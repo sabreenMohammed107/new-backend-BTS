@@ -17,13 +17,13 @@
                         <nav>
                             <div class="ltn__main-menu">
                                 <ul>
-                                    <li class=""><a href="#">HOME</a>
+                                    <li class=""><a href="{{ route('main-home') }}">HOME</a>
 
                                     </li>
-                                    <li class=""><a href="#">ABOUT BTS</a>
+                                    <li class=""><a href="{{ route('about-bts') }}">ABOUT BTS</a>
 
                                     </li>
-                                    <li class="menu-icon"><a href="#">TRAINING CATEGORY</a>
+                                    <li class="menu-icon"><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
                                         <ul>
                                             <li><a href="">TRAINING</a></li>
                                             <li><a href="">TRAINING Grid</a></li>
@@ -34,12 +34,12 @@
 
                                         </ul>
                                     </li>
-                                    <li class=""><a href="#">Join US</a>
+                                    <li class=""><a href="{{ route('join-us') }}">Join US</a>
 
                                     </li>
 
-                                    <li class="special-link-in"><a href="">Contact Us</a></li>
-                                    <li class="special-link"><a href="">Download center</a></li>
+                                    <li class="special-link-in"><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                                    <li class="special-link"><a href="{{ route('download-center') }}">Download center</a></li>
 
                                 </ul>
                             </div>
@@ -83,14 +83,14 @@
 
         <div class="ltn__utilize-menu text-center">
             <ul class="text-center">
-                <li><a href="#">HOME</a>
+                <li><a href="{{ route('main-home') }}">HOME</a>
 
                 </li>
-                <li><a href="#">ABOUT BTS</a>
+                <li><a href="{{ route('about-bts') }}">ABOUT BTS</a>
 
                 </li>
 
-                <li><a href="#">TRAINING CATEGORY</a>
+                <li><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
                     <ul class="sub-menu">
                         <li><a href="about.html">TRAINING CATEGORY</a></li>
                         <li><a href="service.html">TRAINING CATEGORY</a></li>
@@ -98,7 +98,7 @@
 
                     </ul>
                 </li>
-                <li><a href="#">Join US</a>
+                <li><a href="{{ route('join-us') }}">Join US</a>
 
                 </li>
 
@@ -106,8 +106,8 @@
         </div>
         <div class="ltn__utilize-buttons ltn__utilize-buttons-2 text-center">
             <ul>
-                <li class="special-link-in"><a href="">Contact Us</a></li>
-                <li class="special-link"><a href="">Download center</a></li>
+                <li class="special-link-in"><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                <li class="special-link"><a href="{{ route('download-center') }}">Download center</a></li>
             </ul>
         </div>
 
