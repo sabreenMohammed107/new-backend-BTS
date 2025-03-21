@@ -69,11 +69,6 @@
                     </div>
                 </div>
                 </div>
-                <style>
-                #join-team-page .ltn__product-tab-area.ltn__product-gutter .card {
-                    background-color:#F9F9FF ;
-                }
-                </style>
                 <!-- card -->
                 <div class="card">
                 <h6 class="ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-2"

@@ -28,6 +28,6 @@
     <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="body-wrapper" id="@yield('page-id')">
+  <div class="body-wrapper @yield('page-class')" id="@yield('page-id')">
 
     @include('front-design-pages.front-layout.navbar')

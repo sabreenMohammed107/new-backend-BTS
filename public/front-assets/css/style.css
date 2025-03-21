@@ -19,7 +19,7 @@
 >>> TABLE OF CONTENTS:
 ===============================================================
 # Google fonts
-# Gutter Code 
+# Gutter Code
 # Normalize
 # Typography
 # Custom Class
@@ -38,7 +38,7 @@
 # Galleries
 # Unit test
 # ScrollUp
-# Owl Carousel 
+# Owl Carousel
 # Slick Slider
 # Background Overlay
 # Scrollbar
@@ -70,7 +70,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 /* ====================================================
-    Gutter Code 
+    Gutter Code
 ==================================================== */
 .container,
 .container-fluid {
@@ -207,7 +207,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 /* ----------------------------------------------------
-    Normalize  
+    Normalize
 ---------------------------------------------------- */
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Marhey:wght@300..700&display=swap");
@@ -1423,7 +1423,7 @@ ul {
 }
 
 /* ----------------------------------------------------
-    Owl Carousel 
+    Owl Carousel
 ---------------------------------------------------- */
 .owl-dots {
   display: block;
@@ -1930,7 +1930,7 @@ ul {
 }
 
 /* ----------------------------------------------
-  Scrollbar 
+  Scrollbar
 ---------------------------------------------- */
 .ltn__scrollbar {
   overflow-y: auto;
@@ -9378,7 +9378,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 # Common CSS
 # Section title
 # Category Area
-# Feature Area 
+# Feature Area
 # Countdown Area
 # Blog Area
 # Blog Details
@@ -9407,12 +9407,12 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 # Service Area
 # Call To Action
 # Elements Area
-# Service Form 
+# Service Form
 # Get A Quote Form
 # Car Dealer Form
 # Video Area
 # Brand Logo
-# Progress Bar 
+# Progress Bar
 # Our Journey Area
 # Google Map Locations Area
 # Team Details
@@ -9877,7 +9877,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 /* ----------------------------------------------------
-    Feature Area 
+    Feature Area
 ---------------------------------------------------- */
 .ltn__feature-item {
   padding: 40px 25px 10px;
@@ -13774,7 +13774,7 @@ input.cart-plus-minus-box {
 }
 
 /* ----------------------------------------------------
-    Service Form 
+    Service Form
 ---------------------------------------------------- */
 .ltn__service-form-box {
   margin: 0;
@@ -14188,7 +14188,7 @@ input.cart-plus-minus-box {
 }
 
 /* ----------------------------------------------------
-    Progress Bar 
+    Progress Bar
 ---------------------------------------------------- */
 .ltn__progress-bar-wrap {
   margin-bottom: 50px;
@@ -16883,7 +16883,7 @@ border: none;
 #single-course-page.registration-course-page .nice-select:after {
 display: none;
 }
-#single-course-page.registration-course-page .nice-select, 
+#single-course-page.registration-course-page .nice-select,
 #single-course-page.registration-course-page .form-container input {
 background-color: #fff;
 }
@@ -16970,12 +16970,12 @@ background-color: #fff;
   font-size: 40px;
 }
 #about-bts-page .main-hero-section .about-bts-description p ,
-#about-bts-page .main-hero-section .about-bts-description ul li 
+#about-bts-page .main-hero-section .about-bts-description ul li
 {
   color: #a9a3a3;
   font-size: 12px;
 }
-#about-bts-page .map-section .map-description .blue-clr 
+#about-bts-page .map-section .map-description .blue-clr
 {
   color: #376EFF;
 }
@@ -17075,12 +17075,12 @@ font-size: smaller;
   font-size: 40px;
 }
 #testimonials-page .main-hero-section .about-bts-description p ,
-#testimonials-page .main-hero-section .about-bts-description ul li 
+#testimonials-page .main-hero-section .about-bts-description ul li
 {
   color: #a9a3a3;
   font-size: 12px;
 }
-#testimonials-page .map-section .map-description .blue-clr 
+#testimonials-page .map-section .map-description .blue-clr
 {
   color: #376EFF;
 }
@@ -17174,12 +17174,12 @@ font-size: smaller;
   font-size: 40px;
 }
 #contact-us-page .main-hero-section .about-bts-description p ,
-#contact-us-page .main-hero-section .about-bts-description ul li 
+#contact-us-page .main-hero-section .about-bts-description ul li
 {
   color: #a9a3a3;
   font-size: 12px;
 }
-#contact-us-page .map-section .map-description .blue-clr 
+#contact-us-page .map-section .map-description .blue-clr
 {
   color: #376EFF;
 }
@@ -17278,12 +17278,12 @@ font-size: smaller;
   font-size: 40px;
 }
 #join-us-page .main-hero-section .about-bts-description p ,
-#join-us-page .main-hero-section .about-bts-description ul li 
+#join-us-page .main-hero-section .about-bts-description ul li
 {
   color: #a9a3a3;
   font-size: 12px;
 }
-#join-us-page .map-section .map-description .blue-clr 
+#join-us-page .map-section .map-description .blue-clr
 {
   color: #376EFF;
 }
@@ -17594,7 +17594,7 @@ font-weight: 900;
 #join-team-page  .ltn__product-item.ltn__product-item-3 .product-img {
   position: relative;
 }
-#join-team-page 
+#join-team-page
   .ltn__product-item.ltn__product-item-3
   .product-img
   .course-badge {
@@ -17602,32 +17602,32 @@ font-weight: 900;
   bottom: 0;
   left: 0;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
 .product-img
 .img-container img {
 width: 100%;
 height: 100%;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .title-section h3{
 font-size: 15px;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .title-section p{
 font-size: 11px;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .bottom-title{
 font-size: 11px;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .category-title{
@@ -17635,7 +17635,7 @@ font-size: 11px;
 text-decoration: underline;
 color: #fff;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .icon-arrow {
@@ -17643,7 +17643,7 @@ background-color: #376EFF;
 padding: 10px;
 border-radius: 50%;
 }
-#join-team-page 
+#join-team-page
 .ltn__product-item.ltn__product-item-3
  {
 border: none;
@@ -17678,7 +17678,7 @@ border: none;
 #join-team-page .nice-select:after {
 display: none;
 }
-#join-team-page .nice-select, 
+#join-team-page .nice-select,
 #join-team-page .form-container input {
 background-color: #fff;
 }
@@ -17962,7 +17962,7 @@ background-color: #fff;
 #join-us-speaker-page  .ltn__product-item.ltn__product-item-3 .product-img {
   position: relative;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
   .ltn__product-item.ltn__product-item-3
   .product-img
   .course-badge {
@@ -17970,32 +17970,32 @@ background-color: #fff;
   bottom: 0;
   left: 0;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
 .product-img
 .img-container img {
 width: 100%;
 height: 100%;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .title-section h3{
 font-size: 15px;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .title-section p{
 font-size: 11px;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .bottom-title{
 font-size: 11px;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .category-title{
@@ -18003,7 +18003,7 @@ font-size: 11px;
 text-decoration: underline;
 color: #fff;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
 .icon-arrow {
@@ -18011,7 +18011,7 @@ background-color: #376EFF;
 padding: 10px;
 border-radius: 50%;
 }
-#join-us-speaker-page 
+#join-us-speaker-page
 .ltn__product-item.ltn__product-item-3
  {
 border: none;
@@ -18046,7 +18046,7 @@ border: none;
 #join-us-speaker-page .nice-select:after {
 display: none;
 }
-#join-us-speaker-page .nice-select, 
+#join-us-speaker-page .nice-select,
 #join-us-speaker-page .form-container input {
 background-color: #fff;
 }
@@ -18143,12 +18143,12 @@ background-color: #fff;
   font-size: 40px;
 }
 #soft-skills-page .main-hero-section .about-bts-description p ,
-#soft-skills-page .main-hero-section .about-bts-description ul li 
+#soft-skills-page .main-hero-section .about-bts-description ul li
 {
   color: #a9a3a3;
   font-size: 12px;
 }
-#soft-skills-page .map-section .map-description .blue-clr 
+#soft-skills-page .map-section .map-description .blue-clr
 {
   color: #376EFF;
 }
@@ -18605,7 +18605,7 @@ border: none;
 #download-center-page.registration-course-page .nice-select:after {
 display: none;
 }
-#download-center-page.registration-course-page .nice-select, 
+#download-center-page.registration-course-page .nice-select,
 #download-center-page.registration-course-page .form-container input {
 background-color: #fff;
 }
@@ -19280,7 +19280,7 @@ border: none;
 #accre-course-page.registration-course-page .nice-select:after {
 display: none;
 }
-#accre-course-page.registration-course-page .nice-select, 
+#accre-course-page.registration-course-page .nice-select,
 #accre-course-page.registration-course-page .form-container input {
 background-color: #fff;
 }
@@ -19333,8 +19333,30 @@ background-color: #fff;
   font-size: 40px;
 }
 #accre-course-page .main-hero-section .about-bts-description p ,
-#accre-course-page .main-hero-section .about-bts-description ul li 
+#accre-course-page .main-hero-section .about-bts-description ul li
 {
   color: #a9a3a3;
   font-size: 12px;
 }
+#join-team-page .ltn__product-tab-area.ltn__product-gutter .card {
+    background-color:#F9F9FF ;
+}
+#soft-skills-page .section-title-area.ltn__section-title-2 h5{
+    font-size: 15px;
+  }
+
+  #testimonials-page .section-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  #testimonials-page .g-clr {
+    color: #666;
+    display: block;
+    margin: 0 auto 50px;
+  }
+
+  #testimonials-page .fnt-siz-sm {
+    font-size: 1rem;
+  }

@@ -4,7 +4,6 @@
 @section('page-id' , 'about-bts-page')
 @section('page-content')
     <div class="main-course-bg-header">
-
       <div class="course-main-title">
         <h2>ABOUT BTS</h2>
       </div>

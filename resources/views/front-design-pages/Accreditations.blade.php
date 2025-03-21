@@ -13,7 +13,7 @@
           <div class="main-hero-section">
             <div class="row">
               <div class="col-lg-4 vid-play">
-                <a href="http://"> <img src="img/icons/play.png" alt=""></a>
+                <a href="http://"> <img src="{{ asset('front-assets/img/icons/play.png') }}" alt=""></a>
               </div>
               <div class="col-lg-8 about-bts-description p-5">
                 <h3>We have been assessed against internationally recognized standards</h3>
@@ -50,28 +50,28 @@
           <!-- Blog Item -->
           <div class="col-lg-12 ">
 
-                <a href="" class="img-container"><img height="100%" src="img/slider/d565e8067f134e55d8999f227ee551ee 1.png" alt="#"></a>
+                <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/slider/d565e8067f134e55d8999f227ee551ee 1.png') }}" alt="#"></a>
 
           </div>
           <div class="col-lg-12 ">
 
-                <a href="" class="img-container"><img height="100%" src="img/slider/pngwing.com 1.png" alt="#"></a>
+                <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/slider/pngwing.com 1.png') }}" alt="#"></a>
 
           </div>
           <div class="col-lg-12 ">
 
-                <a href="" class="img-container"><img height="100%" src="img/slider/ISC2_CISSP_RGB__mark 1.png" alt="#"></a>
+                <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/slider/ISC2_CISSP_RGB__mark 1.png') }}" alt="#"></a>
 
           </div>
           <div class="col-lg-12 ">
 
-                <a href="" class="img-container"><img height="100%" src="img/slider/CEH-600x497 1.png" alt="#"></a>
+                <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/slider/CEH-600x497 1.png') }}" alt="#"></a>
 
           </div>
           <div class="col-lg-12 ">
 
 
-                <a href="" class="img-container"><img height="100%" src="img/slider/pngwing.com (1) 1.png" alt="#"></a>
+                <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/slider/pngwing.com (1) 1.png') }}" alt="#"></a>
 
 
           </div>
@@ -131,7 +131,7 @@
 
                 <div class="contact-us-main-page row flex-column p-3">
                   <div class="">
-                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="img/icons/hom.png"
+                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                         alt="">
                       UAE
                     </div>
@@ -139,19 +139,19 @@
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Office
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                     </div>
                     <span>+353214552955</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Mobile
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                     </div>
                     <span>+353876480984</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/mail.png" alt="">E-mail
+                        src="{{ asset('front-assets/img/icons/mail.png') }}" alt="">E-mail
                     </div>
                     <span>Info@btsconsultant.com</span>
                   </div>
@@ -159,12 +159,12 @@
                     <div class="row">
                       <div class="col-12 col-lg-6">
                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                            src="img/icons/time.png" alt="">Working
+                            src="{{ asset('front-assets/img/icons/time.png') }}" alt="">Working
                           hours</div>
                         <span>Sun to Fri 09:00 AM to 06:00 PM</span>
                       </div>
                       <div class="col-12 col-lg-6 text-end">
-                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="img/icons/loc.png"
+                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="{{ asset('front-assets/img/icons/loc.png') }}"
                             alt="">Location</a>
 
                       </div>
