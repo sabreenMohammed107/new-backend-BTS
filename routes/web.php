@@ -40,6 +40,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('/')->group(function(){
+    Route::get('join-us' , function(){
+        return view('front-design-pages.join-team');
+    })->name('join-us');
+    Route::get('/' , function(){
+        return view('front-design-pages.index');
+    })->name('main-home');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
