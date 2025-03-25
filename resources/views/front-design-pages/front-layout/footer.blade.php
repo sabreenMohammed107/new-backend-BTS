@@ -8,10 +8,10 @@
                 <h4 class="footer-title">Company</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="blog.html">About Us</a></li>
-                    <li><a href="shop.html">Training Category</a></li>
-                    <li><a href="locations.html">Download Center</a></li>
+                        <li><a href="{{ route('main-home') }}">Home</a></li>
+                        <li><a href="{{ route('about-bts') }}">About Us</a></li>
+                        <li><a href="{{ route('soft-skills-page') }}">Training Category</a></li>
+                        <li><a href="{{ route('download-center') }}">Download Center</a></li>
                     </ul>
                 </div>
                 </div>
@@ -21,10 +21,10 @@
                 <h4 class="footer-title">JOIN BTS</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="order-tracking.html">jobs</a></li>
-                    <li><a href="wishlist.html">Speakers</a></li>
-                    <li><a href="login.html">Terms of Service</a></li>
-                    <li><a href="account.html">Contact US</a></li>
+                    <li><a href="{{ route('join-us') }}">jobs</a></li>
+                    <li><a href="{{ route('join-us-speaker-page') }}">Speakers</a></li>
+                    <li><a href="{{ route('service') }}">Terms of Service</a></li>
+                    <li><a href="{{ route('contact-us') }}">Contact US</a></li>
 
                     </ul>
                 </div>
@@ -35,10 +35,10 @@
                 <h4 class="footer-title">MAJORS</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="login.html">Technical</a></li>
-                    <li><a href="account.html">Soft skills</a></li>
-                    <li><a href="wishlist.html">Certified</a></li>
-                    <li><a href="order-tracking.html">Information Technology</a></li>
+                    <li><a href="{{ route('join-us') }}">Technical</a></li>
+                    <li><a href="{{ route('soft-skills-page') }}">Soft skills</a></li>
+                    <li><a href="{{ route('accreditations') }}">Certified</a></li>
+                    <li><a href="">Information Technology</a></li>
 
                     </ul>
                 </div>
@@ -49,10 +49,10 @@
                 <h4 class="footer-title">RESOURCES</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="login.html">Public Training</a></li>
-                    <li><a href="account.html">In-House Training</a></li>
-                    <li><a href="wishlist.html">Consultancy</a></li>
-                    <li><a href="order-tracking.html">Online Courses</a></li>
+                    <li><a href="">Public Training</a></li>
+                    <li><a href="">In-House Training</a></li>
+                    <li><a href="">Consultancy</a></li>
+                    <li><a href="">Online Courses</a></li>
                     </ul>
                 </div>
                 </div>

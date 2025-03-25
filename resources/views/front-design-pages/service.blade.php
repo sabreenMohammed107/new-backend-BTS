@@ -20,10 +20,10 @@
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="img/bg/Rectangle 10249.png" alt="Public Training Session" class="primary-image">
+                      <img src="{{ asset('front-assets/img/bg/Rectangle 10249.png') }}" alt="Public Training Session" class="primary-image">
 
 
-                      <img src="img/bg/Rectangle 10250 (1).png" alt="City Skyline" class="secondary-image">
+                      <img src="{{ asset('front-assets/img/bg/Rectangle 10250 (1).png') }}" alt="City Skyline" class="secondary-image">
                       <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
 
                     </div>
@@ -62,9 +62,9 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="img/service/Rectangle 10250 (1).png" alt="Business Training" class="image-top">
-                      <img src="img/service/Rectangle 102aaa52.png" alt="Team Discussion" class="image-bottom-left">
-                      <img src="img/service/Rectangle 10aaa251.png" alt="Team Discussion" class="image-bottom-right">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 10250 (1).png') }}" alt="Business Training" class="image-top">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 102aaa52.png') }}" alt="Team Discussion" class="image-bottom-left">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 10aaa251.png') }}" alt="Team Discussion" class="image-bottom-right">
                     </div>
                   </div>
                 </div>
@@ -89,10 +89,10 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="img/service/Rectangle 102ss51.png" alt="Public Training Session" class="primary-image">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 102ss51.png') }}" alt="Public Training Session" class="primary-image">
 
 
-                      <img src="img/service/Rectangle 102aaa55.png" alt="City Skyline" class="secondary-image">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 102aaa55.png') }}" alt="City Skyline" class="secondary-image">
                       <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
 
                     </div>
@@ -108,10 +108,10 @@
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="img/service/Rectangle 10254.png" alt="Public Training Session" class="primary-image">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 10254.png') }}" alt="Public Training Session" class="primary-image">
 
 
-                      <img src="img/service/Rectangle 1025ss2.png" alt="City Skyline" class="secondary-image">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 1025ss2.png') }}" alt="City Skyline" class="secondary-image">
                       <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
 
                     </div>
@@ -186,7 +186,7 @@
 
                 <div class="contact-us-main-page row flex-column p-3">
                   <div class="">
-                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="img/icons/hom.png"
+                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                         alt="">
                       UAE
                     </div>
@@ -194,19 +194,19 @@
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Office
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                     </div>
                     <span>+353214552955</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Mobile
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                     </div>
                     <span>+353876480984</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/mail.png" alt="">E-mail
+                        src="{{ asset('front-assets/img/icons/mail.png') }}" alt="">E-mail
                     </div>
                     <span>Info@btsconsultant.com</span>
                   </div>
@@ -214,12 +214,12 @@
                     <div class="row">
                       <div class="col-12 col-lg-6">
                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                            src="img/icons/time.png" alt="">Working
+                            src="{{ asset('front-assets/img/icons/time.png') }}" alt="">Working
                           hours</div>
                         <span>Sun to Fri 09:00 AM to 06:00 PM</span>
                       </div>
                       <div class="col-12 col-lg-6 text-end">
-                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="img/icons/loc.png"
+                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="{{ asset('front-assets/img/icons/loc.png') }}"
                             alt="">Location</a>
 
                       </div>

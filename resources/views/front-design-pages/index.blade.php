@@ -30,8 +30,8 @@
                                                     success, enhance skills, and drive organizational growth.</p>
                                             </div>
                                             <div class="btn-wrapper animated">
-                                                <a href="" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download center</a>
+                                                <a href="{{ route('contact-us') }}" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
+                                                <a href="{{ route('download-center') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download center</a>
                                             </div>
                                         </div>
                                     </div>
@@ -63,8 +63,8 @@
                                                     success, enhance skills, and drive organizational growth.</p>
                                             </div>
                                             <div class="btn-wrapper animated">
-                                                <a href="" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download center</a>
+                                                <a href="{{ route('contact-us') }}" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
+                                                <a href="{{ route('download-center') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download center</a>
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@
                                     <a href="" class="form-btn-transparent">Tailor your course</a>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                    <a href="" class="form-btn">Search</a>
+                                    <a href="{{ route('course-search') }}" class="form-btn">Search</a>
                                 </div>
                             </div>
 
@@ -192,11 +192,11 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-8">
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
                                                     Details</a>
                                             </div>
                                             <div class="col-2 offset-2 d-flex align-items-center">
-                                                <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
+                                                <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -216,11 +216,11 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-8">
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
                                                     Details</a>
                                             </div>
                                             <div class="col-2 offset-2 d-flex align-items-center">
-                                                <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
+                                                <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -239,11 +239,11 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-8">
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
                                                     Details</a>
                                             </div>
                                             <div class="col-2 offset-2 d-flex align-items-center">
-                                                <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
+                                                <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -261,11 +261,11 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-8">
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
                                                     Details</a>
                                             </div>
                                             <div class="col-2 offset-2 d-flex align-items-center">
-                                                <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
+                                                <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -422,7 +422,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/aa.png') }}" alt="#"></a>
+                                    <a href="{{ route('single-course') }}" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/aa.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -434,7 +434,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -446,7 +446,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -458,7 +458,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -470,7 +470,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/cc.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/cc.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -482,7 +482,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -494,7 +494,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/dd.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/dd.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -506,7 +506,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -521,7 +521,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/aa.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/aa.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -533,7 +533,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -545,7 +545,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -557,7 +557,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -569,7 +569,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/cc.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/cc.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -581,7 +581,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -593,7 +593,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-3 text-left">
                                 <div class="product-img">
-                                    <a  class="img-container" href=""><img height="100%" src="{{ asset('front-assets/img/bg/dd.png') }}" alt="#"></a>
+                                    <a  class="img-container" href="{{ route('single-course') }}"><img height="100%" src="{{ asset('front-assets/img/bg/dd.png') }}" alt="#"></a>
                                     <div class="course-badge">
                                         <div class="row">
                                             <div class="col-12">
@@ -605,7 +605,7 @@
                                                 </div>
                                                 <div class="col-2 mb-2">
                                                     <span class="icon-arrow">
-                                                        <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                        <a href="{{ route('single-course') }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -622,7 +622,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 col-lg-4 text-center">
 
-                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">LOAD MORE</a>
+                        <a href="{{ route('course-search') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">LOAD MORE</a>
                     </div>
                 </div>
 
@@ -698,18 +698,20 @@
 
                             <div class="ltn__blog-brief bg-light-blue">
                                 <div class="ltn__blog-meta bg-light-blue"">
+                                    <a href="{{ route('testimonials') }}">
                                         <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                                    <li class="ltn__blog-title ">
-                                        <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                                    </li>
-                                    <li class="ltn__blog-tags d-flex">
-                                        <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                                        <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                                        <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                                        <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                                        <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                                    </li>
-                                    </ul>
+                                            <li class="ltn__blog-title ">
+                                                <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
+                                            </li>
+                                            <li class="ltn__blog-tags d-flex">
+                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                                            </li>
+                                        </ul>
+                                    </a>
                                 </div>
                                 <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
                                     opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
@@ -723,6 +725,7 @@
 
                             <div class="ltn__blog-brief bg-light-blue">
                                 <div class="ltn__blog-meta bg-light-blue"">
+                                    <a href="{{ route('testimonials') }}">
                                         <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title ">
                                         <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
@@ -735,6 +738,7 @@
                                         <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                                     </li>
                                     </ul>
+                                </a>
                                 </div>
                                 <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
                                     opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
@@ -748,6 +752,7 @@
 
                             <div class="ltn__blog-brief bg-light-blue">
                                 <div class="ltn__blog-meta bg-light-blue"">
+                                    <a href="{{ route('testimonials') }}">
                                         <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title ">
                                         <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
@@ -760,6 +765,7 @@
                                         <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                                     </li>
                                     </ul>
+                                </a>
                                 </div>
                                 <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
                                     opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
@@ -773,6 +779,7 @@
 
                             <div class="ltn__blog-brief bg-light-blue">
                                 <div class="ltn__blog-meta bg-light-blue"">
+                                    <a href="{{ route('testimonials') }}">
                                         <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title ">
                                         <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
@@ -785,6 +792,7 @@
                                         <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                                     </li>
                                     </ul>
+                                </a>
                                 </div>
                                 <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
                                     opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
@@ -798,6 +806,7 @@
 
                             <div class="ltn__blog-brief bg-light-blue">
                                 <div class="ltn__blog-meta bg-light-blue"">
+                                    <a href="{{ route('testimonials') }}">
                                         <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title ">
                                         <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
@@ -810,6 +819,7 @@
                                         <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                                     </li>
                                     </ul>
+                                </a>
                                 </div>
                                 <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
                                     opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
@@ -823,6 +833,7 @@
 
                             <div class="ltn__blog-brief bg-light-blue">
                                 <div class="ltn__blog-meta bg-light-blue"">
+                                    <a href="{{ route('testimonials') }}">
                                         <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title ">
                                         <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
@@ -835,6 +846,7 @@
                                         <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                                     </li>
                                     </ul>
+                                </a>
                                 </div>
                                 <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
                                     opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
@@ -986,7 +998,7 @@
                                                 <span>Sun to Fri 09:00 AM to 06:00 PM</span>
                                             </div>
                                             <div class="col-12 col-lg-6 text-end">
-                                                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img
+                                                <a href="{{ route('contact-us') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img
                                                         src="{{ asset('front-assets/img/icons/loc.png') }}" alt="">Location</a>
 
                                             </div>

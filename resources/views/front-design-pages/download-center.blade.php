@@ -21,7 +21,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv6.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv6.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -49,7 +49,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv7.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv7.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -77,7 +77,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv8.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv8.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -105,7 +105,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv1.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv1.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -133,7 +133,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv4.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv4.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -161,7 +161,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv3.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv3.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -190,7 +190,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv5.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv5.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -218,7 +218,7 @@
             <div class="col-12 col-lg-3">
               <div class="ltn__product-item ltn__product-item-3 text-left">
                 <div class="product-img">
-                  <a href="" class="img-container"><img height="100%" src="img/bg/adv2.png" alt="#"></a>
+                  <a href="" class="img-container"><img height="100%" src="{{ asset('front-assets/img/bg/adv2.png') }}" alt="#"></a>
                   <div class="course-badge p-3">
                     <div class="row">
                       <div class="col-12 title-section">
@@ -303,7 +303,7 @@
 
                 <div class="contact-us-main-page row flex-column p-3">
                   <div class="">
-                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="img/icons/hom.png"
+                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                         alt="">
                       UAE
                     </div>
@@ -311,19 +311,19 @@
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Office
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                     </div>
                     <span>+353214552955</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Mobile
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                     </div>
                     <span>+353876480984</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/mail.png" alt="">E-mail
+                        src="{{ asset('front-assets/img/icons/mail.png') }}" alt="">E-mail
                     </div>
                     <span>Info@btsconsultant.com</span>
                   </div>
@@ -331,12 +331,12 @@
                     <div class="row">
                       <div class="col-12 col-lg-6">
                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                            src="img/icons/time.png" alt="">Working
+                            src="{{ asset('front-assets/img/icons/time.png') }}" alt="">Working
                           hours</div>
                         <span>Sun to Fri 09:00 AM to 06:00 PM</span>
                       </div>
                       <div class="col-12 col-lg-6 text-end">
-                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="img/icons/loc.png"
+                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="{{ asset('front-assets/img/icons/loc.png') }}"
                             alt="">Location</a>
 
                       </div>

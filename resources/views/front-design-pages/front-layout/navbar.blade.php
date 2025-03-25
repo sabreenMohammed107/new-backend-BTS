@@ -92,9 +92,9 @@
 
                 <li><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
                     <ul class="sub-menu">
-                        <li><a href="about.html">TRAINING CATEGORY</a></li>
-                        <li><a href="service.html">TRAINING CATEGORY</a></li>
-                        <li><a href="service-details.html">TRAINING CATEGORY Details</a></li>
+                        <li><a href="">TRAINING CATEGORY</a></li>
+                        <li><a href="">TRAINING CATEGORY</a></li>
+                        <li><a href="">TRAINING CATEGORY Details</a></li>
 
                     </ul>
                 </li>

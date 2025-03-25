@@ -93,6 +93,10 @@ Route::prefix('/')->group(function(){
         return view('front-design-pages.single-course');
     })->name('single-course');
 
+    Route::get('testimonials' , function(){
+        return view('front-design-pages.testimonials');
+    })->name('testimonials');
+
     Route::get('soft-skills-page' , function(){
         return view('front-design-pages.soft-skills-page');
     })->name('soft-skills-page');

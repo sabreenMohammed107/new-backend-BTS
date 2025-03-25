@@ -4,7 +4,6 @@
 @section('page-id' , 'soft-skills-page')
 @section('page-content')
     <div class="main-course-bg-header">
-
       <div class="course-main-title">
         <h2>Soft skills Categories</h2>
       </div>
@@ -25,7 +24,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/asaf.png" alt="Administration and Finance">
+                            <img src="{{ asset('front-assets/img/bg/asaf.png') }}" alt="Administration and Finance">
                             <div class="service-overlay">
                                 <h3 class="service-title">ADMINISTRATION AND FINANCE</h3>
                             </div>
@@ -34,7 +33,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Administration and Secretary.png" alt="Administration and Secretary">
+                            <img src="{{ asset('front-assets/img/bg/Administration and Secretary.png') }}" alt="Administration and Secretary">
                             <div class="service-overlay">
                                 <h3 class="service-title">ADMINISTRATION AND SECRETARY</h3>
                             </div>
@@ -43,7 +42,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Auditing Skills Management.png" alt="Auditing Skills Management">
+                            <img src="{{ asset('front-assets/img/bg/Auditing Skills Management.png') }}" alt="Auditing Skills Management">
                             <div class="service-overlay">
                                 <h3 class="service-title">AUDITING SKILLS MANAGEMENT</h3>
                             </div>
@@ -52,7 +51,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Customer Services.png" alt="Customer Services">
+                            <img src="{{ asset('front-assets/img/bg/Customer Services.png') }}" alt="Customer Services">
                             <div class="service-overlay">
                                 <h3 class="service-title">CUSTOMER SERVICES</h3>
                             </div>
@@ -61,7 +60,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Human Resources and Training.png" alt="Human Resources and Training">
+                            <img src="{{ asset('front-assets/img/bg/Human Resources and Training.png') }}" alt="Human Resources and Training">
                             <div class="service-overlay">
                                 <h3 class="service-title">HUMAN RESOURCES AND TRAINING</h3>
                             </div>
@@ -70,7 +69,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Leadership and Management.png" alt="Leadership and Management">
+                            <img src="{{ asset('front-assets/img/bg/Leadership and Management.png') }}" alt="Leadership and Management">
                             <div class="service-overlay">
                                 <h3 class="service-title">LEADERSHIP AND MANAGEMENT</h3>
                             </div>
@@ -79,7 +78,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Logistics, Warehouse & General Services.png" alt="Logistics, Warehouse & General Services">
+                            <img src="{{ asset('front-assets/img/bg/Logistics, Warehouse & General Services.png') }}" alt="Logistics, Warehouse & General Services">
                             <div class="service-overlay">
                                 <h3 class="service-title">LOGISTICS, WAREHOUSE & GENERAL SERVICES</h3>
                             </div>
@@ -88,7 +87,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Procurement, Purchasing and Supply Chain Management.png" alt="Procurement, Purchasing and Supply Chain Management">
+                            <img src="{{ asset('front-assets/img/bg/Procurement, Purchasing and Supply Chain Management.png') }}" alt="Procurement, Purchasing and Supply Chain Management">
                             <div class="service-overlay">
                                 <h3 class="service-title">PROCUREMENT, PURCHASING AND SUPPLY CHAIN MANAGEMENT</h3>
                             </div>
@@ -97,7 +96,7 @@
 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="service-card">
-                            <img src="img/bg/Quality Assurance and Quality Control Management.png" alt="Quality Assurance and Quality Control Management">
+                            <img src="{{ asset('front-assets/img/bg/Quality Assurance and Quality Control Management.png') }}" alt="Quality Assurance and Quality Control Management">
                             <div class="service-overlay">
                                 <h3 class="service-title">QUALITY ASSURANCE AND QUALITY CONTROL MANAGEMENT</h3>
                             </div>
@@ -162,7 +161,7 @@
 
                 <div class="contact-us-main-page row flex-column p-3">
                   <div class="">
-                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="img/icons/hom.png"
+                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                         alt="">
                       UAE
                     </div>
@@ -170,19 +169,19 @@
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Office
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                     </div>
                     <span>+353214552955</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Mobile
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                     </div>
                     <span>+353876480984</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/mail.png" alt="">E-mail
+                        src="{{ asset('front-assets/img/icons/mail.png') }}" alt="">E-mail
                     </div>
                     <span>Info@btsconsultant.com</span>
                   </div>
@@ -190,12 +189,12 @@
                     <div class="row">
                       <div class="col-12 col-lg-6">
                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                            src="img/icons/time.png" alt="">Working
+                            src="{{ asset('front-assets/img/icons/time.png') }}" alt="">Working
                           hours</div>
                         <span>Sun to Fri 09:00 AM to 06:00 PM</span>
                       </div>
                       <div class="col-12 col-lg-6 text-end">
-                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="img/icons/loc.png"
+                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="{{ asset('front-assets/img/icons/loc.png') }}"
                             alt="">Location</a>
 
                       </div>

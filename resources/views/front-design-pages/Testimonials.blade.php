@@ -17,7 +17,7 @@
           <div class="main-hero-section">
             <div class="row">
               <div class="col-lg-4 vid-play">
-                <a href="http://"> <img src="img/icons/play.png" alt=""></a>
+                <a href="http://"> <img src="{{ asset('front-assets/img/icons/play.png') }}" alt=""></a>
               </div>
               <div class="col-lg-8 about-bts-description p-5">
                 <h3>WHAT DO OUR DELEGATES AND CLIENTS SAY ABOUT US?</h3>
@@ -68,11 +68,11 @@
                       <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
                     </li>
                     <li class="ltn__blog-tags d-flex">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                     </li>
                     </ul>
                   </div>
@@ -93,11 +93,11 @@
                       <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
                     </li>
                     <li class="ltn__blog-tags d-flex">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                     </li>
                     </ul>
                   </div>
@@ -118,11 +118,11 @@
                       <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
                     </li>
                     <li class="ltn__blog-tags d-flex">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                     </li>
                     </ul>
                   </div>
@@ -143,11 +143,11 @@
                       <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
                     </li>
                     <li class="ltn__blog-tags d-flex">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                     </li>
                     </ul>
                   </div>
@@ -168,11 +168,11 @@
                       <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
                     </li>
                     <li class="ltn__blog-tags d-flex">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                     </li>
                     </ul>
                   </div>
@@ -193,11 +193,11 @@
                       <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
                     </li>
                     <li class="ltn__blog-tags d-flex">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
-                      <img src="img/icons/star.png" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
+                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
                     </li>
                     </ul>
                   </div>
@@ -321,57 +321,57 @@
           <div class="container container-wrapper">
             <div class="gallary-container w-2 h-3">
               <div class="image">
-                <img src="img/testimonial/Rectangle 102.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 102.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container w-1 h-2">
               <div class="image">
-                <img src="img/testimonial/Rectangle 103.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 103.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container w-3 h-3">
               <div class="image">
-                <img src="img/testimonial/Rectangle 104.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 104.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container w-3 h-3">
               <div class="image">
-                <img src="img/testimonial/Rectangle 105.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 105.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container w-2 h-2">
               <div class="image">
-                <img src="img/testimonial/Rectangle 106.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 106.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container">
               <div class="image">
-                <img src="img/testimonial/Rectangle 107.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 107.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container">
               <div class="image">
-                <img src="img/testimonial/Rectangle 108.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 108.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container">
               <div class="image">
-                <img src="img/testimonial/Rectangle 109.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 109.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container">
               <div class="image">
-                <img src="img/testimonial/Rectangle 110.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 110.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container">
               <div class="image">
-                <img src="img/testimonial/Rectangle 111.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 111.png') }}" alt="" srcset="">
               </div>
             </div>
             <div class="gallary-container">
               <div class="image">
-                <img src="img/testimonial/Rectangle 112.png" alt="" srcset="">
+                <img src="{{ asset('front-assets/img/testimonial/Rectangle 112.png') }}" alt="" srcset="">
               </div>
             </div>
           </div>
@@ -431,7 +431,7 @@
 
                 <div class="contact-us-main-page row flex-column p-3">
                   <div class="">
-                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="img/icons/hom.png"
+                    <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                         alt="">
                       UAE
                     </div>
@@ -439,19 +439,19 @@
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Office
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                     </div>
                     <span>+353214552955</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/phone.png" alt="">Mobile
+                        src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                     </div>
                     <span>+353876480984</span>
                   </div>
                   <div class="pt-3">
                     <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                        src="img/icons/mail.png" alt="">E-mail
+                        src="{{ asset('front-assets/img/icons/mail.png') }}" alt="">E-mail
                     </div>
                     <span>Info@btsconsultant.com</span>
                   </div>
@@ -459,12 +459,12 @@
                     <div class="row">
                       <div class="col-12 col-lg-6">
                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
-                            src="img/icons/time.png" alt="">Working
+                            src="{{ asset('front-assets/img/icons/time.png') }}" alt="">Working
                           hours</div>
                         <span>Sun to Fri 09:00 AM to 06:00 PM</span>
                       </div>
                       <div class="col-12 col-lg-6 text-end">
-                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="img/icons/loc.png"
+                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase"><img src="{{ asset('front-assets/img/icons/loc.png') }}"
                             alt="">Location</a>
 
                       </div>
