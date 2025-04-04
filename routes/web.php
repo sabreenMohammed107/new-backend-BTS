@@ -42,6 +42,68 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('/')->group(function(){
+    Route::get('/' , function(){
+        return view('front-design-pages.index');
+    })->name('main-home');
+
+    Route::get('join-us' , function(){
+        return view('front-design-pages.join-team');
+    })->name('join-us');
+
+    Route::get('about-bts' , function(){
+        return view('front-design-pages.about-bts');
+    })->name('about-bts');
+
+    Route::get('accreditations' , function(){
+        return view('front-design-pages.Accreditations');
+    })->name('accreditations');
+
+    Route::get('contact-us' , function(){
+        return view('front-design-pages.contact-us');
+    })->name('contact-us');
+
+    Route::get('course-registration' , function(){
+        return view('front-design-pages.course-registration');
+    })->name('course-registration');
+
+    Route::get('course-search' , function(){
+        return view('front-design-pages.course-search');
+    })->name('course-search');
+
+    Route::get('download-center' , function(){
+        return view('front-design-pages.download-center');
+    })->name('download-center');
+
+    Route::get('join-team' , function(){
+        return view('front-design-pages.join-team');
+    })->name('join-team');
+
+    Route::get('join-us-speaker-page' , function(){
+        return view('front-design-pages.join-us-speaker-page');
+    })->name('join-us-speaker-page');
+
+    Route::get('join-us' , function(){
+        return view('front-design-pages.join-us');
+    })->name('join-us');
+
+    Route::get('service' , function(){
+        return view('front-design-pages.service');
+    })->name('service');
+
+    Route::get('single-course' , function(){
+        return view('front-design-pages.single-course');
+    })->name('single-course');
+
+    Route::get('testimonials' , function(){
+        return view('front-design-pages.testimonials');
+    })->name('testimonials');
+
+    Route::get('soft-skills-page' , function(){
+        return view('front-design-pages.soft-skills-page');
+    })->name('soft-skills-page');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
