@@ -10,12 +10,14 @@ use App\Http\Controllers\Admin\CoursesApplicantController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\ExpertiseController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\HomeSliderController;
 use App\Http\Controllers\Admin\JobApplicantController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\NewsLetterController;
 use App\Http\Controllers\Admin\PartenerController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\RoundsController;
+use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\TeachController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -51,6 +53,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::resource('slider', HomeSliderController::class);
+
     Route::resource('sub-categories', SubCategoryController::class);
     Route::resource('courses', CoursesController::class);
     Route::get('dynamicdependentCat/fetch', [CoursesController::class, 'fetchCat'])->name('dynamicdependentCat.fetch');
@@ -82,8 +86,18 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('career', CareersController::class);
     Route::resource('jobApplicant', JobApplicantController::class);
     Route::resource('appl', ApplicantSpeakerController::class);
-
-
+//new staticdata
+Route::get("homeMethodology/view", [StaticPageController::class, "homeMethodologyView"])->name("homeMethodologyView");
+Route::post("homeMethodology/update", [StaticPageController::class, "homeMethodologyUpdate"])->name("homeMethodologyUpdate");
+//accreditation
+Route::get("homeAccreditation/view", [StaticPageController::class, "homeAccreditationView"])->name("homeAccreditationView");
+Route::post("homeAccreditation/update", [StaticPageController::class, "homeAccreditationUpdate"])->name("homeAccreditationUpdate");
+//homeTestimonialView
+Route::get("homeTestimonial/view", [StaticPageController::class, "homeTestimonialView"])->name("homeTestimonialView");
+Route::post("homeTestimonial/update", [StaticPageController::class, "homeTestimonialUpdate"])->name("homeTestimonialUpdate");
+//homeContactView
+Route::get("homeContact/view", [StaticPageController::class, "homeContactView"])->name("homeContactView");
+Route::post("homeContact/update", [StaticPageController::class, "homeContactUpdate"])->name("homeContactUpdate");
 
 });
 

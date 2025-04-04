@@ -2,11 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class HomeSlider extends Model
 {
+
+    use HasFactory;
+     protected $table ="home_sliders";
     protected $fillable = [
-        'slider_en_title', 'slider_en_subtitle','slider_video_url','testimonials_video_url','active'
+        'en_head_title',
+        'en_title',
+        'description',
+        'image',
+        'rank',
+        'active',
     ];
 }

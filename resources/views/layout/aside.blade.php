@@ -59,6 +59,14 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
+                            <a class="menu-link" href="{{ route('slider.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Home slider</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
                             <a class="menu-link" href="{{ route('sub-categories.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
@@ -118,7 +126,51 @@
                         </div>
                     </div>
                 </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-bullet">
+                            <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Static content</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('homeMethodologyView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Home methodology </span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('homeTestimonialView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Home testemonials</span>
+                            </a>
+                        </div>
 
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('homeAccreditationView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Home accreditation</span>
+                            </a>
+                        </div>
+
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('homeContactView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Home contact us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-bullet">
