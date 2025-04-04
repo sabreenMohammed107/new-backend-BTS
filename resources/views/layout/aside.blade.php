@@ -176,6 +176,89 @@
                         <span class="menu-bullet">
                             <span class="bullet bullet-dot"></span>
                         </span>
+                        <span class="menu-title">About us</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('testimonial.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Who we are</span>
+                            </a>
+                        </div>
+
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('gallery.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Bts target</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('gallery.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Offers</span>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-bullet">
+                            <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Services</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('publicTrainingView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Public training</span>
+                            </a>
+                        </div>
+
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('inHouseTrainingView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Inhouse training</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('consultancyView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">consultancy</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('onlineCoursesView') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Online courses</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-bullet">
+                            <span class="bullet bullet-dot"></span>
+                        </span>
                         <span class="menu-title">Testimonials</span>
                         <span class="menu-arrow"></span>
                     </span>

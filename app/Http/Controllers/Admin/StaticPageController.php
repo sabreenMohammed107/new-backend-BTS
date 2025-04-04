@@ -144,4 +144,170 @@ class StaticPageController extends Controller
             return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
         }
     }
+    public function publicTrainingView() {
+        $oneData = array();
+        $row = StaticPage::find(7);
+        return view("staticPages.service.publicTraining", compact('row'));
+    }
+    public function publicTrainingUpdate(Request $request) {
+        try {
+            $staticPage = StaticPage::find(7);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+                "details4" => $request->input("details5"),
+            ];
+
+            // Handle image uploads for public_training images
+            $imageFields = [
+                "details2" => "uploads/public_training/",
+                "details3" => "uploads/public_training/",
+            ];
+
+            foreach ($imageFields as $field => $path) {
+                if ($request->hasFile($field)) {
+                    $file = $request->file($field);
+                    $filename = time() . '_' . $file->getClientOriginalName();
+                    $file->move(public_path($path), $filename);
+                    $dataToBeUpdated[$field] = $path . $filename;
+                }
+            }
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
+    public function inHouseTrainingView() {
+        $oneData = array();
+        $row = StaticPage::find(8);
+        return view("staticPages.service.inHouseTraining", compact('row'));
+    }
+    public function inHouseTrainingViewUpdate(Request $request) {
+        try {
+            $staticPage = StaticPage::find(8);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+            ];
+
+            // Handle image uploads for in_house_training images
+            $imageFields = [
+                "details2" => "uploads/in_house_training/",
+                "details3" => "uploads/in_house_training/",
+                "details4" => "uploads/in_house_training/",
+            ];
+
+            foreach ($imageFields as $field => $path) {
+                if ($request->hasFile($field)) {
+                    $file = $request->file($field);
+                    $filename = time() . '_' . $file->getClientOriginalName();
+                    $file->move(public_path($path), $filename);
+                    $dataToBeUpdated[$field] = $path . $filename;
+                }
+            }
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
+    public function consultancyView() {
+        $oneData = array();
+        $row = StaticPage::find(9);
+        return view("staticPages.service.consultancy", compact('row'));
+    }
+    public function consultancyUpdate(Request $request) {
+        try {
+            $staticPage = StaticPage::find(9);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+            ];
+
+            // Handle image uploads for consultancy images
+            $imageFields = [
+                "details2" => "uploads/consultancy/",
+                "details3" => "uploads/consultancy/",
+            ];
+
+            foreach ($imageFields as $field => $path) {
+                if ($request->hasFile($field)) {
+                    $file = $request->file($field);
+                    $filename = time() . '_' . $file->getClientOriginalName();
+                    $file->move(public_path($path), $filename);
+                    $dataToBeUpdated[$field] = $path . $filename;
+                }
+            }
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
+    public function onlineCoursesView() {
+        $oneData = array();
+        $row = StaticPage::find(10);
+        return view("staticPages.service.onlineCourses", compact('row'));
+    }
+    public function onlineCoursesUpdate(Request $request) {
+        try {
+            $staticPage = StaticPage::find(10);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+            ];
+
+            // Handle image uploads for online_courses images
+            $imageFields = [
+                "details2" => "uploads/online_courses/",
+                "details3" => "uploads/online_courses/",
+            ];
+
+            foreach ($imageFields as $field => $path) {
+                if ($request->hasFile($field)) {
+                    $file = $request->file($field);
+                    $filename = time() . '_' . $file->getClientOriginalName();
+                    $file->move(public_path($path), $filename);
+                    $dataToBeUpdated[$field] = $path . $filename;
+                }
+            }
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
 }

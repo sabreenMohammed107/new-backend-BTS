@@ -160,18 +160,18 @@ Route::post("homeTestimonial/update", [StaticPageController::class, "homeTestimo
 //homeContactView
 Route::get("homeContact/view", [StaticPageController::class, "homeContactView"])->name("homeContactView");
 Route::post("homeContact/update", [StaticPageController::class, "homeContactUpdate"])->name("homeContactUpdate");
-// //publicTraining
-// Route::get("publicTraining/view", [StaticPageController::class, "publicTrainingView"])->name("publicTrainingView");
-// Route::post("publicTraining/update", [StaticPageController::class, "publicTrainingUpdate"])->name("publicTrainingUpdate");
-// //inHouseTraining
-// Route::get("inHouseTraining/view", [StaticPageController::class, "inHouseTrainingView"])->name("inHouseTrainingView");
-// Route::post("inHouseTraining/update", [StaticPageController::class, "inHouseTrainingUpdate"])->name("inHouseTrainingUpdate");
-// //consultancy
-// Route::get("consultancy/view", [StaticPageController::class, "consultancyView"])->name("consultancyView");
-// Route::post("consultancy/update", [StaticPageController::class, "consultancyUpdate"])->name("consultancyUpdate");
-// //onlineCourses
-// Route::get("onlineCourses/view", [StaticPageController::class, "onlineCoursesView"])->name("onlineCoursesView");
-// Route::post("onlineCourses/update", [StaticPageController::class, "onlineCoursesUpdate"])->name("onlineCoursesUpdate");
+//publicTraining
+Route::get("publicTraining/view", [StaticPageController::class, "publicTrainingView"])->name("publicTrainingView");
+Route::post("publicTraining/update", [StaticPageController::class, "publicTrainingUpdate"])->name("publicTrainingUpdate");
+//inHouseTraining
+Route::get("inHouseTraining/view", [StaticPageController::class, "inHouseTrainingView"])->name("inHouseTrainingView");
+Route::post("inHouseTraining/update", [StaticPageController::class, "inHouseTrainingUpdate"])->name("inHouseTrainingUpdate");
+//consultancy
+Route::get("consultancy/view", [StaticPageController::class, "consultancyView"])->name("consultancyView");
+Route::post("consultancy/update", [StaticPageController::class, "consultancyUpdate"])->name("consultancyUpdate");
+//onlineCourses
+Route::get("onlineCourses/view", [StaticPageController::class, "onlineCoursesView"])->name("onlineCoursesView");
+Route::post("onlineCourses/update", [StaticPageController::class, "onlineCoursesUpdate"])->name("onlineCoursesUpdate");
 
 
 
