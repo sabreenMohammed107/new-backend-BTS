@@ -4,12 +4,12 @@
     <div class="toolbar" id="kt_toolbar">
         <div class="container-fluid d-flex flex-stack flex-wrap flex-sm-nowrap">
             <div class="d-flex flex-column align-items-start justify-content-center flex-wrap me-2">
-                <h1 class="text-dark fw-bolder my-1 fs-2">Public Training</h1>
+                <h1 class="text-dark fw-bolder my-1 fs-2">Consultancy</h1>
                 <ul class="breadcrumb fw-bold fs-base my-1">
                     <li class="breadcrumb-item text-muted">
                         <a href="#" class="text-muted text-hover-primary">Home</a>
                     </li>
-                    <li class="breadcrumb-item text-muted">Public Training</li>
+                    <li class="breadcrumb-item text-muted">Consultancy</li>
                     <li class="breadcrumb-item text-dark">Update</li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                     <div class="card card-flush py-4">
                         <div class="card-header">
                             <div class="card-title">
-                                <h2>Public Training Information</h2>
+                                <h2>Consultancy Information</h2>
                             </div>
                         </div>
 

@@ -10,73 +10,48 @@
         <div class="ltn__slider-area ltn__slider-3  section-bg-1">
             <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
                 <!-- ltn__slide-item -->
-                <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal" tabindex="-1">
-                    <div class="ltn__slide-item-inner">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 align-self-center">
-                                    <div class="slide-item-info">
-                                        <div class="slide-item-info-inner ltn__slide-animation">
+                @isset($banners)
+    @foreach ($banners as $banner)
+        <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal ltn__slide-one-active"
+             style="background-image: url('{{ asset('uploads/sliders/' . $banner->image) }}'); background-size: cover; background-position: center 10%;"
+             tabindex="-1">
+            <div class="ltn__slide-item-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 align-self-center">
+                            <div class="slide-item-info">
+                                <div class="slide-item-info-inner ltn__slide-animation">
 
-                                            <h6 class="slide-sub-title animated wh-txt-clr">BTS for training and
-                                                consulting services</h6>
-                                            <h1
-                                                class="slide-title animated bebas-neue-regular wh-txt-clr uppercase-litter">
-                                                If you aim to excel, <br> let expertise propel.</h1>
-                                            <div class="slide-brief animated wh-txt-clr">
-                                                <p class="wh-txt-clr">Unlock your potential with our customized training
-                                                    and expert consulting services. We offer innovative solutions and
-                                                    deep industry knowledge to help you and your team achieve greater
-                                                    success, enhance skills, and drive organizational growth.</p>
-                                            </div>
-                                            <div class="btn-wrapper animated">
-                                                <a href="{{ route('contact-us') }}" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
-                                                <a href="{{ route('download-center') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download center</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="slide-item-img">
-                                    <img src="{{ asset('front-assets/img/slider/21.png') }}" alt="#">
-                                </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal" tabindex="-1">
-                    <div class="ltn__slide-item-inner">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 align-self-center">
-                                    <div class="slide-item-info">
-                                        <div class="slide-item-info-inner ltn__slide-animation">
+                                    <h6 class="slide-sub-title animated wh-txt-clr">
+                                        {!! $banner->en_head_title !!}
+                                    </h6>
 
-                                            <h6 class="slide-sub-title animated wh-txt-clr">BTS for training and
-                                                consulting services</h6>
-                                            <h1
-                                                class="slide-title animated bebas-neue-regular wh-txt-clr uppercase-litter">
-                                                If you aim to excel, <br> let expertise propel.</h1>
-                                            <div class="slide-brief animated wh-txt-clr">
-                                                <p class="wh-txt-clr">Unlock your potential with our customized training
-                                                    and expert consulting services. We offer innovative solutions and
-                                                    deep industry knowledge to help you and your team achieve greater
-                                                    success, enhance skills, and drive organizational growth.</p>
-                                            </div>
-                                            <div class="btn-wrapper animated">
-                                                <a href="{{ route('contact-us') }}" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
-                                                <a href="{{ route('download-center') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download center</a>
-                                            </div>
-                                        </div>
+                                    <h1 class="slide-title animated bebas-neue-regular wh-txt-clr uppercase-litter">
+                                        {!! $banner->en_title !!}
+                                    </h1>
+
+                                    <div class="slide-brief animated wh-txt-clr">
+                                        <p class="wh-txt-clr">
+                                            {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }}
+                                        </p>
                                     </div>
-                                    <!-- <div class="slide-item-img">
-                                    <img src="{{ asset('front-assets/img/slider/21.png') }}" alt="#">
-                                </div> -->
+
+                                    <div class="btn-wrapper animated">
+                                        <a href="{{ route('contact-us') }}" class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
+                                        <a href="{{ route('download-center') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download Center</a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    @endforeach
+@endisset
+
+          </div>
             <div class="social-side-links">
                 <div class="row flex-column">
 
@@ -183,7 +158,7 @@
                 </div>
                 <div class="row ">
                     <div class="col-12 col-md-6 col-lg-3 p-2">
-                        <div class="card-item-services service-item-4">
+                        <div class="card-item-services service-item-4" style="background-image: url({{ asset('assets/front/img/service/service-3.jpg') }});">
                             <div class="card-service-bottom-footer">
                                 <div class="row">
                                     <div class="col-12">
@@ -207,7 +182,7 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-3  p-2">
-                        <div class="card-item-services service-item-2">
+                        <div class="card-item-services service-item-2" style="background-image: url({{ asset('assets/front/img/service/service-3.jpg') }});">
                             <div class="card-service-bottom-footer">
                                 <div class="row">
                                     <div class="col-12">
@@ -230,7 +205,7 @@
 
                     </div>
                     <div class="col-12 col-md-6 col-lg-3  p-2">
-                        <div class="card-item-services service-item-1">
+                        <div class="card-item-services service-item-1" style="background-image: url({{ asset('assets/front/img/service/service-3.jpg') }});">
                             <div class="card-service-bottom-footer">
                                 <div class="row">
                                     <div class="col-12">
@@ -252,7 +227,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 p-2">
-                        <div class="card-item-services service-item-3">
+                        <div class="card-item-services service-item-3" style="background-image: url({{ asset('assets/front/img/service/service-3.jpg') }});">
                             <div class="card-service-bottom-footer">
                                 <div class="row">
                                     <div class="col-12">

@@ -191,7 +191,7 @@ class StaticPageController extends Controller
         $row = StaticPage::find(8);
         return view("staticPages.service.inHouseTraining", compact('row'));
     }
-    public function inHouseTrainingViewUpdate(Request $request) {
+    public function inHouseTrainingUpdate(Request $request) {
         try {
             $staticPage = StaticPage::find(8);
             if (!$staticPage) {
