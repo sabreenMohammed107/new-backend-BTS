@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\HomeSliderController;
 use App\Http\Controllers\Admin\JobApplicantController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\NewsLetterController;
+use App\Http\Controllers\Admin\OffersController;
 use App\Http\Controllers\Admin\PartenerController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\RoundsController;
@@ -173,6 +174,14 @@ Route::post("consultancy/update", [StaticPageController::class, "consultancyUpda
 Route::get("onlineCourses/view", [StaticPageController::class, "onlineCoursesView"])->name("onlineCoursesView");
 Route::post("onlineCourses/update", [StaticPageController::class, "onlineCoursesUpdate"])->name("onlineCoursesUpdate");
 
+//whoWeAre
+Route::get("whoWeAre/view", [StaticPageController::class, "whoWeAreView"])->name("whoWeAreView");
+Route::post("whoWeAre/update", [StaticPageController::class, "whoWeAreUpdate"])->name("whoWeAreUpdate");
+//btsTarget
+Route::get("btsTarget/view", [StaticPageController::class, "btsTargetView"])->name("btsTargetView");
+Route::post("btsTarget/update", [StaticPageController::class, "btsTargetUpdate"])->name("btsTargetUpdate");
+
+Route::resource('offer', OffersController::class);
 
 
 

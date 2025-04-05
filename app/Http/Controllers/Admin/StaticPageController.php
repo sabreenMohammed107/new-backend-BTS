@@ -310,4 +310,67 @@ class StaticPageController extends Controller
             return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
         }
     }
+
+    public function whoWeAreView() {
+        $oneData = array();
+        $row = StaticPage::find(5);
+        return view("staticPages.aboutUs.whoWeAre", compact('row'));
+    }
+    public function whoWeAreUpdate(Request $request) {
+        try {
+            $staticPage = StaticPage::find(5);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+                "details2" => $request->input("details2"),
+                "details3" => $request->input("details3"),
+                "details4" => $request->input("details4"),
+            ];
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
+    public function btsTargetView() {
+        $oneData = array();
+        $row = StaticPage::find(6);
+        return view("staticPages.aboutUs.target", compact('row'));
+    }
+    public function btsTargetUpdate(Request $request) {
+        try {
+            $staticPage = StaticPage::find(6);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+                "details2" => $request->input("details2"),
+                "details3" => $request->input("details3"),
+                "details4" => $request->input("details4"),
+                "details6" => $request->input("details6"),
+                "details7" => $request->input("details7"),
+                "details8" => $request->input("details8"),
+
+            ];
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
 }
