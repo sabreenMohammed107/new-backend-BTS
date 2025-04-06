@@ -66,6 +66,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="mb-10 fv-row">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Facebook</label>
+                                        <input type="text" class="form-control" name="details2" value="{{ $row->details2 }}" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">linkedin</label>
+                                        <input type="text" class="form-control" name="details3" value="{{ $row->details3 }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-10 fv-row">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Twitter</label>
+                                        <input type="text" class="form-control" name="details4" value="{{ $row->details4 }}" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">instagram</label>
+                                        <input type="text" class="form-control" name="details5" value="{{ $row->details5 }}" required>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--end::General options-->

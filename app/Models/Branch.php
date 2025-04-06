@@ -8,7 +8,7 @@ class Branch extends Model
 {
     protected $fillable = [
         'branch_name', 'address','office_phone','mobile','email','map_location','country_id',
-        'venue_id','hq','active'
+        'venue_id','hq','active','working_hour'
     ];
     public function country()
     {
