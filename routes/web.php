@@ -1,33 +1,34 @@
 <?php
 
-use App\Http\Controllers\Admin\ApplicantSpeakerController;
-use App\Http\Controllers\Admin\BranchsController;
-use App\Http\Controllers\Admin\BTSNumbersController;
-use App\Http\Controllers\Admin\CareersController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Admin\TeachController;
+use App\Http\Controllers\Admin\VenueController;
 use App\Http\Controllers\Admin\ClientController;
-use App\Http\Controllers\Admin\CountryController;
-use App\Http\Controllers\Admin\CoursesApplicantController;
-use App\Http\Controllers\Admin\CoursesController;
-use App\Http\Controllers\Admin\ExpertiseController;
-use App\Http\Controllers\Admin\GalleryController;
-use App\Http\Controllers\Admin\HomeSliderController;
-use App\Http\Controllers\Admin\JobApplicantController;
-use App\Http\Controllers\Admin\MessagesController;
-use App\Http\Controllers\Admin\NewsLetterController;
 use App\Http\Controllers\Admin\OffersController;
-use App\Http\Controllers\Admin\PartenerController;
-use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\RoundsController;
+use App\Http\Controllers\Admin\BranchsController;
+use App\Http\Controllers\Admin\CareersController;
+use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\CoursesController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\MessagesController;
+use App\Http\Controllers\Admin\PartenerController;
+use App\Http\Controllers\Admin\TrainersController;
+use App\Http\Controllers\Front\AboutBtsController;
+use App\Http\Controllers\Admin\ExpertiseController;
+use App\Http\Controllers\Admin\BTSNumbersController;
+use App\Http\Controllers\Admin\HomeSliderController;
+use App\Http\Controllers\Admin\NewsLetterController;
 use App\Http\Controllers\Admin\StaticPageController;
 use App\Http\Controllers\Admin\SubCategoryController;
-use App\Http\Controllers\Admin\TeachController;
 use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\TrainersController;
-use App\Http\Controllers\Admin\VenueController;
+use App\Http\Controllers\Admin\JobApplicantController;
 use App\Http\Controllers\Admin\YearCalenderController;
-use App\Http\Controllers\Front\HomeController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\RoundsApplicantController;
+use App\Http\Controllers\Admin\ApplicantSpeakerController;
+use App\Http\Controllers\Admin\CoursesApplicantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,9 +55,7 @@ Route::prefix('/')->group(function () {
         return view('front-design-pages.join-team');
     })->name('join-us');
 
-    Route::get('about-bts' , function(){
-        return view('front-design-pages.about-bts');
-    })->name('about-bts');
+    Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
 
     Route::get('accreditations' , function(){
         return view('front-design-pages.Accreditations');

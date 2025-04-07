@@ -2,6 +2,24 @@
   <!-- Body main wrapper start -->
 
 @section('page-id' , 'about-bts-page')
+
+@section('page-style')
+<style>
+
+    .card-item-services.service-item-1 {
+        background-image: url({{ $consultancy->details2 }});
+    }
+    .card-item-services.service-item-2 {
+        background-image: url({{ $in_house_training->details2 }});
+    }
+    .card-item-services.service-item-3 {
+        background-image: url({{ $online_courses->details2 }});
+    }
+    .card-item-services.service-item-4 {
+        background-image: url({{ $public_training->details2 }});
+    }
+    </style>
+@endsection
 @section('page-content')
     <div class="main-course-bg-header">
       <div class="course-main-title">
@@ -15,12 +33,14 @@
             <div class="main-hero-section">
             <div class="row">
                 <div class="col-lg-4 vid-play">
-                <a href="http://"> <img src="{{ asset('front-assets/img/icons/play.png') }}" alt=""></a>
+                <a href="{{ $whoWeAre->details4 }}"> <img src="{{ asset('front-assets/img/icons/play.png') }}" alt=""></a>
                 </div>
                 <div class="col-lg-8 about-bts-description">
-                <h3>Who we are</h3>
-                <p>We are an international engineering & management training and consulting firm, providing training programs and consulting services to hundreds of organizations in UK and abroad. We have built our reputation on providing innovative solutions and custom-designed training programs to address problems and challenges facing our clients in rapidly changing times. Since 2000, we have trained more than 25,000 people who have applied effective time-saving procedures and techniques to increase productivity, ultimately resulting in an improved bottom line for our clients.</p>
-                <p>BTS offers you high quality, professional services that will increase your productivity and decrease your expenses. We strive to:</p>
+                <h3>{{ ucwords(str_replace('_', ' ', $whoWeAre->section_name)) }}</h3>
+                <p>{{ $whoWeAre->small_description }}</p>
+                <p>{{ $whoWeAre->details }}</p>
+                <p>{{ $whoWeAre->details2 }}</p>
+                <p>{{ $whoWeAre->details3 }}</p>
 
                 <ul class="services-list">
                     <li>Have a direct effect upon your profitability</li>
@@ -120,8 +140,8 @@
     <div class="row mt-5 bts-target-section">
       <div class="col-lg-12">
         <div class="section-title-area text-center">
-          <h1 class="section-title">BTS Target</h1>
-          <span class="col-12 col-md-8  fnt-siz-sm g-clr ">Your Growth, Our Mission</span>
+          <h1 class="section-title">{{ ucwords(str_replace('_', ' ', $VisionAndMission->section_name)) }}</h1>
+          <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{{ $VisionAndMission->small_description }}</span>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -130,8 +150,8 @@
               <div class="img-contain">
                 <img src="{{ asset('front-assets/img/icons/hugeicons_vision.png') }}" alt="" class="target-title-icon">
               </div>
-                <h4> Our Vision </h4>
-                <p>Our vision is to consistently deliver excellent training courses and seminars which set the highest standards in our industry.</p>
+                <h4> {{ $VisionAndMission->details }} </h4>
+                <p>{{ $VisionAndMission->details2 }}</p>
               </div>
             </div>
 
@@ -140,8 +160,8 @@
               <div class="img-contain">
                 <img src="{{ asset('front-assets/img/icons/Vector.png') }}" alt="" class="target-title-icon">
               </div>
-                <h4> Our Mission </h4>
-                <p>We empower clients through innovative learning solutions, build trust with reliable services, align with their needs, and inspire growth by enabling skill application.</p>
+                <h4> {{ $VisionAndMission->details3 }} </h4>
+                <p>{{ $VisionAndMission->details4 }}</p>
 
               </div>
             </div>
@@ -150,8 +170,8 @@
               <div class="img-contain">
                 <img src="{{ asset('front-assets/img/icons/Grxxoup.png') }}" alt="" class="target-title-icon">
               </div>
-                <h4> Our Service Quality </h4>
-                <p>BTS places customer satisfaction at the core of its services, measuring success through client achievements. With ongoing evaluations and strong relationships, BTS ensures its offerings consistently exceed expectations.</p>
+                <h4> {{ $VisionAndMission->details5 }} </h4>
+                <p>{{ $VisionAndMission->details6 }}</p>
 
               </div>
             </div>
@@ -160,8 +180,8 @@
               <div class="img-contain">
                 <img src="{{ asset('front-assets/img/icons/carbon_settings-services.png') }}" alt="" class="target-title-icon">
               </div>
-                <h4> Our Values </h4>
-                <p>BTS upholds a commitment to mastery, excellence, and innovation, ensuring client satisfaction through reliable, ethical, and high-quality services designed to empower success and foster trust.</p>
+                <h4> {{ $VisionAndMission->details7 }} </h4>
+                <p>{{ $VisionAndMission->details8 }}</p>
               </div>
             </div>
           </div>
@@ -189,7 +209,7 @@
                     <div class="card-service-bottom-footer">
                         <div class="row">
                             <div class="col-12">
-                                <h3 class="white-color">Public Training</h3>
+                                <h3 class="white-color">{{ $public_training->small_description }}</h3>
                             </div>
                             <div class="col-12">
                                 <div class="row">
@@ -213,7 +233,7 @@
                     <div class="card-service-bottom-footer">
                         <div class="row">
                             <div class="col-12">
-                                <h3 class="white-color">In-House Training</h3>
+                                <h3 class="white-color">{{ $in_house_training->small_description }}</h3>
                             </div>
                             <div class="col-12">
                                 <div class="row">
@@ -236,7 +256,7 @@
                     <div class="card-service-bottom-footer">
                         <div class="row">
                             <div class="col-12">
-                                <h3 class="white-color">Consultancy</h3>
+                                <h3 class="white-color">{{ $consultancy->small_description }}</h3>
                             </div>
                             <div class="col-12">
                                 <div class="row">
@@ -258,7 +278,7 @@
                     <div class="card-service-bottom-footer">
                         <div class="row">
                             <div class="col-12">
-                                <h3 class="white-color">Online Courses</h3>
+                                <h3 class="white-color">{{ $online_courses->small_description }}</h3>
                             </div>
                             <div class="col-12">
                                 <div class="row">

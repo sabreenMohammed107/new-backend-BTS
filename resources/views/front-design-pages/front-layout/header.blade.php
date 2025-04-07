@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ asset('front-assets/css/style.css') }}">
   <!-- Responsive css -->
   <link rel="stylesheet" href="{{ asset('front-assets/css/responsive.css') }}">
-
+@yield('page-style')
 </head>
 
 <body>
