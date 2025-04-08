@@ -163,8 +163,7 @@
                 </div>
                 <div class="row ">
                     @isset($public_training)
-                    <div class="col-12 col-md-6 col-lg-3 p-2">D
-
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
                         <div class="card-item-services service-item-4" style="background-image: url('{{ asset($public_training->details2) }}');">
                                    <div class="card-service-bottom-footer">
                                        <div class="row">

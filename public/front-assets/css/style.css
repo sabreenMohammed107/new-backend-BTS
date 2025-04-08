@@ -16176,7 +16176,7 @@ input[type="date"] {
 .section-of-introduction::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   left: 35%;
   width: 30%;
   height: 2px;
@@ -16185,7 +16185,7 @@ input[type="date"] {
 .section-of-introduction::before {
   content: "";
   position: absolute;
-  bottom: -1px;
+  bottom: -50px;
   left: 35%;
   width: 10%;
   height: 5px;
