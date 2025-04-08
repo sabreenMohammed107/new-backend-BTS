@@ -79,56 +79,56 @@
           <div class="row">
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/wifi.png') }}" alt="" class="offer-title-icon"> Customized Training Programs </h4>
-                <p>Our bespoke training solutions are tailored to address unique organizational challenges, empowering teams with relevant skills to drive measurable results.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/wifi.png') }}" alt="" class="offer-title-icon"> {{ $offers[0]->title }} </h4>
+                <p>{{ $offers[0]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1.png') }}" alt="" class="offer-title-icon"> Certified Courses for Professionals </h4>
-                <p>Gain industry-recognized certifications through courses designed to enhance technical expertise and foster career advancement in competitive fields.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1.png') }}" alt="" class="offer-title-icon"> {{ $offers[1]->title }} </h4>
+                <p>{{ $offers[1]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (1).png') }}" alt="" class="offer-title-icon"> Strategic Consulting Services </h4>
-                <p>Partner with our experts to develop actionable strategies that optimize processes, align goals, and achieve sustainable growth for your business.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (1).png') }}" alt="" class="offer-title-icon"> {{ $offers[2]->title }} </h4>
+                <p>{{ $offers[2]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (2).png') }}" alt="" class="offer-title-icon"> Continuous Support for Growth</h4>
-                <p>We provide ongoing mentorship and resources, ensuring long-term success and adaptability in an ever-changing market landscape.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (2).png') }}" alt="" class="offer-title-icon"> {{ $offers[3]->title }} </h4>
+                <p>{{ $offers[3]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (3).png') }}" alt="" class="offer-title-icon"> Leadership Development Programs </h4>
-                <p>Equip leaders with essential skills through immersive workshops and coaching, enhancing decision-making and team management capabilities.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (3).png') }}" alt="" class="offer-title-icon"> {{ $offers[4]->title }} </h4>
+                <p>{{ $offers[4]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (4).png') }}" alt="" class="offer-title-icon"> Technology-Driven Solutions </h4>
-                <p>Leverage cutting-edge technologies to streamline workflows, boost productivity, and achieve operational excellence in a digital-first world.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (4).png') }}" alt="" class="offer-title-icon"> {{ $offers[5]->title }} </h4>
+                <p>{{ $offers[5]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (5).png') }}" alt="" class="offer-title-icon"> Industry-Specific Workshops </h4>
-                <p>Attend specialized workshops designed for industries such as healthcare, energy, and IT, offering practical solutions and industry insights.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (5).png') }}" alt="" class="offer-title-icon"> {{ $offers[6]->title }} </h4>
+                <p>{{ $offers[6]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (6).png') }}" alt="" class="offer-title-icon"> Performance Assessment Tools </h4>
-                <p>Utilize advanced tools and methodologies to evaluate team and organizational performance, identifying areas for growth and improvement.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/translation-svgrepo-com 1 (6).png') }}" alt="" class="offer-title-icon"> {{ $offers[7]->title }} </h4>
+                <p>{{ $offers[7]->description }}</p>
               </div>
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/grommet-icons_performance.png') }}" alt="" class="offer-title-icon"> Global Networking Opportunities </h4>
-                <p>Expand your professional horizons with exclusive access to international networks, fostering collaboration and knowledge exchange with industry leaders.</p>
+                <h4> <img src="{{ asset('front-assets/img/icons/grommet-icons_performance.png') }}" alt="" class="offer-title-icon"> {{ $offers[8]->title }} </h4>
+                <p>{{ $offers[8]->description }}</p>
               </div>
             </div>
 

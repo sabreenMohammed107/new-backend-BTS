@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Offer;
 
 class AboutBtsController extends Controller
 {
@@ -16,6 +17,7 @@ class AboutBtsController extends Controller
         $in_house_training = StaticPage::where('id', 8)->first();
         $consultancy = StaticPage::where('id', 9)->first();
         $online_courses = StaticPage::where('id', 10)->first();
-        return view('front-design-pages.about-bts' , compact('whoWeAre' , 'VisionAndMission' , 'public_training' , 'in_house_training' , 'consultancy' , 'online_courses'));
+        $offers = Offer::all();
+        return view('front-design-pages.about-bts' , compact('offers' , 'whoWeAre' , 'VisionAndMission' , 'public_training' , 'in_house_training' , 'consultancy' , 'online_courses'));
     }
 }
