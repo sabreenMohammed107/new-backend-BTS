@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\YearCalenderController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
+use App\Http\Controllers\Front\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,7 @@ Route::prefix('/')->group(function () {
     })->name('join-us');
 
     Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
+    Route::get('service' , [ServiceController::class , 'index'])->name('service');
 
     Route::get('accreditations' , function(){
         return view('front-design-pages.Accreditations');
@@ -89,9 +91,6 @@ Route::prefix('/')->group(function () {
         return view('front-design-pages.join-us');
     })->name('join-us');
 
-    Route::get('service' , function(){
-        return view('front-design-pages.service');
-    })->name('service');
 
     Route::get('single-course' , function(){
         return view('front-design-pages.single-course');

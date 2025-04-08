@@ -20,22 +20,19 @@
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="{{ asset('front-assets/img/bg/Rectangle 10249.png') }}" alt="Public Training Session" class="primary-image">
+                      <img src="{{ $public_training->details2 }}" alt="Public Training Session" class="primary-image">
 
 
-                      <img src="{{ asset('front-assets/img/bg/Rectangle 10250 (1).png') }}" alt="City Skyline" class="secondary-image">
+                      <img src="{{ $public_training->details3 }}" alt="City Skyline" class="secondary-image">
                       <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
 
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="content-container">
-                      <h2 class="training-title">Public Training</h2>
+                      <h2 class="training-title">{{ $public_training->small_description }}</h2>
                       <p class="training-description">
-                        Enhance Your Expertise And Advance Your Career With Public Training Programs
-                        Designed By Industry-Leading Professionals, Offering Practical, High-Quality Learning
-                        Experiences Across Engineering, Management, IT, And More, Available In Major Global
-                        Cities To Help You Stay Competitive In Today's Rapidly Evolving Job Market.
+                        {{ $public_training->details }}
                       </p>
                       <button class="view-details-btn">View Details</button>
                     </div>
@@ -49,12 +46,9 @@
               <div class="container section-border">
                 <div class="row align-items-center section-content">
                   <div class="col-lg-6">
-                    <h2 class="training-title">In-House Training</h2>
+                    <h2 class="training-title">{{ $in_house_training->small_description }}</h2>
                     <p class="training-description">
-                      Maximize Your Team's Potential With In-House Training Programs Tailored To Your
-                      Organization's Specific Needs, Delivered By Expert Trainers Directly At Your Workplace
-                      Or Preferred Location, Ensuring Cost-Effective, Flexible, And Results-Driven Learning
-                      Experience That Enhances Productivity And Drives Business Success.
+                        {{ $in_house_training->details }}
                     </p>
                     <div class="btn-container">
                       <button class="view-details-btn">View Details</button>
@@ -62,9 +56,12 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="{{ asset('front-assets/img/service/Rectangle 10250 (1).png') }}" alt="Business Training" class="image-top">
+                      {{-- <img src="{{ asset('front-assets/img/service/Rectangle 10250 (1).png') }}" alt="Business Training" class="image-top">
                       <img src="{{ asset('front-assets/img/service/Rectangle 102aaa52.png') }}" alt="Team Discussion" class="image-bottom-left">
-                      <img src="{{ asset('front-assets/img/service/Rectangle 10aaa251.png') }}" alt="Team Discussion" class="image-bottom-right">
+                      <img src="{{ asset('front-assets/img/service/Rectangle 10aaa251.png') }}" alt="Team Discussion" class="image-bottom-right"> --}}
+                      <img src="{{ $in_house_training->details2 }}" alt="Business Training" class="image-top">
+                      <img src="{{ $in_house_training->details3 }}" alt="Team Discussion" class="image-bottom-left">
+                      <img src="{{ $in_house_training->details4 }}" alt="Team Discussion" class="image-bottom-right">
                     </div>
                   </div>
                 </div>
@@ -77,23 +74,25 @@
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                     <div class="content-container">
-                      <h2 class="training-title">Consultancy</h2>
+                      <h2 class="training-title">{{ $consultancy->small_description }}</h2>
                       <p class="training-description">
-                        Optimize your business performance with Consultancy services designed to provide expert
-                        guidance, strategic solutions, and tailored recommendations, helping organizations enhance
-                        efficiency, streamline operations, and achieve sustainable growth through industry-specific
-                        insights and best practices.
+                        {{ $consultancy->details }}
                       </p>
                       <button class="view-details-btn">View Details</button>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="{{ asset('front-assets/img/service/Rectangle 102ss51.png') }}" alt="Public Training Session" class="primary-image">
+                      <img src="{{ $consultancy->details2 }}" alt="Public Training Session" class="primary-image">
+
+
+                      <img src="{{ $consultancy->details3 }}" alt="City Skyline" class="secondary-image">
+                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      {{-- <img src="{{ asset('front-assets/img/service/Rectangle 102ss51.png') }}" alt="Public Training Session" class="primary-image">
 
 
                       <img src="{{ asset('front-assets/img/service/Rectangle 102aaa55.png') }}" alt="City Skyline" class="secondary-image">
-                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a> --}}
 
                     </div>
                   </div>
@@ -108,21 +107,24 @@
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                     <div class="images-container">
-                      <img src="{{ asset('front-assets/img/service/Rectangle 10254.png') }}" alt="Public Training Session" class="primary-image">
+                      <img src="{{ $online_courses->details2 }}" alt="Public Training Session" class="primary-image">
+
+
+                      <img src="{{ $online_courses->details3 }}" alt="City Skyline" class="secondary-image">
+                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      {{-- <img src="{{ asset('front-assets/img/service/Rectangle 10254.png') }}" alt="Public Training Session" class="primary-image">
 
 
                       <img src="{{ asset('front-assets/img/service/Rectangle 1025ss2.png') }}" alt="City Skyline" class="secondary-image">
-                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a> --}}
 
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="content-container">
-                      <h2 class="training-title">Online Courses</h2>
+                      <h2 class="training-title">{{ $online_courses->small_description }}</h2>
                       <p class="training-description">
-                        Advance your skills anytime, anywhere with Online Courses designed for flexible learning,
-                        offering expert-led training across various industries, interactive content, and globally
-                        recognized certifications to help you stay competitive in today’s fast-paced world.
+                        {{ $online_courses->details }}
                       </p>
                       <button class="view-details-btn">View Details</button>
                     </div>
