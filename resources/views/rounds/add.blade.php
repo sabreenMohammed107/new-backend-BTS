@@ -74,9 +74,9 @@
                                         <option value="">Course..</option>
                                         {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
                                     </label>
-                                    <select name="course_id" class="form-select form-select-solid"
+                                        <select name="course_id" class="form-select form-select-solid  "
                                         data-control="select2" data-show-subtext="true" data-live-search="true"
-                                        id="country" data-dependent="state">
+                                        id="course" >
                                         <option value="">select....</option>
                                         @foreach ($courses as $course)
                                             <option value='{{ $course->id }}'>
