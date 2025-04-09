@@ -149,7 +149,7 @@
         <!-- FEATURE AREA END -->
         <!-- CATEGORY AREA START -->
         <div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90"
-            data-bg="{{ asset('front-assts/img/bg/Background\ \(2\).png') }}">
+            data-bg="{{ asset('front-assets/img/bg/Background\ \(2\).png') }}" style="background-image: url('{{ asset('front-assets/img/bg/Background (2).png') }}');">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
