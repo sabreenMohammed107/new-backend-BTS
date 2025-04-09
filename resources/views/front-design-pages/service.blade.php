@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
-            <section class="training-section">
+            <section class="training-section" id="public_training">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-lg-6">
@@ -34,7 +34,7 @@
                       <p class="training-description">
                         {{ $public_training->details }}
                       </p>
-                      <button class="view-details-btn">View Details</button>
+                      {{-- <button class="view-details-btn">View Details</button> --}}
                     </div>
                   </div>
                 </div>
@@ -42,7 +42,7 @@
             </section>
           </div>
           <div class="col-lg-12">
-            <section class="public-training-section">
+            <section class="public-training-section" id="in_house_training">
               <div class="container section-border">
                 <div class="row align-items-center section-content">
                   <div class="col-lg-6">
@@ -51,7 +51,7 @@
                         {{ $in_house_training->details }}
                     </p>
                     <div class="btn-container">
-                      <button class="view-details-btn">View Details</button>
+                      {{-- <button class="view-details-btn">View Details</button> --}}
                     </div>
                   </div>
                   <div class="col-lg-6">
@@ -69,7 +69,7 @@
             </section>
           </div>
           <div class="col-lg-12">
-            <section class="training-section">
+            <section class="training-section" id="consultancy">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-lg-6">
@@ -78,7 +78,7 @@
                       <p class="training-description">
                         {{ $consultancy->details }}
                       </p>
-                      <button class="view-details-btn">View Details</button>
+                      {{-- <button class="view-details-btn">View Details</button> --}}
                     </div>
                   </div>
                   <div class="col-lg-6">
@@ -102,7 +102,7 @@
             </section>
           </div>
           <div class="col-lg-12">
-            <section class="training-section">
+            <section class="training-section" id="online_courses">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-lg-6">
@@ -126,7 +126,7 @@
                       <p class="training-description">
                         {{ $online_courses->details }}
                       </p>
-                      <button class="view-details-btn">View Details</button>
+                      {{-- <button class="view-details-btn">View Details</button> --}}
                     </div>
                   </div>
                 </div>

@@ -164,13 +164,14 @@
                 <div class="row ">
                     @isset($public_training)
                     <div class="col-12 col-md-6 col-lg-3 p-2">
+                        <a href="{{ route('service') }}#public_training">
                         <div class="card-item-services service-item-4" style="background-image: url('{{ asset($public_training->details2) }}');">
                                    <div class="card-service-bottom-footer">
                                        <div class="row">
                                            <div class="col-12">
                                                <h3 class="white-color">{{ $public_training->small_description }}</h3>
                                            </div>
-                                           <div class="col-12">
+                                           {{-- <div class="col-12">
                                                <div class="row">
                                                    <div class="col-8">
                                                        <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
@@ -180,22 +181,24 @@
                                                        <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                                    </div>
                                                </div>
-                                           </div>
+                                           </div> --}}
                                        </div>
                                    </div>
                                </div>
-
+                        </a>
                            </div>
                     @endisset
                    @isset($in_house_training)
                    <div class="col-12 col-md-6 col-lg-3  p-2">
+                    <a href="{{ route('service') }}#in_house_training">
                     <div class="card-item-services service-item-2" style="background-image: url('{{  asset($in_house_training->details2) }}');">
                         <div class="card-service-bottom-footer">
+
                             <div class="row">
                                 <div class="col-12">
                                     <h3 class="white-color">{{ $in_house_training->small_description }}</h3>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <div class="row">
                                         <div class="col-8">
                                             <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
@@ -205,23 +208,25 @@
                                             <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
+
                         </div>
                     </div>
-
+                </a>
                 </div>
                    @endisset
 
                    @isset($consultancy)
                    <div class="col-12 col-md-6 col-lg-3  p-2">
+                    <a href="{{ route('service') }}#consultancy">
                     <div class="card-item-services service-item-1" style="background-image: url('{{  asset($consultancy->details2) }}');">
                         <div class="card-service-bottom-footer">
                             <div class="row">
                                 <div class="col-12">
                                     <h3 class="white-color">{{ $consultancy->small_description }}</h3>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <div class="row">
                                         <div class="col-8">
                                             <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
@@ -231,21 +236,23 @@
                                             <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                    @endisset
                   @isset($online_courses)
                   <div class="col-12 col-md-6 col-lg-3 p-2">
+                    <a href="{{ route('service') }}#online_courses">
                     <div class="card-item-services service-item-3" style="background-image: url({{ asset($online_courses->details2) }});">
                         <div class="card-service-bottom-footer">
                             <div class="row">
                                 <div class="col-12">
                                     <h3 class="white-color">{{ $online_courses->small_description }}</h3>
                                 </div>
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <div class="row">
                                         <div class="col-8">
                                             <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
@@ -255,11 +262,11 @@
                                             <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
-
+                    </a>
                 </div>
                   @endisset
 
