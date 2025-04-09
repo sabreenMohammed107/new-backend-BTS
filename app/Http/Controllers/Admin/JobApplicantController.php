@@ -45,8 +45,8 @@ class JobApplicantController extends Controller
         $row = $this->object::findOrFail($id);
         $file = $row->doc_path;
         $cv = $row->cv_path;
-        $file_name = 'uploads/applicant/' . $file;
-        $doc_name = 'uploads/applicant/' . $cv;
+        $file_name = public_path('uploads/applicant/') . $file;
+        $doc_name = public_path('uploads/applicant/') . $cv;
         $row->delete();
         File::delete($file_name);
         File::delete($doc_name);

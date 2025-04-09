@@ -134,7 +134,7 @@ class CoursesController extends Controller
 
         // Rename The Image ..
         $imageName = $name;
-        $uploadPath = 'uploads/courses';
+        $uploadPath = public_path('uploads/courses');
         //$uploadPath ='C:\inetpub\vhosts\btsconsultant.com\httpdocs\BTSConsultant_Resources\public\uploads/courses';
         try {
             $file->move($uploadPath, $imageName);

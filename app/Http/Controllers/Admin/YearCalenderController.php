@@ -135,7 +135,7 @@ class YearCalenderController extends Controller
 
 		// Rename The Image ..
 		$imageName =$name;
-		$uploadPath = 'uploads/calender';
+		$uploadPath = public_path('uploads/calender');
 
 		// Move The image..
 		$file->move($uploadPath, $imageName);

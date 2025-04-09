@@ -52,8 +52,8 @@ class ApplicantSpeakerController extends Controller
         $file = $row->doc_path;
         $cv = $row->cv_path;
 
-        $file_name ='uploads/courseBrochure/'.$file;
-        $doc_name = 'uploads/courseBrochure/'.$cv;
+        $file_name =public_path('uploads/courseBrochure/').$file;
+        $doc_name = public_path('uploads/courseBrochure/').$cv;
 
 
 
