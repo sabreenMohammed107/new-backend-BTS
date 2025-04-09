@@ -6,14 +6,14 @@
             <!--begin::Info-->
             <div class="d-flex flex-column align-items-start justify-content-center flex-wrap me-2">
                 <!--begin::Title-->
-                <h1 class="text-dark fw-bolder my-1 fs-2">Testimonial</h1>
+                <h1 class="text-dark fw-bolder my-1 fs-2">Who we are</h1>
                 <!--end::Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb fw-bold fs-base my-1">
                     <li class="breadcrumb-item text-muted">
                         <a href="#" class="text-muted text-hover-primary">Home</a>
                     </li>
-                    <li class="breadcrumb-item text-muted">Testimonial</li>
+                    <li class="breadcrumb-item text-muted">Who we are</li>
                     <li class="breadcrumb-item text-dark">Update</li>
                 </ul>
                 <!--end::Breadcrumb-->

@@ -91,14 +91,14 @@
                             </a>
                         </div>
 
-                        <div class="menu-item">
+                        {{-- <div class="menu-item">
                             <a class="menu-link" href="{{ route('bts-numbers.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">BTS numbers</span>
                             </a>
-                        </div>
+                        </div> --}}
 
                         <div class="menu-item">
                             <a class="menu-link" href="{{ route('branches.index') }}">
@@ -113,25 +113,25 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Dawnload center</span>
+                                <span class="menu-title">Download center</span>
                             </a>
                         </div>
-                        <div class="menu-item">
+                        {{-- <div class="menu-item">
                             <a class="menu-link" href="{{ route('trainers.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Trainers</span>
                             </a>
-                        </div>
-                        <div class="menu-item">
+                        </div> --}}
+                        {{-- <div class="menu-item">
                             <a class="menu-link" href="{{ route('yearCalender.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Year calender</span>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -156,7 +156,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Home testemonials</span>
+                                <span class="menu-title">Home testimonials</span>
                             </a>
                         </div>
 

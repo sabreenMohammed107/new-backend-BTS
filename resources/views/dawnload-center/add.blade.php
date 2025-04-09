@@ -6,14 +6,14 @@
             <!--begin::Info-->
             <div class="d-flex flex-column align-items-start justify-content-center flex-wrap me-2">
                 <!--begin::Title-->
-                <h1 class="text-dark fw-bolder my-1 fs-2">Dawnload centers</h1>
+                <h1 class="text-dark fw-bolder my-1 fs-2">Download centers</h1>
                 <!--end::Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb fw-bold fs-base my-1">
                     <li class="breadcrumb-item text-muted">
                         <a href="#" class="text-muted text-hover-primary">Home</a>
                     </li>
-                    <li class="breadcrumb-item text-muted">Dawnload centers</li>
+                    <li class="breadcrumb-item text-muted">Download centers</li>
 
                     <li class="breadcrumb-item text-dark">All</li>
                 </ul>

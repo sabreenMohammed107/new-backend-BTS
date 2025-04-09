@@ -68,7 +68,7 @@
                             </div>
 
                             <!-- Row 2: Image Upload Fields -->
-                            <div class="mb-10 fv-row">
+                            {{-- <div class="mb-10 fv-row">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label class="form-label">button</label>
@@ -76,7 +76,7 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
