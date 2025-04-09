@@ -109,6 +109,14 @@
                             </a>
                         </div>
                         <div class="menu-item">
+                            <a class="menu-link" href="{{ route('dawnload-center.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Dawnload center</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
                             <a class="menu-link" href="{{ route('trainers.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>

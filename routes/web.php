@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\YearCalenderController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
+use App\Http\Controllers\Admin\DawnloadCenterController;
 use App\Http\Controllers\Front\ServiceController;
 
 /*
@@ -183,6 +184,7 @@ Route::post("btsTarget/update", [StaticPageController::class, "btsTargetUpdate"]
 
 Route::resource('offer', OffersController::class);
 
+Route::resource('dawnload-center', DawnloadCenterController::class);
 
 
 });
