@@ -15,7 +15,7 @@ class VenueController extends Controller
     {
         $this->object = $object;
         $this->route = 'venue';
-        $this->view = 'Venue';
+        $this->view = 'venue';
     }
 
     public function index()
