@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
 use App\Http\Controllers\Admin\DawnloadCenterController;
+use App\Http\Controllers\DownloadCenterController;
 use App\Http\Controllers\Front\ServiceController;
 
 /*
@@ -59,6 +60,7 @@ Route::prefix('/')->group(function () {
 
     Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
     Route::get('service' , [ServiceController::class , 'index'])->name('service');
+    Route::get('download-center' , [DownloadCenterController::class , 'index'])->name('download-center');
 
     Route::get('accreditations' , function(){
         return view('front-design-pages.Accreditations');
@@ -75,10 +77,6 @@ Route::prefix('/')->group(function () {
     Route::get('course-search' , function(){
         return view('front-design-pages.course-search');
     })->name('course-search');
-
-    Route::get('download-center' , function(){
-        return view('front-design-pages.download-center');
-    })->name('download-center');
 
     Route::get('join-team' , function(){
         return view('front-design-pages.join-team');

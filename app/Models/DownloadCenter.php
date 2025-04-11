@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DawnloadCenter extends Model
+class DownloadCenter extends Model
 {
     use HasFactory;
-    protected $table = "dawnload_centers";
+    protected $table = "download_centers";
     protected $fillable = [
         'title',
         'description',
