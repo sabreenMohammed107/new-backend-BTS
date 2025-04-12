@@ -13,9 +13,11 @@ use App\Http\Controllers\Admin\CareersController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Front\ServiceController;
 use App\Http\Controllers\Admin\MessagesController;
 use App\Http\Controllers\Admin\PartenerController;
 use App\Http\Controllers\Admin\TrainersController;
+use App\Http\Controllers\DownloadCenterController;
 use App\Http\Controllers\Front\AboutBtsController;
 use App\Http\Controllers\Admin\ExpertiseController;
 use App\Http\Controllers\Admin\BTSNumbersController;
@@ -26,12 +28,11 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\JobApplicantController;
 use App\Http\Controllers\Admin\YearCalenderController;
+use App\Http\Controllers\Front\TestimonialsController;
+use App\Http\Controllers\Admin\DawnloadCenterController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
-use App\Http\Controllers\Admin\DawnloadCenterController;
-use App\Http\Controllers\DownloadCenterController;
-use App\Http\Controllers\Front\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,8 @@ Route::prefix('/')->group(function () {
     Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
     Route::get('service' , [ServiceController::class , 'index'])->name('service');
     Route::get('download-center' , [DownloadCenterController::class , 'index'])->name('download-center');
+    Route::get('testimonials' , [TestimonialsController::class , 'index'])->name('testimonials');
+
 
     Route::get('accreditations' , function(){
         return view('front-design-pages.Accreditations');
@@ -95,9 +98,6 @@ Route::prefix('/')->group(function () {
         return view('front-design-pages.single-course');
     })->name('single-course');
 
-    Route::get('testimonials' , function(){
-        return view('front-design-pages.testimonials');
-    })->name('testimonials');
 
     Route::get('soft-skills-page' , function(){
         return view('front-design-pages.soft-skills-page');

@@ -37,7 +37,6 @@ class HomeController extends Controller
         $testimonials = Testmonials::get();
         $clients = Client::where('active', 1)->get();
         $partners = Partner::where('active', 1)->get();
-
         return view('front-design-pages.index', compact(
             'banners',
             'venues',
@@ -52,7 +51,7 @@ class HomeController extends Controller
             'homeAccreditation',
             'testimonials',
             'clients',
-            'partners'
+            'partners',
         ));
 
         // return view('front-design-pages.index');

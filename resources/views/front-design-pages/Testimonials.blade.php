@@ -58,155 +58,30 @@
           <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
             <!-- Blog Item -->
 
+            @foreach ($data as $testimonial)
             <div class="col-lg-12 ">
-              <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
+                <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
 
-                <div class="ltn__blog-brief bg-light-blue">
-                  <div class="ltn__blog-meta bg-light-blue"">
-                                <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                    <li class="ltn__blog-title ">
-                      <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                    </li>
-                    <li class="ltn__blog-tags d-flex">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                    </li>
-                    </ul>
+                  <div class="ltn__blog-brief bg-light-blue">
+                    <div class="ltn__blog-meta bg-light-blue">
+                                  <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
+                      <li class="ltn__blog-title ">
+                        <h1 class="fnt-siz-md"> {{ $testimonial->reviewer_name }} </h1>
+                      </li>
+                      <li class="ltn__blog-tags d-flex">
+                        @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
+                            <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="star">
+                        @endfor
+                      </li>
+                      </ul>
+                    </div>
+                    <h3 class="ltn__blog-author fnt-siz-sm">{{ $testimonial->reviewer_text }}</h3>
+
                   </div>
-                  <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
-                    opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
-
                 </div>
               </div>
-            </div>
 
-            <div class="col-lg-12 ">
-              <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-
-                <div class="ltn__blog-brief bg-light-blue">
-                  <div class="ltn__blog-meta bg-light-blue"">
-                                <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                    <li class="ltn__blog-title ">
-                      <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                    </li>
-                    <li class="ltn__blog-tags d-flex">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                    </li>
-                    </ul>
-                  </div>
-                  <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
-                    opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12 ">
-              <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-
-                <div class="ltn__blog-brief bg-light-blue">
-                  <div class="ltn__blog-meta bg-light-blue"">
-                                <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                    <li class="ltn__blog-title ">
-                      <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                    </li>
-                    <li class="ltn__blog-tags d-flex">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                    </li>
-                    </ul>
-                  </div>
-                  <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
-                    opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12 ">
-              <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-
-                <div class="ltn__blog-brief bg-light-blue">
-                  <div class="ltn__blog-meta bg-light-blue"">
-                                <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                    <li class="ltn__blog-title ">
-                      <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                    </li>
-                    <li class="ltn__blog-tags d-flex">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                    </li>
-                    </ul>
-                  </div>
-                  <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
-                    opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12 ">
-              <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-
-                <div class="ltn__blog-brief bg-light-blue">
-                  <div class="ltn__blog-meta bg-light-blue"">
-                                <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                    <li class="ltn__blog-title ">
-                      <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                    </li>
-                    <li class="ltn__blog-tags d-flex">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                    </li>
-                    </ul>
-                  </div>
-                  <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
-                    opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12 ">
-              <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-
-                <div class="ltn__blog-brief bg-light-blue">
-                  <div class="ltn__blog-meta bg-light-blue"">
-                                <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                    <li class="ltn__blog-title ">
-                      <h1 class="fnt-siz-md"> Zayn Ahmed </h1>
-                    </li>
-                    <li class="ltn__blog-tags d-flex">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                      <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="" srcset="">
-                    </li>
-                    </ul>
-                  </div>
-                  <h3 class="ltn__blog-author fnt-siz-sm">Here will be the opinion Here will be the
-                    opinionHere will be the opinionHere will be the opinionHere will be the opinion</h3>
-
-                </div>
-              </div>
-            </div>
+            @endforeach
 
           </div>
 
