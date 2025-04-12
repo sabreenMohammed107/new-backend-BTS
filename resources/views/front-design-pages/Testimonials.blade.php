@@ -17,19 +17,13 @@
           <div class="main-hero-section">
             <div class="row">
               <div class="col-lg-4 vid-play">
-                <a href="http://"> <img src="{{ asset('front-assets/img/icons/play.png') }}" alt=""></a>
+                {{-- <a href="http://"> <img src="{{ asset('front-assets/img/icons/play.png') }}" alt=""></a> --}}
               </div>
               <div class="col-lg-8 about-bts-description p-5">
-                <h3>WHAT DO OUR DELEGATES AND CLIENTS SAY ABOUT US?</h3>
-                <p>We are always delighted to receive positive comments regarding our courses. Here are some of our many
-                  testimonials. Feedback from our clients is most important to us. Client feedback enables us to
-                  continuously develop and improve our course offerings based on the experiences and opinions of former
-                  course participants. In this section, we would like to share some of the feedback that we have
-                  received from individuals and companies. We also share regular updates on our social media pages
-                  (Facebook, LinkedIn & Twitter) so please check us out if you want to see more recent updates.
-                  The first comments have been made by our open-course delegates who have attended our wide range of
-                  courses and the last testimonials are from a few of our clients about the experience they had with us
-                  with In-House training.</p>
+                <h3>{{ $titles->small_description }}</h3>
+                <p>
+                    {{ $titles->details }}
+                </p>
 
                 <!-- <ul class="services-list">
                     <li>Have a direct effect upon your profitability</li>
@@ -42,7 +36,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -59,28 +52,27 @@
             <!-- Blog Item -->
 
             @foreach ($data as $testimonial)
-            <div class="col-lg-12 ">
-                <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
+                <div class="col-lg-12 ">
+                    <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
 
-                  <div class="ltn__blog-brief bg-light-blue">
-                    <div class="ltn__blog-meta bg-light-blue">
-                                  <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
-                      <li class="ltn__blog-title ">
-                        <h1 class="fnt-siz-md"> {{ $testimonial->reviewer_name }} </h1>
-                      </li>
-                      <li class="ltn__blog-tags d-flex">
-                        @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
-                            <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="star">
-                        @endfor
-                      </li>
-                      </ul>
+                    <div class="ltn__blog-brief bg-light-blue">
+                        <div class="ltn__blog-meta bg-light-blue">
+                                    <ul class=" ltn__blog-tags d-flex align-items-start justify-content-between">
+                        <li class="ltn__blog-title ">
+                            <h1 class="fnt-siz-md"> {{ $testimonial->reviewer_name }} </h1>
+                        </li>
+                        <li class="ltn__blog-tags d-flex">
+                            @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
+                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15" height="15" alt="star">
+                            @endfor
+                        </li>
+                        </ul>
+                        </div>
+                        <h3 class="ltn__blog-author fnt-siz-sm">{{ $testimonial->reviewer_text }}</h3>
+
                     </div>
-                    <h3 class="ltn__blog-author fnt-siz-sm">{{ $testimonial->reviewer_text }}</h3>
-
-                  </div>
+                    </div>
                 </div>
-              </div>
-
             @endforeach
 
           </div>
@@ -194,61 +186,27 @@
             }
           </style>
           <div class="container container-wrapper">
-            <div class="gallary-container w-2 h-3">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 102.png') }}" alt="" srcset="">
+            @foreach ($gallary as $data)
+              <div class="gallary-container
+                @if ($data->order == 1 )
+                    w-2 h-3
+                @elseif ($data->order == 2)
+                    w-1 h-2
+                @elseif ($data->order == 3)
+                    w-3 h-3
+                @elseif ($data->order == 4)
+                    w-3 h-3
+                @elseif ($data->order == 5)
+                    w-2 h-2
+                @endif
+              ">
+                <div class="image">
+                  <img src="{{ asset('uploads/testimonials_gallary/' . $data->image_path) }}" alt="" srcset="">
+                </div>
               </div>
-            </div>
-            <div class="gallary-container w-1 h-2">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 103.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container w-3 h-3">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 104.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container w-3 h-3">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 105.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container w-2 h-2">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 106.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 107.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 108.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 109.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 110.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 111.png') }}" alt="" srcset="">
-              </div>
-            </div>
-            <div class="gallary-container">
-              <div class="image">
-                <img src="{{ asset('front-assets/img/testimonial/Rectangle 112.png') }}" alt="" srcset="">
-              </div>
-            </div>
+            @endforeach
+
+
           </div>
         </div>
       </div>
