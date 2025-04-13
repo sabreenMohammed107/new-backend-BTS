@@ -78,17 +78,9 @@ Route::prefix('/')->group(function () {
         return view('front-design-pages.course-registration');
     })->name('course-registration');
 
-    // Route::get("/tours", [ToursController::class, 'all_tours']);
-    // Route::post("/tours", [ToursController::class, 'tours']);
-    // Route::get('/fetch-tour-filter', [ToursController::class, 'fetch_data'])->name('fetch-tour-filter');
-    // Route::post("/tours/retrieve", [ToursController::class, 'fetch']);
-    // Route::get("/tours/{id}/{slug?}", [ToursController::class, 'profile']);
-    // Route::post("/bookTours", [ToursController::class, 'bookTours']);
-    // Route::get("/tourByCity/{id}", [ToursController::class, 'getTourByCity'])->name("tourByCity");
-
     Route::get('/search-course', [CourseSearchController::class, 'index'])->name('searchCourse.index');
 
-    // Route::post("/course-search", [CourseSearchController::class, 'courses']);
+    Route::get('/courseDetails/{id}', [CourseSearchController::class, 'courseDetails']);
 
     Route::get('course-search' , function(){
         return view('front-design-pages.course-search');

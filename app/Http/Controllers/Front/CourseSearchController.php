@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ApplicantSalut;
+use App\Models\Country;
 use App\Models\Course;
 use App\Models\CourseCategory;
 use App\Models\CourseSubCategory;
+use App\Models\RelatedCourses;
 use App\Models\Round;
 use App\Models\Venue; // تأكد من أنك قد قمت بإضافة هذه السطر
 use Carbon\Carbon;
@@ -142,4 +145,19 @@ class CourseSearchController extends Controller
 
         ));
     }
+
+    public function courseDetails($course_id)
+    {
+        $now_date = now();
+        $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
+        $rounds = $course->rounds()->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->get();
+        $specfic_round =  $course->rounds()->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->firstOrFail();
+        $related_courses = RelatedCourses::with('course')->where('course_id', $course_id)->get();
+        $venues = Venue::all();
+        $countries = Country::all();
+        $saluts = ApplicantSalut::all();
+        $objectCourses = Course::orderBy("course_en_name", "asc")->get();
+        return view('front-design-pages.single-course', compact('objectCourses', 'venues', 'countries', 'course', 'rounds', 'specfic_round', 'related_courses', 'saluts'));
+    }
+
 }

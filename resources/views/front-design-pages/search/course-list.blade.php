@@ -1,7 +1,7 @@
 
         <div class="ltn__product-item ltn__product-item-3 text-center">
             <div class="product-img">
-                <a href="#"><img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_en_name }}"></a>
+                <a href="{{ url('courseDetails/'.$round->course->id) }}"><img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_en_name }}"></a>
             </div>
             <div class="product-info">
                 <div class="product-ratting">
@@ -13,7 +13,7 @@
                     </ul>
                 </div>
                 <h2 class="product-title">
-                    <a href="product-details.html">{{ $round->course->course_en_name }}</a>
+                    <a href="{{ url('courseDetails/'.$round->course->id) }}">{{ $round->course->course_en_name }}</a>
                 </h2>
             </div>
         </div>

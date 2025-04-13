@@ -405,7 +405,7 @@
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="ltn__product-item ltn__product-item-3 text-left">
                                     <div class="product-img">
-                                        <a href="{{ route('single-course') }}" class="img-container">
+                                        <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
                                             <img height="100%"
                                                 src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
                                                 alt="="{{ $round->country->country_en_name }}"></a>
@@ -427,7 +427,7 @@
                                                     </div>
                                                     <div class="col-2 mb-2">
                                                         <span class="icon-arrow">
-                                                            <a href="{{ route('single-course') }}"><i
+                                                            <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
                                                                     class="fa fa-arrow-right white-color"></i></a>
                                                         </span>
                                                     </div>
