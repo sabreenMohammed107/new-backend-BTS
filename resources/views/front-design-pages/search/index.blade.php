@@ -42,13 +42,13 @@
     <!-- PRODUCT DETAILS AREA START -->
     <div class="ltn__product-area ltn__product-gutter mb-120 mt-50">
         <div class="container-fluid">
+
             <div class="row">
 
                 <div class="col-xl-3">
 
                     <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar">
                         <form method="get" action="{{ route('searchCourse.index') }}" id="courseFilterForm">
-
                             <!-- Category Widget -->
                             <div class="widget main-sidebar-widget">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Fulfilled by BTS</h4>
@@ -59,7 +59,6 @@
                                     <span class="col-4 row justify-content-center">( {{ $filtered->total() }} )</span>
                                 </div>
                             </div>
-
                             <!-- Venue Filter -->
                             <div class="widget main-sidebar-widget Venue mt-35">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Venue</h4>
@@ -76,30 +75,55 @@
                                     @endforeach
                                 </div>
                             </div>
-<style>
-   .category-list {
-    max-height: 200px; /* تحديد الارتفاع الأقصى للقائمة */
-    overflow-y: auto; /* السماح بالتمرير عموديًا إذا كانت المحتويات أكثر من المساحة المحددة */
-    padding: 0;
-    list-style-type: none; /* إزالة النقط من القائمة */
-}
+                            <style>
+                                .category-list {
+                                    max-height: 200px;
+                                    /* تحديد الارتفاع الأقصى للقائمة */
+                                    overflow-y: auto;
+                                    /* السماح بالتمرير عموديًا إذا كانت المحتويات أكثر من المساحة المحددة */
+                                    padding: 0;
+                                    list-style-type: none;
+                                    /* إزالة النقط من القائمة */
+                                }
 
-.category-list li {
-    padding: 5px 0; /* إضافة مسافة بين العناصر */
-}
+                                .category-list li {
+                                    padding: 5px 0;
+                                    /* إضافة مسافة بين العناصر */
+                                }
 
-.category-list a {
-    text-decoration: none; /* إزالة التسطير من الروابط */
-    color: #000; /* تحديد اللون للنص */
-}
+                                .category-list a {
+                                    text-decoration: none;
+                                    /* إزالة التسطير من الروابط */
+                                    color: #000;
+                                    /* تحديد اللون للنص */
+                                }
 
-.category-list a:hover {
-    color: #007bff; /* تغيير اللون عند التمرير على الرابط */
-}
+                                .category-list a:hover {
+                                    color: #007bff;
+                                    /* تغيير اللون عند التمرير على الرابط */
+                                }
 
+                                .filter-chip {
+                                    background-color: #f1f1f1;
+                                    color: #333;
+                                    border-radius: 20px;
+                                    padding: 6px 12px;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    font-size: 14px;
+                                }
 
+                                .filter-chip .remove-filter {
+                                    color: #888;
+                                    margin-left: 8px;
+                                    font-weight: bold;
+                                    text-decoration: none;
+                                }
 
-    </style>
+                                .filter-chip .remove-filter:hover {
+                                    color: #d00;
+                                }
+                            </style>
                             <!-- Date Filter -->
                             <div class="date-filter main-sidebar-widget mt-35">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Date</h4>
@@ -132,14 +156,13 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="widget ltn__tagcloud-widget mt-35">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Training Categories</h4>
                                 <ul class="category-list">
                                     @foreach ($subCategories as $category)
                                         <li>
-                                            <a href="{{ route('searchCourse.index', ['category_id' => $category->id]) }}">
-                                                {{ $category->subcategory_en_name }}
+                                            <a href="{{ route('searchCourse.index', ['category_id_search' => $category->id]) }}">
+                                                {{ $category->category_en_name }}
                                             </a>
                                         </li>
                                     @endforeach
@@ -166,6 +189,70 @@
 
                 <div class="col-xl-9">
                     <div class="ltn__search-course-breadcrumb-area">
+                        <div class="active-filters d-flex flex-wrap gap-2 mb-3">
+                            @if (request('search'))
+                                <div class="filter-chip">
+                                    Name: {{ request('search') }}
+                                    <a href="{{ request()->fullUrlWithQuery(['search' => null]) }}"
+                                        class="remove-filter">&times;</a>
+                                </div>
+                            @endif
+                            {{-- Venues --}}
+                            @if (request('venue'))
+                                @foreach (request('venue') as $venueId)
+                                    <div class="filter-chip">
+                                        Venue: {{ $venues->firstWhere('id', $venueId)->venue_en_name ?? 'Unknown' }}
+                                        <a href="{{ request()->fullUrlWithQuery(['venue' => collect(request('venue'))->reject(fn($v) => $v == $venueId)->values()->all() ?: null]) }}"
+                                            class="remove-filter">&times;</a>
+                                    </div>
+                                @endforeach
+                            @endif
+                            {{-- Categories --}}
+                            @if (request()->has('category_id_search'))
+                                @foreach (explode(',', request('category_id_search')) as $catId)
+                                    <div class="filter-chip">
+                                        Category:
+                                        {{ $subCategories->firstWhere('id', $catId)->category_en_name ?? 'Unknown' }}
+                                        <a href="{{ request()->fullUrlWithQuery(['category_id_search' =>collect(explode(',', request('category_id_search')))->reject(fn($c) => $c == $catId)->implode(',') ?:null]) }}"
+                                            class="remove-filter">&times;</a>
+                                    </div>
+                                @endforeach
+                            @endif
+
+                            {{-- Date From --}}
+                            @if (request('date_from'))
+                                <div class="filter-chip">
+                                    Date From: {{ request('date_from') }}
+                                    <a href="{{ request()->fullUrlWithQuery(['date_from' => null]) }}"
+                                        class="remove-filter">&times;</a>
+                                </div>
+                            @endif
+
+                            {{-- Date To --}}
+                            @if (request('date_to'))
+                                <div class="filter-chip">
+                                    Date To: {{ request('date_to') }}
+                                    <a href="{{ request()->fullUrlWithQuery(['date_to' => null]) }}"
+                                        class="remove-filter">&times;</a>
+                                </div>
+                            @endif
+
+                            {{-- Keyword --}}
+                            @if (request('keyword'))
+                                <div class="filter-chip">
+                                    Search: {{ request('keyword') }}
+                                    <a href="{{ request()->fullUrlWithQuery(['keyword' => null]) }}"
+                                        class="remove-filter">&times;</a>
+                                </div>
+                            @endif
+
+                            {{-- Clear All --}}
+                            @if (request()->hasAny(['venue', 'category_id_search', 'date_from', 'date_to', 'keyword']))
+                                <a href="{{ route('searchCourse.index') }}"
+                                    class="btn btn-sm btn-outline-danger ms-2">Clear All</a>
+                            @endif
+                        </div>
+
                         <div class="row">
                             <h3>Results / <span>{{ $filtered->total() }}</span></h3>
                             <p>Check each course page for other register options.</p>

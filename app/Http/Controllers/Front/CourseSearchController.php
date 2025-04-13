@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\CourseCategory;
 use App\Models\CourseSubCategory;
 use App\Models\Round;
 use App\Models\Venue; // تأكد من أنك قد قمت بإضافة هذه السطر
@@ -28,6 +29,7 @@ class CourseSearchController extends Controller
         $venues = $request->input('venue', []); // أخذ الفلاتر المختارة للمكان
         $date_from = $request->input('date_from');
         $date_to = $request->input('date_to');
+        $category_id_search=$request->input('category_id_search');
         $now_date = now();
 
         $sort_by = $request->get('sort_by'); // title, venue, date, duration
@@ -44,6 +46,13 @@ class CourseSearchController extends Controller
         // فلتر الفئة
         if (!empty($category_id) && $category_id !== "Category") {
             $filters->where('courses.course_sub_category_id', '=', $category_id);
+        }
+        // فلتر الفئة
+
+        if (!empty($category_id_search) && $category_id_search !== "Category") {
+            $filters->whereHas('course.subCategory', function ($query) use ($category_id_search) {
+                $query->where('course_category_id', $category_id_search);
+            });
         }
 
         // فلتر المدينة
@@ -106,8 +115,8 @@ class CourseSearchController extends Controller
 
         // جلب المدن والفئات
         $venues = Venue::all();
-        $subCategories = CourseSubCategory::where('active', 1)
-            ->orderBy('subcategory_en_name', 'asc')
+        $subCategories = CourseCategory::where('active', 1)
+            ->orderBy('category_en_name', 'asc')
             ->get();
 
         // عدد النتائج الإجمالي
