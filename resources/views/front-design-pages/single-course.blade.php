@@ -144,7 +144,7 @@
                                 @csrf
                                 <input type="hidden" name="course_id" value="{{$course->id}}" />
                                 <input type="hidden" name="applicant_type_id" value=2 />
-                                <div class="form-group form-inline">
+                                <div class="row">
                                     <div class="form-group col-lg-6 col-md-12 name">
                                         <label>Salutation*</label>
                                         <select name="salut_id" class="form-control" style="padding:0 12px;border: 1px solid #CCC;">
@@ -160,7 +160,7 @@
                                         <input type="text" name="name" value="{{ old('name') }}" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group form-inline">
+                                <div class="row">
                                     <div class="form-group col-lg-6 col-md-12 name">
                                         <label>Designation*</label>
                                         <input name="job_title" type="text" value="{{ old('job_title') }}" class="form-control">
@@ -170,7 +170,7 @@
                                         <input type="text" name="company" value="{{ old('company') }}" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group form-inline">
+                                <div class="row">
                                     <div class="form-group col-lg-6 col-md-12 name">
                                         <label>Country*</label>
                                         <select name="country_id" class="form-control" style="padding:0 15px;border: 1px solid #CCC;">
@@ -193,7 +193,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group form-inline">
+                                <div class="row">
                                     <div class="form-group col-lg-6 col-md-12 name">
                                         <label>Address*</label>
                                         <input type="text" name="address" value="{{ old('address') }}" class="form-control">
@@ -204,7 +204,7 @@
                                         <input type="text" name="email" value="{{ old('email') }}" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group form-inline">
+                                <div class="row">
                                     <div class="form-group col-lg-6 col-md-12 name">
                                         <label>Fax*</label>
                                         <input type="text" name="fax" value="{{ old('fax') }}" class="form-control">

@@ -160,7 +160,6 @@ class StaticPageSeeder extends Seeder
         'small_description' => 'WHAT DO OUR DELEGATES AND CLIENTS SAY ABOUT US?',
         'details' => 'We are always delighted to receive positive comments regarding our courses. Here are some of our many testimonials. Feedback from our clients is most important to us. Client feedback enables us to continuously develop and improve our course offerings based on the experiences and opinions of former course participants. In this section, we would like to share some of the feedback that we have received from individuals and companies. We also share regular updates on our social media pages (Facebook, LinkedIn & Twitter) so please check us out if you want to see more recent updates. The first comments have been made by our open-course delegates who have attended our wide range of courses and the last testimonials are from a few of our clients about the experience they had with us with In-House training.',
         'details2' => 'see all',
-
         'created_at' => now(),
         'updated_at' => now(),
         'active' => true,
