@@ -82,7 +82,7 @@
                             <div class="mb-10 fv-row">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label class="form-label">Twitter</label>
+                                        <label class="form-label">X</label>
                                         <input type="text" class="form-control" name="details4" value="{{ $row->details4 }}" required>
                                     </div>
 
