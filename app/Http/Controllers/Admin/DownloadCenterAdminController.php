@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\DawnloadCenter;
+use App\Models\DownloadCenter;
 use Exception;
 use File;
 use Illuminate\Http\Request;
 
-class DawnloadCenterController extends Controller
+class DownloadCenterAdminController extends Controller
 {
     private $route;
     private $view;
     protected $object;
-    function __construct(DawnloadCenter $object)
+    function __construct(DownloadCenter $object)
     {
         $this->object = $object;
         $this->route = 'dawnload-center';
