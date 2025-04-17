@@ -62,7 +62,7 @@
 
                                     <div class="col-md-6">
                                         <label class="form-label">Details</label>
-                                        <textarea   class="form-control" name="details" >{{ $row->details }}</textarea>
+                                        <textarea   class="form-control tinymce-editor" name="details" >{{ $row->details }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -72,15 +72,15 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label class="form-label">details 2</label>
-                                        <textarea   class="form-control" name="details2" >{{ $row->details2 }}</textarea>
+                                        <textarea   class="form-control tinymce-editor" name="details2" >{{ $row->details2 }}</textarea>
                                     </div>
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-6">
                                         <label class="form-label">details 3 </label>
-                                        <textarea   class="form-control" name="details3" >{{ $row->details3 }}</textarea>
-                                    </div>
+                                        <textarea   class="form-control tinymce-editor" name="details3" >{{ $row->details3 }}</textarea>
+                                    </div> --}}
                                     <div class="col-md-6">
                                         <label class="form-label">youtube link</label>
-                                        <textarea   class="form-control" name="details4" > {{ $row->details4 }}</textarea>
+                                        <input type="text" class="form-control" name="details4" value="{{ $row->details4 }}" />
                                     </div>
 
                                 </div>

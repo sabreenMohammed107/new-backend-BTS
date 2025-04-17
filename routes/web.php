@@ -29,7 +29,7 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\JobApplicantController;
 use App\Http\Controllers\Admin\YearCalenderController;
 use App\Http\Controllers\Front\TestimonialsController;
-use App\Http\Controllers\Admin\DawnloadCenterController;
+use App\Http\Controllers\Admin\DownloadCenterAdminController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
@@ -187,7 +187,7 @@ Route::post("btsTarget/update", [StaticPageController::class, "btsTargetUpdate"]
 
 Route::resource('offer', OffersController::class);
 
-Route::resource('dawnload-center', DawnloadCenterController::class);
+Route::resource('dawnload-center', DownloadCenterAdminController::class);
 
 
 });

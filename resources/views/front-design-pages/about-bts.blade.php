@@ -38,16 +38,7 @@
                 <div class="col-lg-8 about-bts-description">
                 <h3>{{ ucwords(str_replace('_', ' ', $whoWeAre->section_name)) }}</h3>
                 <p>{{ $whoWeAre->small_description }}</p>
-                <p>{{ $whoWeAre->details }}</p>
-                <p>{{ $whoWeAre->details2 }}</p>
-                <p>{{ $whoWeAre->details3 }}</p>
-
-                <ul class="services-list">
-                    <li>Have a direct effect upon your profitability</li>
-                    <li>Help you meet your specific objectives</li>
-                    <li>Assist you in implementing and achieving your strategic plans</li>
-                    <li>Enhance your image within your industry</li>
-                </ul>
+                {!! $whoWeAre->details !!}
 
                 </div>
             </div>
@@ -57,7 +48,7 @@
             <div class="map-section">
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0 map-description d-flex align-items-center">
-                <p class="fs-5">BTS is happy and ready to provide its services in the Gulf Cooperation Council countries, <span class="blue-clr">Europe, Africa, and Asia</span>. Additionally, we work with many clients and partners across the globe. This is in line with our team's commitment to <span class="blue-clr">Saudi Vision 2030</span>.</p>
+                <p class="fs-5"> {!! $whoWeAre->details2 !!}</p>
                 </div>
                 <div class="col-lg-6 text-center map-img">
                     <img src="{{ asset('front-assets/img/bg/map.png') }}" alt="World Map" class="map-image img-fluid">
