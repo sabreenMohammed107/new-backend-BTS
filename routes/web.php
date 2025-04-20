@@ -99,7 +99,7 @@ Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'dow
     })->name('join-team');
 
     Route::get('join-us-speaker-page' , function(){
-        return view('front-design-pages.join-us-speaker-page');
+        return view('front-design-pages.join-us-speaker');
     })->name('join-us-speaker-page');
 
     Route::get('join-us' , function(){
