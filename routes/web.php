@@ -85,6 +85,14 @@ Route::prefix('/')->group(function () {
     Route::get('course-search' , function(){
         return view('front-design-pages.course-search');
     })->name('course-search');
+//captch
+Route::get('/refresh-captcha', function () {
+    return response()->json(['captcha' => captcha_img('flat')]);
+});
+Route::post('/registerApplicants', [CourseSearchController::class, 'registerApplicants'])->name('registerApplicants');
+Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'registerApplicantsDawnload'])->name('registerApplicantsDawnload');
+Route::post('registerApplicantRounds',[CourseSearchController::class, 'registerApplicantRounds']);
+Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);
 
     Route::get('join-team' , function(){
         return view('front-design-pages.join-team');

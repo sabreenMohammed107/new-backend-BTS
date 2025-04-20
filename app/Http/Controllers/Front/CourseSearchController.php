@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Applicant;
 use App\Models\ApplicantSalut;
 use App\Models\Country;
 use App\Models\Course;
@@ -159,5 +160,111 @@ class CourseSearchController extends Controller
         $objectCourses = Course::orderBy("course_en_name", "asc")->get();
         return view('front-design-pages.single-course', compact('objectCourses', 'venues', 'countries', 'course', 'rounds', 'specfic_round', 'related_courses', 'saluts'));
     }
+    //form in tabs in single course
+    public function registerApplicants(Request $request)
+    {
+        $request->validate([
 
+            'captcha' => 'required|captcha'
+        ]);
+        $data = $request->all();
+        $quick = Applicant::create($data);
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+
+        // if (!$request->get('courseBrochure')) {
+            return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+        // }
+    }
+
+    public function registerApplicantsDawnload(Request $request)
+    {
+        $request->validate([
+
+            'captcha' => 'required|captcha'
+        ]);
+        $data = $request->all();
+        $dawnload = Applicant::create($data);
+
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        // \Mail::to($emails)->send(new DawnloadNotification($dawnload));
+
+        if (!$request->get('courseBrochure')) {
+
+            return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+        }
+    }
+
+    public function requestInHouse($course_id)
+    {
+        $now_date = now();
+        $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
+        $rounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
+        $venues = Venue::all();
+        $countries = Country::all();
+        $saluts = ApplicantSalut::all();
+        return view('web.courses.requestInHouse', compact('course', 'countries', 'venues', 'saluts', 'rounds'))->with('message', 'Thanks; your request has been submitted successfully !');
+    }
+
+
+    public function registerCourse($round_id)
+    {
+        $now_date = now();
+        $course = Round::where('id', '=', $round_id)->firstOrFail()->course;
+        $course_rounds = $course->rounds()->with('course')->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->get();
+        $venues = Venue::all();
+        $countries = Country::all();
+        $saluts = ApplicantSalut::all();
+        $rounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
+        return view('web.courses.registerCourse', compact('course_rounds', 'rounds', 'course', 'countries', 'venues', 'saluts'));
+    }
+
+    public function registerApplicantRounds(Request $request)
+    {
+        $request->validate([
+
+            'captcha' => 'required|captcha'
+        ]);
+        $applicant_data['salut_id'] = $request->get('salut_id');
+        $applicant_data['name'] = $request->get('name');
+        $applicant_data['country_id'] = $request->get('country_id');
+        $applicant_data['job_title'] = $request->get('job_title');
+        $applicant_data['company'] = $request->get('company');
+        $applicant_data['venue_id'] = $request->get('venue_id');
+        $applicant_data['address'] = $request->get('address');
+        $applicant_data['email'] = $request->get('email');
+        $applicant_data['phone'] = $request->get('phone');
+        $applicant_data['mobile'] = $request->get('mobile');
+        $applicant_data['fax'] = $request->get('fax');
+        $applicant_data['register_round_id'] = $request->get('register_round_id');
+        $applicant_data['applicant_type_id'] = $request->get('applicant_type_id');
+        $applicant_id = Applicant::create($applicant_data);
+
+        $billing_data['salut_id'] = $request->get('billing_salut_id');
+        $billing_data['name'] = $request->get('billing_name');
+        $billing_data['job_title'] = $request->get('billing_job_title');
+        $billing_data['company'] = $request->get('billing_company');
+        $billing_data['address'] = $request->get('billing_address');
+        $billing_data['venue_id'] = $request->get('billing_venue_id');
+        $billing_data['country_id'] = $request->get('billing_country_id');
+        $billing_data['phone'] = $request->get('billing_phone');
+        $billing_data['email'] = $request->get('billing_email');
+        $billing_data['applicant_id'] = $applicant_id->id;
+        $billingDetails = BillingDetails::create($billing_data);
+
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        // \Mail::to($emails)->send(new RegisterNotification($applicant_id,$billingDetails));
+        return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+    }
+
+    public function downloadBrochure($course_id)
+    {
+        $countries = Country::all();
+        $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
+
+        return view('front-design-pages.downloadBrochure', compact('course', 'countries'));
+    }
 }

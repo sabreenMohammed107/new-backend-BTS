@@ -10,6 +10,12 @@
         <h2>{{ $course->course_en_name }}</h2>
       </div>
     </div>
+    @if ($message = Session::get('message'))
+    <div id="alertDivDetails" class="alert alert-info" style="position: relative; padding: 15px; border-radius: 5px; margin-top: 20px;">
+        <button type="button" id="alertCloseDetails" style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; line-height: 20px;">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
+@endif
 
     <div class="container main-course-title-and-details">
       <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span>
@@ -215,18 +221,27 @@
                                     <textarea name="quk_enquery_notes" value="{{ old('quk_enquery_notes') }}" class="form-control mb-10" rows="5">{{Request::old('quk_enquery_notes')}}</textarea>
                                 </div>
 
-                                {{-- <div class="form-group form-inline">
-                                    <div class="captcha">
-                                        <span>{!! captcha_img() !!}</span>
-                                        <button type="button" class="btn btn-success"><i class="fa fa-refresh" id="refresh"></i></button>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label>Captcha*</label>
+                                        <div class="captcha d-flex align-items-center gap-2">
+                                            <span id="captcha-img">{!! captcha_img('flat') !!}</span>
+                                            <button type="button" class="btn btn-secondary btn-sm" id="refresh-captcha" style="margin-left: 10px; padding: 6px 10px;">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </button>
+
+                                        </div>
                                     </div>
-                                </div> --}}
 
-
-
-                                <div class="form-group col-lg-6">
-                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                                    <div class="form-group col-lg-6">
+                                        <label>Enter Captcha*</label>
+                                        <input id="captcha" type="text" class="form-control" name="captcha">
+                                        @error('captcha')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
+
 
                                 <button type="submit" class="mt-40 text-uppercase genric-btn primary text-center">Submit</button>
                             </form>
@@ -245,7 +260,9 @@
           <div class="row action-btns mb-4">
 
             <div class="col-12 d-flex flex-wrap justify-content-between">
-              <button class=" btn-single-course-option"><i class="fas fa-download mr-2"></i>Download Brochure</button>
+                <a href='{{url ("/downloadBrochure/$course->id") }}' class=" btn-single-course-option">
+                    <i class="fas fa-download mr-2"></i> Download Brochure</a>
+              {{-- <button class=" btn-single-course-option"><i class="fas fa-download mr-2"></i>Download Brochure</button> --}}
               <button class=" btn-single-course-option">Request Online Proposal</button>
               <button class=" btn-single-course-option">Request In house Proposal</button>
             </div>
@@ -487,4 +504,18 @@
         </div>
       </div>
     </div>
+@endsection
+@section('script')
+<script>
+    document.getElementById('refresh-captcha').addEventListener('click', function () {
+        fetch('/refresh-captcha')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('captcha-img').innerHTML = data.captcha;
+            });
+    });
+    $(document).on('click', '#alertCloseDetails', function () {
+        $('#alertDivDetails').fadeOut();
+    });
+</script>
 @endsection
