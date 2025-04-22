@@ -34,6 +34,8 @@ use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
 use App\Http\Controllers\Front\CourseSearchController;
+use App\Http\Controllers\Front\JobApplicationController;
+use App\Http\Controllers\Admin\CareerLevelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,10 +57,6 @@ Route::prefix('/')->group(function(){
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('main-home');
 });
-
-    Route::get('join-us' , function(){
-        return view('front-design-pages.join-team');
-    })->name('join-us');
 
     Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
     Route::get('service' , [ServiceController::class , 'index'])->name('service');
@@ -94,18 +92,11 @@ Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'regi
 Route::post('registerApplicantRounds',[CourseSearchController::class, 'registerApplicantRounds']);
 Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);
 
-    Route::get('join-team' , function(){
-        return view('front-design-pages.join-team');
-    })->name('join-team');
+    Route::get('join-us' , [JobApplicationController::class, 'showForm'])->name('join-us');
 
     Route::get('join-us-speaker-page' , function(){
         return view('front-design-pages.join-us-speaker');
     })->name('join-us-speaker-page');
-
-    Route::get('join-us' , function(){
-        return view('front-design-pages.join-us');
-    })->name('join-us');
-
 
     Route::get('single-course' , function(){
         return view('front-design-pages.single-course');
@@ -159,6 +150,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('country', CountryController::class);
     Route::resource('venue', VenueController::class);
     Route::resource('career', CareersController::class);
+    Route::resource('careerLevel', CareerLevelController::class);
     Route::resource('jobApplicant', JobApplicantController::class);
     Route::resource('appl', ApplicantSpeakerController::class);
 //new staticdata
@@ -197,6 +189,9 @@ Route::resource('offer', OffersController::class);
 
 Route::resource('dawnload-center', DownloadCenterAdminController::class);
 
+// Career application routes
+Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
+Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
 
 });
 
