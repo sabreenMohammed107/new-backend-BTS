@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\CoursesApplicantController;
 use App\Http\Controllers\Front\CourseSearchController;
 use App\Http\Controllers\Front\JobApplicationController;
 use App\Http\Controllers\Admin\CareerLevelController;
+use App\Http\Controllers\Front\SpeakerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -153,6 +154,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('careerLevel', CareerLevelController::class);
     Route::resource('jobApplicant', JobApplicantController::class);
     Route::resource('appl', ApplicantSpeakerController::class);
+    Route::resource('speaker', App\Http\Controllers\Admin\SpeakerController::class);
+    Route::post('speaker/{id}/status', [App\Http\Controllers\Admin\SpeakerController::class, 'updateStatus'])->name('speaker.status.update');
 //new staticdata
 Route::get("homeMethodology/view", [StaticPageController::class, "homeMethodologyView"])->name("homeMethodologyView");
 Route::post("homeMethodology/update", [StaticPageController::class, "homeMethodologyUpdate"])->name("homeMethodologyUpdate");
@@ -192,6 +195,10 @@ Route::resource('dawnload-center', DownloadCenterAdminController::class);
 // Career application routes
 Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
 Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
+
+// Speaker application routes
+Route::get('/join-us-speaker', [SpeakerController::class, 'showForm'])->name('join.speaker');
+Route::post('/speaker-application', [SpeakerController::class, 'store'])->name('speaker.application.store');
 
 });
 

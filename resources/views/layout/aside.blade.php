@@ -379,7 +379,14 @@
                             </a>
                         </div>
 
-
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('speaker.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Speaker Applications</span>
+                            </a>
+                        </div>
 
                     </div>
 
