@@ -51,7 +51,7 @@
                         the power of AI in document
                         processing. We need to move beyond our AI tools simply recognizing text. Perhaps we should
                         delve deeper into the orbit of semantic understanding. Still, what do we need to create
-                        smart documents, and how do we use them to train AI? Let’s review how AI support can lead
+                        smart documents, and how do we use them to train AI? Let's review how AI support can lead
                         to more intelligent content creation with the bonus of integrated accessibility. Managing
                         a growing
                         volume of documents and records can be challenging. This document
@@ -121,64 +121,93 @@
             <div class="container form-container">
             <h2 class="form-title f-s-20">Apply For Your Desired Job Here</h2>
 
-            <form>
+            <form action="{{ route('job.application.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <!-- Course Details -->
 
                 <div class="row mb-3">
                     <div class="col-md-12 mb-3">
-                        <label for="dateVenue" class="form-label"> <i class="fas fa-thumbtack"></i> Job Title</label>
-                        <select class="form-select" id="dateVenue" required>
+                        <label for="career_id" class="form-label"> <i class="fas fa-thumbtack"></i> Job Title</label>
+                        <select class="form-select" id="career_id" name="career_id" required>
                             <option value="" selected>Select</option>
-                            <option value="1">March 15-17, 2025 - New York</option>
-                            <option value="2">April 10-12, 2025 - Chicago</option>
-                            <option value="3">May 5-7, 2025 - Houston</option>
+                            @foreach($careers as $career)
+                                <option value="{{ $career->id }}" {{ old('career_id') == $career->id ? 'selected' : '' }}>{{ $career->job_name }}</option>
+                            @endforeach
                         </select>
+                        @error('career_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12 mb-3">
-                        <label for="dateVenue" class="form-label"> <i class="fas fa-thumbtack"></i> Career Level</label>
-                        <select class="form-select" id="dateVenue" required>
+                        <label for="carrer_level_id" class="form-label"> <i class="fas fa-thumbtack"></i> Career Level</label>
+                        <select class="form-select" id="carrer_level_id" name="carrer_level_id" required>
                             <option value="" selected>Select</option>
-                            <option value="1">March 15-17, 2025 - New York</option>
-                            <option value="2">April 10-12, 2025 - Chicago</option>
-                            <option value="3">May 5-7, 2025 - Houston</option>
+                            @foreach($careerLevels as $level)
+                                <option value="{{ $level->id }}" {{ old('carrer_level_id') == $level->id ? 'selected' : '' }}>{{ $level->level }}</option>
+                            @endforeach
                         </select>
+                        @error('carrer_level_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
 
                 <div class="row mb-3">
                     <div class="col-md-12 mb-3">
-                        <label for="salutation" class="form-label required"><i class="fas fa-thumbtack"></i> Expected Salary</label>
-                        <input type="text" class="form-control" placeholder="Expected Salary" id="salutation" required>
+                        <label for="expected_salary" class="form-label required"><i class="fas fa-thumbtack"></i> Expected Salary</label>
+                        <input type="text" class="form-control" placeholder="Expected Salary" id="expected_salary" name="expected_salary" value="{{ old('expected_salary') }}" required>
+                        @error('expected_salary')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-md-12 mb-3">
-                        <input type="text" class="form-control" placeholder="Name" id="fullName" required>
+                        <input type="text" class="form-control" placeholder="Name" id="name" name="name" value="{{ old('name') }}" required>
+                        @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-md-12 mb-3">
-                        <input type="text" class="form-control" placeholder="Email" id="fullName" required>
+                        <input type="email" class="form-control" placeholder="Email" id="email" name="email" value="{{ old('email') }}" required>
+                        @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-md-12 mb-3">
-                        <input type="text" class="form-control" placeholder="Mobile" id="fullName" required>
+                        <input type="text" class="form-control" placeholder="Mobile" id="mobile" name="mobile" value="{{ old('mobile') }}" required>
+                        @error('mobile')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12 mb-3">
-                        <label for="designation" class="form-label required">Upload CV with a clear photo</label>
-                        <input type="file" class="form-control" id="designation" required>
+                        <label for="cv_file" class="form-label required">Upload CV with a clear photo</label>
+                        <input type="file" class="form-control" id="cv_file" name="cv_file" required>
+                        @error('cv_file')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="company" class="form-label required">Upload other supporting documents</label>
-                        <input type="file" class="form-control" id="company" required>
+                        <label for="supporting_docs" class="form-label required">Upload other supporting documents</label>
+                        <input type="file" class="form-control" id="supporting_docs" name="supporting_docs">
+                        @error('supporting_docs')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
                 <div class="row mt-4">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary" style="border-radius: 6px;">Apply Now </button>
-
                     </div>
                 </div>
             </form>
