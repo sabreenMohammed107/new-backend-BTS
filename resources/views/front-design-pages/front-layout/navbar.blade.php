@@ -8,7 +8,7 @@
                 <div class="col">
                     <div class="site-logo-wrap">
                         <div class="site-logo">
-                            <a href="index.html"><img width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
+                            <a href="{{ url('/') }}"><img width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
                         </div>
                     </div>
                 </div>
@@ -25,12 +25,11 @@
                                     </li>
                                     <li class="menu-icon"><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
                                         <ul>
-                                            <li><a href="">TRAINING</a></li>
-                                            <li><a href="">TRAINING Grid</a></li>
-                                            <li><a href="">TRAINING Left sidebar</a></li>
-                                            <li><a href="">TRAINING right sidebar</a></li>
-                                            <li><a href="">TRAINING details </a></li>
-                                            <li><a href="">TRAINING details no sidebar </a></li>
+                                            @isset($categories)
+                                            @foreach ($categories as $category )
+                                            <li><a href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->category_en_name }}</a></li>
+                                            @endforeach
+                                           @endisset
 
                                         </ul>
                                     </li>
@@ -76,7 +75,7 @@
         <div class="ltn__utilize-menu-head">
 
             <div class="site-logo">
-                <a href="index.html"><img width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
+                <a href="{{ url('/') }}"><img width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
             </div>
             <button class="ltn__utilize-close">×</button>
         </div>
@@ -92,10 +91,11 @@
 
                 <li><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
                     <ul class="sub-menu">
-                        <li><a href="">TRAINING CATEGORY</a></li>
-                        <li><a href="">TRAINING CATEGORY</a></li>
-                        <li><a href="">TRAINING CATEGORY Details</a></li>
-
+                        @isset($categories)
+                        @foreach ($categories as $category )
+                        <li><a href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->category_en_name }}</a></li>
+                        @endforeach
+                       @endisset
                     </ul>
                 </li>
                 <li><a href="{{ route('join-us') }}">Join US</a>

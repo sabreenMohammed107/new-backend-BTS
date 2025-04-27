@@ -19,6 +19,23 @@
   <link rel="stylesheet" href="{{ asset('front-assets/css/style.css') }}">
   <!-- Responsive css -->
   <link rel="stylesheet" href="{{ asset('front-assets/css/responsive.css') }}">
+<!-- إضافة Tom Select -->
+<!-- TomSelect CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+<!-- TomSelect JS -->
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+<!-- تفعيل Tom Select -->
+<script>
+    new TomSelect("#categorySelect",{
+        create: false,
+        sortField: {
+            field: "text",
+            direction: "asc"
+        }
+    });
+</script>
+
 @yield('page-style')
 </head>
 

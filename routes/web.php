@@ -33,7 +33,9 @@ use App\Http\Controllers\Admin\DownloadCenterAdminController;
 use App\Http\Controllers\Admin\RoundsApplicantController;
 use App\Http\Controllers\Admin\ApplicantSpeakerController;
 use App\Http\Controllers\Admin\CoursesApplicantController;
+use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Front\CourseSearchController;
+use App\Http\Controllers\Front\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +57,8 @@ Route::prefix('/')->group(function(){
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('main-home');
 });
-
+Route::post('/sendMessage',  [IndexController::class, 'sendMessage']);
+Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter']);
     Route::get('join-us' , function(){
         return view('front-design-pages.join-team');
     })->name('join-us');
@@ -64,6 +67,9 @@ Route::prefix('/')->group(function () {
     Route::get('service' , [ServiceController::class , 'index'])->name('service');
     Route::get('download-center' , [DownloadCenterController::class , 'index'])->name('download-center');
     Route::get('testimonials' , [TestimonialsController::class , 'index'])->name('testimonials');
+
+    //category
+    Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
 
     Route::get('accreditations' , function(){
@@ -107,14 +113,6 @@ Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'dow
     })->name('join-us');
 
 
-    Route::get('single-course' , function(){
-        return view('front-design-pages.single-course');
-    })->name('single-course');
-
-
-    Route::get('soft-skills-page' , function(){
-        return view('front-design-pages.soft-skills-page');
-    })->name('soft-skills-page');
 });
 
 Route::get('/dashboard', function () {
