@@ -23,7 +23,7 @@
                                     <li class=""><a href="{{ route('about-bts') }}">ABOUT BTS</a>
 
                                     </li>
-                                    <li class="menu-icon"><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
+                                    <li class="menu-icon"><a href="#">TRAINING CATEGORY</a>
                                         <ul>
                                             @isset($categories)
                                             @foreach ($categories as $category )
@@ -89,7 +89,7 @@
 
                 </li>
 
-                <li><a href="{{ route('soft-skills-page') }}">TRAINING CATEGORY</a>
+                <li><a href="#">TRAINING CATEGORY</a>
                     <ul class="sub-menu">
                         @isset($categories)
                         @foreach ($categories as $category )

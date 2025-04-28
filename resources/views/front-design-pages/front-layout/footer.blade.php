@@ -10,7 +10,7 @@
                     <ul>
                         <li><a href="{{ route('main-home') }}">Home</a></li>
                         <li><a href="{{ route('about-bts') }}">About Us</a></li>
-                        <li><a href="{{ route('soft-skills-page') }}">Training Category</a></li>
+                        {{-- <li><a href="{{ route('soft-skills-page') }}">Training Category</a></li> --}}
                         <li><a href="{{ route('download-center') }}">Download Center</a></li>
                     </ul>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="footer-menu">
                     <ul>
                     <li><a href="{{ route('join-us') }}">Technical</a></li>
-                    <li><a href="{{ route('soft-skills-page') }}">Soft skills</a></li>
+                    {{-- <li><a href="{{ route('soft-skills-page') }}">Soft skills</a></li> --}}
                     <li><a href="{{ route('accreditations') }}">Certified</a></li>
                     <li><a href="">Information Technology</a></li>
 
