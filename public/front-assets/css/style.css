@@ -7288,7 +7288,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 ---------------------------------------------------- */
 .ltn__slide-item {
   padding-top: 100px;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   height: 750px;
 }
 
@@ -15829,7 +15829,7 @@ input.cart-plus-minus-box {
 }
 
 .ltn__slide-item {
-  margin-bottom: 75px;
+  /* margin-bottom: 75px; */
 }
 
 .slick-slide:focus {

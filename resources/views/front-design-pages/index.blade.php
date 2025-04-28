@@ -12,7 +12,7 @@
             <!-- ltn__slide-item -->
             @isset($banners)
                 @foreach ($banners as $banner)
-                    <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal ltn__slide-one-active"
+                    <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal"
                         style="background-image: url('{{ asset('uploads/sliders/' . $banner->image) }}'); background-size: cover; background-position: center 10%;"
                         tabindex="-1">
                         <div class="ltn__slide-item-inner">
