@@ -19475,10 +19475,10 @@ background-color: #fff;
     position: absolute;
     z-index: 10; /* Ensure it's above the overlay */
 }
-.slick-list.draggable .slick-track {
+.slick-list .slick-track {
     height: 100vh !important;
 }
-.slick-list.draggable .slick-track .ltn__slide-item{
+.slick-list .slick-track .ltn__slide-item{
     height: 100vh !important;
 }
 .ltn__slide-item {
