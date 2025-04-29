@@ -9,6 +9,11 @@
 
     <div class="ltn__slider-area ltn__slider-3 section-bg-1" >
         <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
+            <style>
+                .slick-list.draggable {
+                    height: 100vh !important;
+                }
+            </style>
             <!-- ltn__slide-item -->
             @isset($banners)
                 @foreach ($banners as $banner)
