@@ -19475,3 +19475,9 @@ background-color: #fff;
     position: absolute;
     z-index: 10; /* Ensure it's above the overlay */
 }
+.slick-list.draggable .slick-track {
+    height: 100vh;
+}
+.slick-list.draggable .slick-track .ltn__slide-item{
+    height: 100vh;
+}
