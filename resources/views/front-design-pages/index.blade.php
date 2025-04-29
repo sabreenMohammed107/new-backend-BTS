@@ -6,7 +6,11 @@
     <div class="ltn__utilize-overlay"></div>
 
     <!-- SLIDER AREA START (slider-3) -->
-
+<style>
+    .slick-track {
+    height: 100vh !important;
+}
+</style>
     <div class="ltn__slider-area ltn__slider-3 section-bg-1" >
         <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
             <!-- ltn__slide-item -->
