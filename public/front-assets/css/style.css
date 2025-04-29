@@ -19481,3 +19481,6 @@ background-color: #fff;
 .slick-list.draggable .slick-track .ltn__slide-item{
     height: 100vh !important;
 }
+.ltn__slide-item {
+    height: 100vh !important;
+}
