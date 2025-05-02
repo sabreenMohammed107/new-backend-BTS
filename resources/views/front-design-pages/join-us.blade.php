@@ -26,7 +26,7 @@
                   <div class="join-us-cart-data">
                     <span>Speakers</span>
                     <h3>Join the <br> speakers and <br> make an impact!</h3>
-                    <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1" tabindex="0">Click Here</a>
+                    <a href="{{ route('join-us-speaker-page') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1" tabindex="0">Click Here</a>
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                   <div class="join-us-cart-data">
                     <span>Team Member</span>
                     <h3>Join our <br> team and <br> grow with us</h3>
-                    <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1" tabindex="0">Click Here</a>
+                    <a href="{{ route('join-team') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1" tabindex="0">Click Here</a>
                   </div>
                 </div>
               </div>

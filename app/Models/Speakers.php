@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 class Speakers extends Model
 {
     protected $fillable = [
-        'salut_id', 'frist_name','last_name','email', 'country_id','venue_id','address', 'mobile','phone',
+        'salut_id', 'first_name','last_name','email', 'country_id','venue_id','address', 'mobile','phone',
         'other_data', 'cv_path','doc_path',
     ];
-    
+
     public function country()
     {
         return $this->belongsTo('App\Models\Country','country_id');

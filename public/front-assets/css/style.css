@@ -7287,9 +7287,23 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     Slider Area 1, 2, 3, 4, 5, 6, 7, 9
 ---------------------------------------------------- */
 .ltn__slide-item {
-  padding-top: 100px;
-  /* padding-bottom: 100px; */
-  height: 750px;
+    padding-top: 0;
+    height: 100vh; /* Change from fixed height to 100vh */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Add overlay between background and content */
+.ltn__slide-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Place above the background but below the content */
 }
 
 .ltn__slide-item-inner {
@@ -19360,3 +19374,121 @@ background-color: #fff;
   #testimonials-page .fnt-siz-sm {
     font-size: 1rem;
   }
+
+
+  .ltn__slide-item-inner {
+    position: relative;
+    z-index: 2; /* Higher than the overlay */
+    width: 100%;
+}
+
+/* Fix for slide animation to ensure it's above the overlay */
+.ltn__slide-animation {
+    position: relative;
+    z-index: 2;
+}
+
+/* Adjust slide background container */
+.ltn__slide-one-active {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Optional: makes the background fixed during scroll */
+}
+
+/* Ensure any buttons in the slider are clickable */
+.ltn__slide-item .btn-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+/* Adjust responsive behavior */
+@media (max-width: 767px) {
+    .ltn__slide-item {
+        /* height: 100vh; Maintain 100vh on mobile */
+        padding-top: 80px; /* Add some padding for mobile header */
+    }
+}.ltn__slide-item {
+    /* height: 100vh; */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Improved overlay with better opacity and z-index management */
+.ltn__slide-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly lighter overlay */
+    z-index: 1;
+    pointer-events: none; /* Ensures clicks pass through to content beneath */
+}
+
+/* Ensure slide content is above the overlay */
+.ltn__slide-item-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fix animation z-index to ensure it's visible */
+.ltn__slide-animation {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure buttons are clickable */
+.btn-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .ltn__slide-item {
+        /* height: 100vh; */
+        padding-top: 60px; /* Adjusted for mobile header */
+    }
+
+    .slide-title {
+        font-size: 36px; /* Smaller font size on mobile */
+    }
+
+    .ltn__slide-item-2 .slide-title {
+        font-size: 32px;
+    }
+}
+
+/* Fix for background image */
+.ltn__slide-one-active {
+    background-attachment: scroll; /* Better mobile performance than fixed */
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Fix for social sidebar links */
+#slider-3-section .social-side-links {
+    position: absolute;
+    z-index: 10; /* Ensure it's above the overlay */
+}
+#slider-3-section .slick-list .slick-track {
+    height: 100vh !important;
+}
+#slider-3-section .slick-list .slick-track .ltn__slide-item{
+    height: 100vh !important;
+}
+#slider-3-section .ltn__slide-item {
+    height: 100vh !important;
+}
+
+#slider-3-section .ltn__slide-item.ltn__slide-item-2.ltn__slide-item-3.ltn__slide-item-3-normal.slick-slide{
+    height: 100vh !important;
+}
+
+#slider-3-section .slick-track {
+    height: 100vh !important;
+}

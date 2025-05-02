@@ -71,11 +71,11 @@
                         </div>
                         <div class="py-3">
                             <div class="fw-bolder fs-5 text-gray-800 mb-1">Country</div>
-                            <div class="text-gray-600">{{ $row->country ?? 'N/A' }}</div>
+                            <div class="text-gray-600">{{ $row->country->country_en_name ?? 'N/A' }}</div>
                         </div>
                         <div class="py-3">
                             <div class="fw-bolder fs-5 text-gray-800 mb-1">City</div>
-                            <div class="text-gray-600">{{ $row->city ?? 'N/A' }}</div>
+                            <div class="text-gray-600">{{ $row->venue->venue_en_name ?? 'N/A' }}</div>
                         </div>
                         <div class="py-3">
                             <div class="fw-bolder fs-5 text-gray-800 mb-1">Phone</div>
@@ -110,10 +110,10 @@
                         </h3>
                     </div>
                     <div class="card-body pt-3">
-                        @if(is_array($row->expertise) && count($row->expertise) > 0)
+                        @if($row->expertises->count() > 0)
                             <div class="d-flex flex-wrap">
-                                @foreach($row->expertise as $expertise)
-                                    <span class="badge badge-light-primary fs-7 m-1">{{ $expertise }}</span>
+                                @foreach($row->expertises as $expertise)
+                                    <span class="badge badge-light-primary fs-7 m-1">{{ $expertise->text }}</span>
                                 @endforeach
                             </div>
                         @else
@@ -146,7 +146,7 @@
                             <div class="fw-bolder fs-5 text-gray-800 mb-1">CV</div>
                             <div class="text-gray-600">
                                 @if($row->cv_path)
-                                    <a href="{{ asset('storage/' . $row->cv_path) }}" class="btn btn-sm btn-light-primary" target="_blank">
+                                    <a href="{{ asset( $row->cv_path) }}" class="btn btn-sm btn-light-primary" target="_blank">
                                         <i class="fa fa-download"></i> Download CV
                                     </a>
                                 @else
@@ -158,7 +158,7 @@
                             <div class="fw-bolder fs-5 text-gray-800 mb-1">Supporting Documents</div>
                             <div class="text-gray-600">
                                 @if($row->doc_path)
-                                    <a href="{{ asset('storage/' . $row->doc_path) }}" class="btn btn-sm btn-light-primary" target="_blank">
+                                    <a href="{{ asset( $row->doc_path) }}" class="btn btn-sm btn-light-primary" target="_blank">
                                         <i class="fa fa-download"></i> Download Documents
                                     </a>
                                 @else
