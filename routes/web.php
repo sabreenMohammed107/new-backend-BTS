@@ -55,35 +55,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('/')->group(function(){
-
 Route::prefix('/')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('main-home');
-});
-Route::post('/sendMessage',  [IndexController::class, 'sendMessage']);
-Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter']);
-    Route::get('join-us' , function(){
+
+    Route::prefix('/')->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('main-home');
+    });
+    Route::post('/sendMessage',  [IndexController::class, 'sendMessage']);
+    Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter']);
+    Route::get('join-us', function () {
         return view('front-design-pages.join-team');
     })->name('join-us');
 
-    Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
-    Route::get('service' , [ServiceController::class , 'index'])->name('service');
-    Route::get('download-center' , [DownloadCenterController::class , 'index'])->name('download-center');
-    Route::get('testimonials' , [TestimonialsController::class , 'index'])->name('testimonials');
+    Route::get('about-bts', [AboutBtsController::class, 'index'])->name('about-bts');
+    Route::get('service', [ServiceController::class, 'index'])->name('service');
+    Route::get('download-center', [DownloadCenterController::class, 'index'])->name('download-center');
+    Route::get('testimonials', [TestimonialsController::class, 'index'])->name('testimonials');
 
     //category
     Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
 
-    Route::get('accreditations' , function(){
+    Route::get('accreditations', function () {
         return view('front-design-pages.Accreditations');
     })->name('accreditations');
 
-    Route::get('contact-us' , function(){
+    Route::get('contact-us', function () {
         return view('front-design-pages.contact-us');
     })->name('contact-us');
 
-    Route::get('course-registration' , function(){
+    Route::get('course-registration', function () {
         return view('front-design-pages.course-registration');
     })->name('course-registration');
 
@@ -91,29 +91,32 @@ Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter']);
 
     Route::get('/courseDetails/{id}', [CourseSearchController::class, 'courseDetails']);
 
-    Route::get('course-search' , function(){
+    Route::get('course-search', function () {
         return view('front-design-pages.course-search');
     })->name('course-search');
-//captch
-Route::get('/refresh-captcha', function () {
-    return response()->json(['captcha' => captcha_img('flat')]);
-});
-Route::post('/registerApplicants', [CourseSearchController::class, 'registerApplicants'])->name('registerApplicants');
-Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'registerApplicantsDawnload'])->name('registerApplicantsDawnload');
-Route::post('registerApplicantRounds',[CourseSearchController::class, 'registerApplicantRounds']);
-Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);
+    //captch
+    Route::get('/refresh-captcha', function () {
+        return response()->json(['captcha' => captcha_img('flat')]);
+    });
+    // Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'registerApplicantsDawnload'])->name('registerApplicantsDawnload');
+    Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);
+    //register in house course , post , get
+    Route::get('/requestInHouse/{course_id}', [CourseSearchController::class, 'requestInHouse']);
+    Route::post('/registerApplicants', [CourseSearchController::class, 'registerApplicants'])->name('registerApplicants');
 
-    Route::get('join-us' , [JobApplicationController::class, 'showForm'])->name('join-us');
+    //register course , post , get
+    Route::get('/registerCourse/{round_id}', [CourseSearchController::class, 'registerCourse']);
+    Route::post('registerApplicantRounds', [CourseSearchController::class, 'registerApplicantRounds']);
 
-    Route::get('join-us-speaker-page' , function(){
+    Route::get('join-us', [JobApplicationController::class, 'showForm'])->name('join-us');
+
+    Route::get('join-us-speaker-page', function () {
         return view('front-design-pages.join-us-speaker');
     })->name('join-us-speaker-page');
 
-    Route::get('join-us' , function(){
+    Route::get('join-us', function () {
         return view('front-design-pages.join-us');
     })->name('join-us');
-
-
 });
 
 Route::get('/dashboard', function () {
@@ -163,50 +166,49 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('appl', ApplicantSpeakerController::class);
     Route::resource('speaker', App\Http\Controllers\Admin\SpeakerController::class);
     Route::post('speaker/{id}/status', [App\Http\Controllers\Admin\SpeakerController::class, 'updateStatus'])->name('speaker.status.update');
-//new staticdata
-Route::get("homeMethodology/view", [StaticPageController::class, "homeMethodologyView"])->name("homeMethodologyView");
-Route::post("homeMethodology/update", [StaticPageController::class, "homeMethodologyUpdate"])->name("homeMethodologyUpdate");
-//accreditation
-Route::get("homeAccreditation/view", [StaticPageController::class, "homeAccreditationView"])->name("homeAccreditationView");
-Route::post("homeAccreditation/update", [StaticPageController::class, "homeAccreditationUpdate"])->name("homeAccreditationUpdate");
-//homeTestimonialView
-Route::get("homeTestimonial/view", [StaticPageController::class, "homeTestimonialView"])->name("homeTestimonialView");
-Route::post("homeTestimonial/update", [StaticPageController::class, "homeTestimonialUpdate"])->name("homeTestimonialUpdate");
-//homeContactView
-Route::get("homeContact/view", [StaticPageController::class, "homeContactView"])->name("homeContactView");
-Route::post("homeContact/update", [StaticPageController::class, "homeContactUpdate"])->name("homeContactUpdate");
-//publicTraining
-Route::get("publicTraining/view", [StaticPageController::class, "publicTrainingView"])->name("publicTrainingView");
-Route::post("publicTraining/update", [StaticPageController::class, "publicTrainingUpdate"])->name("publicTrainingUpdate");
-//inHouseTraining
-Route::get("inHouseTraining/view", [StaticPageController::class, "inHouseTrainingView"])->name("inHouseTrainingView");
-Route::post("inHouseTraining/update", [StaticPageController::class, "inHouseTrainingUpdate"])->name("inHouseTrainingUpdate");
-//consultancy
-Route::get("consultancy/view", [StaticPageController::class, "consultancyView"])->name("consultancyView");
-Route::post("consultancy/update", [StaticPageController::class, "consultancyUpdate"])->name("consultancyUpdate");
-//onlineCourses
-Route::get("onlineCourses/view", [StaticPageController::class, "onlineCoursesView"])->name("onlineCoursesView");
-Route::post("onlineCourses/update", [StaticPageController::class, "onlineCoursesUpdate"])->name("onlineCoursesUpdate");
+    //new staticdata
+    Route::get("homeMethodology/view", [StaticPageController::class, "homeMethodologyView"])->name("homeMethodologyView");
+    Route::post("homeMethodology/update", [StaticPageController::class, "homeMethodologyUpdate"])->name("homeMethodologyUpdate");
+    //accreditation
+    Route::get("homeAccreditation/view", [StaticPageController::class, "homeAccreditationView"])->name("homeAccreditationView");
+    Route::post("homeAccreditation/update", [StaticPageController::class, "homeAccreditationUpdate"])->name("homeAccreditationUpdate");
+    //homeTestimonialView
+    Route::get("homeTestimonial/view", [StaticPageController::class, "homeTestimonialView"])->name("homeTestimonialView");
+    Route::post("homeTestimonial/update", [StaticPageController::class, "homeTestimonialUpdate"])->name("homeTestimonialUpdate");
+    //homeContactView
+    Route::get("homeContact/view", [StaticPageController::class, "homeContactView"])->name("homeContactView");
+    Route::post("homeContact/update", [StaticPageController::class, "homeContactUpdate"])->name("homeContactUpdate");
+    //publicTraining
+    Route::get("publicTraining/view", [StaticPageController::class, "publicTrainingView"])->name("publicTrainingView");
+    Route::post("publicTraining/update", [StaticPageController::class, "publicTrainingUpdate"])->name("publicTrainingUpdate");
+    //inHouseTraining
+    Route::get("inHouseTraining/view", [StaticPageController::class, "inHouseTrainingView"])->name("inHouseTrainingView");
+    Route::post("inHouseTraining/update", [StaticPageController::class, "inHouseTrainingUpdate"])->name("inHouseTrainingUpdate");
+    //consultancy
+    Route::get("consultancy/view", [StaticPageController::class, "consultancyView"])->name("consultancyView");
+    Route::post("consultancy/update", [StaticPageController::class, "consultancyUpdate"])->name("consultancyUpdate");
+    //onlineCourses
+    Route::get("onlineCourses/view", [StaticPageController::class, "onlineCoursesView"])->name("onlineCoursesView");
+    Route::post("onlineCourses/update", [StaticPageController::class, "onlineCoursesUpdate"])->name("onlineCoursesUpdate");
 
-//whoWeAre
-Route::get("whoWeAre/view", [StaticPageController::class, "whoWeAreView"])->name("whoWeAreView");
-Route::post("whoWeAre/update", [StaticPageController::class, "whoWeAreUpdate"])->name("whoWeAreUpdate");
-//btsTarget
-Route::get("btsTarget/view", [StaticPageController::class, "btsTargetView"])->name("btsTargetView");
-Route::post("btsTarget/update", [StaticPageController::class, "btsTargetUpdate"])->name("btsTargetUpdate");
+    //whoWeAre
+    Route::get("whoWeAre/view", [StaticPageController::class, "whoWeAreView"])->name("whoWeAreView");
+    Route::post("whoWeAre/update", [StaticPageController::class, "whoWeAreUpdate"])->name("whoWeAreUpdate");
+    //btsTarget
+    Route::get("btsTarget/view", [StaticPageController::class, "btsTargetView"])->name("btsTargetView");
+    Route::post("btsTarget/update", [StaticPageController::class, "btsTargetUpdate"])->name("btsTargetUpdate");
 
-Route::resource('offer', OffersController::class);
+    Route::resource('offer', OffersController::class);
 
-Route::resource('dawnload-center', DownloadCenterAdminController::class);
+    Route::resource('dawnload-center', DownloadCenterAdminController::class);
 
-// Career application routes
-Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
-Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
+    // Career application routes
+    Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
+    Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
 
-// Speaker application routes
-Route::get('/join-us-speaker', [SpeakerController::class, 'showForm'])->name('join.speaker');
-Route::post('/speaker-application', [SpeakerController::class, 'store'])->name('speaker.application.store');
-
+    // Speaker application routes
+    Route::get('/join-us-speaker', [SpeakerController::class, 'showForm'])->name('join.speaker');
+    Route::post('/speaker-application', [SpeakerController::class, 'store'])->name('speaker.application.store');
 });
 
 require __DIR__ . '/auth.php';

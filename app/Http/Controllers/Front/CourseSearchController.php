@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Applicant;
 use App\Models\ApplicantSalut;
+use App\Models\BillingDetails;
 use App\Models\Country;
 use App\Models\Course;
 use App\Models\CourseCategory;
@@ -149,10 +150,11 @@ class CourseSearchController extends Controller
 
     public function courseDetails($course_id)
     {
+
         $now_date = now();
         $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
         $rounds = $course->rounds()->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->get();
-        $specfic_round =  $course->rounds()->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->firstOrFail();
+        $specfic_round =  $course->rounds()->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->first();
         $related_courses = RelatedCourses::with('course')->where('course_id', $course_id)->get();
         $venues = Venue::all();
         $countries = Country::all();
@@ -218,7 +220,7 @@ class CourseSearchController extends Controller
         $countries = Country::all();
         $saluts = ApplicantSalut::all();
         $rounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
-        return view('web.courses.registerCourse', compact('course_rounds', 'rounds', 'course', 'countries', 'venues', 'saluts'));
+        return view('front-design-pages.courses.registerCourse', compact('course_rounds', 'rounds', 'course', 'countries', 'venues', 'saluts'));
     }
 
     public function registerApplicantRounds(Request $request)

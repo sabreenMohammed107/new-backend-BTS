@@ -286,8 +286,14 @@
                     @foreach($rounds as $round)
                   <tr>
                     <td>{{ $round->round_code }}</td>
-                    <td><?php $date = date_create($round->round_start_date) ?>
-                        {{ date_format($date,"d-m-Y") }}</td>
+                    <td>
+                        <?php if ($round): ?>
+                            <?php $date = date_create($round->round_start_date); ?>
+                            <?= date_format($date, 'Y-m-d') ?>
+                        <?php else: ?>
+                            N/A
+                        <?php endif; ?>
+                    </td>
                     <td>{{ $round->venue->venue_en_name ?? ''}}</td>
                     <td>{{ $round->currancy->currency_name ?? ''}} {{ $round->round_price}}</td>
                     <td>   <button class="btn btn-primary btn-sm">
@@ -308,15 +314,14 @@
               <h3 class="section-title">Details</h3>
               <div class="info-row">
                 <div class="info-label">Start date</div>
-                <div class="info-value"> <?php $date = date_create($specfic_round->round_start_date) ?>
-                    {{ date_format($date,"d-m-Y") }}</div>
-              </div>
+                <div class="info-value">
+                    {{ $specfic_round && $specfic_round->round_start_date ? \Carbon\Carbon::parse($specfic_round->round_start_date)->format('d-m-Y') : 'N/A' }}
+                </div>
               <div class="info-row">
                 <div class="info-label">End date</div>
-                <div class="info-value"><?php $date = date_create($specfic_round->round_end_date) ?>
-                    {{ date_format($date,"d-m-Y") }}</div>
-              </div>
-
+              <div class="info-value">
+                {{ $specfic_round && $specfic_round->round_end_date ? \Carbon\Carbon::parse($specfic_round->round_end_date)->format('d-m-Y') : 'N/A' }}
+            </div>
               <h3 class="section-title">Venue</h3>
               <div class="info-row">
                 <div class="info-label">Country</div>
@@ -329,9 +334,11 @@
 
               <div class="row action-row mt-4 align-items-center">
                 <div class="col-md-6 col-12">
+                    @isset($specfic_round)
                   <button class="btn btn-primary register-btn">
                                      <a href='{{url ("/registerCourse/$specfic_round->id") }}' style="padding:2px 3px;color:#fff"> Register Now</a>
                   </button>
+                  @endisset
                 </div>
                 <div class="col-md-6 col-12">
                   <div class="social-buttons">
