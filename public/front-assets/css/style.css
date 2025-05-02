@@ -19471,24 +19471,24 @@ background-color: #fff;
 }
 
 /* Fix for social sidebar links */
-.social-side-links {
+#slider-3-section .social-side-links {
     position: absolute;
     z-index: 10; /* Ensure it's above the overlay */
 }
-.slick-list .slick-track {
+#slider-3-section .slick-list .slick-track {
     height: 100vh !important;
 }
-.slick-list .slick-track .ltn__slide-item{
+#slider-3-section .slick-list .slick-track .ltn__slide-item{
     height: 100vh !important;
 }
-.ltn__slide-item {
-    height: 100vh !important;
-}
-
-.ltn__slide-item.ltn__slide-item-2.ltn__slide-item-3.ltn__slide-item-3-normal.slick-slide{
+#slider-3-section .ltn__slide-item {
     height: 100vh !important;
 }
 
-.slick-track {
+#slider-3-section .ltn__slide-item.ltn__slide-item-2.ltn__slide-item-3.ltn__slide-item-3-normal.slick-slide{
+    height: 100vh !important;
+}
+
+#slider-3-section .slick-track {
     height: 100vh !important;
 }

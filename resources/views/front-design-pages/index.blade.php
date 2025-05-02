@@ -3,588 +3,591 @@
 
 @section('page-content')
 
-    <div class="ltn__utilize-overlay"></div>
+<div class="ltn__utilize-overlay"></div>
 
-    <!-- SLIDER AREA START (slider-3) -->
+
 <style>
-    .slick-track {
-    height: 100vh !important;
-}
+    #slider-3-section .slick-track {
+        height: 100vh !important;
+    }
 </style>
-    <div class="ltn__slider-area ltn__slider-3 section-bg-1" >
-        <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
-            <!-- ltn__slide-item -->
-            @isset($banners)
-                @foreach ($banners as $banner)
-                    <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal"
-                        style="background-image: url('{{ asset('uploads/sliders/' . $banner->image) }}'); background-size: cover; background-position: center 10%; height: 100%;"
-                        tabindex="-1">
-                        <div class="ltn__slide-item-inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 align-self-center">
-                                        <div class="slide-item-info">
-                                            <div class="slide-item-info-inner ltn__slide-animation">
+<div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
+    <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
+        <!-- ltn__slide-item -->
+        @isset($banners)
+        @foreach ($banners as $banner)
+        <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3 ltn__slide-item-3-normal"
+            style="background-image: url('{{ asset('uploads/sliders/' . $banner->image) }}'); background-size: cover; background-position: center 10%; height: 100%;"
+            tabindex="-1">
+            <div class="ltn__slide-item-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 align-self-center">
+                            <div class="slide-item-info">
+                                <div class="slide-item-info-inner ltn__slide-animation">
 
-                                                <h6 class="slide-sub-title animated wh-txt-clr">
-                                                    {!! $banner->en_head_title !!}
-                                                </h6>
+                                    <h6 class="slide-sub-title animated wh-txt-clr">
+                                        {!! $banner->en_head_title !!}
+                                    </h6>
 
-                                                <h1 class="slide-title animated bebas-neue-regular wh-txt-clr uppercase-litter">
-                                                    {!! $banner->en_title !!}
-                                                </h1>
+                                    <h1 class="slide-title animated bebas-neue-regular wh-txt-clr uppercase-litter">
+                                        {!! $banner->en_title !!}
+                                    </h1>
 
-                                                <div class="slide-brief animated wh-txt-clr">
-                                                    <p class="wh-txt-clr">
-                                                        {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }}
-                                                    </p>
-                                                </div>
-
-                                                <div class="btn-wrapper animated">
-                                                    <a href="{{ route('contact-us') }}"
-                                                        class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
-                                                    <a href="{{ route('download-center') }}"
-                                                        class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download
-                                                        Center</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
+                                    <div class="slide-brief animated wh-txt-clr">
+                                        <p class="wh-txt-clr">
+                                            {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }}
+                                        </p>
                                     </div>
+
+                                    <div class="btn-wrapper animated">
+                                        <a href="{{ route('contact-us') }}"
+                                            class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
+                                        <a href="{{ route('download-center') }}"
+                                            class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download
+                                            Center</a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @endisset
+
+
+    </div>
+    <div class="social-side-links">
+        <div class="row flex-column">
+
+            <div class="face">
+                <a href="{{ $staticContact->details2 ?? '#' }}"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="linkedin">
+                <a href="{{ $staticContact->details3 ?? '#' }}"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <a href="{{ $staticContact->details4 ?? '#' }}">
+                <div class="xtw">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="#e7eaee"
+                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                    </svg>
+                </div>
+            </a>
+            <div class="insta">
+                <a href="{{ $staticContact->details5 ?? '#' }}"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SLIDER AREA END -->
+
+<!-- FEATURE AREA START ( Feature - 3) -->
+
+<div class="ltn__feature-area search-form-top-slider mt-100 mt--65">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__feature-item-box-wrap ltn__feature-item-box-wrap-2 ltn__border section-bg-6">
+                    <form action="{{ route('searchCourse.index') }}" method="GET" id="search-form">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <div class="mc-field-group">
+                                    <input type="text" placeholder="Course Name" value="" name="course_name">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
+                                <div class="">
+                                    <select id="categorySelect" name="category_id" placeholder="Select a Category...">
+                                        <option value="">Select a Category</option>
+                                        @isset($subCategories)
+                                        @foreach ($subCategories as $subCategory)
+                                        <option value="{{ $subCategory->id }}">{{ $subCategory->subcategory_en_name }}
+                                        </option>
+                                        @endforeach
+                                        @endisset
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
+                                <div class="mc-field-group">
+                                    <select id="venueSelect" name="city_id" placeholder="Select a Venue...">
+                                        <option value="">Select a Venue</option>
+                                        @isset($venues)
+                                        @foreach ($venues as $venue)
+                                        <option value="{{ $venue->id }}">{{ $venue->venue_en_name }}</option>
+                                        @endforeach
+                                        @endisset
+                                    </select>
+
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-md-3 mt-xl-0">
+                                <div class="mc-field-group">
+                                    <input type="text" placeholder="Duration" value="" name="duration">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                                <div class="mc-field-group d-flex align-items-center">
+                                    <span>From:</span>
+                                    <input type="date" placeholder="Course From" value="" name="start">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                                <div class="mc-field-group d-flex align-items-center">
+                                    <span>To:</span>
+
+                                    <input type="date" placeholder="Course Name" value="" name="end">
+                                </div>
+                            </div>
+                            {{-- Tailor your course --}}
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                                <a href="{{ route('course-search') }}"
+                                    class="form-btn-transparent w-100 text-center">Tailor your course</a>
+                            </div>
+
+                            {{-- Search button --}}
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                                <a href="javascript:void(0);" onclick="document.getElementById('search-form').submit();"
+                                    class="form-btn w-100 text-center">Search</a>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FEATURE AREA END -->
+<!-- CATEGORY AREA START -->
+<div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90"
+    data-bg="{{ asset('front-assets/img/bg/Background\ \(2\).png') }}"
+    style="background-image: url('{{ asset('front-assets/img/bg/Background (2).png') }}');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-area ltn__section-title-2 text-center">
+                    <h1 class="section-title white-color">Services</h1>
+                    <span class="g-clr  text-center">Your Growth, Our Mission</span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row ">
+            @isset($public_training)
+            <div class="col-12 col-md-6 col-lg-3 p-2">
+                <a href="{{ route('service') }}#public_training">
+                    <div class="card-item-services service-item-4"
+                        style="background-image: url('{{ asset($public_training->details2) }}');">
+                        <div class="card-service-bottom-footer">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="white-color">{{ $public_training->small_description }}</h3>
+                                </div>
+                                {{-- <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <a href="{{ route('service') }}"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                Details</a>
+                                        </div>
+                                        <div class="col-2 offset-2 d-flex align-items-center">
+                                            <a href="{{ route('service') }}" class="white-color"><i
+                                                    class="fas fa-share-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endisset
+            @isset($in_house_training)
+            <div class="col-12 col-md-6 col-lg-3  p-2">
+                <a href="{{ route('service') }}#in_house_training">
+                    <div class="card-item-services service-item-2"
+                        style="background-image: url('{{ asset($in_house_training->details2) }}');">
+                        <div class="card-service-bottom-footer">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="white-color">{{ $in_house_training->small_description }}</h3>
+                                </div>
+                                {{-- <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <a href="{{ route('service') }}"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                Details</a>
+                                        </div>
+                                        <div class="col-2 offset-2 d-flex align-items-center">
+                                            <a href="{{ route('service') }}" class="white-color"><i
+                                                    class="fas fa-share-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endisset
+
+            @isset($consultancy)
+            <div class="col-12 col-md-6 col-lg-3  p-2">
+                <a href="{{ route('service') }}#consultancy">
+                    <div class="card-item-services service-item-1"
+                        style="background-image: url('{{ asset($consultancy->details2) }}');">
+                        <div class="card-service-bottom-footer">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="white-color">{{ $consultancy->small_description }}</h3>
+                                </div>
+                                {{-- <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <a href="{{ route('service') }}"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                Details</a>
+                                        </div>
+                                        <div class="col-2 offset-2 d-flex align-items-center">
+                                            <a href="{{ route('service') }}" class="white-color"><i
+                                                    class="fas fa-share-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endisset
+            @isset($online_courses)
+            <div class="col-12 col-md-6 col-lg-3 p-2">
+                <a href="{{ route('service') }}#online_courses">
+                    <div class="card-item-services service-item-3"
+                        style="background-image: url({{ asset($online_courses->details2) }});">
+                        <div class="card-service-bottom-footer">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="white-color">{{ $online_courses->small_description }}</h3>
+                                </div>
+                                {{-- <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <a href="{{ route('service') }}"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                                Details</a>
+                                        </div>
+                                        <div class="col-2 offset-2 d-flex align-items-center">
+                                            <a href="{{ route('service') }}" class="white-color"><i
+                                                    class="fas fa-share-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
             @endisset
 
 
         </div>
-        <div class="social-side-links">
-            <div class="row flex-column">
-
-                <div class="face">
-                    <a href="{{ $staticContact->details2 ?? '#' }}"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <div class="linkedin">
-                    <a href="{{ $staticContact->details3 ?? '#' }}"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <a href="{{ $staticContact->details4 ?? '#' }}">
-                    <div class="xtw">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path fill="#e7eaee"
-                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-                        </svg>
-                    </div>
-                </a>
-                <div class="insta">
-                    <a href="{{ $staticContact->details5 ?? '#' }}"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- SLIDER AREA END -->
+</div>
+<!-- CATEGORY AREA END -->
+<!-- ABOUT US AREA START -->
+@isset($methodologies)
+<div class="ltn__about-us-area pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="about-us-info-wrap">
+                    <div class="row">
+                        <div class="col-12 section-title-area ltn__section-title-2">
 
-    <!-- FEATURE AREA START ( Feature - 3) -->
-
-    <div class="ltn__feature-area search-form-top-slider mt-100 mt--65">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ltn__feature-item-box-wrap ltn__feature-item-box-wrap-2 ltn__border section-bg-6">
-                        <form action="{{ route('searchCourse.index') }}" method="GET" id="search-form">
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="mc-field-group">
-                                        <input type="text" placeholder="Course Name" value="" name="course_name">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
-                                    <div class="">
-                                        <select id="categorySelect" name="category_id" placeholder="Select a Category...">                                            <option value="">Select a Category</option>
-                                            @isset($subCategories)
-                                            @foreach ($subCategories as $subCategory)
-                                                <option value="{{ $subCategory->id }}">{{ $subCategory->subcategory_en_name }}</option>
-                                            @endforeach
-                                        @endisset
-                                        </select>
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
-                                    <div class="mc-field-group">
-                                        <select id="venueSelect" name="city_id" placeholder="Select a Venue...">
-                                            <option value="">Select a Venue</option>
-                                            @isset($venues)
-                                                @foreach ($venues as $venue)
-                                                    <option value="{{ $venue->id }}">{{ $venue->venue_en_name }}</option>
-                                                @endforeach
-                                            @endisset
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-md-3 mt-xl-0">
-                                    <div class="mc-field-group">
-                                        <input type="text" placeholder="Duration" value="" name="duration">
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                    <div class="mc-field-group d-flex align-items-center">
-                                        <span>From:</span>
-                                        <input type="date" placeholder="Course From" value="" name="start">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                    <div class="mc-field-group d-flex align-items-center">
-                                        <span>To:</span>
-
-                                        <input type="date" placeholder="Course Name" value="" name="end">
-                                    </div>
-                                </div>
-                                {{-- Tailor your course --}}
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                    <a href="{{ route('course-search') }}"
-                                        class="form-btn-transparent w-100 text-center">Tailor your course</a>
-                                </div>
-
-                                {{-- Search button --}}
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                    <a href="javascript:void(0);" onclick="document.getElementById('search-form').submit();"
-                                        class="form-btn w-100 text-center">Search</a>
-                                </div>
-                            </div>
-                        </form>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FEATURE AREA END -->
-    <!-- CATEGORY AREA START -->
-    <div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90"
-        data-bg="{{ asset('front-assets/img/bg/Background\ \(2\).png') }}"
-        style="background-image: url('{{ asset('front-assets/img/bg/Background (2).png') }}');">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title-area ltn__section-title-2 text-center">
-                        <h1 class="section-title white-color">Services</h1>
-                        <span class="g-clr  text-center">Your Growth, Our Mission</span>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="row ">
-                @isset($public_training)
-                    <div class="col-12 col-md-6 col-lg-3 p-2">
-                        <a href="{{ route('service') }}#public_training">
-                            <div class="card-item-services service-item-4"
-                                style="background-image: url('{{ asset($public_training->details2) }}');">
-                                <div class="card-service-bottom-footer">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class="white-color">{{ $public_training->small_description }}</h3>
-                                        </div>
-                                        {{-- <div class="col-12">
-                                               <div class="row">
-                                                   <div class="col-8">
-                                                       <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                           Details</a>
-                                                   </div>
-                                                   <div class="col-2 offset-2 d-flex align-items-center">
-                                                       <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                                   </div>
-                                               </div>
-                                           </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endisset
-                @isset($in_house_training)
-                    <div class="col-12 col-md-6 col-lg-3  p-2">
-                        <a href="{{ route('service') }}#in_house_training">
-                            <div class="card-item-services service-item-2"
-                                style="background-image: url('{{ asset($in_house_training->details2) }}');">
-                                <div class="card-service-bottom-footer">
-
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class="white-color">{{ $in_house_training->small_description }}</h3>
-                                        </div>
-                                        {{-- <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endisset
-
-                @isset($consultancy)
-                    <div class="col-12 col-md-6 col-lg-3  p-2">
-                        <a href="{{ route('service') }}#consultancy">
-                            <div class="card-item-services service-item-1"
-                                style="background-image: url('{{ asset($consultancy->details2) }}');">
-                                <div class="card-service-bottom-footer">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class="white-color">{{ $consultancy->small_description }}</h3>
-                                        </div>
-                                        {{-- <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endisset
-                @isset($online_courses)
-                    <div class="col-12 col-md-6 col-lg-3 p-2">
-                        <a href="{{ route('service') }}#online_courses">
-                            <div class="card-item-services service-item-3"
-                                style="background-image: url({{ asset($online_courses->details2) }});">
-                                <div class="card-service-bottom-footer">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class="white-color">{{ $online_courses->small_description }}</h3>
-                                        </div>
-                                        {{-- <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endisset
-
-
-            </div>
-        </div>
-    </div>
-    <!-- CATEGORY AREA END -->
-    <!-- ABOUT US AREA START -->
-    @isset($methodologies)
-        <div class="ltn__about-us-area pt-120 pb-120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 align-self-center">
-                        <div class="about-us-info-wrap">
-                            <div class="row">
-                                <div class="col-12 section-title-area ltn__section-title-2">
-
-                                    <h1 class="section-title">{{ $methodologies->small_description }}
-                                    </h1>
-                                    <p>{!! $methodologies->details !!}</p>
-                                </div>
-
-                                <div class="col-12 row">
-
-                                    <div class="col-6 align-self-center">
-                                        <img src="{{ asset($methodologies->details2) }}" alt="#">
-                                    </div>
-                                    <div class="col-6   align-self-center">
-                                        <img src="{{ asset($methodologies->details3) }}" alt="#">
-                                    </div>
-                                </div>
-                            </div>
-
+                            <h1 class="section-title">{{ $methodologies->small_description }}
+                            </h1>
+                            <p>{!! $methodologies->details !!}</p>
                         </div>
-                    </div>
-                    <div class="col-lg-6 mt-3 mt-lg-0 align-self-center row justify-content-end">
-                        <div class="about-us-img-wrap row about-img-left">
-                            <img src="{{ asset($methodologies->details4) }}" alt="About Us Image">
+
+                        <div class="col-12 row">
+
+                            <div class="col-6 align-self-center">
+                                <img src="{{ asset($methodologies->details2) }}" alt="#">
+                            </div>
+                            <div class="col-6   align-self-center">
+                                <img src="{{ asset($methodologies->details3) }}" alt="#">
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-    @endisset
-    @isset($methodologies)
-        <div class="container section-of-introduction">
-            <div class="row">
-                <div class="col-12 row justify-content-end training-footer mt-5">
-                    <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
-                        <!-- Blog Item -->
-                        <div class="col-12 col-md-6 col-lg-3 ">
-                            <div class="training-footer-item p-3 py-5">
-                                <div class="training-footer-item-box d-flex flex-column align-items-center">
-                                    <span><img src="{{ asset($methodologies->details6) }}" alt=""
-                                            srcset=""></span>
-                                    <h6 class='mt-3'>{{ $methodologies->details5 }}</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 ">
-                            <div class="training-footer-item p-3 py-5">
-                                <div class="training-footer-item-box d-flex flex-column align-items-center">
-                                    <span><img src="{{ asset($methodologies->details8) }}" alt=""
-                                            srcset=""></span>
-                                    <h6 class='mt-3'>{{ $methodologies->details7 }}</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3 ">
-                            <div class="training-footer-item p-3 py-5">
-
-                                <div class="training-footer-item-box d-flex flex-column align-items-center">
-                                    <span><img src="{{ asset($methodologies->details10) }}" alt=""
-                                            srcset=""></span>
-                                    <h6 class='mt-3'>{{ $methodologies->details9 }}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-3  ">
-                            <div class="training-footer-item p-3 py-5">
-
-                                <div class="training-footer-item-box d-flex flex-column align-items-center">
-                                    <span><img src="{{ asset($methodologies->details12) }}" alt=""
-                                            srcset=""></span>
-                                    <h6 class='mt-3'>{{ $methodologies->details11 }}</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    @endisset
-    <!-- ABOUT US AREA END -->
-
-    <!-- PRODUCT AREA START (product-item-3) -->
-    <div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title-area ltn__section-title-2 text-center">
-                        <h1 class="section-title">Top Ranked Courses We Offer</h1>
-                        <h6>Your Growth, Our Mission</h6>
-                    </div>
-                </div>
-            </div>
-            <style>
-
-            </style>
-            <div class="row ltn__tab-product-slider-one-active--- slick-arrow-1">
-                <div class="row">
-                    @isset($rounds)
-                        @foreach ($rounds as $round)
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="ltn__product-item ltn__product-item-3 text-left">
-                                    <div class="product-img">
-                                        <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
-                                            <img height="100%"
-                                                src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
-                                                alt="="{{ $round->country->country_en_name }}"></a>
-
-                                        <div class="course-badge">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h3 class='white-color'>
-                                                        {{ Str::limit($round->course->course_en_name, 70, '') }}</h3>
-                                                </div>
-
-                                                <div class="col-12 row">
-                                                    <?php $date = date_create($round->round_start_date); ?>
-
-                                                    <div class="col-10 white-color bottom-title">
-                                                        {{ $round->venue->venue_en_name }} -
-                                                        {{ $round->country->country_en_name }} |
-                                                        {{ date_format($date, 'd M, Y') }}
-                                                    </div>
-                                                    <div class="col-2 mb-2">
-                                                        <span class="icon-arrow">
-                                                            <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
-                                                                    class="fa fa-arrow-right white-color"></i></a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endisset
-
-                </div>
-
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4 text-center">
-
-                    <a href="{{ route('course-search') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">LOAD
-                        MORE</a>
+            <div class="col-lg-6 mt-3 mt-lg-0 align-self-center row justify-content-end">
+                <div class="about-us-img-wrap row about-img-left">
+                    <img src="{{ asset($methodologies->details4) }}" alt="About Us Image">
                 </div>
             </div>
 
         </div>
     </div>
-    <!-- PRODUCT AREA END -->
-
-    <!-- BLOG AREA START (blog-3) -->
-    <div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
-        <div class="container">
-            <div class="row">
-                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
-                    <h1>Proud to <br> Serve</h1>
-                </div>
-
-                <div
-                    class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
-                    @isset($clients)
-                        @foreach ($clients as $client)
-                            <div class="col row justify-content-center align-items-center">
-                                <img src="{{ asset('uploads/clients') }}/{{ $client->client_logo_url }}" alt=""
-                                    srcset="">
-                            </div>
-                        @endforeach
-                    @endisset
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- BLOG AREA START (blog-3) -->
-    <div class="ltn__blog-area blog-of-Testimonials pt-5 pb-50">
-        <div class="container">
-            <div class="row">
-                @isset($homeTestimonials)
-                    <div class="col-lg-12">
-                        <div class="section-title-area ltn__section-title-2 text-center row">
-                            <h1 class="section-title white-color--- col-12">{{ $homeTestimonials->small_description }}</h1>
-                            <span class="px-5 col-12 col-md-8 offset-md-2 fnt-siz-sm ">{{ $homeTestimonials->details }}</span>
-                        </div>
-                    </div>
-                @endisset
-
-            </div>
+</div>
+@endisset
+@isset($methodologies)
+<div class="container section-of-introduction">
+    <div class="row">
+        <div class="col-12 row justify-content-end training-footer mt-5">
             <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
                 <!-- Blog Item -->
-                @isset($testimonials)
-                    @foreach ($testimonials as $testimonial)
-                        <div class="col-lg-12">
-                            <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-                                <div class="ltn__blog-brief bg-light-blue">
-                                    <div class="ltn__blog-meta bg-light-blue">
-                                        <a href="{{ route('testimonials') }}">
-                                            <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
-                                                <li class="ltn__blog-title">
-                                                    <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
-                                                </li>
-                                                <li class="ltn__blog-tags d-flex">
-                                                    {{-- Filled stars --}}
-                                                    @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
-                                                        <img src="{{ asset('front-assets/img/icons/star.png') }}"
-                                                            width="15" height="15" alt="star">
-                                                    @endfor
+                <div class="col-12 col-md-6 col-lg-3 ">
+                    <div class="training-footer-item p-3 py-5">
+                        <div class="training-footer-item-box d-flex flex-column align-items-center">
+                            <span><img src="{{ asset($methodologies->details6) }}" alt="" srcset=""></span>
+                            <h6 class='mt-3'>{{ $methodologies->details5 }}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 ">
+                    <div class="training-footer-item p-3 py-5">
+                        <div class="training-footer-item-box d-flex flex-column align-items-center">
+                            <span><img src="{{ asset($methodologies->details8) }}" alt="" srcset=""></span>
+                            <h6 class='mt-3'>{{ $methodologies->details7 }}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 ">
+                    <div class="training-footer-item p-3 py-5">
 
-                                                    {{-- Optional: Empty stars --}}
-                                                    {{-- @for ($i = $testimonial->reviewer_star_rate; $i < 5; $i++)
-                                                        <img src="{{ asset('front-assets/img/icons/star-empty.png') }}" width="15" height="15" alt="star">
-                                                    @endfor --}}
-                                                </li>
-                                            </ul>
-                                        </a>
+                        <div class="training-footer-item-box d-flex flex-column align-items-center">
+                            <span><img src="{{ asset($methodologies->details10) }}" alt="" srcset=""></span>
+                            <h6 class='mt-3'>{{ $methodologies->details9 }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="training-footer-item p-3 py-5">
+
+                        <div class="training-footer-item-box d-flex flex-column align-items-center">
+                            <span><img src="{{ asset($methodologies->details12) }}" alt="" srcset=""></span>
+                            <h6 class='mt-3'>{{ $methodologies->details11 }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+@endisset
+<!-- ABOUT US AREA END -->
+
+<!-- PRODUCT AREA START (product-item-3) -->
+<div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-area ltn__section-title-2 text-center">
+                    <h1 class="section-title">Top Ranked Courses We Offer</h1>
+                    <h6>Your Growth, Our Mission</h6>
+                </div>
+            </div>
+        </div>
+        <style>
+
+        </style>
+        <div class="row ltn__tab-product-slider-one-active--- slick-arrow-1">
+            <div class="row">
+                @isset($rounds)
+                @foreach ($rounds as $round)
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="ltn__product-item ltn__product-item-3 text-left">
+                        <div class="product-img">
+                            <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
+                                <img height="100%"
+                                    src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
+                                    alt="=" {{ $round->country->country_en_name }}"></a>
+
+                            <div class="course-badge">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class='white-color'>
+                                            {{ Str::limit($round->course->course_en_name, 70, '') }}</h3>
                                     </div>
-                                    <h3 class="ltn__blog-author fnt-siz-sm">
-                                        {{ $testimonial->reviewer_text }}
-                                    </h3>
+
+                                    <div class="col-12 row">
+                                        <?php $date = date_create($round->round_start_date); ?>
+
+                                        <div class="col-10 white-color bottom-title">
+                                            {{ $round->venue->venue_en_name }} -
+                                            {{ $round->country->country_en_name }} |
+                                            {{ date_format($date, 'd M, Y') }}
+                                        </div>
+                                        <div class="col-2 mb-2">
+                                            <span class="icon-arrow">
+                                                <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
+                                                        class="fa fa-arrow-right white-color"></i></a>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                </div>
+                @endforeach
+                @endisset
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 text-center">
+
+                <a href="{{ route('course-search') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">LOAD
+                    MORE</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- PRODUCT AREA END -->
+
+<!-- BLOG AREA START (blog-3) -->
+<div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
+                <h1>Proud to <br> Serve</h1>
+            </div>
+
+            <div
+                class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
+                @isset($clients)
+                @foreach ($clients as $client)
+                <div class="col row justify-content-center align-items-center">
+                    <img src="{{ asset('uploads/clients') }}/{{ $client->client_logo_url }}" alt="" srcset="">
+                </div>
+                @endforeach
+                @endisset
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- BLOG AREA START (blog-3) -->
+<div class="ltn__blog-area blog-of-Testimonials pt-5 pb-50">
+    <div class="container">
+        <div class="row">
+            @isset($homeTestimonials)
+            <div class="col-lg-12">
+                <div class="section-title-area ltn__section-title-2 text-center row">
+                    <h1 class="section-title white-color--- col-12">{{ $homeTestimonials->small_description }}</h1>
+                    <span class="px-5 col-12 col-md-8 offset-md-2 fnt-siz-sm ">{{ $homeTestimonials->details }}</span>
+                </div>
+            </div>
+            @endisset
+
+        </div>
+        <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
+            <!-- Blog Item -->
+            @isset($testimonials)
+            @foreach ($testimonials as $testimonial)
+            <div class="col-lg-12">
+                <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
+                    <div class="ltn__blog-brief bg-light-blue">
+                        <div class="ltn__blog-meta bg-light-blue">
+                            <a href="{{ route('testimonials') }}">
+                                <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
+                                    <li class="ltn__blog-title">
+                                        <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
+                                    </li>
+                                    <li class="ltn__blog-tags d-flex">
+                                        {{-- Filled stars --}}
+                                        @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
+                                            <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
+                                                height="15" alt="star">
+                                            @endfor
+
+                                            {{-- Optional: Empty stars --}}
+                                            {{-- @for ($i = $testimonial->reviewer_star_rate; $i < 5; $i++) <img
+                                                src="{{ asset('front-assets/img/icons/star-empty.png') }}" width="15"
+                                                height="15" alt="star">
+                                                @endfor --}}
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                        <h3 class="ltn__blog-author fnt-siz-sm">
+                            {{ $testimonial->reviewer_text }}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            @endisset
+        </div>
+    </div>
+</div>
+<!-- BLOG AREA END -->
+<!-- BLOG AREA START (blog-3) -->
+
+<div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
+                <h1>BTS <br>Partners </h1>
+            </div>
+
+            <div
+                class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
+                @isset($partners)
+                @foreach ($partners as $partner)
+                <div class="col row justify-content-center align-items-center">
+                    <img src="{{ asset('uploads/partners') }}/{{ $partner->partner_logo_url }}" alt="" srcset="">
+                </div>
+                @endforeach
                 @endisset
             </div>
         </div>
     </div>
-    <!-- BLOG AREA END -->
-    <!-- BLOG AREA START (blog-3) -->
+</div>
 
-    <div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
-        <div class="container">
-            <div class="row">
-                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
-                    <h1>BTS <br>Partners </h1>
-                </div>
+<!-- COUNTER UP AREA START -->
+<div class="container">
+    @isset($homeAccreditation)
+    <div class="ltn__counterup-area bg-image pt-115 pb-70" data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
+        <div class="row justify-content-center text-center">
+            <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
+            </h1>
+            <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
+            <div class="col-12 text-center pt-3">
 
-                <div
-                    class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
-                    @isset($partners)
-                        @foreach ($partners as $partner)
-                            <div class="col row justify-content-center align-items-center">
-                                <img src="{{ asset('uploads/partners') }}/{{ $partner->partner_logo_url }}" alt=""
-                                    srcset="">
-                            </div>
-                        @endforeach
-                    @endisset
-                </div>
+                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $homeAccreditation->details2 }}</a>
             </div>
         </div>
-    </div>
-
-    <!-- COUNTER UP AREA START -->
-    <div class="container">
-        @isset($homeAccreditation)
-            <div class="ltn__counterup-area bg-image pt-115 pb-70"
-                data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
-                <div class="row justify-content-center text-center">
-                    <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
-                    </h1>
-                    <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
-                    <div class="col-12 text-center pt-3">
-
-                        <a href=""
-                            class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $homeAccreditation->details2 }}</a>
-                    </div>
-                </div>
-
-            </div>
-        @endisset
 
     </div>
+    @endisset
 
-    <!-- COUNTER UP AREA END -->
-    <!-- BLOG AREA END -->
+</div>
+
+<!-- COUNTER UP AREA END -->
+<!-- BLOG AREA END -->
 @endsection
 @section('script')
 <script>
@@ -611,6 +614,6 @@ if (categorySelect && !categorySelect.tomselect) {
             });
         }
     });
-    </script>
+</script>
 
 @endsection
