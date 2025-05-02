@@ -57,12 +57,12 @@ class SpeakerController extends Controller
 
         // Delete files if they exist
         if ($cvPath) {
-            $cv_file_path = public_path('storage/' . $cvPath);
+            $cv_file_path = public_path($cvPath);
             File::delete($cv_file_path);
         }
 
         if ($docPath) {
-            $doc_file_path = public_path('storage/' . $docPath);
+            $doc_file_path = public_path($docPath);
             File::delete($doc_file_path);
         }
 
