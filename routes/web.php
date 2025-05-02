@@ -62,9 +62,6 @@ Route::prefix('/')->group(function () {
 });
 Route::post('/sendMessage',  [IndexController::class, 'sendMessage']);
 Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter']);
-    Route::get('join-us' , function(){
-        return view('front-design-pages.join-team');
-    })->name('join-us');
 
     Route::get('about-bts' , [AboutBtsController::class , 'index'])->name('about-bts');
     Route::get('service' , [ServiceController::class , 'index'])->name('service');
@@ -103,16 +100,27 @@ Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'regi
 Route::post('registerApplicantRounds',[CourseSearchController::class, 'registerApplicantRounds']);
 Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);
 
-    Route::get('join-us' , [JobApplicationController::class, 'showForm'])->name('join-us');
+    // Route::get('join-us' , [JobApplicationController::class, 'showForm'])->name('join-us');
 
-    Route::get('join-us-speaker-page' , function(){
-        return view('front-design-pages.join-us-speaker');
-    })->name('join-us-speaker-page');
+    Route::get('join-us-speaker-page' , [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join-us-speaker-page');
 
     Route::get('join-us' , function(){
         return view('front-design-pages.join-us');
     })->name('join-us');
 
+    Route::get('join-team' , function(){
+        return view('front-design-pages.join-team');
+    })->name('join-team');
+
+    // Add the fetch venues route here
+    Route::get('fetch/venues', [VenueController::class, 'fetchVenues'])->name('fetch.venues');
+// Career application routes
+Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
+Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
+
+// Speaker application routes
+Route::get('/join-us-speaker', [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join.speaker');
+Route::post('/speaker-application', [App\Http\Controllers\Front\SpeakerController::class, 'store'])->name('speaker.application.store');
 
 });
 
@@ -199,13 +207,6 @@ Route::resource('offer', OffersController::class);
 
 Route::resource('dawnload-center', DownloadCenterAdminController::class);
 
-// Career application routes
-Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
-Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
-
-// Speaker application routes
-Route::get('/join-us-speaker', [SpeakerController::class, 'showForm'])->name('join.speaker');
-Route::post('/speaker-application', [SpeakerController::class, 'store'])->name('speaker.application.store');
 
 });
 

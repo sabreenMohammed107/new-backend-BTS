@@ -25,7 +25,24 @@ class SpeakerController extends Controller
         $rows = $this->object::orderBy("created_at", "Desc")->get();
         return view("admin.{$this->view}.index", compact('rows'));
     }
+    public function download($type, $id)
+    {
+        $speaker = $this->object::findOrFail($id);
 
+        if ($type == 'cv' && $speaker->cv_path) {
+            $path = public_path(ltrim($speaker->cv_path, '/'));
+            if (file_exists($path)) {
+                return response()->download($path);
+            }
+        } elseif ($type == 'doc' && $speaker->doc_path) {
+            $path = public_path(ltrim($speaker->doc_path, '/'));
+            if (file_exists($path)) {
+                return response()->download($path);
+            }
+        }
+
+        return back()->with('error', 'File not found.');
+    }
     public function show($id)
     {
         $row = $this->object::where('id', '=', $id)->first();

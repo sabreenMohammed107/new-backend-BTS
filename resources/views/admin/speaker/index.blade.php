@@ -109,7 +109,7 @@
 
                             <!--begin::Country-->
                             <td>
-                                <span class="fw-bolder">{{ $row->country ?? 'N/A' }}</span>
+                                <span class="fw-bolder">{{ $row->country->country_en_name ?? 'N/A' }}</span>
                             </td>
                             <!--end::Country-->
 
