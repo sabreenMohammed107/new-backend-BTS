@@ -163,30 +163,23 @@ class CourseSearchController extends Controller
         $objectCourses = Course::orderBy("course_en_name", "asc")->get();
         return view('front-design-pages.single-course', compact('objectCourses', 'venues', 'countries', 'course', 'rounds', 'specfic_round', 'related_courses', 'saluts'));
     }
-    //form in tabs in single course
-    public function registerApplicants(Request $request)
-    {
-        $request->validate([
 
-            'captcha' => 'required|captcha'
-        ]);
-        $data = $request->all();
-        $quick = Applicant::create($data);
-        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
-
-        //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
-
-        // if (!$request->get('courseBrochure')) {
-            return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-        // }
-    }
 
     public function registerApplicantsDawnload(Request $request)
     {
-        $request->validate([
-
-            'captcha' => 'required|captcha'
+        $validator = Validator::make($request->all(), [
+            'captcha' => 'required'
         ]);
+
+        $validator->after(function ($validator) use ($request) {
+            if (!captcha_check($request->input('captcha'))) {
+                $validator->errors()->add('captcha', 'invalid Captcha');
+            }
+        });
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
         $data = $request->all();
         $dawnload = Applicant::create($data);
 
@@ -208,9 +201,34 @@ class CourseSearchController extends Controller
         $venues = Venue::all();
         $countries = Country::all();
         $saluts = ApplicantSalut::all();
-        return view('web.courses.requestInHouse', compact('course', 'countries', 'venues', 'saluts', 'rounds'))->with('message', 'Thanks; your request has been submitted successfully !');
+        return view('front-design-pages.courses.requestInHouse', compact('course', 'countries', 'venues', 'saluts', 'rounds'))->with('message', 'Thanks; your request has been submitted successfully !');
     }
+ //form in tabs in single course inhouse
+ public function registerApplicants(Request $request)
+ {
+    $validator = Validator::make($request->all(), [
+        'captcha' => 'required'
+    ]);
 
+    $validator->after(function ($validator) use ($request) {
+        if (!captcha_check($request->input('captcha'))) {
+            $validator->errors()->add('captcha', 'invalid Captcha');
+        }
+    });
+
+    if ($validator->fails()) {
+        return back()->withErrors($validator)->withInput();
+    }
+     $data = $request->all();
+     $quick = Applicant::create($data);
+     $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+     //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+
+     // if (!$request->get('courseBrochure')) {
+         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+     // }
+ }
 
     public function registerCourse($round_id)
     {
@@ -233,7 +251,7 @@ class CourseSearchController extends Controller
 
         $validator->after(function ($validator) use ($request) {
             if (!captcha_check($request->input('captcha'))) {
-                $validator->errors()->add('captcha', 'كلمة التحقق غير صحيحة.');
+                $validator->errors()->add('captcha', 'invalid Captcha');
             }
         });
 

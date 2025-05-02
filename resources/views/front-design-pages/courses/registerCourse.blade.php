@@ -293,19 +293,27 @@
 
                 <h3 class="mb-4">Popular Courses</h3>
                 <div class="row popular-courses">
+                    @isset($rounds)
+                        @foreach ( $rounds as $round )
+
                     <div class="col-12 col-sm-6">
                         <div class="ltn__product-item ltn__product-item-3 text-left">
                             <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
+                                <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
+                                        src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
                                 <div class="course-badge">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
+                                            <h3 class='white-color'>{{ $round->course->course_en_name ?? ''}}</h3>
                                         </div>
 
                                         <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
+                                            <?php $date = date_create($round->round_start_date); ?>
+
+                                            <div class="col-10 white-color bottom-title">
+                                                {{ $round->venue->venue_en_name }} -
+                                                {{ $round->country->country_en_name }} |
+                                                {{ date_format($date, 'd M, Y') }}
                                             </div>
                                             <div class="col-2 mb-2">
                                                 <span class="icon-arrow">
@@ -318,181 +326,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
-                                <a class="img-container" href=""><img height="100%"
-                                        src="{{ asset('front-assets/img/bg/bb.png') }}" alt="#"></a>
-                                <div class="course-badge">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color'>Advanced Drilling Best Practices</h3>
-                                        </div>
-
-                                        <div class="col-12 row">
-                                            <div class="col-10 white-color bottom-title">Dubai - UAE | 24 Nov, 2024
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endisset
                 </div>
 
 
