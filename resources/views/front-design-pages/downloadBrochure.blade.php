@@ -3,7 +3,11 @@
 
 @section('page-id' , 'single-course-page')
 @section('page-content')
-
+<style>
+    .input-hidden .ts-control > input {
+    position: relative !important;
+}
+    </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
       <!-- <div class="share-icon">
@@ -40,16 +44,16 @@
                     <div class="form-group col-lg-12 col-md-12">
                         <label>Your Country:</label>
                     </div>
+
                     <div class="form-group col-lg-12 col-md-12">
-                        <select class="form-control" name="country_id" required>
-                            <option value="">Select Country</option>
+                            <select id="country_id" name="country_id" placeholder="Select a Country...">
+                            <option value=""></option>
                             @foreach ($countries as $country)
-                                <option value="{{ $country->id }}" {{ old('country_id') == $country->id ? 'selected' : '' }}>
-                                    {{ $country->country_en_name }}
-                                </option>
+                                <option value='{{ $country->id }}'
+                                    @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
+                                    {{ $country->country_en_name }}</option>
                             @endforeach
                         </select>
-
                     </div>
 
                     <div class="form-group col-lg-12 col-md-12">
@@ -152,16 +156,66 @@
     $(document).on('click', '#alertCloseDetails', function () {
         $('#alertDivDetails').fadeOut();
     });
-    $(document).ready(function() {
-    // تأكد من تفعيل المكتبة الخاصة بالـ nice-select
-    $('select').niceSelect();
 
-    // التحقق من التغيير في الـ nice-select
-    $(".nice-select").on("change", function() {
-        var selectedValue = $(this).find('input').val();
-        $('select[name="country_id"]').val(selectedValue);
+    document.addEventListener('DOMContentLoaded', function () {
+        // Category
+        var categorySelect = document.getElementById('country_id');
+if (categorySelect && !categorySelect.tomselect) {
+    new TomSelect(categorySelect, {
+        create: false,
+        placeholder: "Select a country",
+        allowEmptyOption: true,
+        sortField: { field: "text", direction: "asc" }
+    });
+}
+
+ });
+ $(document).ready(function () {
+    $('#downloadButton').click(function () {
+        var data = $('#downloadForm').serialize();
+        var _token = $('input[name="_token"]').val();
+        var courseBrochure = $('input[name="courseBrochure"]').val();
+        var fileName = $('#fileName').val();
+        var email = $('#emailAddrees').val();
+
+        var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        var freeRegex = /@(gmail\.com|hotmail\.com|yahoo\.com)$/i;
+
+        if (email.match(emailRegex)) {
+            if (!email.match(freeRegex)) {
+                if ($('input[name="agree"]:checked').length > 0) {
+                    $.ajax({
+                        url: "{{route('registerApplicantsDawnload')}}",
+                        method: "POST",
+                        data: data,
+                        success: function (result) {
+                            var link = document.createElement("a");
+                            link.download = fileName;
+                            link.href = courseBrochure;
+                            link.click();
+                        },
+                    });
+                    $('#alertDivinfo').fadeTo(2000, 500).slideUp(500, function () {
+                        $("#alertDivinfo").slideUp(3000);
+                    });
+                } else {
+                    $('#alertDivDanger').fadeTo(2000, 500).slideUp(500, function () {
+                        $("#alertDivDanger").slideUp(3000);
+                    });
+                }
+            } else {
+                $('#alertDivValid').fadeTo(2000, 500).slideUp(500, function () {
+                    $("#alertDivValid").slideUp(3000);
+                });
+            }
+        } else {
+            $('#alertDivValid').fadeTo(2000, 500).slideUp(500, function () {
+                $("#alertDivValid").slideUp(3000);
+            });
+        }
     });
 });
+
 
 </script>
 @endsection

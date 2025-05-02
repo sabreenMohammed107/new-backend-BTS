@@ -95,6 +95,8 @@ Route::prefix('/')->group(function () {
     });
     // Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'registerApplicantsDawnload'])->name('registerApplicantsDawnload');
     Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);
+    Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'registerApplicantsDawnload'])->name('registerApplicantsDawnload');
+
     //register in house course , post , get
     Route::get('/requestInHouse/{course_id}', [CourseSearchController::class, 'requestInHouse']);
     Route::post('/registerApplicants', [CourseSearchController::class, 'registerApplicants'])->name('registerApplicants');
