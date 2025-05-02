@@ -15,7 +15,8 @@ use App\Models\RelatedCourses;
 use App\Models\Round;
 use App\Models\Venue; // تأكد من أنك قد قمت بإضافة هذه السطر
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Validator;
+use Mews\Captcha\Facades\Captcha;
 class CourseSearchController extends Controller
 {
     protected $orderByColumn = 'courses.course_en_name'; // الترتيب الافتراضي على اسم الدورة
@@ -225,10 +226,20 @@ class CourseSearchController extends Controller
 
     public function registerApplicantRounds(Request $request)
     {
-        $request->validate([
-
-            'captcha' => 'required|captcha'
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'captcha' => 'required'
         ]);
+
+        $validator->after(function ($validator) use ($request) {
+            if (!captcha_check($request->input('captcha'))) {
+                $validator->errors()->add('captcha', 'كلمة التحقق غير صحيحة.');
+            }
+        });
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
         $applicant_data['salut_id'] = $request->get('salut_id');
         $applicant_data['name'] = $request->get('name');
         $applicant_data['country_id'] = $request->get('country_id');

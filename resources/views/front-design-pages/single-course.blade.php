@@ -259,12 +259,14 @@
         <div class="col-12 col-lg-6">
           <div class="row action-btns mb-4">
 
-            <div class="col-12 d-flex flex-wrap justify-content-between">
+            <div class="col-12 d-flex flex-wrap justify-content-end gap-2">
                 <a href='{{url ("/downloadBrochure/$course->id") }}' class=" btn-single-course-option">
                     <i class="fas fa-download mr-2"></i> Download Brochure</a>
               {{-- <button class=" btn-single-course-option"><i class="fas fa-download mr-2"></i>Download Brochure</button> --}}
-              <button class=" btn-single-course-option">Request Online Proposal</button>
-              <button class=" btn-single-course-option">Request In house Proposal</button>
+              {{-- <button class=" btn-single-course-option">Request Online Proposal</button> --}}
+              {{-- <button class=" btn-single-course-option">Request In house Proposal</button> --}}
+              <a href='{{url ("/requestInHouse/$course->id") }}' class=" btn-single-course-option">
+                Request In house Proposal</a>
             </div>
           </div>
           <!-- Course Rounds Table -->
@@ -306,7 +308,6 @@
             </div>
             <p class="pricing-note">Prices doesn't Include VAT</p>
           </div>
-
           <div class="social-single-course">
             <div class="upcoming-date-card">
               <h2 class="upcoming-date-title">UpComing Date</h2>
@@ -315,17 +316,19 @@
               <div class="info-row">
                 <div class="info-label">Start date</div>
                 <div class="info-value">
-                    {{ $specfic_round && $specfic_round->round_start_date ? \Carbon\Carbon::parse($specfic_round->round_start_date)->format('d-m-Y') : 'N/A' }}
+                              {{ $specfic_round && $specfic_round->round_start_date ? \Carbon\Carbon::parse($specfic_round->round_start_date)->format('d-m-Y') : 'N/A' }}
                 </div>
+              </div>
               <div class="info-row">
                 <div class="info-label">End date</div>
-              <div class="info-value">
-                {{ $specfic_round && $specfic_round->round_end_date ? \Carbon\Carbon::parse($specfic_round->round_end_date)->format('d-m-Y') : 'N/A' }}
-            </div>
+                <div class="info-value">                {{ $specfic_round && $specfic_round->round_end_date ? \Carbon\Carbon::parse($specfic_round->round_end_date)->format('d-m-Y') : 'N/A' }}
+                </div>
+              </div>
+
               <h3 class="section-title">Venue</h3>
               <div class="info-row">
                 <div class="info-label">Country</div>
-                <div class="info-value"> {{ $specfic_round->country->country_en_name ??'' }}</div>
+                <div class="info-value">{{ $specfic_round->country->country_en_name ??'' }}</div>
               </div>
               <div class="info-row">
                 <div class="info-label">Venue</div>
@@ -334,11 +337,10 @@
 
               <div class="row action-row mt-4 align-items-center">
                 <div class="col-md-6 col-12">
-                    @isset($specfic_round)
-                  <button class="btn btn-primary register-btn">
-                                     <a href='{{url ("/registerCourse/$specfic_round->id") }}' style="padding:2px 3px;color:#fff"> Register Now</a>
-                  </button>
-                  @endisset
+
+                    <a href='{{url ("/registerCourse/$specfic_round->id") }}' class="btn btn-primary register-btn">
+                        Register Now</a>
+                  {{-- <button class="btn btn-primary register-btn">Register Now</button> --}}
                 </div>
                 <div class="col-md-6 col-12">
                   <div class="social-buttons">
@@ -365,11 +367,9 @@
               </div>
             </div>
           </div>
-        </div>
-
 
       </div>
-
+    </div>
       <div class="row">
         <div class="container main-course-title-and-details">
           <span>Technical Training</span>
