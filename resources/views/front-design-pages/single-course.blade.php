@@ -338,8 +338,13 @@
               <div class="row action-row mt-4 align-items-center">
                 <div class="col-md-6 col-12">
 
-                    <a href='{{url ("/registerCourse/$specfic_round->id") }}' class="btn btn-primary register-btn">
-                        Register Now</a>
+                    @if($specfic_round)
+                    <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary register-btn">
+                        Register
+                    </a>
+                @else
+                    <p>No round available for registration.</p>
+                @endif
                   {{-- <button class="btn btn-primary register-btn">Register Now</button> --}}
                 </div>
                 <div class="col-md-6 col-12">
