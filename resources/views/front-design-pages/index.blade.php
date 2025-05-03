@@ -73,12 +73,12 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
     }
 
     .card-item-services:hover::before {
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.4);
     }
 
     .card-item-services:hover {
@@ -633,7 +633,8 @@
     .ltn__product-item-3 .product-img.shine::before {
         background: linear-gradient(to right,
                 rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.3) 100%);
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 100%);
         content: "";
         display: block;
         height: 100%;
@@ -647,10 +648,13 @@
 
     .ltn__product-item-3 .product-img.shine:hover::before,
     .ltn__product-item-3 .product-img.shine:focus::before {
-        animation: shine 0.85s;
+        animation: shine 4s ease-in-out;
     }
 
     @keyframes shine {
+        0% {
+            left: -75%;
+        }
         100% {
             left: 125%;
         }

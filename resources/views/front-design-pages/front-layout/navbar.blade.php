@@ -72,10 +72,10 @@
 <!-- Utilize Mobile Menu Start -->
 <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
     <div class="ltn__utilize-menu-inner ltn__scrollbar">
-        <div class="ltn__utilize-menu-head">
+        <div class="ltn__utilize-menu-head" style="justify-content: center;">
 
             <div class="site-logo">
-                <a href="{{ url('/') }}"><img width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
+                <a href="{{ url('/') }}"><img width="135" src="{{ asset('img/logo/250.jpg') }}" alt="Logo"></a>
             </div>
             <button class="ltn__utilize-close">×</button>
         </div>
