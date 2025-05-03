@@ -10,6 +10,209 @@
     #slider-3-section .slick-track {
         height: 100vh !important;
     }
+
+    /* Social Media Icons Hover Effects */
+    .social-side-links .face a,
+    .social-side-links .linkedin a,
+    .social-side-links .xtw a,
+    .social-side-links .insta a {
+        transition: all 0.3s ease;
+        display: inline-block;
+        color: #e7eaee;
+        /* Default color for all icons */
+    }
+
+    .social-side-links .face .fa-facebook-f:hover {
+        color: #1877f2 !important;
+        /* Facebook blue */
+        transform: translateY(-3px);
+    }
+
+    .social-side-links .linkedin .fa-linkedin-in:hover {
+        color: #0077b5 !important;
+        /* LinkedIn blue */
+        transform: translateY(-3px);
+    }
+
+    .social-side-links .xtw svg path {
+        fill: #e7eaee;
+        /* Default color */
+        transition: fill 0.3s ease;
+    }
+
+    .social-side-links .xtw:hover svg path {
+        fill: #1da1f2 !important;
+        /* Twitter blue */
+    }
+
+    .social-side-links .xtw:hover {
+        transform: translateY(-3px);
+    }
+
+    .social-side-links .insta .fa-instagram:hover {
+        color: #e4405f !important;
+        /* Instagram pink */
+        transform: translateY(-3px);
+    }
+
+    /* Service Cards Hover Effects */
+    .card-item-services {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-item-services::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .card-item-services:hover::before {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .card-item-services:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-service-bottom-footer {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-service-bottom-footer h3 {
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .card-item-services:hover .card-service-bottom-footer h3 {
+        transform: scale(1.05);
+    }
+
+
+
+    /* Add a smooth transition for the text */
+    .training-footer-item h6 {
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    .training-footer-item:hover h6 {
+        transform: translateY(-5px);
+        color: #007bff;
+        /* You can change this color to match your theme */
+    }
+
+    /* Ensure the image container doesn't overflow */
+    .training-footer-item-box {
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    /* About Us Images Shine Effect */
+    .about-us-info-wrap img,
+    .about-us-img-wrap img {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .about-us-info-wrap img::before,
+    .about-us-img-wrap img::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
+    }
+
+    .about-us-info-wrap img:hover::before,
+    .about-us-img-wrap img:hover::before {
+        left: 100%;
+    }
+
+    .about-us-info-wrap img:hover,
+    .about-us-img-wrap img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Testimonial Hover Effects */
+    .ltn__blog-item-3 {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .ltn__blog-item-3:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .ltn__blog-item-3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.05));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .ltn__blog-item-3:hover::before {
+        opacity: 1;
+    }
+
+    .ltn__blog-title h1 {
+        transition: color 0.3s ease;
+    }
+
+    .ltn__blog-item-3:hover .ltn__blog-title h1 {
+        color: #007bff;
+    }
+
+    .ltn__blog-author {
+        transition: transform 0.3s ease;
+    }
+
+    .ltn__blog-item-3:hover .ltn__blog-author {
+        transform: translateX(5px);
+    }
+
+    .ltn__blog-tags img {
+        transition: transform 0.3s ease;
+    }
+
+    .ltn__blog-item-3:hover .ltn__blog-tags img {
+        transform: scale(1.2);
+    }
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
@@ -394,7 +597,65 @@
 </div>
 @endisset
 <!-- ABOUT US AREA END -->
+<style>
+    /* Image container styles */
+    .ltn__product-item-3 .product-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        height: 12rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .ltn__product-item-3 .product-img .img-container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .ltn__product-item-3 .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    /* Shine hover effect */
+    .ltn__product-item-3 .product-img.shine {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ltn__product-item-3 .product-img.shine::before {
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 100%);
+        content: "";
+        display: block;
+        height: 100%;
+        left: -75%;
+        position: absolute;
+        top: 0;
+        transform: skewX(-25deg);
+        width: 50%;
+        z-index: 2;
+    }
+
+    .ltn__product-item-3 .product-img.shine:hover::before,
+    .ltn__product-item-3 .product-img.shine:focus::before {
+        animation: shine 0.85s;
+    }
+
+    @keyframes shine {
+        100% {
+            left: 125%;
+        }
+    }
+</style>
 <!-- PRODUCT AREA START (product-item-3) -->
 <div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
     <div class="container">
@@ -406,16 +667,13 @@
                 </div>
             </div>
         </div>
-        <style>
-
-        </style>
         <div class="row ltn__tab-product-slider-one-active--- slick-arrow-1">
             <div class="row">
                 @isset($rounds)
                 @foreach ($rounds as $round)
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="ltn__product-item ltn__product-item-3 text-left">
-                        <div class="product-img">
+                        <div class="product-img shine">
                             <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
                                 <img height="100%"
                                     src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
@@ -511,7 +769,7 @@
                 <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
                     <div class="ltn__blog-brief bg-light-blue">
                         <div class="ltn__blog-meta bg-light-blue">
-                            <a href="{{ route('testimonials') }}">
+                            <a href="{{ route('testimonials') }}" class="text-decoration-none">
                                 <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title">
                                         <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
@@ -522,12 +780,6 @@
                                             <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
                                                 height="15" alt="star">
                                             @endfor
-
-                                            {{-- Optional: Empty stars --}}
-                                            {{-- @for ($i = $testimonial->reviewer_star_rate; $i < 5; $i++) <img
-                                                src="{{ asset('front-assets/img/icons/star-empty.png') }}" width="15"
-                                                height="15" alt="star">
-                                                @endfor --}}
                                     </li>
                                 </ul>
                             </a>
@@ -570,6 +822,90 @@
 <!-- COUNTER UP AREA START -->
 <div class="container">
     @isset($homeAccreditation)
+    <style>
+        /* Shining Hover Effect for Accreditation Section */
+
+        /* Base styling for the button */
+        .theme-btn-1.btn-effect-1 {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* The shining effect */
+        .theme-btn-1.btn-effect-1:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            transition: all 0.65s ease;
+        }
+
+        /* Animation on hover */
+        .theme-btn-1.btn-effect-1:hover:before {
+            left: 120%;
+            transition: all 0.65s ease;
+        }
+
+        /* Optional: Add some extra styling when hovering */
+        .theme-btn-1.btn-effect-1:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Apply shining effect to the entire section */
+        .ltn__counterup-area {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* The shining effect for the entire section */
+        .ltn__counterup-area:before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 50%;
+            height: 300%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+            pointer-events: none;
+        }
+
+        /* Keyframes for the shine animation */
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Extra styling for enhancing section appearance on hover */
+        .ltn__counterup-area:hover .wh-txt-clr {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .ltn__counterup-area:hover .g-clr {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+    </style>
     <div class="ltn__counterup-area bg-image pt-115 pb-70" data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
         <div class="row justify-content-center text-center">
             <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
