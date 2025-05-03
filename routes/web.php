@@ -71,7 +71,7 @@ Route::prefix('/')->group(function () {
 
 
     Route::get('no-result', function () {
-        return view('front-design-pages.course-no-result');
+        return view('front-design-pages.cant-found-my-course');
     })->name('course-no-result');
 
 
@@ -115,26 +115,25 @@ Route::prefix('/')->group(function () {
     Route::get('join-us-speaker-page', function () {
         return view('front-design-pages.join-us-speaker');
     })->name('join-us-speaker-page');
-    Route::get('join-us-speaker-page' , [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join-us-speaker-page');
+    Route::get('join-us-speaker-page', [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join-us-speaker-page');
 
     Route::get('join-us', function () {
         return view('front-design-pages.join-us');
     })->name('join-us');
 
-    Route::get('join-team' , function(){
+    Route::get('join-team', function () {
         return view('front-design-pages.join-team');
     })->name('join-team');
 
     // Add the fetch venues route here
     Route::get('fetch/venues', [VenueController::class, 'fetchVenues'])->name('fetch.venues');
-// Career application routes
-Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
-Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
+    // Career application routes
+    Route::get('/join-our-team', [JobApplicationController::class, 'showForm'])->name('join.team');
+    Route::post('/job-application', [JobApplicationController::class, 'store'])->name('job.application.store');
 
-// Speaker application routes
-Route::get('/join-us-speaker', [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join.speaker');
-Route::post('/speaker-application', [App\Http\Controllers\Front\SpeakerController::class, 'store'])->name('speaker.application.store');
-
+    // Speaker application routes
+    Route::get('/join-us-speaker', [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join.speaker');
+    Route::post('/speaker-application', [App\Http\Controllers\Front\SpeakerController::class, 'store'])->name('speaker.application.store');
 });
 
 Route::get('/dashboard', function () {
@@ -218,7 +217,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('offer', OffersController::class);
     Route::resource('dawnload-center', DownloadCenterAdminController::class);
-
 });
 
 require __DIR__ . '/auth.php';
