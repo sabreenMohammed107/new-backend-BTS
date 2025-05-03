@@ -32,8 +32,8 @@
     <!-- PRODUCT DETAILS AREA START -->
     <div class="ltn__product-area ltn__product-gutter mb-120 mt-50">
       <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-3">
+          <div class="row d-flex flex-column flex-xl-row">
+            <div class="col-xl-3 order-xl-1 order-2">
               <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar">
                   <!-- Category Widget -->
                   <div class=" widget main-sidebar-widget">
@@ -160,7 +160,7 @@
               </aside>
             </div>
 
-            <div class="col-xl-9">
+            <div class="col-xl-9 order-xl-2 order-1">
                 <div class="ltn__search-course-breadcrumb-area">
                     <div class="row">
                       <h3>Results / <span>5405</span></h3>
@@ -178,10 +178,7 @@
                                             <a href="#"><img src="{{ asset('front-assets/img/product/card1.png') }}" alt="#"></a>
                                         </div>
                                         <div class="product-info">
-                                          <style>
 
-
-                                          </style>
                                             <div class="product-ratting">
                                                 <ul class="row flags">
                                                     <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>

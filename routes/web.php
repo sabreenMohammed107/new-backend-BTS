@@ -70,6 +70,11 @@ Route::prefix('/')->group(function () {
     Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
 
+    Route::get('no-result', function () {
+        return view('front-design-pages.course-no-result');
+    })->name('course-no-result');
+
+
     Route::get('accreditations', function () {
         return view('front-design-pages.Accreditations');
     })->name('accreditations');
