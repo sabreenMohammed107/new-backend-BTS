@@ -1,5 +1,10 @@
 @include('front-design-pages.front-layout.header')
 
 @yield('page-content')
-@include('front-design-pages.front-layout.contact')
+
+@if (!Request::is('contact-us'))
+    @include('front-design-pages.front-layout.contact')
+@endif
+
 @include('front-design-pages.front-layout.footer')
+

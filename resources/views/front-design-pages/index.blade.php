@@ -733,14 +733,14 @@
     <div class="container">
         <div class="row">
             <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
-                <h1>Proud to <br> Serve</h1>
+                <h1>PROUD<br>TO SERVE</h1>
             </div>
 
             <div
                 class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
                 @isset($clients)
                 @foreach ($clients as $client)
-                <div class="col row justify-content-center align-items-center">
+                <div class="col row justify-content-center align-items-center mx-2">
                     <img src="{{ asset('uploads/clients') }}/{{ $client->client_logo_url }}" alt="" srcset="">
                 </div>
                 @endforeach
@@ -806,14 +806,14 @@
     <div class="container">
         <div class="row">
             <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
-                <h1>BTS <br>Partners </h1>
+                <h1>BTS <br>PARTNERS</h1>
             </div>
 
             <div
                 class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
                 @isset($partners)
                 @foreach ($partners as $partner)
-                <div class="col row justify-content-center align-items-center">
+                <div class="col row justify-content-center align-items-center mx-2">
                     <img src="{{ asset('uploads/partners') }}/{{ $partner->partner_logo_url }}" alt="" srcset="">
                 </div>
                 @endforeach

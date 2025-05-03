@@ -10,7 +10,7 @@
                     style="background-color: #12576D;border-top-right-radius:7px;border-bottom-right-radius:7px;">
                     <div class="container-fluid">
                         <form method="get" action="{{ route('searchCourse.index') }}">
-                            <input type="text" name="search" value="{{ request('search') }}"
+                            <input type="text" id="search" name="search" value="{{ request('search') }}"
                                 placeholder="Search here...">
                             <button type="submit">
                                 <span><i class="icon-search"></i></span>
@@ -50,7 +50,7 @@
                     <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar">
                         <form method="get" action="{{ route('searchCourse.index') }}" id="courseFilterForm">
                             <!-- Category Widget -->
-                            <div class="widget main-sidebar-widget">
+                            {{-- <div class="widget main-sidebar-widget">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Fulfilled by BTS</h4>
                                 <div class="row justify-content-between">
                                     <div class="left-item-filter col-8">
@@ -58,9 +58,9 @@
                                     </div>
                                     <span class="col-4 row justify-content-center">( {{ $filtered->total() }} )</span>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Venue Filter -->
-                            <div class="widget main-sidebar-widget Venue mt-35">
+                            <div class="widget main-sidebar-widget Venue ">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Venue</h4>
                                 <div class="Venue-menu">
                                     @foreach ($venues as $venue)
@@ -77,31 +77,39 @@
                             </div>
                             <style>
                                 .category-list {
+
                                     max-height: 200px;
-                                    /* تحديد الارتفاع الأقصى للقائمة */
                                     overflow-y: auto;
-                                    /* السماح بالتمرير عموديًا إذا كانت المحتويات أكثر من المساحة المحددة */
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 10px;
                                     padding: 0;
-                                    list-style-type: none;
-                                    /* إزالة النقط من القائمة */
+                                    list-style: none;
                                 }
 
                                 .category-list li {
-                                    padding: 5px 0;
-                                    /* إضافة مسافة بين العناصر */
+                                    margin: 0;
                                 }
 
                                 .category-list a {
+                                    display: inline-block;
+                                    padding: 6px 12px;
+                                    background-color: #e9eff8;
+                                    border-radius: 6px;
+                                    font-size: 0.875rem;
+                                    color: #333;
                                     text-decoration: none;
-                                    /* إزالة التسطير من الروابط */
-                                    color: #000;
-                                    /* تحديد اللون للنص */
+                                    white-space: nowrap;
+                                    /* prevents long text from wrapping */
                                 }
 
                                 .category-list a:hover {
+                                    background-color: rgb(18, 87, 109) !important;
                                     color: #007bff;
-                                    /* تغيير اللون عند التمرير على الرابط */
+
                                 }
+
+
 
                                 .filter-chip {
                                     background-color: #f1f1f1;
@@ -125,7 +133,7 @@
                                 }
                             </style>
                             <!-- Date Filter -->
-                            <div class="date-filter main-sidebar-widget mt-35">
+                            <div class="date-filter main-sidebar-widget">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Date</h4>
                                 <div class="price_filter">
                                     <div class="date-range-container">
@@ -156,32 +164,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="widget ltn__tagcloud-widget mt-35">
+                            <div class="row filter-buttons  px-5">
+                                <button class="col-12 filter-btn" type="submit"
+                                    style="position: relative !important">Filter</button>
+
+
+                            </div>
+                            <div class="widget ltn__tagcloud-widget mt-5">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Training Categories</h4>
                                 <ul class="category-list">
                                     @foreach ($subCategories as $category)
                                         <li>
-                                            <a href="{{ route('searchCourse.index', ['category_id_search' => $category->id]) }}">
+                                            <a
+                                                href="{{ route('searchCourse.index', ['category_id_search' => $category->id]) }}">
                                                 {{ $category->category_en_name }}
                                             </a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
+                            <div class="row filter-buttons  p-5">
 
 
-
-                            <div class="row filter-buttons mt-35 p-5">
-                                <button class="col-12 filter-btn" type="submit"
-                                    style="position: relative !important">Filter</button>
-
-                                <button class="col-12 tailor-btn mt-15"
+                                <button class="col-12 tailor-btn "
                                     onclick="window.location.href='{{ route('course-search') }}';"
                                     style="position: relative !important">
                                     Tailor your course
                                 </button>
 
                             </div>
+
+
+
                         </form>
 
                     </aside>

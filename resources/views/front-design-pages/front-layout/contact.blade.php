@@ -16,33 +16,33 @@
                     <div class="row">
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-name ltn__custom-icon">
-                          <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Enter your name">
+                          <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Your name">
                         </div>
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-email ltn__custom-icon">
-                          <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Enter email address">
+                          <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Email address">
                         </div>
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-phone ltn__custom-icon">
-                          <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Enter mobile number">
+                          <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Mobile number">
                         </div>
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-email ltn__custom-icon">
-                          <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Enter message title">
+                          <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Message title">
                         </div>
                       </div>
                     </div>
                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                      <textarea name="message" placeholder="Enter message">{{ old('sender_message') }}</textarea>
+                      <textarea name="message" placeholder="Your message">{{ old('sender_message') }}</textarea>
                     </div>
 
                     <p class="form-messege mb-0 mt-20"></p>
 
-                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase w-100">SEE
-                      MORE</button>
+                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase w-100">Send
+                      Message</button>
                   </form>
                 </div>
                 @isset($branch)
@@ -84,10 +84,10 @@
                                                 <span>{{ $branch->working_hour ?? '' }}</span>
                                             </div>
                                             <div class="col-12 col-lg-6 text-end">
-                                                <a href="{{ route('contact-us') }}"
+                                                <a href="{{ $branch->office_phone }}"
                                                     class="theme-btn-1 btn btn-effect-1 text-uppercase"><img
-                                                        src="{{ asset('front-assets/img/icons/loc.png') }}"
-                                                        alt="">Location</a>
+                                                        src="{{ asset('front-assets/img/icons/phone.png') }}"
+                                                        alt="">Contact us</a>
 
                                             </div>
                                         </div>

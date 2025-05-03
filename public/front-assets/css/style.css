@@ -16405,11 +16405,14 @@ input[type="date"] {
 .course-search-page .container-fluid .row form input {
   background-color: transparent;
   border: none;
-  color: rgb(241, 241, 236);
+  /* color: rgb(241, 241, 236); */
 }
 .course-search-page .container-fluid .row form input::placeholder {
-  color: rgba(241, 241, 236, 0.532);
+  color: rgba(17, 17, 17, 0.532);
 }
+#search::placeholder {
+    color: #fff;
+  }
 .course-search-page .container-fluid .row form button {
   position: absolute;
   background-color: transparent;
@@ -16458,7 +16461,7 @@ input[type="date"] {
   .sidebar.ltn__shop-sidebar
   .main-sidebar-widget.Venue
   .Venue-menu {
-  max-height: 250px;
+  max-height: 150px;
   overflow: scroll;
 }
 
