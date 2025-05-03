@@ -16390,13 +16390,13 @@ input[type="date"] {
 .ltn__utilize-close {
   color: #fff;
 }
-.course-search-page .container-fluid .row div.col a i,
-.course-search-page .container-fluid .row div.col a {
-  color: #fff;
+.course-search-page .container-fluid.main-course-search-nav .row div.col a i,
+.course-search-page .container-fluid.main-course-search-nav .row div.col a {
+  color: #fff !important;
 }
-.course-search-page .container-fluid .row div.col a:hover i,
-.course-search-page .container-fluid .row div.col a:hover {
-  color: #376eff;
+.course-search-page .container-fluid.main-course-search-nav .row div.col a:hover i,
+.course-search-page .container-fluid.main-course-search-nav .row div.col a:hover {
+  color: #376eff !important;
 }
 
 .course-search-page .container-fluid .row form {
