@@ -13,6 +13,7 @@ use App\Models\CourseCategory;
 use App\Models\CourseSubCategory;
 use App\Models\RelatedCourses;
 use App\Models\Round;
+use App\Models\TailorCourse;
 use App\Models\Venue; // تأكد من أنك قد قمت بإضافة هذه السطر
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -298,4 +299,37 @@ class CourseSearchController extends Controller
 
         return view('front-design-pages.downloadBrochure', compact('course', 'countries'));
     }
+    public function tailorCourse(Request $request)
+    {
+        $now_date = now();
+
+        return view('front-design-pages.cant-found-my-course');
+    }
+
+    public function submitTailor(Request $request)
+    {
+       $validator = Validator::make($request->all(), [
+           'captcha' => 'required'
+       ]);
+
+       $validator->after(function ($validator) use ($request) {
+           if (!captcha_check($request->input('captcha'))) {
+               $validator->errors()->add('captcha', 'invalid Captcha');
+           }
+       });
+
+       if ($validator->fails()) {
+           return back()->withErrors($validator)->withInput();
+       }
+        $data = $request->all();
+        $quick = TailorCourse::create($data);
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+        //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+
+        // if (!$request->get('courseBrochure')) {
+            return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+        // }
+    }
+
 }

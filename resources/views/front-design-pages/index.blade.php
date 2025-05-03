@@ -351,7 +351,7 @@
                             </div>
                             {{-- Tailor your course --}}
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                <a href="{{ route('course-search') }}"
+                                <a href="{{ route('course-no-result') }}"
                                     class="form-btn-transparent w-100 text-center">Tailor your course</a>
                             </div>
 

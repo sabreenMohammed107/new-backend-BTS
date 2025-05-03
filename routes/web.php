@@ -70,9 +70,9 @@ Route::prefix('/')->group(function () {
     Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
 
-    Route::get('no-result', function () {
-        return view('front-design-pages.cant-found-my-course');
-    })->name('course-no-result');
+    Route::get('/no-result', [CourseSearchController::class, 'tailorCourse'])->name('course-no-result');
+
+    Route::post('/submitTailor', [CourseSearchController::class, 'submitTailor'])->name('submitTailor');
 
 
     Route::get('accreditations', function () {
