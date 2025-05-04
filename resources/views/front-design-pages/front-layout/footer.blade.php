@@ -37,7 +37,7 @@
                     <ul>
                     <li><a href="{{ route('join-us') }}">Technical</a></li>
                     {{-- <li><a href="{{ route('soft-skills-page') }}">Soft skills</a></li> --}}
-                    <li><a href="{{ route('accreditations') }}">Certified</a></li>
+                    <li><a href="{{ route('accreditations') }}">Accreditation</a></li>
                     <li><a href="">Information Technology</a></li>
 
                     </ul>
@@ -64,9 +64,9 @@
                 <div class="footer-newsletter">
                     <div id="mc_embed_signup">
                     <form
-                        action="https://gmail.us5.list-manage.com/subscribe/post?u=dde0a42ff09e8d43cad40dc82&amp;id=72d274d15d"
-                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                        target="_blank" novalidate>
+                        action=""
+                        method="get" >
+                        {{-- @csrf --}}
                         <div id="mc_embed_signup_scroll">
                         <div class="mc-field-group" style="margin-bottom: 15px;">
                             <input type="text" class="footer-input" value="" name="name" class="required name"

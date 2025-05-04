@@ -213,6 +213,8 @@
     .ltn__blog-item-3:hover .ltn__blog-tags img {
         transform: scale(1.2);
     }
+
+
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
@@ -304,18 +306,20 @@
                             </div>
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
                                 <div class="">
-                                    <select id="categorySelect" name="category_id" placeholder="Select a Category...">
-                                        <option value="">Select a Category</option>
+                                    <select id="categorySelect" name="category_id">
+                                        <!-- هذا الخيار لا يجب أن يكون فاضيًا أبداً -->
+                                        <option value="" disabled selected>Select a Category</option>
+
                                         @isset($subCategories)
-                                        @foreach ($subCategories as $subCategory)
-                                        <option value="{{ $subCategory->id }}">{{ $subCategory->subcategory_en_name }}
-                                        </option>
-                                        @endforeach
+                                            @foreach ($subCategories as $subCategory)
+                                                <option value="{{ $subCategory->id }}">{{ $subCategory->subcategory_en_name }}</option>
+                                            @endforeach
                                         @endisset
                                     </select>
 
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
                                 <div class="mc-field-group">
                                     <select id="venueSelect" name="city_id" placeholder="Select a Venue...">
@@ -332,7 +336,7 @@
                             </div>
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-md-3 mt-xl-0">
                                 <div class="mc-field-group">
-                                    <input type="text" placeholder="Duration" value="" name="duration">
+                                    <input type="hidden" placeholder="Duration" value="" name="duration">
                                 </div>
                             </div>
 
@@ -523,7 +527,7 @@
 
                             <h1 class="section-title">{{ $methodologies->small_description }}
                             </h1>
-                            <p>{!! $methodologies->details !!}</p>
+                            <p class="fnt-siz-sm">{!! $methodologies->details !!}</p>
                         </div>
 
                         <div class="col-12 row">
@@ -715,8 +719,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-4 text-center">
 
-                <a href="{{ route('course-search') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">LOAD
-                    MORE</a>
+                <a href="{{ route('searchCourse.index') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">All Courses</a>
             </div>
         </div>
 
@@ -913,7 +916,7 @@
             <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
             <div class="col-12 text-center pt-3">
 
-                <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $homeAccreditation->details2 }}</a>
+                <a href="{{ url('/accreditations') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $homeAccreditation->details2 }}</a>
             </div>
         </div>
 
@@ -928,16 +931,44 @@
 @section('script')
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Category
-        var categorySelect = document.getElementById('categorySelect');
-if (categorySelect && !categorySelect.tomselect) {
-    new TomSelect(categorySelect, {
+        const select = new TomSelect('#categorySelect', {
         create: false,
+        allowEmptyOption: false,
         placeholder: "Select a Category",
-        allowEmptyOption: true,
-        sortField: { field: "text", direction: "asc" }
+
+        onInitialize: function () {
+            this.control_input.setAttribute('readonly', true);
+            this.control_input.style.caretColor = 'transparent';
+        },
+
+        onFocus: function () {
+            this.control_input.removeAttribute('readonly');
+            this.control_input.style.caretColor = '';
+        },
+
+        onBlur: function () {
+            this.control_input.setAttribute('readonly', true);
+            this.control_input.style.caretColor = 'transparent';
+        },
+
+        onItemAdd: function () {
+            this.control_input.setAttribute('readonly', true);
+            this.control_input.style.caretColor = 'transparent';
+        }
     });
-}
+
+
+
+        // Category
+//         var categorySelect = document.getElementById('categorySelect');
+// if (categorySelect && !categorySelect.tomselect) {
+//     new TomSelect(categorySelect, {
+//         create: false,
+//         placeholder: "Select a Category",
+//         allowEmptyOption: false,
+//         sortField: { field: "text", direction: "asc" },
+//     });
+// }
 
         // Venue
         var venueSelect = document.getElementById('venueSelect');
@@ -945,7 +976,7 @@ if (categorySelect && !categorySelect.tomselect) {
             new TomSelect(venueSelect, {
                 create: false,
                 placeholder: "Select a Venue",
-                allowEmptyOption: true,
+                allowEmptyOption: false,
                 sortField: { field: "text", direction: "asc" }
             });
         }

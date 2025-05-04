@@ -3,7 +3,7 @@
 
     <!-- ltn__header-middle-area start -->
     <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white ltn__logo-right-menu-option plr--9---">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="site-logo-wrap">
@@ -17,30 +17,35 @@
                         <nav>
                             <div class="ltn__main-menu">
                                 <ul>
-                                    <li class=""><a href="{{ route('main-home') }}">HOME</a>
-
+                                    <li class="{{ request()->routeIs('main-home') ? 'active' : '' }}">
+                                        <a href="{{ route('main-home') }}">HOME</a>
                                     </li>
-                                    <li class=""><a href="{{ route('about-bts') }}">ABOUT BTS</a>
-
+                                    <li class="{{ request()->routeIs('about-bts') ? 'active' : '' }}">
+                                        <a href="{{ route('about-bts') }}">ABOUT BTS</a>
                                     </li>
-                                    <li class="menu-icon"><a href="#">TRAINING CATEGORY</a>
+                                    <li class="menu-icon {{ request()->routeIs('category.show') ? 'active' : '' }}">
+                                        <a href="#">TRAINING CATEGORY</a>
                                         <ul>
                                             @isset($categories)
-                                            @foreach ($categories as $category )
-                                            <li><a href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->category_en_name }}</a></li>
-                                            @endforeach
-                                           @endisset
-
+                                                @foreach ($categories as $category )
+                                                    <li class="{{ request()->routeIs('category.show') && request('id') == $category->id ? 'active' : '' }}">
+                                                        <a href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->category_en_name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            @endisset
                                         </ul>
                                     </li>
-                                    <li class=""><a href="{{ route('join-us') }}">Join US</a>
-
+                                    <li class="{{ request()->routeIs('join-us') ? 'active' : '' }}">
+                                        <a href="{{ route('join-us') }}">Join US</a>
                                     </li>
-
-                                    <li class="special-link-in"><a href="{{ route('contact-us') }}">Contact Us</a></li>
-                                    <li class="special-link"><a href="{{ route('download-center') }}">Download center</a></li>
-
+                                    <li class="special-link-in {{ request()->routeIs('contact-us') ? 'active' : '' }}">
+                                        <a href="{{ route('contact-us') }}">Contact Us</a>
+                                    </li>
+                                    <li class="special-link {{ request()->routeIs('download-center') ? 'active' : '' }}">
+                                        <a href="{{ route('download-center') }}">Download center</a>
+                                    </li>
                                 </ul>
+
                             </div>
                         </nav>
                     </div>

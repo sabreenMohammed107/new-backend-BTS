@@ -19538,4 +19538,9 @@ background-color: #fff;
     position: relative;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+/* menu underline */
+ul li.active > a {
+    text-decoration: underline;
+    color:var(--ltn__secondary-color) ;
+}
 
