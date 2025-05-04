@@ -2,6 +2,70 @@
 
 @section('page-class', 'course-search-page')
 @section('page-content')
+    <style>
+    /* Image container styles */
+    .ltn__product-item-3 .product-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        /* height: 12rem; */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ltn__product-item-3 .product-img .img-container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .ltn__product-item-3 .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    /* Shine hover effect */
+    .ltn__product-item-3 .product-img.shine {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ltn__product-item-3 .product-img.shine::before {
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 100%);
+        content: "";
+        display: block;
+        height: 100%;
+        left: -75%;
+        position: absolute;
+        top: 0;
+        transform: skewX(-25deg);
+        width: 50%;
+        z-index: 2;
+    }
+
+    .ltn__product-item-3 .product-img.shine:hover::before,
+    .ltn__product-item-3 .product-img.shine:focus::before {
+        animation: shine 4s ease-in-out;
+    }
+
+    @keyframes shine {
+        0% {
+            left: -75%;
+        }
+        100% {
+            left: 125%;
+        }
+    }
+</style>
 
     <div class="container-fluid main-course-search-nav" style='background-color:#232F3E;'>
         <div class="container-fluid">
