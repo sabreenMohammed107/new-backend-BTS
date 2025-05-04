@@ -603,7 +603,7 @@
         position: relative;
         overflow: hidden;
         border-radius: 6px;
-        height: 12rem;
+        /* height: 12rem; */
         width: 100%;
         display: flex;
         align-items: center;
@@ -626,6 +626,7 @@
 
     /* Shine hover effect */
     .ltn__product-item-3 .product-img.shine {
+        height: 100%;
         position: relative;
         overflow: hidden;
     }
@@ -679,36 +680,31 @@
                     <div class="ltn__product-item ltn__product-item-3 text-left">
                         <div class="product-img shine">
                             <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
-                                <img height="100%"
-                                    src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
-                                    alt="=" {{ $round->country->country_en_name }}"></a>
+                                <img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
+                                    alt="{{ $round->country->country_en_name }}">
+                            </a>
 
                             <div class="course-badge">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h3 class='white-color'>
-                                            {{ Str::limit($round->course->course_en_name, 70, '') }}</h3>
+                                <h3 class='white-color mb-2'>
+                                    <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
+                                    {{ Str::limit($round->course->course_en_name, 70, '') }}
+                                    </a>
+                                </h3>
+                                <?php $date = date_create($round->round_start_date); ?>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="white-color bottom-title">
+                                        {{ $round->venue->venue_en_name }} -
+                                        {{ $round->country->country_en_name }} |
+                                        {{ date_format($date, 'd M, Y') }}
                                     </div>
-
-                                    <div class="col-12 row">
-                                        <?php $date = date_create($round->round_start_date); ?>
-
-                                        <div class="col-10 white-color bottom-title">
-                                            {{ $round->venue->venue_en_name }} -
-                                            {{ $round->country->country_en_name }} |
-                                            {{ date_format($date, 'd M, Y') }}
-                                        </div>
-                                        <div class="col-2 mb-2">
-                                            <span class="icon-arrow">
-                                                <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
-                                                        class="fa fa-arrow-right white-color"></i></a>
-                                            </span>
-                                        </div>
+                                    <div class="icon-arrow">
+                                        <a href="{{ url('courseDetails/'.$round->course->id) }}"><i class="fa fa-arrow-right white-color"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 @endforeach
                 @endisset
