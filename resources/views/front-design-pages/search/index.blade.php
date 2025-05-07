@@ -126,7 +126,7 @@
                             <!-- Venue Filter -->
                             <div class="widget main-sidebar-widget Venue ">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Venue</h4>
-                                <div class="Venue-menu">
+                                <div class="Venue-menu" style="overflow-x: hidden;">
                                     @foreach ($venues as $venue)
                                         <div class="row justify-content-between">
                                             <div class="left-item-filter col-12">
