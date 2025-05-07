@@ -62,18 +62,18 @@
                 <div class="footer-newsletter">
                     <div id="mc_embed_signup">
                     <form
-                        action=""
-                        method="get" >
-                        {{-- @csrf --}}
+                        action="{{ route('send-newsletter') }}"
+                        method="post">
+                        @csrf
                         <div id="mc_embed_signup_scroll">
                         <div class="mc-field-group" style="margin-bottom: 15px;">
                             <input type="text" class="footer-input" value="" name="name" class="required name"
-                            id="mce-NAME" placeholder="enter your name">
+                            id="mce-NAME" placeholder="enter your name" required>
                         </div>
 
                         <div class="mc-field-group">
-                            <input type="email" class="footer-input" value="" name="EMAIL" class="required email"
-                            id="mce-EMAIL" placeholder="enter your email">
+                            <input type="email" class="footer-input" value="" name="email" class="required email"
+                            id="mce-EMAIL" placeholder="enter your email" required>
 
                         </div>
 
@@ -109,7 +109,7 @@
                                 <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                        <button class=" col-3 offset-3 theme-btn-1 btn" type="submit" value="Subscribe" name="subscribe"
+                        <button class="col-3 offset-3 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
                             id="mc-embedded-subscribe"><i class="fas fa-location-arrow"></i></button>
                         </div>
 

@@ -59,7 +59,7 @@ Route::prefix('/')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('main-home');
     Route::post('/sendMessage',  [IndexController::class, 'sendMessage']);
-    Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter']);
+    Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter'])->name('send-newsletter');
 
     Route::get('about-bts', [AboutBtsController::class, 'index'])->name('about-bts');
     Route::get('service', [ServiceController::class, 'index'])->name('service');
