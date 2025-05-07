@@ -65,6 +65,85 @@
             left: 125%;
         }
     }
+
+    .category-list {
+        max-height: 300px;
+        overflow-y: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        list-style: none;
+        margin: 0;
+        border: 1px solid #eee;
+        border-radius: 6px;
+    }
+
+    .category-list::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .category-list::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    .category-list::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+    }
+
+    .category-list::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .category-list li {
+        margin: 0;
+        width: auto;
+        flex: 0 1 auto;
+    }
+
+    .category-list a {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #e9eff8;
+        border-radius: 6px;
+        font-size: 0.975rem;
+        color: #222;
+        text-decoration: none;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all 0.3s ease;
+    }
+
+    .category-list a:hover {
+        background-color: rgb(18, 87, 109) !important;
+        color: #fff;
+        transform: translateY(-1px);
+    }
+
+    .filter-chip {
+        background-color: #f1f1f1;
+        color: #333;
+        border-radius: 20px;
+        padding: 6px 12px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .filter-chip .remove-filter {
+        color: #888;
+        margin-left: 8px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .filter-chip .remove-filter:hover {
+        color: #d00;
+    }
 </style>
 
     <div class="container-fluid main-course-search-nav" style='background-color:#232F3E;'>
@@ -139,63 +218,6 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <style>
-                                .category-list {
-
-                                    max-height: 200px;
-                                    overflow-y: auto;
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    gap: 10px;
-                                    padding: 0;
-                                    list-style: none;
-                                }
-
-                                .category-list li {
-                                    margin: 0;
-                                }
-
-                                .category-list a {
-                                    display: inline-block;
-                                    padding: 6px 12px;
-                                    background-color: #e9eff8;
-                                    border-radius: 6px;
-                                    font-size: 0.875rem;
-                                    color: #333;
-                                    text-decoration: none;
-                                    white-space: nowrap;
-                                    /* prevents long text from wrapping */
-                                }
-
-                                .category-list a:hover {
-                                    background-color: rgb(18, 87, 109) !important;
-                                    color: #007bff;
-
-                                }
-
-
-
-                                .filter-chip {
-                                    background-color: #f1f1f1;
-                                    color: #333;
-                                    border-radius: 20px;
-                                    padding: 6px 12px;
-                                    display: inline-flex;
-                                    align-items: center;
-                                    font-size: 14px;
-                                }
-
-                                .filter-chip .remove-filter {
-                                    color: #888;
-                                    margin-left: 8px;
-                                    font-weight: bold;
-                                    text-decoration: none;
-                                }
-
-                                .filter-chip .remove-filter:hover {
-                                    color: #d00;
-                                }
-                            </style>
                             <!-- Date Filter -->
                             <div class="date-filter main-sidebar-widget">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Date</h4>
