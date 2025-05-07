@@ -19571,5 +19571,5 @@ ul li.active > a {
 }
 
 .course-search-page .product-info .product-ratting .flags li {
-    font-size: 13px;
+    font-size: 13px !important;
 }
