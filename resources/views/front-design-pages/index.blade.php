@@ -246,6 +246,158 @@
         left: 100%;
     }
 
+    /* Slider Social Side Links Styling */
+    .slider-social-side-links {
+        position: absolute;
+        right:0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px 10px;
+        border-radius: 30px 0 0 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+    }
+
+    .slider-social-side-links .row {
+        margin: 0;
+    }
+
+    .slider-social-side-links .face,
+    .slider-social-side-links .linkedin,
+    .slider-social-side-links .xtw,
+    .slider-social-side-links .insta {
+        margin: 10px 0;
+        transition: all 0.3s ease;
+    }
+
+    .slider-social-side-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        color:#fff
+    }
+
+    .slider-social-side-links i,
+    .slider-social-side-links svg {
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    /* Facebook Hover Effect */
+    .slider-social-side-links .face a:hover {
+        background: #1877f2;
+        transform: translateY(-3px);
+    }
+
+    .slider-social-side-links .face a:hover i {
+        color: white;
+    }
+
+    /* LinkedIn Hover Effect */
+    .slider-social-side-links .linkedin a:hover {
+        background: #0077b5;
+        transform: translateY(-3px);
+    }
+
+    .slider-social-side-links .linkedin a:hover i {
+        color: white;
+    }
+
+    /* Twitter Hover Effect */
+    .slider-social-side-links .xtw a:hover {
+        background: #1da1f2;
+        transform: translateY(-3px);
+    }
+
+    .slider-social-side-links .xtw a:hover svg path {
+        fill: white;
+    }
+
+    /* Instagram Hover Effect */
+    .slider-social-side-links .insta a:hover {
+        background: #e4405f;
+        transform: translateY(-3px);
+    }
+
+    .slider-social-side-links .insta a:hover i {
+        color: white;
+    }
+
+    /* Tooltip Effect */
+    .slider-social-side-links a::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        margin-right: 10px;
+    }
+
+    .slider-social-side-links a:hover::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Footer Social Links Styling */
+    .footer-social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .footer-social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .footer-social-links i,
+    .footer-social-links svg {
+        font-size: 16px;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .footer-social-links a:hover {
+        transform: translateY(-3px);
+    }
+
+    .footer-social-links .face a:hover {
+        background: #1877f2;
+    }
+
+    .footer-social-links .linkedin a:hover {
+        background: #0077b5;
+    }
+
+    .footer-social-links .xtw a:hover {
+        background: #1da1f2;
+    }
+
+    .footer-social-links .insta a:hover {
+        background: #e4405f;
+    }
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100%;">
@@ -296,25 +448,29 @@
 
 
     </div>
-    <div class="social-side-links">
+    <div class="slider-social-side-links">
         <div class="row flex-column">
-
             <div class="face">
-                <a href="{{ $staticContact->details2 ?? '#' }}"><i class="fab fa-facebook-f"></i></a>
+                <a href="{{ $staticContact->details2 ?? '#' }}" data-tooltip="Follow us on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
             <div class="linkedin">
-                <a href="{{ $staticContact->details3 ?? '#' }}"><i class="fab fa-linkedin-in"></i></a>
+                <a href="{{ $staticContact->details3 ?? '#' }}" data-tooltip="Connect on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
-            <a href="{{ $staticContact->details4 ?? '#' }}">
-                <div class="xtw">
+            <div class="xtw">
+                <a href="{{ $staticContact->details4 ?? '#' }}" data-tooltip="Follow us on Twitter">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="#e7eaee"
-                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                        <path fill="#e7eaee" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
                     </svg>
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="insta">
-                <a href="{{ $staticContact->details5 ?? '#' }}"><i class="fab fa-instagram"></i></a>
+                <a href="{{ $staticContact->details5 ?? '#' }}" data-tooltip="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </div>

@@ -19718,47 +19718,47 @@ ul li.active > a {
     font-size: 13px !important;
 }
 
-.social-square {
+.ltn__footer-area .social-square {
     width: 40px;
     height: 40px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-.social-link {
+.ltn__footer-area .social-link {
     color: #e7eaee;
     transition: all 0.3s ease;
 }
 
-.face:hover {
+.ltn__footer-area  .face:hover {
     background-color: #1877f2;
 }
 
-.face:hover .social-link {
+.ltn__footer-area .face:hover .social-link {
     color: white;
 }
 
-.linkedin:hover {
+.ltn__footer-area .linkedin:hover {
     background-color: #0a66c2;
 }
 
-.linkedin:hover .social-link {
+.ltn__footer-area .linkedin:hover .social-link {
     color: white;
 }
 
-.xtw:hover {
+.ltn__footer-area .xtw:hover {
     background-color: #000000;
 }
 
-.xtw:hover svg path {
+.ltn__footer-area .xtw:hover svg path {
     fill: white;
 }
 
-.insta:hover {
+.ltn__footer-area .insta:hover {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-.insta:hover .social-link {
+.ltn__footer-area .insta:hover .social-link {
     color: white;
 }
 
