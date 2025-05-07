@@ -16579,7 +16579,7 @@ input[type="date"] {
 }
 
 .product-info .product-ratting ul.flags li {
-  font-size: x-small;
+  font-size: 13px;
   margin: 0 -7px !important;
   color: #afccff;
 }
