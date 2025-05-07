@@ -32,10 +32,10 @@
                             </style>
                             <div class="product-ratting">
                                 <ul class="row flags" style="font-weight: bold;font-size: 13px;">
-                                    <li class="col" ><i class="fas fa-map-marker-alt me-1"></i>{{ $round->venue->venue_en_name }}</li>
-                                    <li class="col"><i class="fas fa-clock  me-1"></i>{{ $round->course->duration }}-Days</li>
-                                    <li class="col"><i class="fas fa-dollar-sign  me-1"></i>{{ $round->round_price }}</li>
-                                    <li class="col"><i class="fas fa-calendar-week  me-1">  {{ \Carbon\Carbon::parse($round->round_start_date)->format('Y-m-d') }}</i></li>
+                                    <li class="col fnt-siz-13" ><i class="fas fa-map-marker-alt me-1"></i>{{ $round->venue->venue_en_name }}</li>
+                                    <li class="col fnt-siz-13"><i class="fas fa-clock  me-1"></i>{{ $round->course->duration }}-Days</li>
+                                    <li class="col fnt-siz-13"><i class="fas fa-dollar-sign  me-1"></i>{{ $round->round_price }}</li>
+                                    <li class="col fnt-siz-13"><i class="fas fa-calendar-week  me-1">  {{ \Carbon\Carbon::parse($round->round_start_date)->format('Y-m-d') }}</i></li>
                                 </ul>
                             </div>
                             <h2 class="product-title" style="text-align: left;">
