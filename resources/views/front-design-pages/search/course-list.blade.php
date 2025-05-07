@@ -35,7 +35,7 @@
                                     <li class="col"><i class="fas fa-calendar-week  me-1">  {{ \Carbon\Carbon::parse($round->round_start_date)->format('Y-m-d') }}</i></li>
                                 </ul>
                             </div>
-                            <h2 class="product-title text-left">
+                            <h2 class="product-title" style="text-align: left;">
                                 <a href="{{ url('courseDetails/'.$round->course->id) }}" class="course-title">{{ $round->course->course_en_name }}</a>
                             </h2>
                         </div>
