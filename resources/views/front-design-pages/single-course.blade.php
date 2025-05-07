@@ -686,7 +686,19 @@
 
                   <div class="action-section">
                       <div class="row align-items-center">
-
+ <div class="col-md-4 col-12 mb-3 mb-md-0">
+                              @if($specfic_round)
+                                  <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary btn-register-large">
+                                      <i class="fas fa-user-plus"></i>
+                                      Register Now
+                                  </a>
+                              @else
+                                  <p class="no-rounds-message">
+                                      <i class="fas fa-info-circle"></i>
+                                      No rounds available for registration
+                                  </p>
+                              @endif
+                          </div>
                           <div class="col-md-8 col-12">
                               <div class="social-share">
                                   <span class="share-label">Share Course:</span>
@@ -713,19 +725,7 @@
                               </div>
                           </div>
 
-                          <div class="col-md-4 col-12 mb-3 mb-md-0">
-                              @if($specfic_round)
-                                  <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary btn-register-large">
-                                      <i class="fas fa-user-plus"></i>
-                                      Register Now
-                                  </a>
-                              @else
-                                  <p class="no-rounds-message">
-                                      <i class="fas fa-info-circle"></i>
-                                      No rounds available for registration
-                                  </p>
-                              @endif
-                          </div>
+
                       </div>
                   </div>
               </div>
