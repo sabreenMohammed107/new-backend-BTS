@@ -333,7 +333,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-5">
           <div class="main-img-of-course text-center">
             <img src="{{ asset('uploads/courses')}}/{{ $course->course_image }}" alt="{{ $course->course_en_name }}">
           </div>
@@ -565,7 +565,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-7">
           <div class="row action-btns mb-4">
 
             <div class="col-12 d-flex flex-wrap justify-content-end gap-2">
@@ -686,20 +686,8 @@
 
                   <div class="action-section">
                       <div class="row align-items-center">
-                          <div class="col-md-6 col-12 mb-3 mb-md-0">
-                              @if($specfic_round)
-                                  <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary btn-register-large">
-                                      <i class="fas fa-user-plus"></i>
-                                      Register Now
-                                  </a>
-                              @else
-                                  <p class="no-rounds-message">
-                                      <i class="fas fa-info-circle"></i>
-                                      No rounds available for registration
-                                  </p>
-                              @endif
-                          </div>
-                          <div class="col-md-6 col-12">
+
+                          <div class="col-md-8 col-12">
                               <div class="social-share">
                                   <span class="share-label">Share Course:</span>
                                   <div class="social-buttons">
@@ -723,6 +711,20 @@
                                       </a>
                                   </div>
                               </div>
+                          </div>
+
+                          <div class="col-md-4 col-12 mb-3 mb-md-0">
+                              @if($specfic_round)
+                                  <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary btn-register-large">
+                                      <i class="fas fa-user-plus"></i>
+                                      Register Now
+                                  </a>
+                              @else
+                                  <p class="no-rounds-message">
+                                      <i class="fas fa-info-circle"></i>
+                                      No rounds available for registration
+                                  </p>
+                              @endif
                           </div>
                       </div>
                   </div>
