@@ -74,9 +74,6 @@
     transition: all 0.3s ease;
 }
 
-.course-card:hover .hover-content {
-    opacity: 1;
-}
 
 .course-title {
     color: #fff;
