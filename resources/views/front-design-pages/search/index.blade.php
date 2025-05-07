@@ -332,7 +332,7 @@
                         </div>
 
                         <div class="row">
-                            <h3>Results / <span>{{ $filtered->total() }}</span></h3>
+                            <h3>Results {{ $filtered->firstItem() ?? 0 }} - {{ $filtered->lastItem() ?? 0 }} / <span>{{ $filtered->total() }}</span></h3>
                             <p>Check each course page for other register options.</p>
                         </div>
                     </div>
