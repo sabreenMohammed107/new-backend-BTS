@@ -214,6 +214,37 @@
         transform: scale(1.2);
     }
 
+    /* Search Button Hover Effect */
+    .form-btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+
+    .form-btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.2) 50%,
+            rgba(255,255,255,0) 100%);
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
+
+    .form-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .form-btn:hover:before {
+        left: 100%;
+    }
 
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
@@ -389,124 +420,107 @@
 
 
         </div>
+<style>
+
+</style>
         <div class="row ">
             @isset($public_training)
             <div class="col-12 col-md-6 col-lg-3 p-2">
-                <a href="{{ route('service') }}#public_training">
+
                     <div class="card-item-services service-item-4"
                         style="background-image: url('{{ asset($public_training->details2) }}');">
                         <div class="card-service-bottom-footer">
-                            <div class="row">
+                            <div class="row main-footer-of-services">
                                 <div class="col-12">
-                                    <h3 class="white-color">{{ $public_training->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
-                                {{-- <div class="col-12">
+                                <div class="col-12">
                                     <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i
-                                                    class="fas fa-share-alt"></i></a>
+                                        <div class="col-12">
+                                            <a href="{{ route('service') }}#public_training"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </a>
+                <
             </div>
             @endisset
             @isset($in_house_training)
             <div class="col-12 col-md-6 col-lg-3  p-2">
-                <a href="{{ route('service') }}#in_house_training">
+
                     <div class="card-item-services service-item-2"
                         style="background-image: url('{{ asset($in_house_training->details2) }}');">
                         <div class="card-service-bottom-footer">
 
-                            <div class="row">
+                            <div class="row main-footer-of-services">
                                 <div class="col-12">
-                                    <h3 class="white-color">{{ $in_house_training->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
-                                {{-- <div class="col-12">
+                                <div class="col-12">
                                     <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i
-                                                    class="fas fa-share-alt"></i></a>
+                                        <div class="col-12">
+                                            <a href="{{ route('service') }}#in_house_training"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
 
                         </div>
                     </div>
-                </a>
+
             </div>
             @endisset
 
             @isset($consultancy)
             <div class="col-12 col-md-6 col-lg-3  p-2">
-                <a href="{{ route('service') }}#consultancy">
+
                     <div class="card-item-services service-item-1"
                         style="background-image: url('{{ asset($consultancy->details2) }}');">
                         <div class="card-service-bottom-footer">
-                            <div class="row">
+                            <div class="row main-footer-of-services">
                                 <div class="col-12">
-                                    <h3 class="white-color">{{ $consultancy->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
-                                {{-- <div class="col-12">
+                                <div class="col-12">
                                     <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i
-                                                    class="fas fa-share-alt"></i></a>
+                                        <div class="col-12">
+                                            <a href="{{ route('service') }}#consultancy"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </a>
+
             </div>
             @endisset
             @isset($online_courses)
             <div class="col-12 col-md-6 col-lg-3 p-2">
-                <a href="{{ route('service') }}#online_courses">
+
                     <div class="card-item-services service-item-3"
                         style="background-image: url({{ asset($online_courses->details2) }});">
                         <div class="card-service-bottom-footer">
-                            <div class="row">
+                            <div class="row main-footer-of-services">
                                 <div class="col-12">
-                                    <h3 class="white-color">{{ $online_courses->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
-                                {{-- <div class="col-12">
+                                <div class="col-12">
                                     <div class="row">
-                                        <div class="col-8">
-                                            <a href="{{ route('service') }}"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase">View
-                                                Details</a>
-                                        </div>
-                                        <div class="col-2 offset-2 d-flex align-items-center">
-                                            <a href="{{ route('service') }}" class="white-color"><i
-                                                    class="fas fa-share-alt"></i></a>
+                                        <div class="col-12">
+                                            <a href="{{ route('service') }}#online_courses"
+                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </a>
+
             </div>
             @endisset
 
@@ -527,7 +541,7 @@
 
                             <h1 class="section-title">{{ $methodologies->small_description }}
                             </h1>
-                            <p class="fnt-siz-sm">{!! $methodologies->details !!}</p>
+                            <p class="f-siz-larger">{!! $methodologies->details !!}</p>
                         </div>
 
                         <div class="col-12 row">
@@ -683,14 +697,14 @@
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="ltn__product-item ltn__product-item-3 text-left">
                         <div class="product-img shine">
-                            <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
+                            <a class="img-container">
                                 <img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
                                     alt="{{ $round->country->country_en_name }}">
                             </a>
 
                             <div class="course-badge">
                                 <h3 class='white-color mb-2'>
-                                    <a href="{{ url('courseDetails/'.$round->course->id) }}" class="img-container">
+                                    <a class="img-container">
                                     {{ Str::limit($round->course->course_en_name, 70, '') }}
                                     </a>
                                 </h3>

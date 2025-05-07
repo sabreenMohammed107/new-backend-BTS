@@ -16172,7 +16172,8 @@ input[type="date"] {
 }
 
 .footer-top-area ul li a:hover {
-  color: #376eff;
+    text-decoration: underline;
+
 }
 
 .footer-social-icon .social-square:hover {
@@ -16203,7 +16204,7 @@ input[type="date"] {
 }
 
 .footer-top-area ul li a:hover {
-  color: #376eff;
+  text-decoration: underline;
 }
 
 .footer-social-icon .social-square:hover {
@@ -19544,3 +19545,27 @@ ul li.active > a {
     color:var(--ltn__secondary-color) ;
 }
 
+.card-service-bottom-footer .main-footer-of-services{
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+}
+.card-item-services .card-service-bottom-footer .main-footer-of-services .v-d-of-services {
+    width: fit-content !important;
+    padding: 6px 20px !important;
+}
+
+.f-siz-larger {
+    font-size: larger !important;
+}
+
+.section-title {
+    text-transform: uppercase !important;
+}
+
+.linkedin.social-square:hover {
+    background-color: #174094;
+}
+.tw.social-link:hover {
+    background-color: black;
+}
