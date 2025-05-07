@@ -2,6 +2,53 @@
     <!-- Body main wrapper start -->
 @section('page-id' , 'single-course-page')
 @section('page-content')
+<style>
+    /* Action buttons hover effect */
+    .btn-single-course-option {
+        transition: all 0.3s ease;
+    }
+    .btn-single-course-option:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        opacity: 0.9;
+    }
+
+    /* Register button hover effect */
+    .btn-primary {
+        transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Social media buttons hover effect */
+    .social-btn {
+        transition: all 0.3s ease;
+    }
+    .social-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Form submit button hover effect */
+    .genric-btn {
+        transition: all 0.3s ease;
+    }
+    .genric-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Refresh captcha button hover effect */
+    #refresh-captcha {
+        transition: all 0.3s ease;
+    }
+    #refresh-captcha:hover {
+        transform: rotate(180deg);
+        background-color: #6c757d;
+    }
+</style>
     <div class="main-course-bg-header">
       <div class="share-icon">
         <i class="fas fa-share-alt-square"></i>

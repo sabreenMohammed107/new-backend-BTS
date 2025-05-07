@@ -851,7 +851,7 @@
                 @isset($rounds)
                 @foreach ($rounds as $round)
                 <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="ltn__product-item ltn__product-item-3 text-left">
+                    <div class="ltn__product-item ltn__product-item-3 text-left w-100">
                         <div class="product-img shine">
                             <a class="img-container">
                                 <img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
