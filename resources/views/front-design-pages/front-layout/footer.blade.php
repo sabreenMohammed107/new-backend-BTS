@@ -92,14 +92,11 @@
                                 class="face social-square d-flex justify-content-center align-items-center mr-1">
                                 <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                             </div>
-                            <style>
-
-                            </style>
                             <div style="margin-right: 5px;"
                                 class="linkedin social-square d-flex justify-content-center align-items-center mr-1">
                                 <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                            <a href="https://twitter.com/" target="_blank" style="margin-right: 5px;" class="social-link tw">
+                            <a href="https://twitter.com/" target="_blank" style="margin-right: 5px;" class="social-link">
                                 <div class="xtw social-square d-flex justify-content-center align-items-center mr-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path fill="#e7eaee"
@@ -165,7 +162,7 @@
 }
 
 .face:hover {
-    background-color: #174094;
+    background-color: #1877f2;
 }
 
 .face:hover .social-link {
@@ -173,7 +170,7 @@
 }
 
 .linkedin:hover {
-    background-color: #174094;
+    background-color: #0a66c2;
 }
 
 .linkedin:hover .social-link {
@@ -181,7 +178,7 @@
 }
 
 .xtw:hover {
-    background-color: #174094;
+    background-color: #000000;
 }
 
 .xtw:hover svg path {
@@ -189,7 +186,7 @@
 }
 
 .insta:hover {
-    background-color: #174094;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
 .insta:hover .social-link {

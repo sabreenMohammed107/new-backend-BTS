@@ -19564,8 +19564,8 @@ ul li.active > a {
 }
 
 .linkedin.social-square:hover {
-    background-color: #174094;
+    background-color: #174094 !important;
 }
-.tw.social-link:hover {
-    background-color: black;
+.xtw.social-square:hover {
+    background-color: black !important;
 }
