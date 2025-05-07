@@ -70,13 +70,13 @@
                             <div class="col-md-6">
                                 <div class="mc-field-group" style="margin-bottom: 15px;">
                                     <input type="text" class="footer-input" value="" name="name" class="required name"
-                                    id="mce-NAME" placeholder="name" required>
+                                    id="mce-NAME" placeholder="name" required style="background-color: #fff;">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mc-field-group">
                                     <input type="email" class="footer-input" value="" name="email" class="required email"
-                                    id="mce-EMAIL" placeholder="email" required>
+                                    id="mce-EMAIL" placeholder="email" required style="background-color: #fff;">
                                 </div>
                             </div>
                         </div>
@@ -108,12 +108,16 @@
                                     </svg>
                                 </div>
                             </a>
-                            <div style="margin-right: 5px;"
+                            <div
                                 class="insta social-square d-flex justify-content-center align-items-center mr-1">
                                 <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                        <button class="col-3 offset-3 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
+                        <button style="padding: 10px 20px !important;margin-right: 5px;margin-top: 15px;position: relative;
+                        overflow: hidden;
+                        transition: all 0.3s ease;margin-right: 0;background-color: var(--ltn__secondary-color);
+                        
+                        border-radius: 9px;" class="col-3 offset-3 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
                             id="mc-embedded-subscribe"><i class="fas fa-location-arrow"></i></button>
                         </div>
 
@@ -152,51 +156,6 @@
 <script src="{{ asset('front-assets/js/main.js') }}"></script>
 @yield('script')
 
-<style>
-.social-square {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.social-link {
-    color: #e7eaee;
-    transition: all 0.3s ease;
-}
-
-.face:hover {
-    background-color: #1877f2;
-}
-
-.face:hover .social-link {
-    color: white;
-}
-
-.linkedin:hover {
-    background-color: #0a66c2;
-}
-
-.linkedin:hover .social-link {
-    color: white;
-}
-
-.xtw:hover {
-    background-color: #000000;
-}
-
-.xtw:hover svg path {
-    fill: white;
-}
-
-.insta:hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.insta:hover .social-link {
-    color: white;
-}
-</style>
 </body>
 
 </html>
