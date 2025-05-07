@@ -19569,3 +19569,7 @@ ul li.active > a {
 .xtw.social-square:hover {
     background-color: black !important;
 }
+
+.course-search-page .product-info .product-ratting .flags li {
+    font-size: 13px;
+}

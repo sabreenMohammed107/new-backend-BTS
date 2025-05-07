@@ -27,6 +27,9 @@
                     <div class="course-badge hover-content">
                         <?php $date = date_create($round->round_start_date); ?>
                         <div class="product-info w-100">
+                            <style>
+
+                            </style>
                             <div class="product-ratting">
                                 <ul class="row flags" style="font-weight: bold;font-size: 13px;">
                                     <li class="col" ><i class="fas fa-map-marker-alt me-1"></i>{{ $round->venue->venue_en_name }}</li>
