@@ -586,7 +586,7 @@
                     <div class="card-item-services service-item-4"
                         style="background-image: url('{{ asset($public_training->details2) }}');">
                         <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services">
+                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
@@ -611,7 +611,7 @@
                         style="background-image: url('{{ asset($in_house_training->details2) }}');">
                         <div class="card-service-bottom-footer">
 
-                            <div class="row main-footer-of-services">
+                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
@@ -637,7 +637,7 @@
                     <div class="card-item-services service-item-1"
                         style="background-image: url('{{ asset($consultancy->details2) }}');">
                         <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services">
+                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
@@ -661,7 +661,7 @@
                     <div class="card-item-services service-item-3"
                         style="background-image: url({{ asset($online_courses->details2) }});">
                         <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services">
+                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
