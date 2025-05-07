@@ -70,10 +70,13 @@
     right: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     padding: 20px;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.3s ease;
 }
 
+.course-card:hover .hover-content {
+    opacity: 1;
+}
 
 .course-title {
     color: #fff;
