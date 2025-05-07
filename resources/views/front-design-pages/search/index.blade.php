@@ -154,7 +154,7 @@
                     <div class="container-fluid">
                         <form method="get" action="{{ route('searchCourse.index') }}">
                             <input type="text" id="search" name="search" value="{{ request('search') }}"
-                                placeholder="Search here...">
+                                placeholder="Search here..." style="color:white;">
                             <button type="submit">
                                 <span><i class="icon-search"></i></span>
                             </button>
