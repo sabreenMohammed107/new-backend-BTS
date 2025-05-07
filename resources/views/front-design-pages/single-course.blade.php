@@ -48,6 +48,268 @@
         transform: rotate(180deg);
         background-color: #6c757d;
     }
+
+    /* Course Rounds Table Styles */
+    .table-single-course-details {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        margin-bottom: 30px;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0;
+    }
+
+    .course-duration {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+
+    .course-rounds-table {
+        margin-bottom: 0;
+    }
+
+    .course-rounds-table thead th {
+        background: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+        color: #495057;
+        font-weight: 600;
+        padding: 15px;
+    }
+
+    .course-rounds-table tbody td {
+        padding: 15px;
+        vertical-align: middle;
+    }
+
+    .round-code {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    .date-info, .venue-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #495057;
+    }
+
+    .date-info i, .venue-info i {
+        color: #6c757d;
+    }
+
+    .price-info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .currency {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    .amount {
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .btn-register {
+        background: #1976d2;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-register:hover {
+        background: #1565c0;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .pricing-note {
+        margin-top: 15px;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    /* Upcoming Course Card Styles */
+    .upcoming-course-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: #1976d2;
+        color: white;
+        padding: 20px;
+    }
+
+    .card-title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .card-body {
+        padding: 25px;
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .detail-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .detail-label {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .detail-value {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    .venue-section {
+        margin-bottom: 25px;
+    }
+
+    .venue-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .venue-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .venue-label {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .venue-value {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    .btn-register-large {
+        background: #1976d2;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-register-large:hover {
+        background: #1565c0;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .no-rounds-message {
+        color: #6c757d;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .social-share {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .share-label {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    .social-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .fb-btn { background: #1877f2; }
+    .twitter-btn { background: #1da1f2; }
+    .linkedin-btn { background: #0077b5; }
+    .whatsapp-btn { background: #25d366; }
+    .messenger-btn { background: #0084ff; }
+    .email-btn { background: #ea4335; }
+
+    @media (max-width: 768px) {
+        .social-share {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .social-buttons {
+            margin-top: 10px;
+        }
+    }
 </style>
     <div class="main-course-bg-header">
       <div class="share-icon">
@@ -318,104 +580,152 @@
           </div>
           <!-- Course Rounds Table -->
           <div class="table-single-course-details">
-
-            <h3 class="mb-4">Course Rounds: ({{ $course->course_duration }} -Days)</h3>
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover align-middle">
-                <thead class="table-light">
-                  <tr>
-                    <th>Code</th>
-                    <th>Date</th>
-                    <th>Venue</th>
-                    <th>Fees</th>
-                    <th>Register</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach($rounds as $round)
-                  <tr>
-                    <td>{{ $round->round_code }}</td>
-                    <td>
-                        <?php if ($round): ?>
-                            <?php $date = date_create($round->round_start_date); ?>
-                            <?= date_format($date, 'Y-m-d') ?>
-                        <?php else: ?>
-                            N/A
-                        <?php endif; ?>
-                    </td>
-                    <td>{{ $round->venue->venue_en_name ?? ''}}</td>
-                    <td>{{ $round->currancy->currency_name ?? ''}} {{ $round->round_price}}</td>
-                    <td>   <button class="btn btn-primary btn-sm">
-                        <a href='{{url ("/registerCourse/$round->id") }}' style="padding:2px 3px;color:#fff"> Register</a>
-                    </button></td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
+            <div class="section-header mb-4">
+                <h3 class="section-title">Course Rounds</h3>
+                <span class="course-duration">{{ $course->course_duration }} Days</span>
             </div>
-            <p class="pricing-note">Prices doesn't Include VAT</p>
+            <div class="table-responsive">
+                <table class="table table-hover course-rounds-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Date</th>
+                            <th>Venue</th>
+                            <th>Fees</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($rounds as $round)
+                        <tr>
+                            <td><span class="round-code">{{ $round->round_code }}</span></td>
+                            <td>
+                                @if($round)
+                                    <div class="date-info">
+                                        <i class="far fa-calendar-alt"></i>
+                                        {{ date_format(date_create($round->round_start_date), 'Y-m-d') }}
+                                    </div>
+                                @else
+                                    <span class="text-muted">N/A</span>
+                                @endif
+                            </td>
+                            <td>
+                                <div class="venue-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ $round->venue->venue_en_name ?? ''}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-info">
+                                    <span class="currency">{{ $round->currancy->currency_name ?? ''}}</span>
+                                    <span class="amount">{{ $round->round_price}}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <a href='{{url ("/registerCourse/$round->id") }}' class="btn btn-register">
+                                    Register Now
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <p class="pricing-note"><i class="fas fa-info-circle"></i> Prices don't include VAT</p>
           </div>
           <div class="social-single-course">
-            <div class="upcoming-date-card">
-              <h2 class="upcoming-date-title">UpComing Date</h2>
-
-              <h3 class="section-title">Details</h3>
-              <div class="info-row">
-                <div class="info-label">Start date</div>
-                <div class="info-value">
-                              {{ $specfic_round && $specfic_round->round_start_date ? \Carbon\Carbon::parse($specfic_round->round_start_date)->format('d-m-Y') : 'N/A' }}
-                </div>
-              </div>
-              <div class="info-row">
-                <div class="info-label">End date</div>
-                <div class="info-value">                {{ $specfic_round && $specfic_round->round_end_date ? \Carbon\Carbon::parse($specfic_round->round_end_date)->format('d-m-Y') : 'N/A' }}
-                </div>
+            <div class="upcoming-course-card">
+              <div class="card-header">
+                  <h2 class="card-title">Upcoming Course</h2>
               </div>
 
-              <h3 class="section-title">Venue</h3>
-              <div class="info-row">
-                <div class="info-label">Country</div>
-                <div class="info-value">{{ $specfic_round->country->country_en_name ??'' }}</div>
-              </div>
-              <div class="info-row">
-                <div class="info-label">Venue</div>
-                <div class="info-value">{{ $specfic_round->venue->venue_en_name ??''}}</div>
-              </div>
-
-              <div class="row action-row mt-4 align-items-center">
-                <div class="col-md-6 col-12">
-
-                    @if($specfic_round)
-                    <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary register-btn">
-                        Register
-                    </a>
-                @else
-                    <p>No round available for registration.</p>
-                @endif
-                  {{-- <button class="btn btn-primary register-btn">Register Now</button> --}}
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="social-buttons">
-                    <a href="#" class="social-btn fb-btn">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-btn twitter-btn">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-btn linkedin-btn">
-                      <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-btn whatsapp-btn">
-                      <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="#" class="social-btn messenger-btn">
-                      <i class="fab fa-facebook-messenger"></i>
-                    </a>
-                    <a href="#" class="social-btn email-btn">
-                      <i class="fas fa-envelope"></i>
-                    </a>
+              <div class="card-body">
+                  <div class="course-details-section">
+                      <h3 class="section-title">Course Details</h3>
+                      <div class="details-grid">
+                          <div class="detail-item">
+                              <div class="detail-label">
+                                  <i class="far fa-calendar-check"></i>
+                                  Start Date
+                              </div>
+                              <div class="detail-value">
+                                  {{ $specfic_round && $specfic_round->round_start_date ? \Carbon\Carbon::parse($specfic_round->round_start_date)->format('d M, Y') : 'N/A' }}
+                              </div>
+                          </div>
+                          <div class="detail-item">
+                              <div class="detail-label">
+                                  <i class="far fa-calendar-times"></i>
+                                  End Date
+                              </div>
+                              <div class="detail-value">
+                                  {{ $specfic_round && $specfic_round->round_end_date ? \Carbon\Carbon::parse($specfic_round->round_end_date)->format('d M, Y') : 'N/A' }}
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
+
+                  <div class="venue-section">
+                      <h3 class="section-title">Venue Information</h3>
+                      <div class="venue-details">
+                          <div class="venue-item">
+                              <div class="venue-label">
+                                  <i class="fas fa-globe"></i>
+                                  Country
+                              </div>
+                              <div class="venue-value">{{ $specfic_round->country->country_en_name ??'' }}</div>
+                          </div>
+                          <div class="venue-item">
+                              <div class="venue-label">
+                                  <i class="fas fa-building"></i>
+                                  Venue
+                              </div>
+                              <div class="venue-value">{{ $specfic_round->venue->venue_en_name ??''}}</div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="action-section">
+                      <div class="row align-items-center">
+                          <div class="col-md-6 col-12 mb-3 mb-md-0">
+                              @if($specfic_round)
+                                  <a href="{{ url("/registerCourse/$specfic_round->id") }}" class="btn btn-primary btn-register-large">
+                                      <i class="fas fa-user-plus"></i>
+                                      Register Now
+                                  </a>
+                              @else
+                                  <p class="no-rounds-message">
+                                      <i class="fas fa-info-circle"></i>
+                                      No rounds available for registration
+                                  </p>
+                              @endif
+                          </div>
+                          <div class="col-md-6 col-12">
+                              <div class="social-share">
+                                  <span class="share-label">Share Course:</span>
+                                  <div class="social-buttons">
+                                      <a href="#" class="social-btn fb-btn" title="Share on Facebook">
+                                          <i class="fab fa-facebook-f"></i>
+                                      </a>
+                                      <a href="#" class="social-btn twitter-btn" title="Share on Twitter">
+                                          <i class="fab fa-twitter"></i>
+                                      </a>
+                                      <a href="#" class="social-btn linkedin-btn" title="Share on LinkedIn">
+                                          <i class="fab fa-linkedin-in"></i>
+                                      </a>
+                                      <a href="#" class="social-btn whatsapp-btn" title="Share on WhatsApp">
+                                          <i class="fab fa-whatsapp"></i>
+                                      </a>
+                                      <a href="#" class="social-btn messenger-btn" title="Share on Messenger">
+                                          <i class="fab fa-facebook-messenger"></i>
+                                      </a>
+                                      <a href="#" class="social-btn email-btn" title="Share via Email">
+                                          <i class="fas fa-envelope"></i>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
             </div>
           </div>
