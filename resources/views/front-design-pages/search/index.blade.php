@@ -342,7 +342,7 @@
                                 <div class="row">
                                     @isset($filtered)
                                         @foreach ($filtered as $round)
-                                            <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
+                                            <div class="col-xl-4 col-sm-6 col-12 single-course-item-card">
 
                                                 @include('front-design-pages.search.course-list', [
                                                     'round' => $round,
