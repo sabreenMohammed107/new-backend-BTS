@@ -35,18 +35,16 @@
                 <h4 class="footer-title">MAJORS</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="{{ route('join-us') }}">Technical</a></li>
-                    {{-- <li><a href="{{ route('soft-skills-page') }}">Soft skills</a></li> --}}
-                    <li><a href="{{ route('accreditations') }}">Accreditation</a></li>
-                    <li><a href="">Information Technology</a></li>
-
+                    @foreach($categories as $category)
+                        <li><a href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->category_en_name }}</a></li>
+                    @endforeach
                     </ul>
                 </div>
                 </div>
             </div>
             <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                 <div class="footer-widget footer-menu-widget clearfix">
-                <h4 class="footer-title">RESOURCES</h4>
+                <h4 class="footer-title">SERVICES</h4>
                 <div class="footer-menu">
                     <ul>
                     <li><a href="">Public Training</a></li>
@@ -64,19 +62,23 @@
                 <div class="footer-newsletter">
                     <div id="mc_embed_signup">
                     <form
-                        action=""
-                        method="get" >
-                        {{-- @csrf --}}
+                        action="{{ route('send-newsletter') }}"
+                        method="post">
+                        @csrf
                         <div id="mc_embed_signup_scroll">
-                        <div class="mc-field-group" style="margin-bottom: 15px;">
-                            <input type="text" class="footer-input" value="" name="name" class="required name"
-                            id="mce-NAME" placeholder="enter your name">
-                        </div>
-
-                        <div class="mc-field-group">
-                            <input type="email" class="footer-input" value="" name="EMAIL" class="required email"
-                            id="mce-EMAIL" placeholder="enter your email">
-
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mc-field-group" style="margin-bottom: 15px;">
+                                    <input type="text" class="footer-input" value="" name="name" class="required name"
+                                    id="mce-NAME" placeholder="name" required style="background-color: #fff;">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mc-field-group">
+                                    <input type="email" class="footer-input" value="" name="email" class="required email"
+                                    id="mce-EMAIL" placeholder="email" required style="background-color: #fff;">
+                                </div>
+                            </div>
                         </div>
 
                         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -91,28 +93,31 @@
                         <div class="row">
                         <div class=" align-self-end footer-social-icon col-6 d-flex justify-content-start mt-2">
                             <div style="margin-right: 5px;"
-                            class="face social-square d-flex justify-content-center align-items-center mr-1">
-                            <a href="http://"><i class="fab fa-facebook-f"></i></a>
+                                class="face social-square d-flex justify-content-center align-items-center mr-1">
+                                <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                             </div>
                             <div style="margin-right: 5px;"
-                            class="linkedin social-square d-flex justify-content-center align-items-center mr-1">
-                            <a href="http://"><i class="fab fa-linkedin-in"></i></a>
+                                class="linkedin social-square d-flex justify-content-center align-items-center mr-1">
+                                <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
-                            <a href="http://" style="margin-right: 5px;">
-                            <div class="xtw social-square d-flex justify-content-center align-items-center mr-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path fill="#e7eaee"
-                                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-                                </svg>
-                            </div>
+                            <a href="https://twitter.com/" target="_blank" style="margin-right: 5px;" class="social-link">
+                                <div class="xtw social-square d-flex justify-content-center align-items-center mr-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="#e7eaee"
+                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                                    </svg>
+                                </div>
                             </a>
-                            <div style="margin-right: 5px;"
-                            class="insta social-square d-flex justify-content-center align-items-center mr-1">
-                            <a href="http://"><i class="fab fa-instagram"></i></a>
+                            <div
+                                class="insta social-square d-flex justify-content-center align-items-center mr-1">
+                                <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                             </div>
-
                         </div>
-                        <button class=" col-3 offset-3 theme-btn-1 btn" type="submit" value="Subscribe" name="subscribe"
+                        <button style="padding: 10px 20px !important;margin-right: 5px;margin-top: 15px;position: relative;
+                        overflow: hidden;
+                        transition: all 0.3s ease;margin-right: 0;background-color: var(--ltn__secondary-color);
+                        
+                        border-radius: 9px;" class="col-3 offset-3 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
                             id="mc-embedded-subscribe"><i class="fas fa-location-arrow"></i></button>
                         </div>
 
@@ -150,6 +155,7 @@
 <!-- Main JS -->
 <script src="{{ asset('front-assets/js/main.js') }}"></script>
 @yield('script')
+
 </body>
 
 </html>

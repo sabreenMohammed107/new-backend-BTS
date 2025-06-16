@@ -29,21 +29,21 @@ class IndexController extends Controller
     }
 
     public function sendNewsLetter(Request $request){
-        try{
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|max:255|unique:news_letters,email'
+            ]);
 
-       $letter= NewsLetter::create($request->all());
-       $emails = ['senior.steps.info@gmail.com','info@btsconsultant.com','nasser@btsconsultant.com'];
-      // \Mail::to($emails)->send(new NewsLetterNotification($letter));
+            NewsLetter::create([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
 
-
-        return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-    }
-       catch(QueryException $q){
-
-        return redirect()->back()->with('message','ُEmpty Newsletter !!!');
-
-    }
-
+            return redirect()->back()->with('message', 'Thanks; your newsletter subscription has been submitted successfully!');
+        } catch(QueryException $q) {
+            return redirect()->back()->with('error', 'Error submitting newsletter subscription. Please try again.');
+        }
     }
 
 }
