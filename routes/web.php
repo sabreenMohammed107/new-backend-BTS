@@ -39,6 +39,7 @@ use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\JobApplicationController;
 use App\Http\Controllers\Admin\CareerLevelController;
 use App\Http\Controllers\Front\SpeakerController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,10 @@ use App\Http\Controllers\Front\SpeakerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/clear-cache', function () {
+    Artisan::call('optimize:clear');
+    return 'Cache cleared';
+});
 
 Route::get('/', function () {
     return view('welcome');
