@@ -16,7 +16,7 @@
 12. Product Details Page
 13. Isotope Gallery Active  ( Gallery / Portfolio )
 14. LightCase jQuery Active
-15. Slider One Active 
+15. Slider One Active
 16. Product Slider One
 17. Tab Product Slider One
 18. Blog Slider One
@@ -24,10 +24,10 @@
 20. Testimonial Slider - 2
 21. Testimonial Slider - 3
 22. Category Slider
-23. Image Slide  - 1 (Screenshot) 
+23. Image Slide  - 1 (Screenshot)
 24. Image Slide - 2
 25. Image Slide - 3
-26. Image Slide - 4 
+26. Image Slide - 4
 27. Brand Logo
 28. Blog Gallery (Blog Page )
 29. Countdown
@@ -49,7 +49,7 @@
   "use strict";
 
     jQuery(document).ready(function(){
-      
+
         /* --------------------------------------------------------
             1. Variables
         --------------------------------------------------------- */
@@ -60,7 +60,7 @@
             2. Mobile Menu
         --------------------------------------------------------- */
          /* ---------------------------------
-            Utilize Function 
+            Utilize Function
         ----------------------------------- */
         (function () {
             var $ltn__utilizeToggle = $('.ltn__utilize-toggle'),
@@ -127,7 +127,7 @@
                 $(this).addClass('column-'+ulChildren)
             }
         });
-        
+
 
         /* Remove Attribute( href ) from sub-menu title in mega-menu */
         /*
@@ -138,7 +138,7 @@
         /* Mega Munu  */
         // $(".mega-menu").parent().css({"position": "inherit"});
         $(".mega-menu").parent().addClass("mega-menu-parent");
-        
+
 
         /* Add space for Elementor Menu Anchor link */
         $( window ).on( 'elementor/frontend/init', function() {
@@ -153,7 +153,7 @@
 
         $('.ltn__category-menu-title').on('click', function(){
             $('.ltn__category-menu-toggle').slideToggle(500);
-        });	
+        });
 
         /* Category Menu More Item show */
         $('.ltn__category-menu-more-item-parent').on('click', function(){
@@ -255,7 +255,7 @@
         --------------------------------------------------------- */
         $('select').niceSelect();
 
-        
+
         /* --------------------------------------------------------
             11. Default active and hover item active
         --------------------------------------------------------- */
@@ -308,7 +308,7 @@
                 }
             ]
         });
-                        
+
         /* --------------------------------------------------------
             13. Isotope Gallery Active  ( Gallery / Portfolio )
         -------------------------------------------------------- */
@@ -348,9 +348,9 @@
         });
 
         /* --------------------------------------------------------
-            15. Slider One Active 
+            15. Slider One Active
         --------------------------------------------------------- */
-        
+
         $('.ltn__slide-one-active').slick({
             autoplay: true,
             autoplaySpeed: 6000,
@@ -384,7 +384,7 @@
             15-2. Slider Active 2
         --------------------------------------------------------- */
         $('.ltn__slide-active-2').slick({
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 2000,
             arrows: false,
             dots: true,
@@ -592,7 +592,7 @@
             17. Small Product Slider One
         --------------------------------------------------------- */
         $('.ltn__small-product-slider-active').slick({
-            arrows: false,
+            arrows: true,
             dots: true,
             infinite: true,
             speed: 300,
@@ -944,7 +944,7 @@
 
 
         /* --------------------------------------------------------
-            23. Image Slide  - 1 (Screenshot) 
+            23. Image Slide  - 1 (Screenshot)
         --------------------------------------------------------- */
         $('.ltn__image-slider-1-active').slick({
             arrows: true,
@@ -1082,7 +1082,7 @@
 
 
         /* --------------------------------------------------------
-            26. Image Slide - 4 
+            26. Image Slide - 4
         --------------------------------------------------------- */
         $('.ltn__image-slider-4-active').slick({
             rtl: false,
@@ -1222,9 +1222,9 @@
           delay: 10,
           time: 2000
         });
-        $('.counter').addClass('animated fadeInDownBig');  
+        $('.counter').addClass('animated fadeInDownBig');
         $('h3').addClass('animated fadeIn');
-        
+
 
         /* --------------------------------------------------------
             31. Instagram Feed
@@ -1306,7 +1306,7 @@
             }
         });
         $( ".amount" ).val( "$" + $( ".slider-range" ).slider( "values", 0 ) +
-        " - $" + $( ".slider-range" ).slider( "values", 1 ) ); 
+        " - $" + $( ".slider-range" ).slider( "values", 1 ) );
 
 
         /* --------------------------------------------------------
@@ -1319,11 +1319,11 @@
             var oldValue = $button.parent().find("input").val();
             if ($button.text() == "+") {
                 var newVal = parseFloat(oldValue) + 1;
-            } 
+            }
             else {
                 if (oldValue > 0) {
                     var newVal = parseFloat(oldValue) - 1;
-                } 
+                }
                 else {
                     newVal = 0;
                 }
@@ -1346,8 +1346,8 @@
 	    /* --------------------------------------------------------
             35. Parallax active ( About Section  )
         -------------------------------------------------------- */
-        /* 
-        > 1 page e 2 ta call korle 1 ta kaj kore 
+        /*
+        > 1 page e 2 ta call korle 1 ta kaj kore
         */
         if($('.ltn__parallax-effect-active').length){
             var scene = $('.ltn__parallax-effect-active').get(0);
@@ -1471,14 +1471,14 @@
     /* --------------------------------------------------------
         36. Header menu sticky
     -------------------------------------------------------- */
-    $(window).on('scroll',function() {    
+    $(window).on('scroll',function() {
         var scroll = $(window).scrollTop();
         if (scroll < 445) {
             $(".ltn__header-sticky").removeClass("sticky-active");
         } else {
             $(".ltn__header-sticky").addClass("sticky-active");
         }
-    }); 
+    });
 
 
     $(window).on('load',function(){
@@ -1495,5 +1495,5 @@
     });
 
 
-  
+
 })(jQuery);

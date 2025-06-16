@@ -1393,8 +1393,8 @@ ul {
     ScrollUp
 ---------------------------------------------------- */
 #scrollUp {
-  background-color: var(--section-bg-1);
-  color: var(--ltn__heading-color);
+  background-color:#32525c;
+  color: white;
   bottom: 70px;
   font-size: 20px;
   font-weight: bold;
