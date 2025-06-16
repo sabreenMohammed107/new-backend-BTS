@@ -329,7 +329,7 @@
     <div class="container main-course-title-and-details">
       <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span>
       <h2>Courses Details</h2>
-      <p>We will never stop improving</p>
+      <p> Your Growth; our Mission </p>
     </div>
     <div class="container">
       <div class="row">
@@ -738,7 +738,7 @@
         <div class="container main-course-title-and-details">
           <span>Technical Training</span>
           <h2>Related Courses</h2>
-          <p>We will never stop improving</p>
+          <p> Your Growth; our Mission </p>
         </div>
         <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
             @foreach($related_courses as $related_course)

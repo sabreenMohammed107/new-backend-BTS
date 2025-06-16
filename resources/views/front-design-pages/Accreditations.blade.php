@@ -37,7 +37,7 @@
     <div class="container main-course-title-and-details">
       <span>Technical Training</span>
       <h2>Courses Details</h2>
-      <p>We will never stop improving</p>
+      <p> Your Growth; our Mission </p>
     </div>
     <div class="container">
       <div class="row">
