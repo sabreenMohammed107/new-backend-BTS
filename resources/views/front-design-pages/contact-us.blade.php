@@ -63,36 +63,38 @@
 
                                 </div>
                                 <div class="col-12">
-                                    <form id="contact-form main-page-form" action="" method="post">
+                                    <form id="contact-form main-page-form" action="{{url('/sendMessage')}}" method="POST">
+                                        @csrf
                                     <div class="row">
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="name" placeholder="Enter your name">
+                                              <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Your name">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="email" name="email" placeholder="Enter email address">
+                                            <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Email address">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-phone ltn__custom-icon">
-                                            <input type="text" name="mobile" placeholder="Enter mobile number">
+                                            <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Mobile number">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="text" name="title" placeholder="Enter message title">
+                                             <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Message title">
+
                                         </div>
                                         </div>
                                     </div>
                                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                                        <textarea name="message" placeholder="Enter message"></textarea>
+                                         <textarea name="message" placeholder="Your message">{{ old('sender_message') }}</textarea>
                                     </div>
 
                                     <p class="form-messege mb-0 mt-20"></p>
 
-                                    <button href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
+                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
                                     </form>
                                 </div>
                                 </div>
@@ -136,36 +138,38 @@
 
                                 </div>
                                 <div class="col-12">
-                                    <form id="contact-form main-page-form" action="" method="post">
+                                    <form id="contact-form main-page-form" action="{{url('/sendMessage')}}" method="POST">
+                                        @csrf
                                     <div class="row">
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="name" placeholder="Enter your name">
+                                              <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Your name">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="email" name="email" placeholder="Enter email address">
+                                            <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Email address">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-phone ltn__custom-icon">
-                                            <input type="text" name="mobile" placeholder="Enter mobile number">
+                                            <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Mobile number">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="text" name="title" placeholder="Enter message title">
+                                             <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Message title">
+
                                         </div>
                                         </div>
                                     </div>
                                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                                        <textarea name="message" placeholder="Enter message"></textarea>
+                                         <textarea name="message" placeholder="Your message">{{ old('sender_message') }}</textarea>
                                     </div>
 
                                     <p class="form-messege mb-0 mt-20"></p>
 
-                                    <button href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
+                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
                                     </form>
                                 </div>
                                 </div>
@@ -209,36 +213,38 @@
 
                                 </div>
                                 <div class="col-12">
-                                    <form id="contact-form main-page-form" action="" method="post">
+                                    <form id="contact-form main-page-form" action="{{url('/sendMessage')}}" method="POST">
+                                        @csrf
                                     <div class="row">
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="name" placeholder="Enter your name">
+                                              <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Your name">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="email" name="email" placeholder="Enter email address">
+                                            <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Email address">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-phone ltn__custom-icon">
-                                            <input type="text" name="mobile" placeholder="Enter mobile number">
+                                            <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Mobile number">
                                         </div>
                                         </div>
                                         <div class="col-md-6 my-3">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="text" name="title" placeholder="Enter message title">
+                                             <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Message title">
+
                                         </div>
                                         </div>
                                     </div>
                                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                                        <textarea name="message" placeholder="Enter message"></textarea>
+                                         <textarea name="message" placeholder="Your message">{{ old('sender_message') }}</textarea>
                                     </div>
 
                                     <p class="form-messege mb-0 mt-20"></p>
 
-                                    <button href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
+                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
                                     </form>
                                 </div>
                                 </div>

@@ -19,7 +19,7 @@ class HomeController extends Controller
     {
         // Fetch any data you need for the home page
         $banners = HomeSlider::orderBy('created_at', 'desc')->get();
-        $venues = Venue::all();
+        $venues = Venue::orderBy('venue_en_name', 'asc')->get();
         $subCategories = CourseSubCategory::where('active', 1)->orderBy('subcategory_en_name', 'asc')->get();
         $public_training = StaticPage::where('id', 7)->first();
         $in_house_training = StaticPage::where('id', 8)->first();

@@ -1,5 +1,20 @@
 
     <!-- FEATURE AREA START ( Feature - 3) -->
+    @if ($message = Session::get('message'))
+    <div id="alertDiv" class="alert alert-info alert-block">
+        {{-- <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button> --}}
+        <strong style="color:black;font-weight:bold">{{ $message }}</strong>
+    </div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div><br />
+@endif
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
         <div class="container">
           <div class="row">

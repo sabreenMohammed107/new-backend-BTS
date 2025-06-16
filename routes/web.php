@@ -74,7 +74,9 @@ Route::prefix('/')->group(function () {
 
     Route::post('/submitTailor', [CourseSearchController::class, 'submitTailor'])->name('submitTailor');
 
-
+    Route::get('/thanks', function () {
+        return view('front-design-pages.thanks');
+    })->name('thanks');
     Route::get('accreditations', function () {
         return view('front-design-pages.Accreditations');
     })->name('accreditations');

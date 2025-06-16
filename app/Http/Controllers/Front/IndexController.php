@@ -20,15 +20,9 @@ class IndexController extends Controller
            // \Mail::to($emails)->send(new NewUserNotification($user));
 
 
-              return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
-
-
-
-        }
-        catch(QueryException $q){
-
-            return redirect()->back()->with('message','You cannot send Empty Message...');
-
+           return redirect()->route('thanks');
+        } catch (QueryException $q) {
+            return redirect()->back()->with('message','You cannot send an empty message...');
         }
 
 
