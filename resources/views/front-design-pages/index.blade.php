@@ -901,7 +901,7 @@
 <div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
     <div class="container">
         <div class="row">
-            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
+            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
                 <h1>PROUD<br>TO SERVE</h1>
             </div>
 
@@ -974,7 +974,7 @@
 <div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
     <div class="container">
         <div class="row">
-            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3">
+            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
                 <h1>BTS <br>PARTNERS</h1>
             </div>
 
