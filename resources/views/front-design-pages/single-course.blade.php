@@ -294,11 +294,16 @@
     }
 
     .fb-btn { background: #1877f2; }
-    .twitter-btn { background: #1da1f2; }
+    .twitter-btn { background: #000; color: #fff; }
     .linkedin-btn { background: #0077b5; }
     .whatsapp-btn { background: #25d366; }
     .messenger-btn { background: #0084ff; }
     .email-btn { background: #ea4335; }
+
+    .social-btn.twitter-btn svg {
+        display: block;
+        margin: auto;
+    }
 
     @media (max-width: 768px) {
         .social-share {
