@@ -61,7 +61,7 @@
                   </form>
                 </div>
                 @isset($branch)
-                  <div class="col-12 col-lg-6 mt-5 mt-lg-0" style="height: max-content;">
+                  <div class="col-12 col-lg-6 mt-5 mt-lg-0" style="height: max-content;padding-top:17px">
 
                                 <div class="contact-us-main-page row flex-column p-3">
                                     <div class="">
