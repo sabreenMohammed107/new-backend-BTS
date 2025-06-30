@@ -320,7 +320,7 @@
       <div class="share-icon">
         <i class="fas fa-share-alt-square"></i>
       </div>
-      <div class="course-main-title">
+      <div class="course-main-title text-center text-center">
         <h2>{{ $course->course_en_name }}</h2>
       </div>
     </div>

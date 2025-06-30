@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
 
     <div class="main-course-bg-header">
-      <div class="course-main-title">
+      <div class="course-main-title text-center">
         <h2>Join Us AS SPEAKER</h2>
       </div>
     </div>

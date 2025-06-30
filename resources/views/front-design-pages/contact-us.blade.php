@@ -2,7 +2,7 @@
 @section('page-id' , 'contact-us-page')
 @section('page-content')
 <div class="main-course-bg-header">
-    <div class="course-main-title">
+    <div class="course-main-title text-center">
     <h2>CONTACT US</h2>
     </div>
 </div>

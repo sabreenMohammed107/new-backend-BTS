@@ -11,7 +11,7 @@
     background-position: center;
 
     }
-    .main-course-bg-header .course-main-title h2 {
+    .main-course-bg-header .course-main-title text-center h2 {
         color: #fff;
         font-size: 55px;
         padding-left: 30px;
@@ -21,7 +21,7 @@
     }
 </style>
 <div class="main-course-bg-header">
-    <div class="course-main-title">
+    <div class="course-main-title text-center">
         <h2>TAILOR YOUR COURSE</h2>
     </div>
 </div>

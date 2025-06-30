@@ -9,7 +9,7 @@
         <!-- <div class="share-icon">
                 <i class="fas fa-share-alt-square"></i>
               </div> -->
-        <div class="course-main-title">
+        <div class="course-main-title text-center ">
             <h2>Course Registration</h2>
         </div>
     </div>

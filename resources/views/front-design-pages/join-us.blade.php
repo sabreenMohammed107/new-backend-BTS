@@ -4,7 +4,7 @@
 @section('page-id' , 'join-us-page')
 @section('page-content')
     <div class="main-course-bg-header">
-      <div class="course-main-title">
+      <div class="course-main-title text-center">
         <h2>JOIN US</h2>
       </div>
     </div>

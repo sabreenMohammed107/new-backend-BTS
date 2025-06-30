@@ -4,7 +4,7 @@
 @section('page-id' , 'soft-skills-page')
 @section('page-content')
     <div class="main-course-bg-header">
-      <div class="course-main-title">
+      <div class="course-main-title text-center">
         <h2>{{ $category->category_en_name }}</h2>
       </div>
     </div>

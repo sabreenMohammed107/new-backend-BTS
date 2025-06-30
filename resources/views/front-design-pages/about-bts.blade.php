@@ -22,7 +22,7 @@
 @endsection
 @section('page-content')
     <div class="main-course-bg-header">
-      <div class="course-main-title">
+      <div class="course-main-title text-center">
         <h2>ABOUT BTS</h2>
       </div>
     </div>
