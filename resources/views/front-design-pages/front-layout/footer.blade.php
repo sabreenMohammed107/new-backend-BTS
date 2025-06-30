@@ -70,13 +70,13 @@
                             <div class="col-md-6">
                                 <div class="mc-field-group" style="margin-bottom: 15px;">
                                     <input type="text" class="footer-input" value="" name="name" class="required name"
-                                    id="mce-NAME" placeholder="name" required style="background-color: #fff;">
+                                    id="mce-NAME" placeholder="Name" required style="background-color: #fff;">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mc-field-group">
                                     <input type="email" class="footer-input" value="" name="email" class="required email"
-                                    id="mce-EMAIL" placeholder="email" required style="background-color: #fff;">
+                                    id="mce-EMAIL" placeholder="Email" required style="background-color: #fff;">
                                 </div>
                             </div>
                         </div>
