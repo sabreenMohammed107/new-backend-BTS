@@ -123,13 +123,13 @@ Route::prefix('/')->group(function () {
     })->name('join-us-speaker-page');
     Route::get('join-us-speaker-page', [App\Http\Controllers\Front\SpeakerController::class, 'showForm'])->name('join-us-speaker-page');
 
-    Route::get('join-us', function () {
-        return view('front-design-pages.join-us');
-    })->name('join-us');
+    // Route::get('join-us', function () {
+    //     return view('front-design-pages.join-us');
+    // })->name('join-us');
 
-    Route::get('join-team', function () {
-        return view('front-design-pages.join-team');
-    })->name('join-team');
+    // Route::get('join-team', function () {
+    //     return view('front-design-pages.join-team');
+    // })->name('join-team');
 
     // Add the fetch venues route here
     Route::get('fetch/venues', [VenueController::class, 'fetchVenues'])->name('fetch.venues');
