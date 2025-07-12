@@ -330,7 +330,7 @@
 @endif
 
     <div class="container main-course-title-and-details">
-      <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span>
+      {{-- <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span> --}}
       <h2>Courses Details</h2>
       <p> Your Growth; our Mission </p>
     </div>
@@ -392,7 +392,7 @@
                         </div>
                       </div>
                       <!-- card -->
-                      <div class="card">
+                      {{-- <div class="card">
                         <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-4"
                           aria-expanded="false">
                           Returns and refunds
@@ -402,7 +402,7 @@
                             {!! $course->course_objectives !!}
                           </div>
                         </div>
-                      </div>
+                      </div> --}}
                       <!-- card -->
                       <div class="card">
                         <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-5"
@@ -741,7 +741,6 @@
     </div>
       <div class="row">
         <div class="container main-course-title-and-details">
-          <span>Technical Training</span>
           <h2>Related Courses</h2>
           <p> Your Growth; our Mission </p>
         </div>

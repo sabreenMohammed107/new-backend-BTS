@@ -23,13 +23,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-       // Example shared data
-    $staticContact =  StaticPage::where('id', 3)->first();
-    $branch = Branch::where('hq', 1)->first();
-    $categories= CourseCategory::where('active',1)->get();
+        // Example shared data
+        $staticContact =  StaticPage::where('id', 3)->first();
+        $branch = Branch::where('hq', 1)->first();
+        $egyptBranch = Branch::where('id', 8)->first();
+        $categories = CourseCategory::where('active', 1)->get();
 
-    View::share('staticContact', $staticContact);
-    View::share('branch', $branch);
-    View::share('categories', $categories);
+        View::share('staticContact', $staticContact);
+        View::share('branch', $branch);
+        View::share('egyptBranch', $egyptBranch);
+        View::share('categories', $categories);
     }
 }

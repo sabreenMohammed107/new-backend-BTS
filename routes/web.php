@@ -86,9 +86,8 @@ Route::prefix('/')->group(function () {
         return view('front-design-pages.Accreditations');
     })->name('accreditations');
 
-    Route::get('contact-us', function () {
-        return view('front-design-pages.contact-us');
-    })->name('contact-us');
+     Route::get('contact-us', [HomeController::class, 'contact'])->name('contact-us');
+
 
     Route::get('course-registration', function () {
         return view('front-design-pages.course-registration');

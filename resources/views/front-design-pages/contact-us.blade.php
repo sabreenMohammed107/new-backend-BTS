@@ -21,13 +21,13 @@
             <div class="ltn__our-history-inner">
                 <div class="ltn__tab-menu text-uppercase">
                     <div class="nav">
-                        <a class="active show col-12 col-md-4 mr-0" data-bs-toggle="tab" href="#liton_tab_2_1">UAE</a>
-                        <a class="col-12 col-md-4  mr-0" data-bs-toggle="tab" href="#liton_tab_2_2">United Arab Emirates</a>
-                        <a data-bs-toggle="tab" class="col-12 col-md-4 mr-0" href="#liton_tab_2_3">Egypt</a>
+                        {{-- <a class="active show col-12 col-md-4 mr-0" data-bs-toggle="tab" href="#liton_tab_2_1">UAE</a> --}}
+                        <a class="col-12 col-md-6  mr-0" data-bs-toggle="tab" href="#liton_tab_2_2">United Arab Emirates</a>
+                        <a data-bs-toggle="tab" class="col-12 col-md-6 mr-0" href="#liton_tab_2_3">Egypt</a>
                     </div>
                 </div>
                 <div class="tab-content">
-                    <div class="tab-pane fade active show" id="liton_tab_2_1">
+                    {{-- <div class="tab-pane fade active show" id="liton_tab_2_1">
                             <div class="ltn__product-tab-content-inner">
                             <div class="container">
                                 <div class="row align-items-center">
@@ -101,8 +101,8 @@
                             </div>
                             </div>
 
-                    </div>
-                    <div class="tab-pane fade" id="liton_tab_2_2">
+                    </div> --}}
+                    <div class="tab-pane fade active show" id="liton_tab_2_2">
                             <div class="ltn__product-tab-content-inner">
                             <div class="container">
                                 <div class="row align-items-center">
@@ -112,21 +112,21 @@
                                     <div class="">
                                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                                             alt="">
-                                        UAE
+                                        {{ $branch->country->country_en_name ?? '' }}
                                         </div>
-                                        <span>3012, Block 3, 30 Euro Business Park,<br> Little Island, Co. Cork, T45 V220</span>
+                                        <span>{{ $branch->office_phone ?? '' }}</span>
                                     </div>
                                     <div class="pt-3">
                                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
                                             src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                                         </div>
-                                        <span>+353214552955</span>
+                                        <span>{{ $branch->office_phone ?? '' }}</span>
                                     </div>
                                     <div class="pt-3">
                                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
                                             src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                                         </div>
-                                        <span>+353876480984</span>
+                                        <span>{{ $branch->mobile ?? '' }}</span>
                                     </div>
 
                                     </div>
@@ -187,21 +187,21 @@
                                     <div class="">
                                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2" src="{{ asset('front-assets/img/icons/hom.png') }}"
                                             alt="">
-                                        UAE
+                                         {{ $egyptBranch->country->country_en_name ?? '' }}
                                         </div>
-                                        <span>3012, Block 3, 30 Euro Business Park,<br> Little Island, Co. Cork, T45 V220</span>
+                                        <span>{{ $egyptBranch->address ?? '' }}</span>
                                     </div>
                                     <div class="pt-3">
                                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
                                             src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Office
                                         </div>
-                                        <span>+353214552955</span>
+                                        <span>{{ $egyptBranch->office_phone ?? '' }}</span>
                                     </div>
                                     <div class="pt-3">
                                         <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
                                             src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                                         </div>
-                                        <span>+353876480984</span>
+                                        <span>{{ $egyptBranch->mobile ?? '' }}</span>
                                     </div>
 
                                     </div>

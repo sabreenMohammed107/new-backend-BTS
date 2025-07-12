@@ -56,4 +56,7 @@ class HomeController extends Controller
 
         // return view('front-design-pages.index');
     }
+    public function contact(){
+  return view('front-design-pages.contact-us');
+    }
 }

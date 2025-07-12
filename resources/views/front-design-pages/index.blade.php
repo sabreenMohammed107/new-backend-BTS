@@ -841,7 +841,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2 text-center">
-                    <h1 class="section-title">Top Ranked Courses We Offer</h1>
+                    <h1 class="section-title">Top Ranked Courses</h1>
                     <h6>Your Growth, Our Mission</h6>
                 </div>
             </div>

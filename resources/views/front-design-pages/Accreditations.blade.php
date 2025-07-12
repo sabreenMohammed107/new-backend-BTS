@@ -34,11 +34,11 @@
 
       </div>
     </div>
-    <div class="container main-course-title-and-details">
+    {{-- <div class="container main-course-title-and-details">
       <span>Technical Training</span>
       <h2>Courses Details</h2>
       <p> Your Growth; our Mission </p>
-    </div>
+    </div> --}}
     <div class="container">
       <div class="row">
         <div class="container main-course-title-and-details">

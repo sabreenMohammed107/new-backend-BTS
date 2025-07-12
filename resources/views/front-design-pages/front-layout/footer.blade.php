@@ -21,9 +21,9 @@
                 <h4 class="footer-title">JOIN BTS</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="{{ route('join-us') }}">jobs</a></li>
+                    <li><a href="{{ route('join-us') }}">Jobs</a></li>
                     <li><a href="{{ route('join-us-speaker-page') }}">Speakers</a></li>
-                    <li><a href="{{ route('service') }}">Terms of Service</a></li>
+                    {{-- <li><a href="{{ route('service') }}">Terms of Service</a></li> --}}
                     <li><a href="{{ route('contact-us') }}">Contact US</a></li>
 
                     </ul>
