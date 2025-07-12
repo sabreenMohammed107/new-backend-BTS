@@ -613,7 +613,7 @@
 
                             <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $in_house_training->small_description }}</h3>
                                 </div>
                                 <div class="col-12">
                                     <div class="row">
@@ -639,7 +639,7 @@
                         <div class="card-service-bottom-footer">
                             <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $consultancy->small_description }}</h3>
                                 </div>
                                 <div class="col-12">
                                     <div class="row">
@@ -663,7 +663,7 @@
                         <div class="card-service-bottom-footer">
                             <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
                                 <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
+                                    <h3 class="white-color mb-3">{{ $online_courses->small_description }}</h3>
                                 </div>
                                 <div class="col-12">
                                     <div class="row">
