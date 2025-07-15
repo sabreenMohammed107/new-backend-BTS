@@ -14,7 +14,7 @@
     </div>
 
     <!-- FEATURE AREA START ( Feature - 3) -->
-    <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
+    <div class="ltn__product-tab-area ltn__product-gutter pt-30 pb-30">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -22,7 +22,7 @@
               <h4 class="first-title">Are you highly qualified, experienced and respected in your field of technical
                 expertise ?</h4>
               <h4 class="second-title">Then, YOU ARE WHO WE'RE LOOKING FOR!</h4>
-              <span class="col-12 col-md-8 g-clr f-s-13 m-auto">
+              <span class="col-12 col-md-8 g-clr f-s-13 m-auto px-0">
                 At BTS, commitment to excellence is at the core of everything we do and we are always looking to welcome
                 motivated, talented and experienced professionals to support our growth. If you have the passion to
                 deliver training courses, seminars and workshops with the highest standards, we invite you to view our
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="container" style="margin-top: 70px;">
+      <div class="container" style="margin-top: 10px;">
         <div class="row">
           <div class="col-12">
             <div class="container form-container">

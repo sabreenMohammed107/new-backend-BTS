@@ -91,7 +91,7 @@
 
                         </div>
                         <div class="row">
-                        <div class=" align-self-end footer-social-icon col-6 d-flex justify-content-start mt-2">
+                        <div class=" align-self-end footer-social-icon col-8 d-flex justify-content-start mt-2">
                             <div style="margin-right: 5px;"
                                 class="face social-square d-flex justify-content-center align-items-center mr-1">
                                 <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -117,7 +117,7 @@
                         overflow: hidden;
                         transition: all 0.3s ease;margin-right: 0;background-color: var(--ltn__secondary-color);
 
-                        border-radius: 9px;" class="col-3 offset-3 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
+                        border-radius: 9px;" class="col-4 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
                             id="mc-embedded-subscribe"><i class="fas fa-location-arrow"></i></button>
                         </div>
 

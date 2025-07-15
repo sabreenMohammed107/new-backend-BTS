@@ -16236,7 +16236,7 @@ input[type="date"] {
   position: absolute;
   bottom: -50px;
   left: 35%;
-  width: 10%;
+  width: 30%;
   height: 5px;
   background-color: #376eff;
   z-index: 105;
@@ -16259,7 +16259,7 @@ input[type="date"] {
   position: absolute;
   bottom: -1px;
   left: 35%;
-  width: 10%;
+  width: 30%;
   height: 5px;
   background-color: #376eff;
   z-index: 105;
@@ -16306,7 +16306,7 @@ input[type="date"] {
   position: absolute;
   bottom: -1px;
   left: 35%;
-  width: 10%;
+  width: 30%;
   height: 5px;
   background-color: #376eff;
   z-index: 105;
@@ -16329,7 +16329,7 @@ input[type="date"] {
   position: absolute;
   bottom: -1px;
   left: 35%;
-  width: 10%;
+  width:30%;
   height: 5px;
   background-color: #376eff;
   z-index: 105;
