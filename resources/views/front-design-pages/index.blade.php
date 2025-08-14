@@ -484,7 +484,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="ltn__feature-item-box-wrap ltn__feature-item-box-wrap-2 ltn__border section-bg-6">
-                    <form action="{{ route('searchCourse.index') }}" method="GET" id="search-form">
+                    <form action="{{ route('course-search') }}" method="GET" id="search-form">
                         <div class="row">
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="mc-field-group">

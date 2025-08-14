@@ -27,16 +27,17 @@ class CourseSearchController extends Controller
 
     public function index(Request $request)
     {
-        $word = $request->input('course_name');
+        // Handle both homepage form and search page form fields
+        $word = $request->input('course_name') ?: $request->input('search');
         $search = $request->input('search');
         $category_id = $request->input('category_id');
         $city_id = $request->input('city_id');
         $start = $request->input('start');
         $end = $request->input('end');
         $venues = $request->input('venue', []); // أخذ الفلاتر المختارة للمكان
-        $date_from = $request->input('date_from');
-        $date_to = $request->input('date_to');
-        $category_id_search=$request->input('category_id_search');
+        $date_from = $request->input('date_from') ?: $start;
+        $date_to = $request->input('date_to') ?: $end;
+        $category_id_search = $request->input('category_id_search');
         $now_date = now();
 
         $sort_by = $request->get('sort_by'); // title, venue, date, duration
@@ -62,42 +63,45 @@ class CourseSearchController extends Controller
             });
         }
 
-        // فلتر المدينة
+        // فلتر المدينة - handle both city_id from homepage and venue[] from search page
         if (!empty($city_id) && $city_id !== "Venue") {
             $filters->where('rounds.venue_id', '=', $city_id);
         }
 
-        // تاريخ البداية
-        if (!empty($start)) {
-            $filters->where('rounds.round_start_date', '>=', Carbon::parse($start));
+        // تاريخ البداية - handle both start and date_from
+        if (!empty($start) || !empty($date_from)) {
+            $startDate = $start ?: $date_from;
+            $filters->where('rounds.round_start_date', '>=', Carbon::parse($startDate));
         }
 
-        // تاريخ النهاية
-        if (!empty($end)) {
-            $filters->where('rounds.round_start_date', '<=', Carbon::parse($end));
+        // تاريخ النهاية - handle both end and date_to
+        if (!empty($end) || !empty($date_to)) {
+            $endDate = $end ?: $date_to;
+            $filters->where('rounds.round_start_date', '<=', Carbon::parse($endDate));
         }
 
-        //
+        // Search by course name - handle both search and course_name fields
         if (!empty($word) || !empty($search)) {
-            $words = explode(' ', $word ?: $search);
+            $searchTerm = $word ?: $search;
+            $words = explode(' ', $searchTerm);
             $filters->where(function ($q) use ($words) {
                 foreach ($words as $word) {
                     $q->where('courses.course_en_name', 'like', '%' . $word . '%');
                 }
             });
         }
-        // فلتر الأماكن (Venues)
-        if (!empty($venues)) {
-            $filters->whereIn('rounds.venue_id', $venues); // التحقق من الأماكن المختارة
+        // فلتر الأماكن (Venues) - handle both single and multiple venue selection
+        if (!empty($venues) || !empty($city_id)) {
+            if (!empty($venues) && is_array($venues)) {
+                // If venues array is provided, use it
+                $filters->whereIn('rounds.venue_id', $venues);
+            } elseif (!empty($city_id) && $city_id !== "Venue") {
+                // If city_id is provided, use it
+                $filters->where('rounds.venue_id', '=', $city_id);
+            }
         }
 
-        // فلتر التاريخ (Date)
-        if ($date_from) {
-            $filters->where('rounds.round_start_date', '>=', Carbon::parse($date_from));
-        }
-        if ($date_to) {
-            $filters->where('rounds.round_start_date', '<=', Carbon::parse($date_to));
-        }
+
         // الترتيب بناءً على الاختيار
         switch ($sort_by) {
             case 'course_en_name':
@@ -129,8 +133,8 @@ class CourseSearchController extends Controller
         // عدد النتائج الإجمالي
         $total = $filtered->total();  // الحصول على العدد الإجمالي للنتائج
 
-        return view('front-design-pages.search.index', compact(
-            'filtered',   // هنا يتم إرسال rounds بدلاً من filtered
+        return view('front-design-pages.course-search', compact(
+            'filtered',
             'word',
             'category_id',
             'city_id',
@@ -140,13 +144,9 @@ class CourseSearchController extends Controller
             'subCategories',
             'sort_by',
             'total',
-            'word',
             'search',
-            'category_id',
-            'venues',
             'date_from',
             'date_to'
-
         ));
     }
 

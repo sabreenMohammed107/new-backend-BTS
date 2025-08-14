@@ -9,8 +9,8 @@
         <div class="row">
           <div class="col-3" style="background-color: #12576D;border-top-right-radius:7px;border-bottom-right-radius:7px;">
             <div class="container-fluid">
-              <form id="#" method="get" action="#">
-                <input type="text" name="search" value="" placeholder="Search here...">
+              <form method="get" action="{{ route('course-search') }}">
+                <input type="text" name="search" value="{{ request('search') ?: request('course_name') }}" placeholder="Search here...">
                 <button type="submit">
                     <span><i class="icon-search"></i></span>
                 </button>
@@ -18,11 +18,11 @@
             </div>
           </div>
           <div class="col-9 row jsutify-content-betwween align-items-center">
-            <div class="col"> <a href="http://"> <i class="fas fa-bars"></i> All</a></div>
-            <div class="col"><a href="http://"> <i class="fab fa-tumblr"></i> BY TITLE</a></div>
-            <div class="col"><a href="http://"> <i class="fas fa-map-marker-alt"></i> BY VENUE</a></div>
-            <div class="col"><a href="http://"> <i class="fas fa-calendar"></i> BY DATE</a></div>
-            <div class="col"><a href="http://"> <i class="far fa-clock"></i> BY DURATION</a></div>
+            <div class="col"> <a href="{{ route('course-search') }}"> <i class="fas fa-bars"></i> All</a></div>
+            <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'course_en_name'])) }}"> <i class="fab fa-tumblr"></i> BY TITLE</a></div>
+            <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'venue_id'])) }}"> <i class="fas fa-map-marker-alt"></i> BY VENUE</a></div>
+            <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'date'])) }}"> <i class="fas fa-calendar"></i> BY DATE</a></div>
+            <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'duration'])) }}"> <i class="far fa-clock"></i> BY DURATION</a></div>
           </div>
         </div>
       </div>
@@ -35,95 +35,49 @@
           <div class="row d-flex flex-column flex-xl-row">
             <div class="col-xl-3 order-xl-1 order-2">
               <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar">
-                  <!-- Category Widget -->
-                  <div class=" widget main-sidebar-widget">
-                      <h4 class="ltn__widget-title ltn__widget-title-border">Fulfilled by BTS</h4>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-8 ">
-                          <input  type="checkbox" name="" id="">  <span>All Courses</span>
+                  <form method="get" action="{{ route('course-search') }}" id="courseFilterForm">
+                    <!-- Hidden fields to preserve homepage form data -->
+                    @if(request('category_id'))
+                        <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                    @endif
+                    @if(request('city_id'))
+                        <input type="hidden" name="city_id" value="{{ request('city_id') }}">
+                    @endif
+
+                    <!-- Category Widget -->
+                    <div class=" widget main-sidebar-widget">
+                        <h4 class="ltn__widget-title ltn__widget-title-border">Fulfilled by BTS</h4>
+                        <div class="row justify-content-between">
+                          <div class="left-item-filter col-8 ">
+                            <input type="checkbox" name="all_courses" id="all_courses" @if(request('all_courses')) checked @endif>  <span>All Courses</span>
+                          </div>
+                          <span class="col-4 row justify-content-center">( {{ $total ?? 0 }} )</span>
                         </div>
-                        <span class="col-4 row justify-content-center">( 5405 )</span>
-
-                      </div>
-                  </div>
-                  <div class=" widget main-sidebar-widget Venue mt-35">
-                      <h4 class="ltn__widget-title ltn__widget-title-border">Venue</h4>
-                    <div class="Venue-menu">
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Cairo</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Chicago</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Copenhagen</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Calgary</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Cape Town</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Canberra</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Calgary</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Cape Town</span>
-                        </div>
-
-
-                      </div>
-                      <div class="row justify-content-between">
-                        <div class="left-item-filter col-12">
-                          <input  type="checkbox" name="" id="">  <span>Canberra</span>
-                        </div>
-
-
-                      </div>
-
                     </div>
-                  </div>
-                  <!-- Price Filter Widget -->
-                  <div class=" date-filter main-sidebar-widget mt-35">
-                      <h4 class="ltn__widget-title ltn__widget-title-border">Date</h4>
+                    <div class="widget main-sidebar-widget Venue">
+                        <h4 class="ltn__widget-title ltn__widget-title-border">Venue</h4>
+                      <div class="Venue-menu">
+                        @foreach ($venues as $venue)
+                        <div class="row justify-content-between venue-item">
+                          <div class="left-item-filter col-12">
+                            <input type="checkbox" name="venue[]" value="{{ $venue->id }}" id="venue-{{ $venue->id }}"
+                                   @if(in_array($venue->id, request()->get('venue', [])) || request('city_id') == $venue->id) checked @endif>
+                            <span>{{ $venue->venue_en_name }}</span>
+                          </div>
+                        </div>
+                        @endforeach
+                      </div>
+                    </div>
+                    <!-- Price Filter Widget -->
+                    <div class=" date-filter main-sidebar-widget mt-35">
+                        <h4 class="ltn__widget-title ltn__widget-title-border">Date</h4>
                       <div class="price_filter">
                         <div class="date-range-container">
 
                           <div class="date-input-group">
                               <div class="input-date">
-                                  <input type="text" class="course-input"  placeholder="From" onfocus="(this.type='date')">
+                                  <input type="text" class="course-input" name="date_from" placeholder="From"
+                                         value="{{ request('date_from') ?: request('start') }}" onfocus="(this.type='date')">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="calendar-icon bi bi-calendar" viewBox="0 0 16 16">
                                       <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                   </svg>
@@ -132,7 +86,8 @@
                               <span class="separator">-</span>
 
                               <div class="input-date">
-                                  <input type="text" class="course-input" placeholder="To" onfocus="(this.type='date')">
+                                  <input type="text" class="course-input" name="date_to" placeholder="To"
+                                         value="{{ request('date_to') ?: request('end') }}" onfocus="(this.type='date')">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="calendar-icon bi bi-calendar" viewBox="0 0 16 16">
                                       <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                   </svg>
@@ -140,428 +95,121 @@
                           </div>
                       </div>
                       </div>
+                    </div>
+                    <div class="widget ltn__tagcloud-widget mt-35">
+                      <h4 class="ltn__widget-title ltn__widget-title-border">Training Categories</h4>
+                      <ul>
+                          @foreach ($subCategories as $category)
+                          <li><a href="{{ route('course-search', array_merge(request()->query(), ['category_id_search' => $category->id])) }}">{{ $category->category_en_name }}</a></li>
+                          @endforeach
+                      </ul>
                   </div>
-                  <div class="widget ltn__tagcloud-widget mt-35">
-                    <h4 class="ltn__widget-title ltn__widget-title-border">Training Categories</h4>
-                    <ul>
-                        <li><a href="#">Online Courses</a></li>
-                        <li><a href="#">Soft Skills category</a></li>
-                        <li><a href="#">Information Technology</a></li>
-                        <li><a href="#">Technical category</a></li>
-                        <li><a href="#">Certified courses</a></li>
 
-                    </ul>
-                </div>
-
-                <div class="row filter-buttons mt-35 p-5">
-                  <button class="col-12 filter-btn ">Filter</button>
-                  <button class="col-12 tailor-btn mt-15">Tailor your course</button>
-                </div>
+                  <div class="filter-buttons-container">
+                    <button class="filter-btn w-100" type="submit">Filter</button>
+                    <button class="tailor-btn w-100 mt-3" type="button" onclick="window.location.href='{{ route('course-no-result') }}'">Tailor your course</button>
+                  </div>
+                </form>
               </aside>
             </div>
 
             <div class="col-xl-9 order-xl-2 order-1">
                 <div class="ltn__search-course-breadcrumb-area">
                     <div class="row">
-                      <h3>Results / <span>5405</span></h3>
+                      <h3>Results / <span>{{ $total ?? 0 }}</span></h3>
                       <p>Check each course page for other register options.</p>
                     </div>
                 </div>
+
+                <!-- Active Filters Display -->
+                <div class="active-filters d-flex flex-wrap gap-2 mb-3">
+                    @if (request('search') || request('course_name'))
+                        <div class="filter-chip">
+                            Name: {{ request('search') ?: request('course_name') }}
+                            <a href="{{ request()->fullUrlWithQuery(['search' => null, 'course_name' => null]) }}" class="remove-filter">&times;</a>
+                        </div>
+                    @endif
+                    @if (request('category_id'))
+                        <div class="filter-chip">
+                            Category: {{ $subCategories->firstWhere('id', request('category_id'))->category_en_name ?? 'Unknown' }}
+                            <a href="{{ request()->fullUrlWithQuery(['category_id' => null]) }}" class="remove-filter">&times;</a>
+                        </div>
+                    @endif
+                    @if (request('city_id'))
+                        <div class="filter-chip">
+                            Venue: {{ $venues->firstWhere('id', request('city_id'))->venue_en_name ?? 'Unknown' }}
+                            <a href="{{ request()->fullUrlWithQuery(['city_id' => null]) }}" class="remove-filter">&times;</a>
+                        </div>
+                    @endif
+                    @if (request('venue'))
+                        @foreach (request('venue') as $venueId)
+                            <div class="filter-chip">
+                                Venue: {{ $venues->firstWhere('id', $venueId)->venue_en_name ?? 'Unknown' }}
+                                <a href="{{ request()->fullUrlWithQuery(['venue' => collect(request('venue'))->reject(fn($v) => $v == $venueId)->values()->all() ?: null]) }}" class="remove-filter">&times;</a>
+                            </div>
+                        @endforeach
+                    @endif
+                    @if (request('date_from') || request('start'))
+                        <div class="filter-chip">
+                            Date From: {{ request('date_from') ?: request('start') }}
+                            <a href="{{ request()->fullUrlWithQuery(['date_from' => null, 'start' => null]) }}" class="remove-filter">&times;</a>
+                        </div>
+                    @endif
+                    @if (request('date_to') || request('end'))
+                        <div class="filter-chip">
+                            Date To: {{ request('date_to') ?: request('end') }}
+                            <a href="{{ request()->fullUrlWithQuery(['date_to' => null, 'end' => null]) }}" class="remove-filter">&times;</a>
+                        </div>
+                    @endif
+                </div>
+
                 <div class="tab-content">
                     <div class="tab-pane fade active show" id="liton_product_grid">
                         <div class="ltn__product-tab-content-inner ltn__product-grid-view">
                             <div class="row">
-                                <!-- ltn__product-item -->
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/card1.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
+                                @if(isset($filtered) && $filtered->count() > 0)
+                                    @foreach($filtered as $round)
+                                    <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
+                                        <div class="ltn__product-item ltn__product-item-3 text-center">
+                                            <div class="product-img">
+                                                <a href="{{ url('courseDetails/'.$round->course->id) }}">
+                                                    <img src="{{ asset('uploads/courses/' . $round->course->course_image_thumbnail) }}" alt="{{ $round->course->course_en_name }}">
+                                                </a>
                                             </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
+                                            <div class="product-info">
+                                                <div class="product-ratting">
+                                                    <ul class="row flags">
+                                                        <li class="col"><i class="fas fa-map-marker-alt"></i>{{ $round->venue->venue_en_name }}</li>
+                                                        <li class="col"><i class="fas fa-clock"></i>{{ $round->course->course_duration }}-Days</li>
+                                                        <li class="col"><i class="fas fa-dollar-sign"></i>USD-{{ $round->course->course_price ?? 'N/A' }}</li>
+                                                        <li class="col"><i class="fas fa-calendar-week">{{ $round->round_start_date ? \Carbon\Carbon::parse($round->round_start_date)->format('d-m-Y') : 'TBD' }}</i></li>
+                                                    </ul>
+                                                </div>
+                                                <h2 class="product-title">
+                                                  <a href="{{ url('courseDetails/'.$round->course->id) }}">{{ $round->course->course_en_name }}</a>
+                                                </h2>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/4.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="col-12 text-center">
+                                        <h3>No courses found matching your criteria.</h3>
+                                        <p>Try adjusting your search filters or <a href="{{ route('course-no-result') }}">request a tailor-made course</a>.</p>
                                     </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/5.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/card1.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/4.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/5.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/card1.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/4.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/5.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/card1.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/4.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/5.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/card1.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/4.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
-                                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                                        <div class="product-img">
-                                            <a href="#"><img src="{{ asset('front-assets/img/product/5.png') }}" alt="#"></a>
-                                        </div>
-                                        <div class="product-info">
-                                          <style>
-
-
-                                          </style>
-                                            <div class="product-ratting">
-                                                <ul class="row flags">
-                                                    <li class="col"><i class="fas fa-map-marker-alt"></i>Cairo</li>
-                                                    <li class="col"><i class="fas fa-clock"></i>5-Days</li>
-                                                    <li class="col"><i class="fas fa-dollar-sign"></i>USD-5450</li>
-                                                    <li class="col"><i class="fas fa-calendar-week">12-12-2024</i></li>
-                                                </ul>
-                                            </div>
-                                            <h2 class="product-title">
-                                              <a href="product-details.html">Writing Effective Policies, Procedures, Specifications & Standards</a>
-                                            </h2>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                @if(isset($filtered) && $filtered->hasPages())
                 <div class="ltn__pagination-area text-center">
                     <div class="ltn__pagination">
-                        <ul>
-                            <li><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">...</a></li>
-                            <li><a href="#">10</a></li>
-                            <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
-                        </ul>
+                        {{ $filtered->appends(request()->query())->links() }}
                     </div>
                 </div>
+                @endif
             </div>
 
           </div>
@@ -664,15 +312,190 @@
     </div>
   </div>
 
-
-
 @endsection
 
+@section('script')
+<style>
+.filter-chip {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 15px;
+    font-size: 12px;
+}
 
+.remove-filter {
+    color: #ff0000;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+}
 
+.remove-filter:hover {
+    color: #cc0000;
+}
 
+.active-filters {
+    margin-bottom: 20px;
+}
 
+/* Fix for venue section and filter buttons positioning */
+.Venue-menu {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 30px !important;
+    padding-bottom: 15px;
+    padding-right: 10px;
+}
 
+.venue-item {
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.venue-item:last-child {
+    border-bottom: none;
+}
+
+.filter-buttons-container {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, #12576D 0%, #0d414f 100%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(18, 87, 109, 0.3);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+
+.filter-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.filter-btn:hover:before {
+    left: 100%;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(135deg, #0d414f 0%, #0a2f38 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(18, 87, 109, 0.4);
+}
+
+.tailor-btn {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+
+.tailor-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.tailor-btn:hover:before {
+    left: 100%;
+}
+
+.tailor-btn:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+.widget {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Ensure proper spacing between sections */
+.main-sidebar-widget {
+    margin-bottom: 35px !important;
+}
+
+/* Fix for the venue checkboxes */
+.left-item-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.left-item-filter input[type="checkbox"] {
+    margin: 0;
+    transform: scale(1.2);
+}
+
+.left-item-filter span {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Ensure the filter button doesn't overlap */
+.filter-btn {
+    position: relative !important;
+    z-index: 10;
+}
+
+/* Remove horizontal scrollbar */
+.Venue-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.Venue-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.Venue-menu::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.Venue-menu::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+</style>
+@endsection
 
 
 

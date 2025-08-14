@@ -97,9 +97,7 @@ Route::prefix('/')->group(function () {
 
     Route::get('/courseDetails/{id}', [CourseSearchController::class, 'courseDetails']);
 
-    Route::get('course-search', function () {
-        return view('front-design-pages.course-search');
-    })->name('course-search');
+    Route::get('course-search', [CourseSearchController::class, 'index'])->name('course-search');
     //captch
     Route::get('/refresh-captcha', function () {
         return response()->json(['captcha' => captcha_img('flat')]);

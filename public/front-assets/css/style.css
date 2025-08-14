@@ -16449,10 +16449,9 @@ input[type="date"] {
     color: #fff;
   }
 .course-search-page .container-fluid .row form button {
-  position: absolute;
+
   background-color: transparent;
-  top: 25%;
-  left: -10px;
+
 }
 .course-search-page .container-fluid .row form button span i {
   color: #fff;
