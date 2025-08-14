@@ -75,6 +75,14 @@
                             </a>
                         </div>
                         <div class="menu-item">
+                            <a class="menu-link" href="{{ route('course-categories.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Course Categories</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
                             <a class="menu-link" href="{{ route('courses.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>

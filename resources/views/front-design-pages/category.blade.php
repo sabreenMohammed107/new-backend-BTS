@@ -3,10 +3,12 @@
 
 @section('page-id' , 'soft-skills-page')
 @section('page-content')
-    <div class="main-course-bg-header">
+    <div class="main-course-bg-header" style="background-image: url('{{ $category->category_image ? asset($category->category_image) : asset('front-assets/img/bg/servics-bg.png') }}');">
       <div class="course-main-title text-center">
         <h2>{{ $category->category_en_name }}</h2>
       </div>
+      <!-- Add overlay for better text readability -->
+      <div class="bg-overlay"></div>
     </div>
 
     <!-- FEATURE AREA START ( Feature - 3) -->

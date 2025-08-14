@@ -153,6 +153,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('slider', HomeSliderController::class);
 
+    Route::resource('course-categories', App\Http\Controllers\Admin\CourseCategoryController::class);
+    Route::post('course-categories/{id}/status', [App\Http\Controllers\Admin\CourseCategoryController::class, 'updateStatus'])->name('course-categories.status.update');
     Route::resource('sub-categories', SubCategoryController::class);
     Route::resource('courses', CoursesController::class);
     Route::get('dynamicdependentCat/fetch', [CoursesController::class, 'fetchCat'])->name('dynamicdependentCat.fetch');
