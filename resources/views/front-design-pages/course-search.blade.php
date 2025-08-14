@@ -7,23 +7,25 @@
     <div class="container-fluid main-course-search-nav" style='background-color:#232F3E;'>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-3" style="background-color: #12576D;border-top-right-radius:7px;border-bottom-right-radius:7px;">
+          <div class="col-4 search-container">
             <div class="container-fluid">
-              <form method="get" action="{{ route('course-search') }}">
-                <input type="text" name="search" value="{{ request('search') ?: request('course_name') }}" placeholder="Search here...">
-                <button type="submit">
-                    <span><i class="icon-search"></i></span>
-                </button>
+              <form method="get" action="{{ route('course-search') }}" class="search-form">
+                <div class="search-input-wrapper">
+                  <input type="text" name="search" value="{{ request('search') ?: request('course_name') }}" placeholder="Search for courses..." class="search-input">
+                  <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
               </form>
             </div>
           </div>
-          <div class="col-9 row jsutify-content-betwween align-items-center">
+          {{--  <div class="col-9 row jsutify-content-betwween align-items-center">
             <div class="col"> <a href="{{ route('course-search') }}"> <i class="fas fa-bars"></i> All</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'course_en_name'])) }}"> <i class="fab fa-tumblr"></i> BY TITLE</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'venue_id'])) }}"> <i class="fas fa-map-marker-alt"></i> BY VENUE</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'date'])) }}"> <i class="fas fa-calendar"></i> BY DATE</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'duration'])) }}"> <i class="far fa-clock"></i> BY DURATION</a></div>
-          </div>
+          </div>  --}}
         </div>
       </div>
 
@@ -316,6 +318,150 @@
 
 @section('script')
 <style>
+/* Search Container Styling */
+.search-container {
+    background: linear-gradient(135deg, #12576D 0%, #0d414f 100%);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(18, 87, 109, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.search-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.search-form {
+    position: relative;
+    z-index: 2;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.search-input-wrapper:focus-within {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    background: transparent;
+    color: #333;
+    font-weight: 500;
+}
+
+.search-input::placeholder {
+    color: #999;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.search-input:focus::placeholder {
+    color: #12576D;
+    transform: translateX(10px);
+}
+
+.search-button {
+    background: linear-gradient(135deg, #12576D 0%, #0d414f 100%);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(18, 87, 109, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.search-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.search-button:hover::before {
+    left: 100%;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #0d414f 0%, #0a2f38 100%);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(18, 87, 109, 0.4);
+}
+
+.search-button i {
+    color: white;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.search-button:hover i {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        border-radius: 12px;
+        margin: 10px;
+    }
+
+    .search-input-wrapper {
+        border-radius: 20px;
+    }
+
+    .search-input {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .search-button {
+        width: 45px;
+        height: 45px;
+    }
+}
+
 .filter-chip {
     display: inline-block;
     background: #f0f0f0;
