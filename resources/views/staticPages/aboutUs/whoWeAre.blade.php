@@ -79,8 +79,18 @@
                                         <textarea   class="form-control tinymce-editor" name="details3" >{{ $row->details3 }}</textarea>
                                     </div> --}}
                                     <div class="col-md-6">
-                                        <label class="form-label">youtube link</label>
-                                        <input type="text" class="form-control" name="details4" value="{{ $row->details4 }}" />
+                                        <label class="form-label">Video Upload</label>
+                                        <input type="file" class="form-control" name="video_file" accept="video/*" />
+                                        @if($row->details4)
+                                            <div class="mt-2">
+                                                <small class="text-muted">Current video: {{ basename($row->details4) }}</small>
+                                                <br>
+                                                <a href="#" class="btn btn-sm btn-primary mt-2 admin-video-preview" data-video-src="{{ asset($row->details4) }}">
+                                                    <i class="fas fa-play"></i> Preview Video
+                                                </a>
+                                            </div>
+                                        @endif
+                                        <small class="form-text text-muted">Upload MP4, AVI, or MOV video files (max 50MB)</small>
                                     </div>
 
                                 </div>
@@ -107,4 +117,168 @@
         </div>
     </div>
     <!--end::Post-->
+
+    <!-- Admin Video Modal -->
+    <div class="admin-video-modal" id="adminVideoModal">
+        <div class="admin-video-modal-content">
+            <div class="admin-video-modal-header">
+                <h5 class="admin-video-modal-title">Video Preview</h5>
+                <span class="admin-video-modal-close">&times;</span>
+            </div>
+            <div class="admin-video-modal-body">
+                <video id="adminModalVideo" controls preload="metadata">
+                    <source src="" type="video/mp4">
+                    <source src="" type="video/avi">
+                    <source src="" type="video/mov">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+<style>
+/* Admin Video Modal Styles */
+.admin-video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.admin-video-modal-content {
+    position: relative;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.admin-video-modal-header {
+    position: relative;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-video-modal-title {
+    margin: 0;
+    color: #495057;
+    font-weight: 600;
+}
+
+.admin-video-modal-close {
+    color: #6c757d;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.admin-video-modal-close:hover {
+    color: #dc3545;
+}
+
+.admin-video-modal-body {
+    padding: 0;
+    position: relative;
+}
+
+.admin-video-modal-body video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .admin-video-modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .admin-video-modal-header {
+        padding: 10px 15px;
+    }
+
+    .admin-video-modal-close {
+        font-size: 20px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Admin Video Modal Functionality
+    const adminVideoModal = document.getElementById('adminVideoModal');
+    const adminModalVideo = document.getElementById('adminModalVideo');
+    const adminModalClose = document.querySelector('.admin-video-modal-close');
+    const adminVideoPreviewBtns = document.querySelectorAll('.admin-video-preview');
+
+    // Open modal when preview button is clicked
+    adminVideoPreviewBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const videoSrc = this.getAttribute('data-video-src');
+
+            // Set video source
+            const sources = adminModalVideo.querySelectorAll('source');
+            sources.forEach(source => {
+                source.src = videoSrc;
+            });
+
+            // Load video
+            adminModalVideo.load();
+
+            // Show modal
+            adminVideoModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal when X is clicked
+    adminModalClose.addEventListener('click', function() {
+        closeAdminVideoModal();
+    });
+
+    // Close modal when clicking outside the video
+    adminVideoModal.addEventListener('click', function(e) {
+        if (e.target === adminVideoModal) {
+            closeAdminVideoModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && adminVideoModal.style.display === 'block') {
+            closeAdminVideoModal();
+        }
+    });
+
+    // Function to close modal
+    function closeAdminVideoModal() {
+        adminVideoModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        adminModalVideo.pause();
+        adminModalVideo.currentTime = 0;
+
+        // Clear video sources
+        const sources = adminModalVideo.querySelectorAll('source');
+        sources.forEach(source => {
+            source.src = '';
+        });
+    }
+});
+</script>
 @endsection

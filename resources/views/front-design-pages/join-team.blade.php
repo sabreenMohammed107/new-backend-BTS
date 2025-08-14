@@ -16,9 +16,9 @@
     <div class="container-fluid">
         <div class="row">
         <div class="col-lg-12">
-            <div class="section-title-area ltn__section-title-2 text-center">
+            <div class="section-title-area ltn__section-title-2 text-left">
 
-            <span class="col-12 col-md-8 g-clr text-center f-s-13 m-auto">
+            <span class="col-12 col-md-8 g-clr text-left f-s-13 m-auto">
                 We are always interested to meet potential team members to join our fast-growing, dynamic team of professionals in order to continue providing a personalized, efficient, professional and confidential service to our increasing portfolio of clients. Our people are undoubtedly our greatest asset and we pride ourselves on creating an environment where our team look forward to come to work every day. While experience is not a requirement (for certain positions), preference will be given to those applicants who are interested in a challenge, who are results and target-oriented besides wanting to form part of our dynamic team and fast- growing business. Read on below to find out more about what our positions entail and what skills are required.
             </span>
 

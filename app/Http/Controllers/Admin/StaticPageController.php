@@ -318,6 +318,18 @@ class StaticPageController extends Controller
     }
     public function whoWeAreUpdate(Request $request) {
         try {
+            // Validate the request
+            $request->validate([
+                'small_description' => 'nullable|string|max:1000',
+                'details' => 'nullable|string',
+                'details2' => 'nullable|string',
+                'details3' => 'nullable|string',
+                'video_file' => 'nullable|file|mimes:mp4,avi,mov|max:51200', // 50MB max
+            ], [
+                'video_file.mimes' => 'The video file must be a file of type: mp4, avi, mov.',
+                'video_file.max' => 'The video file may not be greater than 50MB.',
+            ]);
+
             $staticPage = StaticPage::find(5);
             if (!$staticPage) {
                 return back()->withErrors(["Errors" => "Static Page not found!"]);
@@ -328,8 +340,40 @@ class StaticPageController extends Controller
                 "details" => $request->input("details"),
                 "details2" => $request->input("details2"),
                 "details3" => $request->input("details3"),
-                "details4" => $request->input("details4"),
             ];
+
+            // Handle video upload
+            if ($request->hasFile('video_file')) {
+                $videoFile = $request->file('video_file');
+
+                // Validate video file
+                $allowedTypes = ['video/mp4', 'video/avi', 'video/mov', 'video/quicktime'];
+                $maxSize = 50 * 1024 * 1024; // 50MB
+
+                if (!in_array($videoFile->getMimeType(), $allowedTypes)) {
+                    return back()->withErrors(["Errors" => "Invalid video format. Please upload MP4, AVI, or MOV files only."]);
+                }
+
+                if ($videoFile->getSize() > $maxSize) {
+                    return back()->withErrors(["Errors" => "Video file size must be less than 50MB."]);
+                }
+
+                // Create upload directory if it doesn't exist
+                $uploadPath = public_path('uploads/videos');
+                if (!file_exists($uploadPath)) {
+                    mkdir($uploadPath, 0755, true);
+                }
+
+                // Generate unique filename
+                $filename = time() . '_' . $videoFile->getClientOriginalName();
+
+                // Move uploaded file
+                if ($videoFile->move($uploadPath, $filename)) {
+                    $dataToBeUpdated["details4"] = 'uploads/videos/' . $filename;
+                } else {
+                    return back()->withErrors(["Errors" => "Failed to upload video file."]);
+                }
+            }
 
             // Update the static page
             $staticPage->update($dataToBeUpdated);

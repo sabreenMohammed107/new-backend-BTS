@@ -363,7 +363,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-5">
+            <div class="col-12 col-lg-6">
                 <div class="main-img-of-course text-center">
                     <img src="{{ asset('uploads/courses') }}/{{ $course->course_image }}"
                         alt="{{ $course->course_en_name }}">
@@ -617,7 +617,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-6">
                 <div class="row action-btns mb-4">
 
                     <div class="col-12 d-flex flex-wrap justify-content-end gap-2">

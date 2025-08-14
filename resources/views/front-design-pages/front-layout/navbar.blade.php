@@ -35,9 +35,20 @@
                                             @endisset
                                         </ul>
                                     </li>
-                                    <li class="{{ request()->routeIs('join-us') ? 'active' : '' }}">
-                                        <a href="{{ route('join-us') }}">Join US</a>
+                                    <li class="menu-icon {{ request()->routeIs('join-us') ? 'active' : '' }}">
+                                        <a href="#">Join US</a>
+                                        <ul>
+
+                                                    <li>
+                                                        <a href="{{ route('join-us') }}">Team Member</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ route('join-us') }}">Speaker</a>
+                                                    </li>
+
+                                        </ul>
                                     </li>
+
                                     <li class="special-link-in {{ request()->routeIs('contact-us') ? 'active' : '' }}">
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                     </li>

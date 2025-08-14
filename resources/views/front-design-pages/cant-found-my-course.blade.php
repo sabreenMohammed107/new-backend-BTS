@@ -11,17 +11,18 @@
     background-position: center;
 
     }
-    .main-course-bg-header .course-main-title text-center h2 {
-        color: #fff;
+    .main-course-bg-header .course-main-title.text-center h2 {
+        color: #fff !important;
         font-size: 55px;
         padding-left: 30px;
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
     }
 </style>
 <div class="main-course-bg-header">
-    <div class="course-main-title text-center">
+    <div class="course-main-title text-center" >
         <h2>TAILOR YOUR COURSE</h2>
     </div>
 </div>
@@ -51,35 +52,35 @@
         <div class="row g-4">
             <div class="col-md-6">
                 <label for="courseTitle" class="form-label fw-bold">Course Title</label>
-                <input type="text" class="form-control" id="courseTitle" placeholder="Writing Effective Policies, Procedures, Specifications & Standards">
+                <input type="text" class="form-control" id="courseTitle" >
             </div>
             <div class="col-md-6">
                 <label for="courseCity" class="form-label fw-bold">Course City</label>
-                <input type="text" class="form-control" id="courseCity" placeholder="DUBAI">
+                <input type="text" class="form-control" id="courseCity" >
             </div>
             <div class="col-md-6">
                 <label for="courseDescription" class="form-label fw-bold">Course Description</label>
-                <textarea class="form-control" id="courseDescription" rows="2" placeholder="1234567890"></textarea>
+                <textarea class="form-control" id="courseDescription" rows="2" ></textarea>
             </div>
             <div class="col-md-6">
                 <label for="courseDate" class="form-label fw-bold">Date</label>
-                <input style="height: 45px" type="date" class="form-control" id="courseDate" placeholder="MM/DD/YYYY">
+                <input style="height: 45px" type="date" class="form-control" id="courseDate">
             </div>
             <div class="col-md-6">
                 <label for="name" class="form-label fw-bold">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="FARIS">
+                <input type="text" class="form-control" id="name" >
             </div>
             <div class="col-md-6">
                 <label for="email" class="form-label fw-bold">E-mail</label>
-                <input type="email" class="form-control" id="email" placeholder="EXAPLE@GMAIL.COM">
+                <input type="email" class="form-control" id="email" >
             </div>
             <div class="col-md-6">
                 <label for="mobile" class="form-label fw-bold">Mobile</label>
-                <input type="text" class="form-control" id="mobile" placeholder="123456789">
+                <input type="text" class="form-control" id="mobile" >
             </div>
             <div class="col-md-6">
                 <label for="organisation" class="form-label fw-bold">Organisation Or Company</label>
-                <input type="text" class="form-control" id="organisation" placeholder="EXAMPLE@GMAIL.COM">
+                <input type="text" class="form-control" id="organisation">
             </div>
         </div>
         <div class="form-check mt-4">
