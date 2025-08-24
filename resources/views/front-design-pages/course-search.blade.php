@@ -19,13 +19,13 @@
               </form>
             </div>
           </div>
-          {{--  <div class="col-9 row jsutify-content-betwween align-items-center">
+           <div class="col-8 row jsutify-content-betwween align-items-center">
             <div class="col"> <a href="{{ route('course-search') }}"> <i class="fas fa-bars"></i> All</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'course_en_name'])) }}"> <i class="fab fa-tumblr"></i> BY TITLE</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'venue_id'])) }}"> <i class="fas fa-map-marker-alt"></i> BY VENUE</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'date'])) }}"> <i class="fas fa-calendar"></i> BY DATE</a></div>
             <div class="col"><a href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'duration'])) }}"> <i class="far fa-clock"></i> BY DURATION</a></div>
-          </div>  --}}
+          </div>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
                     </div>
                     <div class="widget main-sidebar-widget Venue">
                         <h4 class="ltn__widget-title ltn__widget-title-border">Venue</h4>
-                      <div class="Venue-menu">
+                      <div class="Venue-menu" style="padding :0 20px">
                         @foreach ($venues as $venue)
                         <div class="row justify-content-between venue-item">
                           <div class="left-item-filter col-12">
@@ -323,7 +323,7 @@
     background: linear-gradient(135deg, #12576D 0%, #0d414f 100%);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    padding: 20px 0;
+    padding: 2px 0;
     box-shadow: 0 4px 20px rgba(18, 87, 109, 0.3);
     position: relative;
     overflow: hidden;
