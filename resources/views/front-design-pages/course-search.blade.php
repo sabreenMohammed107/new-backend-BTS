@@ -469,7 +469,7 @@
                     </aside>
                 </div>
 
-                <div class="col-xl-9 order-xl-2 order-1">
+                <div class="container col-xl-9 order-xl-2 order-1">
                     <div class="ltn__search-course-breadcrumb-area">
                         <div class="row">
                             <h3>Results / <span>{{ $total ?? 0 }}</span></h3>
@@ -545,23 +545,32 @@
                                                         <!-- Overlay المعلومات فوق الصورة -->
                                                         <div class="position-absolute bottom-0 start-0 w-100 text-white p-3"
                                                             style="background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));">
-                                                            <ul class="d-flex flex-wrap gap-3 mb-2 small">
-                                                                <li><i class="fas fa-map-marker-alt"></i>
-                                                                    {{ $round->venue->venue_en_name }}</li>
-                                                                <li><i class="fas fa-clock"></i>
-                                                                    {{ $round->course->course_duration }}-Days</li>
-                                                                <li><i class="fas fa-dollar-sign"></i>
-                                                                    USD-{{ $round->course->course_price ?? 'N/A' }}</li>
-                                                                <li><i class="fas fa-calendar-week"></i>
-                                                                    {{ $round->round_start_date ? \Carbon\Carbon::parse($round->round_start_date)->format('d-m-Y') : 'TBD' }}
-                                                                </li>
-                                                            </ul>
-                                                            <h6 class="fw-bold mb-0">
-                                                                <a class="text-white text-decoration-none"
-                                                                    href="{{ url('courseDetails/' . $round->course->id) }}">
-                                                                    {{ $round->course->course_en_name }}
-                                                                </a>
-                                                            </h6>
+                                                         <ul class="d-flex flex-wrap gap-3 mb-2 small align-items-center"
+    style="font-size:12px; list-style: none; margin:0; padding:0;">
+    <li class="d-flex align-items-center gap-1">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>{{ $round->venue->venue_en_name }}</span>
+    </li>
+    <li class="d-flex align-items-center gap-1">
+        <i class="fas fa-clock"></i>
+        <span>{{ $round->course->course_duration }}-Days</span>
+    </li>
+    <li class="d-flex align-items-center gap-1">
+        <i class="fas fa-dollar-sign"></i>
+        <span>USD-{{ $round->course->course_price ?? 'N/A' }}</span>
+    </li>
+    <li class="d-flex align-items-center gap-1">
+        <i class="fas fa-calendar-week"></i>
+        <span>{{ $round->round_start_date ? \Carbon\Carbon::parse($round->round_start_date)->format('d-m-Y') : 'TBD' }}</span>
+    </li>
+</ul>
+
+<h6 class="fw-bold mb-0">
+    <a class="text-white text-decoration-none" href="{{ url('courseDetails/' . $round->course->id) }}">
+        {{ $round->course->course_en_name }}
+    </a>
+</h6>
+
                                                         </div>
                                                     </div>
                                                 </div>
