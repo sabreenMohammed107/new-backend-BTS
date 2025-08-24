@@ -649,7 +649,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($rounds as $round)
-                                    <tr>
+                                    <tr style="font-size: 12px !importnant;">
                                         <td><span class="round-code">{{ $round->round_code }}</span></td>
                                         <td>
                                             @if ($round)
@@ -674,7 +674,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <a href='{{ url("/registerCourse/$round->id") }}' class="btn btn-register">
+                                            <a href='{{ url("/registerCourse/$round->id") }}' class="btn btn-register" style="font-size: 12px !importnant;">
                                                 Register Now
                                             </a>
                                         </td>
