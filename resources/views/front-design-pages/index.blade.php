@@ -494,7 +494,6 @@
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
                                 <div class="">
                                     <select id="categorySelect" name="category_id">
-                                        <!-- هذا الخيار لا يجب أن يكون فاضيًا أبداً -->
                                         <option value="" disabled selected>Select a Category</option>
 
                                         @isset($subCategories)
@@ -527,19 +526,20 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                <div class="mc-field-group d-flex align-items-center">
-                                    <span>From:</span>
-                                    <input type="date" placeholder="Course From" value="" name="start">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-                                <div class="mc-field-group d-flex align-items-center">
-                                    <span>To:</span>
+                           <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+    <div class="mc-field-group">
+        <input type="text" name="start" placeholder="From Date"
+               onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+    </div>
+</div>
 
-                                    <input type="date" placeholder="Course Name" value="" name="end">
-                                </div>
-                            </div>
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+    <div class="mc-field-group">
+        <input type="text" name="end" placeholder="To Date"
+               onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+    </div>
+</div>
+
                             {{-- Tailor your course --}}
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
                                 <a href="{{ route('course-no-result') }}"

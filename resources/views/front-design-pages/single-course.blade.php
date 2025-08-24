@@ -385,7 +385,7 @@
                                                 data-bs-target="#faq-item-2-1" aria-expanded="true">
                                                 Course Description
                                             </h6>
-                                            <div id="faq-item-2-1" class="collapse show" data-parent="#accordion_2">
+                                            <div id="faq-item-2-1" class="collapse show" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     {!! $course->course_en_desc !!}
                                                 </div>
@@ -397,7 +397,7 @@
                                                 data-bs-target="#faq-item-2-2" aria-expanded="false">
                                                 The Training Course Will Highlight ?
                                             </h6>
-                                            <div id="faq-item-2-2" class="collapse " data-parent="#accordion_2">
+                                            <div id="faq-item-2-2" class="collapse " data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     <div class="ltn__video-img alignleft">
                                                         <img src="{{ asset('front-assets/img/bg/17.jpg') }}"
@@ -418,7 +418,7 @@
                                                 data-bs-target="#faq-item-2-3" aria-expanded="false">
                                                 Training Objective
                                             </h6>
-                                            <div id="faq-item-2-3" class="collapse" data-parent="#accordion_2">
+                                            <div id="faq-item-2-3" class="collapse" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     {!! $course->course_highlight !!}
                                                 </div>
@@ -430,7 +430,7 @@
                           aria-expanded="false">
                           Returns and refunds
                         </h6>
-                        <div id="faq-item-2-4" class="collapse" data-parent="#accordion_2">
+                        <div id="faq-item-2-4" class="collapse" data-bs-parent="#accordion_2">
                           <div class="card-body">
                             {!! $course->course_objectives !!}
                           </div>
@@ -442,7 +442,7 @@
                                                 data-bs-target="#faq-item-2-5" aria-expanded="false">
                                                 Target Audience
                                             </h6>
-                                            <div id="faq-item-2-5" class="collapse" data-parent="#accordion_2">
+                                            <div id="faq-item-2-5" class="collapse" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     {!! $course->course_audience !!}
                                                 </div>
@@ -454,7 +454,7 @@
                                                 data-bs-target="#faq-item-2-6" aria-expanded="false">
                                                 Training Methods
                                             </h6>
-                                            <div id="faq-item-2-6" class="collapse" data-parent="#accordion_2">
+                                            <div id="faq-item-2-6" class="collapse" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     {!! $course->course_training_methods !!}
                                                 </div>
@@ -466,7 +466,7 @@
                                                 data-bs-target="#faq-item-2-7" aria-expanded="false">
                                                 Daily Agenda
                                             </h6>
-                                            <div id="faq-item-2-7" class="collapse" data-parent="#accordion_2">
+                                            <div id="faq-item-2-7" class="collapse" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     {!! $course->course_daily_agenda !!}
                                                 </div>
@@ -477,7 +477,7 @@
                                                 data-bs-target="#faq-item-2-8" aria-expanded="false">
                                                 Accreditation
                                             </h6>
-                                            <div id="faq-item-2-8" class="collapse" data-parent="#accordion_2">
+                                            <div id="faq-item-2-8" class="collapse" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     {!! $course->Accreditation !!}
                                                 </div>
@@ -488,7 +488,7 @@
                                                 data-bs-target="#faq-item-2-9" aria-expanded="false">
                                                 Quick Enquiry
                                             </h6>
-                                            <div id="faq-item-2-9" class="collapse" data-parent="#accordion_2">
+                                            <div id="faq-item-2-9" class="collapse" data-bs-parent="#accordion_2">
                                                 <div class="card-body">
                                                     <h4>Request Info</h4>
                                                     <form class="form-area contact-form text-right"

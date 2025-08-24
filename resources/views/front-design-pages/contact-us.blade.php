@@ -20,11 +20,18 @@
             <div class="col-lg-12">
             <div class="ltn__our-history-inner">
                 <div class="ltn__tab-menu text-uppercase">
-                    <div class="nav">
-                        {{-- <a class="active show col-12 col-md-4 mr-0" data-bs-toggle="tab" href="#liton_tab_2_1">UAE</a> --}}
-                        <a class="col-12 col-md-6  mr-0" data-bs-toggle="tab" href="#liton_tab_2_2">United Arab Emirates</a>
-                        <a data-bs-toggle="tab" class="col-12 col-md-6 mr-0" href="#liton_tab_2_3">Egypt</a>
-                    </div>
+                     <div class="container">
+  <div class="nav text-center">
+    <a class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+       data-bs-toggle="tab" href="#liton_tab_2_2">
+       United Arab Emirates
+    </a>
+    <a class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+       data-bs-toggle="tab" href="#liton_tab_2_3">
+       Egypt
+    </a>
+  </div>
+</div>
                 </div>
                 <div class="tab-content">
                     {{-- <div class="tab-pane fade active show" id="liton_tab_2_1">
@@ -128,6 +135,12 @@
                                         </div>
                                         <span>{{ $branch->mobile ?? '' }}</span>
                                     </div>
+<div class="pt-3">
+                                        <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
+                                            src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Email
+                                        </div>
+                                        <span>{{ $branch->email ?? '' }}</span>
+                                    </div>
 
                                     </div>
                                 </div>
@@ -202,6 +215,12 @@
                                             src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Mobile
                                         </div>
                                         <span>{{ $egyptBranch->mobile ?? '' }}</span>
+                                    </div>
+                                     <div class="pt-3">
+                                        <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
+                                            src="{{ asset('front-assets/img/icons/phone.png') }}" alt="">Email
+                                        </div>
+                                        <span>{{ $egyptBranch->email ?? '' }}</span>
                                     </div>
 
                                     </div>

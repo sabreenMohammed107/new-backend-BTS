@@ -195,6 +195,14 @@
 
             </div>
             <div class="col-12 col-lg-6">
+<div class="event-details-left left-contents p-4 mb-5" style="background-color:#f9f9ff">
+    <h5 class="mt-4 mb-2">{{ $branch->venue->venue_en_name }}</h5>
+    <p>{{ $branch->address }}</p>
+    <p>{{ $branch->email }}</p>
+    <p>{{ $branch->venue->venue_en_name }} ,{{ $branch->country->country_en_name }}</p>
+    <p><span style="color:#32a2a8">Tel :</span> {{ $branch->mobile }}</p>
+    <p><span style="color:#32a2a8">Office Phone :</span>{{ $branch->office_phone }}</p>
+</div>
 
                 <h3 class="mb-4">Popular Courses</h3>
                 <div class="row popular-courses">
