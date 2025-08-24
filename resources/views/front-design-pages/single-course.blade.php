@@ -632,6 +632,8 @@
                         {{-- <button class=" btn-single-course-option">Request In house Proposal</button> --}}
                         <a href='{{ url("/requestInHouse/$course->id") }}' class=" btn-single-course-option">
                             Request In house Proposal</a>
+                               <a href='{{ url("/requestOnline/$course->id") }}' class=" btn-single-course-option">
+                            Request Online Proposal</a>
                     </div>
                 </div>
                 <!-- Course Rounds Table -->

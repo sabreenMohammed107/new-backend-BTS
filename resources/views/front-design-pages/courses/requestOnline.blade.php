@@ -16,7 +16,7 @@
                 <i class="fas fa-share-alt-square"></i>
               </div> -->
         <div class="course-main-title text-center">
-            <h2>Request for Inhouse</h2>
+            <h2>Request for online</h2>
         </div>
     </div>
     <div class="container" style="margin-top: 70px;">
@@ -38,9 +38,9 @@
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="container form-container">
-                    <h2 class="form-title f-s-20">Request for Inhouse Form</h2>
+                    <h2 class="form-title f-s-20">Request for Online Form</h2>
 
-                    <form action="{{url('/registerApplicants')}}" method="POST">
+                    <form action="{{url('/registerApplicantsOnline')}}" method="POST">
                         @csrf
                         <!-- Course Details -->
                         <h4 class="section-title f-s-15">Course Details</h4>
@@ -48,6 +48,7 @@
                             <div class="col-md-6 mb-3">
                                 <input type="hidden" name="applicant_type_id" value=3 />
                                 <input type="hidden" name="course_id" value="{{$course->id}}" />
+                                  <input type="hidden" name="type" value="online" />
                                 <label for="courseCode" class="form-label">Code:</label>
                                 <br>
                                 <span class="courseCode">{{ $course->course_code ?? '' }}</span>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Applicant extends Model
 {
     protected $fillable = [
-        'code', 'salut_id', 'name', 'country_id', 'job_title', 'company',
+        'code', 'salut_id', 'name', 'country_id', 'job_title', 'company','type',
         'venue_id', 'address', 'email', 'phone', 'mobile', 'fax',
         'register_round_id', 'course_id', 'quk_enquery_notes', 'inhouse_no_days', 'inhouse_perefer_dates',
         'applicant_type_id','inhouse_requirements','inhouse_no_particants'

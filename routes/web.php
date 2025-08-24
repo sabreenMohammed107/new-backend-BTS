@@ -51,6 +51,7 @@ use Illuminate\Support\Facades\Artisan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/clear-cache', function () {
     Artisan::call('optimize:clear');
     return 'Cache cleared';
@@ -86,7 +87,7 @@ Route::prefix('/')->group(function () {
         return view('front-design-pages.Accreditations');
     })->name('accreditations');
 
-     Route::get('contact-us', [HomeController::class, 'contact'])->name('contact-us');
+    Route::get('contact-us', [HomeController::class, 'contact'])->name('contact-us');
 
 
     Route::get('course-registration', function () {
@@ -109,7 +110,9 @@ Route::prefix('/')->group(function () {
     //register in house course , post , get
     Route::get('/requestInHouse/{course_id}', [CourseSearchController::class, 'requestInHouse']);
     Route::post('/registerApplicants', [CourseSearchController::class, 'registerApplicants'])->name('registerApplicants');
-
+    //request online
+    Route::get('/requestOnline/{course_id}', [CourseSearchController::class, 'requestOnline']);
+    Route::post('/registerApplicantsOnline', [CourseSearchController::class, 'registerApplicantsOnline'])->name('registerApplicantsOnline');
     //register course , post , get
     Route::get('/registerCourse/{round_id}', [CourseSearchController::class, 'registerCourse']);
     Route::post('registerApplicantRounds', [CourseSearchController::class, 'registerApplicantRounds']);

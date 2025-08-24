@@ -204,8 +204,43 @@ class CourseSearchController extends Controller
         $saluts = ApplicantSalut::all();
         return view('front-design-pages.courses.requestInHouse', compact('course', 'countries', 'venues', 'saluts', 'rounds'))->with('message', 'Thanks; your request has been submitted successfully !');
     }
+        public function requestOnline($course_id)
+    {
+        $now_date = now();
+        $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
+        $rounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
+        $venues = Venue::all();
+        $countries = Country::all();
+        $saluts = ApplicantSalut::all();
+        return view('front-design-pages.courses.requestOnline', compact('course', 'countries', 'venues', 'saluts', 'rounds'))->with('message', 'Thanks; your request has been submitted successfully !');
+    }
  //form in tabs in single course inhouse
  public function registerApplicants(Request $request)
+ {
+    $validator = Validator::make($request->all(), [
+        'captcha' => 'required'
+    ]);
+
+    $validator->after(function ($validator) use ($request) {
+        if (!captcha_check($request->input('captcha'))) {
+            $validator->errors()->add('captcha', 'invalid Captcha');
+        }
+    });
+
+    if ($validator->fails()) {
+        return back()->withErrors($validator)->withInput();
+    }
+     $data = $request->all();
+     $quick = Applicant::create($data);
+     $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+
+     //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+
+     // if (!$request->get('courseBrochure')) {
+         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+     // }
+ }
+public function registerApplicantsOnline(Request $request)
  {
     $validator = Validator::make($request->all(), [
         'captcha' => 'required'
