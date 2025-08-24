@@ -7,10 +7,10 @@
     <div class="container-fluid main-course-search-nav" style='background-color:#232F3E;'>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-4 search-container">
+          <div class="col-3 search-container">
             <div class="container-fluid">
               <form method="get" action="{{ route('course-search') }}" class="search-form">
-                <div class="search-input-wrapper">
+                <div class="search-input-wrapper" style="padding: 0">
                   <input type="text" name="search" value="{{ request('search') ?: request('course_name') }}" placeholder="Search for courses..." class="search-input">
                   <button type="submit" class="search-button">
                     <i class="fas fa-search"></i>
@@ -394,11 +394,12 @@
 }
 
 .search-button {
+    margin: 5px 6px;
     background: linear-gradient(135deg, #12576D 0%, #0d414f 100%);
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
