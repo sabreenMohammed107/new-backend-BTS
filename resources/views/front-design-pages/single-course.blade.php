@@ -340,6 +340,10 @@
                 margin-top: 10px;
             }
         }
+        .course-rounds-table tr td {
+  font-size: 12px !important;
+}
+
     </style>
     <div class="main-course-bg-header">
 
