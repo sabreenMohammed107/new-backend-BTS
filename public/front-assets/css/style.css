@@ -16496,7 +16496,7 @@ input[type="date"] {
   .main-sidebar-widget.Venue
   .Venue-menu {
   max-height: 150px;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .main-sidebar-widget.date-filter .date-range-container {
