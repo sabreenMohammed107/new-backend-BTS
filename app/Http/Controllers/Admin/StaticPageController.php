@@ -159,7 +159,7 @@ class StaticPageController extends Controller
             $dataToBeUpdated = [
                 "small_description" => $request->input("small_description"),
                 "details" => $request->input("details"),
-                "details4" => $request->input("details5"),
+                "details4" => $request->input("details4"),
             ];
 
             // Handle image uploads for public_training images
@@ -243,6 +243,7 @@ class StaticPageController extends Controller
             $dataToBeUpdated = [
                 "small_description" => $request->input("small_description"),
                 "details" => $request->input("details"),
+                 "details4" => $request->input("details4"),
             ];
 
             // Handle image uploads for consultancy images
@@ -284,6 +285,7 @@ class StaticPageController extends Controller
             $dataToBeUpdated = [
                 "small_description" => $request->input("small_description"),
                 "details" => $request->input("details"),
+                 "details4" => $request->input("details4"),
             ];
 
             // Handle image uploads for online_courses images

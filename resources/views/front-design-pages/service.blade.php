@@ -24,7 +24,7 @@
 
 
                       <img src="{{ $public_training->details3 }}" alt="City Skyline" class="secondary-image">
-                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      <a href="{{ $public_training->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
 
                     </div>
                   </div>
@@ -87,7 +87,7 @@
 
 
                       <img src="{{ $consultancy->details3 }}" alt="City Skyline" class="secondary-image">
-                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
                       {{-- <img src="{{ asset('front-assets/img/service/Rectangle 102ss51.png') }}" alt="Public Training Session" class="primary-image">
 
 
@@ -111,7 +111,7 @@
 
 
                       <img src="{{ $online_courses->details3 }}" alt="City Skyline" class="secondary-image">
-                      <a href="" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
                       {{-- <img src="{{ asset('front-assets/img/service/Rectangle 10254.png') }}" alt="Public Training Session" class="primary-image">
 
 

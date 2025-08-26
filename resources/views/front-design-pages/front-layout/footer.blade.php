@@ -47,10 +47,10 @@
                 <h4 class="footer-title">SERVICES</h4>
                 <div class="footer-menu">
                     <ul>
-                    <li><a href="">Public Training</a></li>
-                    <li><a href="">In-House Training</a></li>
-                    <li><a href="">Consultancy</a></li>
-                    <li><a href="">Online Courses</a></li>
+                    <li><a href="{{ route('service') }}#public_training">Public Training</a></li>
+                    <li><a href="{{ route('service') }}#in_house_training">In-House Training</a></li>
+                    <li><a href="{{ route('service') }}#consultancy">Consultancy</a></li>
+                    <li><a href="{{ route('service') }}#online_courses">Online Courses</a></li>
                     </ul>
                 </div>
                 </div>

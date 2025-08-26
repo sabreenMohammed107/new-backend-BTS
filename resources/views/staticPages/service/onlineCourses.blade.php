@@ -58,7 +58,10 @@
                                 <label class="form-label">Details</label>
                                 <input type="text" class="form-control" name="details" value="{{ $row->details ?? '' }}" required>
                             </div>
-
+<div class="mb-10 fv-row">
+                                <label class="form-label">Youtube link</label>
+                                <input type="text" class="form-control" name="details4" value="{{ $row->details4 ?? '' }}">
+                            </div>
                             <div class="mb-10 fv-row">
                                 <label class="form-label">Image 1 </label>
                                 <input type="file" class="form-control" name="details2">

@@ -40,7 +40,7 @@
                     aria-expanded="false">
                     Training Coordinator
                 </h6>
-                <div id="faq-item-2-1" class="collapse" data-parent="#accordion_2">
+                <div id="faq-item-2-1" class="collapse" data-bs-parent="#accordion_2">
                     <div class="card-body">
                     <p>Artificial intelligence is transforming our interaction with documents rapidly. AI holds
                         incalculable potential – from data extraction automation to improving review systems.
@@ -75,7 +75,7 @@
                     aria-expanded="true">
                     Marketing Specialist
                 </h6>
-                <div id="faq-item-2-2" class="collapse show" data-parent="#accordion_2">
+                <div id="faq-item-2-2" class="collapse show" data-bs-parent="#accordion_2">
                     <div class="card-body">
                     <div class="ltn__video-img alignleft">
                         <img src="{{ asset('front-assets/img/bg/17.jpg') }}" alt="video popup bg image">
@@ -100,7 +100,7 @@
                     aria-expanded="false">
                     Finance Manager
                 </h6>
-                <div id="faq-item-2-3" class="collapse" data-parent="#accordion_2">
+                <div id="faq-item-2-3" class="collapse" data-bs-parent="#accordion_2">
                     <div class="card-body">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec

@@ -694,12 +694,12 @@
                 <div class="social-single-course">
                     <div class="upcoming-course-card">
                         <div class="card-header">
-                            <h2 class="card-title">Upcoming Course</h2>
+                            <h2 class="card-title">Upcoming Sessions</h2>
                         </div>
 
                         <div class="card-body">
                             <div class="course-details-section">
-                                <h3 class="section-title">Course Details</h3>
+                                <h3 class="section-title">Session Details</h3>
                                 <div class="details-grid">
                                     <div class="detail-item">
                                         <div class="detail-label">
@@ -745,10 +745,10 @@
 
                             <div class="action-section">
                                 <div class="row align-items-center">
-                                    <div class="col-md-4 col-12 mb-3 mb-md-0">
+                                    <div class="col-md-4 col-12 mb-3 mb-md-0" >
                                         @if ($specfic_round)
                                             <a href="{{ url("/registerCourse/$specfic_round->id") }}"
-                                                class="btn btn-primary btn-register-large">
+                                                class="btn btn-primary btn-register-large p-2" >
                                                 <i class="fas fa-user-plus"></i>
                                                 Register Now
                                             </a>
@@ -764,8 +764,8 @@
                                         $courseTitle = $course->title ?? 'Course Title';
                                     @endphp
                                     <div class="col-md-8 col-12">
-                                        <div class="social-share">
-                                            <span class="share-label">Share Course:</span>
+                                        <div class="social-share" style="font-size: 12px">
+                                            <span class="share-label">Share </span>
                                             <div class="social-buttons">
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($courseUrl) }}"
                                                     target="_blank" class="social-btn fb-btn" title="Share on Facebook">

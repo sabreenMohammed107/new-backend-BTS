@@ -43,7 +43,7 @@
                                                         <a href="{{ route('join-us') }}">Team Member</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ route('join-us') }}">Speaker</a>
+                                                        <a href="{{ route('join.speaker') }}">Speaker</a>
                                                     </li>
 
                                         </ul>
