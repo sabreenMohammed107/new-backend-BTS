@@ -533,7 +533,7 @@
                                 <div class="row">
                                     @if (isset($filtered) && $filtered->count() > 0)
                                         @foreach ($filtered as $round)
-                                            <div class="col-xl-4 col-sm-6 col-6 single-course-item-card">
+                                            <div class="col-xl-4 mb-3 col-sm-6 col-12 single-course-item-card">
                                                 <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-3">
                                                     <!-- الصورة -->
                                                     <div class="position-relative">
