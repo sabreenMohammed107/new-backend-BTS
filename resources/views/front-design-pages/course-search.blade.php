@@ -451,7 +451,10 @@
                             </div>
                             <div class="widget ltn__tagcloud-widget mt-35">
                                 <h4 class="ltn__widget-title ltn__widget-title-border">Training Categories</h4>
-                                <ul>
+                                <ul style="
+                                display: flex;
+                                flex-direction: column;
+                            ">
                                     @foreach ($subCategories as $category)
                                         <li><a
                                                 href="{{ route('course-search', array_merge(request()->query(), ['category_id_search' => $category->id])) }}">{{ $category->category_en_name }}</a>
