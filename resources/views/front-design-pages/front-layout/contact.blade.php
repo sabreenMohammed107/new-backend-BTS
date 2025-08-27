@@ -99,7 +99,7 @@
                                                 <span>{{ $branch->working_hour ?? '' }}</span>
                                             </div>
                                             <div class="col-12 col-lg-6 text-end">
-                                                <a href="{{ $branch->office_phone }}"
+                                                <a href="{{ route('contact-us') }}"
                                                     class="theme-btn-1 btn btn-effect-1 text-uppercase"><img
                                                         src="{{ asset('front-assets/img/icons/phone.png') }}"
                                                         alt="">Contact us</a>

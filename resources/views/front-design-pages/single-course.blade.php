@@ -693,8 +693,8 @@
                 </div>
                 <div class="social-single-course">
                     <div class="upcoming-course-card">
-                        <div class="card-header">
-                            <h2 class="card-title">Upcoming Sessions</h2>
+                        <div class="card-header" style="background: #fff">
+                            <h2 class="card-title">Upcoming Session</h2>
                         </div>
 
                         <div class="card-body">
