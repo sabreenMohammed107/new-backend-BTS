@@ -339,6 +339,11 @@
             .social-buttons {
                 margin-top: 10px;
             }
+            .main-course-bg-header .course-main-title h2 {
+                color: #fff;
+                font-size: 35px !important;
+                padding: 0 5px;
+            }
         }
         .course-rounds-table tr td {
   font-size: 12px !important;
