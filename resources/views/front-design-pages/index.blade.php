@@ -727,7 +727,7 @@
 <div class="container section-of-introduction">
     <div class="row">
         <div class="col-12 row justify-content-end training-footer mt-5">
-            <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
+            <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal" style="padding-bottom: 15px">
                 <!-- Blog Item -->
                 <div class="col-12 col-md-6 col-lg-3 ">
                     <div class="training-footer-item p-3 py-5">
