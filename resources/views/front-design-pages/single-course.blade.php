@@ -244,6 +244,85 @@
             }
         }
 
+        /* Course Details Section Styling */
+        .main-course-title-and-details {
+            text-align: center;
+            padding: 60px 0;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-course-title-and-details::before {
+        
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5, #1976d2);
+            background-size: 200% 100%;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .main-course-title-and-details h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .main-course-title-and-details h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+            border-radius: 2px;
+        }
+
+        .main-course-title-and-details p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-in-up 0.8s ease-out 0.3s forwards;
+        }
+
+        @keyframes fade-in-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-course-title-and-details {
+                padding: 40px 0;
+            }
+
+            .main-course-title-and-details h2 {
+                font-size: 2rem;
+            }
+
+            .main-course-title-and-details p {
+                font-size: 1rem;
+            }
+        }
+
         /* Upcoming Course Card Styles */
         .upcoming-course-card {
             background: #fff;
@@ -466,7 +545,7 @@
                                 </a>
                             </li>
                         @endif
-                        
+
                     </ol>
                 </nav>
             </div>
@@ -483,7 +562,7 @@
 
     <div class="container main-course-title-and-details">
         {{-- <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span> --}}
-        <h2>Courses Details</h2>
+        <h2>Course Details</h2>
         <p> Your Growth; our Mission </p>
     </div>
     <div class="container">
