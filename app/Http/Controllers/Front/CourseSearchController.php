@@ -31,6 +31,7 @@ class CourseSearchController extends Controller
         $word = $request->input('course_name') ?: $request->input('search');
         $search = $request->input('search');
         $category_id = $request->input('category_id');
+        $subcategory_id = $request->input('subcategory_id');
         $city_id = $request->input('city_id');
         $start = $request->input('start');
         $end = $request->input('end');
@@ -55,7 +56,11 @@ class CourseSearchController extends Controller
         if (!empty($category_id) && $category_id !== "Category") {
             $filters->where('courses.course_sub_category_id', '=', $category_id);
         }
-        // فلتر الفئة
+
+        // فلتر الفئة الفرعية
+        if (!empty($subcategory_id)) {
+            $filters->where('courses.course_sub_category_id', '=', $subcategory_id);
+        }
 
         if (!empty($category_id_search) && $category_id_search !== "Category") {
             $filters->whereHas('course.subCategory', function ($query) use ($category_id_search) {

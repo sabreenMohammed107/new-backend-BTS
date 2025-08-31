@@ -161,6 +161,89 @@
             font-size: 0.9rem;
         }
 
+        /* Breadcrumb Navigation Styles - Inside Header */
+        .breadcrumb-navigation {
+            background: transparent;
+            padding: 15px 0;
+            margin-bottom: 0;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: '/';
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 300;
+        }
+
+        .breadcrumb-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        .breadcrumb-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .breadcrumb-link i {
+            font-size: 12px;
+        }
+
+        .breadcrumb-item.active {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .breadcrumb-item.active::after {
+            display: none;
+        }
+
+        /* Responsive breadcrumb */
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 12px;
+            }
+
+            .breadcrumb-link {
+                padding: 3px 6px;
+            }
+
+            .breadcrumb-item:not(:last-child)::after {
+                margin: 0 6px;
+            }
+        }
+
         /* Upcoming Course Card Styles */
         .upcoming-course-card {
             background: #fff;
@@ -350,10 +433,43 @@
 }
 
     </style>
+
+    <!-- Breadcrumb Navigation -->
+
+
     <div class="main-course-bg-header">
 
         <div class="course-main-title text-center text-center">
             <h2>{{ $course->course_en_name }}</h2>
+        </div>
+        <div class="breadcrumb-navigation">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{{ url('/') }}" class="breadcrumb-link">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        @if($course->subCategory && $course->subCategory->courseCategory)
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('course-search', ['category_id' => $course->subCategory->courseCategory->id]) }}" class="breadcrumb-link">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            </li>
+                        @endif
+                        @if($course->subCategory)
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}" class="breadcrumb-link">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </a>
+                            </li>
+                        @endif
+                        
+                    </ol>
+                </nav>
+            </div>
         </div>
     </div>
     @if ($message = Session::get('message'))
@@ -696,7 +812,7 @@
                     </div>
                     <p class="pricing-note"><i class="fas fa-info-circle"></i> Prices don't include VAT</p>
                 </div>
-                <div class="social-single-course">
+                <div class="social-single-course" style="background-color: #fff;font-size: 12px !important;">
                     <div class="upcoming-course-card">
                         <div class="card-header" style="background: #fff">
                             <h2 class="card-title">Upcoming Session</h2>
@@ -779,7 +895,9 @@
                                                 <a href="https://twitter.com/intent/tweet?url={{ urlencode($courseUrl) }}&text={{ urlencode($courseTitle) }}"
                                                     target="_blank" class="social-btn twitter-btn"
                                                     title="Share on Twitter">
-                                                    <i class="fab fa-twitter"></i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:16px;height:16px">
+                        <path fill="#e7eaee" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                    </svg>
                                                 </a>
                                                 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($courseUrl) }}"
                                                     target="_blank" class="social-btn linkedin-btn"
