@@ -890,7 +890,7 @@
                                         </td>
                                         <td>
                                             <a href='{{ url("/registerCourse/$round->id") }}' class="btn btn-register" style="font-size: 12px !importnant;">
-                                                Register Now
+                                                Register
                                             </a>
                                         </td>
                                     </tr>
