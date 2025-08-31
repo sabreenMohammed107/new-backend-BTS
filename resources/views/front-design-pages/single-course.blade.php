@@ -108,6 +108,10 @@
             padding: 5px 10px;
             border-radius: 4px;
             font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 120px;
         }
 
         .date-info,
@@ -116,6 +120,10 @@
             align-items: center;
             gap: 8px;
             color: #495057;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
         }
 
         .date-info i,
@@ -192,12 +200,12 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        .breadcrumb-item:not(:last-child)::after {
+        {{--  .breadcrumb-item:not(:last-child)::after {
             content: '/';
             margin: 0 10px;
             color: rgba(255, 255, 255, 0.6);
             font-weight: 300;
-        }
+        }  --}}
 
         .breadcrumb-link {
             color: rgba(255, 255, 255, 0.9);
@@ -254,7 +262,7 @@
         }
 
         .main-course-title-and-details::before {
-        
+
             position: absolute;
             top: 0;
             left: 0;
@@ -533,6 +541,7 @@
                         </li>
                         @if($course->subCategory && $course->subCategory->courseCategory)
                             <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
                                 <a href="{{ route('course-search', ['category_id' => $course->subCategory->courseCategory->id]) }}" class="breadcrumb-link">
                                     {{ $course->subCategory->courseCategory->category_en_name }}
                                 </a>
@@ -540,12 +549,12 @@
                         @endif
                         @if($course->subCategory)
                             <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
                                 <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}" class="breadcrumb-link">
                                     {{ $course->subCategory->subcategory_en_name }}
                                 </a>
                             </li>
                         @endif
-
                     </ol>
                 </nav>
             </div>
@@ -855,7 +864,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($rounds as $round)
-                                    <tr style="font-size: 12px !importnant;">
+                                    <tr >
                                         <td><span class="round-code">{{ $round->round_code }}</span></td>
                                         <td>
                                             @if ($round)
