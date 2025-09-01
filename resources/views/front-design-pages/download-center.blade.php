@@ -21,7 +21,7 @@
             @foreach ($downloadCenterData as $data )
             <div class="col-12 col-lg-3">
                 <div class="ltn__product-item ltn__product-item-3 text-left">
-                  <div class="product-img">
+                  <div class="product-img" style='height: 100%;'>
                     <a href="" class="img-container"><img height="100%" src="{{ asset($data->image) }}" alt="#"></a>
                     <div class="course-badge p-3">
                       <div class="row">
