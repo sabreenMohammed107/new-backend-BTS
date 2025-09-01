@@ -542,7 +542,7 @@
                         @if($course->subCategory && $course->subCategory->courseCategory)
                             <li class="breadcrumb-item">
                                 <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                                <a href="{{ route('course-search', ['category_id' => $course->subCategory->courseCategory->id]) }}" class="breadcrumb-link">
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}" class="breadcrumb-link">
                                     {{ $course->subCategory->courseCategory->category_en_name }}
                                 </a>
                             </li>
@@ -890,7 +890,7 @@
                                         </td>
                                         <td>
                                             <a href='{{ url("/registerCourse/$round->id") }}' class="btn btn-register" style="font-size: 12px !importnant;">
-                                                Register Now
+                                                Register
                                             </a>
                                         </td>
                                     </tr>
