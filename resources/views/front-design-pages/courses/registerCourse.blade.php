@@ -298,7 +298,7 @@
 
                     <div class="col-12 col-sm-6">
                         <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
+                            <div class="product-img" style='height: 100%;'>
                                 <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
                                         src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
                                 <div class="course-badge">

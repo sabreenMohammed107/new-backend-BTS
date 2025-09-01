@@ -176,7 +176,7 @@
             margin-bottom: 0;
             margin-top: 20px;
             position: absolute;
-            bottom: 20px;
+            bottom:-50px;
             left: 0;
             width: 100%;
             z-index: 100;
@@ -515,6 +515,12 @@
                 padding: 0 5px;
             }
         }
+        @media (max-width: 478px) {
+
+.breadcrumb-navigation {
+    bottom: -100px;
+}
+        }
         .course-rounds-table tr td {
   font-size: 12px !important;
 }
@@ -526,39 +532,40 @@
 
     <div class="main-course-bg-header">
 
-        <div class="course-main-title text-center text-center">
+        <div class="course-main-title text-center text-center" style='position: relative;'>
             <h2>{{ $course->course_en_name }}</h2>
-        </div>
-        <div class="breadcrumb-navigation">
-            <div class="container">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{{ url('/') }}" class="breadcrumb-link">
-                                <i class="fas fa-home"></i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        @if($course->subCategory && $course->subCategory->courseCategory)
+            <div class="breadcrumb-navigation">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}" class="breadcrumb-link">
-                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                <a href="{{ url('/') }}" class="breadcrumb-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
                                 </a>
                             </li>
-                        @endif
-                        @if($course->subCategory)
-                            <li class="breadcrumb-item">
-                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}" class="breadcrumb-link">
-                                    {{ $course->subCategory->subcategory_en_name }}
-                                </a>
-                            </li>
-                        @endif
-                    </ol>
-                </nav>
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                    <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}" class="breadcrumb-link">
+                                        {{ $course->subCategory->courseCategory->category_en_name }}
+                                    </a>
+                                </li>
+                            @endif
+                            @if($course->subCategory)
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                    <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}" class="breadcrumb-link">
+                                        {{ $course->subCategory->subcategory_en_name }}
+                                    </a>
+                                </li>
+                            @endif
+                        </ol>
+                    </nav>
+                </div>
             </div>
         </div>
+
     </div>
     @if ($message = Session::get('message'))
         <div id="alertDivDetails" class="alert alert-info"
@@ -848,7 +855,7 @@
                 <!-- Course Rounds Table -->
                 <div class="table-single-course-details">
                     <div class="section-header mb-4">
-                        <h3 class="section-title">Course Rounds</h3>
+                        <h3 class="section-title" style="text-transform: math-auto !important;">Course Rounds</h3>
                         <span class="course-duration">{{ $course->course_duration }} Days</span>
                     </div>
                     <div class="table-responsive">
@@ -903,12 +910,12 @@
                 <div class="social-single-course" style="background-color: #fff;font-size: 12px !important;">
                     <div class="upcoming-course-card">
                         <div class="card-header" style="background: #fff">
-                            <h2 class="card-title">Upcoming Session</h2>
+                            <h2 class="card-title" style="text-transform: math-auto !important;">Upcoming Session</h2>
                         </div>
 
                         <div class="card-body">
                             <div class="course-details-section">
-                                <h3 class="section-title">Session Details</h3>
+                                <h3 class="section-title"  style="text-transform: math-auto !important;">Session Details</h3>
                                 <div class="details-grid">
                                     <div class="detail-item">
                                         <div class="detail-label">
@@ -932,7 +939,7 @@
                             </div>
 
                             <div class="venue-section">
-                                <h3 class="section-title">Venue Information</h3>
+                                <h3 class="section-title"  style="text-transform: math-auto !important;">Venue Information</h3>
                                 <div class="venue-details">
                                     <div class="venue-item">
                                         <div class="venue-label">
@@ -1028,7 +1035,7 @@
                     <!-- Blog Item -->
                     <div class="col-lg-12 ">
                         <div class="ltn__product-item ltn__product-item-3 text-left">
-                            <div class="product-img">
+                            <div class="product-img" style='height: 100%;'>
                                 <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}"
                                     class="img-container"><img height="100%"
                                         src="{{ asset('uploads/courses') }}/{{ $related_course->relatedcourse->course_image_thumbnail }}"
