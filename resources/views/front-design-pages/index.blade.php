@@ -41,7 +41,7 @@
     }
 
     .social-side-links .xtw:hover svg path {
-        fill: #1da1f2 !important;
+        fill: #000406 !important;
         /* Twitter blue */
     }
 
@@ -312,7 +312,7 @@
 
     /* Twitter Hover Effect */
     .slider-social-side-links .xtw a:hover {
-        background: #1da1f2;
+        background: #010a10;
         transform: translateY(-3px);
     }
 
@@ -392,7 +392,7 @@
     }
 
     .footer-social-links .xtw a:hover {
-        background: #1da1f2;
+        background: #010609;
     }
 
     .footer-social-links .insta a:hover {
