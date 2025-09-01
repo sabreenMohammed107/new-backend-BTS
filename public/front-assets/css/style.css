@@ -16797,38 +16797,113 @@ body {
 }
 
 #single-course-page .social-single-course .social-btn {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  border-radius: 5px;
-  transition: all 0.2s ease;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  background-color: transparent;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 #single-course-page .social-single-course .social-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-color: transparent;
+}
+
+#single-course-page .social-single-course .social-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+#single-course-page .social-single-course .social-btn:hover::before {
+  transform: translateX(100%);
+}
+
+#single-course-page .social-single-course .social-btn i,
+#single-course-page .social-single-course .social-btn svg {
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+#single-course-page .social-single-course .social-btn:hover i,
+#single-course-page .social-single-course .social-btn:hover svg {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  color: white !important;
+}
+
+#single-course-page .social-single-course .social-btn:hover svg path {
+  fill: white !important;
 }
 
 .fb-btn {
-  background-color: #3b5998;
+  background-color: transparent;
+}
+.fb-btn:hover {
+  background: linear-gradient(135deg, #3b5998, #4c70ba);
+  color: white;
+  border-color: #3b5998;
+  box-shadow: 0 8px 25px rgba(59, 89, 152, 0.3);
 }
 .twitter-btn {
-  background-color: #1da1f2;
+  background-color: transparent;
+}
+.twitter-btn:hover {
+  background: linear-gradient(135deg, #1da1f2, #1a91da);
+  color: white;
+  border-color: #1da1f2;
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.3);
 }
 .linkedin-btn {
-  background-color: #0077b5;
+  background-color: transparent;
+}
+.linkedin-btn:hover {
+  background: linear-gradient(135deg, #0077b5, #005885);
+  color: white;
+  border-color: #0077b5;
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.3);
 }
 .whatsapp-btn {
-  background-color: #25d366;
+  background-color: transparent;
+}
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border-color: #25d366;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
 }
 .messenger-btn {
-  background-color: #0084ff;
+  background-color: transparent;
+}
+.messenger-btn:hover {
+  background: linear-gradient(135deg, #0084ff, #0073e6);
+  color: white;
+  border-color: #0084ff;
+  box-shadow: 0 8px 25px rgba(0, 132, 255, 0.3);
 }
 .email-btn {
-  background-color: #ea4335;
+  background-color: transparent;
+}
+.email-btn:hover {
+  background: linear-gradient(135deg, #ea4335, #d32f2f);
+  color: white;
+  border-color: #ea4335;
+  box-shadow: 0 8px 25px rgba(234, 67, 53, 0.3);
 }
 
 @media (max-width: 576px) {
