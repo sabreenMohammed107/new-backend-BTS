@@ -51,10 +51,10 @@
                     </ul>
                 </div>
             @endif
-                  <form id="kt_ecommerce_add_category_form" class="form d-flex flex-column flex-lg-row"
-            action="{{ route('branches.update', $row->id) }}" method="post" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+            <form id="kt_ecommerce_add_category_form" class="form d-flex flex-column flex-lg-row"
+                action="{{ route('branches.update', $row->id) }}" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <!--begin::Main column-->
                 <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
                     <!--begin::General options-->
@@ -71,187 +71,182 @@
                             <!--begin::Input group-->
                             <div class="d-flex flex-wrap gap-5 mt-4">
                                 <div class="fv-row w-100 flex-md-root">
-                                <!--begin::Label-->
-                                <label class="required form-label"> Name</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input id="branch_name" type="text"
-                                    class="form-control @error('branch_name') is-invalid @enderror" name="branch_name"
-                                    value="{{ $row->branch_name }}" required autocomplete="branch_name" autofocus>
+                                    <!--begin::Label-->
+                                    <label class="required form-label"> Name</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input id="branch_name" type="text"
+                                        class="form-control @error('branch_name') is-invalid @enderror" name="branch_name"
+                                        value="{{ $row->branch_name }}" required autocomplete="branch_name" autofocus>
 
-                                @error('branch_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-
-                            </div>
-                            <!--end::Input-->
-
-                            <!--begin::Input group-->
-                                <div class="fv-row w-100 flex-md-root">
-                                <!--begin::Label-->
-                                <label class="required form-label">Address</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <input id="address" type="text"
-                                    class="form-control @error('address') is-invalid @enderror" name="address"
-                                    value="{{ $row->address }}" required autocomplete="address">
-
-                                @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @error('branch_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
 
 
-                            </div>
-                        </div>
-                            <!--end::Input-->
+                                </div>
+                                <!--end::Input-->
+
                                 <!--begin::Input group-->
-                                <div class="d-flex flex-wrap gap-5 mt-4">
-                                    <div class="fv-row w-100 flex-md-root">
-                                        <!--begin::Label-->
-                                        <label class="required form-label"> Office phone</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
-                                        <input id="office_phone" type="text"
-                                            class="form-control @error('office_phone') is-invalid @enderror"
-                                            name="office_phone" value="{{ $row->office_phone }}" required
-                                            autocomplete="office_phone" autofocus>
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Label-->
+                                    <label class="required form-label">Address</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input id="address" type="text"
+                                        class="form-control @error('address') is-invalid @enderror" name="address"
+                                        value="{{ $row->address }}" required autocomplete="address">
 
-                                        @error('office_phone')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                    @error('address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
 
 
-                                    </div>
-                                    <!--end::Input-->
-
-                                    <!--begin::Input group-->
-                                    <div class="fv-row w-100 flex-md-root">
-                                        <!--begin::Label-->
-                                        <label class="required form-label">Mobile</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
-                                        <input id="mobile" type="text"
-                                            class="form-control @error('mobile') is-invalid @enderror" name="mobile"
-                                            value="{{ $row->mobile }}" required autocomplete="mobile">
-
-                                        @error('mobile')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-
-
-                                    </div>
-                                    <!--end::Input-->
                                 </div>
-                                    <!--begin::Input group-->
-                                    <div class="d-flex flex-wrap gap-5 mt-4">
-                                        <div class="fv-row w-100 flex-md-root">
-                                            <!--begin::Label-->
-                                            <label class="required form-label"> email</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input id="email" type="email"
-                                                class="form-control @error('email') is-invalid @enderror" name="email"
-                                                value="{{ $row->email }}" required autocomplete="email" autofocus>
-
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-
-                                        </div>
-                                        <!--end::Input-->
-
-                                        <!--begin::Input group-->
-                                        <div class="fv-row w-100 flex-md-root">
-                                            <!--begin::Label-->
-                                            <label class="required form-label">Map location</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input id="map_location" type="text"
-                                                class="form-control @error('map_location') is-invalid @enderror"
-                                                name="map_location" value="{{ $row->map_location }}" required
-                                                autocomplete="map_location">
-
-                                            @error('map_location')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-
-                                        </div>
-                                        <!--end::Input-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <div class="d-flex flex-wrap gap-5 mt-4">
-                                        <div class="fv-row w-100 flex-md-root">
-                                        <label class="fs-6 fw-bold form-label mt-3">
-                                            <option value="">Country..</option>
-                                            {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
-                                        </label>
-                                <select name="country_id"
-        id="country"
-        class="form-select form-select-solid dynamic"
-        data-control="select2"
-        data-show-subtext="true"
-        data-live-search="true"
-        data-dependent="state"
-        required>
-    @foreach ($countries as $country)
-        <option value="{{ $country->id }}"
-            {{ (string) old('country_id', $row->country_id) === (string) $country->id ? 'selected' : '' }}>
-            {{ $country->country_en_name }}
-        </option>
-    @endforeach
-</select>
-
-                                    </div>
-
-                                        <div class="fv-row w-100 flex-md-root">
-                                        <label class="fs-6 fw-bold form-label mt-3">
-                                            <option value="">Select Venue..</option>
-                                            {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
-                                        </label>
-                                        <select name="venue_id" class="form-select form-select-solid "
-                                            data-control="select2" data-show-subtext="true" data-live-search="true"
-                                            id="state">
-                                            <option value="">{{$row->venue->venue_en_name ?? ''}}</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                </div>
-                                <!--end::Card header-->
                             </div>
-                            <!--end::General options-->
+                            <!--end::Input-->
+                            <!--begin::Input group-->
+                            <div class="d-flex flex-wrap gap-5 mt-4">
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Label-->
+                                    <label class="required form-label"> Office phone</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input id="office_phone" type="text"
+                                        class="form-control @error('office_phone') is-invalid @enderror" name="office_phone"
+                                        value="{{ $row->office_phone }}" required autocomplete="office_phone" autofocus>
+
+                                    @error('office_phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
 
 
-                            <div class="d-flex justify-content-end">
-                                <!--begin::Button-->
-                                <a href="{{ route('branches.index') }}" id="kt_ecommerce_add_product_cancel"
-                                    class="btn btn-light me-5">Cancel</a>
-                                <!--end::Button-->
-                                <!--begin::Button-->
-                                <button type="submit" id="kt_ecommerce_add_category_submit" class="btn btn-primary">
-                                    <span class="indicator-label">Save Changes</span>
-                                    <span class="indicator-progress">Please wait...
-                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                </button>
-                                <!--end::Button-->
+                                </div>
+                                <!--end::Input-->
+
+                                <!--begin::Input group-->
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Label-->
+                                    <label class="required form-label">Mobile</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input id="mobile" type="text"
+                                        class="form-control @error('mobile') is-invalid @enderror" name="mobile"
+                                        value="{{ $row->mobile }}" required autocomplete="mobile">
+
+                                    @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <!--begin::Input group-->
+                            <div class="d-flex flex-wrap gap-5 mt-4">
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Label-->
+                                    <label class="required form-label"> email</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ $row->email }}" required autocomplete="email" autofocus>
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+
+                                </div>
+                                <!--end::Input-->
+
+                                <!--begin::Input group-->
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Label-->
+                                    <label class="required form-label">Map location</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input id="map_location" type="text"
+                                        class="form-control @error('map_location') is-invalid @enderror" name="map_location"
+                                        value="{{ $row->map_location }}" required autocomplete="map_location">
+
+                                    @error('map_location')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <div class="d-flex flex-wrap gap-5 mt-4">
+                                <div class="fv-row w-100 flex-md-root">
+                                    <label class="fs-6 fw-bold form-label mt-3">
+                                        <option value="">Country..</option>
+                                        {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
+                                    </label>
+                                    <select name="country_id" id="country" class="form-select form-select-solid dynamic"
+                                        data-control="select2" data-show-subtext="true" data-live-search="true"
+                                        data-dependent="state" required>
+                                        @foreach ($countries as $country)
+                                            <option value="{{ $country->id }}"
+                                                {{ (string) old('country_id', $row->country_id) === (string) $country->id ? 'selected' : '' }}>
+                                                {{ $country->country_en_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+
+                                <div class="fv-row w-100 flex-md-root">
+                                    <label class="fs-6 fw-bold form-label mt-3">
+                                        <option value="">Select Venue..</option>
+                                        {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
+                                    </label>
+                                    <select name="venue_id" id="venue" class="form-select form-select-solid"
+                                        data-control="select2" data-placeholder="Choose a venue" required>
+                                        @if ($row->venue)
+                                            <option value="{{ $row->venue->id }}" selected>
+                                                {{ $row->venue->venue_en_name }}
+                                            </option>
+                                        @endif
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <!--end::Main column-->
+                        <!--end::Card header-->
+                    </div>
+                    <!--end::General options-->
+
+
+                    <div class="d-flex justify-content-end">
+                        <!--begin::Button-->
+                        <a href="{{ route('branches.index') }}" id="kt_ecommerce_add_product_cancel"
+                            class="btn btn-light me-5">Cancel</a>
+                        <!--end::Button-->
+                        <!--begin::Button-->
+                        <button type="submit" id="kt_ecommerce_add_category_submit" class="btn btn-primary">
+                            <span class="indicator-label">Save Changes</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        </button>
+                        <!--end::Button-->
+                    </div>
+                </div>
+                <!--end::Main column-->
             </form>
         </div>
         <!--end::Container-->

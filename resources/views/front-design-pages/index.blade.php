@@ -424,7 +424,8 @@
 
                                     <div class="slide-brief animated wh-txt-clr">
                                         <p class="wh-txt-clr">
-                                            {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }}
+                                            {!! $banner->description !!}
+                                            {{-- {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }} --}}
                                         </p>
                                     </div>
 
