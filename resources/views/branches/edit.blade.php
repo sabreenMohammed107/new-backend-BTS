@@ -200,16 +200,22 @@
                                             <option value="">Country..</option>
                                             {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
                                         </label>
-                                        <select name="country_id" class="form-select form-select-solid  dynamic"
-                                            data-control="select2" data-show-subtext="true" data-live-search="true"
-                                            id="country" data-dependent="state">
-                                            <option value="">{{$row->country->country_en_name ?? ''}}</option>
-                                            @foreach ($countries as $country)
-                                                <option value='{{ $country->id }}'>
-                                                    {{ $country->country_en_name }}</option>
-                                            @endforeach
+                                <select name="country_id"
+        id="country"
+        class="form-select form-select-solid dynamic"
+        data-control="select2"
+        data-show-subtext="true"
+        data-live-search="true"
+        data-dependent="state"
+        required>
+    @foreach ($countries as $country)
+        <option value="{{ $country->id }}"
+            {{ (string) old('country_id', $row->country_id) === (string) $country->id ? 'selected' : '' }}>
+            {{ $country->country_en_name }}
+        </option>
+    @endforeach
+</select>
 
-                                        </select>
                                     </div>
 
                                         <div class="fv-row w-100 flex-md-root">
