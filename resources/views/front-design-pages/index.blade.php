@@ -403,7 +403,9 @@
 .slide-brief * {
   color: #fff !important;
 }
-
+.methodology-title-area p {
+  font-size: 16px !important;
+}
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 120vh !important;">
@@ -700,7 +702,7 @@
             <div class="col-lg-6 align-self-center">
                 <div class="about-us-info-wrap">
                     <div class="row">
-                        <div class="col-12 section-title-area ltn__section-title-2">
+                        <div class="col-12 section-title-area ltn__section-title-2 methodology-title-area">
 
                             <h1 class="section-title">{{ $methodologies->small_description }}
                             </h1>
