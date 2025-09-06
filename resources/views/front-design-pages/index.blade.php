@@ -398,6 +398,12 @@
     .footer-social-links .insta a:hover {
         background: #e4405f;
     }
+    .slide-brief,
+.slide-brief p,
+.slide-brief * {
+  color: #fff !important;
+}
+
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 120vh !important;">
