@@ -51,10 +51,10 @@
                     </ul>
                 </div>
             @endif
-
-            <form id="kt_ecommerce_add_category_form" class="form d-flex flex-column flex-lg-row"
-                action="{{ route('branches.store') }}" method="post" enctype="multipart/form-data">
-                @csrf
+                  <form id="kt_ecommerce_add_category_form" class="form d-flex flex-column flex-lg-row"
+            action="{{ route('branches.update', $row->id) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
                 <!--begin::Main column-->
                 <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
                     <!--begin::General options-->
