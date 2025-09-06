@@ -62,7 +62,7 @@
 
                                     <div class="col-md-6">
                                         <label class="form-label">Details</label>
-                                        <input type="text" class="form-control" name="details" value="{{ $row->details }}" required>
+                                        <textarea class="form-control form-control-solid tinymce-editor" rows="3" name="details"  required>{{ $row->details }}</textarea>
                                     </div>
                                 </div>
                             </div>
