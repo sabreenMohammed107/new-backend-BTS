@@ -422,8 +422,8 @@
                                         {!! $banner->en_title !!}
                                     </h1>
 
-                                    <div class="slide-brief animated wh-txt-clr">
-                                        <p class="wh-txt-clr">
+                                    <div class="slide-brief animated wh-txt-clr" style="color:#fff !important;">
+                                        <p class="wh-txt-clr" style="color:#fff !important;">
                                             {!! $banner->description !!}
                                             {{-- {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }} --}}
                                         </p>
