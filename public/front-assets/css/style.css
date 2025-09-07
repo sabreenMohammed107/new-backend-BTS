@@ -226,9 +226,9 @@ font-family: 'Roboto', sans-serif;
   /* Lighten */
   --ltn__heading-color: #071c1f;
   --ltn__paragraph-color: #071c1f;
-  --ltn__heading-font: "Rajdhani", sans-serif;
-  --ltn__body-font: "Open Sans", sans-serif;
-  --ltn__head-font: "Bebas Neue", serif;
+  --ltn__heading-font: "Poppins", sans-serif;
+  --ltn__body-font: "Poppins", sans-serif;
+  --ltn__head-font: "Poppins", sans-serif;
   /*
     --ltn__heading-font: 'Roboto', sans-serif;
     --ltn__body-font: 'Nunito Sans', sans-serif;
@@ -398,6 +398,14 @@ body {
   font-family: var(--ltn__body-font);
   line-height: 1.8;
   margin: 0 auto;
+}
+
+/* -------------------------------------
+    Font override
+   Use Poppins as the global body font
+------------------------------------- */
+:root {
+  --ltn__body-font: "Poppins", sans-serif;
 }
 
 h1,
