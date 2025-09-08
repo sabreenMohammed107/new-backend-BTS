@@ -18,7 +18,7 @@
             </div>
             <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                 <div class="footer-widget footer-menu-widget clearfix">
-                <h4 class="footer-title">JOIN BTS</h4>
+                <h4 class="footer-title">Join BTS</h4>
                 <div class="footer-menu">
                     <ul>
                     <li><a href="{{ route('join-us') }}">Jobs</a></li>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                 <div class="footer-widget footer-menu-widget clearfix">
-                <h4 class="footer-title">MAJORS</h4>
+                <h4 class="footer-title">Majors</h4>
                 <div class="footer-menu">
                     <ul>
                     @foreach($categories as $category)
@@ -44,7 +44,7 @@
             </div>
             <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                 <div class="footer-widget footer-menu-widget clearfix">
-                <h4 class="footer-title">SERVICES</h4>
+                <h4 class="footer-title">Services</h4>
                 <div class="footer-menu">
                     <ul>
                     <li><a href="{{ route('service') }}#public_training">Public Training</a></li>

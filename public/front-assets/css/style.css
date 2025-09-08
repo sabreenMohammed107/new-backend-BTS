@@ -15066,6 +15066,10 @@ input.cart-plus-minus-box {
 ---------------------------------------------------- */
 .footer-widget .footer-title {
   font-size: 17px;
+  text-transform: capitalize;
+}
+.footer-widget .footer-title h4{
+  text-transform: capitalize;
 }
 
 /* footer-2 */
@@ -19802,7 +19806,7 @@ ul li.active > a {
 }
 
 .section-title {
-    text-transform: uppercase !important;
+    text-transform: capitalize !important;
 }
 
 .linkedin.social-square:hover {
