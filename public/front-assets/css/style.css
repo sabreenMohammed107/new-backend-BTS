@@ -394,7 +394,7 @@ body {
   color: var(--ltn__paragraph-color);
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
+  font-size: 12px;
   font-family: var(--ltn__body-font);
   line-height: 1.8;
   margin: 0 auto;
@@ -410,33 +410,33 @@ body {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 34px;
   line-height: 1.2;
 }
 
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 26px;
 }
 
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 h4,
 .h4 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h5,
 .h5 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h6,
 .h6 {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 h1,
@@ -5090,7 +5090,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .ltn__main-menu > ul > li > a {
-  font-size: 16px;
+  font-size: 14px;
   padding: 20px 10px;
   display: inline-block;
   white-space: nowrap;
@@ -5455,7 +5455,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .menu-icon > a::before {
   content: "\f078";
-  font-size: 8px;
+  font-size: 7px;
   position: absolute;
   top: 50%;
   right: 0;
@@ -9665,7 +9665,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   text-transform: uppercase;
 }
 .ltn__section-title-2 .section-title {
-  font-size: 72px;
+  font-size: 52px;
   font-weight: 700;
   margin-bottom: 15px;
   line-height: 1;
@@ -9718,13 +9718,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 @media (max-width: 1599px) {
   .ltn__section-title-2 .section-title {
-    font-size: 60px;
+    font-size: 45px;
   }
 }
 
 @media (max-width: 1399px) {
   .ltn__section-title-2 .section-title {
-    font-size: 56px;
+    font-size: 35px;
   }
   .section-title-style-3 .section-title {
     min-width: 320px;
@@ -9736,7 +9736,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-size: 30px;
   }
   .ltn__section-title-2 .section-title {
-    font-size: 50px;
+    font-size: 35px;
   }
 }
 
@@ -9745,7 +9745,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-size: 26px;
   }
   .ltn__section-title-2 .section-title {
-    font-size: 40px;
+        font-size: 30px;
   }
   .ltn__section-title-2 p {
     padding: 0 0 0 15px;
@@ -12460,7 +12460,7 @@ input.cart-plus-minus-box {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 0;
 }
 .ltn__faq-inner .card .ltn__card-title::before {
@@ -15065,17 +15065,17 @@ input.cart-plus-minus-box {
     Footer Default Style
 ---------------------------------------------------- */
 .footer-widget .footer-title {
-  font-size: 22px;
+  font-size: 17px;
 }
 
 /* footer-2 */
 .ltn__footer-2 .footer-widget .footer-title {
-  font-size: 24px;
+  font-size: 17px;
 }
 
 .ltn__footer-2 .footer-widget p,
 .ltn__footer-2 .footer-widget li {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .ltn__footer-2 .footer-about-widget .footer-logo {
@@ -15091,7 +15091,7 @@ input.cart-plus-minus-box {
 
 .ltn__footer-2 .footer-widget .ltn__blog-meta li,
 .footer-widget .ltn__blog-meta li {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* footer-color-1 */
@@ -15174,7 +15174,7 @@ input.cart-plus-minus-box {
 }
 
 .footer-title {
-  font-size: 20px;
+  font-size: 17px;
   margin-bottom: 25px;
 }
 
@@ -15608,7 +15608,7 @@ input.cart-plus-minus-box {
 .btn {
   border-radius: 0;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   font-family: var(--ltn__heading-font);
   padding: 15px 40px;
@@ -15884,13 +15884,16 @@ input[type="date"] {
 .ltn__feature-item-box-wrap a.form-btn-transparent {
   list-style: none;
   width: 100%;
+  height: 100%;
   background-color: transparent;
   color: var(--ltn__secondary-color-2) !important;
   border: solid 1px var(--ltn__secondary-color-2);
   border-radius: 10px;
-  padding: 3px 30px !important;
+  padding: 9px 30px !important;
   display: block;
   text-align: center;
+  font-size: larger;
+
 }
 
 .ltn__feature-item-box-wrap a.form-btn {
@@ -15900,10 +15903,12 @@ input[type="date"] {
   color: var(--white) !important;
   border: solid 1px var(--ltn__secondary-color-2);
   border-radius: 10px;
-  padding: 3px 30px !important;
+  padding: 9px 30px !important;
   display: block;
   text-align: center;
   height: 100%;
+  font-size: larger;
+
 }
 
 .ltn__feature-item-box-wrap a.form-btn-transparent:hover {
@@ -16654,7 +16659,7 @@ body {
 }
 #single-course-page .main-course-bg-header .course-main-title h2 {
   color: #fff;
-  font-size: 55px;
+  font-size: 35px;
 }
 #single-course-page .main-course-bg-header {
   position: relative;
@@ -16782,7 +16787,7 @@ body {
 #single-course-page .social-single-course .section-title {
   color: #333;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
   margin: 25px 0 15px 0;
 }
 
@@ -16872,10 +16877,10 @@ body {
   background-color: transparent;
 }
 .twitter-btn:hover {
-  background: linear-gradient(135deg, #1da1f2, #1a91da);
+  background: linear-gradient(135deg, #161616, #1a1b1b);
   color: white;
-  border-color: #1da1f2;
-  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.3);
+  border-color: #161616;
+  box-shadow: 0 8px 25px rgba(27, 28, 29, 0.3);
 }
 .linkedin-btn {
   background-color: transparent;
