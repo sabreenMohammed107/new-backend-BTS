@@ -1,6 +1,6 @@
     <footer class="ltn__footer-area  ">
         <div class="footer-top-area  plr--5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
 
             <div class="col-xl-2 col-md-6 col-sm-6 col-12">
@@ -67,16 +67,20 @@
                         @csrf
                         <div id="mc_embed_signup_scroll">
                         <div class="row">
-                            <div class="col-md-6">
+                            {{--  <div class="col-md-6">
                                 <div class="mc-field-group" style="margin-bottom: 15px;">
                                     <input type="text" class="footer-input" value="" name="name" class="required name"
                                     id="mce-NAME" placeholder="Name" required style="background-color: #fff;">
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mc-field-group">
+                            </div>  --}}
+                            <div class="col-md-12">
+                                <div class="mc-field-group" style="position: relative; display: flex; align-items: center;">
                                     <input type="email" class="footer-input" value="" name="email" class="required email"
-                                    id="mce-EMAIL" placeholder="Email" required style="background-color: #fff;">
+                                    id="mce-EMAIL" placeholder="Email" required style="background-color: #fff; width: 100%; height: 48px; border-radius: 9px; padding-right: 56px;">
+                                    <button style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); height: 36px; width: 36px; padding: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: all 0.3s ease; background-color: var(--ltn__secondary-color); border-radius: 9px;"
+                                        class="theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                                        <i class="fas fa-location-arrow"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -91,34 +95,29 @@
 
                         </div>
                         <div class="row">
-                        <div class=" align-self-end footer-social-icon col-8 d-flex justify-content-start mt-2">
-                            <div style="margin-right: 5px;"
-                                class="face social-square d-flex justify-content-center align-items-center mr-1">
-                                <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                            <div style="margin-right: 5px;"
-                                class="linkedin social-square d-flex justify-content-center align-items-center mr-1">
-                                <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <a href="https://twitter.com/" target="_blank" style="margin-right: 5px;" class="social-link">
-                                <div class="xtw social-square d-flex justify-content-center align-items-center mr-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 16px;height:16px">
-                                        <path fill="#e7eaee"
-                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-                                    </svg>
+                            <div class=" align-self-end footer-social-icon col-8 d-flex justify-content-start mt-2">
+                                <div style="margin-right: 5px;"
+                                    class="face social-square d-flex justify-content-center align-items-center mr-1">
+                                    <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                                 </div>
-                            </a>
-                            <div
-                                class="insta social-square d-flex justify-content-center align-items-center mr-1">
-                                <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <div style="margin-right: 5px;"
+                                    class="linkedin social-square d-flex justify-content-center align-items-center mr-1">
+                                    <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <a href="https://twitter.com/" target="_blank" style="margin-right: 5px;" class="social-link">
+                                    <div class="xtw social-square d-flex justify-content-center align-items-center mr-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 16px;height:16px">
+                                            <path fill="#e7eaee"
+                                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                                <div
+                                    class="insta social-square d-flex justify-content-center align-items-center mr-1">
+                                    <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <button style="padding: 10px 20px !important;margin-right: 5px;margin-top: 15px;position: relative;
-                        overflow: hidden;
-                        transition: all 0.3s ease;margin-right: 0;background-color: var(--ltn__secondary-color);
 
-                        border-radius: 9px;" class="col-4 theme-btn-1 btn btn-effect-1" type="submit" value="Subscribe" name="subscribe"
-                            id="mc-embedded-subscribe"><i class="fas fa-location-arrow"></i></button>
                         </div>
 
                     </form>
