@@ -957,7 +957,7 @@ input[type="password"] {
 textarea {
   resize: vertical;
   padding: 15px 20px;
-  min-height: 150px;
+  min-height: 95px;
 }
 
 button {

@@ -1155,7 +1155,7 @@ height: 100% !important;
             <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
             <div class="col-12 text-center pt-3">
 
-                <a href="{{ url('/accreditations') }}" class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
+                <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;" class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
             </div>
         </div>
 

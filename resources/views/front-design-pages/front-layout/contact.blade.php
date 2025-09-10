@@ -21,7 +21,7 @@
             <div class="col-lg-12">
               <div class="section-title-area ltn__section-title-2 text-center">
                 <h1 class="section-title">{{ $staticContact->small_description }}</h1>
-                <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $staticContact->details !!}</span>
+                <span class="col-12 col-md-8" style="color: black;font-size:16px">{!! $staticContact->details !!}</span>
 
               </div>
               <div class="row">
@@ -46,7 +46,7 @@
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-email ltn__custom-icon">
-                          <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Message title">
+                          <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Subject">
                         </div>
                       </div>
                     </div>
@@ -56,7 +56,7 @@
 
                     <p class="form-messege mb-0 mt-20"></p>
 
-                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase w-100">Send
+                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1  w-100">Send
                       Message</button>
                   </form>
                 </div>
@@ -100,7 +100,7 @@
                                             </div>
                                             <div class="col-12 col-lg-6 text-end">
                                                 <a href="{{ route('contact-us') }}"
-                                                    class="theme-btn-1 btn btn-effect-1 text-uppercase"><img
+                                                    class="theme-btn-1 btn btn-effect-1 "><img
                                                         src="{{ asset('front-assets/img/icons/phone.png') }}"
                                                         alt="">Contact Us</a>
 
