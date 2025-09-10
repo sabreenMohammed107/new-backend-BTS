@@ -14639,12 +14639,14 @@ input[type="date"] {
 .training-footer-item img {
   width: 60px;
 }
-
+.fnt-w-400 {
+    font-weight: 400 !important;
+}
 .ltn__blog-slider-one-active .slick-dots {
   margin-top: 25px;
 }
 .ltn__product-area.ltn__product-gutter .section-title-area h6 {
-  font-size: 0.8125rem;
+  font-size: 1rem;
 }
 .ltn__product-area .ltn__product-item .product-img .course-badge {
   position: absolute;
@@ -14886,7 +14888,7 @@ input[type="date"] {
   left: 35%;
   width: 30%;
   height: 2px;
-  background-color: #15242f;
+  background-color: #376eff;
 }
 .section-of-introduction::before {
   content: "";
@@ -14894,7 +14896,7 @@ input[type="date"] {
   bottom: -50px;
   left: 35%;
   width: 30%;
-  height: 5px;
+  height: 2px;
   background-color: #376eff;
   z-index: 105;
 }
@@ -14909,7 +14911,7 @@ input[type="date"] {
   left: 35%;
   width: 30%;
   height: 2px;
-  background-color: #15242f;
+  background-color: #376eff;
 }
 .blogs-top-ranked::before {
   content: "";
@@ -14917,7 +14919,7 @@ input[type="date"] {
   bottom: -1px;
   left: 35%;
   width: 30%;
-  height: 5px;
+  height: 2px;
   background-color: #376eff;
   z-index: 105;
 }
@@ -14932,7 +14934,7 @@ input[type="date"] {
   left: 35%;
   width: 30%;
   height: 2px;
-  background-color: #15242f;
+  background-color: #376eff;
 }
 .blogs-of-proud::before {
   content: "";
@@ -14940,7 +14942,7 @@ input[type="date"] {
   bottom: -1px;
   left: 35%;
   width: 30%;
-  height: 5px;
+  height: 2px;
   background-color: #376eff;
   z-index: 105;
 }
@@ -14956,7 +14958,7 @@ input[type="date"] {
   left: 35%;
   width: 30%;
   height: 2px;
-  background-color: #15242f;
+  background-color: #376eff;
 }
 .blog-of-Testimonials::before {
   content: "";
@@ -14964,7 +14966,7 @@ input[type="date"] {
   bottom: -1px;
   left: 35%;
   width: 30%;
-  height: 5px;
+  height: 2px;
   background-color: #376eff;
   z-index: 105;
 }
@@ -14979,7 +14981,7 @@ input[type="date"] {
   left: 35%;
   width: 30%;
   height: 2px;
-  background-color: #15242f;
+  background-color: #376eff;
 }
 .blog-of-Partners::before {
   content: "";
@@ -14987,7 +14989,7 @@ input[type="date"] {
   bottom: -1px;
   left: 35%;
   width:30%;
-  height: 5px;
+  height: 2px;
   background-color: #376eff;
   z-index: 105;
 }
@@ -18401,7 +18403,7 @@ background-color: #fff;
 /* sabreen update */
 .ltn__product-item {
     width: 250px; /* عرض أصغر */
-    height: 420px; /* ارتفاع أطول */
+    height: 370px; /* ارتفاع أطول */
     border-radius: 12px;
     overflow: hidden;
     position: relative;

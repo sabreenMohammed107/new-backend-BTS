@@ -737,49 +737,104 @@ height: 100% !important;
     </div>
 </div>
 @endisset
+<style>
+    .feature-card {
+        position: relative;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        animation: cardFadeUp 0.6s ease both;
+        background-color: #f5f7fb !important;
+    }
+    .feature-card:hover, .feature-card:focus-within {
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 1.75rem rgba(16, 24, 40, 0.12);
+    }
+    .feature-icon {
+        width: 72px;
+        height: 72px;
+        background-color: #f5f7fb;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .feature-icon img {
+        max-width: 48px;
+        max-height: 48px;
+        transition: transform 0.25s ease;
+    }
+    .feature-card:hover .feature-icon, .feature-card:focus-within .feature-icon { box-shadow: inset 0 2px 6px rgba(0,0,0,0.06); }
+    .feature-card:hover .feature-icon img, .feature-card:focus-within .feature-icon img { transform: scale(1.06) rotate(-2deg); }
+
+    /* Sheen sweep on hover */
+    .feature-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(120deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 60%);
+        transform: translateX(-120%);
+        transition: transform 0.6s ease;
+        border-radius: inherit;
+    }
+    .feature-card:hover::after, .feature-card:focus-within::after { transform: translateX(120%); }
+
+    /* Staggered entrance animation for cards */
+    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(1) .feature-card { animation-delay: 0.0s; }
+    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(2) .feature-card { animation-delay: 0.08s; }
+    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(3) .feature-card { animation-delay: 0.16s; }
+    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(4) .feature-card { animation-delay: 0.24s; }
+
+    @keyframes cardFadeUp {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .feature-card { transition: none; animation: none; }
+        .feature-card::after { display: none; }
+        .feature-icon, .feature-icon img { transition: none; }
+    }
+</style>
 @isset($methodologies)
 <div class="container section-of-introduction">
     <div class="row">
-        <div class="col-12 row justify-content-end training-footer mt-5">
-            <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal" style="padding-bottom: 15px">
-                <!-- Blog Item -->
-                <div class="col-12 col-md-6 col-lg-3 ">
-                    <div class="training-footer-item p-3 py-5">
-                        <div class="training-footer-item-box d-flex flex-column align-items-center">
-                            <span><img src="{{ asset($methodologies->details6) }}" alt="" srcset=""></span>
-                            <h6 class='mt-3'>{{ $methodologies->details5 }}</h6>
+        <div class="col-12 training-footer mt-5">
+            <div class="row g-3 g-md-4" role="list">
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                            <img class="img-fluid" src="{{ asset($methodologies->details6) }}" alt="{{ $methodologies->details5 }} icon" loading="lazy" decoding="async">
                         </div>
+                        <h6 class="mb-0">{{ $methodologies->details5 }}</h6>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 ">
-                    <div class="training-footer-item p-3 py-5">
-                        <div class="training-footer-item-box d-flex flex-column align-items-center">
-                            <span><img src="{{ asset($methodologies->details8) }}" alt="" srcset=""></span>
-                            <h6 class='mt-3'>{{ $methodologies->details7 }}</h6>
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                            <img class="img-fluid" src="{{ asset($methodologies->details8) }}" alt="{{ $methodologies->details7 }} icon" loading="lazy" decoding="async">
                         </div>
+                        <h6 class="mb-0">{{ $methodologies->details7 }}</h6>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 ">
-                    <div class="training-footer-item p-3 py-5">
-
-                        <div class="training-footer-item-box d-flex flex-column align-items-center">
-                            <span><img src="{{ asset($methodologies->details10) }}" alt="" srcset=""></span>
-                            <h6 class='mt-3'>{{ $methodologies->details9 }}</h3>
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                            <img class="img-fluid" src="{{ asset($methodologies->details10) }}" alt="{{ $methodologies->details9 }} icon" loading="lazy" decoding="async">
                         </div>
+                        <h6 class="mb-0">{{ $methodologies->details9 }}</h6>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3  ">
-                    <div class="training-footer-item p-3 py-5">
-
-                        <div class="training-footer-item-box d-flex flex-column align-items-center">
-                            <span><img src="{{ asset($methodologies->details12) }}" alt="" srcset=""></span>
-                            <h6 class='mt-3'>{{ $methodologies->details11 }}</h3>
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                            <img class="img-fluid" src="{{ asset($methodologies->details12) }}" alt="{{ $methodologies->details11 }} icon" loading="lazy" decoding="async">
                         </div>
+                        <h6 class="mb-0">{{ $methodologies->details11 }}</h6>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -856,7 +911,7 @@ height: 100% !important;
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2 text-center">
                     <h1 class="section-title">Top Ranked Courses</h1>
-                    <h6>Your Growth, Our Mission</h6>
+                    <h6 class="fnt-w-400">Your Growth, Our Mission</h6>
                 </div>
             </div>
         </div>
@@ -874,7 +929,7 @@ height: 100% !important;
 
                             <div class="course-badge">
                                 <h3 class='white-color mb-2'>
-                                    <a class="img-container">
+                                    <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}">
                                     {{ Str::limit($round->course->course_en_name, 70, '') }}
                                     </a>
                                 </h3>
@@ -903,7 +958,7 @@ height: 100% !important;
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-4 text-center">
 
-                <a href="{{ route('searchCourse.index') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">All Courses</a>
+                <a href="{{ route('searchCourse.index') }}" class="theme-btn-1 btn btn-effect-1 ">All Courses</a>
             </div>
         </div>
 
@@ -916,7 +971,7 @@ height: 100% !important;
     <div class="container">
         <div class="row">
             <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
-                <h1>PROUD<br>TO SERVE</h1>
+                <h1>Proud<br>To Serve</h1>
             </div>
 
             <div
@@ -942,7 +997,7 @@ height: 100% !important;
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2 text-center row">
                     <h1 class="section-title white-color--- col-12">{{ $homeTestimonials->small_description }}</h1>
-                    <span class="px-5 col-12 col-md-8 offset-md-2 fnt-siz-sm ">{{ $homeTestimonials->details }}</span>
+                    <span class="px-5 col-12 col-md-8 offset-md-2 fnt-sz-16 ">{{ $homeTestimonials->details }}</span>
                 </div>
             </div>
             @endisset
@@ -955,7 +1010,7 @@ height: 100% !important;
             <div class="col-lg-12">
                 <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
                     <div class="ltn__blog-brief bg-light-blue">
-                        <div class="ltn__blog-meta bg-light-blue">
+                        <div class="ltn__blog-meta bg-light-blue mb-0">
                             <a href="{{ route('testimonials') }}" class="text-decoration-none">
                                 <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
                                     <li class="ltn__blog-title">
@@ -971,7 +1026,7 @@ height: 100% !important;
                                 </ul>
                             </a>
                         </div>
-                        <h3 class="ltn__blog-author fnt-siz-sm">
+                        <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400">
                             {{ $testimonial->reviewer_text }}
                         </h3>
                     </div>
@@ -989,7 +1044,7 @@ height: 100% !important;
     <div class="container">
         <div class="row">
             <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
-                <h1>BTS <br>PARTNERS</h1>
+                <h1>BTS <br>Partners</h1>
             </div>
 
             <div
@@ -1100,7 +1155,7 @@ height: 100% !important;
             <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
             <div class="col-12 text-center pt-3">
 
-                <a href="{{ url('/accreditations') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase">{{ $homeAccreditation->details2 }}</a>
+                <a href="{{ url('/accreditations') }}" class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
             </div>
         </div>
 

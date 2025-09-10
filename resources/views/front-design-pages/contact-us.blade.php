@@ -3,7 +3,7 @@
 @section('page-content')
 <div class="main-course-bg-header">
     <div class="course-main-title text-center">
-    <h2>CONTACT US</h2>
+    <h2>Contact Us</h2>
     </div>
 </div>
 <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
@@ -19,7 +19,7 @@
 
             <div class="col-lg-12">
             <div class="ltn__our-history-inner">
-                <div class="ltn__tab-menu text-uppercase">
+                <div class="ltn__tab-menu">
                      <div class="container">
   <div class="nav text-center">
     <a class="col-12 col-md-6 d-flex justify-content-center align-items-center"
@@ -101,7 +101,7 @@
 
                                     <p class="form-messege mb-0 mt-20"></p>
 
-                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
+                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1">Send</button>
                                     </form>
                                 </div>
                                 </div>
@@ -182,7 +182,7 @@
 
                                     <p class="form-messege mb-0 mt-20"></p>
 
-                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
+                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1">Send</button>
                                     </form>
                                 </div>
                                 </div>
@@ -263,7 +263,7 @@
 
                                     <p class="form-messege mb-0 mt-20"></p>
 
-                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Send</button>
+                                    <button href="" type="submit" class="theme-btn-1 btn btn-effect-1">Send</button>
                                     </form>
                                 </div>
                                 </div>

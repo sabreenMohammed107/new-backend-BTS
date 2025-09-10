@@ -102,7 +102,7 @@
                                                 <a href="{{ route('contact-us') }}"
                                                     class="theme-btn-1 btn btn-effect-1 text-uppercase"><img
                                                         src="{{ asset('front-assets/img/icons/phone.png') }}"
-                                                        alt="">Contact us</a>
+                                                        alt="">Contact Us</a>
 
                                             </div>
                                         </div>
