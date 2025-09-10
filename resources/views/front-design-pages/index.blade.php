@@ -434,7 +434,7 @@ height: 100% !important;
                                         {!! $banner->en_head_title !!}
                                     </h6>
 
-                                    <h1 class="slide-title animated bebas-neue-regular wh-txt-clr uppercase-litter">
+                                    <h1 class="slide-title animated bebas-neue-regular wh-txt-clr ">
                                         {!! $banner->en_title !!}
                                     </h1>
 
@@ -447,9 +447,9 @@ height: 100% !important;
 
                                     <div class="btn-wrapper animated">
                                         <a href="{{ route('contact-us') }}"
-                                            class="theme-btn-3 btn btn-effect-1 text-uppercase mt-1">Contact Us</a>
+                                            class="theme-btn-3 btn btn-effect-1 mt-1">Contact Us</a>
                                         <a href="{{ route('download-center') }}"
-                                            class="theme-btn-1 btn btn-effect-1 text-uppercase mt-1">Download
+                                            class="theme-btn-1 btn btn-effect-1 mt-1">Download
                                             Center</a>
                                     </div>
 
@@ -587,15 +587,12 @@ height: 100% !important;
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2 text-center">
                     <h1 class="section-title white-color">Services</h1>
-                    <span class="g-clr  text-center">Your Growth, Our Mission</span>
+                    <span class="g-clr fnt-sz-16  text-center">Your Growth, Our Mission</span>
                 </div>
             </div>
 
 
         </div>
-<style>
-
-</style>
         <div class="row ">
             @isset($public_training)
             <div class="col-12 col-md-6 col-lg-3 p-2">
@@ -603,7 +600,7 @@ height: 100% !important;
                     <div class="card-item-services service-item-4"
                         style="background-image: url('{{ asset($public_training->details2) }}');">
                         <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
+                            <div class="row main-footer-of-services"  style='position: absolute;bottom: 15px;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
                                 </div>
@@ -611,7 +608,7 @@ height: 100% !important;
                                     <div class="row">
                                         <div class="col-12">
                                             <a href="{{ route('service') }}#public_training"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
+                                                class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -628,7 +625,7 @@ height: 100% !important;
                         style="background-image: url('{{ asset($in_house_training->details2) }}');">
                         <div class="card-service-bottom-footer">
 
-                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
+                            <div class="row main-footer-of-services" style='position: absolute;bottom: 15px;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $in_house_training->small_description }}</h3>
                                 </div>
@@ -636,7 +633,7 @@ height: 100% !important;
                                     <div class="row">
                                         <div class="col-12">
                                             <a href="{{ route('service') }}#in_house_training"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
+                                                class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -654,7 +651,7 @@ height: 100% !important;
                     <div class="card-item-services service-item-1"
                         style="background-image: url('{{ asset($consultancy->details2) }}');">
                         <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
+                            <div class="row main-footer-of-services"  style='position: absolute;bottom: 15px;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $consultancy->small_description }}</h3>
                                 </div>
@@ -662,7 +659,7 @@ height: 100% !important;
                                     <div class="row">
                                         <div class="col-12">
                                             <a href="{{ route('service') }}#consultancy"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
+                                                class="theme-btn-1 btn btn-effect-1  v-d-of-services">View Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -678,7 +675,7 @@ height: 100% !important;
                     <div class="card-item-services service-item-3"
                         style="background-image: url({{ asset($online_courses->details2) }});">
                         <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services" style='position: absolute;bottom: 0;'>
+                            <div class="row main-footer-of-services"  style='position: absolute;bottom: 15px;'>
                                 <div class="col-12">
                                     <h3 class="white-color mb-3">{{ $online_courses->small_description }}</h3>
                                 </div>
@@ -686,7 +683,7 @@ height: 100% !important;
                                     <div class="row">
                                         <div class="col-12">
                                             <a href="{{ route('service') }}#online_courses"
-                                                class="theme-btn-1 btn btn-effect-1 text-uppercase v-d-of-services">View Details</a>
+                                                class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
                                         </div>
                                     </div>
                                 </div>
