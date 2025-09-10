@@ -8,7 +8,7 @@
                 <div class="col">
                     <div class="site-logo-wrap">
                         <div class="site-logo">
-                            <a href="{{ url('/') }}"><img width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
+                            <a href="{{ url('/') }}"><img style="padding:10px 0;" width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
                         </div>
                     </div>
                 </div>
@@ -18,13 +18,13 @@
                             <div class="ltn__main-menu">
                                 <ul>
                                     <li class="{{ request()->routeIs('main-home') ? 'active' : '' }}">
-                                        <a href="{{ route('main-home') }}">HOME</a>
+                                        <a href="{{ route('main-home') }}">Home</a>
                                     </li>
                                     <li class="{{ request()->routeIs('about-bts') ? 'active' : '' }}">
-                                        <a href="{{ route('about-bts') }}">ABOUT BTS</a>
+                                        <a href="{{ route('about-bts') }}">About BTS</a>
                                     </li>
                                     <li class="menu-icon {{ request()->routeIs('category.show') ? 'active' : '' }}">
-                                        <a href="#">TRAINING CATEGORY</a>
+                                        <a href="#">Training Category</a>
                                         <ul>
                                             @isset($categories)
                                                 @foreach ($categories as $category )
@@ -36,7 +36,7 @@
                                         </ul>
                                     </li>
                                     <li class="menu-icon {{ request()->routeIs('join-us') ? 'active' : '' }}">
-                                        <a href="#">Join US</a>
+                                        <a href="#">Join Us</a>
                                         <ul>
 
                                                     <li>
@@ -98,14 +98,14 @@
 
         <div class="ltn__utilize-menu text-center">
             <ul class="text-center">
-                <li><a href="{{ route('main-home') }}">HOME</a>
+                <li><a href="{{ route('main-home') }}">Home</a>
 
                 </li>
-                <li><a href="{{ route('about-bts') }}">ABOUT BTS</a>
+                <li><a href="{{ route('about-bts') }}">About BTS</a>
 
                 </li>
 
-                <li><a href="#">TRAINING CATEGORY</a>
+                <li><a href="#">Training Category</a>
                     <ul class="sub-menu">
                         @isset($categories)
                         @foreach ($categories as $category )
@@ -114,7 +114,7 @@
                        @endisset
                     </ul>
                 </li>
-                <li><a href="{{ route('join-us') }}">Join US</a>
+                <li><a href="{{ route('join-us') }}">Join Us</a>
 
                 </li>
 

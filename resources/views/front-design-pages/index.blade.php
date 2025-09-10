@@ -254,7 +254,7 @@
         transform: translateY(-50%);
         z-index: 999;
         background: rgba(0, 0, 0, 0.7);
-        padding: 15px 10px;
+        padding: 5px 0px;
         border-radius: 30px 0 0 30px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(5px);
@@ -406,6 +406,14 @@
 .methodology-title-area p {
   font-size: 16px !important;
 }
+.ltn__feature-area.search-form-top-slider .ts-control {
+    background-color: #efefef !important;
+    height: 100% !important;
+    color:black !important;
+}
+.ltn__feature-area.search-form-top-slider .ts-wrapper.single{
+height: 100% !important;
+}
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1 pt-0" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 120vh !important;">
@@ -501,7 +509,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
-                                <div class="">
+                                <div class="h-100" >
                                     <select id="categorySelect" name="category_id">
                                         <option value="" disabled selected>Select a Category</option>
 
@@ -516,7 +524,7 @@
                             </div>
 
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
-                                <div class="mc-field-group">
+                                <div class="mc-field-group h-100">
                                     <select id="venueSelect" name="city_id" placeholder="Select a Venue...">
                                         <option value="">Select a Venue</option>
                                         @isset($venues)
