@@ -1,7 +1,7 @@
     <footer class="ltn__footer-area  ">
         <div class="footer-top-area  plr--5">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
 
             <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                 <div class="footer-widget footer-menu-widget clearfix">

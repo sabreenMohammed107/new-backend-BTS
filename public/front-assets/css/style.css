@@ -14567,7 +14567,7 @@ input[type="date"] {
   color: var(--white) !important;
   border: solid 1px var(--ltn__secondary-color);
   border-radius: 10px;
-  padding: 3px 30px !important;
+  padding: 9px 30px !important;
 }
 
 .ltn__feature-item-box-wrap a.form-btn:hover {
@@ -14603,19 +14603,44 @@ input[type="date"] {
 
 .card-item-services.service-item-1 {
   background-image: url("../img/bg/Consultancy.png");
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .card-item-services.service-item-2 {
   background-image: url("../img/bg/In-House Training@2x.png");
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .card-item-services.service-item-3 {
   background-image: url("../img/bg/Online Courses.png");
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .card-item-services.service-item-4 {
   background-image: url("../img/bg/Public Training.png");
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .ltn__feature-area {
   background-image: url("../img/bg/Background\ \(2\).png");
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 @media (max-width: 1199px) {
   .ltn__feature-area {
@@ -14949,7 +14974,7 @@ input[type="date"] {
 
 .blog-of-Testimonials {
   position: relative;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 .blog-of-Testimonials::after {
   content: "";
