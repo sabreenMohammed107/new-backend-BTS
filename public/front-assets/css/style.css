@@ -15335,7 +15335,7 @@ body {
 #single-course-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Single Course.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -15741,7 +15741,7 @@ background-color: #fff;
 #about-bts-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/ABOUT BTS.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -15771,13 +15771,13 @@ background-color: #fff;
   padding: 25px 30px;
 }
 #about-bts-page .main-hero-section .about-bts-description h3{
-  color: #AFCCFF;
+  color: #fff;
   font-size: 2.5rem;
 }
 #about-bts-page .main-hero-section .about-bts-description p ,
 #about-bts-page .main-hero-section .about-bts-description ul li
 {
-  color: #a9a3a3;
+  color: #fff;
   font-size: 0.75rem;
 }
 #about-bts-page .map-section .map-description .blue-clr
@@ -15788,7 +15788,7 @@ background-color: #fff;
   padding:25px;
 }
 #about-bts-page .best-offers-section .card-offer .card-data {
-  background-color: rgba(131, 185, 251, 0.17);
+  background-color: #f5f7fb;
   padding: 20px 15px;
   border-radius: 15px;
 }
@@ -15800,6 +15800,7 @@ font-size: smaller;
 #about-bts-page .bts-target-section .target-bts-card h4{
   text-align: center;
   font-size: 2.1875rem;
+  margin-top: 20px;
 }
 #about-bts-page .bts-target-section .target-bts-card p{
   text-align: center;
@@ -15807,7 +15808,7 @@ font-size: smaller;
 }
 #about-bts-page .bts-target-section .target-bts-card .card-data{
   position: relative;
-  background-color: rgba(131, 185, 251, 0.17);
+  background-color: #f5f7fb;
   padding: 20px 15px;
   border-radius: 15px;
 
@@ -15845,7 +15846,7 @@ font-size: smaller;
 #testimonials-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Testimonials (1).png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -15876,13 +15877,13 @@ font-size: smaller;
   padding: 25px 30px;
 }
 #testimonials-page .main-hero-section .about-bts-description h3{
-  color: #AFCCFF;
+  color: #fff;
   font-size: 2.5rem;
 }
 #testimonials-page .main-hero-section .about-bts-description p ,
 #testimonials-page .main-hero-section .about-bts-description ul li
 {
-  color: #a9a3a3;
+  color: #fff;
   font-size: 0.75rem;
 }
 #testimonials-page .map-section .map-description .blue-clr
@@ -15950,7 +15951,7 @@ font-size: smaller;
 #contact-us-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Contact Us.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -15975,13 +15976,13 @@ font-size: smaller;
   padding: 25px 30px;
 }
 #contact-us-page .main-hero-section .about-bts-description h3{
-  color: #AFCCFF;
+  color: #fff;
   font-size: 2.5rem;
 }
 #contact-us-page .main-hero-section .about-bts-description p ,
 #contact-us-page .main-hero-section .about-bts-description ul li
 {
-  color: #a9a3a3;
+  color: #fff;
   font-size: 0.75rem;
 }
 #contact-us-page .map-section .map-description .blue-clr
@@ -16054,7 +16055,7 @@ font-size: smaller;
 #join-us-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Join Us.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -16079,13 +16080,13 @@ font-size: smaller;
   padding: 25px 30px;
 }
 #join-us-page .main-hero-section .about-bts-description h3{
-  color: #AFCCFF;
+  color: #fff;
   font-size: 2.5rem;
 }
 #join-us-page .main-hero-section .about-bts-description p ,
 #join-us-page .main-hero-section .about-bts-description ul li
 {
-  color: #a9a3a3;
+  color: #fff;
   font-size: 0.75rem;
 }
 #join-us-page .map-section .map-description .blue-clr
@@ -16200,7 +16201,7 @@ font-weight: 900;
 #join-team-page  .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Single Course.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -16563,7 +16564,7 @@ background-color: #fff;
 #join-us-speaker-page  .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Join Us ( Speaker ).png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -16913,7 +16914,7 @@ background-color: #fff;
 }
 #soft-skills-page .main-course-bg-header {
   position: relative;
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -16951,13 +16952,13 @@ background-color: #fff;
   padding: 25px 30px;
 }
 #soft-skills-page .main-hero-section .about-bts-description h3{
-  color: #AFCCFF;
+  color: #fcfcfc;
   font-size: 2.5rem;
 }
 #soft-skills-page .main-hero-section .about-bts-description p ,
 #soft-skills-page .main-hero-section .about-bts-description ul li
 {
-  color: #a9a3a3;
+  color: #ffffff;
   font-size: 0.75rem;
 }
 #soft-skills-page .map-section .map-description .blue-clr
@@ -17128,7 +17129,7 @@ font-weight: 900;
 #download-center-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/DOWNLOAD CENTER.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -17598,7 +17599,7 @@ font-size: 2.1875rem;
 #service-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/servics-bg.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -17814,7 +17815,7 @@ background-repeat: repeat-y;
 #accre-course-page .main-course-bg-header {
   position: relative;
   background-image: url("../img/bg/Accreditations.png");
-  height: 400px;
+  height: 270px;
   background-size: cover;
   background-position: center;
 }
@@ -18275,13 +18276,13 @@ background-color: #fff;
   padding: 25px 30px;
 }
 #accre-course-page .main-hero-section .about-bts-description h3{
-  color: #AFCCFF;
+  color: #fff;
   font-size: 2.5rem;
 }
 #accre-course-page .main-hero-section .about-bts-description p ,
 #accre-course-page .main-hero-section .about-bts-description ul li
 {
-  color: #a9a3a3;
+  color: #fff;
   font-size: 0.75rem;
 }
 #join-team-page .ltn__product-tab-area.ltn__product-gutter .card {

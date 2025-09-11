@@ -162,6 +162,14 @@
     .video-error.show {
         display: block;
     }
+    .about-bts-description p {
+        color: #fff !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .about-bts-description ul li {
+        color: #fff !important;
+        margin-top: 0.5rem !important;
+    }
     </style>
 @endsection
 
@@ -261,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
 @section('page-content')
     <div class="main-course-bg-header">
       <div class="course-main-title text-center">
-        <h2>ABOUT BTS</h2>
+        <h2>About BTS</h2>
       </div>
     </div>
 
