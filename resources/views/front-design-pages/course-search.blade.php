@@ -334,6 +334,27 @@
         .Venue-menu::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
+        /* Ensure all course card titles render on a single line with ellipsis */
+        .single-course-item-card .card h6 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+        .single-course-item-card .card h6 a {
+            display: block;
+            white-space: inherit;
+        }
+        /* Align overlay content so titles share the same baseline across cards */
+        .single-course-item-card .course-card-overlay {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            /* Reserve space for metadata so title baseline is consistent */
+            min-height: 115px;
+        }
+        .single-course-item-card .course-card-overlay .course-meta { margin-bottom: 0 !important; }
+        .single-course-item-card .course-card-overlay h6 { margin-top: auto; }
     </style>
     <div class="container-fluid main-course-search-nav" style='background-color:#232F3E;'>
         <div class="container-fluid">
@@ -548,9 +569,9 @@
                                                                 alt="{{ $round->course->course_en_name }}">
                                                         </a>
                                                         <!-- Overlay المعلومات فوق الصورة -->
-                                                        <div class="position-absolute bottom-0 start-0 w-100 text-white p-3"
+                                                        <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 course-card-overlay"
                                                             style="background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));">
-                                                         <ul class="d-flex flex-wrap gap-3 mb-2 small align-items-center"
+                                                         <ul class="d-flex flex-wrap gap-3 mb-2 small align-items-center course-meta"
     style="font-size:12px; list-style: none; margin:0; padding:0;">
     <li class="d-flex align-items-center gap-1">
         <i class="fas fa-map-marker-alt"></i>

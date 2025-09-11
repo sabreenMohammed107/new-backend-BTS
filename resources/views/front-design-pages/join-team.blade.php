@@ -4,21 +4,25 @@
 @section('page-id' , 'join-team-page')
 @section('page-content')
 
-
+<style>
+    #join-team-page .nice-select, #join-team-page .form-container input{
+    background-color: #efefef !important;
+}
+</style>
     <div class="main-course-bg-header">
     <div class="course-main-title text-center">
-        <h2>Join Us AS TEAM MEMBER</h2>
+        <h2>Join Us As Team Member</h2>
     </div>
     </div>
 
     <!-- FEATURE AREA START ( Feature - 3) -->
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
         <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2 text-left">
 
-            <span class="col-12 col-md-8 g-clr text-left f-s-13 m-auto">
+            <span class="col-12 col-md-8 g-clr text-left f-s-13 m-auto" style="color: black">
                 We are always interested to meet potential team members to join our fast-growing, dynamic team of professionals in order to continue providing a personalized, efficient, professional and confidential service to our increasing portfolio of clients. Our people are undoubtedly our greatest asset and we pride ourselves on creating an environment where our team look forward to come to work every day. While experience is not a requirement (for certain positions), preference will be given to those applicants who are interested in a challenge, who are results and target-oriented besides wanting to form part of our dynamic team and fast- growing business. Read on below to find out more about what our positions entail and what skills are required.
             </span>
 
@@ -30,9 +34,39 @@
 
     <div class="container">
         <div class="row">
-        <h4 class="bullhorn"> <i class="fas fa-bullhorn"></i> Currently Available Jobs </h4>
+        <h4 class="bullhorn mb-5"> <i class="fas fa-bullhorn"></i> Currently Available Jobs </h4>
         <div class="col-lg-6">
             <div class="ltn__faq-inner ltn__faq-inner-2">
+            <style>
+                /* Accordion header icon: force chevrons and suppress theme plus/minus */
+                .ltn__faq-inner .ltn__card-title {
+                    position: relative;
+                    padding-right: 40px;
+                    cursor: pointer;
+                }
+                /* Hide any existing pseudo icon from the theme */
+                .ltn__faq-inner .ltn__card-title::before {
+                    content: none !important;
+                }
+                /* Our chevron icon */
+                .ltn__faq-inner .ltn__card-title::after {
+                    content: "\f078" !important; /* fa-chevron-down */
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    line-height: 1;
+                    color: inherit;
+                    transition: transform 0.2s ease;
+                }
+                /* When expanded, show up arrow */
+                .ltn__faq-inner .ltn__card-title[aria-expanded="true"]::after,
+                .ltn__faq-inner .ltn__card-title:not(.collapsed)[aria-expanded="true"]::after {
+                    content: "\f077" !important; /* fa-chevron-up */
+                }
+            </style>
             <div id="accordion_2">
                 <!-- card -->
                 <div class="card">

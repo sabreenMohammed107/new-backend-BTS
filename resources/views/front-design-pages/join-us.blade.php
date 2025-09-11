@@ -5,17 +5,17 @@
 @section('page-content')
     <div class="main-course-bg-header">
       <div class="course-main-title text-center">
-        <h2>JOIN US</h2>
+        <h2>Join Us</h2>
       </div>
     </div>
     <!-- FEATURE AREA START ( Feature - 3) -->
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2 text-center">
 
-              <h5 class="col-12 col-md-8 g-clr text-center f-s-20 p-5 m-auto">Join our inspiring team or become a distinguished speaker and be part of a journey of success, innovation, and meaningful connections. Share your expertise, inspire others, and make a lasting impact!</h5>
+              <h5 class="col-12 col-md-8 text-center f-s-20 p-5 m-auto" style="color: black">Join our inspiring team or become a distinguished speaker and be part of a journey of success, innovation, and meaningful connections. Share your expertise, inspire others, and make a lasting impact!</h5>
 
             </div>
             <div class="row">
