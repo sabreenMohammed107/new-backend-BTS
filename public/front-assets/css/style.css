@@ -6781,7 +6781,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .ltn__slide-item-2 .slide-brief {
   padding-left: 30px;
-  border-left: 1px solid #576466;
+  /* border-left: 1px solid #576466; */
 }
 
 .ltn__slide-item-6 .text-right .slide-item-info,
@@ -7135,13 +7135,16 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 @media (min-width: 1200px) and (max-width: 1599px) {
   .ltn__slide-item-2 .slide-title {
-    font-size: 3.125rem;
+    font-size: 45px;
   }
   .ltn__slide-item-6 {
     height: 620px;
   }
   .ltn__slide-item-6 .slide-title {
-    font-size: 3.125rem;
+    font-size:  45px;
+  }
+  .ltn__slide-item-inner .slide-item-info-inner .slide-brief {
+    font-size:17px;
   }
 }
 

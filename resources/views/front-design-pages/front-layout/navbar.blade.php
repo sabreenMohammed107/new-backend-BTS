@@ -49,7 +49,7 @@
                                         </ul>
                                     </li>
 
-                                    <li class="special-link-in {{ request()->routeIs('contact-us') ? 'active' : '' }}">
+                                    <li class=" {{ request()->routeIs('contact-us') ? 'active' : '' }}">
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                     </li>
                                     <li class="special-link {{ request()->routeIs('download-center') ? 'active' : '' }}">
@@ -115,6 +115,18 @@
                     </ul>
                 </li>
                 <li><a href="{{ route('join-us') }}">Join Us</a>
+                    <ul>
+
+                        <li>
+                            <a href="{{ route('join-us') }}">Team Member</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('join.speaker') }}">Speaker</a>
+                        </li>
+
+            </ul>
+                </li>
+                <li><a href="{{ route('contact-us') }}">Contact Us</a>
 
                 </li>
 
@@ -122,8 +134,7 @@
         </div>
         <div class="ltn__utilize-buttons ltn__utilize-buttons-2 text-center">
             <ul>
-                <li class="special-link-in"><a href="{{ route('contact-us') }}">Contact Us</a></li>
-                <li class="special-link"><a href="{{ route('download-center') }}">Download center</a></li>
+                <li class="special-link"><a href="{{ route('download-center') }}">Download Center</a></li>
             </ul>
         </div>
 

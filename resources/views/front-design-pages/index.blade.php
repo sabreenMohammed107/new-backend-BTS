@@ -230,16 +230,16 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(90deg,
-            rgba(255,255,255,0) 0%,
-            rgba(255,255,255,0.2) 50%,
-            rgba(255,255,255,0) 100%);
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 100%);
         transition: all 0.5s ease;
         z-index: -1;
     }
 
     .form-btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .form-btn:hover:before {
@@ -249,7 +249,7 @@
     /* Slider Social Side Links Styling */
     .slider-social-side-links {
         position: absolute;
-        right:0;
+        right: 0;
         top: 50%;
         transform: translateY(-50%);
         z-index: 999;
@@ -281,7 +281,7 @@
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
-        color:#fff
+        color: #fff
     }
 
     .slider-social-side-links i,
@@ -398,22 +398,26 @@
     .footer-social-links .insta a:hover {
         background: #e4405f;
     }
+
     .slide-brief,
-.slide-brief p,
-.slide-brief * {
-  color: #fff !important;
-}
-.methodology-title-area p {
-  font-size: 16px !important;
-}
-.ltn__feature-area.search-form-top-slider .ts-control {
-    background-color: #efefef !important;
-    height: 100% !important;
-    color:black !important;
-}
-.ltn__feature-area.search-form-top-slider .ts-wrapper.single{
-height: 100% !important;
-}
+    .slide-brief p,
+    .slide-brief * {
+        color: #fff !important;
+    }
+
+    .methodology-title-area p {
+        font-size: 16px !important;
+    }
+
+    .ltn__feature-area.search-form-top-slider .ts-control {
+        background-color: #efefef !important;
+        height: 100% !important;
+        color: black !important;
+    }
+
+    .ltn__feature-area.search-form-top-slider .ts-wrapper.single {
+        height: 100% !important;
+    }
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1 pt-0" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100vh !important;">
@@ -434,14 +438,15 @@ height: 100% !important;
                                         {!! $banner->en_head_title !!}
                                     </h6>
 
-                                    <h1 class="slide-title animated bebas-neue-regular wh-txt-clr ">
+                                    <h1 class="slide-title animated bebas-neue-regular wh-txt-clr " style="font-size: 45px">
                                         {!! $banner->en_title !!}
                                     </h1>
 
                                     <div class="slide-brief animated wh-txt-clr" style="color:#fff !important;">
                                         <p class="wh-txt-clr" style="color:#fff !important;">
                                             {!! $banner->description !!}
-                                            {{-- {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description))) }} --}}
+                                            {{-- {{ trim(str_replace('&nbsp;', ' ', strip_tags($banner->description)))
+                                            }} --}}
                                         </p>
                                     </div>
 
@@ -480,7 +485,8 @@ height: 100% !important;
             <div class="xtw">
                 <a href="{{ $staticContact->details4 ?? '#' }}" data-tooltip="Follow us on X">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:16px;height:16px">
-                        <path fill="#e7eaee" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                        <path fill="#e7eaee"
+                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
                     </svg>
                 </a>
             </div>
@@ -509,14 +515,15 @@ height: 100% !important;
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
-                                <div class="h-100" >
+                                <div class="h-100">
                                     <select id="categorySelect" name="category_id">
                                         <option value="" disabled selected>Select a Category</option>
 
                                         @isset($subCategories)
-                                            @foreach ($subCategories as $subCategory)
-                                                <option value="{{ $subCategory->id }}">{{ $subCategory->subcategory_en_name }}</option>
-                                            @endforeach
+                                        @foreach ($subCategories as $subCategory)
+                                        <option value="{{ $subCategory->id }}">{{ $subCategory->subcategory_en_name }}
+                                        </option>
+                                        @endforeach
                                         @endisset
                                     </select>
 
@@ -543,19 +550,19 @@ height: 100% !important;
                                 </div>
                             </div>
 
-                           <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-    <div class="mc-field-group">
-        <input type="text" name="start" placeholder="From Date"
-               onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-    </div>
-</div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                                <div class="mc-field-group">
+                                    <input type="text" name="start" placeholder="From Date" onfocus="(this.type='date')"
+                                        onblur="if(!this.value)this.type='text'">
+                                </div>
+                            </div>
 
-<div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
-    <div class="mc-field-group">
-        <input type="text" name="end" placeholder="To Date"
-               onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-    </div>
-</div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                                <div class="mc-field-group">
+                                    <input type="text" name="end" placeholder="To Date" onfocus="(this.type='date')"
+                                        onblur="if(!this.value)this.type='text'">
+                                </div>
+                            </div>
 
                             {{-- Tailor your course --}}
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
@@ -597,579 +604,642 @@ height: 100% !important;
             @isset($public_training)
             <div class="col-12 col-md-6 col-lg-3 p-2">
 
-                    <div class="card-item-services service-item-4"
-                        style="background-image: url('{{ asset($public_training->details2) }}');">
-                        <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services"  style='position: absolute;bottom: 15px;'>
-                                <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="{{ route('service') }}#public_training"
-                                                class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
-                                        </div>
+                <div class="card-item-services service-item-4"
+                    style="background-image: url('{{ asset($public_training->details2) }}');">
+                    <div class="card-service-bottom-footer">
+                        <div class="row main-footer-of-services" style='position: absolute;bottom: 15px;'>
+                            <div class="col-12">
+                                <h3 class="white-color mb-3">{{ $public_training->small_description }}</h3>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="{{ route('service') }}#public_training"
+                                            class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <
-            </div>
-            @endisset
-            @isset($in_house_training)
-            <div class="col-12 col-md-6 col-lg-3  p-2">
+                </div>
+                < </div>
+                    @endisset
+                    @isset($in_house_training)
+                    <div class="col-12 col-md-6 col-lg-3  p-2">
 
-                    <div class="card-item-services service-item-2"
-                        style="background-image: url('{{ asset($in_house_training->details2) }}');">
-                        <div class="card-service-bottom-footer">
+                        <div class="card-item-services service-item-2"
+                            style="background-image: url('{{ asset($in_house_training->details2) }}');">
+                            <div class="card-service-bottom-footer">
 
-                            <div class="row main-footer-of-services" style='position: absolute;bottom: 15px;'>
-                                <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $in_house_training->small_description }}</h3>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="{{ route('service') }}#in_house_training"
-                                                class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
+                                <div class="row main-footer-of-services" style='position: absolute;bottom: 15px;'>
+                                    <div class="col-12">
+                                        <h3 class="white-color mb-3">{{ $in_house_training->small_description }}</h3>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="{{ route('service') }}#in_house_training"
+                                                    class="theme-btn-1 btn btn-effect-1 v-d-of-services">View
+                                                    Details</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-
                         </div>
+
                     </div>
+                    @endisset
 
-            </div>
-            @endisset
+                    @isset($consultancy)
+                    <div class="col-12 col-md-6 col-lg-3  p-2">
 
-            @isset($consultancy)
-            <div class="col-12 col-md-6 col-lg-3  p-2">
-
-                    <div class="card-item-services service-item-1"
-                        style="background-image: url('{{ asset($consultancy->details2) }}');">
-                        <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services"  style='position: absolute;bottom: 15px;'>
-                                <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $consultancy->small_description }}</h3>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="{{ route('service') }}#consultancy"
-                                                class="theme-btn-1 btn btn-effect-1  v-d-of-services">View Details</a>
-                                        </div>
+                        <div class="card-item-services service-item-1"
+                            style="background-image: url('{{ asset($consultancy->details2) }}');">
+                            <div class="card-service-bottom-footer">
+                                <div class="row main-footer-of-services" style='position: absolute;bottom: 15px;'>
+                                    <div class="col-12">
+                                        <h3 class="white-color mb-3">{{ $consultancy->small_description }}</h3>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-            </div>
-            @endisset
-            @isset($online_courses)
-            <div class="col-12 col-md-6 col-lg-3 p-2">
-
-                    <div class="card-item-services service-item-3"
-                        style="background-image: url({{ asset($online_courses->details2) }});">
-                        <div class="card-service-bottom-footer">
-                            <div class="row main-footer-of-services"  style='position: absolute;bottom: 15px;'>
-                                <div class="col-12">
-                                    <h3 class="white-color mb-3">{{ $online_courses->small_description }}</h3>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="{{ route('service') }}#online_courses"
-                                                class="theme-btn-1 btn btn-effect-1 v-d-of-services">View Details</a>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="{{ route('service') }}#consultancy"
+                                                    class="theme-btn-1 btn btn-effect-1  v-d-of-services">View
+                                                    Details</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                    @endisset
+                    @isset($online_courses)
+                    <div class="col-12 col-md-6 col-lg-3 p-2">
 
-            </div>
-            @endisset
-
-
-        </div>
-    </div>
-</div>
-<!-- CATEGORY AREA END -->
-<!-- ABOUT US AREA START -->
-@isset($methodologies)
-<div class="ltn__about-us-area pt-120 pb-120">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 align-self-center">
-                <div class="about-us-info-wrap">
-                    <div class="row">
-                        <div class="col-12 section-title-area ltn__section-title-2 methodology-title-area">
-
-                            <h1 class="section-title">{{ $methodologies->small_description }}
-                            </h1>
-                            <p class="f-siz-larger">{!! $methodologies->details !!}</p>
-                        </div>
-
-                        <div class="col-12 row">
-
-                            <div class="col-6 align-self-center">
-                                <img src="{{ asset($methodologies->details2) }}" alt="#">
-                            </div>
-                            <div class="col-6   align-self-center">
-                                <img src="{{ asset($methodologies->details3) }}" alt="#">
+                        <div class="card-item-services service-item-3"
+                            style="background-image: url({{ asset($online_courses->details2) }});">
+                            <div class="card-service-bottom-footer">
+                                <div class="row main-footer-of-services" style='position: absolute;bottom: 15px;'>
+                                    <div class="col-12">
+                                        <h3 class="white-color mb-3">{{ $online_courses->small_description }}</h3>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="{{ route('service') }}#online_courses"
+                                                    class="theme-btn-1 btn btn-effect-1 v-d-of-services">View
+                                                    Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
+                    @endisset
 
-                </div>
-            </div>
-            <div class="col-lg-6 mt-3 mt-lg-0 align-self-center row justify-content-end">
-                <div class="about-us-img-wrap row about-img-left">
-                    <img src="{{ asset($methodologies->details4) }}" alt="About Us Image">
-                </div>
-            </div>
 
-        </div>
-    </div>
-</div>
-@endisset
-<style>
-    .feature-card {
-        position: relative;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        animation: cardFadeUp 0.6s ease both;
-        background-color: #f5f7fb !important;
-    }
-    .feature-card:hover, .feature-card:focus-within {
-        transform: translateY(-4px);
-        box-shadow: 0 1rem 1.75rem rgba(16, 24, 40, 0.12);
-    }
-    .feature-icon {
-        width: 72px;
-        height: 72px;
-        background-color: #f5f7fb;
-        box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .feature-icon img {
-        max-width: 48px;
-        max-height: 48px;
-        transition: transform 0.25s ease;
-    }
-    .feature-card:hover .feature-icon, .feature-card:focus-within .feature-icon { box-shadow: inset 0 2px 6px rgba(0,0,0,0.06); }
-    .feature-card:hover .feature-icon img, .feature-card:focus-within .feature-icon img { transform: scale(1.06) rotate(-2deg); }
-
-    /* Sheen sweep on hover */
-    .feature-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(120deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 60%);
-        transform: translateX(-120%);
-        transition: transform 0.6s ease;
-        border-radius: inherit;
-    }
-    .feature-card:hover::after, .feature-card:focus-within::after { transform: translateX(120%); }
-
-    /* Staggered entrance animation for cards */
-    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(1) .feature-card { animation-delay: 0.0s; }
-    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(2) .feature-card { animation-delay: 0.08s; }
-    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(3) .feature-card { animation-delay: 0.16s; }
-    [role="list"] > .col-12.col-sm-6.col-lg-3:nth-child(4) .feature-card { animation-delay: 0.24s; }
-
-    @keyframes cardFadeUp {
-        from { opacity: 0; transform: translateY(14px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .feature-card { transition: none; animation: none; }
-        .feature-card::after { display: none; }
-        .feature-icon, .feature-icon img { transition: none; }
-    }
-</style>
-@isset($methodologies)
-<div class="container section-of-introduction">
-    <div class="row">
-        <div class="col-12 training-footer mt-5">
-            <div class="row g-3 g-md-4" role="list">
-                <!-- Card 1 -->
-                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                            <img class="img-fluid" src="{{ asset($methodologies->details6) }}" alt="{{ $methodologies->details5 }} icon" loading="lazy" decoding="async">
-                        </div>
-                        <h6 class="mb-0">{{ $methodologies->details5 }}</h6>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                            <img class="img-fluid" src="{{ asset($methodologies->details8) }}" alt="{{ $methodologies->details7 }} icon" loading="lazy" decoding="async">
-                        </div>
-                        <h6 class="mb-0">{{ $methodologies->details7 }}</h6>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                            <img class="img-fluid" src="{{ asset($methodologies->details10) }}" alt="{{ $methodologies->details9 }} icon" loading="lazy" decoding="async">
-                        </div>
-                        <h6 class="mb-0">{{ $methodologies->details9 }}</h6>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                    <div class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                        <div class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                            <img class="img-fluid" src="{{ asset($methodologies->details12) }}" alt="{{ $methodologies->details11 }} icon" loading="lazy" decoding="async">
-                        </div>
-                        <h6 class="mb-0">{{ $methodologies->details11 }}</h6>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-</div>
-@endisset
-<!-- ABOUT US AREA END -->
-<style>
-    /* Image container styles */
-    .ltn__product-item-3 .product-img {
-        position: relative;
-        overflow: hidden;
-        border-radius: 6px;
-        /* height: 12rem; */
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .ltn__product-item-3 .product-img .img-container {
-        display: block;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .ltn__product-item-3 .product-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    /* Shine hover effect */
-    .ltn__product-item-3 .product-img.shine {
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .ltn__product-item-3 .product-img.shine::before {
-        background: linear-gradient(to right,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.5) 50%,
-                rgba(255, 255, 255, 0) 100%);
-        content: "";
-        display: block;
-        height: 100%;
-        left: -75%;
-        position: absolute;
-        top: 0;
-        transform: skewX(-25deg);
-        width: 50%;
-        z-index: 2;
-    }
-
-    .ltn__product-item-3 .product-img.shine:hover::before,
-    .ltn__product-item-3 .product-img.shine:focus::before {
-        animation: shine 4s ease-in-out;
-    }
-
-    @keyframes shine {
-        0% {
-            left: -75%;
-        }
-        100% {
-            left: 125%;
-        }
-    }
-</style>
-<!-- PRODUCT AREA START (product-item-3) -->
-<div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title-area ltn__section-title-2 text-center">
-                    <h1 class="section-title">Top Ranked Courses</h1>
-                    <h6 class="fnt-w-400">Your Growth, Our Mission</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row ltn__tab-product-slider-one-active--- slick-arrow-1">
+    <!-- CATEGORY AREA END -->
+    <!-- ABOUT US AREA START -->
+    @isset($methodologies)
+    <div class="ltn__about-us-area pt-120 pb-120">
+        <div class="container">
             <div class="row">
-                @isset($rounds)
-                @foreach ($rounds as $round)
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="ltn__product-item ltn__product-item-3 text-left w-100">
-                        <div class="product-img shine">
-                            <a class="img-container">
-                                <img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
-                                    alt="{{ $round->country->country_en_name }}">
-                            </a>
+                <div class="col-lg-6 align-self-center">
+                    <div class="about-us-info-wrap">
+                        <div class="row">
+                            <div class="col-12 section-title-area ltn__section-title-2 methodology-title-area">
 
-                            <div class="course-badge">
-                                <h3 class='white-color mb-2'>
-                                    <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}">
-                                    {{ Str::limit($round->course->course_en_name, 70, '') }}
-                                    </a>
-                                </h3>
-                                <?php $date = date_create($round->round_start_date); ?>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="white-color bottom-title">
-                                        {{ $round->venue->venue_en_name }} -
-                                        {{ $round->country->country_en_name }} |
-                                        {{ date_format($date, 'd M, Y') }}
-                                    </div>
-                                    <div class="icon-arrow">
-                                        <a href="{{ url('courseDetails/'.$round->course->id) }}"><i class="fa fa-arrow-right white-color"></i></a>
-                                    </div>
+                                <h1 class="section-title">{{ $methodologies->small_description }}
+                                </h1>
+                                <p class="f-siz-larger">{!! $methodologies->details !!}</p>
+                            </div>
+
+                            <div class="col-12 row">
+
+                                <div class="col-6 align-self-center">
+                                    <img src="{{ asset($methodologies->details2) }}" alt="#">
+                                </div>
+                                <div class="col-6   align-self-center">
+                                    <img src="{{ asset($methodologies->details3) }}" alt="#">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-                @endforeach
-                @endisset
-
-            </div>
-
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 text-center">
-
-                <a href="{{ route('searchCourse.index') }}" class="theme-btn-1 btn btn-effect-1 ">All Courses</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-<!-- PRODUCT AREA END -->
-
-<!-- BLOG AREA START (blog-3) -->
-<div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
-    <div class="container">
-        <div class="row">
-            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
-                <h1>Proud<br>To Serve</h1>
-            </div>
-
-            <div
-                class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
-                @isset($clients)
-                @foreach ($clients as $client)
-                <div class="col row justify-content-center align-items-center mx-2">
-                    <img src="{{ asset('uploads/clients') }}/{{ $client->client_logo_url }}" alt="" srcset="">
-                </div>
-                @endforeach
-                @endisset
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- BLOG AREA START (blog-3) -->
-<div class="ltn__blog-area blog-of-Testimonials pt-5 pb-50">
-    <div class="container">
-        <div class="row">
-            @isset($homeTestimonials)
-            <div class="col-lg-12">
-                <div class="section-title-area ltn__section-title-2 text-center row">
-                    <h1 class="section-title white-color--- col-12">{{ $homeTestimonials->small_description }}</h1>
-                    <span class="px-5 col-12 col-md-8 offset-md-2 fnt-sz-16 ">{{ $homeTestimonials->details }}</span>
-                </div>
-            </div>
-            @endisset
-
-        </div>
-        <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
-            <!-- Blog Item -->
-            @isset($testimonials)
-            @foreach ($testimonials as $testimonial)
-            <div class="col-lg-12">
-                <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
-                    <div class="ltn__blog-brief bg-light-blue">
-                        <div class="ltn__blog-meta bg-light-blue mb-0">
-                            <a href="{{ route('testimonials') }}" class="text-decoration-none">
-                                <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
-                                    <li class="ltn__blog-title">
-                                        <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
-                                    </li>
-                                    <li class="ltn__blog-tags d-flex">
-                                        {{-- Filled stars --}}
-                                        @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
-                                            <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
-                                                height="15" alt="star">
-                                            @endfor
-                                    </li>
-                                </ul>
-                            </a>
-                        </div>
-                        <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400">
-                            {{ $testimonial->reviewer_text }}
-                        </h3>
                     </div>
                 </div>
-            </div>
-            @endforeach
-            @endisset
-        </div>
-    </div>
-</div>
-<!-- BLOG AREA END -->
-<!-- BLOG AREA START (blog-3) -->
-
-<div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
-    <div class="container">
-        <div class="row">
-            <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
-                <h1>BTS <br>Partners</h1>
-            </div>
-
-            <div
-                class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
-                @isset($partners)
-                @foreach ($partners as $partner)
-                <div class="col row justify-content-center align-items-center mx-2">
-                    <img src="{{ asset('uploads/partners') }}/{{ $partner->partner_logo_url }}" alt="" srcset="">
+                <div class="col-lg-6 mt-3 mt-lg-0 align-self-center row justify-content-end">
+                    <div class="about-us-img-wrap row about-img-left">
+                        <img src="{{ asset($methodologies->details4) }}" alt="About Us Image">
+                    </div>
                 </div>
-                @endforeach
-                @endisset
+
             </div>
         </div>
     </div>
-</div>
-
-<!-- COUNTER UP AREA START -->
-<div class="container">
-    @isset($homeAccreditation)
+    @endisset
     <style>
-        /* Shining Hover Effect for Accreditation Section */
-
-        /* Base styling for the button */
-        .theme-btn-1.btn-effect-1 {
+        .feature-card {
             position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            animation: cardFadeUp 0.6s ease both;
+            background-color: #f5f7fb !important;
         }
 
-        /* The shining effect */
-        .theme-btn-1.btn-effect-1:before {
-            content: '';
+        .feature-card:hover,
+        .feature-card:focus-within {
+            transform: translateY(-4px);
+            box-shadow: 0 1rem 1.75rem rgba(16, 24, 40, 0.12);
+        }
+
+        .feature-icon {
+            width: 72px;
+            height: 72px;
+            background-color: #f5f7fb;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .feature-icon img {
+            max-width: 48px;
+            max-height: 48px;
+            transition: transform 0.25s ease;
+        }
+
+        .feature-card:hover .feature-icon,
+        .feature-card:focus-within .feature-icon {
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-card:hover .feature-icon img,
+        .feature-card:focus-within .feature-icon img {
+            transform: scale(1.06) rotate(-2deg);
+        }
+
+        /* Sheen sweep on hover */
+        .feature-card::after {
+            content: "";
             position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 20%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(30deg);
-            transition: all 0.65s ease;
-        }
-
-        /* Animation on hover */
-        .theme-btn-1.btn-effect-1:hover:before {
-            left: 120%;
-            transition: all 0.65s ease;
-        }
-
-        /* Optional: Add some extra styling when hovering */
-        .theme-btn-1.btn-effect-1:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Apply shining effect to the entire section */
-        .ltn__counterup-area {
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* The shining effect for the entire section */
-        .ltn__counterup-area:before {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 50%;
-            height: 300%;
-            background: linear-gradient(to right,
-                    rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 0.3) 50%,
-                    rgba(255, 255, 255, 0) 100%);
-            transform: rotate(30deg);
-            animation: shine 6s infinite;
+            inset: 0;
             pointer-events: none;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%);
+            transform: translateX(-120%);
+            transition: transform 0.6s ease;
+            border-radius: inherit;
         }
 
-        /* Keyframes for the shine animation */
-        @keyframes shine {
-            0% {
-                left: -100%;
+        .feature-card:hover::after,
+        .feature-card:focus-within::after {
+            transform: translateX(120%);
+        }
+
+        /* Staggered entrance animation for cards */
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(1) .feature-card {
+            animation-delay: 0.0s;
+        }
+
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(2) .feature-card {
+            animation-delay: 0.08s;
+        }
+
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(3) .feature-card {
+            animation-delay: 0.16s;
+        }
+
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(4) .feature-card {
+            animation-delay: 0.24s;
+        }
+
+        @keyframes cardFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
             }
 
-            20% {
-                left: 100%;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .feature-card {
+                transition: none;
+                animation: none;
+            }
+
+            .feature-card::after {
+                display: none;
+            }
+
+            .feature-icon,
+            .feature-icon img {
+                transition: none;
+            }
+        }
+    </style>
+    @isset($methodologies)
+    <div class="container section-of-introduction">
+        <div class="row">
+            <div class="col-12 training-footer mt-5">
+                <div class="row g-3 g-md-4" role="list">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                        <div
+                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                            <div
+                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                                <img class="img-fluid" src="{{ asset($methodologies->details6) }}"
+                                    alt="{{ $methodologies->details5 }} icon" loading="lazy" decoding="async">
+                            </div>
+                            <h6 class="mb-0">{{ $methodologies->details5 }}</h6>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                        <div
+                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                            <div
+                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                                <img class="img-fluid" src="{{ asset($methodologies->details8) }}"
+                                    alt="{{ $methodologies->details7 }} icon" loading="lazy" decoding="async">
+                            </div>
+                            <h6 class="mb-0">{{ $methodologies->details7 }}</h6>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                        <div
+                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                            <div
+                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                                <img class="img-fluid" src="{{ asset($methodologies->details10) }}"
+                                    alt="{{ $methodologies->details9 }} icon" loading="lazy" decoding="async">
+                            </div>
+                            <h6 class="mb-0">{{ $methodologies->details9 }}</h6>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                        <div
+                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
+                            <div
+                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
+                                <img class="img-fluid" src="{{ asset($methodologies->details12) }}"
+                                    alt="{{ $methodologies->details11 }} icon" loading="lazy" decoding="async">
+                            </div>
+                            <h6 class="mb-0">{{ $methodologies->details11 }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endisset
+    <!-- ABOUT US AREA END -->
+    <style>
+        /* Image container styles */
+        .ltn__product-item-3 .product-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            /* height: 12rem; */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ltn__product-item-3 .product-img .img-container {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .ltn__product-item-3 .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Shine hover effect */
+        .ltn__product-item-3 .product-img.shine {
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ltn__product-item-3 .product-img.shine::before {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.5) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            content: "";
+            display: block;
+            height: 100%;
+            left: -75%;
+            position: absolute;
+            top: 0;
+            transform: skewX(-25deg);
+            width: 50%;
+            z-index: 2;
+        }
+
+        .ltn__product-item-3 .product-img.shine:hover::before,
+        .ltn__product-item-3 .product-img.shine:focus::before {
+            animation: shine 4s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -75%;
             }
 
             100% {
-                left: 100%;
+                left: 125%;
             }
         }
-
-        /* Extra styling for enhancing section appearance on hover */
-        .ltn__counterup-area:hover .wh-txt-clr {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .ltn__counterup-area:hover .g-clr {
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
     </style>
-    <div class="ltn__counterup-area bg-image pt-115 pb-70" data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
-        <div class="row justify-content-center text-center">
-            <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
-            </h1>
-            <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
-            <div class="col-12 text-center pt-3">
+    <!-- PRODUCT AREA START (product-item-3) -->
+    <div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area ltn__section-title-2 text-center">
+                        <h1 class="section-title">Top Ranked Courses</h1>
+                        <h6 class="fnt-w-400">Your Growth, Our Mission</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row ltn__tab-product-slider-one-active--- slick-arrow-1">
+                <div class="row">
+                    @isset($rounds)
+                    @foreach ($rounds as $round)
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="ltn__product-item ltn__product-item-3 text-left w-100">
+                            <div class="product-img shine">
+                                <a class="img-container">
+                                    <img src="{{ asset('uploads/courses') }}/{{ $round->course->course_image_thumbnail }}"
+                                        alt="{{ $round->country->country_en_name }}">
+                                </a>
 
-                <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;" class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
+                                <div class="course-badge">
+                                    <h3 class='white-color mb-2'>
+                                        <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}">
+                                            {{ Str::limit($round->course->course_en_name, 70, '') }}
+                                        </a>
+                                    </h3>
+                                    <?php $date = date_create($round->round_start_date); ?>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="white-color bottom-title">
+                                            {{ $round->venue->venue_en_name }} -
+                                            {{ $round->country->country_en_name }} |
+                                            {{ date_format($date, 'd M, Y') }}
+                                        </div>
+                                        <div class="icon-arrow">
+                                            <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
+                                                    class="fa fa-arrow-right white-color"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    @endforeach
+                    @endisset
+
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 text-center">
+
+                    <a href="{{ route('searchCourse.index') }}" class="theme-btn-1 btn btn-effect-1 ">All Courses</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- PRODUCT AREA END -->
+
+    <!-- BLOG AREA START (blog-3) -->
+    <div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
+                    <h1>Proud<br>To Serve</h1>
+                </div>
+
+                <div
+                    class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
+                    @isset($clients)
+                    @foreach ($clients as $client)
+                    <div class="col row justify-content-center align-items-center mx-2">
+                        <img src="{{ asset('uploads/clients') }}/{{ $client->client_logo_url }}" alt="" srcset="">
+                    </div>
+                    @endforeach
+                    @endisset
+                </div>
+
             </div>
         </div>
+    </div>
+
+    <!-- BLOG AREA START (blog-3) -->
+    <div class="ltn__blog-area blog-of-Testimonials pt-5 pb-50">
+        <div class="container">
+            <div class="row">
+                @isset($homeTestimonials)
+                <div class="col-lg-12">
+                    <div class="section-title-area ltn__section-title-2 text-center row">
+                        <h1 class="section-title white-color--- col-12">{{ $homeTestimonials->small_description }}</h1>
+                        <span class="px-5 col-12 col-md-8 offset-md-2 fnt-sz-16 ">{{ $homeTestimonials->details
+                            }}</span>
+                    </div>
+                </div>
+                @endisset
+
+            </div>
+            <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
+                <!-- Blog Item -->
+                @isset($testimonials)
+                @foreach ($testimonials as $testimonial)
+                <div class="col-lg-12">
+                    <div class="ltn__blog-item ltn__blog-item-3 bg-light-blue">
+                        <div class="ltn__blog-brief bg-light-blue">
+                            <div class="ltn__blog-meta bg-light-blue mb-0">
+                                <a href="{{ route('testimonials') }}" class="text-decoration-none">
+                                    <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
+                                        <li class="ltn__blog-title">
+                                            <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
+                                        </li>
+                                        <li class="ltn__blog-tags d-flex">
+                                            {{-- Filled stars --}}
+                                            @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
+                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
+                                                    height="15" alt="star">
+                                                @endfor
+                                        </li>
+                                    </ul>
+                                </a>
+                            </div>
+                            <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400">
+                                {{ $testimonial->reviewer_text }}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @endisset
+            </div>
+        </div>
+    </div>
+    <!-- BLOG AREA END -->
+    <!-- BLOG AREA START (blog-3) -->
+
+    <div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
+                    <h1>BTS <br>Partners</h1>
+                </div>
+
+                <div
+                    class=" col-12 align-self-center col-md-9 col-lg-9 row  ltn__blog-slider-proud-active slick-arrow-1 ltn__blog-item-3-normal">
+                    @isset($partners)
+                    @foreach ($partners as $partner)
+                    <div class="col row justify-content-center align-items-center mx-2">
+                        <img src="{{ asset('uploads/partners') }}/{{ $partner->partner_logo_url }}" alt="" srcset="">
+                    </div>
+                    @endforeach
+                    @endisset
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COUNTER UP AREA START -->
+    <div class="container">
+        @isset($homeAccreditation)
+        <style>
+            /* Shining Hover Effect for Accreditation Section */
+
+            /* Base styling for the button */
+            .theme-btn-1.btn-effect-1 {
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            /* The shining effect */
+            .theme-btn-1.btn-effect-1:before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -60%;
+                width: 20%;
+                height: 200%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: rotate(30deg);
+                transition: all 0.65s ease;
+            }
+
+            /* Animation on hover */
+            .theme-btn-1.btn-effect-1:hover:before {
+                left: 120%;
+                transition: all 0.65s ease;
+            }
+
+            /* Optional: Add some extra styling when hovering */
+            .theme-btn-1.btn-effect-1:hover {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+
+            /* Apply shining effect to the entire section */
+            .ltn__counterup-area {
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* The shining effect for the entire section */
+            .ltn__counterup-area:before {
+                content: '';
+                position: absolute;
+                top: -100%;
+                left: -100%;
+                width: 50%;
+                height: 300%;
+                background: linear-gradient(to right,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.3) 50%,
+                        rgba(255, 255, 255, 0) 100%);
+                transform: rotate(30deg);
+                animation: shine 6s infinite;
+                pointer-events: none;
+            }
+
+            /* Keyframes for the shine animation */
+            @keyframes shine {
+                0% {
+                    left: -100%;
+                }
+
+                20% {
+                    left: 100%;
+                }
+
+                100% {
+                    left: 100%;
+                }
+            }
+
+            /* Extra styling for enhancing section appearance on hover */
+            .ltn__counterup-area:hover .wh-txt-clr {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                transition: all 0.3s ease;
+            }
+
+            .ltn__counterup-area:hover .g-clr {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            }
+        </style>
+        <div class="ltn__counterup-area bg-image pt-115 pb-70"
+            data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
+            <div class="row justify-content-center text-center">
+                <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
+                </h1>
+                <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
+                <div class="col-12 text-center pt-3">
+
+                    <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;"
+                        class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
+                </div>
+            </div>
+
+        </div>
+        @endisset
 
     </div>
-    @endisset
 
-</div>
-
-<!-- COUNTER UP AREA END -->
-<!-- BLOG AREA END -->
-@endsection
-@section('script')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+    <!-- COUNTER UP AREA END -->
+    <!-- BLOG AREA END -->
+    @endsection
+    @section('script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
         const select = new TomSelect('#categorySelect', {
         create: false,
         allowEmptyOption: false,
@@ -1220,6 +1290,6 @@ height: 100% !important;
             });
         }
     });
-</script>
+    </script>
 
-@endsection
+    @endsection
