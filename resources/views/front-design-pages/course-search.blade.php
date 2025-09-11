@@ -208,7 +208,7 @@
         }
 
         .filter-btn {
-            background: linear-gradient(135deg, #12576D 0%, #0d414f 100%);
+            background: linear-gradient(135deg, #6A93FF 0%, #3B66E3 100%);
             color: white;
             border: none;
             padding: 15px 25px;
@@ -217,7 +217,7 @@
             font-size: 16px;
             transition: all 0.3s ease;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(18, 87, 109, 0.3);
+            box-shadow: 0 4px 15px rgba(106, 147, 255, 0.3);
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -240,21 +240,21 @@
         }
 
         .filter-btn:hover {
-            background: linear-gradient(135deg, #0d414f 0%, #0a2f38 100%);
+            background: linear-gradient(135deg, #4B79FF 0%, #365FD6 100%);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(18, 87, 109, 0.4);
+            box-shadow: 0 6px 20px rgba(106, 147, 255, 0.4);
         }
 
         .tailor-btn {
-            background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
-            color: white;
-            border: none;
+            background: #ffffff;
+            color: #6A93FF;
+            border: 2px solid #6A93FF;
             padding: 15px 25px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+            box-shadow: 0 4px 15px rgba(106, 147, 255, 0.15);
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -277,9 +277,10 @@
         }
 
         .tailor-btn:hover {
-            background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+            background: #6A93FF;
+            color: #6A93FF;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+            box-shadow: 0 6px 20px rgba(106, 147, 255, 0.35);
         }
 
         .widget {

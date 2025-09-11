@@ -78,8 +78,8 @@
     }
 
     .course-duration {
-        background: #e3f2fd;
-        color: #1976d2;
+        background: #F5F7FB;
+        color: #000;
         padding: 5px 15px;
         border-radius: 20px;
         font-size: 0.9rem;
@@ -103,8 +103,8 @@
     }
 
     .round-code {
-        background: #e3f2fd;
-        color: #1976d2;
+        background: #e0e2e7;
+        color: #000;
         padding: 5px 10px;
         border-radius: 4px;
         font-weight: 500;
@@ -119,7 +119,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        color: #495057;
+        color: #000;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -128,7 +128,7 @@
 
     .date-info i,
     .venue-info i {
-        color: #6c757d;
+        color: #000;
     }
 
     .price-info {
@@ -138,13 +138,13 @@
     }
 
     .currency {
-        color: #6c757d;
+        color: #000;
         font-size: 0.9rem;
     }
 
     .amount {
         font-weight: 600;
-        color: #2c3e50;
+        color: #000;
     }
 
     .btn-register {
@@ -540,6 +540,34 @@
     .course-rounds-table tr td {
         font-size: 12px !important;
     }
+    /* Accordion header icon: force chevrons and suppress theme plus/minus */
+    .ltn__faq-inner .ltn__card-title {
+        position: relative;
+        padding-right: 40px;
+        cursor: pointer;
+    }
+    /* Hide any existing pseudo icon from the theme */
+    .ltn__faq-inner .ltn__card-title::before {
+        content: none !important;
+    }
+    /* Our chevron icon */
+    .ltn__faq-inner .ltn__card-title::after {
+        content: "\f078" !important; /* fa-chevron-down */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1;
+        color: inherit;
+        transition: transform 0.2s ease;
+    }
+    /* When expanded, show up arrow */
+    .ltn__faq-inner .ltn__card-title[aria-expanded="true"]::after,
+    .ltn__faq-inner .ltn__card-title:not(.collapsed)[aria-expanded="true"]::after {
+        content: "\f077" !important; /* fa-chevron-up */
+    }
 </style>
 
 <!-- Breadcrumb Navigation -->
@@ -596,11 +624,11 @@
 <div class="container main-course-title-and-details">
     {{-- <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span> --}}
     <h2>Course Details</h2>
-    <p> Your Growth; our Mission </p>
+    <p style="color: #000"> Your Growth, our Mission </p>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-lg-6">
+    <div class="row ">
+        <div class="col-12 col-lg-6 mt-5">
             <div class="main-img-of-course text-center">
                 <img src="{{ asset('uploads/courses') }}/{{ $course->course_image }}"
                     alt="{{ $course->course_en_name }}">
@@ -853,7 +881,7 @@
         <div class="col-12 col-lg-6">
             <div class="row action-btns mb-4">
 
-                <div class="col-12 d-flex flex-wrap justify-content-end gap-2">
+                <div class="col-12 d-flex flex-wrap justify-content-between gap-2">
                     <a href='{{ url("/downloadBrochure/$course->id") }}' class=" btn-single-course-option">
                         <i class="fas fa-download mr-2"></i> Download Brochure</a>
                     {{-- <button class=" btn-single-course-option"><i class="fas fa-download mr-2"></i>Download

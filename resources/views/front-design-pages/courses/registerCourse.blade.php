@@ -3,7 +3,22 @@
 
 @section('page-id', 'single-course-page')
 @section('page-content')
-
+<style>
+    .nice-select:after {
+        display:none;
+    }
+    .ltn__product-item {
+        height: 202px !important;
+        width:100%;
+    }
+    .courseCode {
+    background-color: #F5F7FB;
+    color: #000;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+</style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
         <!-- <div class="share-icon">
@@ -42,14 +57,14 @@
                             <div class="col-md-6 mb-3">
                                 <input type="hidden" name="applicant_type_id" value=0 />
                                 <label for="courseCode" class="form-label">Code:</label>
-                                <br>
+
                                 <span class="courseCode">{{ $course->course_code ?? '' }}</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12 mb-3">
                                 <label for="courseTitle" class="form-label">Title:</label>
-                                <br>
+                        
                                 <span class="courseCode">{{ $course->course_en_name ?? '' }}</span>
 
                             </div>
@@ -290,21 +305,20 @@
 
             </div>
             <div class="col-12 col-lg-6">
-
                 <h3 class="mb-4">Popular Courses</h3>
                 <div class="row popular-courses">
                     @isset($rounds)
                         @foreach ( $rounds as $round )
 
                     <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left">
+                        <div class="ltn__product-item ltn__product-item-3 text-left no-size">
                             <div class="product-img" style='height: 100%;'>
                                 <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
                                         src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
-                                <div class="course-badge">
+                                <div class="course-badge p-2">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h3 class='white-color'>{{ $round->course->course_en_name ?? ''}}</h3>
+                                            <h3 class='white-color'   style="font-size: 1.075rem !important;">{{ $round->course->course_en_name ?? ''}}</h3>
                                         </div>
 
                                         <div class="col-12 row">

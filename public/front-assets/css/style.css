@@ -3755,8 +3755,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   font-family: var(--ltn__heading-font);
 }
 .ltn__tagcloud-widget ul li a:hover {
-  background-color: var(--ltn__secondary-color);
-  color: var(--white);
+  color: var(--ltn__secondary-color);
 }
 
 /* ----------------------------------------------------
@@ -8828,7 +8827,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 @media (max-width: 1599px) {
   .ltn__section-title-2 .section-title {
-    font-size: 1.8125rem;
+    font-size: 3rem;
   }
 }
 
@@ -15147,7 +15146,7 @@ input[type="date"] {
   }
 }
 .ltn__tagcloud-widget ul li a {
-  background-color: #c7d8f0 !important;
+  background-color: #F5F7FB !important;
 }
 .course-search-page
   .sidebar.ltn__shop-sidebar
@@ -15401,7 +15400,7 @@ body {
   color: #fff;
   border-radius: 5px;
   padding: 5px 10px;
-  font-size: smaller;
+  /* font-size: smaller; */
 }
 #single-course-page .btn-single-course-option:hover {
   background-color: #0d6efd;
@@ -15740,7 +15739,7 @@ background-color: #fff;
 }
 #about-bts-page .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/ABOUT BTS.png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;

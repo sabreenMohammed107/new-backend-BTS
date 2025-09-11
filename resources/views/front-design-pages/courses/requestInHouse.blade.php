@@ -9,6 +9,20 @@
     height: auto !important;
 }
 
+    .courseCode {
+        background-color: #F5F7FB;
+        color: #000;
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+.nice-select:after {
+    display: none
+}
+.ltn__product-item {
+
+    width:100%;
+}
     </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -38,7 +52,7 @@
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="container form-container">
-                    <h2 class="form-title f-s-20">Request for Inhouse Form</h2>
+                    <h2 class="form-title f-s-20">Request For Inhouse Form</h2>
 
                     <form action="{{url('/registerApplicants')}}" method="POST">
                         @csrf
@@ -49,14 +63,14 @@
                                 <input type="hidden" name="applicant_type_id" value=3 />
                                 <input type="hidden" name="course_id" value="{{$course->id}}" />
                                 <label for="courseCode" class="form-label">Code:</label>
-                                <br>
+
                                 <span class="courseCode">{{ $course->course_code ?? '' }}</span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12 mb-3">
                                 <label for="courseTitle" class="form-label">Title:</label>
-                                <br>
+
                                 <span class="courseCode">{{ $course->course_en_name ?? '' }}</span>
 
                             </div>
@@ -73,7 +87,7 @@
                                 <input type="number" name="inhouse_no_particants" value="{{5}}" class="form-control" required>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-3 px-3">
                                 <label>Preferred Dates : </label>
                                 <input type="text" name="inhouse_perefer_dates" value="{{ old('inhouse_perefer_dates') }}"  class="form-control" />
                             </div>
@@ -201,14 +215,14 @@
 
             </div>
             <div class="col-12 col-lg-6">
-<div class="event-details-left left-contents p-4 mb-5" style="background-color:#f9f9ff">
+{{--  <div class="event-details-left left-contents p-4 mb-5" style="background-color:#f9f9ff">
     <h5 class="mt-4 mb-2">{{ $branch->venue->venue_en_name }}</h5>
     <p>{{ $branch->address }}</p>
     <p>{{ $branch->email }}</p>
     <p>{{ $branch->venue->venue_en_name }} ,{{ $branch->country->country_en_name }}</p>
     <p><span style="color:#32a2a8">Tel :</span> {{ $branch->mobile }}</p>
     <p><span style="color:#32a2a8">Office Phone :</span>{{ $branch->office_phone }}</p>
-</div>
+</div>  --}}
 
                 <h3 class="mb-4">Popular Courses</h3>
                 <div class="row popular-courses">
@@ -223,7 +237,7 @@
                                 <div class="course-badge p-2">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h3 class='white-color'>{{ $round->course->course_en_name ?? ''}}</h3>
+                                            <h3 class='white-color'  style="font-size: 1.075rem !important;">{{ $round->course->course_en_name ?? ''}}</h3>
                                         </div>
 
                                         <div class="col-12 row">

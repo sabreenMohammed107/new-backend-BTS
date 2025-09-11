@@ -7,6 +7,9 @@
     .input-hidden .ts-control > input {
     position: relative !important;
 }
+.full .ts-control {
+    background-color: #efefef !important;
+}
     </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -19,55 +22,60 @@
     </div>
     <div class="container" style="margin-top: 70px;">
       <div class="row">
-        <div class="col-12 col-lg-9">
+        <div class="col-12">
           <div class="container form-container">
             <h2 class="form-title f-s-20">Download and further your knowledge with us.</h2>
             <form id="downloadForm">
-                <input type="hidden" name="_token" value="KPAiROFBPjxN5bxHj8Ymng6hMjcFGnEyiyxOPlDh" autocomplete="off">						<div class="form-group form-inline">
-                    <input type="hidden" name="courseBrochure" value="https://btsconsultant.com/uploads/courseBrochure/Integrating AI in Workplace Safety Practices.pdf" alt="Integrating AI in Workplace Safety Practices">
-                    <input type="hidden" name="course_id" value="2903">
-                    <input type="hidden" name="applicant_type_id" value="1">
-                    <input type="hidden" id="fileName" value="Integrating AI in Workplace Safety Practices.pdf">
+                <input type="hidden" name="_token" value="KPAiROFBPjxN5bxHj8Ymng6hMjcFGnEyiyxOPlDh" autocomplete="off">
+                <input type="hidden" name="courseBrochure" value="https://btsconsultant.com/uploads/courseBrochure/Integrating AI in Workplace Safety Practices.pdf" alt="Integrating AI in Workplace Safety Practices">
+                <input type="hidden" name="course_id" value="2903">
+                <input type="hidden" name="applicant_type_id" value="1">
+                <input type="hidden" id="fileName" value="Integrating AI in Workplace Safety Practices.pdf">
 
-                    <div class="form-group col-lg-12 col-md-12">
-                        <label>Your Name : </label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Your Name :</label>
+                      <input name="name" type="text" value="" class="form-control">
                     </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <input name="name" type="text" value="" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Your Company :</label>
+                      <input name="company" type="text" value="" class="form-control">
                     </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <label>Your Company : </label>
-                    </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <input name="company" type="text" value="" class="form-control">
-                    </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <label>Your Country:</label>
-                    </div>
+                  </div>
+                </div>
 
-                    <div class="form-group col-lg-12 col-md-12">
-                            <select id="country_id" name="country_id" placeholder="Select a Country...">
-                            <option value=""></option>
-                            @foreach ($countries as $country)
-                                <option value='{{ $country->id }}'
-                                    @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
-                                    {{ $country->country_en_name }}</option>
-                            @endforeach
-                        </select>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Your Country:</label>
+                      <select id="country_id" name="country_id" placeholder="Select a Country..." class="form-control">
+                        <option value=""></option>
+                        @foreach ($countries as $country)
+                          <option value='{{ $country->id }}'
+                            @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
+                            {{ $country->country_en_name }}</option>
+                        @endforeach
+                      </select>
                     </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Your Job Title :</label>
+                      <input type="text" name="job_title" value="" class="form-control">
+                    </div>
+                  </div>
+                </div>
 
-                    <div class="form-group col-lg-12 col-md-12">
-                        <label>Your Job Title : </label>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label>Your Email Address :</label>
+                      <input type="text" name="email" value="" class="form-control" id="emailAddrees">
                     </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <input type="text" name="job_title" value="" class="form-control">
-                    </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <label>Your Email Address : </label>
-                    </div>
-                    <div class="form-group col-lg-12 col-md-12">
-                        <input type="text" name="email" value="" class="form-control" id="emailAddrees">
-                    </div>
+                  </div>
                 </div>
                 <hr>
                 <div>
@@ -76,14 +84,19 @@
                 <div class=" form-inline" style="padding-bottom:10px">
                     <h5>Terms &amp; Conditions</h5>
                 </div>
-                <div class="form-check form-inline">
-                    <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">I accept the Terms &amp; Conditions*</label>
-                </div>
-                <div class="form-inline">
+                <div class="row">
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="form-check">
+                      <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">I accept the Terms &amp; Conditions*</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
                     <div class="form-group">
-                        <label class="form-check-label" for="exampleCheck1"><a href="{{url('/conditions')}}" target="blank" style="color:#4169E1">Terms & Conditions of Registration</a></label>                    </div>
-                    <span style="color:red;display:block" class="error-message"> </span>
+                      <label class="form-check-label" for="exampleCheck1"><a href="{{url('/conditions')}}" target="blank" style="color:#4169E1">Terms & Conditions of Registration</a></label>
+                      <span style="color:red;display:block" class="error-message"> </span>
+                    </div>
+                  </div>
                 </div>
                 <div id="alertDivDanger" class="alert alert-danger alert-block" style="display:none">
 
@@ -130,15 +143,7 @@
             </form>
           </div>
         </div>
-        <div class="col-12 col-lg-3 event-details-left left-contents" style="background-color:#f9f9ff">
-            <h5 style="margin-top:30px;margin-bottom:10px"> {{ $branch->venue->venue_en_name }}</h5>
-            <p> {{ $branch->address }} </p>
-            <p> {{ $branch->email}} </p>
-            <p> {{ $branch->venue->venue_en_name }} ,{{ $branch->country->country_en_name }}</p>
-            <p><span style="color:#32a2a8">Tel :</span> {{ $branch->mobile}}</p>
-            <p><span style="color:#32a2a8">Office Phone :</span>{{ $branch->office_phone}}</p>
 
-        </div>
       </div>
 
 
