@@ -175,7 +175,7 @@
         font-size:25px !important;
     }
     .map-section p {
-        padding-left: 50px;
+        padding-left: 34px;
     }
     </style>
 @endsection
