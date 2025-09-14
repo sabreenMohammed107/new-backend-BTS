@@ -173,6 +173,9 @@
 
     .map-section p span {
         font-size:25px !important;
+        text-align: justify;
+        text-justify: inter-word;  /* Better word spacing */
+        hyphens: auto;            /* Enable hyphenation */
     }
     .map-section p {
         padding-left: 34px;
