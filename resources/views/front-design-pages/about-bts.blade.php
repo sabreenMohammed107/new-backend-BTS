@@ -172,7 +172,7 @@
     }
 
     .map-section p span {
-        font-size:30px !important;
+        font-size:25px !important;
     }
     .map-section p {
         padding-left: 50px;

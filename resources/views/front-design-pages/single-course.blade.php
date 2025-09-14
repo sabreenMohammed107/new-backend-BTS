@@ -624,7 +624,7 @@
 <div class="container main-course-title-and-details">
     {{-- <span>{{ $course->subCategory->courseCategory->category_en_name ?? '' }}</span> --}}
     <h2>Course Details</h2>
-    <p style="color: #000"> Your Growth, our Mission </p>
+    <p style="color: #000">Your Growth, Our Mission</p>
 </div>
 <div class="container">
     <div class="row ">
