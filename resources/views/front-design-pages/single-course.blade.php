@@ -1070,7 +1070,7 @@
     <div class="row">
         <div class="container main-course-title-and-details">
             <h2>Related Courses</h2>
-            <p> Your Growth; our Mission </p>
+            <p>Your Growth, Our Mission</p>
         </div>
         <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
             @foreach ($related_courses as $related_course)
