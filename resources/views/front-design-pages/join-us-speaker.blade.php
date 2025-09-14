@@ -29,6 +29,9 @@
         background-color: #efefef !important;
 
       }
+     .slct-city .ts-control {
+        border:none !important;
+     }
      textarea {
          min-height: 95px;
         }
@@ -139,7 +142,7 @@
                               <div class="invalid-feedback d-block">{{ $message }}</div>
                           @enderror
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-6 mb-3 slct-city">
                           <label for="city" class="form-label">Select City</label>
                           <select class="form-select @error('city') is-invalid @enderror" id="city" name="city">
                             <option value="" selected>Select</option>

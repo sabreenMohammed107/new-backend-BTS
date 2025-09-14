@@ -111,14 +111,7 @@
                 </h6>
                 <div id="faq-item-2-2" class="collapse show" data-bs-parent="#accordion_2">
                     <div class="card-body">
-                    <div class="ltn__video-img alignleft">
-                        <img src="{{ asset('front-assets/img/bg/17.jpg') }}" alt="video popup bg image">
-                        <a class="ltn__video-icon-2 ltn__video-icon-2-small ltn__video-icon-2-border----"
-                        href="https://www.youtube.com/embed/LjCzPp-MK48?autoplay=1&showinfo=0"
-                        data-rel="lightcase:myCollection">
-                        <i class="fa fa-play"></i>
-                        </a>
-                    </div>
+
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec
                         sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec

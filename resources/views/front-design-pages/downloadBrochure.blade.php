@@ -46,10 +46,25 @@
                     </div>
                   </div>
                 </div>
-
+<style>
+    .slct-country .ts-control {
+        border:none !important;
+        position: relative;
+    }
+    .slct-country .ts-control::after {
+        content: "▼";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #666;
+        font-size: 12px;
+    }
+</style>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group slct-country">
                       <label>Your Country:</label>
                       <select id="country_id" name="country_id" placeholder="Select a Country..." class="form-control">
                         <option value=""></option>

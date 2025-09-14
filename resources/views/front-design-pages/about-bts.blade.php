@@ -170,6 +170,13 @@
         color: #fff !important;
         margin-top: 0.5rem !important;
     }
+
+    .map-section p span {
+        font-size:30px !important;
+    }
+    .map-section p {
+        padding-left: 50px;
+    }
     </style>
 @endsection
 
@@ -299,8 +306,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     @endif
                 </div>
                 <div class="col-lg-8 about-bts-description">
-                <h3>{{ ucwords(str_replace('_', ' ', $whoWeAre->section_name)) }}</h3>
-                <p>{{ $whoWeAre->small_description }}</p>
+                <h3  style="color: #fff !important">{{ ucwords(str_replace('_', ' ', $whoWeAre->section_name)) }}</h3>
+                <p style="color: #fff !important">{{ $whoWeAre->small_description }}</p>
                 {!! $whoWeAre->details !!}
 
                 </div>
@@ -310,8 +317,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="col-12 mt-5">
             <div class="map-section">
             <div class="row">
+
+
                 <div class="col-lg-6 mb-4 mb-lg-0 map-description d-flex align-items-center">
-                <p class="fs-5"> {!! $whoWeAre->details2 !!}</p>
+                <p class="fs-5" style="font-size: 30px"> {!! $whoWeAre->details2 !!}</p>
                 </div>
                 <div class="col-lg-6 text-center map-img">
                     <img src="{{ asset('front-assets/img/bg/map.png') }}" alt="World Map" class="map-image img-fluid">

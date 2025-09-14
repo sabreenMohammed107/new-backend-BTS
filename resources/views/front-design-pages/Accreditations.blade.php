@@ -41,9 +41,9 @@
     </div> --}}
     <div class="container">
       <div class="row">
-        <div class="container main-course-title-and-details">
+        <div class="container main-course-title-and-details text-center mt-5">
 
-          <h2>Who we’re accredited by</h2>
+          <h2>BTS Accredited By</h2>
 
         </div>
         <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">

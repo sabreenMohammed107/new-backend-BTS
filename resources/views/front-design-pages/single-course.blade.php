@@ -660,15 +660,7 @@
                                         </h6>
                                         <div id="faq-item-2-2" class="collapse " data-bs-parent="#accordion_2">
                                             <div class="card-body">
-                                                <div class="ltn__video-img alignleft">
-                                                    <img src="{{ asset('front-assets/img/bg/17.jpg') }}"
-                                                        alt="video popup bg image">
-                                                    <a class="ltn__video-icon-2 ltn__video-icon-2-small ltn__video-icon-2-border----"
-                                                        href="https://www.youtube.com/embed/LjCzPp-MK48?autoplay=1&showinfo=0"
-                                                        data-rel="lightcase:myCollection">
-                                                        <i class="fa fa-play"></i>
-                                                    </a>
-                                                </div>
+
                                                 {!! $course->course_highlight !!}
                                             </div>
                                         </div>
@@ -1037,7 +1029,7 @@
                                                 <i class="fab fa-facebook-f"></i>
                                             </a>
                                             <a href="https://twitter.com/intent/tweet?url={{ urlencode($courseUrl) }}&text={{ urlencode($courseTitle) }}"
-                                                target="_blank" class="social-btn twitter-btn" title="Share on Twitter">
+                                                target="_blank" class="social-btn twitter-btn" title="Share on X">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                                     style="width:16px;height:16px">
                                                     <path fill="#676767"

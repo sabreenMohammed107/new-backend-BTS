@@ -30,7 +30,7 @@
                 <i class="fas fa-share-alt-square"></i>
               </div> -->
         <div class="course-main-title text-center">
-            <h2>Request for online</h2>
+            <h2>Request for Online</h2>
         </div>
     </div>
     <div class="container" style="margin-top: 70px;">

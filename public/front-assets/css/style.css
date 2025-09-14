@@ -6780,7 +6780,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-top: 40px;
 }
 .ltn__slide-item-2 .slide-brief {
-  padding-left: 30px;
+  /* padding-left: 30px; */
   /* border-left: 1px solid #576466; */
 }
 
@@ -7218,7 +7218,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-size: 3.5rem;
   }
   .ltn__slide-item-2 .slide-brief {
-    padding-left: 15px;
+    /* padding-left: 15px; */
   }
   .ltn__slide-item-6 {
     padding-top: 140px;
@@ -7252,7 +7252,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-size: 2.5rem;
   }
   .ltn__slide-item-2 .slide-brief {
-    padding-left: 15px;
+    /* padding-left: 15px; */
   }
   .ltn__slide-item-3 .slide-item-img {
     width: 100%;
@@ -7336,7 +7336,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-size: 1.875rem;
   }
   .ltn__slide-item-2 .slide-brief {
-    padding-left: 15px;
+    /* padding-left: 15px; */
   }
   .ltn__slide-item-3-normal {
     padding-top: 100px;
@@ -8830,13 +8830,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 @media (max-width: 1599px) {
   .ltn__section-title-2 .section-title {
-    font-size: 3rem;
+    font-size: 3.7rem;
   }
 }
 
 @media (max-width: 1399px) {
   .ltn__section-title-2 .section-title {
-    font-size: 1.1875rem;
+    font-size: 2.1875rem;
   }
   .section-title-style-3 .section-title {
     min-width: 320px;
@@ -8848,7 +8848,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     font-size: 1.875rem;
   }
   .ltn__section-title-2 .section-title {
-    font-size: 2.1875rem;
+    font-size: 2rem;
   }
 }
 

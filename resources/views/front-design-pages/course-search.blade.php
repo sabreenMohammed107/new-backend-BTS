@@ -618,7 +618,7 @@
                     @if (isset($filtered) && $filtered->hasPages())
                         <div class="ltn__pagination-area text-center">
                             <div class="ltn__pagination">
-{{ $filtered->appends(request()->query())->links('vendor.pagination.ltn') }}
+                                {{ $filtered->appends(request()->query())->links('vendor.pagination.ltn') }}
                             </div>
                         </div>
                     @endif
