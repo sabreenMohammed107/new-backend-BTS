@@ -377,16 +377,16 @@
                     <div class="col"> <a href="{{ route('course-search') }}"> <i class="fas fa-bars"></i> All</a></div>
                     <div class="col"><a
                             href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'course_en_name'])) }}">
-                            <i class="fab fa-tumblr"></i> BY TITLE</a></div>
+                            <i class="fab fa-tumblr"></i> By Title</a></div>
                     <div class="col"><a
                             href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'venue_id'])) }}">
-                            <i class="fas fa-map-marker-alt"></i> BY VENUE</a></div>
+                            <i class="fas fa-map-marker-alt"></i> By Venue</a></div>
                     <div class="col"><a
                             href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'date'])) }}"> <i
-                                class="fas fa-calendar"></i> BY DATE</a></div>
+                                class="fas fa-calendar"></i> By Date</a></div>
                     <div class="col"><a
                             href="{{ route('course-search', array_merge(request()->query(), ['sort_by' => 'duration'])) }}">
-                            <i class="far fa-clock"></i> BY DURATION</a></div>
+                            <i class="far fa-clock"></i> By Duration</a></div>
                 </div>
             </div>
         </div>

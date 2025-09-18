@@ -3749,7 +3749,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   display: block;
   padding: 8px 24px 6px;
   font-size: 0.8125rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   background-color: var(--section-bg-1);
   font-weight: 700;
   font-family: var(--ltn__heading-font);
@@ -17462,7 +17462,6 @@ background-color: #fff;
 #service-page .training-title {
   font-size: 2.5rem;
   font-weight: 700;
-  text-transform: uppercase;
   margin-bottom: 1.5rem;
   color: #0f172a;
   letter-spacing: 0.5px;
@@ -17471,7 +17470,7 @@ background-color: #fff;
 #service-page .training-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: #64748b;
+  color: #000;
   margin-bottom: 2rem;
 }
 
@@ -17645,14 +17644,14 @@ background-repeat: repeat-y;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color: #a6b6ea;
+  color: #fff;
   letter-spacing: 1px;
 }
 
 #service-page .public-training-section .training-description {
   font-size: 1rem;
   line-height: 1.7;
-  color: #a6b6ea;
+  color: #fff;
   opacity: 0.85;
   margin-bottom: 2rem;
   max-width: 600px;
@@ -17719,7 +17718,13 @@ background-repeat: repeat-y;
 }
 
 #service-page .public-training-section .section-border {
-  border: 2px solid #3b82f6;
+  border: 2px solid rgba(12, 18, 34, 0.8);
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: rgba(12, 18, 34, 0.8);
+}
+#service-page .training-section .section-border {
+  border: 2px solid rgba(12, 18, 34, 0.8);
   border-radius: 8px;
   padding: 2rem;
   background-color: rgba(12, 18, 34, 0.8);
@@ -17766,8 +17771,11 @@ background-repeat: repeat-y;
 
 }
 
-
-
+#service-page .training-section .section-border {
+    background-image: url('../img/bg/Background (2).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;}
 
 
 

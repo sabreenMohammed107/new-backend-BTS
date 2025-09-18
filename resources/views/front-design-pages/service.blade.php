@@ -3,7 +3,9 @@
 
 @section('page-id' , 'service-page')
 @section('page-content')
+<style>
 
+</style>
     <div class="main-course-bg-header">
       <div class="course-main-title text-center">
         <h2>Services</h2>
@@ -24,7 +26,7 @@
 
 
                       <img src="{{ $public_training->details3 }}" alt="City Skyline" class="secondary-image">
-                      <a href="{{ $public_training->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      {{--  <a href="{{ $public_training->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>  --}}
 
                     </div>
                   </div>
@@ -87,7 +89,7 @@
 
 
                       <img src="{{ $consultancy->details3 }}" alt="City Skyline" class="secondary-image">
-                      <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      {{--  <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>  --}}
                       {{-- <img src="{{ asset('front-assets/img/service/Rectangle 102ss51.png') }}" alt="Public Training Session" class="primary-image">
 
 
@@ -103,7 +105,7 @@
           </div>
           <div class="col-lg-12">
             <section class="training-section" id="online_courses">
-              <div class="container">
+              <div class="container section-border">
                 <div class="row align-items-center">
                   <div class="col-lg-6">
                     <div class="images-container">
@@ -111,7 +113,7 @@
 
 
                       <img src="{{ $online_courses->details3 }}" alt="City Skyline" class="secondary-image">
-                      <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>
+                      {{--  <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>  --}}
                       {{-- <img src="{{ asset('front-assets/img/service/Rectangle 10254.png') }}" alt="Public Training Session" class="primary-image">
 
 
@@ -122,8 +124,8 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="content-container">
-                      <h2 class="training-title">{{ $online_courses->small_description }}</h2>
-                      <p class="training-description">
+                      <h2 class="training-title" style="color: #fff !important;">{{ $online_courses->small_description }}</h2>
+                      <p class="training-description" style="color: #fff !important;">
                         {{ $online_courses->details }}
                       </p>
                       {{-- <button class="view-details-btn">View Details</button> --}}

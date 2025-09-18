@@ -25,7 +25,7 @@
                                     </li>
                                     <li class="menu-icon {{ request()->routeIs('category.show') ? 'active' : '' }}">
                                         <a href="#">Training Category</a>
-                                        <ul>
+                                        <ul style="width:max-content">
                                             @isset($categories)
                                                 @foreach ($categories as $category )
                                                     <li class="{{ request()->routeIs('category.show') && request('id') == $category->id ? 'active' : '' }}">
