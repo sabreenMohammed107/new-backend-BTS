@@ -78,9 +78,9 @@
                                         <label class="form-label">details 3 </label>
                                         <textarea   class="form-control tinymce-editor" name="details3" >{{ $row->details3 }}</textarea>
                                     </div> --}}
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-6">
                                         <label class="form-label">Video </label>
-                                       <input type="url" placeholder="enter youtube link"  class="form-control" name="details4" value="{{ $row->details4 }}" />
+                                       <input type="url" placeholder="enter youtube link"  class="form-control" name="details4" value="{{ $row->details4 }}" /> --}}
 
                                         {{-- <input type="file" class="form-control" name="video_file" accept="video/*" />
                                         @if($row->details4)
@@ -93,7 +93,7 @@
                                             </div>
                                         @endif
                                         <small class="form-text text-muted">Upload MP4, AVI, or MOV video files (max 50MB)</small> --}}
-                                    </div>
+                                    {{-- </div> --}}
 
                                 </div>
                             </div>

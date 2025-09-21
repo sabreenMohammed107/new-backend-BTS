@@ -59,10 +59,10 @@
                                 <input type="text" class="form-control" name="details" value="{{ $row->details ?? '' }}" required>
                             </div>
 
-                            <div class="mb-10 fv-row">
+                            {{-- <div class="mb-10 fv-row">
                                 <label class="form-label">Youtube link</label>
                                 <input type="text" class="form-control" name="details4" value="{{ $row->details4 ?? '' }}">
-                            </div>
+                            </div> --}}
 
                             <div class="mb-10 fv-row">
                                 <label class="form-label">Image </label>
