@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\AccreditationClient;
 use App\Models\Client;
 use App\Models\CourseSubCategory;
 use App\Models\HomeSlider;
@@ -58,5 +59,11 @@ class HomeController extends Controller
     }
     public function contact(){
   return view('front-design-pages.contact-us');
+    }
+       public function accreditations()
+    {
+        $accreditation = StaticPage::where('id',11 )->first();
+        $clients = AccreditationClient::all();
+        return view('front-design-pages.Accreditations' , compact('clients' , 'accreditation' ));
     }
 }

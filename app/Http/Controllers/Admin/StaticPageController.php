@@ -326,10 +326,10 @@ class StaticPageController extends Controller
                 'details' => 'nullable|string',
                 'details2' => 'nullable|string',
                 'details3' => 'nullable|string',
-                'video_file' => 'nullable|file|mimes:mp4,avi,mov|max:51200', // 50MB max
+                // 'video_file' => 'nullable|file|mimes:mp4,avi,mov|max:51200', // 50MB max
             ], [
-                'video_file.mimes' => 'The video file must be a file of type: mp4, avi, mov.',
-                'video_file.max' => 'The video file may not be greater than 50MB.',
+                // 'video_file.mimes' => 'The video file must be a file of type: mp4, avi, mov.',
+                // 'video_file.max' => 'The video file may not be greater than 50MB.',
             ]);
 
             $staticPage = StaticPage::find(5);
@@ -342,40 +342,41 @@ class StaticPageController extends Controller
                 "details" => $request->input("details"),
                 "details2" => $request->input("details2"),
                 "details3" => $request->input("details3"),
+                 "details4" => $request->input("details4"),
             ];
 
             // Handle video upload
-            if ($request->hasFile('video_file')) {
-                $videoFile = $request->file('video_file');
+            // if ($request->hasFile('video_file')) {
+            //     $videoFile = $request->file('video_file');
 
-                // Validate video file
-                $allowedTypes = ['video/mp4', 'video/avi', 'video/mov', 'video/quicktime'];
-                $maxSize = 50 * 1024 * 1024; // 50MB
+            //     // Validate video file
+            //     $allowedTypes = ['video/mp4', 'video/avi', 'video/mov', 'video/quicktime'];
+            //     $maxSize = 50 * 1024 * 1024; // 50MB
 
-                if (!in_array($videoFile->getMimeType(), $allowedTypes)) {
-                    return back()->withErrors(["Errors" => "Invalid video format. Please upload MP4, AVI, or MOV files only."]);
-                }
+            //     if (!in_array($videoFile->getMimeType(), $allowedTypes)) {
+            //         return back()->withErrors(["Errors" => "Invalid video format. Please upload MP4, AVI, or MOV files only."]);
+            //     }
 
-                if ($videoFile->getSize() > $maxSize) {
-                    return back()->withErrors(["Errors" => "Video file size must be less than 50MB."]);
-                }
+            //     if ($videoFile->getSize() > $maxSize) {
+            //         return back()->withErrors(["Errors" => "Video file size must be less than 50MB."]);
+            //     }
 
-                // Create upload directory if it doesn't exist
-                $uploadPath = public_path('uploads/videos');
-                if (!file_exists($uploadPath)) {
-                    mkdir($uploadPath, 0755, true);
-                }
+            //     // Create upload directory if it doesn't exist
+            //     $uploadPath = public_path('uploads/videos');
+            //     if (!file_exists($uploadPath)) {
+            //         mkdir($uploadPath, 0755, true);
+            //     }
 
-                // Generate unique filename
-                $filename = time() . '_' . $videoFile->getClientOriginalName();
+            //     // Generate unique filename
+            //     $filename = time() . '_' . $videoFile->getClientOriginalName();
 
-                // Move uploaded file
-                if ($videoFile->move($uploadPath, $filename)) {
-                    $dataToBeUpdated["details4"] = 'uploads/videos/' . $filename;
-                } else {
-                    return back()->withErrors(["Errors" => "Failed to upload video file."]);
-                }
-            }
+            //     // Move uploaded file
+            //     if ($videoFile->move($uploadPath, $filename)) {
+            //         $dataToBeUpdated["details4"] = 'uploads/videos/' . $filename;
+            //     } else {
+            //         return back()->withErrors(["Errors" => "Failed to upload video file."]);
+            //     }
+            // }
 
             // Update the static page
             $staticPage->update($dataToBeUpdated);
@@ -409,6 +410,81 @@ class StaticPageController extends Controller
                 "details8" => $request->input("details8"),
 
             ];
+
+            // Update the static page
+            $staticPage->update($dataToBeUpdated);
+
+            return back()->with(["Success" => "Page updated successfully"]);
+
+        } catch (Exception $e) {
+            return back()->withErrors(["Errors" => "Internal error! " . $e->getMessage()]);
+        }
+    }
+
+       public function accreditationsView() {
+        $oneData = array();
+        $row = StaticPage::find(11);
+        return view("staticPages.accreditations.view", compact('row'));
+    }
+    public function accreditationsUpdate(Request $request) {
+        try {
+            // Validate the request
+            $request->validate([
+                'small_description' => 'nullable|string|max:1000',
+                'details' => 'nullable|string',
+                'details2' => 'nullable|string',
+                'details3' => 'nullable|string',
+                // 'video_file' => 'nullable|file|mimes:mp4,avi,mov|max:51200', // 50MB max
+            ], [
+                // 'video_file.mimes' => 'The video file must be a file of type: mp4, avi, mov.',
+                // 'video_file.max' => 'The video file may not be greater than 50MB.',
+            ]);
+
+            $staticPage = StaticPage::find(11);
+            if (!$staticPage) {
+                return back()->withErrors(["Errors" => "Static Page not found!"]);
+            }
+
+            $dataToBeUpdated = [
+                "small_description" => $request->input("small_description"),
+                "details" => $request->input("details"),
+                "details2" => $request->input("details2"),
+                "details3" => $request->input("details3"),
+                 "details4" => $request->input("details4"),
+            ];
+
+            // Handle video upload
+            // if ($request->hasFile('video_file')) {
+            //     $videoFile = $request->file('video_file');
+
+            //     // Validate video file
+            //     $allowedTypes = ['video/mp4', 'video/avi', 'video/mov', 'video/quicktime'];
+            //     $maxSize = 50 * 1024 * 1024; // 50MB
+
+            //     if (!in_array($videoFile->getMimeType(), $allowedTypes)) {
+            //         return back()->withErrors(["Errors" => "Invalid video format. Please upload MP4, AVI, or MOV files only."]);
+            //     }
+
+            //     if ($videoFile->getSize() > $maxSize) {
+            //         return back()->withErrors(["Errors" => "Video file size must be less than 50MB."]);
+            //     }
+
+            //     // Create upload directory if it doesn't exist
+            //     $uploadPath = public_path('uploads/videos');
+            //     if (!file_exists($uploadPath)) {
+            //         mkdir($uploadPath, 0755, true);
+            //     }
+
+            //     // Generate unique filename
+            //     $filename = time() . '_' . $videoFile->getClientOriginalName();
+
+            //     // Move uploaded file
+            //     if ($videoFile->move($uploadPath, $filename)) {
+            //         $dataToBeUpdated["details4"] = 'uploads/videos/' . $filename;
+            //     } else {
+            //         return back()->withErrors(["Errors" => "Failed to upload video file."]);
+            //     }
+            // }
 
             // Update the static page
             $staticPage->update($dataToBeUpdated);

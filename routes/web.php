@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccreditationClientsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Front\HomeController;
@@ -38,6 +39,7 @@ use App\Http\Controllers\Front\CourseSearchController;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\JobApplicationController;
 use App\Http\Controllers\Admin\CareerLevelController;
+use App\Http\Controllers\Admin\ClientsController;
 use App\Http\Controllers\Front\SpeakerController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -83,13 +85,8 @@ Route::prefix('/')->group(function () {
     Route::get('/thanks', function () {
         return view('front-design-pages.thanks');
     })->name('thanks');
-    Route::get('accreditations', function () {
-        return view('front-design-pages.Accreditations');
-    })->name('accreditations');
-
+    Route::get('accreditations', [HomeController::class, 'accreditations'])->name('accreditations');
     Route::get('contact-us', [HomeController::class, 'contact'])->name('contact-us');
-
-
     Route::get('course-registration', function () {
         return view('front-design-pages.course-registration');
     })->name('course-registration');
@@ -226,6 +223,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('offer', OffersController::class);
     Route::resource('dawnload-center', DownloadCenterAdminController::class);
+
+        //whoWeAre
+    Route::get("accreditations/view", [StaticPageController::class, "accreditationsView"])->name("accreditationsView");
+    Route::post("accreditations/update", [StaticPageController::class, "accreditationsUpdate"])->name("accreditationsUpdate");
+    Route::resource('accreditationClient', AccreditationClientsController::class);
+
 });
 
 require __DIR__ . '/auth.php';
