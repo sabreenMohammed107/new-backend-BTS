@@ -247,6 +247,8 @@
     @media (max-width: 768px) {
         .breadcrumb {
             font-size: 12px;
+            justify-content: flex-start;
+            padding: 0 15px;
         }
 
         .breadcrumb-link {
@@ -255,6 +257,17 @@
 
         .breadcrumb-item:not(:last-child)::after {
             margin: 0 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .breadcrumb {
+            font-size: 11px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            margin-bottom: 5px;
         }
     }
 
@@ -330,17 +343,42 @@
     }
 
     /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        .main-course-title-and-details {
+            padding: 50px 0;
+        }
+
+        .main-course-title-and-details h2 {
+            font-size: 2.2rem;
+        }
+    }
+
     @media (max-width: 768px) {
         .main-course-title-and-details {
             padding: 40px 0;
         }
 
         .main-course-title-and-details h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .main-course-title-and-details p {
             font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-course-title-and-details {
+            padding: 30px 0;
+        }
+
+        .main-course-title-and-details h2 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .main-course-title-and-details p {
+            font-size: 0.9rem;
         }
     }
 
@@ -513,7 +551,76 @@
         margin: auto;
     }
 
+    /* Course Rounds Table Responsive Styles */
+    @media (max-width: 1024px) {
+        .table-single-course-details {
+            padding: 20px;
+        }
+
+        .course-rounds-table thead th,
+        .course-rounds-table tbody td {
+            padding: 12px 10px;
+        }
+
+        .round-code {
+            max-width: 100px;
+            font-size: 0.8rem;
+        }
+
+        .date-info,
+        .venue-info {
+            max-width: 130px;
+            font-size: 0.85rem;
+        }
+    }
+
     @media (max-width: 768px) {
+        .table-single-course-details {
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+        }
+
+        .course-duration {
+            font-size: 0.8rem;
+            padding: 4px 12px;
+        }
+
+        .course-rounds-table {
+            font-size: 0.85rem;
+        }
+
+        .course-rounds-table thead th,
+        .course-rounds-table tbody td {
+            padding: 10px 8px;
+        }
+
+        .round-code {
+            max-width: 80px;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+        }
+
+        .date-info,
+        .venue-info {
+            max-width: 110px;
+            font-size: 0.8rem;
+        }
+
+        .btn-register {
+            padding: 6px 15px;
+            font-size: 0.8rem;
+        }
+
         .social-share {
             flex-direction: column;
             align-items: flex-start;
@@ -525,8 +632,137 @@
 
         .main-course-bg-header .course-main-title h2 {
             color: #fff;
-            font-size: 35px !important;
+            font-size: 22px !important;
             padding: 0 5px;
+        }
+
+        .details-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .venue-details {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .action-section .row {
+            flex-direction: column;
+        }
+
+        .action-section .col-md-4,
+        .action-section .col-md-8 {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .table-single-course-details {
+            padding: 10px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+        }
+
+        .course-rounds-table {
+            font-size: 0.75rem;
+        }
+
+        .course-rounds-table thead th,
+        .course-rounds-table tbody td {
+            padding: 8px 5px;
+        }
+
+        .round-code {
+            max-width: 60px;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+        }
+
+        .date-info,
+        .venue-info {
+            max-width: 90px;
+            font-size: 0.75rem;
+        }
+
+        .btn-register {
+            padding: 5px 12px;
+            font-size: 0.75rem;
+        }
+
+        .social-buttons {
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .social-btn {
+            width: 30px;
+            height: 30px;
+        }
+
+        .btn-register-large {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Responsive Table with Data Labels */
+    @media (max-width: 768px) {
+        .course-rounds-table,
+        .course-rounds-table thead,
+        .course-rounds-table tbody,
+        .course-rounds-table th,
+        .course-rounds-table td,
+        .course-rounds-table tr {
+            display: block;
+        }
+
+        .course-rounds-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .course-rounds-table tr {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .course-rounds-table td {
+            border: none;
+            position: relative;
+            padding: 8px 0 8px 50% !important;
+            text-align: left;
+        }
+
+        .course-rounds-table td:before {
+            content: attr(data-label) ": ";
+            position: absolute;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .round-code,
+        .date-info,
+        .venue-info,
+        .price-info {
+            max-width: none !important;
+            white-space: normal !important;
+        }
+
+        .btn-register {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
         }
     }
 
@@ -539,6 +775,81 @@
 
     .course-rounds-table tr td {
         font-size: 12px !important;
+    }
+
+    /* Action Buttons Responsive Styles */
+    @media (max-width: 768px) {
+        .action-btns .col-12 {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-single-course-option {
+            width: 100%;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .btn-single-course-option {
+            padding: 10px 15px;
+            font-size: 0.85rem;
+        }
+    }
+
+    /* Form Responsive Styles */
+    @media (max-width: 768px) {
+        .form-area .row {
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.col-lg-6 {
+            width: 100%;
+            padding: 0;
+        }
+
+        .form-control {
+            font-size: 0.9rem;
+            padding: 10px 12px;
+        }
+
+        .genric-btn {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+
+        .captcha {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .captcha span {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .form-control {
+            font-size: 0.85rem;
+            padding: 8px 10px;
+        }
+
+        .genric-btn {
+            padding: 10px 15px;
+            font-size: 0.85rem;
+        }
+
+        .captcha {
+            gap: 8px;
+        }
     }
     /* Accordion header icon: force chevrons and suppress theme plus/minus */
     .ltn__faq-inner .ltn__card-title {
@@ -568,6 +879,138 @@
     .ltn__faq-inner .ltn__card-title:not(.collapsed)[aria-expanded="true"]::after {
         content: "\f077" !important; /* fa-chevron-up */
     }
+
+    /* Main Layout Responsive Styles */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 15px;
+        }
+
+        .main-img-of-course img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 10px;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .col-12.col-lg-6 {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .main-img-of-course {
+            margin-bottom: 20px;
+        }
+
+        .main-img-of-course img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .ltn__faq-area {
+            margin-bottom: 50px;
+        }
+
+        .ltn__card-title {
+            font-size: 0.95rem;
+            padding: 15px 20px 15px 15px;
+        }
+
+        .card-body {
+            padding: 20px 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 5px;
+        }
+
+        .col-12.col-lg-6 {
+            margin-bottom: 20px;
+        }
+
+        .ltn__card-title {
+            font-size: 0.9rem;
+            padding: 12px 15px 12px 12px;
+        }
+
+        .card-body {
+            padding: 15px 12px;
+        }
+    }
+
+    /* Related Courses Responsive Styles */
+    @media (max-width: 768px) {
+        .ltn__blog-slider-one-active {
+            margin: 0;
+        }
+
+        .ltn__product-item {
+            margin-bottom: 20px;
+        }
+
+        .product-img {
+            height: 250px !important;
+        }
+
+        .course-badge {
+            padding: 15px !important;
+        }
+
+        .course-badge h3 {
+            font-size: 1.1rem !important;
+            line-height: 1.3;
+        }
+
+        .course-badge p {
+            font-size: 0.85rem !important;
+            line-height: 1.4;
+        }
+
+        .category-title {
+            font-size: 0.8rem;
+        }
+
+        .bottom-title {
+            font-size: 0.8rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-img {
+            height: 200px !important;
+        }
+
+        .course-badge {
+            padding: 12px !important;
+        }
+
+        .course-badge h3 {
+            font-size: 1rem !important;
+        }
+
+        .course-badge p {
+            font-size: 0.8rem !important;
+        }
+
+        .category-title {
+            font-size: 0.75rem;
+        }
+
+        .bottom-title {
+            font-size: 0.75rem !important;
+        }
+    }
 </style>
 
 <!-- Breadcrumb Navigation -->
@@ -575,7 +1018,7 @@
 
 <div class="main-course-bg-header">
 
-    <div class="course-main-title text-center text-center" style='position: relative;'>
+        <div class="course-main-title text-center" style='position: relative;'>
         <h2>{{ $course->course_en_name }}</h2>
         <div class="breadcrumb-navigation">
             <div class="container">
@@ -872,18 +1315,18 @@
         </div>
         <div class="col-12 col-lg-6">
             <div class="row action-btns mb-4">
-
-                <div class="col-12 d-flex flex-wrap justify-content-between gap-2">
-                    <a href='{{ url("/downloadBrochure/$course->id") }}' class=" btn-single-course-option">
-                        <i class="fas fa-download mr-2"></i> Download Brochure</a>
-                    {{-- <button class=" btn-single-course-option"><i class="fas fa-download mr-2"></i>Download
-                        Brochure</button> --}}
-                    {{-- <button class=" btn-single-course-option">Request Online Proposal</button> --}}
-                    {{-- <button class=" btn-single-course-option">Request In house Proposal</button> --}}
-                    <a href='{{ url("/requestInHouse/$course->id") }}' class=" btn-single-course-option">
-                        Request In house Proposal</a>
-                    <a href='{{ url("/requestOnline/$course->id") }}' class=" btn-single-course-option">
-                        Request Online Proposal</a>
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-between gap-2 action-buttons-container">
+                        <a href='{{ url("/downloadBrochure/$course->id") }}' class="btn-single-course-option">
+                            <i class="fas fa-download mr-2"></i> Download Brochure
+                        </a>
+                        <a href='{{ url("/requestInHouse/$course->id") }}' class="btn-single-course-option">
+                            Request In house Proposal
+                        </a>
+                        <a href='{{ url("/requestOnline/$course->id") }}' class="btn-single-course-option">
+                            Request Online Proposal
+                        </a>
+                    </div>
                 </div>
             </div>
             <!-- Course Rounds Table -->
@@ -906,8 +1349,8 @@
                         <tbody>
                             @foreach ($rounds as $round)
                             <tr>
-                                <td><span class="round-code">{{ $round->round_code }}</span></td>
-                                <td>
+                                <td data-label="Code"><span class="round-code">{{ $round->round_code }}</span></td>
+                                <td data-label="Date">
                                     @if ($round)
                                     <div class="date-info">
                                         <i class="far fa-calendar-alt"></i>
@@ -917,21 +1360,21 @@
                                     <span class="text-muted">N/A</span>
                                     @endif
                                 </td>
-                                <td>
+                                <td data-label="Venue">
                                     <div class="venue-info">
                                         <i class="fas fa-map-marker-alt"></i>
                                         {{ $round->venue->venue_en_name ?? '' }}
                                     </div>
                                 </td>
-                                <td>
+                                <td data-label="Fees">
                                     <div class="price-info">
                                         <span class="currency">{{ $round->currancy->currency_name ?? '' }}</span>
                                         <span class="amount">{{ $round->round_price }}</span>
                                     </div>
                                 </td>
-                                <td>
+                                <td data-label="Action">
                                     <a href='{{ url("/registerCourse/$round->id") }}' class="btn btn-register"
-                                        style="font-size: 12px !importnant;">
+                                        style="font-size: 12px !important;">
                                         Register
                                     </a>
                                 </td>

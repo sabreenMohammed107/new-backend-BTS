@@ -277,13 +277,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 @endsection
 @section('page-content')
-    <div class="main-course-bg-header">
+    <div class="main-course-bg-header" style="overflow-x: hidden;">
       <div class="course-main-title text-center">
         <h2>About BTS</h2>
       </div>
     </div>
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5" style="overflow-x: hidden;">
         <div class="row">
         <div class="col-12">
             <div class="main-hero-section">
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
-    <div class="row mt-5 best-offers-section">
+    <div class="row mt-5 best-offers-section" style="overflow-x: hidden;">
       <div class="col-lg-12">
         <div class="section-title-area  text-center">
           <h1 class="section-title">What We Offer</h1>
@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
-    <div class="row mt-5 bts-target-section">
+    <div class="row mt-5 bts-target-section" style="overflow-x: hidden;">
       <div class="col-lg-12">
         <div class="section-title-area text-center">
           <h1 class="section-title">{{ ucwords(str_replace('_', ' ', $VisionAndMission->section_name)) }}</h1>
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- CATEGORY AREA START -->
     <div class="mt-5 ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90"
     data-bg="{{ asset('front-assets/img/bg/Background\ \(2\).png') }}">
-    <div class="container">
+    <div class="container" style="overflow-x: hidden;"  >
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2 text-center">

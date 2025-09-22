@@ -15,7 +15,7 @@
         </ul>
     </div><br />
 @endif
-    <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
+    <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50"  style="padding-left: 15px;padding-right: 15px;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">

@@ -97,7 +97,7 @@
         </div>
 
         <div class="ltn__utilize-menu text-center">
-            <ul class="text-center">
+            <ul class="" style="text-align: left">
                 <li><a href="{{ route('main-home') }}">Home</a>
 
                 </li>
@@ -106,7 +106,7 @@
                 </li>
 
                 <li><a href="#">Training Category</a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu" style="text-align: left">
                         @isset($categories)
                         @foreach ($categories as $category )
                         <li><a href="{{ route('category.show', ['id' => $category->id]) }}">{{ $category->category_en_name }}</a></li>
@@ -114,8 +114,9 @@
                        @endisset
                     </ul>
                 </li>
-                <li><a href="{{ route('join-us') }}">Join Us</a>
-                    <ul>
+                <li>
+                    <a href="{{ route('join-us') }}">Join Us</a>
+                    <ul class="sub-menu" style="text-align: left">
 
                         <li>
                             <a href="{{ route('join-us') }}">Team Member</a>
@@ -124,7 +125,7 @@
                             <a href="{{ route('join.speaker') }}">Speaker</a>
                         </li>
 
-            </ul>
+                    </ul>
                 </li>
                 <li><a href="{{ route('contact-us') }}">Contact Us</a>
 
