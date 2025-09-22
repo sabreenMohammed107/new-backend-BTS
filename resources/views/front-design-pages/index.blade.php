@@ -710,193 +710,405 @@
     <!-- CATEGORY AREA END -->
     <!-- ABOUT US AREA START -->
     @isset($methodologies)
-    <div class="ltn__about-us-area pt-120 pb-120">
+    <div class="methodology-section py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <div class="about-us-info-wrap">
-                        <div class="row">
-                            <div class="col-12 section-title-area ltn__section-title-2 methodology-title-area">
+            <div class="row align-items-center">
+                <!-- Content Section -->
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="methodology-content">
+                        <div class="section-header mb-4">
+                            <h2 class="methodology-title">{{ $methodologies->small_description }}</h2>
+                            <div class="title-underline"></div>
+                        </div>
+                        <p class="methodology-description">{!! $methodologies->details !!}</p>
 
-                                <h1 class="section-title">{{ $methodologies->small_description }}
-                                </h1>
-                                <p class="f-siz-larger">{!! $methodologies->details !!}</p>
-                            </div>
-
-                            <div class="col-12 row">
-
-                                <div class="col-6 align-self-center">
-                                    <img src="{{ asset($methodologies->details2) }}" alt="#">
+                        <!-- Small Images Grid -->
+                        <div class="methodology-images-grid mt-4">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="methodology-image-wrapper">
+                                        <img src="{{ asset($methodologies->details2) }}" alt="Training Methodology" class="methodology-image">
+                                    </div>
                                 </div>
-                                <div class="col-6   align-self-center">
-                                    <img src="{{ asset($methodologies->details3) }}" alt="#">
+                                <div class="col-6">
+                                    <div class="methodology-image-wrapper">
+                                        <img src="{{ asset($methodologies->details3) }}" alt="Training Methodology" class="methodology-image">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-3 mt-lg-0 align-self-center row justify-content-end">
-                    <div class="about-us-img-wrap row about-img-left">
-                        <img src="{{ asset($methodologies->details4) }}" alt="About Us Image">
                     </div>
                 </div>
 
+                <!-- Main Image Section -->
+                <div class="col-lg-6">
+                    <div class="methodology-main-image-wrapper">
+                        <img src="{{ asset($methodologies->details4) }}" alt="Our Training Methodology" class="methodology-main-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     @endisset
     <style>
-        .feature-card {
+        /* Modern Methodology Section Styles */
+        .methodology-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             position: relative;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            animation: cardFadeUp 0.6s ease both;
-            background-color: #f5f7fb !important;
+            overflow: hidden;
         }
 
-        .feature-card:hover,
-        .feature-card:focus-within {
-            transform: translateY(-4px);
-            box-shadow: 0 1rem 1.75rem rgba(16, 24, 40, 0.12);
-        }
-
-        .feature-icon {
-            width: 72px;
-            height: 72px;
-            background-color: #f5f7fb;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .feature-icon img {
-            max-width: 48px;
-            max-height: 48px;
-            transition: transform 0.25s ease;
-        }
-
-        .feature-card:hover .feature-icon,
-        .feature-card:focus-within .feature-icon {
-            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
-        }
-
-        .feature-card:hover .feature-icon img,
-        .feature-card:focus-within .feature-icon img {
-            transform: scale(1.06) rotate(-2deg);
-        }
-
-        /* Sheen sweep on hover */
-        .feature-card::after {
-            content: "";
+        .methodology-section::before {
+            content: '';
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23e2e8f0" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23e2e8f0" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23cbd5e1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
             pointer-events: none;
-            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%);
-            transform: translateX(-120%);
-            transition: transform 0.6s ease;
+        }
+
+        .methodology-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .methodology-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        .title-underline {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .methodology-description {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+
+        .methodology-images-grid {
+            margin-top: 2rem;
+        }
+
+        .methodology-image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+        }
+
+        .methodology-image-wrapper:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .methodology-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .methodology-image-wrapper:hover .methodology-image {
+            transform: scale(1.05);
+        }
+
+        .methodology-main-image-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+        }
+
+        .methodology-main-image-wrapper:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .methodology-main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .methodology-main-image-wrapper:hover .methodology-main-image {
+            transform: scale(1.08);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .methodology-main-image-wrapper:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .methodology-title {
+                font-size: 2rem;
+            }
+
+            .methodology-description {
+                font-size: 1rem;
+            }
+
+            .methodology-main-image {
+                height: 350px;
+            }
+
+            .methodology-image {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .methodology-title {
+                font-size: 1.75rem;
+            }
+
+            .methodology-main-image {
+                height: 280px;
+            }
+
+            .methodology-image {
+                height: 120px;
+            }
+        }
+
+        /* Modern Feature Cards Styles */
+        .methodology-features-section {
+            background: #ffffff;
+            position: relative;
+        }
+
+        .modern-feature-card {
+            position: relative;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .modern-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
             border-radius: inherit;
         }
 
-        .feature-card:hover::after,
-        .feature-card:focus-within::after {
-            transform: translateX(120%);
+        .modern-feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .modern-feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .modern-feature-card:hover .feature-icon-container {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.3);
+        }
+
+        .feature-icon-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(0.7);
+        }
+
+        .modern-feature-card:hover .feature-icon-img {
+            transform: scale(1.1);
+            filter: brightness(1) invert(1);
+        }
+
+        .feature-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .modern-feature-card:hover .feature-title {
+            color: #3b82f6;
         }
 
         /* Staggered entrance animation for cards */
-        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(1) .feature-card {
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(1) .modern-feature-card {
+            animation: cardSlideUp 0.6s ease both;
             animation-delay: 0.0s;
         }
 
-        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(2) .feature-card {
-            animation-delay: 0.08s;
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(2) .modern-feature-card {
+            animation: cardSlideUp 0.6s ease both;
+            animation-delay: 0.1s;
         }
 
-        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(3) .feature-card {
-            animation-delay: 0.16s;
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(3) .modern-feature-card {
+            animation: cardSlideUp 0.6s ease both;
+            animation-delay: 0.2s;
         }
 
-        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(4) .feature-card {
-            animation-delay: 0.24s;
+        [role="list"]>.col-12.col-sm-6.col-lg-3:nth-child(4) .modern-feature-card {
+            animation: cardSlideUp 0.6s ease both;
+            animation-delay: 0.3s;
         }
 
-        @keyframes cardFadeUp {
+        @keyframes cardSlideUp {
             from {
                 opacity: 0;
-                transform: translateY(14px);
+                transform: translateY(30px) scale(0.95);
             }
-
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Responsive Design for Feature Cards */
+        @media (max-width: 768px) {
+            .modern-feature-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-icon-container {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1rem;
+            }
+
+            .feature-icon-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .feature-title {
+                font-size: 1rem;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .feature-card {
+            .modern-feature-card {
                 transition: none;
                 animation: none;
             }
 
-            .feature-card::after {
-                display: none;
-            }
-
-            .feature-icon,
-            .feature-icon img {
+            .feature-icon-container,
+            .feature-icon-img {
                 transition: none;
             }
         }
     </style>
     @isset($methodologies)
-    <div class="container section-of-introduction">
-        <div class="row">
-            <div class="col-12 training-footer mt-5">
-                <div class="row g-3 g-md-4" role="list">
-                    <!-- Card 1 -->
-                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                        <div
-                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                            <div
-                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                                <img class="img-fluid" src="{{ asset($methodologies->details6) }}"
-                                    alt="{{ $methodologies->details5 }} icon" loading="lazy" decoding="async">
+    <div class="methodology-features-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="features-grid">
+                        <div class="row g-4" role="list">
+                            <!-- Feature Card 1 -->
+                            <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                                <div class="modern-feature-card">
+                                    <div class="feature-icon-container">
+                                        <img class="feature-icon-img" src="{{ asset($methodologies->details6) }}"
+                                            alt="{{ $methodologies->details5 }} icon" loading="lazy" decoding="async">
+                                    </div>
+                                    <h6 class="feature-title">{{ $methodologies->details5 }}</h6>
+                                </div>
                             </div>
-                            <h6 class="mb-0">{{ $methodologies->details5 }}</h6>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                        <div
-                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                            <div
-                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                                <img class="img-fluid" src="{{ asset($methodologies->details8) }}"
-                                    alt="{{ $methodologies->details7 }} icon" loading="lazy" decoding="async">
+                            <!-- Feature Card 2 -->
+                            <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                                <div class="modern-feature-card">
+                                    <div class="feature-icon-container">
+                                        <img class="feature-icon-img" src="{{ asset($methodologies->details8) }}"
+                                            alt="{{ $methodologies->details7 }} icon" loading="lazy" decoding="async">
+                                    </div>
+                                    <h6 class="feature-title">{{ $methodologies->details7 }}</h6>
+                                </div>
                             </div>
-                            <h6 class="mb-0">{{ $methodologies->details7 }}</h6>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                        <div
-                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                            <div
-                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                                <img class="img-fluid" src="{{ asset($methodologies->details10) }}"
-                                    alt="{{ $methodologies->details9 }} icon" loading="lazy" decoding="async">
+                            <!-- Feature Card 3 -->
+                            <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                                <div class="modern-feature-card">
+                                    <div class="feature-icon-container">
+                                        <img class="feature-icon-img" src="{{ asset($methodologies->details10) }}"
+                                            alt="{{ $methodologies->details9 }} icon" loading="lazy" decoding="async">
+                                    </div>
+                                    <h6 class="feature-title">{{ $methodologies->details9 }}</h6>
+                                </div>
                             </div>
-                            <h6 class="mb-0">{{ $methodologies->details9 }}</h6>
-                        </div>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="col-12 col-sm-6 col-lg-3" role="listitem">
-                        <div
-                            class="feature-card p-4 h-100 d-flex flex-column align-items-center text-center shadow-sm rounded-3 bg-white">
-                            <div
-                                class="feature-icon rounded-circle d-flex align-items-center justify-content-center mb-3">
-                                <img class="img-fluid" src="{{ asset($methodologies->details12) }}"
-                                    alt="{{ $methodologies->details11 }} icon" loading="lazy" decoding="async">
+                            <!-- Feature Card 4 -->
+                            <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                                <div class="modern-feature-card">
+                                    <div class="feature-icon-container">
+                                        <img class="feature-icon-img" src="{{ asset($methodologies->details12) }}"
+                                            alt="{{ $methodologies->details11 }} icon" loading="lazy" decoding="async">
+                                    </div>
+                                    <h6 class="feature-title">{{ $methodologies->details11 }}</h6>
+                                </div>
                             </div>
-                            <h6 class="mb-0">{{ $methodologies->details11 }}</h6>
                         </div>
                     </div>
                 </div>
