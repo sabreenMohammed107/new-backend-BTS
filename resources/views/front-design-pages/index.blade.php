@@ -434,9 +434,9 @@
                             <div class="slide-item-info">
                                 <div class="slide-item-info-inner ltn__slide-animation">
 
-                                    <h6 class="slide-sub-title animated wh-txt-clr">
+                                    {{--  <h6 class="slide-sub-title animated wh-txt-clr">
                                         {!! $banner->en_head_title !!}
-                                    </h6>
+                                    </h6>  --}}
 
                                     <h1 class="slide-title animated bebas-neue-regular wh-txt-clr " style="font-size: 45px">
                                         {!! $banner->en_title !!}
