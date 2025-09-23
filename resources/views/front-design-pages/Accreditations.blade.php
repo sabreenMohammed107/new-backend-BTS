@@ -3,23 +3,85 @@
 
 @section('page-style')
 <style>
+    /* Video Container Styles */
+    .video-container {
+        position: relative;
+        width: 100%;
+        {{--  height: 100%;  --}}
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        background: #000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
     /* Video Player Styles */
     .video-player {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        max-width: 100%;
-        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 15px;
         transition: opacity 0.3s ease;
     }
 
+    .video-player.youtube-player {
+        background: #000;
+    }
+
+    .video-player.uploaded-video {
+        object-fit: cover;
+    }
+
+    /* Loading State */
+    .video-container::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 1;
+    }
+
+    .video-container.loaded::before {
+        display: none;
+    }
+
+    @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
-        .video-player {
-            width: 100%;
-            height: auto;
+        .video-container {
+            padding-bottom: 60%; /* Slightly taller on mobile */
+            margin-bottom: 20px;
         }
 
         .vid-play {
             margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .video-container {
+            padding-bottom: 65%;
+            border-radius: 10px;
         }
     }
 
@@ -45,94 +107,83 @@
         justify-content: center;
     }
 
-    /* Video Play Button */
-    .video-play-btn {
-        cursor: pointer;
-        display: inline-block;
-    }
 
-    /* Video Modal Styles */
-    .video-modal {
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        left: 0;
+    /* Video Error and Overlay Styles */
+    .video-error-overlay {
+        position: absolute;
         top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px);
-    }
-
-    .video-modal-content {
-        position: relative;
-        margin: 2% auto;
-        width: 90%;
-        max-width: 800px;
-        background: #000;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .video-modal-header {
-        position: relative;
-        padding: 10px 20px;
         background: rgba(0, 0, 0, 0.8);
-        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        z-index: 2;
     }
 
-    .video-modal-close {
-        color: #fff;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
-
-    .video-modal-close:hover {
-        color: #ff6b6b;
-    }
-
-    .video-modal-body {
-        padding: 0;
-        position: relative;
-    }
-
-    .video-modal-body video {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    /* Responsive Modal */
-    @media (max-width: 768px) {
-        .video-modal-content {
-            width: 95%;
-            margin: 5% auto;
-        }
-
-        .video-modal-header {
-            padding: 5px 15px;
-        }
-
-        .video-modal-close {
-            font-size: 24px;
-        }
-    }
-
-    /* Video Error Handling */
-    .video-error {
-        display: none;
+    .error-content {
         text-align: center;
+        color: white;
         padding: 20px;
-        background: #f8f9fa;
-        border-radius: 10px;
-        border: 2px dashed #dee2e6;
     }
 
-    .video-error.show {
-        display: block;
+    .retry-btn {
+        margin-top: 10px;
+        background: #007bff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .retry-btn:hover {
+        background: #0056b3;
+    }
+
+    .play-button-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        z-index: 2;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .play-button-overlay:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .play-content {
+        text-align: center;
+        color: white;
+    }
+
+    .play-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .play-button-overlay:hover .play-icon {
+        transform: scale(1.1);
+    }
+
+    .play-text {
+        font-size: 14px;
+        margin: 0;
+        opacity: 0.9;
     }
 </style>
 @endsection
@@ -140,92 +191,159 @@
 @section('script')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Video Modal Functionality
-    const videoModal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const modalClose = document.querySelector('.video-modal-close');
-    const videoPlayBtns = document.querySelectorAll('.video-play-btn');
+    // Enhanced Video Functionality
+    const videoContainers = document.querySelectorAll('.video-container');
+    const uploadedVideos = document.querySelectorAll('.uploaded-video');
+    const youtubePlayers = document.querySelectorAll('.youtube-player');
 
-    // Open modal when play button is clicked
-    videoPlayBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const videoSrc = this.getAttribute('data-video-src');
+    // Handle uploaded video loading states
+    uploadedVideos.forEach(video => {
+        const container = video.closest('.video-container');
 
-            // Set video source
-            const sources = modalVideo.querySelectorAll('source');
-            sources.forEach(source => {
-                source.src = videoSrc;
-            });
+        // Show loading state initially
+        container.classList.add('loading');
 
-            // Load and play video
-            modalVideo.load();
-
-            // Show modal
-            videoModal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-
-            // Auto-play video (optional - some browsers block this)
-            modalVideo.play().catch(function(error) {
-                console.log('Auto-play was prevented:', error);
-            });
+        // Handle video loading events
+        video.addEventListener('loadstart', function() {
+            container.classList.add('loading');
         });
-    });
 
-    // Close modal when X is clicked
-    modalClose.addEventListener('click', function() {
-        closeVideoModal();
-    });
+        video.addEventListener('canplay', function() {
+            container.classList.remove('loading');
+            container.classList.add('loaded');
+        });
 
-    // Close modal when clicking outside the video
-    videoModal.addEventListener('click', function(e) {
-        if (e.target === videoModal) {
-            closeVideoModal();
+        video.addEventListener('loadeddata', function() {
+            container.classList.remove('loading');
+            container.classList.add('loaded');
+        });
+
+        // Handle video errors
+        video.addEventListener('error', function() {
+            container.classList.remove('loading');
+            showVideoError(container, 'Video could not be loaded');
+        });
+
+        // Handle autoplay policy
+        video.addEventListener('play', function() {
+            container.classList.remove('loading');
+            container.classList.add('loaded');
+        });
+
+        // Attempt autoplay with fallback
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Autoplay started successfully
+                container.classList.remove('loading');
+                container.classList.add('loaded');
+            }).catch(error => {
+                // Autoplay was prevented
+                console.log('Autoplay prevented:', error);
+                container.classList.remove('loading');
+                container.classList.add('loaded');
+
+                // Show play button overlay
+                showPlayButtonOverlay(container, video);
+            });
         }
     });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && videoModal.style.display === 'block') {
-            closeVideoModal();
+    // Handle YouTube iframe loading
+    youtubePlayers.forEach(iframe => {
+        const container = iframe.closest('.video-container');
+
+        iframe.addEventListener('load', function() {
+            container.classList.remove('loading');
+            container.classList.add('loaded');
+        });
+
+        // Handle YouTube API ready (if available)
+        if (typeof YT !== 'undefined') {
+            iframe.addEventListener('load', function() {
+                setTimeout(() => {
+                    container.classList.remove('loading');
+                    container.classList.add('loaded');
+                }, 1000);
+            });
         }
     });
 
-    // Function to close modal
-    function closeVideoModal() {
-        videoModal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
-        modalVideo.pause();
-        modalVideo.currentTime = 0;
+    // Function to show video error
+    function showVideoError(container, message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'video-error-overlay';
+        errorDiv.innerHTML = `
+            <div class="error-content">
+                <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Video Error" style="opacity: 0.5; max-width: 60px; margin-bottom: 10px;">
+                <p class="text-muted">${message}</p>
+                <button class="btn btn-primary btn-sm retry-btn">Retry</button>
+            </div>
+        `;
 
-        // Clear video sources
-        const sources = modalVideo.querySelectorAll('source');
-        sources.forEach(source => {
-            source.src = '';
+        container.appendChild(errorDiv);
+
+        // Add retry functionality
+        const retryBtn = errorDiv.querySelector('.retry-btn');
+        retryBtn.addEventListener('click', function() {
+            errorDiv.remove();
+            const video = container.querySelector('video');
+            if (video) {
+                video.load();
+                video.play().catch(e => console.log('Retry failed:', e));
+            }
         });
     }
 
-    // Handle video errors in modal
-    modalVideo.addEventListener('error', function() {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'video-error show';
-        errorDiv.innerHTML = `
-            <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Video Error" style="opacity: 0.5; max-width: 60px; margin-bottom: 10px;">
-            <p class="text-muted">Video could not be loaded</p>
-            <a href="${modalVideo.querySelector('source').src}" target="_blank" class="btn btn-primary btn-sm">Download Video</a>
+    // Function to show play button overlay for muted autoplay
+    function showPlayButtonOverlay(container, video) {
+        const overlay = document.createElement('div');
+        overlay.className = 'play-button-overlay';
+        overlay.innerHTML = `
+            <div class="play-content">
+                <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Play Video" class="play-icon">
+                <p class="play-text">Click to play video</p>
+            </div>
         `;
 
-        modalVideo.style.display = 'none';
-        document.querySelector('.video-modal-body').appendChild(errorDiv);
-    });
+        container.appendChild(overlay);
 
-    // Add loading indicator for modal video
-    modalVideo.addEventListener('loadstart', function() {
-        modalVideo.style.opacity = '0.7';
-    });
+        overlay.addEventListener('click', function() {
+            video.play().then(() => {
+                overlay.remove();
+            }).catch(e => {
+                console.log('Manual play failed:', e);
+            });
+        });
+    }
 
-    modalVideo.addEventListener('canplay', function() {
-        modalVideo.style.opacity = '1';
+    // Intersection Observer for lazy loading (optional enhancement)
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const video = entry.target.querySelector('video');
+                    if (video && video.paused) {
+                        video.play().catch(e => console.log('Intersection play failed:', e));
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        videoContainers.forEach(container => {
+            observer.observe(container);
+        });
+    }
+
+    // Handle visibility change (pause when tab is not active)
+    document.addEventListener('visibilitychange', function() {
+        uploadedVideos.forEach(video => {
+            if (document.hidden) {
+                video.pause();
+            } else if (!video.paused) {
+                video.play().catch(e => console.log('Resume play failed:', e));
+            }
+        });
     });
 });
 </script>
@@ -246,15 +364,33 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="col-lg-4 vid-play">
                 @if($accreditation->details4)
                     @if(filter_var($accreditation->details4, FILTER_VALIDATE_URL))
-                        <!-- YouTube Link -->
-                        <a href="{{ $accreditation->details4 }}" target="_blank">
-                            <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Play Video">
-                        </a>
+                        <!-- YouTube Link - Embedded Player -->
+                        <div class="video-container">
+                            <iframe
+                                src="{{ str_replace('watch?v=', 'embed/', $accreditation->details4) }}?autoplay=1&mute=1&loop=1&playlist={{ substr(strrchr($accreditation->details4, '='), 1) }}&controls=1&showinfo=0&rel=0&modestbranding=1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                class="video-player youtube-player">
+                            </iframe>
+                        </div>
                     @else
-                        <!-- Uploaded Video - Play Button -->
-                        <a href="#" class="video-play-btn" data-video-src="{{ asset($accreditation->details4) }}">
-                            <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Play Video">
-                        </a>
+                        <!-- Uploaded Video - Direct Player -->
+                        <div class="video-container">
+                            <video
+                                class="video-player uploaded-video"
+                                controls
+                                autoplay
+                                muted
+                                loop
+                                preload="metadata"
+                                poster="{{ asset('front-assets/img/icons/play.png') }}">
+                                <source src="{{ asset($accreditation->details4) }}" type="video/mp4">
+                                <source src="{{ asset($accreditation->details4) }}" type="video/webm">
+                                <source src="{{ asset($accreditation->details4) }}" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     @endif
                 @else
                     <div class="no-video-placeholder">
@@ -307,20 +443,4 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
-    <!-- Video Modal -->
-    <div class="video-modal" id="videoModal">
-        <div class="video-modal-content">
-            <div class="video-modal-header">
-                <span class="video-modal-close">&times;</span>
-            </div>
-            <div class="video-modal-body">
-                <video id="modalVideo" controls preload="metadata">
-                    <source src="" type="video/mp4">
-                    <source src="" type="video/avi">
-                    <source src="" type="video/mov">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
 @endsection

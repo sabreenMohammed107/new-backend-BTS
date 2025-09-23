@@ -921,7 +921,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: start;
             overflow: hidden;
         }
 
@@ -958,6 +958,8 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
@@ -990,6 +992,8 @@
             transition: color 0.3s ease;
             position: relative;
             z-index: 2;
+            text-align: center;
+            padding-left: 0;
         }
 
         .modern-feature-card:hover .feature-title {

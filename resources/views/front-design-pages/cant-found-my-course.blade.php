@@ -6,7 +6,7 @@
         background-image: url('{{ asset('front-assets/img/bg/TAILOR YOUR COURSE.png') }}');
         position: relative;
 
-    height: 400px;
+    height: 270px;
     background-size: cover;
     background-position: center;
 
@@ -23,7 +23,7 @@
 </style>
 <div class="main-course-bg-header">
     <div class="course-main-title text-center" >
-        <h2>TAILOR YOUR COURSE</h2>
+        <h2>Tailor Your Course</h2>
     </div>
 </div>
 <div class="container py-5">
@@ -43,7 +43,7 @@
             </div><br />
         @endif
     <div class="row mb-4">
-        <div class="col-12 text-center">
+        <div class="col-12" style="text-align: justify;">
             <p class="lead">No problem! Reach out to us by filling in the course details you're interested in, and our team will work to address your needs. We'll review your request and get back to you with tailored solutions or alternatives as soon as possible. Your learning journey is our priority!</p>
         </div>
     </div>

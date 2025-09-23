@@ -734,6 +734,7 @@ ol li {
 }
 .fnt-sz-16 {
     font-size: 16px !important;
+    text-align: justify;
 }
 /* .before-bg-1 {
   position: relative; }
@@ -14678,11 +14679,16 @@ input[type="date"] {
 }
 .ltn__product-area .ltn__product-item .product-img .course-badge {
   position: absolute;
-  bottom: 0;
+
   left: 0;
+  top: 55%;
   width: 100%;
+  display: flex;
   z-index: 101;
+  flex-direction: column;
   padding: 5px 15px;
+  justify-content: space-between;
+  height: -webkit-fill-available;
 }
 .ltn__product-area .ltn__product-item .product-img .course-badge h3 {
   font-size: 1rem;
@@ -14773,6 +14779,14 @@ input[type="date"] {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+}
+
+.ltn__counterup-area .fnt-siz-sm {
+  text-align: justify !important;
+}
+
+.ltn__product-tab-area .section-title-area span {
+  text-align: justify !important;
 }
 
 .contact-form.main-page-form input,
@@ -17643,7 +17657,7 @@ background-repeat: repeat-y;
 #service-page .public-training-section .training-title {
   font-size: 2.5rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 1.5rem;
   color: #fff;
   letter-spacing: 1px;
@@ -18317,6 +18331,7 @@ background-color: #fff;
 
   #testimonials-page .fnt-siz-sm {
     font-size: 1rem;
+    text-align: justify;
   }
 
 
@@ -18468,6 +18483,7 @@ ul li.active > a {
 }
 
 .section-title {
+    margin-bottom:25px;
     text-transform: capitalize !important;
 }
 

@@ -19,9 +19,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="section-title-area ltn__section-title-2 text-center">
-                <h1 class="section-title">{{ $staticContact->small_description }}</h1>
-                <span class="col-12 col-md-8" style="color: black;font-size:16px">{!! $staticContact->details !!}</span>
+              <div class="section-title-area ltn__section-title-2 ">
+                <h1 class="section-title text-center">{{ $staticContact->small_description }}</h1>
+                <span class="col-12 col-md-8 pl-0" style="color: black;font-size:16px;padding-left:0">{!! $staticContact->details !!}</span>
 
               </div>
               <div class="row">

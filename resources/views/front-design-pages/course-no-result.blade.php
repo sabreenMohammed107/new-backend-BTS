@@ -158,10 +158,10 @@
                         <h4 class="ltn__widget-title ltn__widget-title-border">Training Categories</h4>
                         <ul>
                             <li><a href="#">Online Courses</a></li>
-                            <li><a href="#">Soft Skills category</a></li>
+                            <li><a href="#">Soft Skills Category</a></li>
                             <li><a href="#">Information Technology</a></li>
-                            <li><a href="#">Technical category</a></li>
-                            <li><a href="#">Certified courses</a></li>
+                            <li><a href="#">Technical Category</a></li>
+                            <li><a href="#">Certified Courses</a></li>
 
                         </ul>
                     </div>
