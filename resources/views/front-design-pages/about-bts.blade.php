@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-6">
                                 <div class="row">
 
-                                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
 
 
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-8">
-                                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
                                     </div>
                                     <div class="col-2 offset-2 d-flex align-items-center">
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-8">
-                                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
                                     </div>
                                     <div class="col-2 offset-2 d-flex align-items-center">
@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-8">
-                                        <a href="" class="theme-btn-1 btn btn-effect-1 text-uppercase">View
+                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
                                     </div>
                                     <div class="col-2 offset-2 d-flex align-items-center">
