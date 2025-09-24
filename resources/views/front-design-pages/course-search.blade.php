@@ -386,7 +386,7 @@
 
     /* Ensure the metadata overlay covers the top portion of the card */
     .single-course-item-card .course-metadata-overlay {
-        height: auto;
+        height: 100%;
         min-height: 80px;
         display: flex;
         align-items: flex-start;

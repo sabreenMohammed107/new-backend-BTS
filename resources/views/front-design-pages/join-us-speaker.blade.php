@@ -176,7 +176,7 @@
                     </div>
                   </div>
                   <div class="col-12 col-lg-4 form-container sticky-aside">
-                    <h3 class="mb-2" style="color: #333;border-bottom: 2px solid #4169E1;padding-bottom: 10px;margin-bottom: 30px;">2- Your Expertise</h3>
+                    <h3 class="mb-2" style="color: #333;border-bottom: 2px solid #4169E1;padding-bottom: 10px;margin-bottom: 30px;display: inline-block;width: fit-content;">2- Your Expertise</h3>
                     <p class="helper-text">Tick one or more options that best match your background.</p>
                     <div class="check-box-container">
                       <div class="checkBox-option-container d-flex justify-content-between">

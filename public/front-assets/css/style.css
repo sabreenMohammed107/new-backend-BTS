@@ -16484,6 +16484,8 @@ border: none;
   border-bottom: 2px solid #4169E1;
   padding-bottom: 10px;
   margin-bottom: 30px;
+  display: inline-block;
+  width: fit-content;
 }
 #join-team-page .form-label {
   font-size: 0.9rem;
@@ -16523,10 +16525,10 @@ background-color: #fff;
 }
 #join-team-page .ltn__product-tab-area.ltn__product-gutter h4.bullhorn::after {
     position: absolute;
-    bottom: -5px;
+    bottom: -15px;
     left: 15px;
     content: '';
-    width: 40%;
+    width: 19%;
     height: 2px;
     background-color: #376EFF;
 }
@@ -16852,6 +16854,8 @@ border: none;
   border-bottom: 2px solid #4169E1;
   padding-bottom: 10px;
   margin-bottom: 30px;
+  display: inline-block;
+  width: fit-content;
 }
 #join-us-speaker-page .form-label {
   font-size: 0.9rem;
@@ -17220,9 +17224,7 @@ font-weight: 900;
   font-size: 1.5625rem;
 }
 
-#download-center-page .main-course-title-and-details p {
-  color: rgb(162, 161, 161);
-}
+
 
 #download-center-page .main-img-of-course {
   margin-bottom: 25px;
@@ -17411,8 +17413,14 @@ font-weight: 900;
   .product-img
   .course-badge {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 #download-center-page
 .ltn__product-item.ltn__product-item-3
@@ -17424,8 +17432,17 @@ height: 100%;
 #download-center-page
 .ltn__product-item.ltn__product-item-3
 .course-badge
+.title-section {
+  padding: 120px 15px 0 15px;
+  width: 100%;
+}
+
+#download-center-page
+.ltn__product-item.ltn__product-item-3
+.course-badge
 .title-section h3{
 font-size: 0.9375rem;
+margin-bottom: 10px;
 }
 #download-center-page
 .ltn__product-item.ltn__product-item-3
@@ -17454,6 +17471,14 @@ color: #fff;
 background-color: #376EFF;
 padding: 10px;
 border-radius: 50%;
+}
+
+#download-center-page
+.ltn__product-item.ltn__product-item-3
+.course-badge
+.row.align-items-center.justify-content-end {
+  margin-top: auto;
+  padding: 0 15px 20px 15px;
 }
 #download-center-page
 .ltn__product-item.ltn__product-item-3

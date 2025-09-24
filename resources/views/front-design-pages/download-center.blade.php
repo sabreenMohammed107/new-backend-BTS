@@ -7,11 +7,11 @@
     <div class="main-course-bg-header">
 
       <div class="course-main-title text-center">
-        <h2>DOWNLOAD CENTER</h2>
+        <h2>Download Center</h2>
       </div>
     </div>
 
-    <div class="container main-course-title-and-details text-center">
+    <div class="container main-course-title-and-details text-center" style="color: #000 !important;text-align: justify !important;">
       <p>Welcome to the BTS Consultant Download Center. Access key resources like brochures, catalogs, and certifications. Get the tools you need to stay informed and succeed with BTS Consultant.</p>
     </div>
     <div class="container">
@@ -32,12 +32,8 @@
                           </p>
                         </div>
 
-                        <div class="col-12 row align-items-center">
-
-
-                          <div class="col-10 white-color bottom-title">{{ $data->file_size }} | {{ $data->file_extention }} | {{ \Carbon\Carbon::parse($data->created_at)->format('d M, Y') }}
-                          </div>
-                          <div class="col-2 ">
+                        <div class="col-12 row align-items-center justify-content-end">
+                          <div class="col-2">
                             <span class="icon-arrow">
                               <a href=""><i class="fas fa-download clr-white"></i></a>
                             </span>
