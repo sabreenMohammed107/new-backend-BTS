@@ -102,7 +102,7 @@ class DownloadCenterAdminController extends Controller
 
         // Rename The Image ..
         $imageName = $name;
-        $uploadPath = public_path('uploads/dawnload_centers');
+        $uploadPath = public_path('uploads/download_centers');
         //$uploadPath ='C:\inetpub\vhosts\btsconsultant.com\httpdocs\BTSConsultant_Resources\public\uploads/courses';
         try {
             $file->move($uploadPath, $imageName);
@@ -130,7 +130,7 @@ class DownloadCenterAdminController extends Controller
 
         // Rename the image (you can customize this)
         $imageName = $name;
-        $uploadPath = public_path('uploads/dawnload_centers');
+        $uploadPath = public_path('uploads/download_centers');
 
         try {
             $file->move($uploadPath, $imageName);

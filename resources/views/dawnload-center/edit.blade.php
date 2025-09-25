@@ -72,9 +72,9 @@
                         <div class="card-body text-center pt-0">
                             <!--begin::Image input-->
                             <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true"
-                                style="background-image: url('{{ asset('uploads/dawnload_centers') }}/{{ $row->image }}')">
+                                style="background-image: url('{{ asset('uploads/download_centers') }}/{{ $row->image }}')">
                                 <div class="image-input-wrapper w-150px h-150px"
-                                    style="background-image: url(' {{ asset('uploads/dawnload_centers') }}/{{ $row->image }}')">
+                                    style="background-image: url(' {{ asset('uploads/download_centers') }}/{{ $row->image }}')">
 
                                 </div>
                                 <!--end::Preview existing avatar-->
@@ -146,7 +146,7 @@
     <!--begin::Label-->
     <label class="form-label"> Upload file</label>
     <!--end::Label-->
-    <a href="{{ asset('uploads/dawnload_centers') }}/{{ $row->upload_file }}" dawnload> Dawnload</a>
+    <a href="{{ asset('uploads/download_centers') }}/{{ $row->upload_file }}" dawnload> Dawnload</a>
     <!--begin::Editor-->
     <input type="file" class="form-control "  name="upload_file" placeholder="upload_file" />
     <!--end::Editor-->
