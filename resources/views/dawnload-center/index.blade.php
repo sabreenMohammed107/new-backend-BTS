@@ -104,7 +104,7 @@
                 <!--end::Thumbnail-->
                 <div class="d-flex align-items-center">
                     <!--begin::Title-->
-                    <img width="100" src="{{ asset('uploads/download_centers')}}/{{ $row->image }}" alt="{{ $row->image }}">
+                    <img width="100" src="{{ asset({{ $row->image }}" alt="{{ $row->image }}">
 
                     <a href="#" class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
                     data-kt-ecommerce-category-filter="category_name" >
