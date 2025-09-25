@@ -18709,23 +18709,23 @@ color: #fff;
     z-index: 9999;
     width: 60px;
     height: 60px;
-    background-color: #25D366;
+    background-color: transparent;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 4px 12px rgba(55, 110, 255, 0.4);
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
 }
 
 .whatsapp-fixed-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 6px 20px rgba(55, 110, 255, 0.6);
 }
 
 .whatsapp-fixed-icon a {
-    color: white;
+    color: var(--ltn__secondary-color);
     font-size: 28px;
     text-decoration: none;
     display: flex;
@@ -18736,19 +18736,19 @@ color: #fff;
 }
 
 .whatsapp-fixed-icon a:hover {
-    color: white;
+    color: var(--ltn__secondary-color-3);
     text-decoration: none;
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 12px rgba(55, 110, 255, 0.4);
     }
     50% {
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.8);
+        box-shadow: 0 4px 12px rgba(55, 110, 255, 0.8);
     }
     100% {
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 12px rgba(55, 110, 255, 0.4);
     }
 }
 
@@ -18774,6 +18774,7 @@ color: #fff;
 
     .whatsapp-fixed-icon a {
         font-size: 24px;
+        color: var(--ltn__secondary-color);
     }
 }
 
