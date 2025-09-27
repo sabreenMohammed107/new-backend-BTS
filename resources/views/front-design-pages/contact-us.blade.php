@@ -201,7 +201,7 @@
                                                                     alt="">
                                                                 {{ $branch->country->country_en_name ?? '' }}
                                                             </div>
-                                                            <span>{{ $branch->office_phone ?? '' }}</span>
+                                                            <span>{{ $branch->address ?? '' }}</span>
                                                         </div>
                                                         <div class="pt-3">
                                                             <div class="title-of-contact-us d-flex align-items-center">
