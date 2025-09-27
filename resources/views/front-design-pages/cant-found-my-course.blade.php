@@ -59,11 +59,11 @@
                 <input type="text" class="form-control" id="courseCity" >
             </div>
             <div class="col-md-6">
-                <label for="courseDescription" class="form-label fw-bold">Course Description</label>
+                <label for="courseDescription" class="form-label fw-bold">Description</label>
                 <textarea class="form-control" id="courseDescription" rows="2" ></textarea>
             </div>
             <div class="col-md-6">
-                <label for="courseDate" class="form-label fw-bold">Date</label>
+                <label for="courseDate" class="form-label fw-bold">Course Date</label>
                 <input style="height: 45px" type="date" class="form-control" id="courseDate">
             </div>
             <div class="col-md-6">
@@ -71,22 +71,22 @@
                 <input type="text" class="form-control" id="name" >
             </div>
             <div class="col-md-6">
-                <label for="email" class="form-label fw-bold">E-mail</label>
+                <label for="email" class="form-label fw-bold">Email</label>
                 <input type="email" class="form-control" id="email" >
             </div>
             <div class="col-md-6">
-                <label for="mobile" class="form-label fw-bold">Mobile</label>
+                <label for="mobile" class="form-label fw-bold">Phone</label>
                 <input type="text" class="form-control" id="mobile" >
             </div>
             <div class="col-md-6">
-                <label for="organisation" class="form-label fw-bold">Organisation Or Company</label>
+                <label for="organisation" class="form-label fw-bold">Organisation or Company</label>
                 <input type="text" class="form-control" id="organisation">
             </div>
         </div>
         <div class="form-check mt-4">
             <input class="form-check-input" type="checkbox" value="" id="dataAgreement">
             <label class="form-check-label small" for="dataAgreement">
-                I AGREE TO THE PROCESSING OF MY DATA FOR THE PURPOSE OF THIS FORM
+                I agree to the processing of my data for the purpose of this form
             </label>
         </div>
         <div class="row mb-2">
@@ -111,8 +111,8 @@
             </div>
         </div>
         <div class="d-flex justify-content-between mt-4">
-            <button type="button" class="btn btn-outline-secondary px-5">PREVIOUS</button>
-            <button type="submit" class="btn btn-primary px-5">SUBMIT</button>
+            <button type="button" class="btn btn-outline-secondary px-5">previous</button>
+            <button type="submit" class="btn btn-primary px-5">submit</button>
         </div>
     </form>
 </div>

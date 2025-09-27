@@ -154,7 +154,7 @@
                             @enderror
                         </div>
                     </div>
-                    <a id="downloadButton" class="theme-btn-1 btn btn-effect-1 text-uppercase " style="background-color: #376EFF;">Submit</a>
+                    <a id="downloadButton" class="theme-btn-1 btn btn-effect-1" style="background-color: #376EFF;">Submit</a>
             </form>
           </div>
         </div>
