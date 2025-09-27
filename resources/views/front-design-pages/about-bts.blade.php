@@ -19,9 +19,27 @@
         background-image: url({{ $public_training->details2 }});
     }
 
+    /* Video Container Styles */
+    .video-container {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+
     /* Video Player Styles */
     .video-player {
-        border-radius: 10px;
+        border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         max-width: 100%;
         width: 100%;
@@ -31,16 +49,49 @@
         background: #000;
     }
 
-    @media (max-width: 768px) {
-        .video-player {
-            width: 100%;
-            height: auto;
-            min-height: 200px;
-        }
+    /* YouTube Video Wrapper */
+    .youtube-video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        background: #000;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .vid-play {
-            margin-bottom: 20px;
-        }
+    .youtube-link {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+
+    .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        max-width: 80px;
+        transition: transform 0.3s ease;
+    }
+
+    .youtube-link:hover .play-icon {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+        z-index: 1;
     }
 
     .no-video-placeholder {
@@ -48,43 +99,214 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 200px;
-        background: #f8f9fa;
-        border-radius: 10px;
+        min-height: 250px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
         border: 2px dashed #dee2e6;
+        transition: all 0.3s ease;
+    }
+
+    .no-video-placeholder:hover {
+        background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+        border-color: #adb5bd;
     }
 
     .no-video-placeholder img {
-        opacity: 0.5;
+        opacity: 0.6;
         max-width: 60px;
+        transition: opacity 0.3s ease;
     }
 
-    .vid-play {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .no-video-placeholder:hover img {
+        opacity: 0.8;
     }
 
+    /* About BTS Description Styles */
+    .about-bts-description {
+        background-image: url('{{ asset("front-assets/img/bg/about-v.png") }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        padding: 2rem;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
 
-    .about-bts-description p {
+    .about-bts-description::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+        border-radius: 15px;
+        z-index: 1;
+    }
+
+    .about-bts-description > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title {
+        color: #fff !important;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .section-subtitle {
+        color: #fff !important;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+
+    .section-content {
+        color: #fff !important;
+    }
+
+    .section-content p {
+        color: #fff !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.7;
+    }
+
+    .section-content ul li {
         color: #fff !important;
         margin-bottom: 0.5rem !important;
-    }
-    .about-bts-description ul li {
-        color: #fff !important;
-        margin-top: 0.5rem !important;
+        line-height: 1.6;
     }
 
-    .map-section p span {
-        font-size:large !important;
+    /* Map Section Styles */
+    .map-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 2rem;
+        border-radius: 15px;
+
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .map-section:hover {
+        transform: translateY(-2px);
+
+    }
+
+    .map-description {
+        padding: 1rem 0;
+    }
+
+    .map-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
         text-align: justify;
-        text-justify: inter-word;  /* Better word spacing */
-        hyphens: auto;            /* Enable hyphenation */
+        text-justify: inter-word;
+        hyphens: auto;
     }
-    .map-section p {
-        padding-left: 34px;
-        font-size:large !important;
 
+    .map-content span {
+        font-size: 1.1rem !important;
+        font-weight: 500;
+    }
+
+    .map-image-container {
+        position: relative;
+        padding: 1rem;
+    }
+
+    .map-image {
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .map-image:hover {
+        transform: scale(1.02);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .youtube-video-wrapper {
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .about-bts-description {
+            padding: 1.5rem;
+        }
+
+        .map-section {
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .video-player {
+            min-height: 200px;
+        }
+
+        .youtube-video-wrapper {
+            height: 200px;
+        }
+
+        .about-bts-description {
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .map-section {
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+        }
+
+        .map-content {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .about-bts-description {
+            padding: 1rem;
+        }
+
+        .map-section {
+            padding: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+        }
+
+        .youtube-video-wrapper {
+            height: 180px;
+        }
+
+        .video-player {
+            min-height: 180px;
+        }
     }
     </style>
 @endsection
@@ -120,17 +342,20 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <div class="container-fluid mt-5" style="overflow-x: hidden;">
-        <div class="row">
-        <div class="col-12">
-            <div class="main-hero-section">
-            <div class="row">
-                <div class="col-lg-4 vid-play">
+        <!-- Video and Who We Are Section - Side by Side -->
+        <div class="row g-4 mb-5">
+            <!-- Video Section -->
+            <div class="col-12 col-md-6 col-lg-5" style="display: flex;align-self: center;">
+                <div class="video-container">
                     @if($whoWeAre->details4)
                         @if(filter_var($whoWeAre->details4, FILTER_VALIDATE_URL))
                             <!-- YouTube Link -->
-                            <a href="{{ $whoWeAre->details4 }}" target="_blank">
-                                <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Play Video">
-                            </a>
+                            <div class="youtube-video-wrapper">
+                                <a href="{{ $whoWeAre->details4 }}" target="_blank" class="youtube-link">
+                                    <img src="{{ asset('front-assets/img/icons/play.png') }}" alt="Play Video" class="play-icon">
+                                    <div class="video-overlay"></div>
+                                </a>
+                            </div>
                         @else
                             <!-- Uploaded Video - Inline Player -->
                             <video class="video-player" controls autoplay muted loop preload="metadata">
@@ -147,30 +372,43 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     @endif
                 </div>
-                <div class="col-lg-8 about-bts-description">
-                <h3  style="color: #fff !important">{{ ucwords(str_replace('_', ' ', $whoWeAre->section_name)) }}</h3>
-                <p style="color: #fff !important">{{ $whoWeAre->small_description }}</p>
-                {!! $whoWeAre->details !!}
-
-                </div>
             </div>
+
+            <!-- Who We Are Description Section -->
+            <div class="col-12 col-md-6 col-lg-7">
+                <div class="about-bts-description">
+                    <h3 class="section-title">{{ ucwords(str_replace('_', ' ', $whoWeAre->section_name)) }}</h3>
+                    <p class="section-subtitle">{{ $whoWeAre->small_description }}</p>
+                    <div class="section-content">
+                        {!! $whoWeAre->details !!}
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-12 mt-5">
-            <div class="map-section">
-            <div class="row">
 
+        <!-- Map Section - Full Width Below -->
+        <div class="row">
+            <div class="col-12">
+                <div class="map-section">
+                    <div class="row g-4 align-items-center">
+                        <!-- Map Description -->
+                        <div class="col-12 col-md-6 order-2 order-md-1">
+                            <div class="map-description">
+                                <div class="map-content">
+                                    {!! $whoWeAre->details2 !!}
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="col-lg-6 mb-4 mb-lg-0 map-description d-flex align-items-center">
-                <p class="" style="font-size: large;"> {!! $whoWeAre->details2 !!}</p>
+                        <!-- Map Image -->
+                        <div class="col-12 col-md-6 order-1 order-md-2">
+                            <div class="map-image-container text-center">
+                                <img src="{{ asset('front-assets/img/bg/map.png') }}" alt="World Map" class="map-image img-fluid">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 text-center map-img">
-                    <img src="{{ asset('front-assets/img/bg/map.png') }}" alt="World Map" class="map-image img-fluid">
-                </div>
-
             </div>
-            </div>
-        </div>
         </div>
     </div>
 
@@ -319,7 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-6">
                                 <div class="row">
 
-                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
+                                        <a href="{{ route('service') }}#public_training" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
 
 
@@ -334,19 +572,18 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-12 col-md-6 col-lg-3  p-2">
                 <div class="card-item-services service-item-2">
                     <div class="card-service-bottom-footer">
-                        <div class="row">
-                            <div class="col-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
                                 <h3 class="white-color">{{ $in_house_training->small_description }}</h3>
+
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="row">
-                                    <div class="col-8">
-                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
+
+                                        <a href="{{ route('service') }}#in_house_training" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
-                                    </div>
-                                    <div class="col-2 offset-2 d-flex align-items-center">
-                                        <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -357,41 +594,40 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-12 col-md-6 col-lg-3  p-2">
                 <div class="card-item-services service-item-1">
                     <div class="card-service-bottom-footer">
-                        <div class="row">
-                            <div class="col-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
                                 <h3 class="white-color">{{ $consultancy->small_description }}</h3>
+
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="row">
-                                    <div class="col-8">
-                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
+
+                                        <a href="{{ route('service') }}#consultancy" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
-                                    </div>
-                                    <div class="col-2 offset-2 d-flex align-items-center">
-                                        <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 p-2">
                 <div class="card-item-services service-item-3">
                     <div class="card-service-bottom-footer">
-                        <div class="row">
-                            <div class="col-12">
+                        <div class="row justify-content-center">
+                            <div class="col-12 text-center">
                                 <h3 class="white-color">{{ $online_courses->small_description }}</h3>
+
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="row">
-                                    <div class="col-8">
-                                        <a href="" class="theme-btn-1 btn btn-effect-1">View
+
+                                        <a href="{{ route('service') }}#online_courses" class="theme-btn-1 btn btn-effect-1">View
                                             Details</a>
-                                    </div>
-                                    <div class="col-2 offset-2 d-flex align-items-center">
-                                        <a href="" class="white-color"><i class="fas fa-share-alt"></i></a>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>
