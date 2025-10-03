@@ -35,7 +35,7 @@
     <div class="container">
         <div class="row">
         <h4 class="bullhorn mb-5"> Currently Available Jobs </h4>
-        <div class="col-lg-6 mt-5">
+        <div class="col-lg-6">
             <div class="ltn__faq-inner ltn__faq-inner-2">
             <style>
                 /* Accordion header icon: force chevrons and suppress theme plus/minus */

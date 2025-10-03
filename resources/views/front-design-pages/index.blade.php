@@ -452,7 +452,12 @@
 
                                     <div class="btn-wrapper animated">
                                         <a href="{{ route('contact-us') }}"
-                                            class="theme-btn-3 btn btn-effect-1 mt-1">Contact Us</a>
+                                            class="theme-btn-3 btn btn-effect-1 mt-1"
+                                            style="transition: all 0.3s ease;"
+                                            onmouseover="this.style.backgroundColor='black'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor=''; this.style.color='';"
+                                            onfocus="this.style.backgroundColor='black'; this.style.color='black';"
+                                            onblur="this.style.backgroundColor=''; this.style.color='';">Contact Us</a>
                                         <a href="{{ route('download-center') }}"
                                             class="theme-btn-1 btn btn-effect-1 mt-1">Download
                                             Center</a>

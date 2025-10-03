@@ -3,7 +3,7 @@
 @section('page-content')
 <style>
     .main-course-bg-header {
-        background-image: url('{{ asset('front-assets/img/bg/TAILOR YOUR COURSE.png') }}');
+        background-image: url('{{ asset('front-assets/img/bg/servics-bg.png') }}');
         position: relative;
 
     height: 270px;

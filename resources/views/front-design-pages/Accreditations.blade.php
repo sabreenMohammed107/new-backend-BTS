@@ -79,7 +79,7 @@
     }
 
     /* Loading State */
-    .video-container::before {
+    {{--  .video-container::before {
         content: '';
         position: absolute;
         top: 50%;
@@ -92,7 +92,7 @@
         border-radius: 50%;
         animation: spin 1s linear infinite;
         z-index: 1;
-    }
+    }  --}}
 
     .video-container.loaded::before {
         display: none;
