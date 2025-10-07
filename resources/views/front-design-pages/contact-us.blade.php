@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-area mb-0 ltn__section-title-2">
-                    <h5 class="col-12 col-md-8 f-s-20 p-5 m-auto txt-al" style="font-weight: 400;">
+                    <h5 class="col-12 col-md-8 p-5 m-auto txt-al" style="font-weight: 400;">
                         Contact us to meet all your inquiries and needs, as our professional team is pleased to provide immediate support and advice to ensure you achieve your goals and facilitate your experience with us in the best possible way.
                     </h5>
                 </div>
@@ -121,7 +121,7 @@
 
                                                 <!-- Egypt Map -->
                                                 <div class="col-12 col-lg-6 d-flex justify-content-end">
-                                                    <img src="{{ asset('front-assets/img/bg/egypt-map.png') }}"
+                                                    <img src="{{ asset('img/egy.jpeg') }}"
                                                         alt="Egypt Map" class="map-image img-fluid">
                                                 </div>
 
@@ -224,7 +224,7 @@
 
                                                 <!-- UAE Map -->
                                                 <div class="col-12 col-lg-6 d-flex justify-content-end">
-                                                    <img src="{{ asset('front-assets/img/bg/Group 112.png') }}"
+                                                    <img src="{{ asset('img/uae.jpeg') }}"
                                                         alt="UAE Map" class="map-image img-fluid">
                                                 </div>
 

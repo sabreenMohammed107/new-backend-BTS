@@ -458,7 +458,12 @@
                                             onmouseout="this.style.backgroundColor=''; this.style.color='';"
                                             onfocus="this.style.backgroundColor='black'; this.style.color='black';"
                                             onblur="this.style.backgroundColor=''; this.style.color='';">Contact Us</a>
-                                        <a href="{{ route('download-center') }}"
+                                        <a
+                                        onmouseover="this.style.backgroundColor='black'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor=''; this.style.color='';"
+                                            onfocus="this.style.backgroundColor='black'; this.style.color='black';"
+                                            onblur="this.style.backgroundColor=''; this.style.color='';"
+                                        href="{{ route('download-center') }}"
                                             class="theme-btn-1 btn btn-effect-1 mt-1">Download
                                             Center</a>
                                     </div>
