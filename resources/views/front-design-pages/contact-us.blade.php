@@ -213,7 +213,7 @@
                                                         </div>
                                                         <div class="pt-3">
                                                             <div class="title-of-contact-us d-flex align-items-center">
-                                                                <img class="pr-2"
+                                                                <img class="pr-2" style="height: 12px !important"
                                                                     src="{{ asset('front-assets/img/icons/mail.png') }}"
                                                                     alt="">Email
                                                             </div>
