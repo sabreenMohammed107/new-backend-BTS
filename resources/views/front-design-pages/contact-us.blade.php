@@ -111,7 +111,7 @@
                                                         <div class="pt-3">
                                                             <div class="title-of-contact-us d-flex align-items-center">
                                                                 <img class="pr-2"
-                                                                    src="{{ asset('front-assets/img/icons/email.png') }}"
+                                                                    src="{{ asset('front-assets/img/icons/mail.png') }}"
                                                                     alt="">Email
                                                             </div>
                                                             <span>{{ $egyptBranch->email ?? 'egypt@company.com' }}</span>
@@ -214,7 +214,7 @@
                                                         <div class="pt-3">
                                                             <div class="title-of-contact-us d-flex align-items-center">
                                                                 <img class="pr-2"
-                                                                    src="{{ asset('front-assets/img/icons/email.png') }}"
+                                                                    src="{{ asset('front-assets/img/icons/mail.png') }}"
                                                                     alt="">Email
                                                             </div>
                                                             <span>{{ $branch->email ?? 'uae@company.com' }}</span>
