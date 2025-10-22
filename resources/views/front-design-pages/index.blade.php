@@ -1444,10 +1444,10 @@
         </style>
         <div class="ltn__counterup-area bg-image pt-115 pb-70"
             data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center text-center" id="accreditation-section-style">
                 <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
                 </h1>
-                <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{!! $homeAccreditation->details !!}</span>
+                <span class="col-12 col-md-8  fnt-siz-sm g-clr spn">{!! $homeAccreditation->details !!}</span>
                 <div class="col-12 text-center pt-3">
 
                     <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;"
