@@ -22,7 +22,7 @@
         <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2 text-left">
 
-            <span class="col-12 col-md-8 g-clr text-left f-s-13 m-auto p-0" style="color: black">
+            <span class="col-12 txt-just  col-md-8 g-clr text-left f-s-13 m-auto p-0" style="color: black">
                 We are always interested to meet potential team members to join our fast-growing, dynamic team of professionals in order to continue providing a personalized, efficient, professional and confidential service to our increasing portfolio of clients. Our people are undoubtedly our greatest asset and we pride ourselves on creating an environment where our team look forward to come to work every day. While experience is not a requirement (for certain positions), preference will be given to those applicants who are interested in a challenge, who are results and target-oriented besides wanting to form part of our dynamic team and fast- growing business. Read on below to find out more about what our positions entail and what skills are required.
             </span>
 
@@ -76,7 +76,7 @@
                 </h6>
                 <div id="faq-item-2-1" class="collapse" data-bs-parent="#accordion_2">
                     <div class="card-body">
-                    <p>Artificial intelligence is transforming our interaction with documents rapidly. AI holds
+                    <p class="txt-just">Artificial intelligence is transforming our interaction with documents rapidly. AI holds
                         incalculable potential – from data extraction automation to improving review systems.
                         Nonetheless, this potential hinges critically on the quality of the input documents. Like
                         the first Optical Character Recognition (OCR)
@@ -112,7 +112,7 @@
                 <div id="faq-item-2-2" class="collapse show" data-bs-parent="#accordion_2">
                     <div class="card-body">
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    <p class="txt-just">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec
                         sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec
                         ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar.
@@ -129,7 +129,7 @@
                 </h6>
                 <div id="faq-item-2-3" class="collapse" data-bs-parent="#accordion_2">
                     <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    <p class="txt-just">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Scelerisque eleifend donec pretium vulputate sapien nec
                         sagittis. Proin libero nunc consequat interdum. Condimentum lacinia quis vel eros donec
                         ac. Mauris sit amet massa vitae tortor. Quisque id diam vel quam elementum pulvinar.

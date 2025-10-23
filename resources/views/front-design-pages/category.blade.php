@@ -18,7 +18,7 @@
           <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2">
 
-              <h5 class="col-12  g-clr text-left">{{ $category->category_en_description }}</h5>
+              <h5 class="col-12 txt-just  text-left">{{ $category->category_en_description }}</h5>
 
             </div>
             <div class="row">

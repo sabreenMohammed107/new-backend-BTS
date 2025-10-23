@@ -15,7 +15,7 @@
           <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2 text-center">
 
-              <h5 class="col-12 col-md-8 text-center f-s-20 p-5 m-auto" style="color: black">Join our inspiring team or become a distinguished speaker and be part of a journey of success, innovation, and meaningful connections. Share your expertise, inspire others, and make a lasting impact!</h5>
+              <h5 class="col-12 txt-just  col-md-8 text-center f-s-20 p-5 m-auto" style="color: black">Join our inspiring team or become a distinguished speaker and be part of a journey of success, innovation, and meaningful connections. Share your expertise, inspire others, and make a lasting impact!</h5>
 
             </div>
             <div class="row">
