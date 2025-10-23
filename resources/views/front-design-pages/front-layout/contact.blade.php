@@ -1,3 +1,13 @@
+<style>
+    /* Contact Us Button Phone Icon Hover Effect */
+    .theme-btn-1.btn-effect-1 img {
+        transition: filter 0.3s ease;
+    }
+
+    .theme-btn-1.btn-effect-1:hover img {
+        filter: brightness(0);
+    }
+</style>
 
     <!-- FEATURE AREA START ( Feature - 3) -->
     @if ($message = Session::get('message'))
@@ -19,8 +29,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="section-title-area ltn__section-title-2 ">
-                <h1 class="section-title text-center">{{ $staticContact->small_description }}</h1>
+              <div class="section-title-area ltn__section-title-2 "  style="color: #000 !important;">
+                <h1 class="section-title text-center"   style="color: #000 !important;">{{ $staticContact->small_description }}</h1>
                 <span class="col-12 col-md-8 pl-0" style="color: black;font-size:16px;padding-left:0">{!! $staticContact->details !!}</span>
 
               </div>
@@ -31,17 +41,17 @@
                     <div class="row">
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-name ltn__custom-icon">
-                          <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Your name">
+                          <input type="text" name="sender_name" value="{{ old('sender_name') }}" placeholder="Your Name">
                         </div>
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-email ltn__custom-icon">
-                          <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Email address">
+                          <input type="email" name="sender_email"  value="{{ old('sender_email') }}" placeholder="Email Address">
                         </div>
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-phone ltn__custom-icon">
-                          <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Mobile number">
+                          <input type="text" name="mobile" name="sender_mobile" value="{{ old('sender_mobile') }}" placeholder="Mobile Number">
                         </div>
                       </div>
                       <div class="col-md-6 my-3">
@@ -51,7 +61,7 @@
                       </div>
                     </div>
                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                      <textarea name="message" placeholder="Your message">{{ old('sender_message') }}</textarea>
+                      <textarea name="message" placeholder="Your Message">{{ old('sender_message') }}</textarea>
                     </div>
 
                     <p class="form-messege mb-0 mt-20"></p>
@@ -95,7 +105,7 @@
                                                 <div class="title-of-contact-us d-flex align-items-center"><img class="pr-2"
                                                         src="{{ asset('front-assets/img/icons/time.png') }}"
                                                         alt="">Working
-                                                    hours</div>
+                                                    Hours</div>
                                                 <span>{{ $branch->working_hour ?? '' }}</span>
                                             </div>
                                             <div class="col-12 col-lg-6 text-end">

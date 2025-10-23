@@ -416,6 +416,46 @@
     {{--  .single-course-item-card .course-card-overlay h6 {
         margin-top: auto;
     }  --}}
+
+    /* Course Search Navigation Links Hover Effects */
+    .main-course-search-nav .col-8.row a {
+        color: #ffffff !important;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        padding-bottom: 3px;
+        display: inline-block;
+    }
+
+    .main-course-search-nav .col-8.row a i {
+        color: #ffffff !important;
+        transition: transform 0.3s ease;
+        margin-right: 5px;
+    }
+
+    .main-course-search-nav .col-8.row a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        transition: width 0.3s ease;
+    }
+
+    .main-course-search-nav .col-8.row a:hover {
+        color: #ffffff !important;
+    }
+
+    .main-course-search-nav .col-8.row a:hover::after {
+        width: 100%;
+    }
+
+    .main-course-search-nav .col-8.row a:hover i {
+        color: #ffffff !important;
+        transform: scale(1.1);
+    }
 </style>
 <div class="container-fluid main-course-search-nav" style='background-color:#232F3E;'>
     <div class="container-fluid">

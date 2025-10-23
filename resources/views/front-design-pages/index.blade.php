@@ -106,7 +106,6 @@
     }
 
 
-
     /* Add a smooth transition for the text */
     .training-footer-item h6 {
         transition: all 0.3s ease;
@@ -577,7 +576,7 @@
                             {{-- Tailor your course --}}
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
                                 <a href="{{ route('course-no-result') }}"
-                                    class="form-btn-transparent w-100 text-center">Tailor your course</a>
+                                    class="form-btn-transparent w-100 text-center">Tailor Your Course</a>
                             </div>
 
                             {{-- Search button --}}
@@ -985,12 +984,13 @@
             height: 48px;
             object-fit: contain;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: brightness(0.7);
+            {{--  filter: brightness(0.7);  --}}
+
         }
 
         .modern-feature-card:hover .feature-icon-img {
             transform: scale(1.1);
-            filter: brightness(1) invert(1);
+            filter: brightness(0) invert(1);
         }
 
         .feature-title {

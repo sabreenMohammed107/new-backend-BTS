@@ -19,6 +19,56 @@
         background-image: url({{ $public_training->details2 }});
     }
 
+    /* Service Cards Hover Effects */
+    .card-item-services {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-item-services::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .card-item-services:hover::before {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .card-item-services:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-service-bottom-footer {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-service-bottom-footer h3 {
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .card-item-services:hover .card-service-bottom-footer h3 {
+        transform: scale(1.05);
+    }
+
     /* Video Container Styles */
     .video-container {
         position: relative;
@@ -414,9 +464,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="row mt-5 best-offers-section" style="overflow-x: hidden;">
       <div class="col-lg-12">
-        <div class="section-title-area  text-center">
-          <h1 class="section-title">What We Offer</h1>
-          <span class="col-12 col-md-8  fnt-siz-sm g-clr ">Your Growth, Our Mission</span>
+        <div class="section-title-area  text-center" style="color: #000 !important;">
+          <h1 class="section-title"   style="color: #000 !important;">What We Offer</h1>
+          <span class="col-12 col-md-8  fnt-siz-sm"  style="color: #000 !important;">Your Growth, Our Mission</span>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -482,9 +532,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="row mt-5 bts-target-section" style="overflow-x: hidden;">
       <div class="col-lg-12">
-        <div class="section-title-area text-center">
-          <h1 class="section-title">{{ ucwords(str_replace('_', ' ', $VisionAndMission->section_name)) }}</h1>
-          <span class="col-12 col-md-8  fnt-siz-sm g-clr ">{{ $VisionAndMission->small_description }}</span>
+        <div class="section-title-area text-center"  style="color: #000 !important;">
+          <h1 class="section-title"   style="color: #000 !important;">{{ ucwords(str_replace('_', ' ', $VisionAndMission->section_name)) }}</h1>
+          <span class="col-12 col-md-8  fnt-siz-sm"  style="color: #000 !important;">{{ $VisionAndMission->small_description }}</span>
         </div>
         <div class="container-fluid">
           <div class="row">

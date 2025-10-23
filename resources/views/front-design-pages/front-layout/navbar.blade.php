@@ -53,7 +53,7 @@
                                         <a href="{{ route('contact-us') }}">Contact Us</a>
                                     </li>
                                     <li class="special-link {{ request()->routeIs('download-center') ? 'active' : '' }}">
-                                        <a href="{{ route('download-center') }}">Download center</a>
+                                        <a href="{{ route('download-center') }}">Download Center</a>
                                     </li>
                                 </ul>
 

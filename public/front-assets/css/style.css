@@ -15126,7 +15126,7 @@ input[type="date"] {
 }
 .course-search-page .container-fluid.main-course-search-nav .row div.col a:hover i,
 .course-search-page .container-fluid.main-course-search-nav .row div.col a:hover {
-  color: #376eff !important;
+  color: #ffffff !important;
 }
 
 .course-search-page .container-fluid .row form {
@@ -15967,7 +15967,7 @@ font-size: smaller;
 }
 #contact-us-page .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/Contact Us.png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;
@@ -16217,7 +16217,7 @@ font-weight: 900;
 }
 #join-team-page  .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/Single Course.png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;
@@ -16582,7 +16582,7 @@ background-color: #fff;
 }
 #join-us-speaker-page  .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/Join Us ( Speaker ).png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;
@@ -17205,7 +17205,7 @@ font-weight: 900;
 
 #download-center-page .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/DOWNLOAD CENTER.png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;
@@ -17920,7 +17920,7 @@ background-repeat: repeat-y;
 }
 #accre-course-page .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/Accreditations.png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;
