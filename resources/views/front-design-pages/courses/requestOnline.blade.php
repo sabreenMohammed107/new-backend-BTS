@@ -49,7 +49,7 @@
 
 .ltn__product-item-3 .product-img.shine:hover::before,
 .ltn__product-item-3 .product-img.shine:focus::before {
-    animation: shine 4s ease-in-out;
+    animation: shine 1s ease-in-out;
 }
 
 @keyframes shine {

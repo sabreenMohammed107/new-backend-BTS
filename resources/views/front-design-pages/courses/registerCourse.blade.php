@@ -18,15 +18,57 @@
     padding: 6px 10px;
     border-radius: 6px;
 }
-    /* Popular courses links styling */
-    .popular-courses .course-badge h3 a {
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
+
+/* Shine hover effect */
+.ltn__product-item-3 .product-img.shine {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.ltn__product-item-3 .product-img.shine::before {
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+
+.ltn__product-item-3 .product-img.shine:hover::before,
+.ltn__product-item-3 .product-img.shine:focus::before {
+    animation: shine 1s ease-in-out;
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
     }
-    .popular-courses .course-badge h3 a:hover {
-        text-decoration: underline;
+
+    100% {
+        left: 125%;
     }
+}
+
+/* White underline on course title when hovering card */
+.popular-courses .ltn__product-item:hover .course-badge h3 a {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+/* Popular courses links styling */
+.popular-courses .course-badge h3 a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -321,13 +363,13 @@
 
                     <div class="col-12 col-sm-6">
                         <div class="ltn__product-item ltn__product-item-3 text-left no-size">
-                            <div class="product-img" style='height: 100%;'>
+                            <div class="product-img shine" style='height: 100%;'>
                                 <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
                                         src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
                                 <div class="course-badge p-2">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h3 class='white-color'   style="font-size: 1.075rem !important;">
+                                            <h3 class='white-color mb-2' style="font-size: 1.075rem !important;">
                                                 <a href="{{ url('courseDetails/'.$round->course->id) }}" class="white-color">
                                                     {{ $round->course->course_en_name ?? ''}}
                                                 </a>
