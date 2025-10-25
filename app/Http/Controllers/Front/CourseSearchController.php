@@ -127,7 +127,7 @@ class CourseSearchController extends Controller
         }
 
         // استخدام paginate للحصول على التصفح
-        $filtered = $filters->paginate(8);
+        $filtered = $filters->paginate(15);
 
         // جلب المدن والفئات
         $venues = Venue::all();

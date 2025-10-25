@@ -168,7 +168,7 @@
 
                     <div class="row filter-buttons mt-35 p-5">
                         <button class="col-12 filter-btn ">Filter</button>
-                        <button class="col-12 tailor-btn mt-15">Tailor your course</button>
+                        <button class="col-12 tailor-btn mt-15">Tailor Your Course</button>
                     </div>
                 </aside>
             </div>

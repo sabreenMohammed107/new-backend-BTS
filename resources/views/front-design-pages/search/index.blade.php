@@ -132,7 +132,7 @@
                                 <button class="col-12 tailor-btn "
                                     onclick="window.location.href='{{ route('course-search') }}';"
                                     style="position: relative !important">
-                                    Tailor your course
+                                    Tailor Your Course
                                 </button>
 
                             </div>

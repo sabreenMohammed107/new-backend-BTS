@@ -72,6 +72,7 @@ Route::prefix('/')->group(function () {
     Route::get('about-bts', [AboutBtsController::class, 'index'])->name('about-bts');
     Route::get('service', [ServiceController::class, 'index'])->name('service');
     Route::get('download-center', [DownloadCenterController::class, 'index'])->name('download-center');
+    Route::get('download-file/{id}', [DownloadCenterController::class, 'download'])->name('download-file');
     Route::get('testimonials', [TestimonialsController::class, 'index'])->name('testimonials');
 
     //category

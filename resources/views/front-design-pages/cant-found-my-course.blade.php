@@ -30,7 +30,7 @@
     @if ($message = Session::get('message'))
             <div id="alertDiv" class="alert alert-info alert-block">
                 {{-- <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button> --}}
-                <strong style="color:black;font-weight:bold">{{ $message }}</strong>
+                <strong style="color:black">{{ $message }}</strong>
             </div>
         @endif
         @if ($errors->any())
@@ -51,35 +51,35 @@
         @csrf
         <div class="row g-4">
             <div class="col-md-6">
-                <label for="courseTitle" class="form-label fw-bold">Course Title</label>
+                <label for="courseTitle" class="form-label ">Course Title</label>
                 <input type="text" class="form-control" id="courseTitle" >
             </div>
             <div class="col-md-6">
-                <label for="courseCity" class="form-label fw-bold">Course City</label>
+                <label for="courseCity" class="form-label ">Course City</label>
                 <input type="text" class="form-control" id="courseCity" >
             </div>
             <div class="col-md-6">
-                <label for="courseDescription" class="form-label fw-bold">Description</label>
+                <label for="courseDescription" class="form-label ">Description</label>
                 <textarea class="form-control" id="courseDescription" rows="2" ></textarea>
             </div>
             <div class="col-md-6">
-                <label for="courseDate" class="form-label fw-bold">Course Date</label>
+                <label for="courseDate" class="form-label ">Course Date</label>
                 <input style="height: 45px" type="date" class="form-control" id="courseDate">
             </div>
             <div class="col-md-6">
-                <label for="name" class="form-label fw-bold">Name</label>
+                <label for="name" class="form-label ">Name</label>
                 <input type="text" class="form-control" id="name" >
             </div>
             <div class="col-md-6">
-                <label for="email" class="form-label fw-bold">Email</label>
+                <label for="email" class="form-label ">Email</label>
                 <input type="email" class="form-control" id="email" >
             </div>
             <div class="col-md-6">
-                <label for="mobile" class="form-label fw-bold">Phone</label>
+                <label for="mobile" class="form-label ">Phone</label>
                 <input type="text" class="form-control" id="mobile" >
             </div>
             <div class="col-md-6">
-                <label for="organisation" class="form-label fw-bold">Organisation or Company</label>
+                <label for="organisation" class="form-label ">Organisation or Company</label>
                 <input type="text" class="form-control" id="organisation">
             </div>
         </div>
@@ -111,7 +111,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-between mt-4">
-            <button type="button" class="btn btn-outline-secondary px-5">previous</button>
+            {{--  <button type="button" class="btn btn-outline-secondary px-5">previous</button>  --}}
             <button type="submit" class="btn btn-primary px-5">submit</button>
         </div>
     </form>

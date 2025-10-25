@@ -1195,6 +1195,12 @@
                 left: 125%;
             }
         }
+
+        /* White underline on course title when hovering card */
+        .ltn__product-item:hover .course-badge h3 a {
+            text-decoration: underline;
+            text-decoration-color: white;
+        }
     </style>
     <!-- PRODUCT AREA START (product-item-3) -->
     <div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
