@@ -30,7 +30,7 @@
                 <i class="fas fa-share-alt-square"></i>
               </div> -->
         <div class="course-main-title text-center">
-            <h2>Request for Inhouse</h2>
+            <h2>Request For Inhouse Proposal</h2>
         </div>
     </div>
     <div class="container" style="margin-top: 70px;">
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="container form-container">
-                    <h2 class="form-title f-s-20">Request For Inhouse Form</h2>
+
 
                     <form action="{{url('/registerApplicants')}}" method="POST">
                         @csrf
