@@ -18,6 +18,15 @@
     padding: 6px 10px;
     border-radius: 6px;
 }
+    /* Popular courses links styling */
+    .popular-courses .course-badge h3 a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .popular-courses .course-badge h3 a:hover {
+        text-decoration: underline;
+    }
 </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -64,7 +73,7 @@
                         <div class="row mb-3">
                             <div class="col-md-12 mb-3">
                                 <label for="courseTitle" class="form-label">Title:</label>
-                        
+
                                 <span class="courseCode">{{ $course->course_en_name ?? '' }}</span>
 
                             </div>
@@ -134,8 +143,8 @@
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
                                 <label for="country" class="form-label required">Country</label>
-                                <select name="country_id" class="form-select">
-                                    <option value=""></option>
+                                <select name="country_id" id="personal_country" class="form-select">
+                                    <option value="">Select Country</option>
                                     @foreach ($countries as $country)
                                         <option value='{{ $country->id }}'
                                             @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
@@ -145,8 +154,8 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="city" class="form-label required">City</label>
-                                <select name="venue_id" class="form-select">
-                                    <option value=""></option>
+                                <select name="venue_id" id="personal_city" class="form-select">
+                                    <option value="">Select City</option>
                                     @foreach ($venues as $venue)
                                         <option value='{{ $venue->id }}'
                                             @if (old('venue_id') == "$venue->id") {{ 'selected' }} @endif>
@@ -227,8 +236,8 @@
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
                                 <label for="country" class="form-label required">Country</label>
-                                <select name="billing_country_id" class="form-select">
-                                    <option value=""></option>
+                                <select name="billing_country_id" id="billing_country" class="form-select">
+                                    <option value="">Select Country</option>
                                     @foreach ($countries as $country)
                                         <option value='{{ $country->id }}'
                                             @if (old('billing_country_id') == "$country->id") {{ 'selected' }} @endif>
@@ -238,8 +247,8 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="city" class="form-label required">City</label>
-                                <select name="billing_venue_id" class="form-select">
-                                    <option value=""></option>
+                                <select name="billing_venue_id" id="billing_city" class="form-select">
+                                    <option value="">Select City</option>
                                     @foreach ($venues as $venue)
                                         <option value='{{ $venue->id }}'
                                             @if (old('billing_venue_id') == "$venue->id") {{ 'selected' }} @endif>
@@ -318,7 +327,11 @@
                                 <div class="course-badge p-2">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h3 class='white-color'   style="font-size: 1.075rem !important;">{{ $round->course->course_en_name ?? ''}}</h3>
+                                            <h3 class='white-color'   style="font-size: 1.075rem !important;">
+                                                <a href="{{ url('courseDetails/'.$round->course->id) }}" class="white-color">
+                                                    {{ $round->course->course_en_name ?? ''}}
+                                                </a>
+                                            </h3>
                                         </div>
 
                                         <div class="col-12 row">
@@ -331,7 +344,7 @@
                                             </div>
                                             <div class="col-2 mb-2">
                                                 <span class="icon-arrow">
-                                                    <a href=""><i class="fa fa-arrow-right white-color"></i></a>
+                                                    <a href="{{ url('courseDetails/'.$round->course->id) }}"><i class="fa fa-arrow-right white-color"></i></a>
                                                 </span>
                                             </div>
                                         </div>
@@ -372,6 +385,74 @@
             $(".nice-select").on("change", function() {
                 var selectedValue = $(this).find('input').val();
                 $('select[name="country_id"]').val(selectedValue);
+            });
+
+            // Cascading select for Personal Data section
+            $('#personal_country').on('change', function() {
+                var countryId = $(this).val();
+                var citySelect = $('#personal_city');
+
+                if (countryId) {
+                    $.ajax({
+                        url: '/get-venues-by-country/' + countryId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            citySelect.empty();
+                            citySelect.append('<option value="">Select City</option>');
+                            $.each(data, function(key, venue) {
+                                citySelect.append('<option value="' + venue.id + '">' + venue.venue_en_name + '</option>');
+                            });
+                            // Update nice-select if it's initialized
+                            if (citySelect.next('.nice-select').length) {
+                                citySelect.niceSelect('update');
+                            }
+                        },
+                        error: function() {
+                            console.log('Error loading cities');
+                        }
+                    });
+                } else {
+                    citySelect.empty();
+                    citySelect.append('<option value="">Select City</option>');
+                    if (citySelect.next('.nice-select').length) {
+                        citySelect.niceSelect('update');
+                    }
+                }
+            });
+
+            // Cascading select for Billing Details section
+            $('#billing_country').on('change', function() {
+                var countryId = $(this).val();
+                var citySelect = $('#billing_city');
+
+                if (countryId) {
+                    $.ajax({
+                        url: '/get-venues-by-country/' + countryId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            citySelect.empty();
+                            citySelect.append('<option value="">Select City</option>');
+                            $.each(data, function(key, venue) {
+                                citySelect.append('<option value="' + venue.id + '">' + venue.venue_en_name + '</option>');
+                            });
+                            // Update nice-select if it's initialized
+                            if (citySelect.next('.nice-select').length) {
+                                citySelect.niceSelect('update');
+                            }
+                        },
+                        error: function() {
+                            console.log('Error loading cities');
+                        }
+                    });
+                } else {
+                    citySelect.empty();
+                    citySelect.append('<option value="">Select City</option>');
+                    if (citySelect.next('.nice-select').length) {
+                        citySelect.niceSelect('update');
+                    }
+                }
             });
         });
     </script>

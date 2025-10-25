@@ -114,6 +114,7 @@ Route::prefix('/')->group(function () {
     //register course , post , get
     Route::get('/registerCourse/{round_id}', [CourseSearchController::class, 'registerCourse']);
     Route::post('registerApplicantRounds', [CourseSearchController::class, 'registerApplicantRounds']);
+    Route::get('/get-venues-by-country/{country_id}', [CourseSearchController::class, 'getVenuesByCountry'])->name('getVenuesByCountry');
     Route::get('join-us', [JobApplicationController::class, 'showForm'])->name('join-us');
     // Route::get('join-us' , [JobApplicationController::class, 'showForm'])->name('join-us');
 

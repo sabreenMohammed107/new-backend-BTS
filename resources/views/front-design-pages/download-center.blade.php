@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="container main-course-title-and-details text-center" style="color: #000 !important;text-align: justify !important;">
+    <div class="container main-course-title-and-details text-center" style="color: #000 !important;text-align: justify !important;font-size: 20px !important;">
       <p>Welcome to the BTS Consultant Download Center. Access key resources like brochures, catalogs, and certifications. Get the tools you need to stay informed and succeed with BTS Consultant.</p>
     </div>
     <div class="container">
@@ -19,7 +19,7 @@
       <div class="col-12">
           <div class="row download-center-cards">
             @foreach ($downloadCenterData as $data )
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-3" style="display: flex;justify-content: center;align-items: center;">
                 <div class="ltn__product-item ltn__product-item-3 text-left">
                   <div class="product-img" style='height: 100%;'>
                     <a href="{{ route('download-file', $data->id) }}" class="img-container"><img height="100%" src="{{ asset($data->image) }}" alt="#"></a>
@@ -54,5 +54,12 @@
 
     </div>
 
-
+<style>
+    @media (max-width: 767px) {
+        .container.main-course-title-and-details.text-center p {
+            font-size: 18px;
+            padding: 0 15px;
+        }
+    }
+</style>
 @endsection

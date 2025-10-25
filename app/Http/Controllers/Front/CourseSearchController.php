@@ -372,4 +372,14 @@ public function registerApplicantsOnline(Request $request)
         // }
     }
 
+    // Get venues/cities by country ID for cascading select
+    public function getVenuesByCountry($country_id)
+    {
+        $venues = Venue::where('country_id', $country_id)
+            ->orderBy('venue_en_name', 'ASC')
+            ->get(['id', 'venue_en_name']);
+
+        return response()->json($venues);
+    }
+
 }
