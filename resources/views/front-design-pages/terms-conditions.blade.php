@@ -12,7 +12,7 @@
     }
 
     .terms-content h3 {
-        color: #32a2a8;
+        color: #376eff ;
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: 30px;
@@ -45,14 +45,14 @@
 
     .terms-content ul li:before {
         content: "•";
-        color: #32a2a8;
+        color: #376eff ;
         font-weight: bold;
         position: absolute;
         left: 0;
     }
 
     .section-number {
-        color: #32a2a8;
+        color: #376eff ;
         font-weight: 700;
     }
 
@@ -62,7 +62,7 @@
         margin-bottom: 30px;
         padding: 20px;
         background-color: #f9f9ff;
-        border-left: 4px solid #32a2a8;
+        border-left: 4px solid #376eff ;
     }
 </style>
 
