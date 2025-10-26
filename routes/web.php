@@ -65,6 +65,8 @@ Route::get('/', function () {
 
 Route::prefix('/')->group(function () {
 
+    Route::get('/courseCategory/{id}', [CategoryController::class, 'course'])->name('course.category');
+
     Route::get('/', [HomeController::class, 'index'])->name('main-home');
     Route::post('/sendMessage',  [IndexController::class, 'sendMessage']);
     Route::post('/sendNewsLetter',  [IndexController::class, 'sendNewsLetter'])->name('send-newsletter');

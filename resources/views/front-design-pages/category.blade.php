@@ -28,7 +28,8 @@
                 <div class="row">
                     @foreach($category->courseSubCategories as $subcategory)
                     <div class="col-12 col-md-6 col-lg-4">
-                         <a href="{{ route('searchCourse.index', ['category_id' => $subcategory->id]) }}">
+                      <a href="{{ route('course.category', ['id' => $subcategory->id]) }}">
+                         {{-- <a href="{{ route('searchCourse.index', ['category_id' => $subcategory->id]) }}"> --}}
                         <div class="service-card">
                             <img src="{{ asset('uploads/course_sub_categories') }}/{{ $subcategory->subcategory_image }}" alt={{ $subcategory->subcategory_en_name }}>
                             <div class="service-overlay">
