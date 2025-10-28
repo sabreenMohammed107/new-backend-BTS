@@ -16222,6 +16222,20 @@ font-weight: 900;
   background-size: cover;
   background-position: center;
 }
+#terms-conditions-page  .main-course-bg-header {
+    position: relative;
+    background-image: url(../img/bg/servics-bg.png);
+    height: 270px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+  }
+  #terms-conditions-page  .main-course-bg-header .course-main-title h2 {
+    color: #fff;
+    font-size: 3.4375rem;
+  }
 #join-team-page  .main-course-title-and-details {
   text-align: center;
   padding: 50px 0;

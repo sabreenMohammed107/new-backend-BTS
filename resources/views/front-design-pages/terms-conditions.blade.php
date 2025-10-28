@@ -12,7 +12,7 @@
     }
 
     .terms-content h3 {
-        color: #376eff ;
+        color: black ;
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: 30px;
@@ -24,7 +24,7 @@
     }
 
     .terms-content p {
-        color: #666;
+        color: black;
         line-height: 1.8;
         margin-bottom: 15px;
         text-align: justify;
@@ -36,7 +36,7 @@
     }
 
     .terms-content ul li {
-        color: #666;
+        color: black;
         line-height: 1.8;
         margin-bottom: 10px;
         padding-left: 20px;
@@ -45,25 +45,26 @@
 
     .terms-content ul li:before {
         content: "•";
-        color: #376eff ;
+        color: black ;
         font-weight: bold;
         position: absolute;
         left: 0;
     }
 
     .section-number {
-        color: #376eff ;
+        color: black ;
         font-weight: 700;
     }
 
     .intro-text {
         font-size: 1.1rem;
-        color: #333;
+        color: black;
         margin-bottom: 30px;
         padding: 20px;
         background-color: #f9f9ff;
         border-left: 4px solid #376eff ;
     }
+
 </style>
 
 <!-- Page Header -->
