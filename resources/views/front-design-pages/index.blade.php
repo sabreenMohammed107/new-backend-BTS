@@ -857,10 +857,11 @@
             height: 500px;
             object-fit: cover;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top left;
         }
 
         .methodology-main-image-wrapper:hover .methodology-main-image {
-            transform: scale(1.08);
+            transform: scale(1.15);
         }
 
         .image-overlay {
@@ -890,6 +891,13 @@
 
             .methodology-main-image {
                 height: 350px;
+                transform-origin: top left;
+                object-position: top left;
+            }
+
+            .methodology-main-image-wrapper:hover .methodology-main-image,
+            .methodology-main-image-wrapper:active .methodology-main-image {
+                transform: scale(1.15);
             }
 
             .methodology-image {
@@ -904,6 +912,13 @@
 
             .methodology-main-image {
                 height: 280px;
+                transform-origin: top left;
+                object-position: top left;
+            }
+
+            .methodology-main-image-wrapper:hover .methodology-main-image,
+            .methodology-main-image-wrapper:active .methodology-main-image {
+                transform: scale(1.15);
             }
 
             .methodology-image {
@@ -1232,7 +1247,7 @@
                                         </a>
                                     </h3>
                                     <?php $date = date_create($round->round_start_date); ?>
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
                                         <div class="white-color bottom-title">
                                             {{ $round->venue->venue_en_name }} -
                                             {{ $round->country->country_en_name }} |

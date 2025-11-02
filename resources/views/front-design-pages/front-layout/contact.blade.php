@@ -108,7 +108,7 @@
                                                     Hours</div>
                                                 <span>{{ $branch->working_hour ?? '' }}</span>
                                             </div>
-                                            <div class="col-12 col-lg-6 text-end">
+                                            <div class="col-12 col-lg-6 text-lg-end" style="padding-top: 17px;">
                                                 <a href="{{ route('contact-us') }}"
                                                     class="theme-btn-1 btn btn-effect-1 "><img
                                                         src="{{ asset('front-assets/img/icons/phone.png') }}"
