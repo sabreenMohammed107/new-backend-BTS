@@ -1447,6 +1447,13 @@
                 text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
                 transition: all 0.3s ease;
             }
+
+            /* Mobile responsive styles */
+            @media (max-width: 768px) {
+                .ltn__counterup-area.pt-115 {
+                    padding-top: 80px !important;
+                }
+            }
         </style>
         <div class="ltn__counterup-area bg-image pt-115 pb-70"
             data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
@@ -1454,7 +1461,7 @@
                 <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
                 </h1>
                 <span class="col-12 col-md-8  fnt-siz-sm g-clr spn">{!! $homeAccreditation->details !!}</span>
-                <div class="col-12 text-center pt-3">
+                <div class="col-12 text-center pt-3" style="padding-top: 35px; margin-top: 70px;">
 
                     <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;"
                         class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
