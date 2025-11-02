@@ -21,36 +21,35 @@ class CategoryController extends Controller
         return view('front-design-pages.category', compact('category'));
 
     }
-     public function course($id)
-    {
+   public function course($id)
+{
+    $subcategory_id = $id;
+    $now_date = now();
 
-        $subcategory_id = $id;
-        $now_date = now();
+    $filters = Round::select('rounds.*')
+        ->with(['course','venue','country'])
+        ->join('courses', 'courses.id', '=', 'rounds.course_id')
+        ->where(function ($query) use ($now_date) {
+            $query->where('rounds.round_start_date', '>', $now_date)
+                ->orWhereNull('rounds.round_start_date');
+        })
+        ->where('rounds.active', 1);
 
-        $filters = Round::with(['course', 'venue', 'country'])
-            ->join('courses', 'courses.id', '=', 'rounds.course_id')
-            ->where(function ($query) use ($now_date) {
-                $query->where('rounds.round_start_date', '>', $now_date)
-                    ->orWhereNull('rounds.round_start_date');
-            })
-            ->where('rounds.active', '=', 1);
-
-        if (!empty($subcategory_id)) {
-            $filters->where('courses.course_sub_category_id', '=', $subcategory_id);
-        }
-                $filters->orderBy('courses.course_en_name');
-        $filtered = $filters->paginate(15);
-        $total = $filtered->total();
-         $subCategory = CourseSubCategory::find($id);
-          $category =null;
-         if( $subCategory){
-          $category = CourseCategory::where("id",'=',$subCategory->course_category_id)->first();
-
-         }
-        //  dd($filtered);
-        return view('front-design-pages.courseCategory', compact(
-            'filtered','category','subCategory',
-            'total',
-        ));
+    if (!empty($subcategory_id)) {
+        $filters->where('courses.course_sub_category_id', $subcategory_id);
     }
+
+    $filters->orderBy('courses.course_en_name');
+
+    $filtered = $filters->distinct()->paginate(15); // important
+
+    $total = $filtered->total();
+    $subCategory = CourseSubCategory::find($id);
+    $category = $subCategory ? CourseCategory::find($subCategory->course_category_id) : null;
+
+    return view('front-design-pages.courseCategory', compact(
+        'filtered','category','subCategory','total'
+    ));
+}
+
 }
