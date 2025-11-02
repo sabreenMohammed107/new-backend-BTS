@@ -108,6 +108,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
+
                       <label class="form-check-label" for="exampleCheck1"><a href="{{url('/terms-conditions')}}" target="blank" style="color:#4169E1">Terms & Conditions of Registration</a></label>
                       <span style="color:red;display:block" class="error-message"> </span>
                     </div>
