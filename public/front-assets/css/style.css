@@ -15351,7 +15351,7 @@ body {
 }
 #single-course-page .main-course-bg-header {
   position: relative;
-  background-image: url("../img/bg/Single Course.png");
+  background-image: url(../img/bg/servics-bg.png);
   height: 270px;
   background-size: cover;
   background-position: center;

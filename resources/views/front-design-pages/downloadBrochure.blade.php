@@ -102,15 +102,17 @@
                 <div class="row">
                   <div class="col-md-6 d-flex align-items-center">
                     <div class="form-check">
+                        {{--  <div class="form-group">
+                            <label class="form-check-label" for="exampleCheck1">Terms & Conditions of Registration</a></label>
+                            <span style="color:red;display:block" class="error-message"> </span>
+                          </div>  --}}
                       <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">I accept the Terms &amp; Conditions*</label>
+                      <label class="form-check-label" for="exampleCheck1"><a href="{{url('/conditions')}}" target="blank" style="color:#4169E1">I accept the Terms &amp; Conditions * </a></label>
+
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="form-check-label" for="exampleCheck1"><a href="{{url('/conditions')}}" target="blank" style="color:#4169E1">Terms & Conditions of Registration</a></label>
-                      <span style="color:red;display:block" class="error-message"> </span>
-                    </div>
+
                   </div>
                 </div>
                 <div id="alertDivDanger" class="alert alert-danger alert-block" style="display:none">
@@ -144,14 +146,21 @@
                                 </button>
 
                             </div>
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label>Enter Captcha*</label>
+                            <div class="form-group">
+                                    <label>Enter Captcha*</label>
                             <input id="captcha" type="text" class="form-control" name="captcha">
                             @error('captcha')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
+                            </div>
+
+
+                            
+
+                        </div>
+
+                        <div class="form-group col-lg-6">
+
                         </div>
                     </div>
                     <a id="downloadButton" class="theme-btn-1 btn btn-effect-1" style="background-color: #376EFF;">Submit</a>
