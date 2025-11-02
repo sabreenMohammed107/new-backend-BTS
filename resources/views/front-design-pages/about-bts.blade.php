@@ -144,7 +144,7 @@
         border-radius: 15px;
         transition: all 0.3s ease;
         position: relative;
-        overflow: hidden;
+        {{--  overflow: hidden;  --}}
         border: 2px solid transparent;
         height: 100%;
     }
