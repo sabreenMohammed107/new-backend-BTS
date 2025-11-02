@@ -73,6 +73,8 @@
     .card-offer {
         padding: 25px;
         transition: all 0.3s ease;
+        display: flex;
+        height: 100%;
     }
 
     .card-offer .card-data {
@@ -82,6 +84,10 @@
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .card-offer .card-data::before {
@@ -118,6 +124,8 @@
 
     .card-offer .card-data .offer-title-icon {
         transition: transform 0.3s ease;
+        width: 35px;
+        height: 35px;
     }
 
     .card-offer:hover .card-data .offer-title-icon {
@@ -127,10 +135,21 @@
     .card-offer .card-data p {
         font-size: smaller;
         transition: color 0.3s ease;
+        flex-grow: 1;
     }
 
     .card-offer:hover .card-data p {
         color: #333;
+    }
+
+    /* Ensure equal height for offer cards row */
+    .best-offers-section .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .best-offers-section .row > [class*='col-'] {
+        display: flex;
     }
 
     /* Target BTS Card Hover Effects */
@@ -631,7 +650,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/grommet-icons_performance.png') }}" alt="" class="offer-title-icon"> {{ $offers[8]->title }} </h4>
+                <h4> <img width="35" height="35"  src="{{ asset('front-assets/img/icons/grommet-icons_performance.png') }}" alt="" class="offer-title-icon"> {{ $offers[8]->title }} </h4>
                 <p>{{ $offers[8]->description }}</p>
               </div>
             </div>
