@@ -358,6 +358,9 @@
             min-height: 180px;
         }
     }
+    .card-data p{
+        font-size: 16px !important;
+    }
     </style>
 @endsection
 

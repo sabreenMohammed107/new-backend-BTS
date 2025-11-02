@@ -1326,7 +1326,7 @@
                                     </ul>
                                 </a>
                             </div>
-                            <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400">
+                            <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400" >
                                 {{ $testimonial->reviewer_text }}
                             </h3>
                         </div>
