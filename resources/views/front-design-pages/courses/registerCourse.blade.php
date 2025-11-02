@@ -317,9 +317,9 @@
                             <label for="fax" class="form-label required" style="padding-top: 6px;"> I accept the
                                 Terms & Conditions</label>
                         </div>
-                        <p class="termsAndConditio">
+                        <a href="{{ route('terms-conditions') }}" class="termsAndConditio">
                             Terms & Conditions of Registration
-                        </p>
+                        </a>
                         <div class="row mb-2">
                             <div class="form-group col-lg-6">
                                 <label>Captcha*</label>

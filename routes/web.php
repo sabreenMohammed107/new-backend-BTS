@@ -88,6 +88,9 @@ Route::prefix('/')->group(function () {
     Route::get('/thanks', function () {
         return view('front-design-pages.thanks');
     })->name('thanks');
+    Route::get('terms-conditions', function () {
+        return view('front-design-pages.terms-conditions');
+    })->name('terms-conditions');
     Route::get('accreditations', [HomeController::class, 'accreditations'])->name('accreditations');
     Route::get('contact-us', [HomeController::class, 'contact'])->name('contact-us');
     Route::get('course-registration', function () {

@@ -857,10 +857,11 @@
             height: 500px;
             object-fit: cover;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top left;
         }
 
         .methodology-main-image-wrapper:hover .methodology-main-image {
-            transform: scale(1.08);
+            transform: scale(1.15);
         }
 
         .image-overlay {
@@ -890,6 +891,13 @@
 
             .methodology-main-image {
                 height: 350px;
+                transform-origin: top left;
+                object-position: top left;
+            }
+
+            .methodology-main-image-wrapper:hover .methodology-main-image,
+            .methodology-main-image-wrapper:active .methodology-main-image {
+                transform: scale(1.15);
             }
 
             .methodology-image {
@@ -904,6 +912,13 @@
 
             .methodology-main-image {
                 height: 280px;
+                transform-origin: top left;
+                object-position: top left;
+            }
+
+            .methodology-main-image-wrapper:hover .methodology-main-image,
+            .methodology-main-image-wrapper:active .methodology-main-image {
+                transform: scale(1.15);
             }
 
             .methodology-image {
@@ -1232,7 +1247,7 @@
                                         </a>
                                     </h3>
                                     <?php $date = date_create($round->round_start_date); ?>
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
                                         <div class="white-color bottom-title">
                                             {{ $round->venue->venue_en_name }} -
                                             {{ $round->country->country_en_name }} |
@@ -1447,6 +1462,13 @@
                 text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
                 transition: all 0.3s ease;
             }
+
+            /* Mobile responsive styles */
+            @media (max-width: 768px) {
+                .ltn__counterup-area.pt-115 {
+                    padding-top: 80px !important;
+                }
+            }
         </style>
         <div class="ltn__counterup-area bg-image pt-115 pb-70"
             data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
@@ -1454,7 +1476,7 @@
                 <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
                 </h1>
                 <span class="col-12 col-md-8  fnt-siz-sm g-clr spn">{!! $homeAccreditation->details !!}</span>
-                <div class="col-12 text-center pt-3">
+                <div class="col-12 text-center pt-3" style="padding-top: 35px; margin-top: 70px;">
 
                     <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;"
                         class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>

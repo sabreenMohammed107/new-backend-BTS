@@ -4,15 +4,15 @@
     <!-- ltn__header-middle-area start -->
     <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white ltn__logo-right-menu-option plr--9---">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-auto">
                     <div class="site-logo-wrap">
                         <div class="site-logo">
                             <a href="{{ url('/') }}"><img style="padding:10px 0;" width="135" src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
                         </div>
                     </div>
                 </div>
-                <div class="col header-menu-column menu-color-white---">
+                <div class="col-auto header-menu-column menu-color-white---">
                     <div class="header-menu d-none d-xl-block">
                         <nav>
                             <div class="ltn__main-menu">
@@ -61,9 +61,9 @@
                         </nav>
                     </div>
                 </div>
-                <div class="ltn__header-options ltn__header-options-2 mb-sm-20">
+                <div class="col-auto d-xl-none">
                     <!-- Mobile Menu Button -->
-                    <div class="mobile-menu-toggle d-xl-none">
+                    <div class="mobile-menu-toggle">
                         <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
                             <svg viewBox="0 0 800 600">
                                 <path

@@ -69,6 +69,136 @@
         transform: scale(1.05);
     }
 
+    /* Card Offer Hover Effects */
+    .card-offer {
+        padding: 25px;
+        transition: all 0.3s ease;
+        display: flex;
+        height: 100%;
+    }
+
+    .card-offer .card-data {
+        background-color: #f5f7fb;
+        padding: 20px 15px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-offer .card-data::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(131, 185, 251, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .card-offer:hover .card-data::before {
+        left: 100%;
+    }
+
+    .card-offer:hover {
+        transform: translateY(-10px);
+    }
+
+    .card-offer:hover .card-data {
+        background-color: #e8f0fe;
+        box-shadow: 0 15px 35px rgba(131, 185, 251, 0.3);
+    }
+
+    .card-offer .card-data h4 {
+        transition: color 0.3s ease;
+    }
+
+    .card-offer:hover .card-data h4 {
+        color: #1e73be;
+    }
+
+    .card-offer .card-data .offer-title-icon {
+        transition: transform 0.3s ease;
+        width: 35px;
+        height: 35px;
+    }
+
+    .card-offer:hover .card-data .offer-title-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .card-offer .card-data p {
+        font-size: smaller;
+        transition: color 0.3s ease;
+        flex-grow: 1;
+    }
+
+    .card-offer:hover .card-data p {
+        color: #333;
+    }
+
+    /* Ensure equal height for offer cards row */
+    .best-offers-section .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .best-offers-section .row > [class*='col-'] {
+        display: flex;
+    }
+
+    /* Target BTS Card Hover Effects */
+    .target-bts-card {
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .target-bts-card .card-data {
+        background-color: #f8f9fa;
+        padding: 30px 20px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+    .target-bts-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .target-bts-card:hover .card-data {
+        background-color: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .target-bts-card .card-data h4 {
+        transition: color 0.3s ease;
+    }
+
+    .target-bts-card:hover .card-data h4 {
+        color: #1e73be;
+    }
+
+    .target-bts-card .card-data .target-title-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .target-bts-card:hover .card-data .target-title-icon {
+        transform: scale(1.1);
+    }
+
+    .target-bts-card .card-data p {
+        transition: color 0.3s ease;
+    }
+
+    .target-bts-card:hover .card-data p {
+        color: #555;
+    }
+
     /* Video Container Styles */
     .video-container {
         position: relative;
@@ -523,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="card-offer col-12 col-md-6 col-lg-4">
               <div class="card-data">
-                <h4> <img src="{{ asset('front-assets/img/icons/grommet-icons_performance.png') }}" alt="" class="offer-title-icon"> {{ $offers[8]->title }} </h4>
+                <h4> <img width="35" height="35"  src="{{ asset('front-assets/img/icons/grommet-icons_performance.png') }}" alt="" class="offer-title-icon"> {{ $offers[8]->title }} </h4>
                 <p>{{ $offers[8]->description }}</p>
               </div>
             </div>
