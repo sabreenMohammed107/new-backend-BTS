@@ -729,7 +729,7 @@
                             <h2 class="methodology-title">{{ $methodologies->small_description }}</h2>
                             <div class="title-underline"></div>
                         </div>
-                        <p class="methodology-description">{!! $methodologies->details !!}</p>
+                        <p class="methodology-description" style="font-size: 16px !important">{!! $methodologies->details !!}</p>
 
                         <!-- Small Images Grid -->
                         <div class="methodology-images-grid mt-4">
@@ -1341,7 +1341,7 @@
                                     </ul>
                                 </a>
                             </div>
-                            <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400">
+                            <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400" >
                                 {{ $testimonial->reviewer_text }}
                             </h3>
                         </div>
@@ -1475,7 +1475,7 @@
             <div class="row justify-content-center text-center" id="accreditation-section-style">
                 <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
                 </h1>
-                <span class="col-12 col-md-8  fnt-siz-sm g-clr spn">{!! $homeAccreditation->details !!}</span>
+                <span class="col-12 col-md-8  fnt-siz-sm g-clr spn" style="font-size: 16px !important">{!! $homeAccreditation->details !!}</span>
                 <div class="col-12 text-center pt-3" style="padding-top: 35px; margin-top: 70px;">
 
                     <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;"
