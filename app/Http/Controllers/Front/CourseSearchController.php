@@ -343,7 +343,7 @@ public function registerApplicantsOnline(Request $request)
     {
         $now_date = now();
 
-        return view('front-design-pages.cant-found-my-course');
+        return view('front-design-pages.tailor-your-course');
     }
 
     public function submitTailor(Request $request)

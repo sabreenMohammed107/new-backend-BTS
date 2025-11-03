@@ -1,5 +1,5 @@
 @extends('front-design-pages.front-layout.app')
-@section('page-id' , 'cant-found-my-course-page')
+@section('page-id' , 'tailor-your-course-page')
 @section('page-content')
 <style>
     .main-course-bg-header {

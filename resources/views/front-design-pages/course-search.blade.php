@@ -588,7 +588,7 @@
                         <div class="filter-buttons-container">
                             <button class="filter-btn w-100" type="submit">Filter</button>
                             <button class="tailor-btn w-100 mt-3" type="button"
-                                onclick="window.location.href='{{ route('course-no-result') }}'">Tailor Your
+                                onclick="window.location.href='{{ route('tailor-your-course') }}'">Tailor Your
                                 Course</button>
                         </div>
                     </form>
@@ -713,7 +713,7 @@
                                 <div class="col-12 text-center">
                                     <h3>No courses found matching your criteria.</h3>
                                     <p>Try adjusting your search filters or <a
-                                            href="{{ route('course-no-result') }}">request a tailor-made
+                                            href="{{ route('tailor-your-course') }}">request a tailor-made
                                             course</a>.</p>
                                 </div>
                                 @endif
