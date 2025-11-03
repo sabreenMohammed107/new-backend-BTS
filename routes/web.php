@@ -81,7 +81,7 @@ Route::prefix('/')->group(function () {
     Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
 
-    Route::get('/no-result', [CourseSearchController::class, 'tailorCourse'])->name('course-no-result');
+    Route::get('/tailor-your-course', [CourseSearchController::class, 'tailorCourse'])->name('tailor-your-course');
 
     Route::post('/submitTailor', [CourseSearchController::class, 'submitTailor'])->name('submitTailor');
 
