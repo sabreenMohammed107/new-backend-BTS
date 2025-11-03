@@ -333,6 +333,33 @@
         margin: 0;
         opacity: 0.9;
     }
+
+    /* Image Container Styles for Client Logos */
+    .img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Mobile View - Center Images */
+    @media (max-width: 768px) {
+        .img-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .img-container img {
+            margin: 0 auto;
+            display: block;
+        }
+    }
 </style>
 @endsection
 
