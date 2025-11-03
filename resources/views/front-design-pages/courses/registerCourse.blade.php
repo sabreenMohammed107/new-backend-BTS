@@ -8,9 +8,20 @@
         display:none;
     }
     .ltn__product-item {
-        height: 202px !important;
+        height: 280px !important;
         width:100%;
     }
+
+    .ltn__product-item-3 .course-badge {
+        padding: 20px !important;
+    }
+
+    .ltn__product-item-3 .course-badge h3 {
+        font-size: 1.075rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.4;
+    }
+
     .courseCode {
         background-color: #F5F7FB;
         color: #000;
