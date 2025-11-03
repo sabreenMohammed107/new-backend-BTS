@@ -3,6 +3,12 @@
 
 @section('page-id' , 'soft-skills-page')
 @section('page-content')
+
+<style>
+.ltn__product-tab-area .section-title-area h5 {
+    text-align: justify !important;
+}
+</style>
     <div class="main-course-bg-header" style="background-image: url('{{ $category->category_image ? asset($category->category_image) : asset('front-assets/img/bg/servics-bg.png') }}');">
       <div class="course-main-title text-center">
         <h2>{{ $category->category_en_name }}</h2>
@@ -13,12 +19,12 @@
 
     <!-- FEATURE AREA START ( Feature - 3) -->
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2">
 
-              <h5 class="col-12 txt-just  text-left">{{ $category->category_en_description }}</h5>
+              <h5 class="col-12 txt-just text-left m-auto p-0" style="font-weight: 400!important; color: black; font-size: 16px; padding-left: 0; font-family: 'Poppins', sans-serif;">{{ $category->category_en_description }}</h5>
 
             </div>
             <div class="row">

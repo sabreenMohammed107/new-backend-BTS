@@ -84,13 +84,11 @@
             </div>
         </div>
         <div class="form-check mt-4">
-            <input class="form-check-input" type="checkbox" value="" id="dataAgreement">
-            <label class="form-check-label small" for="dataAgreement">
-                I agree to the processing of my data for the purpose of this form
-            </label>
+            <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">I accept the <a href="{{ route('terms-conditions') }}" target="_blank" style="color: #007bff; text-decoration: underline;">Terms &amp; Conditions</a>*</label>
         </div>
         <div class="row mb-2">
-            <div class="form-group col-lg-6">
+            <div class="form-group col-lg-4 col-md-6">
                 <label>Captcha*</label>
                 <div class="captcha d-flex align-items-center gap-2">
                     <span id="captcha-img">{!! captcha_img('flat') !!}</span>
@@ -98,16 +96,15 @@
                         style="margin-left: 10px; padding: 6px 10px;">
                         <i class="fas fa-sync-alt"></i>
                     </button>
-
                 </div>
-            </div>
 
-            <div class="form-group col-lg-6">
-                <label>Enter Captcha*</label>
-                <input id="captcha" type="text" class="form-control" name="captcha">
-                @error('captcha')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
+                <div class="mt-3">
+                    <label>Enter Captcha*</label>
+                    <input id="captcha" type="text" class="form-control" name="captcha">
+                    @error('captcha')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
         </div>
         <div class="d-flex justify-content-between mt-4">

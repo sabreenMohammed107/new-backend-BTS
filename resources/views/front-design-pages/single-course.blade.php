@@ -54,6 +54,61 @@
         background-color: #6c757d;
     }
 
+    /* Related Courses Product Card Hover Effects */
+    .ltn__product-item-3 .product-img.shine::before {
+        animation: none;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+        content: "";
+        display: block;
+        height: 100%;
+        left: -75%;
+        position: absolute;
+        top: 0;
+        transform: skewX(-25deg);
+        width: 50%;
+        z-index: 2;
+    }
+
+    .ltn__product-item-3 .product-img.shine:hover::before {
+        animation: shine 0.75s ease-in-out;
+    }
+
+    @keyframes shine {
+        0% {
+            left: -75%;
+        }
+        100% {
+            left: 125%;
+        }
+    }
+
+    /* White underline on course title when hovering card */
+    .ltn__product-item:hover .course-badge h3 a {
+        text-decoration: underline;
+        text-decoration-color: white;
+        text-underline-offset: 4px;
+    }
+
+    /* Smooth transition for title link */
+    .course-badge h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Remove pointer cursor from product-img since it's not fully clickable */
+    .ltn__product-item-3 .product-img {
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Ensure title and arrow are clearly clickable */
+    .course-badge h3 a,
+    .icon-arrow a {
+        cursor: pointer;
+    }
+
     /* Course Rounds Table Styles */
     .table-single-course-details {
         background: #fff;
@@ -1299,8 +1354,7 @@
                                                     </div>
 
 
-                                                    <button type="submit"
-                                                        class="mt-40 text-uppercase genric-btn primary text-center">Submit</button>
+                                                    <button type="submit" class="btn btn-primary" style="border-radius: 6px;margin-top:15px">Submit</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -1520,16 +1574,17 @@
             <!-- Blog Item -->
             <div class="col-lg-12 ">
                 <div class="ltn__product-item ltn__product-item-3 text-left">
-                    <div class="product-img" style='height: 100%;'>
-                        <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}"
-                            class="img-container"><img height="100%"
-                                src="{{ asset('uploads/courses') }}/{{ $related_course->relatedcourse->course_image_thumbnail }}"
-                                alt="{{ $related_course->relatedcourse->course_en_name }}"></a>
+                    <div class="product-img shine" style='height: 100%;'>
+                        <img height="100%"
+                            src="{{ asset('uploads/courses') }}/{{ $related_course->relatedcourse->course_image_thumbnail }}"
+                            alt="{{ $related_course->relatedcourse->course_en_name }}">
                         <div class="course-badge p-3">
                             <div class="row">
                                 <div class="col-12 title-section">
                                     <h3 class='white-color'>
-                                        {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
+                                        <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
+                                            {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
+                                        </a>
                                     </h3>
                                     <p class='white-color'>
                                         {{ Str::limit($related_course->relatedcourse->course_en_desc, 200, ' ...') }}

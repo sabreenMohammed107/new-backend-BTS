@@ -35,6 +35,9 @@
      textarea {
          min-height: 95px;
         }
+     .ltn__product-tab-area .section-title-area span {
+         text-align: justify !important;
+     }
     </style>
     <!-- Add Tom Select CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
@@ -54,7 +57,7 @@
               <h4 class="first-title">Are you highly qualified, experienced and respected in your field of technical
                 expertise ?</h4>
               <h4 class="second-title">Then, YOU ARE WHO WE'RE LOOKING FOR!</h4>
-              <span class="col-12 txt-just  col-md-8 f-s-13 m-auto px-0">
+              <span class="col-12 txt-just col-md-8 m-auto p-0" style="color: black; font-size: 16px; padding-left: 0; font-family: 'Poppins', sans-serif;">
                 At BTS, commitment to excellence is at the core of everything we do and we are always looking to welcome
                 motivated, talented and experienced professionals to support our growth. If you have the passion to
                 deliver training courses, seminars and workshops with the highest standards, we invite you to view our

@@ -417,6 +417,13 @@
     .ltn__feature-area.search-form-top-slider .ts-wrapper.single {
         height: 100% !important;
     }
+
+    .methodology-content span {
+        color: black !important;
+        font-size: 16px !important;
+        padding-left: 0 !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1 pt-0" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100vh !important;">
@@ -729,7 +736,7 @@
                             <h2 class="methodology-title">{{ $methodologies->small_description }}</h2>
                             <div class="title-underline"></div>
                         </div>
-                        <p class="methodology-description" style="font-size: 16px !important">{!! $methodologies->details !!}</p>
+                        <p class="methodology-description" style="color: black; font-size: 16px !important; padding-left: 0; font-family: 'Poppins', sans-serif; text-align: justify;">{!! $methodologies->details !!}</p>
 
                         <!-- Small Images Grid -->
                         <div class="methodology-images-grid mt-4">

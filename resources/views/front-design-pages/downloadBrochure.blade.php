@@ -92,62 +92,23 @@
                     </div>
                   </div>
                 </div>
-                <hr>
-                <div>
-                    <h6></h6>
-                </div>
-                <div class=" form-inline" style="padding-bottom:10px">
-                    <h5>Terms &amp; Conditions</h5>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="form-check">
-                      <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">I accept the Terms &amp; Conditions*</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
 
-                      <label class="form-check-label" for="exampleCheck1"><a href="{{url('/terms-conditions')}}" target="blank" style="color:#4169E1">Terms & Conditions of Registration</a></label>
-                      <span style="color:red;display:block" class="error-message"> </span>
-                    </div>
-                  </div>
+                <div class="form-check mt-4">
+                    <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">I accept the <a href="{{ route('terms-conditions') }}" target="_blank" style="color: #007bff; text-decoration: underline;">Terms &amp; Conditions</a>*</label>
                 </div>
-                <div id="alertDivDanger" class="alert alert-danger alert-block" style="display:none">
-
-                    <strong><span style="color:red;display:block" class="error-message">Please accept conditions </span>
-                    </strong>
-                </div>
-                <div id="alertDivMail" class="alert alert-danger alert-block" style="display:none">
-
-                    <strong><span style="color:red;display:block" class="error-message">You cannot use free email address!</span>
-                    </strong>
-                </div>
-                <div id="alertDivValid" class="alert alert-danger alert-block" style="display:none">
-
-                    <strong><span style="color:red;display:block" class="error-message">Please enter a valid Company email address!</span>
-                    </strong>
-                </div>
-                <div id="alertDivinfo" class="alert alert-info alert-block" style="display:none">
-
-                    <strong><span style="color:black;display:block" class="error-message">Thanks; your request has been submitted successfully ! </span>
-                    </strong>
-                </div>
-
-                    <div class="row mb-2">
-                        <div class="form-group col-lg-6">
-                            <label>Captcha*</label>
-                            <div class="captcha d-flex align-items-center gap-2">
-                                <span id="captcha-img">{!! captcha_img('flat') !!}</span>
-                                <button type="button" class="btn btn-secondary btn-sm" id="refresh-captcha" style="margin-left: 10px; padding: 6px 10px;">
-                                    <i class="fas fa-sync-alt"></i>
-                                </button>
-
-                            </div>
+                <div class="row mb-2">
+                    <div class="form-group col-lg-4 col-md-6">
+                        <label>Captcha*</label>
+                        <div class="captcha d-flex align-items-center gap-2">
+                            <span id="captcha-img">{!! captcha_img('flat') !!}</span>
+                            <button type="button" class="btn btn-secondary btn-sm" id="refresh-captcha"
+                                style="margin-left: 10px; padding: 6px 10px;">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
                         </div>
 
-                        <div class="form-group col-lg-6">
+                        <div class="mt-3">
                             <label>Enter Captcha*</label>
                             <input id="captcha" type="text" class="form-control" name="captcha">
                             @error('captcha')
@@ -155,6 +116,7 @@
                             @enderror
                         </div>
                     </div>
+                </div>
                     <a id="downloadButton" class="theme-btn-1 btn btn-effect-1" style="background-color: #376EFF;">Submit</a>
             </form>
           </div>

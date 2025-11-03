@@ -8,6 +8,10 @@
     #join-team-page .nice-select, #join-team-page .form-container input{
     background-color: #efefef !important;
 }
+
+.ltn__product-tab-area .section-title-area span {
+    text-align: justify !important;
+}
 </style>
     <div class="main-course-bg-header">
     <div class="course-main-title text-center">
@@ -22,7 +26,7 @@
         <div class="col-lg-12">
             <div class="section-title-area ltn__section-title-2 text-left">
 
-            <span class="col-12 txt-just  col-md-8 g-clr text-left f-s-13 m-auto p-0" style="color: black">
+            <span class="col-12 txt-just  col-md-8 g-clr text-left m-auto p-0" style="color: black; font-size: 16px; padding-left: 0; font-family: 'Poppins', sans-serif;">
                 We are always interested to meet potential team members to join our fast-growing, dynamic team of professionals in order to continue providing a personalized, efficient, professional and confidential service to our increasing portfolio of clients. Our people are undoubtedly our greatest asset and we pride ourselves on creating an environment where our team look forward to come to work every day. While experience is not a requirement (for certain positions), preference will be given to those applicants who are interested in a challenge, who are results and target-oriented besides wanting to form part of our dynamic team and fast- growing business. Read on below to find out more about what our positions entail and what skills are required.
             </span>
 

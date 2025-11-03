@@ -143,13 +143,32 @@
     }
 
     /* Ensure equal height for offer cards row */
-    .best-offers-section .row {
+    .best-offers-section .container-fluid > .row {
         display: flex;
         flex-wrap: wrap;
+        align-items: stretch;
     }
 
-    .best-offers-section .row > [class*='col-'] {
+    .best-offers-section .card-offer {
         display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .best-offers-section .card-data {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 230px;
+    }
+
+    /* Make only card-offer columns equal height */
+    .best-offers-section .card-offer.col-12,
+    .best-offers-section .card-offer.col-md-6,
+    .best-offers-section .card-offer.col-lg-4 {
+        display: flex;
+        align-items: stretch;
     }
 
     /* Target BTS Card Hover Effects */
