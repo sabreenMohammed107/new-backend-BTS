@@ -1,16 +1,10 @@
 <?php
-
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\CourseCategory;
 use App\Models\CourseSubCategory;
-use App\Models\ImageGallery;
-use App\Models\Round;
-use App\Models\StaticPage;
-use App\Models\Testmonials;
-use Illuminate\Http\Request;
-use PHPUnit\Event\Code\Test;
 
 class CategoryController extends Controller
 {
@@ -21,35 +15,38 @@ class CategoryController extends Controller
         return view('front-design-pages.category', compact('category'));
 
     }
-   public function course($id)
-{
-    $subcategory_id = $id;
-    $now_date = now();
+    public function course($id)
+    {
+        $subcategory_id = $id;
+        $now_date       = now();
+        $now_date       = now();
 
-    $filters = Round::select('rounds.*')
-        ->with(['course','venue','country'])
-        ->join('courses', 'courses.id', '=', 'rounds.course_id')
-        ->where(function ($query) use ($now_date) {
-            $query->where('rounds.round_start_date', '>', $now_date)
-                ->orWhereNull('rounds.round_start_date');
-        })
-        ->where('rounds.active', 1);
+        $courses = Course::with(['rounds' => function ($q) use ($now_date) {
+            $q->where(function ($query) use ($now_date) {
+                $query->where('round_start_date', '>', $now_date)
+                    ->orWhereNull('round_start_date');
+            })->where('active', 1);
+        }])
+            ->whereHas('rounds', function ($q) use ($now_date) {
+                $q->where('round_start_date', '>', $now_date)
+                    ->orWhereNull('round_start_date')
+                    ->where('active', 1);
+            });
 
-    if (!empty($subcategory_id)) {
-        $filters->where('courses.course_sub_category_id', $subcategory_id);
+        if (! empty($subcategory_id)) {
+            $courses->where('course_sub_category_id', $subcategory_id);
+        }
+
+        $courses = $courses->orderBy('course_en_name')->paginate(15);
+
+        $total = $courses->total();
+
+        $subCategory = CourseSubCategory::find($id);
+        $category    = $subCategory ? CourseCategory::find($subCategory->course_category_id) : null;
+// dd($filtered);
+        return view('front-design-pages.courseCategory', compact(
+            'courses', 'category', 'subCategory', 'total'
+        ));
     }
-
-    $filters->orderBy('courses.course_en_name');
-
-    $filtered = $filters->distinct()->paginate(15); // important
-
-    $total = $filtered->total();
-    $subCategory = CourseSubCategory::find($id);
-    $category = $subCategory ? CourseCategory::find($subCategory->course_category_id) : null;
-
-    return view('front-design-pages.courseCategory', compact(
-        'filtered','category','subCategory','total'
-    ));
-}
 
 }

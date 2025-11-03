@@ -23,20 +23,20 @@
                         <div class="container">
                             <div class="row">
 
-                                @if(isset($filtered) && $filtered->count() > 0)
-                                    @foreach ($filtered as $round)
-                                        <div class="col-12 col-md-6 col-lg-4">
-                                            <a href="{{ url('courseDetails/' . $round->course->id) }}">
-                                                <div class="service-card">
-                                                    <img src="{{ asset('uploads/courses/' . $round->course->course_image_thumbnail) }}"
-                                                         alt="{{ $round->country->country_en_name }}">
-                                                    <div class="service-overlay">
-                                                        <h3 class="service-title">{{ $round->course->course_en_name }}</h3>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    @endforeach
+                                @if(isset($courses) && $courses->count() > 0)
+           @foreach($courses as $course)
+    <div class="col-12 col-md-6 col-lg-4">
+        <a href="{{ url('courseDetails/' . $course->id) }}">
+            <div class="service-card">
+                <img src="{{ asset('uploads/courses/' . $course->course_image_thumbnail) }}" alt="">
+                <div class="service-overlay">
+                    <h3 class="service-title">{{ $course->course_en_name }}</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+@endforeach
+
                                 @else
                                     <div class="col-12">
                                         <div class="no-results-message text-center py-5">
