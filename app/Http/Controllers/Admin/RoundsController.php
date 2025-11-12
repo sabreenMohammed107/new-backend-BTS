@@ -44,11 +44,11 @@ class RoundsController extends Controller
     public function store(Request $request)
     {
         $input = $request->except(['_token']);
-        if ($request->active) {
+        // if ($request->active) {
             $input['active'] = 1;
-        } else {
-            $input['active'] = 0;
-        }
+        // } else {
+        //     $input['active'] = 0;
+        // }
         $maxValue = Round::where('course_id', '=', $request->input('course_id'))->orderBy('id', 'desc')->value('round_code');
         $cors = Course::where('id', '=', $request->input('course_id'))->first();
         $max = substr($maxValue, strrpos($maxValue, '-') + 1);
@@ -89,11 +89,11 @@ class RoundsController extends Controller
             'show_home_order' => $request->input('show_home_order'),
         ];
 
-        if ($request->active) {
+        // if ($request->active) {
             $data['active'] = 1;
-        } else {
-            $data['active'] = 0;
-        }
+        // } else {
+        //     $data['active'] = 0;
+        // }
         if ($request->input('course_id')) {
 
             $data['course_id'] = $request->input('course_id');
