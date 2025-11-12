@@ -163,7 +163,7 @@
                                         <!--end::Label-->
                                         <!--begin::Input-->
                                         <?php $date = date_create($row->round_end_date) ?>
-                                        <input type="date" name="round_end_date" value="{{ date_format($date,'Y-m-d') }}" class="form-control @error('round_end_date') is-round_start_date @enderror"  >
+                                        <input type="date" name="round_end_date" value="{{ date_format($date,'Y-m-d') }}" class="form-control @error('round_end_date') is-round_end_date @enderror"  >
 
 
                                         @error('round_end_date')

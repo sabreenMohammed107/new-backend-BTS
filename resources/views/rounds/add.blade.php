@@ -142,7 +142,7 @@
                                         <label class="required form-label">End date</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="date" name="round_start_date" class="form-control @error('round_end_date') is-round_start_date @enderror"  >
+                                        <input type="date" name="round_end_date" class="form-control @error('round_end_date') is-round_end_date @enderror"  >
 
 
                                         @error('round_end_date')
