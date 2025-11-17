@@ -231,10 +231,13 @@
                             </div>
                         </div>
                         <div class="row mb-2">
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-12">
                                 <label>Captcha*</label>
-                                <div class="captcha d-flex align-items-center gap-2">
-                                    <span id="captcha-img">{!! captcha_img('math') !!}</span>
+                                <div class="captcha d-flex align-items-center">
+                                   <span id="captcha-img" style="display:inline-block; width:auto; height:auto;">
+    {!! captcha_img('math') !!}
+</span>
+
                                     <button type="button" class="btn btn-secondary btn-sm" id="refresh-captcha"
                                         style="margin-left: 10px; padding: 6px 10px;">
                                         <i class="fas fa-sync-alt"></i>

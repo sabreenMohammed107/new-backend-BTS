@@ -157,7 +157,7 @@ class CourseSearchController extends Controller
 
     public function courseDetails($course_id)
     {
-
+session()->forget('captcha');
         $now_date = now();
         $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
         $rounds = $course->rounds()->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->get();
@@ -207,10 +207,12 @@ class CourseSearchController extends Controller
         $venues = Venue::all();
         $countries = Country::all();
         $saluts = ApplicantSalut::all();
+        session()->forget('captcha');
         return view('front-design-pages.courses.requestInHouse', compact('course', 'countries', 'venues', 'saluts', 'rounds'))->with('message', 'Thanks; your request has been submitted successfully !');
     }
         public function requestOnline($course_id)
     {
+        session()->forget('captcha');
         $now_date = now();
         $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
         $rounds = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
@@ -222,6 +224,7 @@ class CourseSearchController extends Controller
  //form in tabs in single course inhouse
  public function registerApplicants(Request $request)
  {
+
     $validator = Validator::make($request->all(), [
         'captcha' => 'required'
     ]);
@@ -273,6 +276,7 @@ public function registerApplicantsOnline(Request $request)
 
     public function registerCourse($round_id)
     {
+        session()->forget('captcha');
         $now_date = now();
         $course = Round::where('id', '=', $round_id)->firstOrFail()->course;
         $course_rounds = $course->rounds()->with('course')->where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->get();
@@ -335,6 +339,7 @@ public function registerApplicantsOnline(Request $request)
 
     public function downloadBrochure($course_id)
     {
+        session()->forget('captcha');
         $countries = Country::all();
         $course = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
 
