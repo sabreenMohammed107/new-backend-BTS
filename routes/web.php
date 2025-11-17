@@ -104,7 +104,7 @@ Route::prefix('/')->group(function () {
     Route::get('course-search', [CourseSearchController::class, 'index'])->name('course-search');
     //captch
     Route::get('/refresh-captcha', function () {
-        return response()->json(['captcha' => captcha_img('flat')]);
+        return response()->json(['captcha' => captcha_img('math')]);
     });
     // Route::post('/registerApplicantsDawnload', [CourseSearchController::class, 'registerApplicantsDawnload'])->name('registerApplicantsDawnload');
     Route::get('/downloadBrochure/{course_id}', [CourseSearchController::class, 'downloadBrochure']);

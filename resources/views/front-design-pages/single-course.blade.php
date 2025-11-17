@@ -1332,7 +1332,7 @@
                                                         <div class="form-group col-lg-6">
                                                             <label>Captcha*</label>
                                                             <div class="captcha d-flex align-items-center gap-2">
-                                                                <span id="captcha-img">{!! captcha_img('flat')
+                                                                <span id="captcha-img">{!! captcha_img('math')
                                                                     !!}</span>
                                                                 <button type="button" class="btn btn-secondary btn-sm"
                                                                     id="refresh-captcha"

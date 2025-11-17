@@ -112,7 +112,8 @@
                                 <!--begin::Register Type-->
                                 <td>
                                     <span class="fw-bolder">
-                                        @php
+                                        {{ $row->type ?? '' }}
+                                        {{-- @php
                                             $registerTypes = [
                                                 0 => 'REGISTER ROUND',
                                                 1 => 'DOWNLOAD BROCHURE FOR COURSE',
@@ -121,7 +122,7 @@
                                                 4 => 'BEST OFFERS COURSE',
                                             ];
                                         @endphp
-                                        {{ $registerTypes[$row->applicant_type_id] ?? 'Unknown' }}
+                                        {{ $registerTypes[$row->applicant_type_id] ?? 'Unknown' }} --}}
                                     </span>
                                 </td>
                                 <!--end::Register Type-->

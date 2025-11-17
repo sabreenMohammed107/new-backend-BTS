@@ -299,6 +299,7 @@ public function registerApplicantsOnline(Request $request)
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
+         $applicant_data['course_id'] = $request->get('course_id');
         $applicant_data['salut_id'] = $request->get('salut_id');
         $applicant_data['name'] = $request->get('name');
         $applicant_data['country_id'] = $request->get('country_id');
