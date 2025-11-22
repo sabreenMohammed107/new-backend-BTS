@@ -9,7 +9,7 @@ class TailorCourse extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title',
+    'title',
     'city',
     'description',
     'course_date',

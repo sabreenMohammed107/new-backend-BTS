@@ -158,7 +158,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="fullName" class="form-label required">Full Name</label>
+                                <label for="fullName" class="form-label required">Full Name *</label>
                                 <input type="text" class="form-control" id="fullName" name="name"
                                     value="{{ old('name') }}" required>
                             </div>
@@ -170,21 +170,21 @@
                                     id="designation" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="company" class="form-label required">Company</label>
+                                <label for="company" class="form-label required">Company *</label>
                                 <input type="text" class="form-control" id="company" name="company"
                                     value="{{ old('company') }}" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="address" class="form-label required">Address</label>
-                                <input type="text" class="form-control" value="{{ old('address') }}" name="address"
-                                    id="address" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="phone" class="form-label required">Phone</label>
+                                <label for="phone" class="form-label required">Phone *</label>
                                 <input type="tel" class="form-control" name="phone" value="{{ old('phone') }}"
                                     id="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label required">Email *</label>
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                    id="email" required>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -209,18 +209,6 @@
                                             {{ $venue->venue_en_name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label required">Email</label>
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                    id="email" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="fax" class="form-label required">Fax</label>
-                                <input type="text" name="fax" value="{{ old('fax') }}" class="form-control"
-                                    id="fax" required>
                             </div>
                         </div>
                         <div class="row mb-3">

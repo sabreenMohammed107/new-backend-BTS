@@ -1,143 +1,135 @@
 @extends('front-design-pages.front-layout.app')
 @section('page-id' , 'tailor-your-course-page')
 @section('page-content')
+
 <style>
-    .main-course-bg-header {
-        background-image: url('{{ asset('front-assets/img/bg/servics-bg.png') }}');
-        position: relative;
-
-    height: 270px;
-    background-size: cover;
-    background-position: center;
-
-    }
-    .main-course-bg-header .course-main-title.text-center h2 {
-        color: #fff !important;
-        font-size: 55px;
-        padding-left: 30px;
-        position: absolute;
-        bottom: 50%;
-        left: 50%;
-        transform: translate(-50%, 50%);
-    }
+    .error-text { color: red; font-size: 14px; margin-top: 5px; }
+    .success-msg { background: #d4edda; padding: 12px; border-left: 5px solid #28a745; margin-bottom: 20px; }
 </style>
+
 <div class="main-course-bg-header">
-    <div class="course-main-title text-center" >
+    <div class="course-main-title text-center">
         <h2>Tailor Your Course</h2>
     </div>
 </div>
+
 <div class="container py-5">
-    @if ($message = Session::get('message'))
-            <div id="alertDiv" class="alert alert-info alert-block">
-                {{-- <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button> --}}
-                <strong style="color:black">{{ $message }}</strong>
-            </div>
-        @endif
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div><br />
-        @endif
-    <div class="row mb-4">
-        <div class="col-12" style="text-align: justify;">
-            <p class="lead">No problem! Reach out to us by filling in the course details you're interested in, and our team will work to address your needs. We'll review your request and get back to you with tailored solutions or alternatives as soon as possible. Your learning journey is our priority!</p>
-        </div>
-    </div>
-    <form action="{{ url('/submitTailor') }}" method="POST">
+
+    <div id="successMessage" class="success-msg d-none"></div>
+
+    <form id="tailorForm">
         @csrf
+
         <div class="row g-4">
+
             <div class="col-md-6">
-                <label for="courseTitle" class="form-label ">Course Title</label>
-                <input type="text" class="form-control" id="courseTitle" >
+                <label class="form-label">Course Title *</label>
+                <input type="text" class="form-control" name="title">
+                <div class="error-text" id="error-title"></div>
             </div>
+
             <div class="col-md-6">
-                <label for="courseCity" class="form-label ">Course City</label>
-                <input type="text" class="form-control" id="courseCity" >
+                <label class="form-label">Course City</label>
+                <input type="text" class="form-control" name="city">
             </div>
+
             <div class="col-md-6">
-                <label for="courseDescription" class="form-label ">Description</label>
-                <textarea class="form-control" id="courseDescription" rows="2" ></textarea>
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="description" rows="2"></textarea>
             </div>
+
             <div class="col-md-6">
-                <label for="courseDate" class="form-label ">Course Date</label>
-                <input style="height: 45px" type="date" class="form-control" id="courseDate">
+                <label class="form-label">Course Date</label>
+                <input type="date" class="form-control" name="course_date">
             </div>
+
             <div class="col-md-6">
-                <label for="name" class="form-label ">Name</label>
-                <input type="text" class="form-control" id="name" >
+                <label class="form-label">Name *</label>
+                <input type="text" class="form-control" name="name">
+                <div class="error-text" id="error-name"></div>
             </div>
+
             <div class="col-md-6">
-                <label for="email" class="form-label ">Email</label>
-                <input type="email" class="form-control" id="email" >
+                <label class="form-label">Email *</label>
+                <input type="email" class="form-control" name="email">
+                <div class="error-text" id="error-email"></div>
             </div>
+
             <div class="col-md-6">
-                <label for="mobile" class="form-label ">Phone</label>
-                <input type="text" class="form-control" id="mobile" >
+                <label class="form-label">Phone *</label>
+                <input type="text" class="form-control" name="mobile">
+                <div class="error-text" id="error-mobile"></div>
             </div>
+
             <div class="col-md-6">
-                <label for="organisation" class="form-label ">Organisation or Company</label>
-                <input type="text" class="form-control" id="organisation">
+                <label class="form-label">Organisation or Company</label>
+                <input type="text" class="form-control" name="company">
             </div>
         </div>
-        <div class="form-check mt-4">
-            <input type="checkbox" name="agree" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">I accept the <a href="{{ route('terms-conditions') }}" target="_blank" style="color: #007bff; text-decoration: underline;">Terms &amp; Conditions</a>*</label>
-        </div>
-        <div class="row mb-2">
-            <div class="form-group col-lg-4 col-md-6">
+
+        <div class="row mt-3">
+            <div class="col-md-6">
                 <label>Captcha*</label>
-                <div class="captcha d-flex align-items-center gap-2">
-                                                 <span id="captcha-img" style="display:inline-block; width:auto; height:auto;">
-    {!! captcha_img('math') !!}
-</span>
-                    <button type="button" class="btn btn-secondary btn-sm" id="refresh-captcha"
-                        style="margin-left: 10px; padding: 6px 10px;">
+                <div class="d-flex align-items-center">
+                    <span id="captcha-img">{!! captcha_img('math') !!}</span>
+                    <button type="button" id="refresh-captcha" class="btn btn-secondary ms-3">
                         <i class="fas fa-sync-alt"></i>
                     </button>
                 </div>
 
-                <div class="mt-3">
-                    <label>Enter Captcha*</label>
-                    <input id="captcha" type="text" class="form-control" name="captcha">
-                    @error('captcha')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
+                <input type="text" name="captcha" class="form-control mt-2">
+                <div class="error-text" id="error-captcha"></div>
             </div>
         </div>
-        <div class="d-flex justify-content-between mt-4">
-            {{--  <button type="button" class="btn btn-outline-secondary px-5">previous</button>  --}}
-            <button type="submit" class="btn btn-primary px-5">submit</button>
-        </div>
+
+        <button type="submit" class="btn btn-primary px-5 mt-4">Submit</button>
+
     </form>
 </div>
+
+
 @endsection
+
+
 @section('script')
-    <script>
-        document.getElementById('refresh-captcha').addEventListener('click', function() {
-            fetch('/refresh-captcha')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('captcha-img').innerHTML = data.captcha;
-                });
+<script>
+    // Refresh Captcha
+    document.getElementById('refresh-captcha').addEventListener('click', function () {
+        fetch('/refresh-captcha')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('captcha-img').innerHTML = data.captcha;
         });
-        $(document).on('click', '#alertCloseDetails', function() {
-            $('#alertDivDetails').fadeOut();
-        });
-        $(document).ready(function() {
-            // تأكد من تفعيل المكتبة الخاصة بالـ nice-select
-            $('select').niceSelect();
+    });
 
-            // التحقق من التغيير في الـ nice-select
-            $(".nice-select").on("change", function() {
-                var selectedValue = $(this).find('input').val();
-                $('select[name="country_id"]').val(selectedValue);
-            });
+    // Ajax Form Submit
+    $('#tailorForm').on('submit', function(e){
+        e.preventDefault();
+
+        $('.error-text').text('');   // Clear old errors
+        $('#successMessage').addClass('d-none').text('');
+
+        $.ajax({
+            url: "/submitTailor",
+            method: "POST",
+            data: $(this).serialize(),
+            success: function(response){
+                $('#successMessage').removeClass('d-none').text("Thanks; your request has been submitted successfully !");
+                $('#tailorForm')[0].reset();
+
+                // refresh captcha
+                $('#refresh-captcha').click();
+            },
+            error: function(xhr){
+                if(xhr.status === 422){
+                    let errors = xhr.responseJSON.errors;
+
+                    for(let field in errors){
+                        $('#error-' + field).text(errors[field][0]);
+                    }
+                }
+            }
         });
-    </script>
+    });
+</script>
 @endsection
-
