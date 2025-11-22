@@ -87,7 +87,6 @@
     <div class="container" style="margin-top: 70px;">
         @if ($message = Session::get('message'))
             <div id="alertDiv" class="alert alert-info alert-block">
-                {{-- <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button> --}}
                 <strong style="color:black;font-weight:bold">{{ $message }}</strong>
             </div>
         @endif

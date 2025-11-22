@@ -10,12 +10,11 @@
 </style>
 
     <!-- FEATURE AREA START ( Feature - 3) -->
-    @if ($message = Session::get('message'))
+    {{-- @if ($message = Session::get('message'))
     <div id="alertDiv" class="alert alert-info alert-block">
-        {{-- <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button> --}}
         <strong style="color:black;font-weight:bold">{{ $message }}</strong>
     </div>
-@endif
+@endif --}}
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

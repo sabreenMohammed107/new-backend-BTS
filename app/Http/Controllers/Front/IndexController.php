@@ -31,12 +31,10 @@ class IndexController extends Controller
     public function sendNewsLetter(Request $request){
         try {
             $request->validate([
-                'name' => 'required|string|max:255',
                 'email' => 'required|email|max:255|unique:news_letters,email'
             ]);
 
             NewsLetter::create([
-                'name' => $request->name,
                 'email' => $request->email
             ]);
 
