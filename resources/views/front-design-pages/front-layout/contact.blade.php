@@ -60,7 +60,7 @@
                       </div>
                     </div>
                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                      <textarea name="message" placeholder="Your Message">{{ old('sender_message') }}</textarea>
+                      <textarea name="message" placeholder="Your Message" style="min-height: 113px">{{ old('sender_message') }}</textarea>
                     </div>
 
                     <p class="form-messege mb-0 mt-20"></p>

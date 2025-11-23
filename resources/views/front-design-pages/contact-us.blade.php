@@ -268,7 +268,7 @@
                                                         </div>
                                                         <div class="input-item input-item-textarea ltn__custom-icon my-3">
                                                             <label for="uae_sender_message" class="visually-hidden">Your message</label>
-                                                            <textarea id="uae_sender_message" name="sender_message"
+                                                            <textarea id="uae_sender_message" name="sender_message" style="min-height: 113px"
                                                                 placeholder="Your message" rows="5" required>{{ old('sender_message') }}</textarea>
                                                             @error('sender_message')<small class="text-danger">{{ $message }}</small>@enderror
                                                         </div>
