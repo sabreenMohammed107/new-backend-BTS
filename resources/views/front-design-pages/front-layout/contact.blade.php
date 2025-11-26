@@ -15,7 +15,7 @@
         <strong style="color:black;font-weight:bold">{{ $message }}</strong>
     </div>
 @endif --}}
-@if ($errors->any())
+{{-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -23,7 +23,7 @@
             @endforeach
         </ul>
     </div><br />
-@endif
+@endif --}}
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50"  style="padding-left: 15px;padding-right: 15px;">
         <div class="container">
           <div class="row">
