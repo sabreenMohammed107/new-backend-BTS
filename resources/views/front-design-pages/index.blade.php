@@ -57,13 +57,21 @@
 
     /* Service Cards Hover Effects */
     .card-item-services {
-        position: relative;
+        {{--  position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
         height: 100%;
         min-height: 300px;
         background-size: cover;
+        background-position: center;  --}}
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        min-height: 300px;
+        background-size: 100% 100%;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
     .card-item-services::before {
