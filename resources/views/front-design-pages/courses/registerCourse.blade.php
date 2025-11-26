@@ -192,7 +192,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="fullName" class="form-label required">Full Name</label>
+                                <label for="fullName" class="form-label required">Full Name *</label>
                                 <input type="text" class="form-control" id="fullName" name="name"
                                     value="{{ old('name') }}" required>
                             </div>
@@ -201,22 +201,22 @@
                             <div class="col-md-6 mb-3">
                                 <label for="designation" class="form-label required">Designation</label>
                                 <input name="job_title" type="text" value="{{ old('job_title') }}" class="form-control"
-                                    id="designation" required>
+                                    id="designation" >
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="company" class="form-label required">Company</label>
+                                <label for="company" class="form-label required">Company *</label>
                                 <input type="text" class="form-control" id="company" name="company"
                                     value="{{ old('company') }}" required>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 mb-3">
-                                <label for="address" class="form-label required">Address</label>
-                                <input type="text" class="form-control" value="{{ old('address') }}" name="address"
-                                    id="address" required>
+                             <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label required">Email *</label>
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                    id="email" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="phone" class="form-label required">Phone</label>
+                                <label for="phone" class="form-label required">Phone *</label>
                                 <input type="tel" class="form-control" name="phone" value="{{ old('phone') }}"
                                     id="phone" required>
                             </div>
@@ -246,28 +246,15 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label required">Email</label>
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                    id="email" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="fax" class="form-label required">Fax</label>
-                                <input type="text" name="fax" value="{{ old('fax') }}" class="form-control"
-                                    id="fax" required>
-                            </div>
+
                         </div>
 
                         <!-- Payment Details -->
                         <h4 class="section-title f-s-15">Payment Details</h4>
                         <div class="row mb-3">
                             <div class="col-md-12 mb-3">
-                                <label for="paymentMethod" class="form-label required">Payment Method</label>
                                 <select class="form-select" id="paymentMethod" required>
-                                    <option value="" selected>Please Select Payment Mode</option>
-                                    <option value="credit">Credit Card</option>
-                                    <option value="bank">Bank Transfer</option>
-                                    <option value="check">Check</option>
+                                    <option value="bank" selected>Bank Transfer</option>
                                 </select>
                             </div>
                         </div>
@@ -285,31 +272,26 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="fullName" class="form-label required">Full Name</label>
+                                <label for="fullName" class="form-label required">Full Name *</label>
                                 <input type="text" class="form-control" name="billing_name"
                                     value="{{ old('billing_name') }}" id="fullName" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="designation" class="form-label required">Designation</label>
+                                <label for="designation" class="form-label ">Designation</label>
                                 <input type="text" name="billing_job_title" value="{{ old('billing_job_title') }}"
-                                    class="form-control" id="designation" required>
+                                    class="form-control" id="designation" >
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="company" class="form-label required">Company</label>
+                                <label for="company" class="form-label required">Company *</label>
                                 <input type="text" name="billing_company" value="{{ old('billing_company') }}"
                                     class="form-control" id="company" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="address" class="form-label required">Address</label>
-                                <input type="text" name="billing_address" value="{{ old('billing_address') }}"
-                                    class="form-control" id="address" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="phone" class="form-label required">Phone</label>
+                                <label for="phone" class="form-label required">Phone *</label>
                                 <input type="tel" name="billing_phone" value="{{ old('billing_phone') }}"
                                     class="form-control" id="phone" required>
                             </div>
@@ -340,14 +322,9 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label required">Email</label>
+                                <label for="email" class="form-label required">Email *</label>
                                 <input type="email" name="billing_email" value="{{ old('billing_email') }}"
                                     class="form-control" id="email" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="fax" class="form-label required">Fax</label>
-                                <input type="text" name="billing_fax" value="{{ old('billing_fax') }}"
-                                    class="form-control" id="fax" required>
                             </div>
                         </div>
 

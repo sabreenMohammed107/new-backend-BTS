@@ -164,9 +164,9 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="designation" class="form-label required">Designation</label>
+                                <label for="designation" class="form-label ">Designation</label>
                                 <input name="job_title" type="text" value="{{ old('job_title') }}" class="form-control"
-                                    id="designation" required>
+                                    id="designation" >
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="company" class="form-label required">Company *</label>

@@ -12,15 +12,14 @@ use App\Models\RelatedCourses;
 use App\Models\Round;
 use App\Models\TailorCourse;
 use App\Models\Venue;
-use Carbon\Carbon; // تأكد من أنك قد قمت بإضافة هذه السطر
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CourseSearchController extends Controller
 {
-    protected $orderByColumn    = 'courses.course_en_name'; // الترتيب الافتراضي على اسم الدورة
-    protected $orderByDirection = 'ASC';                    // الترتيب الافتراضي سيكون تصاعدي
-
+    protected $orderByColumn    = 'courses.course_en_name';
+    protected $orderByDirection = 'ASC';
     public function __construct()
     {}
 
@@ -173,7 +172,30 @@ class CourseSearchController extends Controller
         $validator = Validator::make($request->all(), [
             'name'    => 'required|string',
             'company' => 'required|string',
-            'email'   => 'required|email',
+            'email'   => [
+        'required',
+        'email',
+        // شرط رفض الإيميلات الشخصية
+        function ($attribute, $value, $fail) {
+            $personalDomains = [
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'live.com',
+                'aol.com',
+                'icloud.com',
+                'protonmail.com',
+                'zoho.com',
+            ];
+
+            $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+            if (in_array($domain, $personalDomains)) {
+                $fail("Please use a business email address, personal emails are not accepted.");
+            }
+        },
+    ],
             'captcha' => 'required|captcha',
         ]);
 
@@ -188,9 +210,12 @@ class CourseSearchController extends Controller
         // \Mail::to($emails)->send(new DawnloadNotification($dawnload));
 
         if (! $request->get('courseBrochure')) {
-
-            return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
+            return response()->json([
+                'status'  => 'success',
+                'message' => 'Thanks; your request has been submitted successfully !',
+            ], 200);
         }
+
     }
 
     public function requestInHouse($course_id)
@@ -222,13 +247,35 @@ class CourseSearchController extends Controller
         $validator = Validator::make($request->all(), [
             'name'    => 'required|string',
             'company' => 'required|string',
-            'email'   => 'required|email',
+            'email'   => [
+        'required',
+        'email',
+        function ($attribute, $value, $fail) {
+            $personalDomains = [
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'live.com',
+                'aol.com',
+                'icloud.com',
+                'protonmail.com',
+                'zoho.com',
+            ];
+
+            $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+            if (in_array($domain, $personalDomains)) {
+                $fail("Please use a business email address, personal emails are not accepted.");
+            }
+        },
+    ],
             'captcha' => 'required|captcha',
             'phone'   => 'required',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return back()->withErrors($validator)->withInput();
         }
         $data   = $request->all();
         $quick  = Applicant::create($data);
@@ -245,13 +292,36 @@ class CourseSearchController extends Controller
         $validator = Validator::make($request->all(), [
             'name'    => 'required|string',
             'company' => 'required|string',
-            'email'   => 'required|email',
+            'email'   => [
+        'required',
+        'email',
+        // شرط رفض الإيميلات الشخصية
+        function ($attribute, $value, $fail) {
+            $personalDomains = [
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'live.com',
+                'aol.com',
+                'icloud.com',
+                'protonmail.com',
+                'zoho.com',
+            ];
+
+            $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+            if (in_array($domain, $personalDomains)) {
+                $fail("Please use a business email address, personal emails are not accepted.");
+            }
+        },
+    ],
             'captcha' => 'required|captcha',
             'phone'   => 'required',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return back()->withErrors($validator)->withInput();
         }
         $data   = $request->all();
         $quick  = Applicant::create($data);
@@ -282,6 +352,54 @@ class CourseSearchController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'captcha' => 'required|captcha',
+            'email' => [
+        'required',
+        'email',
+        // شرط رفض الإيميلات الشخصية
+        function ($attribute, $value, $fail) {
+            $personalDomains = [
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'live.com',
+                'aol.com',
+                'icloud.com',
+                'protonmail.com',
+                'zoho.com',
+            ];
+
+            $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+            if (in_array($domain, $personalDomains)) {
+                $fail("Please use a business email address, personal emails are not accepted.");
+            }
+        },
+    ],
+    'billing_email'=> [
+        'required',
+        'email',
+        // شرط رفض الإيميلات الشخصية
+        function ($attribute, $value, $fail) {
+            $personalDomains = [
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'live.com',
+                'aol.com',
+                'icloud.com',
+                'protonmail.com',
+                'zoho.com',
+            ];
+
+            $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+            if (in_array($domain, $personalDomains)) {
+                $fail("Please use a business email address, personal emails are not accepted.");
+            }
+        },
+    ]
         ]);
 
         if ($validator->fails()) {
@@ -336,25 +454,47 @@ class CourseSearchController extends Controller
         return view('front-design-pages.tailor-your-course');
     }
 
-   public function submitTailor(Request $request)
-{
-    $validator = Validator::make($request->all(), [
-        'name'    => 'required|string',
-        'title'   => 'required|string',
-        'email'   => 'required|email',
-        'captcha' => 'required|captcha',
-        'mobile'  => 'required',
-    ]);
+    public function submitTailor(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name'    => 'required|string',
+            'title'   => 'required|string',
+            'email'   => [
+        'required',
+        'email',
+        // شرط رفض الإيميلات الشخصية
+        function ($attribute, $value, $fail) {
+            $personalDomains = [
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'live.com',
+                'aol.com',
+                'icloud.com',
+                'protonmail.com',
+                'zoho.com',
+            ];
 
-    if ($validator->fails()) {
-        return response()->json(['errors' => $validator->errors()], 422);
+            $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+            if (in_array($domain, $personalDomains)) {
+                $fail("Please use a business email address, personal emails are not accepted.");
+            }
+        },
+    ],
+            'captcha' => 'required|captcha',
+            'mobile'  => 'required',
+        ]);
+
+        if ($validator->fails()) {
+             return back()->withErrors($validator)->withInput();
+        }
+
+        TailorCourse::create($request->all());
+
+        return response()->json(['message' => 'success'], 200);
     }
-
-    TailorCourse::create($request->all());
-
-    return response()->json(['message' => 'success'], 200);
-}
-
 
     // Get venues/cities by country ID for cascading select
     public function getVenuesByCountry($country_id)

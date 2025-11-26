@@ -45,19 +45,19 @@
 
             <div class="col-md-6">
                 <label class="form-label">Name *</label>
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" required >
                 <div class="error-text" id="error-name"></div>
             </div>
 
             <div class="col-md-6">
                 <label class="form-label">Email *</label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" required >
                 <div class="error-text" id="error-email"></div>
             </div>
 
             <div class="col-md-6">
                 <label class="form-label">Phone *</label>
-                <input type="text" class="form-control" name="mobile">
+                <input type="text" class="form-control" name="mobile" required accept="">
                 <div class="error-text" id="error-mobile"></div>
             </div>
 
@@ -77,7 +77,7 @@
                     </button>
                 </div>
 
-                <input type="text" name="captcha" class="form-control mt-2">
+                <input type="text" name="captcha" class="form-control mt-2" required >
                 <div class="error-text" id="error-captcha"></div>
             </div>
         </div>
