@@ -94,7 +94,7 @@
                       <img src="{{ $consultancy->details2 }}" alt="Public Training Session" class="primary-image">
 
 
-                      <img src="{{ $consultancy->details3 }}" alt="City Skyline" class="secondary-image">
+                      <img src="{{ $consultancy->details3 }}" alt="City Skyline" style="object-position: top;" class="secondary-image">
                       {{--  <a href="{{ $consultancy->details4 }}" target="_blank" class="image-vid-play"><i class="fas fa-play clr-white"></i></a>  --}}
                       {{-- <img src="{{ asset('front-assets/img/service/Rectangle 102ss51.png') }}" alt="Public Training Session" class="primary-image">
 
