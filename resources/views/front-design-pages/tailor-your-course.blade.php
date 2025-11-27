@@ -5,6 +5,7 @@
 <style>
     .error-text { color: red; font-size: 14px; margin-top: 5px; }
     .success-msg { background: #d4edda; padding: 12px; border-left: 5px solid #28a745; margin-bottom: 20px; }
+    input[name="course_date"] { height: 60%; }
 </style>
 
 <div class="main-course-bg-header">
