@@ -1108,7 +1108,7 @@
             </div>
         </div>
     </div>
-
+ 
 </div>
 @if ($message = Session::get('message'))
 <div id="alertDivDetails" class="alert alert-info"

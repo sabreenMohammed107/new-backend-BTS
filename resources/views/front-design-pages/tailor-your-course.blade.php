@@ -8,10 +8,29 @@
     input[name="course_date"] { height: 60%; }
 </style>
 
-<div class="main-course-bg-header">
-    <div class="course-main-title text-center">
-        <h2>Tailor Your Course</h2>
+<div class="main-course-bg-header" style="background-image: url('{{ asset('front-assets/img/bg/servics-bg.png') }}'); position: relative; height: 270px; background-size: cover; background-position: center;">
+    <div class="course-main-title text-center" style="position: relative; z-index: 2; color: #fff;padding-top: 80px;">
+        <h2 style="font-size: 3.4375rem; color: #fff;">Tailor Your Course</h2>
+        <div class="breadcrumb-navigation" style="margin-top: 20px;">
+            <div class="container text-center">
+                <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item">
+                            <a href="{{ url('/') }}" class="breadcrumb-link">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                            <span class="breadcrumb-link">Tailor Your Course</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
     </div>
+    <div class="bg-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
 </div>
 
 <div class="container py-5">
