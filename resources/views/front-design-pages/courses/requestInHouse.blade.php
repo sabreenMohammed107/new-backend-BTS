@@ -256,7 +256,7 @@
 
 
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6  mt-5 mt-lg-0">
 {{--  <div class="event-details-left left-contents p-4 mb-5" style="background-color:#f9f9ff">
     <h5 class="mt-4 mb-2">{{ $branch->venue->venue_en_name }}</h5>
     <p>{{ $branch->address }}</p>

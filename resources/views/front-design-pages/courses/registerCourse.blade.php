@@ -368,7 +368,7 @@
 
 
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mt-5 mt-lg-0">
                 <h3 class="mb-4">Popular Courses</h3>
                 <div class="row popular-courses">
                     @isset($rounds)
