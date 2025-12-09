@@ -233,7 +233,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-6 mt-2">
                                 <label>Enter Captcha*</label>
                                 <input id="captcha" type="text" class="form-control" name="captcha">
                                 @error('captcha')
