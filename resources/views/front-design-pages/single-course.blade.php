@@ -248,6 +248,63 @@
         justify-content: center;
     }
 
+    .breadcrumb-nav-desktop {
+        display: block;
+    }
+
+    .breadcrumb-nav-mobile {
+        display: none;
+    }
+
+    .breadcrumb-mobile-home {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .breadcrumb-mobile-home:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.4);
+        color: #fff;
+    }
+
+    .breadcrumb-mobile-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+    }
+
+    .breadcrumb-mobile-category {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    .breadcrumb-mobile-category:hover {
+        color: #f5f5f5;
+    }
+
+    .breadcrumb-mobile-course {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    .breadcrumb-mobile-course:hover {
+        color: #fff;
+    }
+
     .breadcrumb-item {
         display: flex;
         align-items: center;
@@ -1039,6 +1096,26 @@
         .bottom-title {
             font-size: 0.8rem !important;
         }
+
+        .breadcrumb-navigation {
+            padding: 12px 0 5px;
+            {{--  bottom: 5px;  --}}
+        }
+
+        .breadcrumb-nav-desktop {
+            display: none;
+        }
+
+        .breadcrumb-nav-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .breadcrumb-mobile-text {
+            align-items: flex-start;
+        }
     }
 
     @media (max-width: 480px) {
@@ -1077,7 +1154,7 @@
         <h2>{{ $course->course_en_name }}</h2>
         <div class="breadcrumb-navigation">
             <div class="container">
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb" class="breadcrumb-nav-desktop">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="{{ url('/') }}" class="breadcrumb-link">
@@ -1105,10 +1182,42 @@
                         @endif
                     </ol>
                 </nav>
+                <nav aria-label="breadcrumb mobile" class="breadcrumb-nav-mobile">
+                    <a href="{{ url('/') }}" class="breadcrumb-mobile-home" aria-label="Home">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <div class="breadcrumb-mobile-text">
+                        @if($course->subCategory && $course->subCategory->courseCategory)
+                            <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                class="breadcrumb-mobile-category">
+                                {{ $course->subCategory->courseCategory->category_en_name }}
+                            </a>
+                        @elseif($course->subCategory)
+                            <span class="breadcrumb-mobile-category">
+                                {{ $course->subCategory->subcategory_en_name }}
+                            </span>
+                        @else
+                            <span class="breadcrumb-mobile-category">
+                                {{ $course->course_en_name }}
+                            </span>
+                        @endif
+
+                        @if($course->subCategory)
+                            <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                class="breadcrumb-mobile-course">
+                                {{ $course->course_en_name }}
+                            </a>
+                        @else
+                            <span class="breadcrumb-mobile-course">
+                                {{ $course->course_en_name }}
+                            </span>
+                        @endif
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
- 
+
 </div>
 @if ($message = Session::get('message'))
 <div id="alertDivDetails" class="alert alert-info"
@@ -1126,9 +1235,10 @@
 </div>
 <div class="container">
     <div class="row ">
-        <div class="col-12 col-lg-6 mt-5">
+        <div class="col-12 col-lg-6  mt-0 mt-lg-5">
             <div class="main-img-of-course text-center">
-                <img src="{{ asset('uploads/courses') }}/{{ $course->course_image }}"
+                <img src="{{ $course->course_image ? asset('uploads/courses/' . $course->course_image) : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                    onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
                     alt="{{ $course->course_en_name }}">
             </div>
 
@@ -1563,7 +1673,10 @@
                 <div class="ltn__product-item ltn__product-item-3 text-left">
                     <div class="product-img shine" style='height: 100%;'>
                         <img height="100%"
-                            src="{{ asset('uploads/courses') }}/{{ $related_course->relatedcourse->course_image_thumbnail }}"
+                            src="{{ $related_course->relatedcourse->course_image_thumbnail
+                                ? asset('uploads/courses/' . $related_course->relatedcourse->course_image_thumbnail)
+                                : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                            onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
                             alt="{{ $related_course->relatedcourse->course_en_name }}">
                         <div class="course-badge p-3">
                             <div class="row">

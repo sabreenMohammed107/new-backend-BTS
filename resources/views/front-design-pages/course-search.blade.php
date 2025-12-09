@@ -598,7 +598,7 @@
             <div class="container col-xl-9 order-xl-2 order-1">
                 <div class="ltn__search-course-breadcrumb-area">
                     <div class="row">
-                        <h3>Results / <span>{{ $total ?? 0 }}</span></h3>
+                        <h3>Results : <span>{{ $total ?? 0 }}</span></h3>
                         <p>Check each course page for other register options.</p>
                     </div>
                 </div>
@@ -665,7 +665,10 @@
                                         <div class="position-relative">
 
                                                 <img class="w-100 h-100" style="height:250px; object-fit:cover;"
-                                                    src="{{ asset('uploads/courses/' . $round->course->course_image_thumbnail) }}"
+                                                    src="{{ $round->course->course_image_thumbnail
+                                                        ? asset('uploads/courses/' . $round->course->course_image_thumbnail)
+                                                        : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                                                    onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
                                                     alt="{{ $round->course->course_en_name }}">
 
                                             <!-- Course metadata overlay - appears on hover with animation -->

@@ -28,7 +28,10 @@
     <div class="col-12 col-md-6 col-lg-4">
         <a href="{{ url('courseDetails/' . $course->id) }}">
             <div class="service-card">
-                <img src="{{ asset('uploads/courses/' . $course->course_image_thumbnail) }}" alt="">
+                <img src="{{ $course->course_image_thumbnail
+                    ? asset('uploads/courses/' . $course->course_image_thumbnail)
+                    : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                    onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';" alt="">
                 <div class="service-overlay">
                     <h3 class="service-title">{{ $course->course_en_name }}</h3>
                 </div>
