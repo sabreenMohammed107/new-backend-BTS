@@ -1397,7 +1397,7 @@
     <!-- PRODUCT AREA END -->
 
     <!-- BLOG AREA START (blog-3) -->
-    <div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
+    <div class="ltn__blog-area blogs-of-proud pt-0  pt-lg-5 pb-50">
         <div class="container">
             <div class="row">
                 <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
@@ -1420,7 +1420,7 @@
     </div>
 
     <!-- BLOG AREA START (blog-3) -->
-    <div class="ltn__blog-area blog-of-Testimonials pt-5 pb-50">
+    <div class="ltn__blog-area blog-of-Testimonials pt-0 pb-50">
         <div class="container">
             <div class="row">
                 @isset($homeTestimonials)
