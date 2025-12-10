@@ -107,6 +107,13 @@
         text-decoration: none;
         transition: all 0.3s ease;
     }
+
+    /* Limit dropdown height for Country and City selects */
+    #personal_country + .nice-select .list,
+    #personal_city + .nice-select .list {
+        max-height: 200px;
+        overflow-y: auto;
+    }
 </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">

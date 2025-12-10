@@ -1072,7 +1072,7 @@
         }
 
         .product-img {
-            height: 250px !important;
+            height: 100% !important;
         }
 
         .course-badge {
@@ -1120,7 +1120,7 @@
 
     @media (max-width: 480px) {
         .product-img {
-            height: 200px !important;
+            height: 100% !important;
         }
 
         .course-badge {
