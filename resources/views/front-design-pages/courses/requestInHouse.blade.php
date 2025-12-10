@@ -19,7 +19,7 @@
 .nice-select:after {
     display: none
 }
-.ltn__product-item {
+    .ltn__product-item {
 
     width:100%;
 }
@@ -49,7 +49,7 @@
 
 .ltn__product-item-3 .product-img.shine:hover::before,
 .ltn__product-item-3 .product-img.shine:focus::before {
-    animation: shine 1s ease-in-out;
+    animation: shine 4s ease-in-out;
 }
 
 @keyframes shine {
@@ -63,9 +63,101 @@
 }
 
 /* White underline on course title when hovering card */
-.popular-courses .ltn__product-item:hover .course-badge h3 a {
+.ltn__product-item:hover .course-badge h3 a {
     text-decoration: underline;
     text-decoration-color: white;
+}
+
+/* Service Card Hover Effect for Course Cards */
+.ltn__product-item-3 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.ltn__product-item-3:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+.ltn__product-item-3 .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) saturate(0.8) contrast(1.2) sepia(0.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.1);
+}
+
+.ltn__product-item-3:hover .product-img img {
+    filter: brightness(1.1) saturate(1.3) contrast(1.1) sepia(0);
+    transform: scale(1.0);
+}
+
+.ltn__product-item-3 .course-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 30px 25px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ltn__product-item-3:hover .course-badge {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.ltn__product-item-3 .course-badge h3 {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    font-size: 1.4rem;
+    text-transform: none;
+    line-height: 1.3;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 20px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ltn__product-item-3:hover .course-badge h3 {
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(8px);
+    filter: brightness(1.2);
+}
+
+.ltn__product-item-3 .course-badge h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.ltn__product-item-3:hover .course-badge h3::before {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);
+    width: 3px;
+}
+
+.ltn__product-item-3:hover .course-badge h3 a {
+    text-decoration: none;
 }
 
 /* Ensure links remain white */
@@ -73,6 +165,16 @@
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+    .ltn__product-item-3 .course-badge {
+        padding: 20px 15px;
+    }
+    .ltn__product-item-3 .course-badge h3 {
+        font-size: 1.1rem;
+        padding-left: 15px;
+    }
 }
 
 /* Limit dropdown height for Country and City selects */
@@ -278,39 +380,37 @@
                     @isset($rounds)
                         @foreach ( $rounds as $round )
 
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left no-size">
-                            <div class="product-img shine" style='height: 100%;'>
-                                <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
-                                        src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
-                                <div class="course-badge p-2">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color mb-2' style="font-size: 1.075rem !important;">
-                                                <a href="{{ url('courseDetails/'.$round->course->id) }}" class="white-color">
-                                                    {{ $round->course->course_en_name ?? ''}}
-                                                </a>
-                                            </h3>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="ltn__product-item ltn__product-item-3 text-left w-100">
+                            <div class="product-img shine">
+                                <a class="img-container">
+                                    <img src="{{ $round->course->course_image_thumbnail ? asset('uploads/courses/' . $round->course->course_image_thumbnail) : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                                        onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
+                                        alt="{{ $round->country->country_en_name }}">
+                                </a>
+
+                                <div class="course-badge">
+                                    <h3 class='white-color mb-2'>
+                                        <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}">
+                                            {{ Str::limit($round->course->course_en_name, 70, '') }}
+                                        </a>
+                                    </h3>
+                                    <?php $date = date_create($round->round_start_date); ?>
+                                    <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px">
+                                        <div class="white-color bottom-title">
+                                            {{ $round->venue->venue_en_name }} -
+                                            {{ $round->country->country_en_name }} |
+                                            {{ date_format($date, 'd M, Y') }}
                                         </div>
-
-                                        <div class="col-12 row">
-                                            <?php $date = date_create($round->round_start_date); ?>
-
-                                            <div class="col-10 white-color bottom-title">
-                                                {{ $round->venue->venue_en_name }} -
-                                                {{ $round->country->country_en_name }} |
-                                                {{ date_format($date, 'd M, Y') }}
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href="{{ url('courseDetails/'.$round->course->id) }}"><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
+                                        <div class="icon-arrow">
+                                            <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
+                                                    class="fa fa-arrow-right white-color"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                         @endforeach
                     @endisset
