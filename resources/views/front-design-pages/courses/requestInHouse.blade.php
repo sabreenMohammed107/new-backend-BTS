@@ -74,6 +74,13 @@
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
+/* Limit dropdown height for Country and City selects */
+#personal_country + .nice-select .list,
+#personal_city + .nice-select .list {
+    max-height: 200px;
+    overflow-y: auto;
+}
     </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -190,7 +197,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
                                 <label for="country" class="form-label required">Country</label>
-                                <select name="country_id" class="form-select">
+                                <select name="country_id" id="personal_country" class="form-select">
                                     <option value=""></option>
                                     @foreach ($countries as $country)
                                         <option value='{{ $country->id }}'
@@ -201,7 +208,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="city" class="form-label required">City</label>
-                                <select name="venue_id" class="form-select">
+                                <select name="venue_id" id="personal_city" class="form-select">
                                     <option value=""></option>
                                     @foreach ($venues as $venue)
                                         <option value='{{ $venue->id }}'

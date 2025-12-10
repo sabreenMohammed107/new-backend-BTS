@@ -38,6 +38,18 @@
      .ltn__product-tab-area .section-title-area span {
          text-align: justify !important;
      }
+
+     /* Limit dropdown height for Country and City selects */
+     #country + .nice-select .list {
+         max-height: 200px;
+         overflow-y: auto;
+     }
+
+     /* Limit dropdown height for Tom Select (City dropdown) */
+     .ts-dropdown-content {
+         max-height: 200px !important;
+         overflow-y: auto !important;
+     }
     </style>
     <!-- Add Tom Select CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
@@ -53,11 +65,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="section-title-area ltn__section-title-2 ">
-              <h4 class="first-title">Are you highly qualified, experienced and respected in your field of technical
+            <div class="section-title-area ltn__section-title-2 " style="text-align: justify !important">
+              <h4 class="second-title" style="color:black !important">Are you highly qualified, experienced and respected in your field of technical
                 expertise ?</h4>
               <h4 class="second-title">Then, YOU ARE WHO WE'RE LOOKING FOR!</h4>
-              <span class="col-12 txt-just col-md-8 m-auto p-0" style="color: black; font-size: 16px; padding-left: 0; font-family: 'Poppins', sans-serif;">
+              <span class="col-12 txt-just col-md-8 m-auto p-0" style="color: black; font-size: 16px; padding-left: 0;text-align: justify !important; font-family: 'Poppins', sans-serif;">
                 At BTS, commitment to excellence is at the core of everything we do and we are always looking to welcome
                 motivated, talented and experienced professionals to support our growth. If you have the passion to
                 deliver training courses, seminars and workshops with the highest standards, we invite you to view our
@@ -170,7 +182,7 @@
                         </div>
                         <div class="col-md-12 mb-3">
                           <label for="other_data" class="form-label">Other Data</label>
-                          <textarea name="other_data" rows="6" class="form-control @error('other_data') is-invalid @enderror" id="other_data" placeholder="Tell us anything else relevant (experience highlights, links, etc.)">{{ old('other_data') }}</textarea>
+                          <textarea style="min-height: 145px !important" name="other_data" rows="6" class="form-control @error('other_data') is-invalid @enderror" id="other_data" placeholder="Tell us anything else relevant (experience highlights, links, etc.)">{{ old('other_data') }}</textarea>
                           @error('other_data')
                               <div class="invalid-feedback d-block">{{ $message }}</div>
                           @enderror
