@@ -401,7 +401,7 @@
                                     <img src="{{ $imageSrc }}" alt="{{ $round->course->course_en_name }}">
                                 </a>
 
-                                <div class="course-badge">
+                                <div class="course-badge w-100">
                                     <h3 class='white-color mb-2'>
                                         <a href="{{ url('courseDetails/'.$round->course->id) }}">
                                             {{ Str::limit($round->course->course_en_name, 70, '') }}
