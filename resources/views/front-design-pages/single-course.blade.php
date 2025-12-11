@@ -1707,7 +1707,7 @@
                         </a>
 
                         <div class="course-badge">
-                            <h3 class="white-color mb-2 animated fadeIn">
+                            <h3 class="white-color mb-2 animated fadeIn p-2">
                                 <a class="img-container" href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
                                     {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
                                 </a>
