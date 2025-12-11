@@ -324,6 +324,27 @@
             margin-bottom: 5px;
         }
     }
+
+    @media (max-width: 768px) {
+        .breadcrumb-navigation {
+            padding: 12px 0 5px;
+        }
+
+        .breadcrumb-nav-desktop {
+            display: none;
+        }
+
+        .breadcrumb-nav-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .breadcrumb-mobile-text {
+            align-items: flex-start;
+        }
+    }
     </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
