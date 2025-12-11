@@ -110,9 +110,18 @@
 
     /* Limit dropdown height for Country and City selects */
     #personal_country + .nice-select .list,
-    #personal_city + .nice-select .list {
-        max-height: 200px;
-        overflow-y: auto;
+    #personal_city + .nice-select .list,
+    #billing_country + .nice-select .list,
+    #billing_city + .nice-select .list {
+        max-height: 250px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Ensure the dropdown list container has proper styling */
+    .nice-select .list {
+        max-height: 250px !important;
+        overflow-y: auto !important;
     }
 </style>
     <!-- Utilize Mobile Menu End -->

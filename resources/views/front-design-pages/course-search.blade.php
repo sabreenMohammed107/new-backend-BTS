@@ -664,7 +664,7 @@
                                         <!-- الصورة -->
                                         <div class="position-relative">
 
-                                                <img class="w-100 h-100" style="height:250px; object-fit:cover;"
+                                                <img class="w-100 " style="height:250px; object-fit:cover;"
                                                     src="{{ $round->course->course_image_thumbnail
                                                         ? asset('uploads/courses/' . $round->course->course_image_thumbnail)
                                                         : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"

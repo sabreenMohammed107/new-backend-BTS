@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2" style="color: #000 !important;">
-                        <h1 class="section-title text-center" style="color: #000 !important;">{{ $category->category_en_description }}</h1>
+                        <span class="section-title" style="color: black;font-size:16px;font-weight: normal;text-align: justify;">{{ $category->category_en_description }}</span>
                     </div>
 
                     <div class="row">
