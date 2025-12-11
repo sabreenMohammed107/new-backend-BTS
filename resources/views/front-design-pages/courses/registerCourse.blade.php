@@ -394,7 +394,11 @@
                         <div class="ltn__product-item ltn__product-item-3 text-left w-100">
                             <div class="product-img shine">
                                 <a class="img-container">
-                                    <img src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="{{ $round->course->course_en_name }}">
+                                    @php
+                                        $imagePath = 'uploads/courses/' . $round->course->course_image_thumbnail;
+                                        $imageSrc = file_exists(public_path($imagePath)) ? asset($imagePath) : asset('front-assets/img/No-Image-Placeholder.svg.png');
+                                    @endphp
+                                    <img src="{{ $imageSrc }}" alt="{{ $round->course->course_en_name }}">
                                 </a>
 
                                 <div class="course-badge">
