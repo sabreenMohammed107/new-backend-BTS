@@ -19,70 +19,70 @@
           </div> -->
         <div class="course-main-title text-center">
             <h2>Download Brochure</h2>
-        </div>
-    </div>
-    <div class="breadcrumb-navigation">
-        <div class="container">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav-desktop">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="{{ url('/') }}" class="breadcrumb-link">
+            <div class="breadcrumb-navigation">
+                <div class="container">
+                    <nav aria-label="breadcrumb" class="breadcrumb-nav-desktop">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ url('/') }}" class="breadcrumb-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                    class="breadcrumb-link">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            </li>
+                            @endif
+                            @if($course->subCategory)
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                    class="breadcrumb-link">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </a>
+                            </li>
+                            @endif
+                        </ol>
+                    </nav>
+                    <nav aria-label="breadcrumb mobile" class="breadcrumb-nav-mobile">
+                        <a href="{{ url('/') }}" class="breadcrumb-mobile-home" aria-label="Home">
                             <i class="fas fa-home"></i>
-                            <span>Home</span>
                         </a>
-                    </li>
-                    @if($course->subCategory && $course->subCategory->courseCategory)
-                    <li class="breadcrumb-item">
-                        <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                        <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
-                            class="breadcrumb-link">
-                            {{ $course->subCategory->courseCategory->category_en_name }}
-                        </a>
-                    </li>
-                    @endif
-                    @if($course->subCategory)
-                    <li class="breadcrumb-item">
-                        <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                        <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
-                            class="breadcrumb-link">
-                            {{ $course->subCategory->subcategory_en_name }}
-                        </a>
-                    </li>
-                    @endif
-                </ol>
-            </nav>
-            <nav aria-label="breadcrumb mobile" class="breadcrumb-nav-mobile">
-                <a href="{{ url('/') }}" class="breadcrumb-mobile-home" aria-label="Home">
-                    <i class="fas fa-home"></i>
-                </a>
-                <div class="breadcrumb-mobile-text">
-                    @if($course->subCategory && $course->subCategory->courseCategory)
-                        <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
-                            class="breadcrumb-mobile-category">
-                            {{ $course->subCategory->courseCategory->category_en_name }}
-                        </a>
-                    @elseif($course->subCategory)
-                        <span class="breadcrumb-mobile-category">
-                            {{ $course->subCategory->subcategory_en_name }}
-                        </span>
-                    @else
-                        <span class="breadcrumb-mobile-category">
-                            {{ $course->course_en_name }}
-                        </span>
-                    @endif
+                        <div class="breadcrumb-mobile-text">
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                    class="breadcrumb-mobile-category">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            @elseif($course->subCategory)
+                                <span class="breadcrumb-mobile-category">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </span>
+                            @else
+                                <span class="breadcrumb-mobile-category">
+                                    {{ $course->course_en_name }}
+                                </span>
+                            @endif
 
-                    @if($course->subCategory)
-                        <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
-                            class="breadcrumb-mobile-course">
-                            {{ $course->course_en_name }}
-                        </a>
-                    @else
-                        <span class="breadcrumb-mobile-course">
-                            {{ $course->course_en_name }}
-                        </span>
-                    @endif
+                            @if($course->subCategory)
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                    class="breadcrumb-mobile-course">
+                                    {{ $course->course_en_name }}
+                                </a>
+                            @else
+                                <span class="breadcrumb-mobile-course">
+                                    {{ $course->course_en_name }}
+                                </span>
+                            @endif
+                        </div>
+                    </nav>
                 </div>
-            </nav>
+            </div>
         </div>
     </div>
     <div class="container" style="margin-top: 70px;">
