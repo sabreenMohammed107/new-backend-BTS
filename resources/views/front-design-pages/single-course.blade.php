@@ -1712,9 +1712,9 @@
                                     {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
                                 </a>
                             </h3>
-                            <p class="white-color mb-3">
+                            {{--  <p class="white-color mb-3">
                                 {{ Str::limit(strip_tags($related_course->relatedcourse->course_en_desc), 200, ' ...') }}
-                            </p>
+                            </p>  --}}
                             <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px">
                                 <div class="white-color bottom-title">
                                     {{ $related_course->related_course->venue->venue_en_name ?? '' }}
