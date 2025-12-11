@@ -1691,12 +1691,11 @@
             <h2>Related Courses</h2>
             <p style='color: #000'>Your Growth, Our Mission</p>
         </div>
-        <div class="row ltn__tab-product-slider-one-active--- slick-arrow-1">
-            <div class="row">
+        <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
             @foreach ($related_courses as $related_course)
             <!-- Blog Item -->
-            <div class="col-lg-3 col-sm-6 col-12">
-                <div class="ltn__product-item ltn__product-item-3 text-left w-100">
+            <div class="col-lg-12 ">
+                <div class="ltn__product-item ltn__product-item-3 text-left">
                     <div class="product-img shine">
                         <a class="img-container" href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
                             <img height="100%"
@@ -1706,16 +1705,17 @@
                                 onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
                                 alt="{{ $related_course->relatedcourse->course_en_name }}">
                         </a>
+
                         <div class="course-badge">
-                            <h3 class="white-color mb-2">
+                            <h3 class="white-color mb-2 animated fadeIn p-2">
                                 <a class="img-container" href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
-                                    {{ Str::limit($related_course->relatedcourse->course_en_name, 70, '') }}
+                                    {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
                                 </a>
                             </h3>
                             {{--  <p class="white-color mb-3">
                                 {{ Str::limit(strip_tags($related_course->relatedcourse->course_en_desc), 200, ' ...') }}
                             </p>  --}}
-                            <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px">
+                            <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px;padding-right:15px">
                                 <div class="white-color bottom-title">
                                     {{ $related_course->related_course->venue->venue_en_name ?? '' }}
                                     @if(!empty($related_course->related_course->venue->venue_en_name) && !empty($related_course->related_course->country->country_en_name))
@@ -1736,7 +1736,6 @@
                 </div>
             </div>
             @endforeach
-            </div>
         </div>
     </div>
 </div>
