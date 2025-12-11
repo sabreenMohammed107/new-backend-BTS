@@ -1726,7 +1726,7 @@
                                         | {{ \Carbon\Carbon::parse($related_course->related_course->round_start_date)->format('d M, Y') }}
                                     @endif
                                 </div>
-                                <div class="icon-arrow">
+                                <div class="icon-arrow px-2">
                                     <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}"><i
                                             class="fa fa-arrow-right white-color"></i></a>
                                 </div>
