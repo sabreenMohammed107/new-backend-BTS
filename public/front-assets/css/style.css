@@ -14760,6 +14760,13 @@ input[type="date"] {
   top: 0;
 }
 
+@media (max-width: 1199.98px) and (min-width: 320px) {
+  .ltn__blog-area .proud-section-title::after {
+    display: none;
+    content: none;
+  }
+}
+
 .fnt-siz-md {
   font-size: medium !important;
 }

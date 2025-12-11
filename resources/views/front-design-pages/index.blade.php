@@ -1687,7 +1687,7 @@
     <div class="ltn__blog-area blogs-of-proud pt-0  pt-lg-5 pb-50">
         <div class="container">
             <div class="row">
-                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
+                <div class="proud-section-title col-12 col-md-3 col-lg-3 text-center d-flex d-md-flex justify-content-center mb-3 mb-md-0">
                     <h1>Proud<br>To Serve</h1>
                 </div>
 

@@ -12,7 +12,7 @@
     </div>
 
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2" style="color: #000 !important;">
