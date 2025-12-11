@@ -75,6 +75,22 @@
     transition: all 0.3s ease;
 }
 
+.popular-courses .course-card-img-wrapper {
+    min-height: 260px;
+    background: #f7f9fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.popular-courses .course-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
+}
+
 /* Limit dropdown height for Country and City selects */
 #personal_country + .nice-select .list,
 #personal_city + .nice-select .list {
@@ -268,12 +284,16 @@
                     @isset($rounds)
                         @foreach ( $rounds as $round )
 
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left no-size">
-                            <div class="product-img shine" style='height: 100%;'>
-                                <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
-                                        src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
-                                <div class="course-badge p-2">
+                    <div class="col-12 col-sm-6 d-flex">
+                        <div class="ltn__product-item ltn__product-item-3 text-left no-size w-100 h-100">
+                            <div class="product-img shine course-card-img-wrapper" style='height: 100%;'>
+                                <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}">
+                                    <img class="course-card-img"
+                                        src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}"
+                                        alt="{{ $round->course->course_en_name ?? 'Course image' }}"
+                                        onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';">
+                                </a>
+                                <div class="course-badge p-2 h-100 d-flex flex-column justify-content-end">
                                     <div class="row">
                                         <div class="col-12">
                                             <h3 class='white-color mb-2' style="font-size: 1.075rem !important;">
