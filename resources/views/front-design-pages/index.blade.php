@@ -1761,7 +1761,7 @@
     <div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
         <div class="container">
             <div class="row">
-                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
+                <div class="proud-section-title col-12 d-flex d-md-flex col-md-3 col-lg-3 text-center justify-content-center mb-3 mb-md-0">
                     <h1>BTS <br>Partners</h1>
                 </div>
 
