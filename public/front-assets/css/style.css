@@ -17089,6 +17089,10 @@ font-weight: 900;
 #soft-skills-page .service-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  -webkit-transform: translateY(-8px) scale(1.02);
+  -moz-transform: translateY(-8px) scale(1.02);
+  -ms-transform: translateY(-8px) scale(1.02);
+  -o-transform: translateY(-8px) scale(1.02);
 }
 
 #soft-skills-page .service-card img {

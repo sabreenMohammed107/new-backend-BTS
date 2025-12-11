@@ -1715,7 +1715,7 @@
                             {{--  <p class="white-color mb-3">
                                 {{ Str::limit(strip_tags($related_course->relatedcourse->course_en_desc), 200, ' ...') }}
                             </p>  --}}
-                            <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px">
+                            <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px;padding-right:15px">
                                 <div class="white-color bottom-title">
                                     {{ $related_course->related_course->venue->venue_en_name ?? '' }}
                                     @if(!empty($related_course->related_course->venue->venue_en_name) && !empty($related_course->related_course->country->country_en_name))
@@ -1726,7 +1726,7 @@
                                         | {{ \Carbon\Carbon::parse($related_course->related_course->round_start_date)->format('d M, Y') }}
                                     @endif
                                 </div>
-                                <div class="icon-arrow px-2">
+                                <div class="icon-arrow ">
                                     <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}"><i
                                             class="fa fa-arrow-right white-color"></i></a>
                                 </div>

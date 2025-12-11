@@ -75,5 +75,8 @@
             font-weight: 500;
             color: #555;
         }
+        #soft-skills-page .service-card img {
+            object-fit: contain !important;
+        }
     </style>
 @endsection
