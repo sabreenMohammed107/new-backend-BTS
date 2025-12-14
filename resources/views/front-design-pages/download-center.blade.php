@@ -35,7 +35,7 @@
                         <div class="col-12 row align-items-center justify-content-end">
                           <div class="col-2">
                             <span class="icon-arrow">
-                             <a href=" {{ $data->upload_file }}" download=""><i class="fas fa-download clr-white"></i></a>
+                             <a href="{{ asset('uploads/download_centers') }}/{{ $data->upload_file }}" download=""><i class="fas fa-download clr-white"></i></a>
 
                               {{-- <a href="{{ route('download-file', $data->id) }}" download=""><i class="fas fa-download clr-white"></i></a> --}}
                             </span>
