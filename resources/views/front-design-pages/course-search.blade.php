@@ -3,6 +3,21 @@
 
 @section('page-class', 'course-search-page')
 @section('page-content')
+@php
+    // Helper variables for badge display
+    $selectedSubCategory = null;
+    $selectedCourseCategory = null;
+
+    // Check if category_id (SubCategory from homepage) is set
+    if (!empty($category_id) && isset($subCategoriesList)) {
+        $selectedSubCategory = $subCategoriesList->firstWhere('id', $category_id);
+    }
+
+    // Check if category_id_search (CourseCategory from sidebar) is set
+    if (!empty($category_id_search) && isset($courseCategories)) {
+        $selectedCourseCategory = $courseCategories->firstWhere('id', $category_id_search);
+    }
+@endphp
 <style>
     /* Search Container Styling */
     .search-container {
@@ -500,12 +515,18 @@
             <div class="col-xl-3 order-xl-1 order-2">
                 <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar">
                     <form method="get" action="{{ route('course-search') }}" id="courseFilterForm">
-                        <!-- Hidden fields to preserve homepage form data -->
+                        <!-- Hidden fields to preserve form data -->
                         @if (request('category_id'))
                         <input type="hidden" name="category_id" value="{{ request('category_id') }}">
                         @endif
-                        @if (request('city_id'))
-                        <input type="hidden" name="city_id" value="{{ request('city_id') }}">
+                        @if (request('category_id_search'))
+                        <input type="hidden" name="category_id_search" value="{{ request('category_id_search') }}">
+                        @endif
+                        @if (request('search'))
+                        <input type="hidden" name="search" value="{{ request('search') }}">
+                        @endif
+                        @if (request('sort_by'))
+                        <input type="hidden" name="sort_by" value="{{ request('sort_by') }}">
                         @endif
 
                         <!-- Category Widget -->
@@ -576,12 +597,17 @@
                                 display: flex;
                                 flex-direction: column;
                             ">
-                                @foreach ($subCategories as $category)
-                                <li><a
-                                        href="{{ route('course-search', array_merge(request()->query(), ['category_id_search' => $category->id])) }}">{{
-                                        $category->category_en_name }}</a>
+                                @isset($courseCategories)
+                                @foreach ($courseCategories as $category)
+                                <li>
+                                    <a href="{{ route('course-search', ['category_id_search' => $category->id]) }}"
+                                       class="{{ request('category_id_search') == $category->id ? 'active' : '' }}"
+                                       style="{{ request('category_id_search') == $category->id ? 'background-color: #12576D; color: white;' : '' }}">
+                                        {{ $category->category_en_name }}
+                                    </a>
                                 </li>
                                 @endforeach
+                                @endisset
                             </ul>
                         </div>
 
@@ -605,6 +631,12 @@
 
                 <!-- Active Filters Display -->
                 <div class="active-filters d-flex flex-wrap gap-2 mb-3">
+                    @if (!empty($all_courses))
+                    <div class="filter-chip" style="background-color: #12576D; color: white;">
+                        All Courses
+                        <a href="{{ route('course-search') }}" class="remove-filter" style="color: white;">&times;</a>
+                    </div>
+                    @endif
                     @if (request('search') || request('course_name'))
                     <div class="filter-chip">
                         Name: {{ request('search') ?: request('course_name') }}
@@ -612,11 +644,17 @@
                             class="remove-filter">&times;</a>
                     </div>
                     @endif
-                    @if (request('category_id'))
+                    @if (request('category_id') && $selectedSubCategory)
                     <div class="filter-chip">
-                        Category:
-                        {{ $subCategories->firstWhere('id', request('category_id'))->category_en_name ?? 'Unknown' }}
+                        Sub-Category: {{ $selectedSubCategory->subcategory_en_name }}
                         <a href="{{ request()->fullUrlWithQuery(['category_id' => null]) }}"
+                            class="remove-filter">&times;</a>
+                    </div>
+                    @endif
+                    @if (request('category_id_search') && $selectedCourseCategory)
+                    <div class="filter-chip">
+                        Category: {{ $selectedCourseCategory->category_en_name }}
+                        <a href="{{ request()->fullUrlWithQuery(['category_id_search' => null]) }}"
                             class="remove-filter">&times;</a>
                     </div>
                     @endif
@@ -744,4 +782,43 @@
 
 @section('style')
 
+@endsection
+
+@section('script')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var allCoursesCheckbox = document.getElementById('all_courses');
+    var filterForm = document.getElementById('courseFilterForm');
+
+    if (allCoursesCheckbox) {
+        allCoursesCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Redirect to show all courses (reset all filters)
+                window.location.href = '{{ route("course-search") }}?all_courses=1';
+            }
+        });
+    }
+
+    // When venue checkboxes change, auto-submit form
+    var venueCheckboxes = document.querySelectorAll('input[name="venue[]"]');
+    venueCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            // Uncheck "All Courses" when selecting specific venues
+            if (allCoursesCheckbox) {
+                allCoursesCheckbox.checked = false;
+            }
+        });
+    });
+
+    // When date inputs change, uncheck "All Courses"
+    var dateInputs = document.querySelectorAll('input[name="date_from"], input[name="date_to"]');
+    dateInputs.forEach(function(input) {
+        input.addEventListener('change', function() {
+            if (allCoursesCheckbox) {
+                allCoursesCheckbox.checked = false;
+            }
+        });
+    });
+});
+</script>
 @endsection

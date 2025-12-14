@@ -8,6 +8,7 @@ use App\Models\BillingDetails;
 use App\Models\Country;
 use App\Models\Course;
 use App\Models\CourseCategory;
+use App\Models\CourseSubCategory;
 use App\Models\RelatedCourses;
 use App\Models\Round;
 use App\Models\TailorCourse;
@@ -25,24 +26,27 @@ class CourseSearchController extends Controller
 
     public function index(Request $request)
     {
+        // Handle "All Courses" checkbox - if checked, ignore all other filters
+        $all_courses = $request->input('all_courses');
+
         // Handle both homepage form and search page form fields
         $word               = $request->input('course_name') ?: $request->input('search');
         $search             = $request->input('search');
-        $category_id        = $request->input('category_id');
+        $category_id        = $request->input('category_id'); // SubCategory ID from homepage
         $subcategory_id     = $request->input('subcategory_id');
         $city_id            = $request->input('city_id');
         $start              = $request->input('start');
         $end                = $request->input('end');
-        $venues             = $request->input('venue', []); // أخذ الفلاتر المختارة للمكان
+        $venuesInput        = $request->input('venue', []); // Venue filter array
         $date_from          = $request->input('date_from') ?: $start;
         $date_to            = $request->input('date_to') ?: $end;
-        $category_id_search = $request->input('category_id_search');
+        $category_id_search = $request->input('category_id_search'); // CourseCategory ID from sidebar
         $now_date           = now();
 
         $sort_by = $request->get('sort_by'); // title, venue, date, duration
 
-        // القاعدة العامة
-        $filters = Round::with(['course', 'venue', 'country'])
+        // Base query
+        $filters = Round::with(['course.subCategory.courseCategory', 'venue', 'country'])
             ->join('courses', 'courses.id', '=', 'rounds.course_id')
             ->where(function ($query) use ($now_date) {
                 $query->where('rounds.round_start_date', '>', $now_date)
@@ -50,90 +54,89 @@ class CourseSearchController extends Controller
             })
             ->where('rounds.active', '=', 1);
 
-        // فلتر الفئة
-        if (! empty($category_id) && $category_id !== "Category") {
-            $filters->where('courses.course_sub_category_id', '=', $category_id);
-        }
+        // If "All Courses" is NOT checked, apply filters
+        if (empty($all_courses)) {
+            // Filter by SubCategory (from homepage category dropdown)
+            if (! empty($category_id) && $category_id !== "Category") {
+                $filters->where('courses.course_sub_category_id', '=', $category_id);
+            }
 
-        // فلتر الفئة الفرعية
-        if (! empty($subcategory_id)) {
-            $filters->where('courses.course_sub_category_id', '=', $subcategory_id);
-        }
+            // Filter by SubCategory ID directly
+            if (! empty($subcategory_id)) {
+                $filters->where('courses.course_sub_category_id', '=', $subcategory_id);
+            }
 
-        if (! empty($category_id_search) && $category_id_search !== "Category") {
-            $filters->whereHas('course.subCategory', function ($query) use ($category_id_search) {
-                $query->where('course_category_id', $category_id_search);
-            });
-        }
+            // Filter by CourseCategory (from sidebar Training Categories)
+            if (! empty($category_id_search) && $category_id_search !== "Category") {
+                $filters->whereHas('course.subCategory', function ($query) use ($category_id_search) {
+                    $query->where('course_category_id', $category_id_search);
+                });
+            }
 
-        // فلتر المدينة - handle both city_id from homepage and venue[] from search page
-        if (! empty($city_id) && $city_id !== "Venue") {
-            $filters->where('rounds.venue_id', '=', $city_id);
-        }
-
-        // تاريخ البداية - handle both start and date_from
-        if (! empty($start) || ! empty($date_from)) {
-            $startDate = $start ?: $date_from;
-            $filters->where('rounds.round_start_date', '>=', Carbon::parse($startDate));
-        }
-
-        // تاريخ النهاية - handle both end and date_to
-        if (! empty($end) || ! empty($date_to)) {
-            $endDate = $end ?: $date_to;
-            $filters->where('rounds.round_start_date', '<=', Carbon::parse($endDate));
-        }
-
-        // Search by course name - handle both search and course_name fields
-        if (! empty($word) || ! empty($search)) {
-            $searchTerm = $word ?: $search;
-            $words      = explode(' ', $searchTerm);
-            $filters->where(function ($q) use ($words) {
-                foreach ($words as $word) {
-                    $q->where('courses.course_en_name', 'like', '%' . $word . '%');
-                }
-            });
-        }
-        // فلتر الأماكن (Venues) - handle both single and multiple venue selection
-        if (! empty($venues) || ! empty($city_id)) {
-            if (! empty($venues) && is_array($venues)) {
-                // If venues array is provided, use it
-                $filters->whereIn('rounds.venue_id', $venues);
+            // Filter by venue - handle both city_id from homepage and venue[] from search page
+            if (! empty($venuesInput) && is_array($venuesInput) && count($venuesInput) > 0) {
+                $filters->whereIn('rounds.venue_id', $venuesInput);
             } elseif (! empty($city_id) && $city_id !== "Venue") {
-                // If city_id is provided, use it
                 $filters->where('rounds.venue_id', '=', $city_id);
+            }
+
+            // Date from filter
+            if (! empty($date_from)) {
+                $filters->where('rounds.round_start_date', '>=', Carbon::parse($date_from));
+            }
+
+            // Date to filter
+            if (! empty($date_to)) {
+                $filters->where('rounds.round_start_date', '<=', Carbon::parse($date_to));
+            }
+
+            // Search by course name
+            if (! empty($word)) {
+                $words = explode(' ', $word);
+                $filters->where(function ($q) use ($words) {
+                    foreach ($words as $w) {
+                        $q->where('courses.course_en_name', 'like', '%' . $w . '%');
+                    }
+                });
             }
         }
 
-        // الترتيب بناءً على الاختيار
+        // Sorting
         switch ($sort_by) {
             case 'course_en_name':
-                $filters->orderBy('courses.course_en_name'); // ترتيب حسب اسم الدورة
+                $filters->orderBy('courses.course_en_name');
                 break;
             case 'venue_id':
-                $filters->orderBy('rounds.venue_id'); // ترتيب حسب ID المكان
+                $filters->orderBy('rounds.venue_id');
                 break;
             case 'date':
-                $filters->orderBy('rounds.round_start_date'); // ترتيب حسب تاريخ البداية
+                $filters->orderBy('rounds.round_start_date');
                 break;
             case 'duration':
-                $filters->orderByDesc('courses.course_duration'); // ترتيب حسب المدة
+                $filters->orderByDesc('courses.course_duration');
                 break;
             default:
-                $filters->orderBy('rounds.round_start_date'); // الترتيب الافتراضي حسب تاريخ البداية
+                $filters->orderBy('rounds.round_start_date');
                 break;
         }
 
-        // استخدام paginate للحصول على التصفح
+        // Paginate results
         $filtered = $filters->paginate(15);
 
-        // جلب المدن والفئات
-        $venues        = Venue::all();
-        $subCategories = CourseCategory::where('active', 1)
+        // Get venues and categories for filters
+        $venues = Venue::all();
+
+        // Get CourseCategories for Training Categories sidebar
+        $courseCategories = CourseCategory::where('active', 1)
             ->orderBy('category_en_name', 'asc')
             ->get();
 
-                                     // عدد النتائج الإجمالي
-        $total = $filtered->total(); // الحصول على العدد الإجمالي للنتائج
+        // Get SubCategories for homepage category filter badge display
+        $subCategoriesList = CourseSubCategory::where('active', 1)
+            ->orderBy('subcategory_en_name', 'asc')
+            ->get();
+
+        $total = $filtered->total();
 
         return view('front-design-pages.course-search', compact(
             'filtered',
@@ -143,12 +146,15 @@ class CourseSearchController extends Controller
             'start',
             'end',
             'venues',
-            'subCategories',
+            'courseCategories',
+            'subCategoriesList',
             'sort_by',
             'total',
             'search',
             'date_from',
-            'date_to'
+            'date_to',
+            'category_id_search',
+            'all_courses'
         ));
     }
 
