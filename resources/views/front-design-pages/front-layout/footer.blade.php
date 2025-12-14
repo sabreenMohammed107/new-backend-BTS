@@ -63,7 +63,8 @@
                     <div id="mc_embed_signup">
                     <form
                         action="{{ route('send-newsletter') }}"
-                        method="post">
+                        method="post"
+                        id="newsletter-form">
                         @csrf
                         <div id="mc_embed_signup_scroll">
                         <div class="row">
@@ -82,6 +83,8 @@
                                         <i class="fas fa-location-arrow"></i>
                                     </button>
                                 </div>
+                                <!-- Newsletter Message Display -->
+                                <div id="newsletter-message" style="display: none; margin-top: 10px; padding: 8px 12px; border-radius: 6px; font-size: 13px;"></div>
                             </div>
                         </div>
 
@@ -153,6 +156,104 @@
 <script src="{{ asset('front-assets/js/plugins.js') }}"></script>
 <!-- Main JS -->
 <script src="{{ asset('front-assets/js/main.js') }}"></script>
+
+<!-- Newsletter AJAX Handler -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var newsletterForm = document.getElementById('newsletter-form');
+    var messageDiv = document.getElementById('newsletter-message');
+    var emailInput = document.getElementById('mce-EMAIL');
+    var submitBtn = document.getElementById('mc-embedded-subscribe');
+    var messageTimeout = null;
+
+    // Function to hide message with fade effect
+    function hideMessage() {
+        messageDiv.style.opacity = '0';
+        setTimeout(function() {
+            messageDiv.style.display = 'none';
+            messageDiv.style.opacity = '1';
+        }, 300);
+    }
+
+    // Function to show message and auto-hide after delay
+    function showMessage(isSuccess, message) {
+        // Clear any existing timeout
+        if (messageTimeout) {
+            clearTimeout(messageTimeout);
+        }
+
+        messageDiv.style.display = 'block';
+        messageDiv.style.opacity = '1';
+        messageDiv.style.transition = 'opacity 0.3s ease';
+
+        if (isSuccess) {
+            messageDiv.style.backgroundColor = '#d4edda';
+            messageDiv.style.color = '#155724';
+            messageDiv.style.border = '1px solid #c3e6cb';
+        } else {
+            messageDiv.style.backgroundColor = '#f8d7da';
+            messageDiv.style.color = '#721c24';
+            messageDiv.style.border = '1px solid #f5c6cb';
+        }
+        messageDiv.textContent = message;
+
+        // Auto-hide after 5 seconds
+        messageTimeout = setTimeout(function() {
+            hideMessage();
+        }, 5000);
+    }
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Prevent double submission
+            if (submitBtn.disabled) return;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+            // Hide previous message
+            messageDiv.style.display = 'none';
+
+            var formData = new FormData(newsletterForm);
+
+            fetch(newsletterForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                }
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                showMessage(data.success, data.message);
+                if (data.success) {
+                    emailInput.value = '';
+                }
+            })
+            .catch(function(error) {
+                showMessage(false, 'An error occurred. Please try again.');
+            })
+            .finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-location-arrow"></i>';
+            });
+        });
+
+        // Hide message on new input
+        emailInput.addEventListener('input', function() {
+            if (messageTimeout) {
+                clearTimeout(messageTimeout);
+            }
+            messageDiv.style.display = 'none';
+        });
+    }
+});
+</script>
+
 @yield('script')
 
 </body>

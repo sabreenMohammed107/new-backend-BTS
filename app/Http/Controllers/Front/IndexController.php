@@ -38,9 +38,39 @@ class IndexController extends Controller
                 'email' => $request->email
             ]);
 
-            return redirect()->back()->with('message', 'Thanks; your newsletter subscription has been submitted successfully!');
+            $message = 'Thank you for subscribing. You have been successfully added to our newsletter.';
+
+            // Return JSON for AJAX requests
+            if ($request->ajax() || $request->wantsJson()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => $message
+                ]);
+            }
+
+            return redirect()->back()->with('message', $message);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $errorMessage = 'This email is already subscribed to our newsletter.';
+
+            if ($request->ajax() || $request->wantsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $errorMessage
+                ], 422);
+            }
+
+            return redirect()->back()->with('error', $errorMessage);
         } catch(QueryException $q) {
-            return redirect()->back()->with('error', 'Error submitting newsletter subscription. Please try again.');
+            $errorMessage = 'Error submitting newsletter subscription. Please try again.';
+
+            if ($request->ajax() || $request->wantsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => $errorMessage
+                ], 500);
+            }
+
+            return redirect()->back()->with('error', $errorMessage);
         }
     }
 
