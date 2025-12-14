@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Front\ServiceController;
 use App\Http\Controllers\Admin\MessagesController;
+use App\Http\Controllers\Admin\TailorCourseController;
 use App\Http\Controllers\Admin\PartenerController;
 use App\Http\Controllers\Admin\TrainersController;
 use App\Http\Controllers\DownloadCenterController;
@@ -186,6 +187,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('applRound', RoundsApplicantController::class);
     Route::resource('newsletter', NewsLetterController::class);
     Route::resource('message', MessagesController::class);
+    Route::resource('tailorCourse', TailorCourseController::class);
     Route::resource('partner', PartenerController::class);
     Route::resource('client', ClientController::class);
     Route::resource('country', CountryController::class);

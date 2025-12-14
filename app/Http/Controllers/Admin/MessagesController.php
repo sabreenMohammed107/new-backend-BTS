@@ -22,7 +22,7 @@ class MessagesController extends Controller
 
     public function index()
     {
-        $rows=$this->object::orderBy("created_at", "Desc")->get();
+        $rows = $this->object::latest()->take(100)->get();
 
         return view("{$this->view}.index", compact('rows',));
     }
