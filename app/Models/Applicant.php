@@ -10,7 +10,7 @@ class Applicant extends Model
         'code', 'salut_id', 'name', 'country_id', 'job_title', 'company','Register Type',
         'venue_id', 'address', 'email', 'phone', 'mobile', 'fax',
         'register_round_id', 'course_id', 'quk_enquery_notes', 'inhouse_no_days', 'inhouse_perefer_dates',
-        'applicant_type_id','inhouse_requirements','inhouse_no_particants'
+        'applicant_type_id','inhouse_requirements','inhouse_no_particants','type'
     ];
 
 

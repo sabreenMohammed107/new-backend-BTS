@@ -28,6 +28,7 @@
                     <h2 class="form-title f-s-20">Download and further your knowledge with us.</h2>
                     <form id="downloadForm">
                         @csrf
+                         <input type="hidden" name="type" value="downloadBrochure" />
                         <input type="hidden" name="courseBrochure"
                             value="https://btsconsultant.com/uploads/courseBrochure/Integrating AI in Workplace Safety Practices.pdf"
                             alt="Integrating AI in Workplace Safety Practices">
