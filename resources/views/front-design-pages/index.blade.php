@@ -57,13 +57,21 @@
 
     /* Service Cards Hover Effects */
     .card-item-services {
-        position: relative;
+        {{--  position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
         height: 100%;
         min-height: 300px;
         background-size: cover;
+        background-position: center;  --}}
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        min-height: 300px;
+        background-size: 100% 100%;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
     .card-item-services::before {
@@ -424,6 +432,293 @@
         padding-left: 0 !important;
         font-family: 'Poppins', sans-serif !important;
     }
+
+    /* Prevent horizontal overflow on mobile */
+    @media (max-width: 767px) {
+        body {
+            overflow-x: hidden;
+        }
+    }
+
+    /* Ensure search form section is always visible on all screen sizes */
+    .ltn__feature-area.search-form-top-slider {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Mobile responsive styles for search form */
+    @media (max-width: 767px) {
+        .ltn__feature-area.search-form-top-slider {
+            display: block !important;
+            margin-top: 50px !important;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .ltn__feature-area.search-form-top-slider .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            max-width: 100%;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .ltn__feature-area.search-form-top-slider .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .ltn__feature-area.search-form-top-slider .row > [class*="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .ltn__feature-item-box-wrap,
+        .ltn__feature-item-box-wrap-2 {
+            padding: 20px 15px !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        .ltn__feature-item-box-wrap form {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .ltn__feature-item-box-wrap .mc-field-group {
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        .ltn__feature-item-box-wrap .mc-field-group input,
+        .ltn__feature-item-box-wrap .mc-field-group select,
+        .ltn__feature-item-box-wrap select {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 12px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            min-height: 48px;
+            box-sizing: border-box;
+        }
+
+        .ltn__feature-item-box-wrap a.form-btn,
+        .ltn__feature-item-box-wrap a.form-btn-transparent {
+            padding: 14px 20px !important;
+            font-size: 16px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .ltn__feature-item-box-wrap .row,
+        .ltn__feature-item-box-wrap form .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+            --bs-gutter-x: 0 !important;
+            --bs-gutter-y: 0 !important;
+        }
+
+        .ltn__feature-item-box-wrap .row > [class*="col-"],
+        .ltn__feature-item-box-wrap form .row > [class*="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-bottom: 15px;
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: 0 0 100% !important;
+        }
+
+        .ltn__feature-item-box-wrap .row > [class*="col-"]:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .ltn__feature-area.search-form-top-slider {
+            display: block !important;
+            margin-top: 30px !important;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .ltn__feature-area.search-form-top-slider .container {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .ltn__feature-area.search-form-top-slider .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .ltn__feature-area.search-form-top-slider .row > [class*="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .ltn__feature-item-box-wrap,
+        .ltn__feature-item-box-wrap-2 {
+            padding: 15px 10px !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden;
+        }
+
+        .ltn__feature-item-box-wrap .mc-field-group input,
+        .ltn__feature-item-box-wrap .mc-field-group select,
+        .ltn__feature-item-box-wrap select {
+            padding: 10px 12px;
+            font-size: 15px;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .ltn__feature-item-box-wrap a.form-btn,
+        .ltn__feature-item-box-wrap a.form-btn-transparent {
+            padding: 12px 18px !important;
+            font-size: 15px;
+            width: 100% !important;
+        }
+
+        .ltn__feature-item-box-wrap .row > [class*="col-"] {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+        }
+    }
+
+    @media screen and (max-width: 520px) {
+        .ltn__feature-area.search-form-top-slider {
+            display: block !important;
+            margin-top: 20px !important;
+            overflow-x: hidden;
+            width: 100% !important;
+            max-width: 100% !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            height: auto !important;
+            min-height: auto !important;
+        }
+
+        .ltn__feature-area.search-form-top-slider .container {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 100%;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .ltn__feature-area.search-form-top-slider .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .ltn__feature-area.search-form-top-slider .row > [class*="col-"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .ltn__feature-item-box-wrap,
+        .ltn__feature-item-box-wrap-2 {
+            padding: 12px 8px !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        .ltn__feature-item-box-wrap form {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .ltn__feature-item-box-wrap .mc-field-group input,
+        .ltn__feature-item-box-wrap .mc-field-group select,
+        .ltn__feature-item-box-wrap select {
+            padding: 10px 10px;
+            font-size: 14px;
+            min-height: 44px;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        .ltn__feature-item-box-wrap a.form-btn,
+        .ltn__feature-item-box-wrap a.form-btn-transparent {
+            padding: 11px 15px !important;
+            font-size: 14px;
+            min-height: 44px;
+            word-wrap: break-word;
+            white-space: normal;
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        .ltn__feature-item-box-wrap .row,
+        .ltn__feature-item-box-wrap form .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+            --bs-gutter-x: 0 !important;
+            --bs-gutter-y: 0 !important;
+        }
+
+        .ltn__feature-item-box-wrap .row > [class*="col-"],
+        .ltn__feature-item-box-wrap form .row > [class*="col-"] {
+            margin-bottom: 12px;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        .ltn__feature-item-box-wrap .row > [class*="col-"]:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Ensure text doesn't overflow on very small screens */
+        .ltn__feature-item-box-wrap input::placeholder,
+        .ltn__feature-item-box-wrap select {
+            font-size: 14px;
+        }
+    }
 </style>
 <div class="ltn__slider-area ltn__slider-3 section-bg-1 pt-0" id="slider-3-section">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1" style="height: 100vh !important;">
@@ -489,17 +784,17 @@
     <div class="slider-social-side-links">
         <div class="row flex-column">
             <div class="face">
-                <a href="{{ $staticContact->details2 ?? '#' }}" data-tooltip="Follow us on Facebook">
+                <a href="{{ $staticContact->details2 ?? '#' }}" target="_blank" data-tooltip="Follow us on Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
             <div class="linkedin">
-                <a href="{{ $staticContact->details3 ?? '#' }}" data-tooltip="Connect on LinkedIn">
+                <a href="{{ $staticContact->details3 ?? '#' }}" target="_blank" data-tooltip="Connect on LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
             <div class="xtw">
-                <a href="{{ $staticContact->details4 ?? '#' }}" data-tooltip="Follow us on X">
+                <a href="{{ $staticContact->details4 ?? '#' }}" target="_blank" data-tooltip="Follow us on X">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:16px;height:16px">
                         <path fill="#e7eaee"
                             d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
@@ -507,7 +802,7 @@
                 </a>
             </div>
             <div class="insta">
-                <a href="{{ $staticContact->details5 ?? '#' }}" data-tooltip="Follow us on Instagram">
+                <a href="{{ $staticContact->details5 ?? '#' }}" target="_blank" data-tooltip="Follow us on Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -524,13 +819,13 @@
             <div class="col-lg-12">
                 <div class="ltn__feature-item-box-wrap ltn__feature-item-box-wrap-2 ltn__border section-bg-6">
                     <form action="{{ route('course-search') }}" method="GET" id="search-form">
-                        <div class="row">
+                        <div class="row g-3 g-md-2">
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="mc-field-group">
                                     <input type="text" placeholder="Course Name" value="" name="course_name">
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="h-100">
                                     <select id="categorySelect" name="category_id">
                                         <option value="" disabled selected>Select a Category</option>
@@ -546,7 +841,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-0">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="mc-field-group h-100">
                                     <select id="venueSelect" name="city_id" placeholder="Select a Venue...">
                                         <option value="">Select a Venue</option>
@@ -560,20 +855,20 @@
 
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-md-3 mt-xl-0">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="mc-field-group">
                                     <input type="hidden" placeholder="Duration" value="" name="duration">
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="mc-field-group">
                                     <input type="text" name="start" placeholder="From Date" onfocus="(this.type='date')"
                                         onblur="if(!this.value)this.type='text'">
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="mc-field-group">
                                     <input type="text" name="end" placeholder="To Date" onfocus="(this.type='date')"
                                         onblur="if(!this.value)this.type='text'">
@@ -581,13 +876,13 @@
                             </div>
 
                             {{-- Tailor your course --}}
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <a href="{{ route('tailor-your-course') }}"
                                     class="form-btn-transparent w-100 text-center">Tailor Your Course</a>
                             </div>
 
                             {{-- Search button --}}
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2 mt-lg-3">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                                 <a href="javascript:void(0);" onclick="document.getElementById('search-form').submit();"
                                     class="form-btn w-100 text-center">Search</a>
                             </div>
@@ -691,7 +986,7 @@
 
                     </div>
                     @endisset
-                    
+
                     @isset($online_courses)
                     <div class="col-12 col-md-6 col-lg-3 p-2">
 
@@ -1222,6 +1517,108 @@
             text-decoration: underline;
             text-decoration-color: white;
         }
+
+        /* Service Card Hover Effect for Course Cards */
+        .ltn__product-item-3 {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .ltn__product-item-3:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+        }
+
+        .ltn__product-item-3 .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) saturate(0.8) contrast(1.2) sepia(0.1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1.1);
+        }
+
+        .ltn__product-item-3:hover .product-img img {
+            filter: brightness(1.1) saturate(1.3) contrast(1.1) sepia(0);
+            transform: scale(1.0);
+        }
+
+        .ltn__product-item-3 .course-badge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 30px 25px;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .ltn__product-item-3:hover .course-badge {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        .ltn__product-item-3 .course-badge h3 {
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            font-size: 1.4rem;
+            text-transform: none;
+            line-height: 1.3;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-left: 20px;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .ltn__product-item-3:hover .course-badge h3 {
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+            transform: translateX(8px);
+            filter: brightness(1.2);
+        }
+
+        .ltn__product-item-3 .course-badge h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.7);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .ltn__product-item-3:hover .course-badge h3::before {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);
+            width: 3px;
+        }
+
+        .ltn__product-item-3:hover .course-badge h3 a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+            .ltn__product-item-3 .course-badge {
+                padding: 20px 15px;
+            }
+            .ltn__product-item-3 .course-badge h3 {
+                font-size: 1.1rem;
+                padding-left: 15px;
+            }
+        }
     </style>
     <!-- PRODUCT AREA START (product-item-3) -->
     <div class="ltn__product-area blogs-top-ranked ltn__product-gutter pt-5 pb-50">
@@ -1253,7 +1650,7 @@
                                         </a>
                                     </h3>
                                     <?php $date = date_create($round->round_start_date); ?>
-                                    <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
+                                    <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px">
                                         <div class="white-color bottom-title">
                                             {{ $round->venue->venue_en_name }} -
                                             {{ $round->country->country_en_name }} |
@@ -1287,10 +1684,10 @@
     <!-- PRODUCT AREA END -->
 
     <!-- BLOG AREA START (blog-3) -->
-    <div class="ltn__blog-area blogs-of-proud pt-50 pb-50">
+    <div class="ltn__blog-area blogs-of-proud pt-0  pt-lg-5 pb-50">
         <div class="container">
             <div class="row">
-                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
+                <div class="proud-section-title col-12 col-md-3 col-lg-3 text-center d-flex d-md-flex justify-content-center mb-3 mb-md-0">
                     <h1>Proud<br>To Serve</h1>
                 </div>
 
@@ -1310,7 +1707,7 @@
     </div>
 
     <!-- BLOG AREA START (blog-3) -->
-    <div class="ltn__blog-area blog-of-Testimonials pt-5 pb-50">
+    <div class="ltn__blog-area blog-of-Testimonials pt-0 pb-50">
         <div class="container">
             <div class="row">
                 @isset($homeTestimonials)
@@ -1364,7 +1761,7 @@
     <div class="ltn__blog-area blog-of-Partners pt-50 pb-50">
         <div class="container">
             <div class="row">
-                <div class="proud-section-title col-12 d-none d-md-flex col-md-3 col-lg-3 text-center">
+                <div class="proud-section-title col-12 d-flex d-md-flex col-md-3 col-lg-3 text-center justify-content-center mb-3 mb-md-0">
                     <h1>BTS <br>Partners</h1>
                 </div>
 

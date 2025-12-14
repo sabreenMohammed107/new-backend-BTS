@@ -11,6 +11,168 @@
         .full .ts-control {
             background-color: #efefef !important;
         }
+
+        /* Breadcrumb Navigation Styles - Inside Header (match single course) */
+        .breadcrumb-navigation {
+            background: transparent;
+            padding: 15px 0;
+            margin-bottom: 0;
+            margin-top: 20px;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .breadcrumb-nav-desktop {
+            display: block;
+        }
+
+        .breadcrumb-nav-mobile {
+            display: none;
+        }
+
+        .breadcrumb-mobile-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .breadcrumb-mobile-home:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+
+        .breadcrumb-mobile-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            text-align: left;
+        }
+
+        .breadcrumb-mobile-category {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.2;
+            text-decoration: none;
+        }
+
+        .breadcrumb-mobile-category:hover {
+            color: #f5f5f5;
+        }
+
+        .breadcrumb-mobile-course {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.2;
+            text-decoration: none;
+        }
+
+        .breadcrumb-mobile-course:hover {
+            color: #fff;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breadcrumb-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        .breadcrumb-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .breadcrumb-link i {
+            font-size: 12px;
+        }
+
+        .breadcrumb-item.active {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .breadcrumb-item.active::after {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 12px;
+                justify-content: flex-start;
+                padding: 0 15px;
+            }
+
+            .breadcrumb-link {
+                padding: 3px 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .breadcrumb {
+                font-size: 11px;
+                flex-wrap: wrap;
+            }
+
+            .breadcrumb-item {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb-navigation {
+                padding: 12px 0 5px;
+            }
+
+            .breadcrumb-nav-desktop {
+                display: none;
+            }
+
+            .breadcrumb-nav-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .breadcrumb-mobile-text {
+                align-items: flex-start;
+            }
+        }
     </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -19,6 +181,70 @@
           </div> -->
         <div class="course-main-title text-center">
             <h2>Download Brochure</h2>
+            <div class="breadcrumb-navigation">
+                <div class="container">
+                    <nav aria-label="breadcrumb" class="breadcrumb-nav-desktop">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ url('/') }}" class="breadcrumb-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                    class="breadcrumb-link">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            </li>
+                            @endif
+                            @if($course->subCategory)
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                    class="breadcrumb-link">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </a>
+                            </li>
+                            @endif
+                        </ol>
+                    </nav>
+                    <nav aria-label="breadcrumb mobile" class="breadcrumb-nav-mobile">
+                        <a href="{{ url('/') }}" class="breadcrumb-mobile-home" aria-label="Home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <div class="breadcrumb-mobile-text">
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                    class="breadcrumb-mobile-category">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            @elseif($course->subCategory)
+                                <span class="breadcrumb-mobile-category">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </span>
+                            @else
+                                <span class="breadcrumb-mobile-category">
+                                    {{ $course->course_en_name }}
+                                </span>
+                            @endif
+
+                            @if($course->subCategory)
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                    class="breadcrumb-mobile-course">
+                                    {{ $course->course_en_name }}
+                                </a>
+                            @else
+                                <span class="breadcrumb-mobile-course">
+                                    {{ $course->course_en_name }}
+                                </span>
+                            @endif
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container" style="margin-top: 70px;">

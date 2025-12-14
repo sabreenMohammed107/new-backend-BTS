@@ -62,6 +62,35 @@
             font-size: 18px;
             padding: 0 15px;
         }
+        .download-center-cards .col-12.col-lg-3 {
+            justify-content: stretch;
+            align-items: stretch;
+            width: 100%;
+        }
+        .download-center-cards .ltn__product-item {
+            width: 100%;
+        }
+        .download-center-cards .ltn__product-item .product-img,
+        .download-center-cards .ltn__product-item .product-img .img-container {
+            width: 100%;
+            height: auto;
+        }
+        .download-center-cards .ltn__product-item .product-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        #download-center-page .download-center-cards .course-badge h3 {
+            font-size: 24px !important;
+            line-height: 1.35;
+        }
+        #download-center-page .download-center-cards .course-badge p {
+            font-size: 17px !important;
+            line-height: 1.65;
+        }
+        #download-center-page .ltn__product-item.ltn__product-item-3 .course-badge .title-section {
+            padding: 15px 15px 0 15px;
+        }
     }
 </style>
 @endsection

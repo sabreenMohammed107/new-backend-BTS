@@ -12,11 +12,11 @@
     </div>
 
     <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title-area ltn__section-title-2">
-                        <h5 class="col-12 txt-just text-left">{{ $category->category_en_description }}</h5>
+                    <div class="section-title-area ltn__section-title-2" style="color: #000 !important;">
+                        <span class="section-title" style="color: black;font-size:16px;font-weight: normal;text-align: justify;">{{ $category->category_en_description }}</span>
                     </div>
 
                     <div class="row">
@@ -25,17 +25,20 @@
 
                                 @if(isset($courses) && $courses->count() > 0)
            @foreach($courses as $course)
-    <div class="col-12 col-md-6 col-lg-4">
-        <a href="{{ url('courseDetails/' . $course->id) }}">
-            <div class="service-card">
-                <img src="{{ asset('uploads/courses/' . $course->course_image_thumbnail) }}" alt="">
-                <div class="service-overlay">
-                    <h3 class="service-title">{{ $course->course_en_name }}</h3>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="{{ url('courseDetails/' . $course->id) }}">
+                        <div class="service-card">
+                            <img src="{{ $course->course_image_thumbnail
+                                ? asset('uploads/courses/' . $course->course_image_thumbnail)
+                                : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                                onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';" alt="">
+                            <div class="service-overlay">
+                                <h3 class="service-title">{{ $course->course_en_name }}</h3>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </a>
-    </div>
-@endforeach
+            @endforeach
 
                                 @else
                                     <div class="col-12">
@@ -71,6 +74,9 @@
         .no-results-message h4 {
             font-weight: 500;
             color: #555;
+        }
+        #soft-skills-page .service-card img {
+            object-fit: contain !important;
         }
     </style>
 @endsection

@@ -7,6 +7,13 @@
     .theme-btn-1.btn-effect-1:hover img {
         filter: brightness(0);
     }
+
+/* Remove bottom padding on mobile for the contact section */
+@media (max-width: 767.98px) {
+    .contact-section-wrapper {
+        padding-bottom: 0 !important;
+    }
+}
 </style>
 
     <!-- FEATURE AREA START ( Feature - 3) -->
@@ -24,7 +31,7 @@
         </ul>
     </div><br />
 @endif --}}
-    <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50"  style="padding-left: 15px;padding-right: 15px;">
+    <div class="ltn__product-tab-area ltn__product-gutter pt-50 pb-50 contact-section-wrapper"  style="padding-left: 15px;padding-right: 15px;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">

@@ -19,7 +19,7 @@
 .nice-select:after {
     display: none
 }
-.ltn__product-item {
+    .ltn__product-item {
 
     width:100%;
 }
@@ -49,7 +49,7 @@
 
 .ltn__product-item-3 .product-img.shine:hover::before,
 .ltn__product-item-3 .product-img.shine:focus::before {
-    animation: shine 1s ease-in-out;
+    animation: shine 4s ease-in-out;
 }
 
 @keyframes shine {
@@ -63,9 +63,101 @@
 }
 
 /* White underline on course title when hovering card */
-.popular-courses .ltn__product-item:hover .course-badge h3 a {
+.ltn__product-item:hover .course-badge h3 a {
     text-decoration: underline;
     text-decoration-color: white;
+}
+
+/* Service Card Hover Effect for Course Cards */
+.ltn__product-item-3 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.ltn__product-item-3:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+.ltn__product-item-3 .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) saturate(0.8) contrast(1.2) sepia(0.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.1);
+}
+
+.ltn__product-item-3:hover .product-img img {
+    filter: brightness(1.1) saturate(1.3) contrast(1.1) sepia(0);
+    transform: scale(1.0);
+}
+
+.ltn__product-item-3 .course-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 30px 25px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ltn__product-item-3:hover .course-badge {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.ltn__product-item-3 .course-badge h3 {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    font-size: 1.4rem;
+    text-transform: none;
+    line-height: 1.3;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 20px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ltn__product-item-3:hover .course-badge h3 {
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(8px);
+    filter: brightness(1.2);
+}
+
+.ltn__product-item-3 .course-badge h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.ltn__product-item-3:hover .course-badge h3::before {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);
+    width: 3px;
+}
+
+.ltn__product-item-3:hover .course-badge h3 a {
+    text-decoration: none;
 }
 
 /* Ensure links remain white */
@@ -74,6 +166,185 @@
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
+@media (max-width: 767px) {
+    .ltn__product-item-3 .course-badge {
+        padding: 20px 15px;
+    }
+    .ltn__product-item-3 .course-badge h3 {
+        font-size: 1.1rem;
+        padding-left: 15px;
+    }
+}
+
+/* Limit dropdown height for Country and City selects */
+#personal_country + .nice-select .list,
+#personal_city + .nice-select .list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+    /* Breadcrumb Navigation Styles - Inside Header (match single course) */
+    .breadcrumb-navigation {
+        background: transparent;
+        padding: 15px 0;
+        margin-bottom: 0;
+        margin-top: 20px;
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .breadcrumb-nav-desktop {
+        display: block;
+    }
+
+    .breadcrumb-nav-mobile {
+        display: none;
+    }
+
+    .breadcrumb-mobile-home {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .breadcrumb-mobile-home:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.4);
+        color: #fff;
+    }
+
+    .breadcrumb-mobile-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+    }
+
+    .breadcrumb-mobile-category {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    .breadcrumb-mobile-category:hover {
+        color: #f5f5f5;
+    }
+
+    .breadcrumb-mobile-course {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    .breadcrumb-mobile-course:hover {
+        color: #fff;
+    }
+
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .breadcrumb-link {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+        padding: 5px 8px;
+        border-radius: 4px;
+    }
+
+    .breadcrumb-link:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+    }
+
+    .breadcrumb-link i {
+        font-size: 12px;
+    }
+
+    .breadcrumb-item.active {
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    .breadcrumb-item.active::after {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .breadcrumb {
+            font-size: 12px;
+            justify-content: flex-start;
+            padding: 0 15px;
+        }
+
+        .breadcrumb-link {
+            padding: 3px 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .breadcrumb {
+            font-size: 11px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            margin-bottom: 5px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .breadcrumb-navigation {
+            padding: 12px 0 5px;
+        }
+
+        .breadcrumb-nav-desktop {
+            display: none;
+        }
+
+        .breadcrumb-nav-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .breadcrumb-mobile-text {
+            align-items: flex-start;
+        }
+    }
     </style>
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
@@ -82,6 +353,70 @@
               </div> -->
         <div class="course-main-title text-center">
             <h2>Request For Inhouse Proposal</h2>
+            <div class="breadcrumb-navigation">
+                <div class="container">
+                    <nav aria-label="breadcrumb" class="breadcrumb-nav-desktop">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{{ url('/') }}" class="breadcrumb-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                    class="breadcrumb-link">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            </li>
+                            @endif
+                            @if($course->subCategory)
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                    class="breadcrumb-link">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </a>
+                            </li>
+                            @endif
+                        </ol>
+                    </nav>
+                    <nav aria-label="breadcrumb mobile" class="breadcrumb-nav-mobile">
+                        <a href="{{ url('/') }}" class="breadcrumb-mobile-home" aria-label="Home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <div class="breadcrumb-mobile-text">
+                            @if($course->subCategory && $course->subCategory->courseCategory)
+                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                    class="breadcrumb-mobile-category">
+                                    {{ $course->subCategory->courseCategory->category_en_name }}
+                                </a>
+                            @elseif($course->subCategory)
+                                <span class="breadcrumb-mobile-category">
+                                    {{ $course->subCategory->subcategory_en_name }}
+                                </span>
+                            @else
+                                <span class="breadcrumb-mobile-category">
+                                    {{ $course->course_en_name }}
+                                </span>
+                            @endif
+
+                            @if($course->subCategory)
+                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                    class="breadcrumb-mobile-course">
+                                    {{ $course->course_en_name }}
+                                </a>
+                            @else
+                                <span class="breadcrumb-mobile-course">
+                                    {{ $course->course_en_name }}
+                                </span>
+                            @endif
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container" style="margin-top: 70px;">
@@ -190,7 +525,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
                                 <label for="country" class="form-label required">Country</label>
-                                <select name="country_id" class="form-select">
+                                <select name="country_id" id="personal_country" class="form-select">
                                     <option value=""></option>
                                     @foreach ($countries as $country)
                                         <option value='{{ $country->id }}'
@@ -201,7 +536,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="city" class="form-label required">City</label>
-                                <select name="venue_id" class="form-select">
+                                <select name="venue_id" id="personal_city" class="form-select">
                                     <option value=""></option>
                                     @foreach ($venues as $venue)
                                         <option value='{{ $venue->id }}'
@@ -234,7 +569,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-lg-6">
+                            <div class="form-group col-lg-6 mt-2">
                                 <label>Enter Captcha*</label>
                                 <input id="captcha" type="text" class="form-control" name="captcha">
                                 @error('captcha')
@@ -256,7 +591,7 @@
 
 
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6  mt-5 mt-lg-0">
 {{--  <div class="event-details-left left-contents p-4 mb-5" style="background-color:#f9f9ff">
     <h5 class="mt-4 mb-2">{{ $branch->venue->venue_en_name }}</h5>
     <p>{{ $branch->address }}</p>
@@ -271,39 +606,37 @@
                     @isset($rounds)
                         @foreach ( $rounds as $round )
 
-                    <div class="col-12 col-sm-6">
-                        <div class="ltn__product-item ltn__product-item-3 text-left no-size">
-                            <div class="product-img shine" style='height: 100%;'>
-                                <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}"><img height="100%"
-                                        src="{{ asset('uploads/courses')}}/{{ $round->course->course_image_thumbnail }}" alt="#"></a>
-                                <div class="course-badge p-2">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class='white-color mb-2' style="font-size: 1.075rem !important;">
-                                                <a href="{{ url('courseDetails/'.$round->course->id) }}" class="white-color">
-                                                    {{ $round->course->course_en_name ?? ''}}
-                                                </a>
-                                            </h3>
+                    <div class="col-sm-6 col-12">
+                        <div class="ltn__product-item ltn__product-item-3 text-left w-100">
+                            <div class="product-img shine">
+                                <a class="img-container">
+                                    <img src="{{ $round->course->course_image_thumbnail ? asset('uploads/courses/' . $round->course->course_image_thumbnail) : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                                        onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
+                                        alt="{{ $round->country->country_en_name }}">
+                                </a>
+
+                                <div class="course-badge">
+                                    <h3 class='white-color mb-2'>
+                                        <a class="img-container" href="{{ url('courseDetails/'.$round->course->id) }}">
+                                            {{ Str::limit($round->course->course_en_name, 70, '') }}
+                                        </a>
+                                    </h3>
+                                    <?php $date = date_create($round->round_start_date); ?>
+                                    <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px">
+                                        <div class="white-color bottom-title">
+                                            {{ $round->venue->venue_en_name }} -
+                                            {{ $round->country->country_en_name }} |
+                                            {{ date_format($date, 'd M, Y') }}
                                         </div>
-
-                                        <div class="col-12 row">
-                                            <?php $date = date_create($round->round_start_date); ?>
-
-                                            <div class="col-10 white-color bottom-title">
-                                                {{ $round->venue->venue_en_name }} -
-                                                {{ $round->country->country_en_name }} |
-                                                {{ date_format($date, 'd M, Y') }}
-                                            </div>
-                                            <div class="col-2 mb-2">
-                                                <span class="icon-arrow">
-                                                    <a href="{{ url('courseDetails/'.$round->course->id) }}"><i class="fa fa-arrow-right white-color"></i></a>
-                                                </span>
-                                            </div>
+                                        <div class="icon-arrow">
+                                            <a href="{{ url('courseDetails/'.$round->course->id) }}"><i
+                                                    class="fa fa-arrow-right white-color"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                         @endforeach
                     @endisset

@@ -248,6 +248,63 @@
         justify-content: center;
     }
 
+    .breadcrumb-nav-desktop {
+        display: block;
+    }
+
+    .breadcrumb-nav-mobile {
+        display: none;
+    }
+
+    .breadcrumb-mobile-home {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .breadcrumb-mobile-home:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.4);
+        color: #fff;
+    }
+
+    .breadcrumb-mobile-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+    }
+
+    .breadcrumb-mobile-category {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    .breadcrumb-mobile-category:hover {
+        color: #f5f5f5;
+    }
+
+    .breadcrumb-mobile-course {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.2;
+        text-decoration: none;
+    }
+
+    .breadcrumb-mobile-course:hover {
+        color: #fff;
+    }
+
     .breadcrumb-item {
         display: flex;
         align-items: center;
@@ -1015,7 +1072,7 @@
         }
 
         .product-img {
-            height: 250px !important;
+            height: 100% !important;
         }
 
         .course-badge {
@@ -1039,11 +1096,31 @@
         .bottom-title {
             font-size: 0.8rem !important;
         }
+
+        .breadcrumb-navigation {
+            padding: 12px 0 5px;
+            {{--  bottom: 5px;  --}}
+        }
+
+        .breadcrumb-nav-desktop {
+            display: none;
+        }
+
+        .breadcrumb-nav-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .breadcrumb-mobile-text {
+            align-items: flex-start;
+        }
     }
 
     @media (max-width: 480px) {
         .product-img {
-            height: 200px !important;
+            height: 100% !important;
         }
 
         .course-badge {
@@ -1066,6 +1143,31 @@
             font-size: 0.75rem !important;
         }
     }
+
+    /* Scrollable select dropdown styling */
+    /* Note: Native HTML select dropdown menus are rendered by the browser and cannot be directly styled.
+       Modern browsers automatically add scrollbars when there are many options.
+       The browser controls the dropdown height, but it typically shows 5-10 visible options with scrolling. */
+    select.form-control.scrollable-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 35px;
+    }
+
+    /* Style options for better readability */
+    select.form-control.scrollable-select option {
+        padding: 8px 12px;
+    }
+
+    /* Ensure select element itself has proper height */
+    select.form-control.scrollable-select {
+        height: 40px;
+        line-height: 40px;
+    }
 </style>
 
 <!-- Breadcrumb Navigation -->
@@ -1077,7 +1179,7 @@
         <h2>{{ $course->course_en_name }}</h2>
         <div class="breadcrumb-navigation">
             <div class="container">
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb" class="breadcrumb-nav-desktop">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="{{ url('/') }}" class="breadcrumb-link">
@@ -1105,6 +1207,38 @@
                         @endif
                     </ol>
                 </nav>
+                <nav aria-label="breadcrumb mobile" class="breadcrumb-nav-mobile">
+                    <a href="{{ url('/') }}" class="breadcrumb-mobile-home" aria-label="Home">
+                        <i class="fas fa-home"></i>
+                    </a>
+                    <div class="breadcrumb-mobile-text">
+                        @if($course->subCategory && $course->subCategory->courseCategory)
+                            <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                class="breadcrumb-mobile-category">
+                                {{ $course->subCategory->courseCategory->category_en_name }}
+                            </a>
+                        @elseif($course->subCategory)
+                            <span class="breadcrumb-mobile-category">
+                                {{ $course->subCategory->subcategory_en_name }}
+                            </span>
+                        @else
+                            <span class="breadcrumb-mobile-category">
+                                {{ $course->course_en_name }}
+                            </span>
+                        @endif
+
+                        @if($course->subCategory)
+                            <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                class="breadcrumb-mobile-course">
+                                {{ $course->course_en_name }}
+                            </a>
+                        @else
+                            <span class="breadcrumb-mobile-course">
+                                {{ $course->course_en_name }}
+                            </span>
+                        @endif
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
@@ -1126,9 +1260,10 @@
 </div>
 <div class="container">
     <div class="row ">
-        <div class="col-12 col-lg-6 mt-5">
+        <div class="col-12 col-lg-6  mt-0 mt-lg-5">
             <div class="main-img-of-course text-center">
-                <img src="{{ asset('uploads/courses') }}/{{ $course->course_image }}"
+                <img src="{{ $course->course_image ? asset('uploads/courses/' . $course->course_image) : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                    onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
                     alt="{{ $course->course_en_name }}">
             </div>
 
@@ -1280,8 +1415,8 @@
                                                     <div class="row">
                                                         <div class="form-group col-lg-6 col-md-12 name">
                                                             <label>Country*</label>
-                                                            <select name="country_id" class="form-control"
-                                                                style="padding:0 15px;border: 1px solid #CCC;">
+                                                            <select name="country_id" class="form-control scrollable-select"
+                                                                style="padding:0 15px;border: 1px solid #CCC;" size="1">
                                                                 <option value=""></option>
                                                                 @foreach ($countries as $country)
                                                                 <option value='{{ $country->id }}' @if (old('country_id')=="$country->id" ) {{ 'selected' }} @endif> {{ $country->country_en_name }}</option>
@@ -1290,8 +1425,8 @@
                                                         </div>
                                                         <div class="form-group col-lg-6 col-md-12 email">
                                                             <label>City*</label>
-                                                            <select name="venue_id" class="form-control"
-                                                                style="padding:0 12px;border: 1px solid #CCC;">
+                                                            <select name="venue_id" class="form-control scrollable-select"
+                                                                style="padding:0 12px;border: 1px solid #CCC;" size="1">
                                                                 <option value=""></option>
                                                                 @foreach ($venues as $venue)
                                                                 <option value='{{ $venue->id }}' @if (old('venue_id')=="$venue->id" ) {{ 'selected' }} @endif> {{ $venue->venue_en_name }}</option>
@@ -1561,38 +1696,39 @@
             <!-- Blog Item -->
             <div class="col-lg-12 ">
                 <div class="ltn__product-item ltn__product-item-3 text-left">
-                    <div class="product-img shine" style='height: 100%;'>
-                        <img height="100%"
-                            src="{{ asset('uploads/courses') }}/{{ $related_course->relatedcourse->course_image_thumbnail }}"
-                            alt="{{ $related_course->relatedcourse->course_en_name }}">
-                        <div class="course-badge p-3">
-                            <div class="row">
-                                <div class="col-12 title-section">
-                                    <h3 class='white-color'>
-                                        <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
-                                            {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
-                                        </a>
-                                    </h3>
-                                    <p class='white-color'>
-                                        {{ Str::limit($related_course->relatedcourse->course_en_desc, 200, ' ...') }}
-                                    </p>
-                                </div>
+                    <div class="product-img shine">
+                        <a class="img-container" href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
+                            <img height="100%"
+                                src="{{ $related_course->relatedcourse->course_image_thumbnail
+                                    ? asset('uploads/courses/' . $related_course->relatedcourse->course_image_thumbnail)
+                                    : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                                onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
+                                alt="{{ $related_course->relatedcourse->course_en_name }}">
+                        </a>
 
-                                <div class="col-12 row align-items-center">
-                                    <span class="category-title">{{
-                                        $related_course->relatedcourse->subCategory->courseCategory->category_en_name ??
-                                        '' }}</span>
-                                    <div class="col-10 white-color bottom-title">
-                                        {{ $related_course->related_course->venue->venue_en_name ?? '' }} -
-                                        {{ $related_course->related_course->country->country_en_name ?? '' }} | 24
-                                        Nov, 2024
-                                    </div>
-                                    <div class="col-2 ">
-                                        <span class="icon-arrow">
-                                            <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}"><i
-                                                    class="fa fa-arrow-right white-color"></i></a>
-                                        </span>
-                                    </div>
+                        <div class="course-badge">
+                            <h3 class="white-color mb-2 animated fadeIn p-2">
+                                <a class="img-container" href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}">
+                                    {{ Str::limit($related_course->relatedcourse->course_en_name, 89, '') }}
+                                </a>
+                            </h3>
+                            {{--  <p class="white-color mb-3">
+                                {{ Str::limit(strip_tags($related_course->relatedcourse->course_en_desc), 200, ' ...') }}
+                            </p>  --}}
+                            <div class="d-flex justify-content-between align-items-center" style="width:100%;margin-bottom: 15px;padding-right:15px">
+                                <div class="white-color bottom-title">
+                                    {{ $related_course->related_course->venue->venue_en_name ?? '' }}
+                                    @if(!empty($related_course->related_course->venue->venue_en_name) && !empty($related_course->related_course->country->country_en_name))
+                                        -
+                                    @endif
+                                    {{ $related_course->related_course->country->country_en_name ?? '' }}
+                                    @if(!empty($related_course->related_course->round_start_date))
+                                        | {{ \Carbon\Carbon::parse($related_course->related_course->round_start_date)->format('d M, Y') }}
+                                    @endif
+                                </div>
+                                <div class="icon-arrow ">
+                                    <a href="{{ url('courseDetails/' . $related_course->relatedcourse->id) }}"><i
+                                            class="fa fa-arrow-right white-color"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1615,6 +1751,29 @@
         });
         $(document).on('click', '#alertCloseDetails', function() {
             $('#alertDivDetails').fadeOut();
+        });
+
+        // Enhance scrollable select dropdowns
+        // Note: Native HTML select dropdowns are controlled by the browser
+        // Modern browsers automatically add scroll when there are many options
+        // This ensures proper styling and behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollableSelects = document.querySelectorAll('select.scrollable-select');
+            scrollableSelects.forEach(function(select) {
+                // Ensure select has proper styling
+                select.style.setProperty('max-height', '40px', 'important');
+
+                // Add event listeners to maintain dropdown functionality
+                select.addEventListener('focus', function() {
+                    this.style.setProperty('outline', '2px solid #007bff', 'important');
+                    this.style.setProperty('outline-offset', '2px', 'important');
+                });
+
+                select.addEventListener('blur', function() {
+                    this.style.removeProperty('outline');
+                    this.style.removeProperty('outline-offset');
+                });
+            });
         });
 </script>
 @endsection
