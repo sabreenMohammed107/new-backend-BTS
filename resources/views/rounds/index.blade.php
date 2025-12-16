@@ -87,6 +87,7 @@
                                 <th class="min-w-100px">Start</th>
                                 <th class="min-w-100px">End</th>
                                 <th class="min-w-100px">Price</th>
+                                 <th class="min-w-100px">HOme order</th>
                                 <th class="text-end min-w-70px">Actions</th>
                             </tr>
                             <!--end::Table row-->
@@ -157,6 +158,12 @@
             @if($row->currancy!=null)
             {{$row->currancy->currency_name}}</span>
             @endif
+    </div>
+    </td>
+      <td class="text-end pe-0">
+        <div class="d-flex align-items-center">
+        <span class="fw-bolder">{{$row->show_home_order}}
+
     </div>
     </td>
     <!--end::SKU=-->
