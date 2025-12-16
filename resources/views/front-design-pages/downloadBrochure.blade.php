@@ -263,7 +263,7 @@
                             alt="Integrating AI in Workplace Safety Practices">
                         <input type="hidden" name="course_id" value="{{ $course->id }}">
                         {{-- <input type="hidden" name="applicant_type_id" value="1"> --}}
-                        <input type="hidden" id="fileName" value="{{ asset('uploads/courseBrochure') }}/{{ $course->course_brochure }}">
+                        <input type="hidden" id="fileName" value="{{$course->course_brochure }}">
 
                         <div class="row">
                             <div class="col-md-6">
