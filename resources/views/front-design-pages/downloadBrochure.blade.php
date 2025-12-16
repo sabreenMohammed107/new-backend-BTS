@@ -254,16 +254,21 @@
                     <h2 class="form-title f-s-20">Download and further your knowledge with us.</h2>
                     <form id="downloadForm">
                         @csrf
+                        <?php
+                       $path = url('uploads/courseBrochure/' . $course->course_brochure);
+
+                        ?>
                          <input type="hidden" name="type" value="downloadBrochure" />
-                        <input type="hidden" name="courseBrochure"
+                        {{-- <input type="hidden" name="courseBrochure"
                             value="https://btsconsultant.com/uploads/courseBrochure/Integrating AI in Workplace Safety Practices.pdf"
-                            alt="Integrating AI in Workplace Safety Practices">
-                            <input type="hidden" name="courseBrochure"
-                            value="{{ asset('uploads/courseBrochure/' . $course->course_brochure) }}"
+                            alt="Integrating AI in Workplace Safety Practices"> --}}
+                            <input type="hidden" name="courseBrochure" id="brochPath"
+                            value="{{$path }}"
                             alt="Integrating AI in Workplace Safety Practices">
                         <input type="hidden" name="course_id" value="{{ $course->id }}">
                         {{-- <input type="hidden" name="applicant_type_id" value="1"> --}}
-                        <input type="hidden" id="fileName" value="{{ $course->course_brochure }}">
+<input type="hidden" id="fileName"
+value="{{ $course->course_brochure }}">
 
                         <div class="row">
                             <div class="col-md-6">
@@ -409,7 +414,7 @@ $(document).ready(function () {
         var _token = $('input[name="_token"]').val();
         var courseBrochure = $('input[name="courseBrochure"]').val();
         var fileName = $('#fileName').val();
-
+        var pp = $('#brochPath').val();
         // Get fields
         let name = $('input[name="name"]').val().trim();
         let company = $('input[name="company"]').val().trim();
@@ -478,9 +483,17 @@ $(document).ready(function () {
 
             success: function (result) {
                 var link = document.createElement("a");
-                link.download = fileName;
-                link.href = encodeURI(courseBrochure);
-                link.click();
+
+    var encodedFileName = encodeURIComponent(fileName);
+
+    var encodedUrl = courseBrochure.replace(fileName, encodedFileName);
+
+    link.href = encodedUrl;
+    link.download = fileName;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
             },
 
             error: function (xhr) {
