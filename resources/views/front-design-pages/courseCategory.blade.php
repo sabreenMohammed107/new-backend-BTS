@@ -4,7 +4,10 @@
 
 @section('page-content')
     <div class="main-course-bg-header"
-        style="background-image: url('{{ $subCategory->subcategory_image ? asset($subCategory->subcategory_image) : asset('front-assets/img/bg/servics-bg.png') }}');">
+style="background-image: url('{{ $subCategory->subcategory_image
+    ? asset('uploads/course_sub_categories/' . $subCategory->subcategory_image)
+    : asset('front-assets/img/bg/servics-bg.png')
+}}');" >
         <div class="course-main-title text-center">
             <h2>{{ $subCategory->subcategory_en_name }}</h2>
         </div>
