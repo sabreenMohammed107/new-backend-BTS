@@ -255,15 +255,15 @@
                     <form id="downloadForm">
                         @csrf
                          <input type="hidden" name="type" value="downloadBrochure" />
-                        {{-- <input type="hidden" name="courseBrochure"
+                        <input type="hidden" name="courseBrochure"
                             value="https://btsconsultant.com/uploads/courseBrochure/Integrating AI in Workplace Safety Practices.pdf"
-                            alt="Integrating AI in Workplace Safety Practices"> --}}
-                             <input type="hidden" name="courseBrochure"
-                            value="{{ asset('uploads/courseBrochure') }}/{{ $course->course_brochure }}"
+                            alt="Integrating AI in Workplace Safety Practices">
+                            <input type="hidden" name="courseBrochure"
+                            value="{{ asset('uploads/courseBrochure/' . $course->course_brochure) }}"
                             alt="Integrating AI in Workplace Safety Practices">
                         <input type="hidden" name="course_id" value="{{ $course->id }}">
                         {{-- <input type="hidden" name="applicant_type_id" value="1"> --}}
-                        <input type="hidden" id="fileName" value="{{$course->course_brochure }}">
+                        <input type="hidden" id="fileName" value="{{ $course->course_brochure }}">
 
                         <div class="row">
                             <div class="col-md-6">
