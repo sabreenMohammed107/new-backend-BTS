@@ -62,12 +62,12 @@
                       </div>
                       <div class="col-md-6 my-3">
                         <div class="input-item input-item-email ltn__custom-icon">
-                          <input type="text" name="title" name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Subject">
+                          <input type="text"  name="sender_subject" value="{{ old('sender_subject') }}" placeholder="Subject">
                         </div>
                       </div>
                     </div>
                     <div class="input-item input-item-textarea ltn__custom-icon my-3">
-                      <textarea name="message" placeholder="Your Message" style="min-height: 113px">{{ old('sender_message') }}</textarea>
+                      <textarea name="sender_message" placeholder="Your Message" style="min-height: 113px">{{ old('sender_message') }}</textarea>
                     </div>
 
                     <p class="form-messege mb-0 mt-20"></p>

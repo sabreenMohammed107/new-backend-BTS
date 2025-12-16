@@ -99,23 +99,23 @@
                                     <!--begin::Full Name-->
                                     <td style="width:50px !important">
                                         <a href="#" class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1">
-                                            {{ $row->email }}
+                                            {{ $row->sender_name }}
                                         </a>
                                     </td>
                                     <!--end::Full Name-->
                                     <!--begin::Course-->
                                     <td>
-                                        <span class="fw-bolder">{{ $row->email }}</span>
+                                        <span class="fw-bolder">{{ $row->sender_email }}</span>
                                     </td>
                                     <!--end::Course-->
                                     <!--begin::Course-->
                                     <td>
-                                        <span class="fw-bolder">{{ $row->subject }}</span>
+                                        <span class="fw-bolder">{{ $row->sender_subject }}</span>
                                     </td>
                                     <!--end::Course-->
                                     <!--begin::Course-->
                                     <td>
-                                        <span class="fw-bolder">{{ $row->message }}</span>
+                                        <span class="fw-bolder">{{ $row->sender_message }}</span>
                                     </td>
                                     <!--end::Course-->
                                     <!--begin::Register Date-->
