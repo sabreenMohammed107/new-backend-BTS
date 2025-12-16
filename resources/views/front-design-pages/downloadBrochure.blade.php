@@ -412,9 +412,8 @@ $(document).ready(function () {
 
         var data = $('#downloadForm').serialize();
         var _token = $('input[name="_token"]').val();
-        var courseBrochure = $('input[name="courseBrochure"]').val();
+        var courseBrochure = $('#brochPath').val();
         var fileName = $('#fileName').val();
-        var pp = $('#brochPath').val();
         // Get fields
         let name = $('input[name="name"]').val().trim();
         let company = $('input[name="company"]').val().trim();
@@ -482,14 +481,17 @@ $(document).ready(function () {
             data: data,
 
             success: function (result) {
-                var link = document.createElement("a");
+               var link = document.createElement("a");
 
+    // Encode اسم الملف فقط
     var encodedFileName = encodeURIComponent(fileName);
 
+    // استبدال اسم الملف في الـ URL
     var encodedUrl = courseBrochure.replace(fileName, encodedFileName);
 
     link.href = encodedUrl;
     link.download = fileName;
+    link.target = "_blank"; // ✅ open + download
 
     document.body.appendChild(link);
     link.click();
