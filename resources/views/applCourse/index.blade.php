@@ -112,7 +112,15 @@
                                 <!--begin::Register Type-->
                                 <td>
                                     <span class="fw-bolder">
-                                        {{ $row->type ?? '' }}
+                                        @if ($row->type == "inhouse")
+                                        Inhouse Request
+                                            @elseif ($row->type == "downloadBrochure")
+                                            Download Brochure
+                                            @elseif ($row->type == "online")
+                                           Online Request
+                                            @else
+
+                                        @endif
                                         {{-- @php
                                             $registerTypes = [
                                                 0 => 'REGISTER ROUND',

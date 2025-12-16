@@ -380,7 +380,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> Tailor Submissions</span>
+                                <span class="menu-title"> Tailor Course</span>
                             </a>
                         </div>
 
