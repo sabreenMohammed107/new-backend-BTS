@@ -4,7 +4,7 @@
 
 @section('page-content')
     <div class="main-course-bg-header"
-        style="background-image: url('{{ $subCategory->category_image ? asset($subCategory->category_image) : asset('front-assets/img/bg/servics-bg.png') }}');">
+        style="background-image: url('{{ $subCategory->subcategory_image ? asset($subCategory->subcategory_image) : asset('front-assets/img/bg/servics-bg.png') }}');">
         <div class="course-main-title text-center">
             <h2>{{ $subCategory->subcategory_en_name }}</h2>
         </div>
@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2" style="color: #000 !important;">
-                        <span class="section-title" style="color: black;font-size:16px;font-weight: normal;text-align: justify;">{{ $subCategory->category_en_description }}</span>
+                        <span class="section-title" style="color: black;font-size:16px;font-weight: normal;text-align: justify;">{{ $subCategory->subcategory_en_description }}</span>
                     </div>
 
                     <div class="row">
