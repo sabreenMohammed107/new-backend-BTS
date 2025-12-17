@@ -2,6 +2,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\DawnloadNotification;
+use App\Mail\OnlineEnqueryNotification;
+use App\Mail\QuickEnqueryNotification;
+use App\Mail\QuickInhouseNotification;
+use App\Mail\RegisterNotification;
 use App\Models\Applicant;
 use App\Models\ApplicantSalut;
 use App\Models\BillingDetails;
@@ -15,6 +20,7 @@ use App\Models\TailorCourse;
 use App\Models\Venue;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class CourseSearchController extends Controller
@@ -213,7 +219,7 @@ class CourseSearchController extends Controller
 
         $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
 
-        // \Mail::to($emails)->send(new DawnloadNotification($dawnload));
+        Mail::to($emails)->send(new DawnloadNotification($dawnload));
 
         if (! $request->get('courseBrochure')) {
             return response()->json([
@@ -287,7 +293,7 @@ class CourseSearchController extends Controller
         $quick  = Applicant::create($data);
         $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
 
-        //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+          Mail::to($emails)->send(new QuickInhouseNotification($quick));
 
         // if (!$request->get('courseBrochure')) {
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
@@ -330,8 +336,8 @@ class CourseSearchController extends Controller
     $quick = Applicant::create($request->all());
 
     // Optional: Send Email (Uncomment if needed)
-    // $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
-    // Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+    $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+    Mail::to($emails)->send(new QuickEnqueryNotification($quick));
 
     return redirect()->back()->with('success', 'Thanks; your request has been submitted successfully!');
 }
@@ -375,7 +381,7 @@ class CourseSearchController extends Controller
         $quick  = Applicant::create($data);
         $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
 
-        //   \Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+          Mail::to($emails)->send(new OnlineEnqueryNotification($quick));
 
         // if (!$request->get('courseBrochure')) {
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
@@ -480,10 +486,10 @@ class CourseSearchController extends Controller
         $billing_data['email']        = $request->get('billing_email');
         $billing_data['applicant_id'] = $applicant_id->id;
         $billingDetails               = BillingDetails::create($billing_data);
+$emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
 
-        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
-
-        // \Mail::to($emails)->send(new RegisterNotification($applicant_id,$billingDetails));
+// 🔑 ACTION: Send the email with both models attached
+Mail::to($emails)->send(new RegisterNotification($applicant_id, $billingDetails));
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
     }
 
