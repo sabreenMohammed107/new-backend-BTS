@@ -1271,6 +1271,21 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
+                            @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                             <div class="ltn__faq-inner ltn__faq-inner-2">
                                 <div id="accordion_2">
                                     <!-- card -->
@@ -1378,8 +1393,9 @@
                                             <div class="card-body">
                                                 <h4>Request Info</h4>
                                                 <form class="form-area contact-form text-right"
-                                                    action="{{ url('/registerApplicants') }}" method="POST">
+                                                    action="{{ url('/registerApplicantsEnquiry') }}" method="POST">
                                                     @csrf
+                                                     <input type="hidden" name="type" value="quickInquiry" />
                                                     <input type="hidden" name="course_id" value="{{ $course->id }}" />
                                                     <input type="hidden" name="applicant_type_id" value=2 />
                                                     <div class="row">

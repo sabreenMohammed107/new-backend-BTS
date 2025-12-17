@@ -293,6 +293,48 @@ class CourseSearchController extends Controller
         return redirect()->back()->with('message', 'Thanks; your request has been submitted successfully !');
         // }
     }
+     public function registerApplicantsEnquiry(Request $request)
+{
+    $validator = Validator::make($request->all(), [
+        'name'                => 'required|string|max:255',
+        'company'             => 'required|string|max:255',
+        'salut_id'            => 'nullable|integer',
+        'job_title'           => 'nullable|string|max:255',
+        'country_id'          => 'required|integer',
+        'venue_id'            => 'required|integer',
+        'course_id'           => 'required|integer',
+        'applicant_type_id'   => 'required|integer',
+        'quk_enquery_notes'   => 'required|string',
+        'captcha'             => 'required|captcha',
+        'email'               => [
+            'required',
+            'email',
+            function ($attribute, $value, $fail) {
+                $personalDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'aol.com', 'icloud.com', 'protonmail.com', 'zoho.com'];
+                $domain = strtolower(substr(strrchr($value, "@"), 1));
+
+                if (in_array($domain, $personalDomains)) {
+                    $fail("Please use a business email address; personal emails are not accepted.");
+                }
+            },
+        ],
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
+    }
+
+    // Save the data
+    $quick = Applicant::create($request->all());
+
+    // Optional: Send Email (Uncomment if needed)
+    // $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+    // Mail::to($emails)->send(new QuickEnqueryNotification($quick));
+
+    return redirect()->back()->with('success', 'Thanks; your request has been submitted successfully!');
+}
     public function registerApplicantsOnline(Request $request)
     {
         $validator = Validator::make($request->all(), [

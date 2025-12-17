@@ -133,6 +133,10 @@ class StaticPageController extends Controller
                 "small_description" => $request->input("small_description"),
                 "details" => $request->input("details"),
                 "details2" => $request->input("details2"),
+                "details3" => $request->input("details3"),
+                "details4" => $request->input("details4"),
+                "details5" => $request->input("details5"),
+                "details6" => $request->input("details6"),
             ];
 
             // Update the static page

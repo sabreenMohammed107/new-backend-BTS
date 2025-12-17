@@ -66,105 +66,96 @@
                         <!--begin::Table head-->
                         <thead>
                             <!--begin::Table row-->
-                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="w-10px pe-2">
-                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                            data-kt-check-target="#kt_ecommerce_category_table .form-check-input"
-                                            value="1" />
-                                    </div>
-                                </th>
-                                <th class="min-w-100px" style="width: 50px !important">Full Name</th>
-                                <th class="min-w-100px">Email</th>
-                                <th class="min-w-100px">Phone</th>
-                                <th class="min-w-100px">Course</th>
-                                <th class="min-w-100px">Register Date</th>
-                                <th class="min-w-100px">City</th>
-                                <th class="text-end min-w-70px">Actions</th>
-                            </tr>
+                         <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+    <th class="w-10px pe-2">
+        <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+            <input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_ecommerce_category_table .form-check-input" value="1" />
+        </div>
+    </th>
+    <th class="min-w-150px">Applicant Info</th>
+    <th class="min-w-100px">Company / Job</th>
+    <th class="min-w-100px">Contact</th>
+    <th class="min-w-150px">Course & Venue</th>
+    <th class="min-w-200px">Enquiry Notes</th>
+    <th class="min-w-100px">Date</th>
+    <th class="text-end min-w-70px">Actions</th>
+</tr>
                             <!--end::Table row-->
                         </thead>
                         <!--end::Table head-->
                         <tbody class="fw-bold text-gray-600">
-                            @foreach ($rows as $index => $row)
-                                <!--begin::Table row-->
-                                <tr>
-                                    <!--begin::Checkbox-->
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                            <input class="form-check-input" type="checkbox" value="{{ $row->id }}" />
-                                        </div>
-                                    </td>
-                                    <!--end::Checkbox-->
+                          @foreach ($rows as $index => $row)
+    <tr>
+        <td>
+            <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                <input class="form-check-input" type="checkbox" value="{{ $row->id }}" />
+            </div>
+        </td>
 
-                                    <!--begin::Full Name-->
-                                    <td style="width:50px !important">
-                                        <a href="#" class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1">
-                                            {{ $row->name }}
-                                        </a>
-                                    </td>
-                                    <!--end::Full Name-->
+        <td>
+            <div class="d-flex flex-column">
+                <span class="text-gray-800 fw-bolder">{{ $row->salut->en_name ?? '' }} {{ $row->name }}</span>
+                <span class="text-muted fw-bold fs-7">{{ $row->country->country_en_name ?? 'N/A' }}</span>
+            </div>
+        </td>
 
-                                    <!--begin::Course-->
+        <td>
+            <div class="d-flex flex-column">
+                <span class="text-gray-800 fw-bold">{{ $row->company }}</span>
+                <span class="text-muted fs-7">{{ $row->job_title ?? 'No Title' }}</span>
+            </div>
+        </td>
 
-                                    <!--end::Course-->
-                                    <td>
-                                        <span class="fw-bolder">{{ $row->email ?? '' }}</span>
-                                    </td>
-                                    <td>
-                                        <span class="fw-bolder">{{ $row->phone ?? '' }}</span>
-                                    </td>
-                                    <td>
-                                        <span class="fw-bolder">{{ $row->courses->course_en_name ?? 'N/A' }}</span>
-                                    </td>
-                                    <!--begin::Register Date-->
-                                    <td>
-                                        <span
-                                            class="fw-bolder">{{ \Carbon\Carbon::parse($row->created_at)->format('d-m-Y') }}</span>
-                                    </td>
-                                    <!--end::Register Date-->
+        <td>
+            <div class="d-flex flex-column">
+                <span class="text-gray-800 fw-bold">{{ $row->email }}</span>
+                <span class="text-muted fs-7">{{ $row->phone }}</span>
+            </div>
+        </td>
 
-                                    <!--begin::city-->
-                                    <td>
-                                        <span class="fw-bolder">
-                                            {{$row->round->venue->venue_en_name ?? ""}}
-                                        </span>
-                                    </td>
-                                    <!--end::city-->
-                                    <!--begin::Actions-->
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
-                                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                                            <span class="svg-icon svg-icon-5 m-0">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
-                                                        fill="black" />
-                                                </svg>
-                                            </span>
-                                        </a>
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4"
-                                            data-kt-menu="true">
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3"
-                                                    data-kt-ecommerce-category-filter="delete_row"
-                                                    onclick="event.preventDefault(); document.getElementById('delete_{{ $row->id }}').submit();">
-                                                    Delete
-                                                </a>
-                                                <form id="delete_{{ $row->id }}"
-                                                    action="{{ route('applRound.destroy', $row->id) }}" method="POST"
-                                                    style="display: none;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <!--end::Actions-->
-                                </tr>
-                                <!--end::Table row-->
-                            @endforeach
+        <td>
+            <div class="d-flex flex-column">
+                <span class="fw-bolder text-primary">{{ $row->courses->course_en_name ?? 'N/A' }}</span>
+                <span class="text-muted fs-7">
+                    <i class="fa fa-map-marker-alt fs-9"></i>
+                    {{ $row->venues->venue_en_name ?? ($row->round->venue->venue_en_name ?? 'N/A') }}
+                </span>
+            </div>
+        </td>
+
+        <td>
+            <div class="text-gray-800 fs-7 italic" style="max-width: 200px; white-space: normal;">
+                {{ Str::limit($row->quk_enquery_notes, 100) }}
+                @if(strlen($row->quk_enquery_notes) > 100)
+                    <span class="badge badge-light-info cursor-pointer" title="{{ $row->quk_enquery_notes }}">more</span>
+                @endif
+            </div>
+        </td>
+
+        <td>
+            <span class="fw-bolder text-gray-600">{{ \Carbon\Carbon::parse($row->created_at)->format('d M, Y') }}</span>
+        </td>
+
+        <td class="text-end">
+            <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                Actions
+                <span class="svg-icon svg-icon-5 m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+                    </svg>
+                </span>
+            </a>
+            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+                <div class="menu-item px-3">
+                    <a href="#" class="menu-link px-3 text-danger" onclick="if(confirm('Are you sure?')) { event.preventDefault(); document.getElementById('delete_{{ $row->id }}').submit(); }">Delete</a>
+                    <form id="delete_{{ $row->id }}" action="{{ route('applRound.destroy', $row->id) }}" method="POST" style="display: none;">
+                        @csrf @method('DELETE')
+                    </form>
+                </div>
+            </div>
+        </td>
+    </tr>
+@endforeach
                         </tbody>
 
                     </table>

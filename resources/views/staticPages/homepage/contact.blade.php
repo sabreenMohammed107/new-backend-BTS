@@ -92,6 +92,14 @@
                                     </div>
                                 </div>
                             </div>
+                             <div class="mb-10 fv-row">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Whatsapp</label>
+                                        <input type="text" class="form-control" name="details6" value="{{ $row->details6 }}" required>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--end::General options-->

@@ -118,6 +118,8 @@
                                             Download Brochure
                                             @elseif ($row->type == "online")
                                            Online Request
+                                            @elseif ($row->type == "quickInquiry")
+                                           Quick Inquiry
                                             @else
 
                                         @endif

@@ -101,13 +101,13 @@
                             <div class=" align-self-end footer-social-icon col-8 d-flex justify-content-start mt-2">
                                 <div style="margin-right: 5px;"
                                     class="face social-square d-flex justify-content-center align-items-center mr-1">
-                                    <a href="https://www.facebook.com/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{ $staticContact->details2 }}" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
                                 </div>
                                 <div style="margin-right: 5px;"
                                     class="linkedin social-square d-flex justify-content-center align-items-center mr-1">
-                                    <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="{{ $staticContact->details3 }}" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
-                                <a href="https://twitter.com/" target="_blank" style="margin-right: 5px;" class="social-link">
+                                <a href="{{ $staticContact->details4 }}" target="_blank" style="margin-right: 5px;" class="social-link">
                                     <div class="xtw social-square d-flex justify-content-center align-items-center mr-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 16px;height:16px">
                                             <path fill="#e7eaee"
@@ -117,7 +117,7 @@
                                 </a>
                                 <div
                                     class="insta social-square d-flex justify-content-center align-items-center mr-1">
-                                    <a href="https://www.instagram.com/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ $staticContact->details5 }}" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
 

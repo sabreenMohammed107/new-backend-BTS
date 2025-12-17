@@ -177,8 +177,8 @@
     <!-- Utilize Mobile Menu End -->
     <div class="main-course-bg-header">
         <!-- <div class="share-icon">
-            <i class="fas fa-share-alt-square"></i>
-          </div> -->
+                    <i class="fas fa-share-alt-square"></i>
+                  </div> -->
         <div class="course-main-title text-center">
             <h2>Download Brochure</h2>
             <div class="breadcrumb-navigation">
@@ -192,22 +192,22 @@
                                 </a>
                             </li>
                             @if($course->subCategory && $course->subCategory->courseCategory)
-                            <li class="breadcrumb-item">
-                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                                <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
-                                    class="breadcrumb-link">
-                                    {{ $course->subCategory->courseCategory->category_en_name }}
-                                </a>
-                            </li>
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                    <a href="{{ route('category.show', ['id' => $course->subCategory->courseCategory->id]) }}"
+                                        class="breadcrumb-link">
+                                        {{ $course->subCategory->courseCategory->category_en_name }}
+                                    </a>
+                                </li>
                             @endif
                             @if($course->subCategory)
-                            <li class="breadcrumb-item">
-                                <i class="fas fa-chevron-right breadcrumb-arrow"></i>
-                                <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
-                                    class="breadcrumb-link">
-                                    {{ $course->subCategory->subcategory_en_name }}
-                                </a>
-                            </li>
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+                                    <a href="{{ route('course-search', ['subcategory_id' => $course->subCategory->id]) }}"
+                                        class="breadcrumb-link">
+                                        {{ $course->subCategory->subcategory_en_name }}
+                                    </a>
+                                </li>
                             @endif
                         </ol>
                     </nav>
@@ -250,39 +250,40 @@
     <div class="container" style="margin-top: 70px;">
         <div class="row">
             <div class="col-12">
+                <div id="downloadSuccessMessage" class="alert alert-success" style="display: none;">
+                    <strong>Success!</strong> Thank you. Your download should start shortly.
+                </div>
                 <div class="container form-container">
                     <h2 class="form-title f-s-20">Download and further your knowledge with us.</h2>
                     <form id="downloadForm">
                         @csrf
                         <?php
-                       $path = url('uploads/courseBrochure/' . $course->course_brochure);
+    $path = url('uploads/courseBrochure/' . $course->course_brochure);
 
-                        ?>
-                         <input type="hidden" name="type" value="downloadBrochure" />
+                                ?>
+                        <input type="hidden" name="type" value="downloadBrochure" />
                         {{-- <input type="hidden" name="courseBrochure"
                             value="https://btsconsultant.com/uploads/courseBrochure/Integrating AI in Workplace Safety Practices.pdf"
                             alt="Integrating AI in Workplace Safety Practices"> --}}
-                            <input type="hidden" name="courseBrochure" id="brochPath"
-                            value="{{$path }}"
+                        <input type="hidden" name="courseBrochure" id="brochPath" value="{{$path }}"
                             alt="Integrating AI in Workplace Safety Practices">
                         <input type="hidden" name="course_id" value="{{ $course->id }}">
                         {{-- <input type="hidden" name="applicant_type_id" value="1"> --}}
-<input type="hidden" id="fileName"
-value="{{ $course->course_brochure }}">
+                        <input type="hidden" id="fileName" value="{{ $course->course_brochure }}">
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Your Name *:</label>
                                     <input name="name" type="text" value="" class="form-control">
-                                     <div class="error-text text-danger" id="nameError" style="display:none;"></div>
+                                    <div class="error-text text-danger" id="nameError" style="display:none;"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Your Company *:</label>
                                     <input name="company" type="text" value="" class="form-control">
-                                     <div class="error-text text-danger" id="companyError" style="display:none;"></div>
+                                    <div class="error-text text-danger" id="companyError" style="display:none;"></div>
                                 </div>
                             </div>
                         </div>
@@ -311,9 +312,9 @@ value="{{ $course->course_brochure }}">
                                         class="form-control">
                                         <option value=""></option>
                                         @foreach ($countries as $country)
-                                            <option value='{{ $country->id }}'
-                                                @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
-                                                {{ $country->country_en_name }}</option>
+                                            <option value='{{ $country->id }}' @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
+                                                {{ $country->country_en_name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -345,9 +346,9 @@ value="{{ $course->course_brochure }}">
                             <div class="form-group col-lg-4 col-md-6">
                                 <label>Captcha*</label>
                                 <div class="captcha d-flex align-items-center gap-2">
-                                                                  <span id="captcha-img" style="display:inline-block; width:auto; height:auto;">
-    {!! captcha_img('math') !!}
-</span>
+                                    <span id="captcha-img" style="display:inline-block; width:auto; height:auto;">
+                                        {!! captcha_img('math') !!}
+                                    </span>
                                     <button type="button" class="btn btn-secondary btn-sm" id="refresh-captcha"
                                         style="margin-left: 10px; padding: 6px 10px;">
                                         <i class="fas fa-sync-alt"></i>
@@ -376,18 +377,18 @@ value="{{ $course->course_brochure }}">
 @endsection
 @section('script')
     <script>
-        document.getElementById('refresh-captcha').addEventListener('click', function() {
+        document.getElementById('refresh-captcha').addEventListener('click', function () {
             fetch('/refresh-captcha')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('captcha-img').innerHTML = data.captcha;
                 });
         });
-        $(document).on('click', '#alertCloseDetails', function() {
+        $(document).on('click', '#alertCloseDetails', function () {
             $('#alertDivDetails').fadeOut();
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Category
             var categorySelect = document.getElementById('country_id');
             if (categorySelect && !categorySelect.tomselect) {
@@ -403,121 +404,90 @@ value="{{ $course->course_brochure }}">
             }
 
         });
-$(document).ready(function () {
-    $('#downloadButton').click(function () {
+        $(document).ready(function () {
+            $('#downloadButton').click(function (e) {
+                e.preventDefault();
 
-        // Reset all errors
-        $(".error-text").hide().text("");
-        $("#emailError").hide().text("");
+                // 1. Reset all errors
+                $(".error-text").hide().text("");
+                $("#emailError").hide().text("");
 
-        var data = $('#downloadForm').serialize();
-        var _token = $('input[name="_token"]').val();
-        var courseBrochure = $('#brochPath').val();
-        var fileName = $('#fileName').val();
-        // Get fields
-        let name = $('input[name="name"]').val().trim();
-        let company = $('input[name="company"]').val().trim();
-        var email = $('#emailAddrees').val().trim();
+                // 2. Client-side Validation
+                let name = $('input[name="name"]').val().trim();
+                let company = $('input[name="company"]').val().trim();
+                let email = $('#emailAddrees').val().trim();
+                let hasError = false;
 
-        let hasError = false;
+                if (!name) { $("#nameError").text("Name is required.").show(); hasError = true; }
+                if (!company) { $("#companyError").text("Company is required.").show(); hasError = true; }
+                if (!email) { $("#emailError").text("Email is required.").show(); hasError = true; }
 
-        // --------------------
-        // 1️⃣ Required fields
-        // --------------------
-        if (!name) {
-            $("#nameError").text("Name is required.").show();
-            hasError = true;
-        }
+                // Email Format Regex
+                var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                if (email && !email.match(emailRegex)) {
+                    $("#emailError").text("❌ Please enter a valid email address.").show();
+                    hasError = true;
+                }
 
-        if (!company) {
-            $("#companyError").text("Company is required.").show();
-            hasError = true;
-        }
+                // Terms Check
+                if ($('input[name="agree"]:checked').length === 0) {
+                    $("#emailError").text("❌ You must accept the Terms & Conditions.").show();
+                    hasError = true;
+                }
 
-        if (!email) {
-            $("#emailError").text("Email is required.").show();
-            hasError = true;
-        }
+                if (hasError) return;
 
-        if (hasError) return;
+                // 3. Prepare Data
+                var formData = $('#downloadForm').serialize();
+                var courseBrochureUrl = $('#brochPath').val();
+                var fileName = $('#fileName').val();
 
-        // --------------------
-        // 2️⃣ Validate email format
-        // --------------------
-        var emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                // 4. AJAX Submit
+                $.ajax({
+                    url: "{{ route('registerApplicantsDawnload') }}",
+                    method: "POST",
+                    data: formData,
+                    success: function (result) {
+                        // 1. Show the success message
+                        $("#downloadSuccessMessage").fadeIn();
 
-        if (!email.match(emailRegex)) {
-            $("#emailError").text("❌ Please enter a valid email address.").show();
-            return;
-        }
+                        // 2. Hide the message after 5 seconds (5000ms)
+                        setTimeout(function () {
+                            $("#downloadSuccessMessage").fadeOut();
+                        }, 5000);
 
-        // --------------------
-        // 3️⃣ Block free emails
-        // --------------------
-        var freeRegex = /@(gmail\.com|hotmail\.com|yahoo\.com)$/i;
+                        // 3. Trigger the file download
+                        const link = document.createElement('a');
+                        link.href = courseBrochureUrl;
+                        link.setAttribute('download', fileName);
+                        link.setAttribute('target', '_blank');
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
 
-        if (email.match(freeRegex)) {
-            $("#emailError").text("❌ Free email domains are not allowed. Please use your corporate email.").show();
-            return;
-        }
-
-        // --------------------
-        // 4️⃣ Terms not accepted
-        // --------------------
-        if ($('input[name="agree"]:checked').length === 0) {
-            $("#emailError").text("❌ You must accept the Terms & Conditions.").show();
-            return;
-        }
-
-        // --------------------
-        // 5️⃣ AJAX request
-        // --------------------
-        $.ajax({
-            url: "{{ route('registerApplicantsDawnload') }}",
-            method: "POST",
-            headers: {
-                'X-CSRF-TOKEN': _token
-            },
-            data: data,
-
-            success: function (result) {
-               var link = document.createElement("a");
-
-    // Encode اسم الملف فقط
-    var encodedFileName = encodeURIComponent(fileName);
-
-    // استبدال اسم الملف في الـ URL
-    var encodedUrl = courseBrochure.replace(fileName, encodedFileName);
-
-    link.href = encodedUrl;
-    link.download = fileName;
-    link.target = "_blank"; // ✅ open + download
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-            },
-
-            error: function (xhr) {
-
-    if (xhr.status === 422) {
-        let errors = xhr.responseJSON.errors;
-
-        if (errors.name) $("#nameError").text(errors.name[0]).show();
-        if (errors.company) $("#companyError").text(errors.company[0]).show();
-        if (errors.email) $("#emailError").text(errors.email[0]).show();
-        if (errors.captcha) $("#captchaError").text(errors.captcha[0]).show();
-
-        return;
-    }
-
-    $("#emailError").text("❌ An error occurred. Please try again later.").show();
-}
-
+                        // 4. Clear the form fields and refresh captcha
+                        $('#downloadForm')[0].reset();
+                        if (typeof TomSelect !== 'undefined' && $('#country_id')[0].tomselect) {
+                            $('#country_id')[0].tomselect.clear();
+                        }
+                        $('#refresh-captcha').click();
+                    },
+                    error: function (xhr) {
+                        if (xhr.status === 422) {
+                            let errors = xhr.responseJSON.errors;
+                            if (errors.name) $("#nameError").text(errors.name[0]).show();
+                            if (errors.company) $("#companyError").text(errors.company[0]).show();
+                            if (errors.email) $("#emailError").text(errors.email[0]).show();
+                            if (errors.captcha) $("#captchaError").text(errors.captcha[0]).show();
+                        } else {
+                            $("#emailError").text("❌ Something went wrong. Please try again.").show();
+                        }
+                        // Refresh captcha on error
+                        $('#refresh-captcha').click();
+                    }
+                });
+            });
         });
-    });
-});
-
 
     </script>
 @endsection
