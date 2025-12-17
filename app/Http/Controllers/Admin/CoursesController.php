@@ -160,18 +160,20 @@ class CoursesController extends Controller
         $size = $file->getSize();
         $path = $file->getRealPath();
         $mime = $file->getMimeType();
-
-
-        // Rename The Image ..
+ // Rename The Image ..
         $imageName = $name;
-
-        $uploadPath = 'uploads/courseBrochure';
-
+        $uploadPath = public_path('uploads/courseBrochure');
+        //$uploadPath ='C:\inetpub\vhosts\btsconsultant.com\httpdocs\BTSConsultant_Resources\public\uploads/courses';
+        try {
+            $file->move($uploadPath, $imageName);
+        } catch (Exception $e) {
+            error_log('Exception: ' . $e->getMessage());
+            return $e->getMessage();
+        }
         // Move The image..
-        $file->move($uploadPath, $imageName);
 
-        //  Storage::put('public/uploads/courseBrochure', $imageName);
-        // $filename =$imageName->store('/public/uploads',['disk' => 'public']);
+        // dd($uploadPath);
+
         return $imageName;
     }
 
