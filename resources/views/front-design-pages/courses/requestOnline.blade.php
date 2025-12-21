@@ -522,30 +522,24 @@
                                     id="email" required>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6 mb-3">
-                                <label for="country" class="form-label required">Country</label>
-                                <select name="country_id" id="personal_country" class="form-select">
-                                    <option value=""></option>
-                                    @foreach ($countries as $country)
-                                        <option value='{{ $country->id }}'
-                                            @if (old('country_id') == "$country->id") {{ 'selected' }} @endif>
-                                            {{ $country->country_en_name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="city" class="form-label required">City</label>
-                                <select name="venue_id" id="personal_city" class="form-select">
-                                    <option value=""></option>
-                                    @foreach ($venues as $venue)
-                                        <option value='{{ $venue->id }}'
-                                            @if (old('venue_id') == "$venue->id") {{ 'selected' }} @endif>
-                                            {{ $venue->venue_en_name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+                        @include('components.country-city-select', [
+                            'countries' => $countries,
+                            'venues' => $venues,
+                            'countryId' => 'personal_country_online',
+                            'cityId' => 'personal_city_online',
+                            'countryName' => 'country_id',
+                            'cityName' => 'venue_id',
+                            'countryLabel' => 'Country',
+                            'cityLabel' => 'City',
+                            'countryRequired' => false,
+                            'cityRequired' => false,
+                            'selectedCountry' => old('country_id'),
+                            'selectedCity' => old('venue_id'),
+                            'wrapperClass' => 'row mb-3',
+                            'colClass' => 'col-md-6 mb-3',
+                            'useNiceSelect' => true,
+                            'instanceName' => 'onlineCascade',
+                        ])
                         <div class="row mb-3">
                             <div class="col-md-12 mb-3">
                                 <label for="email" class="form-label required">Other Requirements</label>
@@ -650,16 +644,6 @@
         });
         $(document).on('click', '#alertCloseDetails', function() {
             $('#alertDivDetails').fadeOut();
-        });
-        $(document).ready(function() {
-            // تأكد من تفعيل المكتبة الخاصة بالـ nice-select
-            $('select').niceSelect();
-
-            // التحقق من التغيير في الـ nice-select
-            $(".nice-select").on("change", function() {
-                var selectedValue = $(this).find('input').val();
-                $('select[name="country_id"]').val(selectedValue);
-            });
         });
     </script>
 @endsection

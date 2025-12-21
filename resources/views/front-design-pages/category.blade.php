@@ -37,7 +37,12 @@
                       <a href="{{ route('course.category', ['id' => $subcategory->id]) }}">
                          {{-- <a href="{{ route('searchCourse.index', ['category_id' => $subcategory->id]) }}"> --}}
                         <div class="service-card">
-                            <img src="{{ asset('uploads/course_sub_categories') }}/{{ $subcategory->subcategory_image }}" alt={{ $subcategory->subcategory_en_name }}>
+                            {{-- <img src="{{ asset('uploads/course_sub_categories') }}/{{ $subcategory->subcategory_image }}" alt={{ $subcategory->subcategory_en_name }}> --}}
+                          <img src="{{ $subcategory->subcategory_image
+                ? asset('uploads/course_sub_categories/' . $subcategory->subcategory_image)
+                : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+     onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
+     alt="{{ $subcategory->subcategory_en_name }}">
                             <div class="service-overlay">
                                 <h3 class="service-title">{{ $subcategory->subcategory_en_name }}</h3>
                             </div>

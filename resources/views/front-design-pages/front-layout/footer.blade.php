@@ -156,6 +156,10 @@
 <script src="{{ asset('front-assets/js/plugins.js') }}"></script>
 <!-- Main JS -->
 <script src="{{ asset('front-assets/js/main.js') }}"></script>
+<!-- Country-City Cascade Module -->
+<script src="{{ asset('front-assets/js/country-city-cascade.js') }}"></script>
+
+@stack('country-city-scripts')
 
 <!-- Newsletter AJAX Handler -->
 <script>

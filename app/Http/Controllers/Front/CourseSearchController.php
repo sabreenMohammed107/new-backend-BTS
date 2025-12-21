@@ -234,7 +234,19 @@ class CourseSearchController extends Controller
     {
         $now_date  = now();
         $course    = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
-        $rounds    = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
+        // Get unique courses by selecting the earliest upcoming round per course
+        $rounds    = Round::where('rounds.active', '=', 1)
+            ->where('round_start_date', '>', $now_date)
+            ->whereIn('id', function ($query) use ($now_date) {
+                $query->selectRaw('MIN(id)')
+                    ->from('rounds')
+                    ->where('active', '=', 1)
+                    ->where('round_start_date', '>', $now_date)
+                    ->groupBy('course_id');
+            })
+            ->orderBy('round_start_date', 'asc')
+            ->take(7)
+            ->get();
         $venues    = Venue::all();
         $countries = Country::all();
         $saluts    = ApplicantSalut::all();
@@ -246,7 +258,19 @@ class CourseSearchController extends Controller
         // session()->forget('captcha');
         $now_date  = now();
         $course    = Course::with('subCategory')->where('id', '=', $course_id)->firstOrFail();
-        $rounds    = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
+        // Get unique courses by selecting the earliest upcoming round per course
+        $rounds    = Round::where('rounds.active', '=', 1)
+            ->where('round_start_date', '>', $now_date)
+            ->whereIn('id', function ($query) use ($now_date) {
+                $query->selectRaw('MIN(id)')
+                    ->from('rounds')
+                    ->where('active', '=', 1)
+                    ->where('round_start_date', '>', $now_date)
+                    ->groupBy('course_id');
+            })
+            ->orderBy('round_start_date', 'asc')
+            ->take(7)
+            ->get();
         $venues    = Venue::all();
         $countries = Country::all();
         $saluts    = ApplicantSalut::all();
@@ -397,7 +421,19 @@ class CourseSearchController extends Controller
         $venues        = Venue::all();
         $countries     = Country::all();
         $saluts        = ApplicantSalut::all();
-        $rounds        = Round::where('rounds.active', '=', 1)->where('round_start_date', '>', $now_date)->orderBy('round_start_date', 'asc')->take(7)->get();
+        // Get unique courses by selecting the earliest upcoming round per course
+        $rounds        = Round::where('rounds.active', '=', 1)
+            ->where('round_start_date', '>', $now_date)
+            ->whereIn('id', function ($query) use ($now_date) {
+                $query->selectRaw('MIN(id)')
+                    ->from('rounds')
+                    ->where('active', '=', 1)
+                    ->where('round_start_date', '>', $now_date)
+                    ->groupBy('course_id');
+            })
+            ->orderBy('round_start_date', 'asc')
+            ->take(7)
+            ->get();
         return view('front-design-pages.courses.registerCourse', compact('course_rounds', 'rounds', 'course', 'countries', 'venues', 'saluts'));
     }
 

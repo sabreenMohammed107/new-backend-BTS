@@ -1401,7 +1401,7 @@
                                                     <div class="row">
                                                         <div class="form-group col-lg-6 col-md-12 name">
                                                             <label>Salutation</label>
-                                                            <select name="salut_id" class="form-control"
+                                                            <select name="salut_id" class="form-control no-nice-select"
                                                                 style="padding:0 12px;border: 1px solid #CCC;">
                                                                 <option value=""></option>
                                                                 @foreach ($saluts as $salut)
@@ -1428,28 +1428,28 @@
                                                                 value="{{ old('company') }}" class="form-control" required >
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-lg-6 col-md-12 name">
-                                                            <label>Country*</label>
-                                                            <select name="country_id" class="form-control scrollable-select"
-                                                                style="padding:0 15px;border: 1px solid #CCC;" size="1">
-                                                                <option value=""></option>
-                                                                @foreach ($countries as $country)
-                                                                <option value='{{ $country->id }}' @if (old('country_id')=="$country->id" ) {{ 'selected' }} @endif> {{ $country->country_en_name }}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group col-lg-6 col-md-12 email">
-                                                            <label>City*</label>
-                                                            <select name="venue_id" class="form-control scrollable-select"
-                                                                style="padding:0 12px;border: 1px solid #CCC;" size="1">
-                                                                <option value=""></option>
-                                                                @foreach ($venues as $venue)
-                                                                <option value='{{ $venue->id }}' @if (old('venue_id')=="$venue->id" ) {{ 'selected' }} @endif> {{ $venue->venue_en_name }}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                                                    @include('components.country-city-select', [
+                                                        'countries' => $countries,
+                                                        'venues' => $venues,
+                                                        'countryId' => 'enquiry_country',
+                                                        'cityId' => 'enquiry_city',
+                                                        'countryName' => 'country_id',
+                                                        'cityName' => 'venue_id',
+                                                        'countryLabel' => 'Country',
+                                                        'cityLabel' => 'City',
+                                                        'countryRequired' => true,
+                                                        'cityRequired' => true,
+                                                        'showAsterisk' => true,
+                                                        'selectedCountry' => old('country_id'),
+                                                        'selectedCity' => old('venue_id'),
+                                                        'wrapperClass' => 'row',
+                                                        'colClass' => 'form-group col-lg-6 col-md-12',
+                                                        'labelClass' => '',
+                                                        'useNiceSelect' => false,
+                                                        'selectClass' => 'form-control scrollable-select',
+                                                        'selectStyle' => 'padding:0 15px;border: 1px solid #CCC;',
+                                                        'instanceName' => 'enquiryCascade',
+                                                    ])
 
                                                     <div class="row">
                                                         <div class="form-group col-lg-6 col-md-12 email">

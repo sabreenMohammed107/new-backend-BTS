@@ -37,7 +37,10 @@ class RoundsApplicantController extends Controller
     }
     public function show($id)
     {
+        $applicant = $this->object::with(['salut', 'country', 'venues', 'courses', 'round.venue', 'billingDetails.salut', 'billingDetails.country', 'billingDetails.venues'])
+            ->findOrFail($id);
 
+        return view("{$this->view}.show", compact('applicant'));
     }
     public function edit($id)
     {

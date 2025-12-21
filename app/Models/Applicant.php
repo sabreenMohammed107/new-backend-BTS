@@ -43,4 +43,9 @@ class Applicant extends Model
 
     }
 
+    public function billingDetails()
+    {
+        return $this->hasOne('App\Models\BillingDetails', 'applicant_id');
+    }
+
 }
