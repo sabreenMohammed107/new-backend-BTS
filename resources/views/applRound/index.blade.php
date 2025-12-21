@@ -76,7 +76,7 @@
     <th class="min-w-100px">Company / Job</th>
     <th class="min-w-100px">Contact</th>
     <th class="min-w-150px">Course & Venue</th>
-    <th class="min-w-200px">Enquiry Notes</th>
+    {{-- <th class="min-w-200px">Enquiry Notes</th> --}}
     <th class="min-w-100px">Date</th>
     <th class="text-end min-w-70px">Actions</th>
 </tr>
@@ -123,14 +123,14 @@
             </div>
         </td>
 
-        <td>
+        {{-- <td>
             <div class="text-gray-800 fs-7 italic" style="max-width: 200px; white-space: normal;">
                 {{ Str::limit($row->quk_enquery_notes, 100) }}
                 @if(strlen($row->quk_enquery_notes) > 100)
                     <span class="badge badge-light-info cursor-pointer" title="{{ $row->quk_enquery_notes }}">more</span>
                 @endif
             </div>
-        </td>
+        </td> --}}
 
         <td>
             <span class="fw-bolder text-gray-600">{{ \Carbon\Carbon::parse($row->created_at)->format('d M, Y') }}</span>

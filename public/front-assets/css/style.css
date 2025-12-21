@@ -14745,7 +14745,14 @@ input[type="date"] {
   font-size: 0.625rem;
 }
 .ltn__blog-area .ltn__blog-slider-proud-active div img {
-  height: 60px;
+  /* height: 60px; */
+  max-height: 120px;    /* Limits height to 120px, but won't stretch smaller images */
+
+    width: auto;          /* Let width adjust naturally */
+    max-width: 100%;      /* Ensure it fits in the column */
+
+    display: block;       /* Layout fix */
+    margin: 0 auto;
 }
 .ltn__blog-area .proud-section-title {
   position: relative;

@@ -53,14 +53,7 @@
                                         <td class="text-muted fw-bold">Phone</td>
                                         <td class="text-gray-800">{{ $applicant->phone ?? 'N/A' }}</td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-muted fw-bold">Mobile</td>
-                                        <td class="text-gray-800">{{ $applicant->mobile ?? 'N/A' }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-muted fw-bold">Fax</td>
-                                        <td class="text-gray-800">{{ $applicant->fax ?? 'N/A' }}</td>
-                                    </tr>
+
                                     <tr>
                                         <td class="text-muted fw-bold">Company</td>
                                         <td class="text-gray-800 fw-bold">{{ $applicant->company ?? 'N/A' }}</td>
@@ -77,10 +70,7 @@
                                         <td class="text-muted fw-bold">Venue/City</td>
                                         <td class="text-gray-800">{{ $applicant->venues->venue_en_name ?? 'N/A' }}</td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-muted fw-bold">Address</td>
-                                        <td class="text-gray-800">{{ $applicant->address ?? 'N/A' }}</td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -132,10 +122,7 @@
                                             <td class="text-muted fw-bold">Venue/City</td>
                                             <td class="text-gray-800">{{ $applicant->billingDetails->venues->venue_en_name ?? 'N/A' }}</td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold">Address</td>
-                                            <td class="text-gray-800">{{ $applicant->billingDetails->address ?? 'N/A' }}</td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             @else
