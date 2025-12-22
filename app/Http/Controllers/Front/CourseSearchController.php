@@ -579,7 +579,7 @@ Mail::to($emails)->send(new RegisterNotification($applicant_id, $billingDetails)
         ]);
 
         if ($validator->fails()) {
-             return back()->withErrors($validator)->withInput();
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
         $tailor=TailorCourse::create($request->all());
