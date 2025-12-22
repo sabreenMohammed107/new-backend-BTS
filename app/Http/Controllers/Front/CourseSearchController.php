@@ -6,6 +6,7 @@ use App\Mail\DawnloadNotification;
 use App\Mail\OnlineEnqueryNotification;
 use App\Mail\QuickEnqueryNotification;
 use App\Mail\QuickInhouseNotification;
+use App\Mail\TailorEnqueryNotification;
 use App\Mail\RegisterNotification;
 use App\Models\Applicant;
 use App\Models\ApplicantSalut;
@@ -581,7 +582,10 @@ Mail::to($emails)->send(new RegisterNotification($applicant_id, $billingDetails)
              return back()->withErrors($validator)->withInput();
         }
 
-        TailorCourse::create($request->all());
+        $tailor=TailorCourse::create($request->all());
+
+       $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+        Mail::to($emails)->send(new TailorEnqueryNotification($tailor));
 
         return response()->json(['message' => 'success'], 200);
     }

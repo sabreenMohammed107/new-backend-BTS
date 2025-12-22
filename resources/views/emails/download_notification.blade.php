@@ -17,7 +17,8 @@
 <body>
     <div class="container">
         <div class="logo-section">
-            <img src="{{ asset('front-assets/img/logo.png') }}" alt="BTS Consultant Logo">
+            {{-- <img src="{{ asset('front-assets/img/logo.png') }}" alt="BTS Consultant Logo"> --}}
+             <img src="{{ $message->embed(public_path('front-assets/img/logo.png')) }}" alt="BTS Consultant Logo">
         </div>
 
         <div class="header">
@@ -27,6 +28,9 @@
         <div class="content">
             <p>Hello Admin,</p>
             <p>A new enquiry has been submitted through the website download form.</p>
+
+             <div class="field-label">Course Name</div>
+            <div class="field-value">{{ $applicant->courses->course_en_name ?? 'N/A' }}</div>
 
             <div class="field-label"> Name</div>
             <div class="field-value">{{ $applicant->name }}</div>

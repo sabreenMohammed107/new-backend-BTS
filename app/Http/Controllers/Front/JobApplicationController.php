@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\CareerEnqueryNotification;
 use App\Models\Career;
 use App\Models\careerLevel;
 use App\Models\CareersApplicant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -48,7 +50,7 @@ class JobApplicationController extends Controller
         }
 
         // Create application record
-        CareersApplicant::create([
+        $career=CareersApplicant::create([
             'career_id' => $request->career_id,
             'carrer_level_id' => $request->carrer_level_id,
             'expected_salary' => $request->expected_salary,
@@ -58,7 +60,8 @@ class JobApplicationController extends Controller
             'cv_path' => $cvPath,
             'doc_path' => $docPath,
         ]);
-
+  $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+        Mail::to($emails)->send(new CareerEnqueryNotification($career));
         return redirect()->back()->with('success', 'Your application has been submitted successfully.');
     }
 

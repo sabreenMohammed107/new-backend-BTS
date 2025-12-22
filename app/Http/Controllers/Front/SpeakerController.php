@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Mail\SpeakerEnqueryNotification;
 use App\Models\Speaker;
 use Illuminate\Http\Request;
 use App\Models\ApplicantSalut;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -111,6 +113,9 @@ class SpeakerController extends Controller
         if ($request->has('expertise') && is_array($request->expertise)) {
             $speaker->expertises()->attach($request->expertise);
         }
+
+          $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+        Mail::to($emails)->send(new SpeakerEnqueryNotification($speaker));
 
         return redirect()->back()->with('success', 'Your application has been submitted successfully.');
     }

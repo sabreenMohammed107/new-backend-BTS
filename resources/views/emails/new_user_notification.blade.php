@@ -17,7 +17,8 @@
 <body>
     <div class="container">
         <div class="logo-section">
-            <img src="{{ asset('front-assets/img/logo.png') }}" alt="BTS Consultant Logo">
+            {{-- <img src="{{ asset('front-assets/img/logo.png') }}" alt="BTS Consultant Logo"> --}}
+             <img src="{{ $message->embed(public_path('front-assets/img/logo.png')) }}" alt="BTS Consultant Logo">
         </div>
 
         <div class="header">

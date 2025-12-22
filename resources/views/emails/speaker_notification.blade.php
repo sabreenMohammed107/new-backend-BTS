@@ -20,56 +20,37 @@
 <body>
     <div class="container">
         <div class="logo-section">
-            {{-- <img src="{{ asset('front-assets/img/logo.png') }}" alt="BTS Consultant Logo"> --}}
             <img src="{{ $message->embed(public_path('front-assets/img/logo.png')) }}" alt="BTS Consultant Logo">
         </div>
 
         <div class="header">
-            <h1>New Online Request</h1>
+            <h1>New Speaker Application</h1>
         </div>
 
         <div class="content">
             <p style="margin-top:0;">Hello Admin,</p>
-            <p>A new registration/in-house enquiry has been received. Here are the full details:</p>
+            <p>A new speaker application has been received. Here are the full details:</p>
 
-            <div class="section-title">Course Information</div>
-
-            <div class="field-label">Course Title</div>
-            <div class="field-value">{{ $applicant->courses->course_en_name ?? 'N/A' }}</div>
-
-            <div style="display: table; width: 100%;">
-                <div style="display: table-cell; width: 50%; padding-right: 10px;">
-                    <div class="field-label">Preferred Dates</div>
-                    <div class="field-value">{{ $applicant->inhouse_perefer_dates ?? 'Not Specified' }}</div>
-                </div>
-                <div style="display: table-cell; width: 25%; padding-right: 10px;">
-                    <div class="field-label">Days</div>
-                    <div class="field-value">{{ $applicant->inhouse_no_days }}</div>
-                </div>
-                <div style="display: table-cell; width: 25%;">
-                    <div class="field-label">Participants</div>
-                    <div class="field-value">{{ $applicant->inhouse_no_particants }}</div>
-                </div>
-            </div>
-
-            <div class="section-title">Personal / Contact Data</div>
+            <div class="section-title">Personal Information</div>
 
             <div class="field-label">Full Name</div>
-            <div class="field-value">{{ $applicant->salut->en_name ?? '' }} {{ $applicant->name }}</div>
+            <div class="field-value">{{ $applicant->salut->en_name ?? '' }} {{ $applicant->first_name }} {{ $applicant->last_name }}</div>
 
             <div class="field-label">Email Address</div>
             <div class="field-value">{{ $applicant->email }}</div>
 
             <div style="display: table; width: 100%;">
                 <div style="display: table-cell; width: 50%; padding-right: 10px;">
-                    <div class="field-label">Company</div>
-                    <div class="field-value">{{ $applicant->company }}</div>
+                    <div class="field-label">Phone</div>
+                    <div class="field-value">{{ $applicant->phone ?? 'N/A' }}</div>
                 </div>
                 <div style="display: table-cell; width: 50%;">
-                    <div class="field-label">Job Title</div>
-                    <div class="field-value">{{ $applicant->job_title ?? 'N/A' }}</div>
+                    <div class="field-label">Mobile</div>
+                    <div class="field-value">{{ $applicant->mobile ?? 'N/A' }}</div>
                 </div>
             </div>
+
+            <div class="section-title">Location</div>
 
             <div style="display: table; width: 100%;">
                 <div style="display: table-cell; width: 50%; padding-right: 10px;">
@@ -78,20 +59,56 @@
                 </div>
                 <div style="display: table-cell; width: 50%;">
                     <div class="field-label">City</div>
-                    <div class="field-value">{{ $applicant->venues->venue_en_name ?? 'N/A' }}</div>
+                    <div class="field-value">{{ $applicant->venue->venue_en_name ?? 'N/A' }}</div>
                 </div>
             </div>
 
-            <div class="field-label">Phone Number</div>
-            <div class="field-value">{{ $applicant->phone }}</div>
+            <div class="field-label">Address</div>
+            <div class="field-value">{{ $applicant->address ?? 'N/A' }}</div>
 
-            @if($applicant->inhouse_requirements)
-            <div class="section-title">Other Requirements</div>
-            <div class="field-value" style="white-space: pre-line; background-color: #fffbe6; border-left-color: #faad14;">{{ $applicant->inhouse_requirements }}</div>
+            <div class="section-title">Expertise & Courses</div>
+
+            @if($applicant->expertises && $applicant->expertises->count() > 0)
+            <div class="field-label">Areas of Expertise</div>
+            <div class="field-value">
+                @foreach($applicant->expertises as $expertise)
+                    {{ $expertise->name }}@if(!$loop->last), @endif
+                @endforeach
+            </div>
+            @endif
+
+            @if($applicant->course && $applicant->course->count() > 0)
+            <div class="field-label">Courses Can Teach</div>
+            <div class="field-value">
+                @foreach($applicant->course as $course)
+                    {{ $course->name ?? $course->course_en_name ?? 'N/A' }}@if(!$loop->last), @endif
+                @endforeach
+            </div>
+            @endif
+
+            @if($applicant->other_data)
+            <div class="section-title">Additional Information</div>
+            <div class="field-value" style="white-space: pre-line; background-color: #fffbe6; border-left-color: #faad14;">{{ $applicant->other_data }}</div>
+            @endif
+
+            <div class="section-title">Attachments</div>
+
+            @if($applicant->cv_path)
+            <div class="field-label">CV/Resume</div>
+            <div class="field-value">
+                <a href="{{ asset('storage/' . $applicant->cv_path) }}" style="color: #376EFF; text-decoration: none;">View CV</a>
+            </div>
+            @endif
+
+            @if($applicant->doc_path)
+            <div class="field-label">Additional Documents</div>
+            <div class="field-value">
+                <a href="{{ asset('storage/' . $applicant->doc_path) }}" style="color: #376EFF; text-decoration: none;">View Document</a>
+            </div>
             @endif
 
             <p style="font-size: 11px; color: #999; text-align: center; margin-top: 30px;">
-                <em>This enquiry was generated automatically from the website on {{ $applicant->created_at->format('M d, Y \a\t H:i') }}</em>
+                <em>This application was submitted automatically from the website on {{ $applicant->created_at->format('M d, Y \a\t H:i') }}</em>
             </p>
         </div>
 

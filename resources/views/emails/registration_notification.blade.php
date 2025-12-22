@@ -20,7 +20,9 @@
 <body>
     <div class="wrapper">
         <div class="logo-section">
-            <img src="{{ asset('assets/img/logo.png') }}" alt="Your Company Logo">
+            {{-- <img src="{{ asset('assets/img/logo.png') }}" alt="Your Company Logo"> --}}
+        <img src="{{ $message->embed(public_path('front-assets/img/logo.png')) }}" alt="BTS Consultant Logo">
+
         </div>
 
         <div class="header">
@@ -39,7 +41,7 @@
                 </tr>
                 <tr>
                     <th>Registration Round</th>
-                    <td>{{ $applicant->round->name ?? 'N/A' }}</td>
+                    <td>{{ $applicant->round->round_start_date->format('Y-m-d') ?? '' }}</td>
                 </tr>
                 <tr>
                     <th>Round Venue</th>
