@@ -41,7 +41,8 @@
                 </tr>
                 <tr>
                     <th>Registration Round</th>
-                    <td>{{ $applicant->round->round_start_date->format('Y-m-d') ?? '' }}</td>
+                    <td>{{ optional(\Carbon\Carbon::parse($applicant->round->round_start_date ?? null))->format('Y-m-d') }}</td>
+                    {{-- <td>{{ $applicant->round->round_start_date->format('Y-m-d') ?? '' }}</td> --}}
                 </tr>
                 <tr>
                     <th>Round Venue</th>
