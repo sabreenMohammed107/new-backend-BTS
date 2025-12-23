@@ -20,7 +20,7 @@ class CoursesApplicantController extends Controller
 
     public function index()
     {
-        $rows=$this->object::with('courses')->orderBy("created_at", "Desc")->get();
+        $rows=$this->object::with('courses')->where('applicant_type_id','!=',0)->orderBy("created_at", "Desc")->get();
 
         return view("{$this->view}.index", compact('rows',));
     }
