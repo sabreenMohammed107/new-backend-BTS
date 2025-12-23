@@ -50,7 +50,7 @@
             <div style="display: table; width: 100%;">
                 <div style="display: table-cell; width: 50%; padding-right: 10px;">
                     <div class="field-label">Career Level</div>
-                    <div class="field-value">{{ $applicant->level->name ?? 'N/A' }}</div>
+                    <div class="field-value">{{ $applicant->level->level ?? 'N/A' }}</div>
                 </div>
                 <div style="display: table-cell; width: 50%;">
                     <div class="field-label">Expected Salary</div>

@@ -72,7 +72,7 @@
             <div class="field-label">Areas of Expertise</div>
             <div class="field-value">
                 @foreach($applicant->expertises as $expertise)
-                    {{ $expertise->name }}@if(!$loop->last), @endif
+                    {{ $expertise->text }}@if(!$loop->last), @endif
                 @endforeach
             </div>
             @endif

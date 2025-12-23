@@ -60,7 +60,7 @@ class JobApplicationController extends Controller
             'cv_path' => $cvPath,
             'doc_path' => $docPath,
         ]);
-  $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
+        $emails = ['senior.steps.info@gmail.com', 'info@btsconsultant.com', 'nasser@btsconsultant.com'];
         Mail::to($emails)->send(new CareerEnqueryNotification($career));
         return redirect()->back()->with('success', 'Your application has been submitted successfully.');
     }
