@@ -34,7 +34,7 @@
             <div class="section-title">Position Information</div>
 
             <div class="field-label">Position Applied For</div>
-            <div class="field-value">{{ $applicant->career->title ?? 'N/A' }}</div>
+            <div class="field-value">{{ $applicant->career->job_name ?? 'N/A' }}</div>
 
             <div class="section-title">Applicant Information</div>
 
