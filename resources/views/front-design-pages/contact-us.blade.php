@@ -121,7 +121,7 @@
 
                                                 <!-- Egypt Map -->
                                                 <div class="col-12 col-lg-6 d-flex justify-content-end">
-                                                    <img src="{{ asset('img/egy.png') }}"
+                                                    <img src="{{ asset('img/egy.jpeg') }}"
                                                         alt="Egypt Map" class="map-image img-fluid">
                                                 </div>
 
