@@ -20,7 +20,7 @@ class SubCategoryController extends Controller
 
     public function index()
     {
-        $rows=$this->object::where('course_category_id', '!=',4)->where('course_category_id', '!=',6)->with('courseCategory')->orderBy("created_at", "Desc")->get();
+        $rows=$this->object::where('course_category_id', '!=',6)->with('courseCategory')->orderBy("created_at", "Desc")->get();
 
         return view("{$this->view}.index", compact('rows',));
     }
@@ -28,7 +28,7 @@ class SubCategoryController extends Controller
 
     public function create()
     {
-        $categories=CourseCategory::where('id', '!=',4)->where('id', '!=',6)->orderBy("created_at", "Desc")->get();
+        $categories=CourseCategory::where('id', '!=',6)->orderBy("created_at", "Desc")->get();
 
         return view("{$this->view}.add",compact('categories'));
     }
@@ -52,7 +52,7 @@ class SubCategoryController extends Controller
     {
         $row=$this->object::findOrFail($id);
         // dd($subCategory);
-        $categories=CourseCategory::where('id', '!=',4)->where('id', '!=',6)->orderBy("created_at", "Desc")->get();
+        $categories=CourseCategory::where('id', '!=',6)->orderBy("created_at", "Desc")->get();
 
         return view("{$this->view}.edit", compact('row','categories'));
     }
