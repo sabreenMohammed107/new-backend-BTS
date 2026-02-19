@@ -1731,10 +1731,10 @@
                             <div class="ltn__blog-meta bg-light-blue mb-0">
                                 <a href="{{ route('testimonials') }}" class="text-decoration-none">
                                     <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
-                                        <li class="ltn__blog-title col-8">
+                                        <li class="ltn__blog-title col-7">
                                             <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
                                         </li>
-                                        <li class="ltn__blog-tags d-flex">
+                                        <li class="ltn__blog-tags d-flex col-5">
                                             {{-- Filled stars --}}
                                             @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
                                                 <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
