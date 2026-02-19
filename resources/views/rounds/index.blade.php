@@ -218,6 +218,20 @@
                         <!--end::Table body-->
                     </table>
                     <!--end::Table-->
+
+                    <!--begin::Pagination-->
+                    <div class="d-flex justify-content-between align-items-center flex-wrap mt-5">
+                        <div class="d-flex flex-wrap py-2 me-3">
+                            {{ $rows->links() }}
+                        </div>
+                        <div class="d-flex align-items-center py-3">
+                            <span class="text-muted">
+                                Showing {{ $rows->firstItem() ?? 0 }} to {{ $rows->lastItem() ?? 0 }}
+                                of {{ $rows->total() }} entries
+                            </span>
+                        </div>
+                    </div>
+                    <!--end::Pagination-->
                 </div>
                 <!--end::Card body-->
             </div>
