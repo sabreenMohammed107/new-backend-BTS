@@ -25,11 +25,51 @@ class RoundsController extends Controller
         $this->view = 'rounds';
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $rows = $this->object::where('round_start_date', '>', now())->orderBy("created_at", "Desc")->get();
+        // Memory diagnostic - uncomment to verify PHP memory settings
+        // dd([
+        //     'memory_limit' => ini_get('memory_limit'),
+        //     'current_usage' => round(memory_get_usage() / 1024 / 1024, 2) . ' MB',
+        //     'peak_usage' => round(memory_get_peak_usage() / 1024 / 1024, 2) . ' MB',
+        // ]);
 
-        return view("{$this->view}.index", compact('rows',));
+        $search = $request->get('search');
+
+        $query = $this->object::select([
+                'id',
+                'round_code',
+                'course_id',
+                'venue_id',
+                'currency_id',
+                'round_start_date',
+                'round_end_date',
+                'round_price',
+                'show_home_order',
+            ])
+            ->with([
+                'course:id,course_en_name,course_duration',
+                'venue:id,venue_en_name',
+                'currancy:id,currency_name',
+            ])
+            ->where('round_start_date', '>', now());
+
+        // Server-side search
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('round_code', 'like', "%{$search}%")
+                  ->orWhereHas('course', function ($q) use ($search) {
+                      $q->where('course_en_name', 'like', "%{$search}%");
+                  })
+                  ->orWhereHas('venue', function ($q) use ($search) {
+                      $q->where('venue_en_name', 'like', "%{$search}%");
+                  });
+            });
+        }
+
+        $rows = $query->orderBy('created_at', 'desc')->paginate(20)->withQueryString();
+
+        return view("{$this->view}.index", compact('rows', 'search'));
     }
 
 
