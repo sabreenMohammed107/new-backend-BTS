@@ -37,7 +37,7 @@
                     <!--begin::Card title-->
                     <div class="card-title">
                         <!--begin::Search-->
-                        <div class="d-flex align-items-center position-relative my-1">
+                        <form action="{{ route('rounds.index') }}" method="GET" class="d-flex align-items-center position-relative my-1">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
                             <span class="svg-icon svg-icon-1 position-absolute ms-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -50,9 +50,13 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-ecommerce-category-filter="search"
-                                class="form-control form-control-solid w-250px ps-14" placeholder="Search Field" />
-                        </div>
+                            <input type="text" name="search" value="{{ $search ?? '' }}"
+                                class="form-control form-control-solid w-250px ps-14" placeholder="Search by code, course, venue..." />
+                            <button type="submit" class="btn btn-sm btn-primary ms-2">Search</button>
+                            @if($search)
+                                <a href="{{ route('rounds.index') }}" class="btn btn-sm btn-secondary ms-2">Clear</a>
+                            @endif
+                        </form>
                         <!--end::Search-->
                     </div>
                     <!--end::Card title-->

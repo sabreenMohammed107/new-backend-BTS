@@ -25,7 +25,7 @@ class RoundsController extends Controller
         $this->view = 'rounds';
     }
 
-    public function index()
+    public function index(Request $request)
     {
         // Memory diagnostic - uncomment to verify PHP memory settings
         // dd([
@@ -34,7 +34,9 @@ class RoundsController extends Controller
         //     'peak_usage' => round(memory_get_peak_usage() / 1024 / 1024, 2) . ' MB',
         // ]);
 
-        $rows = $this->object::select([
+        $search = $request->get('search');
+
+        $query = $this->object::select([
                 'id',
                 'round_code',
                 'course_id',
@@ -50,11 +52,24 @@ class RoundsController extends Controller
                 'venue:id,venue_en_name',
                 'currancy:id,currency_name',
             ])
-            ->where('round_start_date', '>', now())
-            ->orderBy('created_at', 'desc')
-            ->paginate(20);
+            ->where('round_start_date', '>', now());
 
-        return view("{$this->view}.index", compact('rows'));
+        // Server-side search
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('round_code', 'like', "%{$search}%")
+                  ->orWhereHas('course', function ($q) use ($search) {
+                      $q->where('course_en_name', 'like', "%{$search}%");
+                  })
+                  ->orWhereHas('venue', function ($q) use ($search) {
+                      $q->where('venue_en_name', 'like', "%{$search}%");
+                  });
+            });
+        }
+
+        $rows = $query->orderBy('created_at', 'desc')->paginate(20)->withQueryString();
+
+        return view("{$this->view}.index", compact('rows', 'search'));
     }
 
 
