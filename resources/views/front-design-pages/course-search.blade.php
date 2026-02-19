@@ -365,13 +365,12 @@
 
     /* Align overlay content so titles share the same baseline across cards */
     .single-course-item-card .course-card-overlay {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        /* Reserve space for metadata so title baseline is consistent */
-        min-height: 115px;
-        position: absolute;
-        top: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 130px;
+    position: absolute;
+    top: 50%;
     }
 
     .single-course-item-card .course-card-overlay .course-meta {
@@ -737,7 +736,7 @@
 
                                             <!-- Course title overlay -->
                                             <div class=" w-100 text-white p-4 course-card-overlay"
-                                                style="background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));">
+                                                style="background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.5));">
                                                 <h6 class="fw-bold mb-0">
                                                     <a class="text-white text-decoration-none"
                                                         href="{{ url('courseDetails/' . $round->course->id) }}">

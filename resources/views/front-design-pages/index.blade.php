@@ -1731,7 +1731,7 @@
                             <div class="ltn__blog-meta bg-light-blue mb-0">
                                 <a href="{{ route('testimonials') }}" class="text-decoration-none">
                                     <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
-                                        <li class="ltn__blog-title">
+                                        <li class="ltn__blog-title col-8">
                                             <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
                                         </li>
                                         <li class="ltn__blog-tags d-flex">
