@@ -27,7 +27,7 @@ class RoundsController extends Controller
 
     public function index()
     {
-        $rows = $this->object::where('round_start_date', '>', now())->orderBy("created_at", "Desc")->take(300)->get();
+        $rows = $this->object::where('round_start_date', '>', now())->orderBy("created_at", "Desc")->get();
 
         return view("{$this->view}.index", compact('rows',));
     }
