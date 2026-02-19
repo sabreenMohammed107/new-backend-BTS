@@ -2,6 +2,7 @@
 <!-- Body main wrapper start -->
 
 @section('page-class', 'course-search-page')
+@section('page-id', 'soft-skills-page')
 @section('page-content')
 @php
     // Helper variables for badge display
@@ -350,86 +351,44 @@
         background: #a8a8a8;
     }
 
-    /* Ensure all course card titles render on a single line with ellipsis */
-    .single-course-item-card .card h6 {
-        {{--  white-space: nowrap;
-        overflow: hidden;  --}}
-        text-overflow: ellipsis;
-        width: 100%;
-    }
-
-    .single-course-item-card .card h6 a {
-        display: block;
-        white-space: inherit;
-    }
-
-    /* Align overlay content so titles share the same baseline across cards */
-    .single-course-item-card .course-card-overlay {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 130px;
-    position: absolute;
-    top: 50%;
-    }
-
-    .single-course-item-card .course-card-overlay .course-meta {
-        margin-bottom: 0 !important;
-    }
-
-    /* Course card hover effects */
-    .single-course-item-card .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .single-course-item-card:hover .card {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Metadata overlay hover effect */
-    .single-course-item-card .course-metadata-overlay {
-        opacity: 0 !important;
-        transition: opacity 0.3s ease;
-        border-radius: 8px 8px 0 0;
-    }
-
-    .single-course-item-card:hover .course-metadata-overlay {
-        opacity: 1 !important;
-    }
-
-    /* Ensure the metadata overlay covers the top portion of the card */
-    .single-course-item-card .course-metadata-overlay {
-        height: 100%;
-        min-height: 80px;
+    /* Uses same service-card, service-overlay, service-title from style.css (soft-skills-page) */
+    /* Extra: service-overlay-inner + service-meta for course metadata */
+    #soft-skills-page .service-overlay-inner {
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        height: 100%;
     }
 
-    /* Style the metadata items */
-    .single-course-item-card .course-metadata-overlay .course-meta li {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 4px 8px;
-        border-radius: 12px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Make course titles 20px in this section */
+    #soft-skills-page .service-overlay-inner .service-title {
+        font-size: 17px !important;
     }
 
-    .single-course-item-card .course-metadata-overlay .course-meta li i {
-        margin-right: 4px;
+    #soft-skills-page .service-meta {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
         font-size: 11px;
+        color: rgba(255, 255, 255, 0.95);
     }
 
-    /* Debug: Make sure the hover area is working */
-    .single-course-item-card {
-        cursor: pointer;
+    #soft-skills-page .service-meta li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 
-
-    {{--  .single-course-item-card .course-card-overlay h6 {
-        margin-top: auto;
-    }  --}}
+    #soft-skills-page .service-meta li i {
+        font-size: 10px;
+        opacity: 0.9;
+    }
 
     /* Course Search Navigation Links Hover Effects */
     .main-course-search-nav .col-8.row a {
@@ -695,64 +654,33 @@
                             <div class="row">
                                 @if (isset($filtered) && $filtered->count() > 0)
                                 @foreach ($filtered as $round)
-                                <div class="col-xl-4 mb-3 col-sm-6 col-12 single-course-item-card">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <a href="{{ url('courseDetails/' . $round->course->id) }}">
-                                    <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-3">
-                                        <!-- الصورة -->
-                                        <div class="position-relative">
-
-                                                <img class="w-100 " style="height:250px; object-fit:cover;"
-                                                    src="{{ $round->course->course_image_thumbnail
-                                                        ? asset('uploads/courses/' . $round->course->course_image_thumbnail)
-                                                        : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
-                                                    onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
-                                                    alt="{{ $round->course->course_en_name }}">
-
-                                            <!-- Course metadata overlay - appears on hover with animation -->
-                                            <div class="course-metadata-overlay w-100 text-white p-3"
-                                                style="heught:100%;position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.2); z-index: 2;">
-                                                <ul class="d-flex flex-wrap gap-3 mb-2 small align-items-center course-meta"
-                                                    style="font-size:12px; list-style: none; margin:0; padding:0;">
-                                                    <li class="d-flex align-items-center mt-0 mb-0">
-                                                        <i class="fas fa-map-marker-alt"></i>
-                                                        <span>{{ $round->venue->venue_en_name }}</span>
-                                                    </li>
-                                                    <li class="d-flex align-items-center mt-0 mb-0">
-                                                        <i class="fas fa-clock"></i>
-                                                        <span>{{ $round->course->course_duration }}-Days</span>
-                                                    </li>
-                                                    <li class="d-flex align-items-center mt-0 mb-0">
-                                                        <i class="fas fa-dollar-sign"></i>
-                                                        <span>USD-{{ $round->course->course_price ?? 'N/A' }}</span>
-                                                    </li>
-                                                    <li class="d-flex align-items-center mt-0 mb-0">
-                                                        <i class="fas fa-calendar-week"></i>
-                                                        <span>{{ $round->round_start_date ?
-                                                            \Carbon\Carbon::parse($round->round_start_date)->format('d-m-Y')
-                                                            : 'TBD' }}</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <!-- Course title overlay -->
-                                            <div class=" w-100 text-white p-4 course-card-overlay"
-                                                style="background:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.5));">
-                                                <h6 class="fw-bold mb-0">
-                                                    <a class="text-white text-decoration-none"
-                                                        href="{{ url('courseDetails/' . $round->course->id) }}">
-                                                        {{ $round->course->course_en_name }}
-                                                    </a>
-                                                </h6>
+                                        <div class="service-card">
+                                            <img src="{{ $round->course->course_image_thumbnail
+                                                ? asset('uploads/courses/' . $round->course->course_image_thumbnail)
+                                                : asset('front-assets/img/No-Image-Placeholder.svg.png') }}"
+                                                onerror="this.onerror=null;this.src='{{ asset('front-assets/img/No-Image-Placeholder.svg.png') }}';"
+                                                alt="{{ $round->course->course_en_name }}">
+                                            <div class="service-overlay">
+                                                <div class="service-overlay-inner">
+                                                    <ul class="service-meta">
+                                                        <li><i class="fas fa-map-marker-alt"></i><span>{{ $round->venue?->venue_en_name ?? 'N/A' }}</span></li>
+                                                        <li><i class="fas fa-clock"></i><span>{{ $round->course->course_duration ?? 'N/A' }}-Days</span></li>
+                                                        <li><i class="fas fa-dollar-sign"></i><span>USD {{ $round->course->course_price ?? 'N/A' }}</span></li>
+                                                        <li><i class="fas fa-calendar-week"></i><span>{{ $round->round_start_date ? \Carbon\Carbon::parse($round->round_start_date)->format('d-m-Y') : 'TBD' }}</span></li>
+                                                    </ul>
+                                                    <h3 class="service-title animated fadeIn">{{ $round->course->course_en_name }}</h3>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
                                 </div>
                                 @endforeach
                                 @else
-                                <div class="col-12 text-center">
-                                    <h3>No courses found matching your criteria.</h3>
-                                    <p>Try adjusting your search filters or <a
+                                <div class="col-12 text-center py-5">
+                                    <h3 class="mb-3">No courses found matching your criteria.</h3>
+                                    <p class="text-muted mb-0">Try adjusting your search filters or <a
                                             href="{{ route('tailor-your-course') }}">request a tailor-made
                                             course</a>.</p>
                                 </div>
