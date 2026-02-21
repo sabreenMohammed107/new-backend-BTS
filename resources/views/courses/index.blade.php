@@ -72,7 +72,7 @@
                 <div class="card-body pt-0">
 
                        <!--begin::Table-->
-                       <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_category_table">
+                       <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_courses_table">
                         <!--begin::Table head-->
                         <thead>
                             <!--begin::Table row-->
@@ -80,7 +80,7 @@
                                 <th class="w-10px pe-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                            data-kt-check-target="#kt_ecommerce_category_table .form-check-input"
+                                            data-kt-check-target="#kt_courses_table .form-check-input"
                                             value="1" />
                                     </div>
                                 </th>
@@ -210,4 +210,35 @@
         <!--end::Container-->
     </div>
     <!--end::Post-->
+@endsection
+
+@section('scripts')
+<script>
+    // Delete course handler
+    document.querySelectorAll('[data-kt-ecommerce-category-filter="delete_row"]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = e.target.closest('tr');
+            const categoryName = parent.querySelector('[data-kt-ecommerce-category-filter="category_name"]').innerText;
+            const categoryId = parent.querySelector('[data-kt-ecommerce-category-filter="category_id"]').value;
+
+            Swal.fire({
+                text: "Are you sure you want to delete " + categoryName + "?",
+                icon: "warning",
+                showCancelButton: true,
+                buttonsStyling: false,
+                confirmButtonText: "Yes, delete!",
+                cancelButtonText: "No, cancel",
+                customClass: {
+                    confirmButton: "btn fw-bold btn-danger",
+                    cancelButton: "btn fw-bold btn-active-light-primary"
+                }
+            }).then(function(result) {
+                if (result.value) {
+                    document.getElementById('delete_' + categoryId).submit();
+                }
+            });
+        });
+    });
+</script>
 @endsection
