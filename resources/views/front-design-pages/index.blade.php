@@ -1730,18 +1730,16 @@
                         <div class="ltn__blog-brief bg-light-blue">
                             <div class="ltn__blog-meta bg-light-blue mb-0">
                                 <a href="{{ route('testimonials') }}" class="text-decoration-none">
-                                    <ul class="ltn__blog-tags d-flex align-items-start justify-content-between">
-                                        <li class="ltn__blog-title col-7">
-                                            <h1 class="fnt-siz-md">{{ $testimonial->reviewer_name }}</h1>
-                                        </li>
-                                        <li class="ltn__blog-tags d-flex col-5">
-                                            {{-- Filled stars --}}
-                                            @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
-                                                <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
-                                                    height="15" alt="star">
-                                                @endfor
-                                        </li>
-                                    </ul>
+                                    <div class="ltn__blog-title">
+                                        <h1 class="fnt-siz-md mb-2">{{ $testimonial->reviewer_name }}</h1>
+                                    </div>
+                                    <div class="ltn__blog-tags d-flex mb-3">
+                                        {{-- Filled stars --}}
+                                        @for ($i = 0; $i < $testimonial->reviewer_star_rate; $i++)
+                                            <img src="{{ asset('front-assets/img/icons/star.png') }}" width="15"
+                                                height="15" alt="star">
+                                        @endfor
+                                    </div>
                                 </a>
                             </div>
                             <h3 class="ltn__blog-author fnt-siz-sm fnt-w-400" >
