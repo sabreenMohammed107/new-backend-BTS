@@ -91,7 +91,7 @@
                                     <label class="required form-label"> Code</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input id="round_code" type="text" readonly
+                                    <input id="round_code" type="text"
                                         class="form-control @error('round_code') is-invalid @enderror" name="round_code"
                                         value="{{ $row->round_code }}" required autocomplete="round_code" autofocus>
 

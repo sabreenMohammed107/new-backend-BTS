@@ -121,7 +121,7 @@ class RoundsController extends Controller
     {
         $row = $this->object::findOrFail($id);
         $data = [
-
+            'round_code' => $request->input('round_code'),
             'round_start_date' => Carbon::parse($request->input('round_start_date')),
             'round_end_date' => Carbon::parse($request->input('round_end_date')),
             'round_price' => $request->input('round_price'),
@@ -159,8 +159,15 @@ class RoundsController extends Controller
     public function destroy($id)
     {
         $row = $this->object::findOrFail($id);
+
+        // Check if round has related applicants
+        if ($row->applicant()->count() > 0) {
+            return redirect()->route("{$this->route}.index")
+                ->with('error', 'Cannot delete this round. It has ' . $row->applicant()->count() . ' registered applicant(s).');
+        }
+
         $row->delete();
-        return redirect()->route("{$this->route}.index")->with('success', ' deleted Success.');
+        return redirect()->route("{$this->route}.index")->with('success', 'Round deleted successfully.');
     }
     /**
      * Get venue on country
