@@ -51,6 +51,7 @@ class RoundsController extends Controller
                 'course:id,course_en_name,course_duration',
                 'venue:id,venue_en_name',
                 'currancy:id,currency_name',
+                'applicant',
             ])
             ->where('round_start_date', '>', now());
 
@@ -160,14 +161,20 @@ class RoundsController extends Controller
     {
         $row = $this->object::findOrFail($id);
 
-        // Check if round has related applicants
-        if ($row->applicant()->count() > 0) {
-            return redirect()->route("{$this->route}.index")
-                ->with('error', 'Cannot delete this round. It has ' . $row->applicant()->count() . ' registered applicant(s).');
+        // Delete related applicants first
+        $applicantCount = $row->applicant()->count();
+        if ($applicantCount > 0) {
+            $row->applicant()->delete();
         }
 
         $row->delete();
-        return redirect()->route("{$this->route}.index")->with('success', 'Round deleted successfully.');
+
+        $message = 'Round deleted successfully.';
+        if ($applicantCount > 0) {
+            $message .= ' ' . $applicantCount . ' related applicant(s) were also deleted.';
+        }
+
+        return redirect()->route("{$this->route}.index")->with('success', $message);
     }
     /**
      * Get venue on country

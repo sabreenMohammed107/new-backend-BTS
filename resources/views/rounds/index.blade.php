@@ -210,7 +210,8 @@
                  <!--begin::Menu item-->
                  <div class="menu-item px-3">
                     <a href="#" class="menu-link px-3"
-                        data-kt-ecommerce-category-filter="delete_row">Delete</a>
+                        data-kt-ecommerce-category-filter="delete_row"
+                        data-applicant-count="{{ $row->applicant->count() }}">Delete</a>
 
 
         <form id="delete_{{$row->id}}" action="{{ route('rounds.destroy', $row->id) }}"  method="POST" style="display: none;">
@@ -267,13 +268,20 @@
             const parent = e.target.closest('tr');
             const categoryName = parent.querySelector('[data-kt-ecommerce-category-filter="category_name"]').innerText;
             const categoryId = parent.querySelector('[data-kt-ecommerce-category-filter="category_id"]').value;
+            const applicantCount = parseInt(e.target.getAttribute('data-applicant-count')) || 0;
+
+            let message = "Are you sure you want to delete round " + categoryName + "?";
+            if (applicantCount > 0) {
+                message = "This round has " + applicantCount + " registered applicant(s). Deleting this round will also delete all related applicants. Are you sure you want to proceed?";
+            }
 
             Swal.fire({
-                text: "Are you sure you want to delete " + categoryName + "?",
-                icon: "warning",
+                title: applicantCount > 0 ? "Warning!" : "Delete Round",
+                text: message,
+                icon: applicantCount > 0 ? "warning" : "question",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "Yes, delete!",
+                confirmButtonText: applicantCount > 0 ? "Yes, delete all!" : "Yes, delete!",
                 cancelButtonText: "No, cancel",
                 customClass: {
                     confirmButton: "btn fw-bold btn-danger",
