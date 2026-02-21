@@ -55,7 +55,9 @@ style="background-image: url('{{asset('front-assets/img/bg/servics-bg.png')}}');
 
                     @if(isset($courses) && $courses->hasPages())
                         <div class="d-flex justify-content-center mt-4">
-                            {{ $courses->links() }}
+                            <nav class="custom-pagination">
+                                {{ $courses->links() }}
+                            </nav>
                         </div>
                     @endif
                 </div>
@@ -77,6 +79,56 @@ style="background-image: url('{{asset('front-assets/img/bg/servics-bg.png')}}');
         }
         #soft-skills-page .service-card img {
             object-fit: contain !important;
+        }
+
+        /* Custom Pagination Styles */
+        .custom-pagination .pagination {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .custom-pagination .page-item .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 45px;
+            height: 45px;
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .custom-pagination .page-item .page-link:hover {
+            border-color: #1a3d5c;
+            color: #1a3d5c;
+            background-color: #f8f9fa;
+        }
+        .custom-pagination .page-item.active .page-link {
+            background-color: #1a3d5c;
+            border-color: #1a3d5c;
+            color: #fff;
+        }
+        .custom-pagination .page-item.disabled .page-link {
+            color: #999;
+            pointer-events: none;
+            background-color: #f5f5f5;
+            border-color: #e0e0e0;
+        }
+        /* Style for prev/next arrows */
+        .custom-pagination .page-item:first-child .page-link,
+        .custom-pagination .page-item:last-child .page-link {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a3d5c;
         }
     </style>
 @endsection
