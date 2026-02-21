@@ -23,11 +23,35 @@ class CoursesController extends Controller
         $this->view = 'courses';
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $rows = $this->object::orderBy("created_at", "Desc")->get();
+        $search = $request->get('search');
 
-        return view("{$this->view}.index", compact('rows',));
+        $query = $this->object::select([
+                'id',
+                'course_code',
+                'course_en_name',
+                'course_duration',
+                'course_sub_category_id',
+            ])
+            ->with([
+                'subCategory:id,subcategory_en_name',
+            ]);
+
+        // Server-side search
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('course_code', 'like', "%{$search}%")
+                  ->orWhere('course_en_name', 'like', "%{$search}%")
+                  ->orWhereHas('subCategory', function ($q) use ($search) {
+                      $q->where('subcategory_en_name', 'like', "%{$search}%");
+                  });
+            });
+        }
+
+        $rows = $query->orderBy('created_at', 'desc')->paginate(20)->withQueryString();
+
+        return view("{$this->view}.index", compact('rows', 'search'));
     }
 
 

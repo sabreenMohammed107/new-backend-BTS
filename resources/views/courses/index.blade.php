@@ -37,7 +37,7 @@
                     <!--begin::Card title-->
                     <div class="card-title">
                         <!--begin::Search-->
-                        <div class="d-flex align-items-center position-relative my-1">
+                        <form action="{{ route('courses.index') }}" method="GET" class="d-flex align-items-center position-relative my-1">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
                             <span class="svg-icon svg-icon-1 position-absolute ms-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -50,9 +50,13 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-ecommerce-category-filter="search"
-                                class="form-control form-control-solid w-250px ps-14" placeholder="Search Field" />
-                        </div>
+                            <input type="text" name="search" value="{{ $search ?? '' }}"
+                                class="form-control form-control-solid w-250px ps-14" placeholder="Search by code, name, subcategory..." />
+                            <button type="submit" class="btn btn-sm btn-primary ms-2">Search</button>
+                            @if($search)
+                                <a href="{{ route('courses.index') }}" class="btn btn-sm btn-secondary ms-2">Clear</a>
+                            @endif
+                        </form>
                         <!--end::Search-->
                     </div>
                     <!--end::Card title-->
@@ -82,6 +86,7 @@
                                 </th>
                                 <th class="min-w-100px">Code</th>
                                 <th class="min-w-100px">Name</th>
+                                <th class="min-w-100px">Sub Category</th>
                                 <th class="min-w-100px">Duration</th>
                                 <th class="text-end min-w-70px">Actions</th>
                             </tr>
@@ -110,21 +115,28 @@
                 </div>
         </td>
         <!--end::Category=-->
-        <!--begin::SKU=-->
+        <!--begin::Name-->
         <td class="text-end pe-0">
             <div class="d-flex align-items-center">
             <input type="hidden" name="" id=""  data-kt-ecommerce-category-filter="category_id" value="{{$row->id}}" >
             <span class="fw-bolder">{{ $row->course_en_name ?? "" }}</span>
         </div>
         </td>
-        <!--end::SKU=-->
-   <!--begin::SKU=-->
+        <!--end::Name-->
+        <!--begin::SubCategory-->
+        <td class="text-end pe-0">
+            <div class="d-flex align-items-center">
+            <span class="fw-bolder">{{ $row->subCategory->subcategory_en_name ?? "" }}</span>
+        </div>
+        </td>
+        <!--end::SubCategory-->
+   <!--begin::Duration-->
    <td class="text-end pe-0">
     <div class="d-flex align-items-center">
     <span class="fw-bolder">{{ $row->course_duration ?? "" }}</span>
 </div>
 </td>
-<!--end::SKU=-->
+<!--end::Duration-->
         <!--begin::Action=-->
         <td class="text-end">
             <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
@@ -176,6 +188,20 @@
                         <!--end::Table body-->
                     </table>
                     <!--end::Table-->
+
+                    <!--begin::Pagination-->
+                    <div class="d-flex justify-content-between align-items-center flex-wrap mt-5">
+                        <div class="d-flex flex-wrap py-2 me-3">
+                            {{ $rows->links() }}
+                        </div>
+                        <div class="d-flex align-items-center py-3">
+                            <span class="text-muted">
+                                Showing {{ $rows->firstItem() ?? 0 }} to {{ $rows->lastItem() ?? 0 }}
+                                of {{ $rows->total() }} entries
+                            </span>
+                        </div>
+                    </div>
+                    <!--end::Pagination-->
                 </div>
                 <!--end::Card body-->
             </div>
