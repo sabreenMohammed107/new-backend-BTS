@@ -161,6 +161,9 @@ class CoursesController extends Controller
         $uploadPath = public_path('uploads/courses');
         //$uploadPath ='C:\inetpub\vhosts\btsconsultant.com\httpdocs\BTSConsultant_Resources\public\uploads/courses';
         try {
+            if (!file_exists(filename: $uploadPath)) {
+    mkdir($uploadPath, 0755, true);
+}
             $file->move($uploadPath, $imageName);
         } catch (Exception $e) {
             error_log('Exception: ' . $e->getMessage());
