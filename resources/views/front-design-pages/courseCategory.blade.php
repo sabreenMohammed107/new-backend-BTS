@@ -53,9 +53,9 @@ style="background-image: url('{{asset('front-assets/img/bg/servics-bg.png')}}');
                         </div>
                     </div>
 
-                    @if(isset($filtered))
+                    @if(isset($courses) && $courses->hasPages())
                         <div class="d-flex justify-content-center mt-4">
-                            {{ $filtered->links() }}
+                            {{ $courses->links() }}
                         </div>
                     @endif
                 </div>

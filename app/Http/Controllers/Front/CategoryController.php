@@ -19,7 +19,6 @@ class CategoryController extends Controller
     {
         $subcategory_id = $id;
         $now_date       = now();
-        $now_date       = now();
 
         $courses = Course::with(['rounds' => function ($q) use ($now_date) {
             $q->where(function ($query) use ($now_date) {
@@ -28,22 +27,23 @@ class CategoryController extends Controller
             })->where('active', 1);
         }])
             ->whereHas('rounds', function ($q) use ($now_date) {
-                $q->where('round_start_date', '>', $now_date)
-                    ->orWhereNull('round_start_date')
-                    ->where('active', 1);
+                $q->where(function ($query) use ($now_date) {
+                    $query->where('round_start_date', '>', $now_date)
+                        ->orWhereNull('round_start_date');
+                })->where('active', 1);
             });
 
         if (! empty($subcategory_id)) {
             $courses->where('course_sub_category_id', $subcategory_id);
         }
 
-        $courses = $courses->orderBy('course_en_name')->paginate(15);
+        $courses = $courses->orderBy('course_en_name')->paginate(15)->withQueryString();
 
         $total = $courses->total();
 
         $subCategory = CourseSubCategory::find($id);
         $category    = $subCategory ? CourseCategory::find($subCategory->course_category_id) : null;
-// dd($filtered);
+
         return view('front-design-pages.courseCategory', compact(
             'courses', 'category', 'subCategory', 'total'
         ));
