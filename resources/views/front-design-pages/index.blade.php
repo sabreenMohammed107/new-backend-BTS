@@ -1871,19 +1871,16 @@
                 }
             }
         </style>
-        <div class="ltn__counterup-area bg-image pt-115 pb-70"
+        <div class="ltn__counterup-area bg-image pt-30 pb-30"
             data-bg="{{ asset('front-assets/img/bg/servics-bg.png') }}">
-            <div class="row justify-content-center text-center" id="accreditation-section-style">
-                <h1 class="section-title white-color--- col-12 wh-txt-clr ">{{ $homeAccreditation->small_description }}
-                </h1>
-                <span class="col-12 col-md-8  fnt-siz-sm g-clr spn" style="font-size: 16px !important">{!! $homeAccreditation->details !!}</span>
-                <div class="col-12 text-center pt-3" style="padding-top: 35px; margin-top: 70px;">
-
+            <div class="row justify-content-center text-center" id="accreditation-section-style" style="padding: 0 15px;">
+                <h1 class="section-title white-color--- col-12 wh-txt-clr" style="margin-bottom: 5px;">{{ $homeAccreditation->small_description }}</h1>
+                <span class="col-12 col-md-8 fnt-siz-sm g-clr spn" style="font-size: 16px !important; margin-top: 0; width:90%;">{!! $homeAccreditation->details !!}</span>
+                <div class="col-12 text-center" style="padding-top: 10px; margin-top: 10px;">
                     <a href="{{ url('/accreditations') }}" style="text-transform: capitalize;"
                         class="theme-btn-1 btn btn-effect-1 ">{{ $homeAccreditation->details2 }}</a>
                 </div>
             </div>
-
         </div>
         @endisset
 
