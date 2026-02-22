@@ -20,9 +20,14 @@ class Course extends Model
         return $this->belongsTo('App\Models\CourseSubCategory','course_sub_category_id');
 
     }
-    public function relatedcourse()
+    public function relatedCourses()
     {
-        return $this->hasMany('App\Models\Course','related_course_id');
+        return $this->hasMany('App\Models\RelatedCourses', 'course_id');
+    }
+
+    public function relatedToThisCourse()
+    {
+        return $this->hasMany('App\Models\RelatedCourses', 'related_course_id');
     }
 
     public function rounds()

@@ -137,7 +137,22 @@ class CoursesController extends Controller
     public function destroy($id)
     {
         $row = $this->object::findOrFail($id);
+
+        // Delete related courses where this course is the main course
+        RelatedCourses::where('course_id', $id)->delete();
+
+        // Delete related courses where this course is referenced as a related course
+        RelatedCourses::where('related_course_id', $id)->delete();
+
+        // Delete all rounds associated with this course
+        $row->rounds()->delete();
+
+        // Delete all applicants associated with this course
+        $row->applicant()->delete();
+
+        // Now delete the course itself
         $row->delete();
+
         return redirect()->route("{$this->route}.index")->with('success', ' delete Sucess.');
     }
 
