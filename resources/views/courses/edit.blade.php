@@ -315,7 +315,7 @@ if($errors->any()){
                             <!--begin::Label-->
                             <label class="form-label"> Brochure</label>
                             <!--end::Label-->
-                            <a href="{{ asset('uploads/courseBrochure') }}/{{ $row->course_brochure }}" dawnload> Dawnload</a>
+                            <a href="{{ asset('uploads/courseBrochure') }}/{{ $row->course_brochure }}" download="download" > Download</a>
                             <!--begin::Editor-->
                             <input type="file" class="form-control "  name="course_brochure" placeholder="course_brochure" />
                             <!--end::Editor-->
