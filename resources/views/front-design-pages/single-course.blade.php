@@ -1321,7 +1321,7 @@
                                         </h6>
                                         <div id="faq-item-2-3" class="collapse" data-bs-parent="#accordion_2">
                                             <div class="card-body">
-                                                {!! $course->course_highlight !!}
+                                                {!! $course->course_objectives !!}
                                             </div>
                                         </div>
                                     </div>
