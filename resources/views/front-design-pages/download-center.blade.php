@@ -22,7 +22,7 @@
             <div class="col-12 col-lg-3" style="display: flex;justify-content: center;align-items: center;">
                 <div class="ltn__product-item ltn__product-item-3 text-left">
                   <div class="product-img" style='height: 100%;'>
-                    <a href="{{ route('download-file', $data->id) }}" class="img-container"><img height="100%" src="{{ asset($data->image) }}" alt="#"></a>
+                    <a href="{{ route('download-file', $data->id) }}" class="img-container"><img height="100%" src="{{ asset('uploads/download_centers') }}/{{ $data->image }}" alt="#"></a>
                     <div class="course-badge p-3">
                       <div class="row">
                         <div class="col-12 title-section">
