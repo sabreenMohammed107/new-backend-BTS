@@ -84,6 +84,18 @@ class RoundsController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'course_id'        => 'required|exists:courses,id',
+            'country_id'       => 'required|exists:countries,id',
+            'venue_id'         => 'required|exists:venues,id',
+            'currency_id'      => 'required|exists:currencies,id',
+            'round_start_date' => 'required|date',
+            'round_end_date'   => 'required|date|after_or_equal:round_start_date',
+            'round_price'      => 'required|numeric|min:0',
+            'round_place'      => 'required|string|max:255',
+            'show_home_order'  => 'nullable|integer',
+        ]);
+
         $input = $request->except(['_token']);
         // if ($request->active) {
             $input['active'] = 1;

@@ -79,7 +79,7 @@
                                         id="course" >
                                         <option value="">select....</option>
                                         @foreach ($courses as $course)
-                                            <option value='{{ $course->id }}'>
+                                            <option value='{{ $course->id }}' {{ old('course_id') == $course->id ? 'selected' : '' }}>
                                                 {{ $course->course_en_name }}</option>
                                         @endforeach
 
@@ -98,7 +98,7 @@
                                         id="country" data-dependent="state">
                                         <option value="">select....</option>
                                         @foreach ($countries as $country)
-                                            <option value='{{ $country->id }}'>
+                                            <option value='{{ $country->id }}' {{ old('country_id') == $country->id ? 'selected' : '' }}>
                                                 {{ $country->country_en_name }}</option>
                                         @endforeach
 
@@ -124,7 +124,7 @@
                                         <label class="required form-label"> Start date</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="date" name="round_start_date" class="form-control @error('mobile') is-round_start_date @enderror"  >
+                                        <input type="date" name="round_start_date" class="form-control @error('round_start_date') is-invalid @enderror" value="{{ old('round_start_date') }}"  >
 
                                         @error('round_start_date')
                                             <span class="invalid-feedback" role="alert">
@@ -142,7 +142,7 @@
                                         <label class="required form-label">End date</label>
                                         <!--end::Label-->
                                         <!--begin::Input-->
-                                        <input type="date" name="round_end_date" class="form-control @error('round_end_date') is-round_end_date @enderror"  >
+                                        <input type="date" name="round_end_date" class="form-control @error('round_end_date') is-invalid @enderror" value="{{ old('round_end_date') }}"  >
 
 
                                         @error('round_end_date')
@@ -186,7 +186,7 @@
                                         id="currency_id" >
                                         <option value="">select....</option>
                                         @foreach ($currencies as $currency)
-                                        <option value='{{$currency->id}}' >
+                                        <option value='{{$currency->id}}' {{ old('currency_id') == $currency->id ? 'selected' : '' }}>
                                          {{ $currency->currency_name }}</option>
                                            @endforeach
                                     </select>
@@ -201,7 +201,7 @@
                                             <option value="">Place..</option>
                                             {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
                                         </label>
-                                        <textarea type="number" id="newClint" name="round_place" class="form-control" placeholder="Round Place"></textarea>
+                                        <textarea type="number" id="newClint" name="round_place" class="form-control" placeholder="Round Place">{{ old('round_place') }}</textarea>
 
                                     </div>
 
@@ -210,7 +210,7 @@
                                             <option value="">Home order</option>
                                             {{-- <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Interviewer who conducts the meeting with the interviewee"></i> --}}
                                         </label>
-                                                      <input type="number" id="newClint" name="show_home_order" class="form-control" placeholder="" >
+                                                      <input type="number" id="newClint" name="show_home_order" class="form-control" placeholder="" value="{{ old('show_home_order') }}" >
 
                                     </div>
                                 </div>
@@ -246,30 +246,32 @@
     <script>
         $(document).ready(function() {
 
-            $('.dynamic').change(function() {
-
-                if ($(this).val() != '') {
-                    var select = $(this).attr("id");
-                    var value = $(this).val();
-                    var dependent = $(this).data('dependent');
+            function loadVenues(countryId, selectedVenueId) {
+                if (countryId != '') {
                     var _token = $('input[name="_token"]').val();
-
                     $.ajax({
                         url: "{{ route('dynamicdependent.fetch') }}",
                         method: "GET",
-                        data: {
-                            select: select,
-                            value: value,
-                            _token: _token,
-                            dependent: dependent
-                        },
+                        data: { select: 'country', value: countryId, _token: _token, dependent: 'state' },
                         success: function(result) {
-
                             $('#state').html(result);
-
+                            if (selectedVenueId) {
+                                $('#state').val(selectedVenueId).trigger('change');
+                            }
                         }
+                    });
+                }
+            }
 
-                    })
+            // Restore venue on validation error
+            @if(old('country_id'))
+                loadVenues('{{ old('country_id') }}', '{{ old('venue_id') }}');
+            @endif
+
+            $('.dynamic').change(function() {
+
+                if ($(this).val() != '') {
+                    loadVenues($(this).val(), null);
                 }
             });
 
