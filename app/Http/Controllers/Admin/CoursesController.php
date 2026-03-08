@@ -109,7 +109,7 @@ class CoursesController extends Controller
     public function update(Request $request,  $id)
     {
         $row = $this->object::findOrFail($id);
-        $input = $request->except(['_token', 'course_image','course_image_thumbnail','course_brochure','course_sub_category_id']);
+        $input = $request->except(['_token', 'course_image','course_image_thumbnail','course_brochure','course_sub_category_id','course_code']);
         $input['active'] = 1;
         if ($request->hasFile('course_image')) {
             $attach_image = $request->file('course_image');
