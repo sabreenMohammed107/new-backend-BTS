@@ -92,7 +92,7 @@ class RoundsController extends Controller
             'round_start_date' => 'required|date',
             'round_end_date'   => 'required|date|after_or_equal:round_start_date',
             'round_price'      => 'required|numeric|min:0',
-            'round_place'      => 'required|string|max:255',
+            'round_place'      => 'nullable|string|max:255',
             'show_home_order'  => 'nullable|integer',
         ]);
 
